@@ -1,0 +1,18 @@
+# Dados nunca entram no git (CLAUDE.md, "Dados", regra 5)
+data/
+*.wav
+*.WAV
+*.zip
+*.flac
+*.mp3
+IDMT-ISA-ELECTRIC-ENGINE/
+Brushless DC Motor sound dataset for PdM/
+
+# Ambiente e caches
+.venv/
+__pycache__/
+*.pyc
+.pytest_cache/
+cache/
+*.npz
+.ipynb_checkpoints/
