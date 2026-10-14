@@ -159,11 +159,18 @@ def viterbi_rotacao(custo, passo_cents, max_salto=None, w_step=VIT_W_STEP,
     return path
 
 
-def rastrear(y, sr, fmin=15.0, fmax=60.0, passo_cents=10.0, harmonicos=None,
-             n_fft=8192, hop=1024, usar_pyin=False, usar_viterbi=True, max_salto=10,
+def rastrear(y, sr, fmin=15.0, fmax=60.0, passo_cents=2.0, harmonicos=None,
+             n_fft=8192, hop=1024, usar_pyin=False, usar_viterbi=True, max_salto=50,
              banda_pyin=None):
     """Rastreia a rotação. Devolve (f_rot por quadro, NaN = SIL; saliência normalizada;
-    grade). Sem Viterbi, é o argmax por quadro da emissão (variante p12)."""
+    grade). Sem Viterbi, é o argmax por quadro da emissão (variante p12).
+
+    Grade padrão de 2 cents (era 10 até 14/10/2026): a bancada sintética
+    (experimentos/bancada_sintetica.py) mostrou que com 10 cents o rastreador trava em
+    4/3·f quando a energia está nos harmônicos múltiplos de 4 (f e 4f/3 explicam os mesmos
+    picos fortes e o desempate fica com a quantização: 5 cents no 48º harmônico ≈ 3,5 Hz).
+    No treino do IDMT, `good` passou de 34,26 Hz (= 4/3·25,7) para 25,73 Hz. max_salto
+    acompanha a grade (50 × 2 cents = 10 × 10 cents = 1 semitom por quadro)."""
     if harmonicos is None:
         harmonicos = np.arange(1, 49)
     f_grade = grade(fmin, fmax, passo_cents)

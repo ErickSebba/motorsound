@@ -34,12 +34,12 @@ class PreDecifrae(PreConfig):
     sr: int = 16000
     fmin: float = 15.0
     fmax: float = 60.0
-    passo_cents: float = 10.0
+    passo_cents: float = 2.0       # era 10; ver motorsound/rotacao.py::rastrear
     n_fft: int = 8192
     hop: int = 1024
     usar_pyin: bool = False
     usar_viterbi: bool = True
-    max_salto: int = 10
+    max_salto: int = 50
 
 
 @dataclass(frozen=True)

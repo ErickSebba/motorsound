@@ -209,6 +209,40 @@ def avaliar(nome_pipe, base, split_tipo, aval=None, post=None, perturbacao_val=N
     return df
 
 
+def avaliar_condicoes(nome_pipe, base, split_tipo, aval, X, Xc: dict, post=None):
+    """Treina UMA vez por fold em X (limpo) e prevê cada X de `Xc` ({rótulo: X}).
+    Mesmas colunas de `avaliar`, mais `condicao_sintetica`."""
+    pipe = carregar_pipeline(nome_pipe)
+    post = post or _post(pipe)
+    classes = classes_de(base)
+    segs = segmentos_de(base, aval)
+    folds, grupos = folds_de(base, split_tipo, segs)
+    y = np.array([classes.index(s.classe) for s in segs])
+    linhas = []
+    for f in folds:
+        if len(set(y[f.treino])) < 2 or len(f.val) == 0:
+            continue
+        modelo = pipe.treinar(X[f.treino], y[f.treino], post, n_classes=len(classes))
+        for rot, Xv in Xc.items():
+            P = np.asarray(pipe.prever(modelo, Xv[f.val], post), dtype=float)
+            pred = P.argmax(axis=1)
+            for j, i in enumerate(f.val):
+                s = segs[i]
+                linhas.append({
+                    "pipeline": pipe.NOME, "tipo": pipe.TIPO, "base": base,
+                    "split": split_tipo, "fold": f.nome, "rec_id": s.rec_id,
+                    "grupo": grupos[i], "idx": s.idx, "t0": s.t0, "classe": s.classe,
+                    "condicao": s.condicao, "motor": s.motor, "velocidade": s.velocidade,
+                    "condicao_sintetica": rot, "pred": classes[pred[j]],
+                    "acerto": int(pred[j] == y[i]),
+                    **{f"p_{c}": float(P[j, k]) for k, c in enumerate(classes)},
+                    "aval": json.dumps(_dc(aval), sort_keys=True),
+                    "pre": json.dumps(_dc(_pre(pipe)), sort_keys=True, default=str),
+                    "post": json.dumps(_dc(post), sort_keys=True, default=str),
+                })
+    return pd.DataFrame(linhas)
+
+
 def escrever(df: pd.DataFrame, tag: str, meta: dict):
     OUT.mkdir(parents=True, exist_ok=True)
     ts = datetime.now().strftime("%Y%m%d_%H%M%S")
