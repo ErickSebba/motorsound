@@ -17,3 +17,6 @@ cache/
 *.npz
 .ipynb_checkpoints/
 cache/
+
+# CSVs crus de experimento: versionados comprimidos em out/experiments/gz/
+out/experiments/*.csv

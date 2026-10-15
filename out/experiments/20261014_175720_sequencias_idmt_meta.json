@@ -1,0 +1,35 @@
+{
+  "gerado_em": "2026-10-14T17:57:20",
+  "projeto": {
+    "commit": "e3ebe87",
+    "sujo": true
+  },
+  "python": "3.12.13",
+  "numpy": "2.5.4",
+  "argv": [
+    "experimentos/sequencias.py",
+    "--csv",
+    "out/experiments/20261014_175628_robustez_idmt.csv",
+    "--condicao",
+    "{\"snr_db\": 5.0, \"tipo\": \"rosa\"}"
+  ],
+  "entrada": "20261014_175628_robustez_idmt.csv",
+  "split": "blocos",
+  "condicao": "{\"snr_db\": 5.0, \"tipo\": \"rosa\"}",
+  "n_seq": 30,
+  "seed": 0,
+  "passo_s": 3.0,
+  "permanencia_janelas": [
+    5,
+    20
+  ],
+  "penalidades": [
+    0.5,
+    1.0,
+    2.0,
+    4.0,
+    8.0,
+    16.0
+  ],
+  "segundos": 0.8
+}

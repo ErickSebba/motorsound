@@ -1,0 +1,93 @@
+{
+  "gerado_em": "2026-10-14T21:32:12",
+  "projeto": {
+    "commit": "3e26062",
+    "sujo": true
+  },
+  "python": "3.12.13",
+  "numpy": "2.5.4",
+  "argv": [
+    "experimentos/estatistica.py",
+    "--csv",
+    "out/experiments/20261014_192347_robustez_idmt.csv",
+    "out/experiments/20261014_205140_robustez_idmt.csv",
+    "out/experiments/20261014_193054_robustez_a2212.csv",
+    "out/experiments/20261014_210231_robustez_a2212.csv"
+  ],
+  "entradas": [
+    "20261014_192347_robustez_idmt.csv",
+    "20261014_205140_robustez_idmt.csv",
+    "20261014_193054_robustez_a2212.csv",
+    "20261014_210231_robustez_a2212.csv"
+  ],
+  "pares": [
+    [
+      "p12_decifrae_sem_viterbi",
+      "p11_decifrae_harmsum",
+      "Viterbi de rotação (baixo V3)"
+    ],
+    [
+      "p11a_grade10",
+      "p11_decifrae_harmsum",
+      "grade de 2 cents no rastreador"
+    ],
+    [
+      "p11_decifrae_harmsum",
+      "p10_decifrae_pyin_viterbi",
+      "termo pYIN na emissão"
+    ],
+    [
+      "p00_logmel_cnn",
+      "p11_decifrae_harmsum",
+      "Decifrae embarcável × CNN de referência (Strantzalis)"
+    ],
+    [
+      "p02_grollmisch",
+      "p11_decifrae_harmsum",
+      "Decifrae embarcável × baseline dos autores do IDMT"
+    ],
+    [
+      "p11_decifrae_harmsum",
+      "p20b_so_frot",
+      "só a rotação × p11 completa"
+    ],
+    [
+      "b01_forma_espectral",
+      "p21_envelope",
+      "modulação do envelope × forma espectral"
+    ]
+  ],
+  "cenarios": [
+    [
+      "idmt",
+      {
+        "snr_db": 10.0,
+        "tipo": "rosa"
+      }
+    ],
+    [
+      "idmt",
+      {
+        "snr_db": 10.0,
+        "tipo": "branco"
+      }
+    ],
+    [
+      "idmt",
+      {
+        "snr_db": 5.0,
+        "tipo": "rosa"
+      }
+    ],
+    [
+      "a2212",
+      {
+        "tipo": "limpo"
+      }
+    ]
+  ],
+  "n_bootstrap": 10000,
+  "seed": 0,
+  "unidade": "grupo (gravação × bloco no IDMT; gravação no A2212)",
+  "nota": "diferença = b − a; família de Holm = todos os pares × cenários"
+}

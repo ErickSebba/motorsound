@@ -1,0 +1,390 @@
+{
+  "gerado_em": "2026-10-14T17:58:06",
+  "projeto": {
+    "commit": "e3ebe87",
+    "sujo": true
+  },
+  "python": "3.12.13",
+  "numpy": "2.5.4",
+  "argv": [
+    "experimentos/tacometro_a2212.py"
+  ],
+  "faixas": [
+    [
+      15.0,
+      60.0
+    ],
+    [
+      60.0,
+      240.0
+    ],
+    [
+      100.0,
+      400.0
+    ]
+  ],
+  "resumo_spearman": [
+    {
+      "fmin": 15.0,
+      "viterbi": false,
+      "classe": "Bearing",
+      "motor": "M4",
+      "n": 7,
+      "spearman": -0.3571428571428572,
+      "p": 0.431611352038328,
+      "razao_mediana": 1.691535357262897
+    },
+    {
+      "fmin": 15.0,
+      "viterbi": false,
+      "classe": "Healthy",
+      "motor": "M1",
+      "n": 8,
+      "spearman": 0.523809523809524,
+      "p": 0.1827207505397148,
+      "razao_mediana": 1.7163072558203407
+    },
+    {
+      "fmin": 15.0,
+      "viterbi": false,
+      "classe": "Healthy",
+      "motor": "M2",
+      "n": 8,
+      "spearman": -0.09759000729485333,
+      "p": 0.8181772027352759,
+      "razao_mediana": 1.873801215131358
+    },
+    {
+      "fmin": 15.0,
+      "viterbi": false,
+      "classe": "Healthy",
+      "motor": "M3",
+      "n": 6,
+      "spearman": 0.7714285714285715,
+      "p": 0.07239650145772594,
+      "razao_mediana": 1.505486463348734
+    },
+    {
+      "fmin": 15.0,
+      "viterbi": false,
+      "classe": "Propeller",
+      "motor": "M1",
+      "n": 6,
+      "spearman": -0.2571428571428572,
+      "p": 0.6227871720116619,
+      "razao_mediana": 2.0512801559513054
+    },
+    {
+      "fmin": 15.0,
+      "viterbi": false,
+      "classe": "Propeller",
+      "motor": "M2",
+      "n": 8,
+      "spearman": -0.2515015150017844,
+      "p": 0.5479426035598268,
+      "razao_mediana": 1.9814892329554894
+    },
+    {
+      "fmin": 15.0,
+      "viterbi": true,
+      "classe": "Bearing",
+      "motor": "M4",
+      "n": 7,
+      "spearman": -0.21428571428571433,
+      "p": 0.6445115810207203,
+      "razao_mediana": 1.5157165665103982
+    },
+    {
+      "fmin": 15.0,
+      "viterbi": true,
+      "classe": "Healthy",
+      "motor": "M1",
+      "n": 8,
+      "spearman": 0.5476190476190477,
+      "p": 0.16002564253889653,
+      "razao_mediana": 1.7261778179261915
+    },
+    {
+      "fmin": 15.0,
+      "viterbi": true,
+      "classe": "Healthy",
+      "motor": "M2",
+      "n": 8,
+      "spearman": 0.7185757571479554,
+      "p": 0.04462261002441919,
+      "razao_mediana": 1.873801215131358
+    },
+    {
+      "fmin": 15.0,
+      "viterbi": true,
+      "classe": "Healthy",
+      "motor": "M3",
+      "n": 6,
+      "spearman": 0.8285714285714287,
+      "p": 0.04156268221574335,
+      "razao_mediana": 1.3745261144710268
+    },
+    {
+      "fmin": 15.0,
+      "viterbi": true,
+      "classe": "Propeller",
+      "motor": "M1",
+      "n": 6,
+      "spearman": -0.23190841426097938,
+      "p": 0.658373571260927,
+      "razao_mediana": 2.1472686135248873
+    },
+    {
+      "fmin": 15.0,
+      "viterbi": true,
+      "classe": "Propeller",
+      "motor": "M2",
+      "n": 8,
+      "spearman": -0.203596464525254,
+      "p": 0.6286746732890388,
+      "razao_mediana": 1.8610259880970381
+    },
+    {
+      "fmin": 60.0,
+      "viterbi": false,
+      "classe": "Bearing",
+      "motor": "M4",
+      "n": 7,
+      "spearman": 0.7857142857142859,
+      "p": 0.03623846267982715,
+      "razao_mediana": 4.4035411716297075
+    },
+    {
+      "fmin": 60.0,
+      "viterbi": false,
+      "classe": "Healthy",
+      "motor": "M1",
+      "n": 8,
+      "spearman": 0.5952380952380953,
+      "p": 0.11952980613879269,
+      "razao_mediana": 4.766161281436084
+    },
+    {
+      "fmin": 60.0,
+      "viterbi": false,
+      "classe": "Healthy",
+      "motor": "M2",
+      "n": 8,
+      "spearman": 0.9761904761904763,
+      "p": 3.314396026200098e-05,
+      "razao_mediana": 4.412179901959823
+    },
+    {
+      "fmin": 60.0,
+      "viterbi": false,
+      "classe": "Healthy",
+      "motor": "M3",
+      "n": 6,
+      "spearman": 0.2571428571428572,
+      "p": 0.6227871720116619,
+      "razao_mediana": 4.284124100272363
+    },
+    {
+      "fmin": 60.0,
+      "viterbi": false,
+      "classe": "Propeller",
+      "motor": "M1",
+      "n": 6,
+      "spearman": 0.40583972495671394,
+      "p": 0.4246625075613642,
+      "razao_mediana": 4.845793266658406
+    },
+    {
+      "fmin": 60.0,
+      "viterbi": false,
+      "classe": "Propeller",
+      "motor": "M2",
+      "n": 8,
+      "spearman": 0.9761904761904763,
+      "p": 3.314396026200098e-05,
+      "razao_mediana": 4.586864138830714
+    },
+    {
+      "fmin": 60.0,
+      "viterbi": true,
+      "classe": "Bearing",
+      "motor": "M4",
+      "n": 7,
+      "spearman": 0.4642857142857144,
+      "p": 0.29393410760025196,
+      "razao_mediana": 4.3841849209857635
+    },
+    {
+      "fmin": 60.0,
+      "viterbi": true,
+      "classe": "Healthy",
+      "motor": "M1",
+      "n": 8,
+      "spearman": 0.4047619047619048,
+      "p": 0.3198886412288163,
+      "razao_mediana": 4.356681676228797
+    },
+    {
+      "fmin": 60.0,
+      "viterbi": true,
+      "classe": "Healthy",
+      "motor": "M2",
+      "n": 8,
+      "spearman": 0.9285714285714287,
+      "p": 0.0008629681828999767,
+      "razao_mediana": 4.473219667016128
+    },
+    {
+      "fmin": 60.0,
+      "viterbi": true,
+      "classe": "Healthy",
+      "motor": "M3",
+      "n": 6,
+      "spearman": -0.4285714285714286,
+      "p": 0.3965014577259473,
+      "razao_mediana": 4.1338955409958915
+    },
+    {
+      "fmin": 60.0,
+      "viterbi": true,
+      "classe": "Propeller",
+      "motor": "M1",
+      "n": 6,
+      "spearman": 0.942857142857143,
+      "p": 0.004804664723032055,
+      "razao_mediana": 5.52183507746328
+    },
+    {
+      "fmin": 60.0,
+      "viterbi": true,
+      "classe": "Propeller",
+      "motor": "M2",
+      "n": 8,
+      "spearman": 0.7349931063856169,
+      "p": 0.03777021034828378,
+      "razao_mediana": 4.8949496338781895
+    },
+    {
+      "fmin": 100.0,
+      "viterbi": false,
+      "classe": "Bearing",
+      "motor": "M4",
+      "n": 7,
+      "spearman": 1.0,
+      "p": 0.0,
+      "razao_mediana": 4.4048836016021236
+    },
+    {
+      "fmin": 100.0,
+      "viterbi": false,
+      "classe": "Healthy",
+      "motor": "M1",
+      "n": 8,
+      "spearman": -0.203596464525254,
+      "p": 0.6286746732890388,
+      "razao_mediana": 5.0110307898561555
+    },
+    {
+      "fmin": 100.0,
+      "viterbi": false,
+      "classe": "Healthy",
+      "motor": "M2",
+      "n": 8,
+      "spearman": 0.8333333333333335,
+      "p": 0.010175540123456752,
+      "razao_mediana": 4.460582402752662
+    },
+    {
+      "fmin": 100.0,
+      "viterbi": false,
+      "classe": "Healthy",
+      "motor": "M3",
+      "n": 6,
+      "spearman": -0.6,
+      "p": 0.208,
+      "razao_mediana": 5.545982639123535
+    },
+    {
+      "fmin": 100.0,
+      "viterbi": false,
+      "classe": "Propeller",
+      "motor": "M1",
+      "n": 6,
+      "spearman": 0.942857142857143,
+      "p": 0.004804664723032055,
+      "razao_mediana": 5.47218236255912
+    },
+    {
+      "fmin": 100.0,
+      "viterbi": false,
+      "classe": "Propeller",
+      "motor": "M2",
+      "n": 8,
+      "spearman": 0.8095238095238096,
+      "p": 0.014902667686230072,
+      "razao_mediana": 4.781066840777032
+    },
+    {
+      "fmin": 100.0,
+      "viterbi": true,
+      "classe": "Bearing",
+      "motor": "M4",
+      "n": 7,
+      "spearman": 1.0,
+      "p": 0.0,
+      "razao_mediana": 4.41464189740743
+    },
+    {
+      "fmin": 100.0,
+      "viterbi": true,
+      "classe": "Healthy",
+      "motor": "M1",
+      "n": 8,
+      "spearman": -0.28571428571428575,
+      "p": 0.49272624501695717,
+      "razao_mediana": 4.910844503686821
+    },
+    {
+      "fmin": 100.0,
+      "viterbi": true,
+      "classe": "Healthy",
+      "motor": "M2",
+      "n": 8,
+      "spearman": 0.9047619047619048,
+      "p": 0.002008275505429469,
+      "razao_mediana": 4.6266207544801965
+    },
+    {
+      "fmin": 100.0,
+      "viterbi": true,
+      "classe": "Healthy",
+      "motor": "M3",
+      "n": 6,
+      "spearman": -0.6,
+      "p": 0.208,
+      "razao_mediana": 5.527873363422142
+    },
+    {
+      "fmin": 100.0,
+      "viterbi": true,
+      "classe": "Propeller",
+      "motor": "M1",
+      "n": 6,
+      "spearman": 0.9276336570439175,
+      "p": 0.00766584418747316,
+      "razao_mediana": 5.511925824934715
+    },
+    {
+      "fmin": 100.0,
+      "viterbi": true,
+      "classe": "Propeller",
+      "motor": "M2",
+      "n": 8,
+      "spearman": 0.7349931063856169,
+      "p": 0.03777021034828378,
+      "razao_mediana": 4.907289133263711
+    }
+  ],
+  "segundos": 17.2,
+  "nota": "referência = velocidade comandada no nome do arquivo, não tacômetro"
+}

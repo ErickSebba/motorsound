@@ -1,0 +1,107 @@
+{
+  "gerado_em": "2026-10-14T17:56:29",
+  "projeto": {
+    "commit": "e3ebe87",
+    "sujo": true
+  },
+  "python": "3.12.13",
+  "numpy": "2.5.4",
+  "argv": [
+    "experimentos/robustez.py",
+    "--pipelines",
+    "b01_forma_espectral",
+    "p11_decifrae_harmsum",
+    "--base",
+    "idmt",
+    "--n-jobs",
+    "4"
+  ],
+  "pipelines": [
+    "b01_forma_espectral",
+    "p11_decifrae_harmsum"
+  ],
+  "base": "idmt",
+  "split": "blocos",
+  "condicoes": [
+    {
+      "tipo": "limpo"
+    },
+    {
+      "tipo": "branco",
+      "snr_db": 30.0
+    },
+    {
+      "tipo": "branco",
+      "snr_db": 20.0
+    },
+    {
+      "tipo": "branco",
+      "snr_db": 15.0
+    },
+    {
+      "tipo": "branco",
+      "snr_db": 10.0
+    },
+    {
+      "tipo": "branco",
+      "snr_db": 5.0
+    },
+    {
+      "tipo": "branco",
+      "snr_db": 0.0
+    },
+    {
+      "tipo": "branco",
+      "snr_db": -5.0
+    },
+    {
+      "tipo": "rosa",
+      "snr_db": 30.0
+    },
+    {
+      "tipo": "rosa",
+      "snr_db": 20.0
+    },
+    {
+      "tipo": "rosa",
+      "snr_db": 15.0
+    },
+    {
+      "tipo": "rosa",
+      "snr_db": 10.0
+    },
+    {
+      "tipo": "rosa",
+      "snr_db": 5.0
+    },
+    {
+      "tipo": "rosa",
+      "snr_db": 0.0
+    },
+    {
+      "tipo": "rosa",
+      "snr_db": -5.0
+    },
+    {
+      "tipo": "marrom",
+      "snr_db": 0.0
+    },
+    {
+      "tipo": "percussivo",
+      "hits_por_s": 1.5,
+      "amp_rel": 8.0
+    },
+    {
+      "tipo": "reverb",
+      "decay": 0.35
+    },
+    {
+      "tipo": "ganho",
+      "db": 6.0
+    }
+  ],
+  "seed_splits": 20261014,
+  "falhas": [],
+  "segundos": 80.0,
+  "nota": "treino limpo, validação perturbada; semente da perturbação = crc32(rec#idx)"
+}

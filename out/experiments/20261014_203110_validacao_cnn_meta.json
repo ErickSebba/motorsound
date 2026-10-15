@@ -1,0 +1,151 @@
+{
+  "gerado_em": "2026-10-14T20:31:10",
+  "projeto": {
+    "commit": "3e26062",
+    "sujo": true
+  },
+  "python": "3.12.13",
+  "numpy": "2.5.4",
+  "argv": [
+    "experimentos/validacao.py",
+    "--pipelines",
+    "p00_logmel_cnn",
+    "p01_mfcc_cnn1d",
+    "p02_grollmisch",
+    "p05_melcnn",
+    "--n-jobs",
+    "4",
+    "--tag",
+    "validacao_cnn"
+  ],
+  "pipelines": [
+    "p00_logmel_cnn",
+    "p01_mfcc_cnn1d",
+    "p02_grollmisch",
+    "p05_melcnn"
+  ],
+  "cenarios": [
+    [
+      "idmt",
+      "blocos",
+      true
+    ],
+    [
+      "idmt",
+      "aleatorio",
+      true
+    ],
+    [
+      "idmt",
+      "blocos",
+      false
+    ],
+    [
+      "a2212",
+      "arquivo",
+      true
+    ],
+    [
+      "a2212",
+      "motor",
+      true
+    ],
+    [
+      "a2212",
+      "aleatorio",
+      true
+    ],
+    [
+      "a2212",
+      "arquivo",
+      false
+    ]
+  ],
+  "seed_splits": 20261014,
+  "falhas": [],
+  "custo_mcu": {
+    "p00_logmel_cnn": {
+      "params": 7703,
+      "ram_kb": 10.4575,
+      "flash_kb": 7.62,
+      "mflops_s": 3.57,
+      "macc_inferencia": 517467,
+      "artigo_stm32": {
+        "macc": 501428,
+        "ms": 40.767,
+        "ram_kb": 5.52,
+        "flash_kb": 7.65,
+        "placa": "B-L475E-IOT01A (Cortex-M4 80 MHz), int8 X-CUBE-AI"
+      },
+      "esp32_ms_estimado": 14.0,
+      "nota": "7703 parâmetros (artigo ≈7,7 kB flash int8 coerente); MACC analítico 517467 vs 501 428 do X-CUBE-AI. ESP32 (LX6 240 MHz) estimado escalando os ≈6.5 ciclos/MACC medidos no STM32 pela frequência: ≈14 ms/inferência (ESP-NN no ESP32-S3 tende a ser mais rápido; sem SIMD no LX6 pode ser 2× pior). RAM: 5,5 kB de ativações do artigo + buffers de entrada e FFT. Uma inferência por 1,024 s: carga < 2 % da CPU."
+    },
+    "p01_mfcc_cnn1d": {
+      "params": 3553,
+      "ram_kb": 7.0,
+      "flash_kb": 38.2,
+      "mflops_s": 2.38,
+      "macc_inferencia": 112560,
+      "artigo_ei": {
+        "ram_kb": 7.0,
+        "rom_kb": 38.2,
+        "nn_ms": 16,
+        "dsp_ms": 337,
+        "classificacao_ms": 36
+      },
+      "artigo_stm_ref": {
+        "ram_kb": 5.52,
+        "flash_kb": 7.65,
+        "ms": 40.767
+      },
+      "esp32_nn_ms_estimado": 3.1,
+      "nota": "3553 parâmetros (pesos int8 ≈ 3.5 kB; os 38,2 kB do EI incluem DSP e runtime). 112560 MACC por inferência, ~4,4× menos que a rota STM (501 428). ESP32: rede ≈ 3.1 ms escalando os ciclos/MACC do STM32 pela frequência; o gargalo reportado é o DSP (337 ms por janela no MCU do artigo, que com passo de 0,5 s ocuparia > 60 % da CPU), não a rede. Comparação: rota STM 5,5 kB RAM, 7,7 kB flash, 40,8 ms."
+    },
+    "p02_grollmisch": {
+      "params": 542083,
+      "ram_kb": 49.3,
+      "flash_kb": 2117.5,
+      "mflops_s": 28.6,
+      "nota": "estimativa analítica; pesos float32 (int8: ~1/4 do flash); RAM = buffer de entrada com sobreposição + FFT + ativações"
+    },
+    "p05_melcnn": {
+      "params": 2452483,
+      "ram_kb": 373.5,
+      "flash_kb": 9580.0,
+      "mflops_s": 34.6,
+      "nota": "estimativa analítica; flash float32 ~9,4 MB não cabe no ESP32 (int8 ~2,4 MB); RAM = duas maiores ativações + mel de 3 s; 1 inferência por janela de 3 s"
+    }
+  },
+  "tempos_s": {
+    "p00_logmel_cnn/idmt/blocos/True": 702.2,
+    "p00_logmel_cnn/idmt/aleatorio/True": 579.1,
+    "p00_logmel_cnn/idmt/blocos/False": 576.3,
+    "p00_logmel_cnn/a2212/arquivo/True": 384.2,
+    "p00_logmel_cnn/a2212/motor/True": 335.6,
+    "p00_logmel_cnn/a2212/aleatorio/True": 371.7,
+    "p00_logmel_cnn/a2212/arquivo/False": 353.5,
+    "p01_mfcc_cnn1d/idmt/blocos/True": 41.2,
+    "p01_mfcc_cnn1d/idmt/aleatorio/True": 41.7,
+    "p01_mfcc_cnn1d/idmt/blocos/False": 38.7,
+    "p01_mfcc_cnn1d/a2212/arquivo/True": 9.5,
+    "p01_mfcc_cnn1d/a2212/motor/True": 7.1,
+    "p01_mfcc_cnn1d/a2212/aleatorio/True": 9.3,
+    "p01_mfcc_cnn1d/a2212/arquivo/False": 9.9,
+    "p02_grollmisch/idmt/blocos/True": 591.4,
+    "p02_grollmisch/idmt/aleatorio/True": 606.2,
+    "p02_grollmisch/idmt/blocos/False": 568.6,
+    "p02_grollmisch/a2212/arquivo/True": 228.5,
+    "p02_grollmisch/a2212/motor/True": 168.2,
+    "p02_grollmisch/a2212/aleatorio/True": 224.8,
+    "p02_grollmisch/a2212/arquivo/False": 230.7,
+    "p05_melcnn/idmt/blocos/True": 27.1,
+    "p05_melcnn/idmt/aleatorio/True": 27.8,
+    "p05_melcnn/idmt/blocos/False": 28.0,
+    "p05_melcnn/a2212/arquivo/True": 33.8,
+    "p05_melcnn/a2212/motor/True": 26.3,
+    "p05_melcnn/a2212/aleatorio/True": 33.5,
+    "p05_melcnn/a2212/arquivo/False": 34.6
+  },
+  "segundos": 6289.5,
+  "nota": "validação apenas; test/ do IDMT trancado por motorsound.io"
+}

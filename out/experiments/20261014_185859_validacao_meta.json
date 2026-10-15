@@ -1,0 +1,312 @@
+{
+  "gerado_em": "2026-10-14T18:58:59",
+  "projeto": {
+    "commit": "3e26062",
+    "sujo": true
+  },
+  "python": "3.12.13",
+  "numpy": "2.5.4",
+  "argv": [
+    "experimentos/validacao.py",
+    "--pipelines",
+    "b00_nivel",
+    "b01_forma_espectral",
+    "p03_etnext",
+    "p03b_etnext_knn",
+    "p04_classicas",
+    "p04b_msaf",
+    "p04c_classicas_lr",
+    "p10_decifrae_pyin_viterbi",
+    "p11_decifrae_harmsum",
+    "p11a_grade10",
+    "p12_decifrae_sem_viterbi",
+    "p20_hfs",
+    "p20b_so_frot",
+    "p21_envelope",
+    "p30_anomalia",
+    "p30b_ae",
+    "--n-jobs",
+    "6"
+  ],
+  "pipelines": [
+    "b00_nivel",
+    "b01_forma_espectral",
+    "p03_etnext",
+    "p03b_etnext_knn",
+    "p04_classicas",
+    "p04b_msaf",
+    "p04c_classicas_lr",
+    "p10_decifrae_pyin_viterbi",
+    "p11_decifrae_harmsum",
+    "p11a_grade10",
+    "p12_decifrae_sem_viterbi",
+    "p20_hfs",
+    "p20b_so_frot",
+    "p21_envelope",
+    "p30_anomalia",
+    "p30b_ae"
+  ],
+  "cenarios": [
+    [
+      "idmt",
+      "blocos",
+      true
+    ],
+    [
+      "idmt",
+      "aleatorio",
+      true
+    ],
+    [
+      "idmt",
+      "blocos",
+      false
+    ],
+    [
+      "a2212",
+      "arquivo",
+      true
+    ],
+    [
+      "a2212",
+      "motor",
+      true
+    ],
+    [
+      "a2212",
+      "aleatorio",
+      true
+    ],
+    [
+      "a2212",
+      "arquivo",
+      false
+    ]
+  ],
+  "seed_splits": 20261014,
+  "falhas": [],
+  "custo_mcu": {
+    "b00_nivel": {
+      "params": 9,
+      "ram_kb": 0.1,
+      "mflops_s": 0.03,
+      "nota": "RMS + pico por janela"
+    },
+    "b01_forma_espectral": {
+      "params": 114,
+      "ram_kb": 9.0,
+      "mflops_s": 1.5872,
+      "nota": "estimativa analítica"
+    },
+    "p03_etnext": {
+      "params": 7070,
+      "ram_kb": 1.79296875,
+      "flash_kb": 27.34375,
+      "mflops_s": 0.8,
+      "nota": "estimativa analítica; n_SV ~200 suposto (depende do treino)"
+    },
+    "p03b_etnext_knn": {
+      "params": 70000,
+      "ram_kb": 1.79296875,
+      "flash_kb": 273.4375,
+      "mflops_s": 0.8,
+      "nota": "estimativa analítica; n_treino ~2000 suposto (depende da base)"
+    },
+    "p04_classicas": {
+      "params": 68099,
+      "ram_kb": 7.23046875,
+      "flash_kb": 292.11328125,
+      "mflops_s": 2.074849,
+      "nota": "estimativa analítica; classificador dominado por kNN/SVM, que guardam o treino (n_treino≈1000 suposto); a variante embarcável é p04c_classicas_lr"
+    },
+    "p04b_msaf": {
+      "params": 113,
+      "ram_kb": 96.00390625,
+      "flash_kb": 0.44140625,
+      "mflops_s": 0.62276,
+      "nota": "estimativa analítica; RAM dominada pela FFT de 16 k pontos (~96 KB, cabe na SRAM do ESP32 sem folga); alternativa: Goertzel só nos 28 bins (~28·16k MAC/s, RAM < 1 KB, mas perde a normalização L1 sobre o espectro inteiro)"
+    },
+    "p04c_classicas_lr": {
+      "params": 163,
+      "ram_kb": 5.23046875,
+      "flash_kb": 26.73828125,
+      "mflops_s": 2.0070759999999996,
+      "nota": "estimativa analítica; custo dominado pela FFT de 512 pts (62,5 quadros/s)"
+    },
+    "p10_decifrae_pyin_viterbi": {
+      "params": 65,
+      "ram_kb": 167.2,
+      "mflops_s": 15.79,
+      "nota": "estimativa analítica; pYIN não embarcável"
+    },
+    "p11_decifrae_harmsum": {
+      "params": 65,
+      "ram_kb": 167.2,
+      "mflops_s": 15.79,
+      "nota": "estimativa analítica; Viterbi com janela de 40 quadros"
+    },
+    "p11a_grade10": {
+      "params": 65,
+      "ram_kb": 84.7,
+      "mflops_s": 9.22,
+      "nota": "estimativa analítica; Viterbi com janela de 40 quadros"
+    },
+    "p12_decifrae_sem_viterbi": {
+      "params": 65,
+      "ram_kb": 73.4,
+      "mflops_s": 11.94,
+      "nota": "estimativa analítica; Viterbi com janela de 40 quadros"
+    },
+    "p20_hfs": {
+      "params": 1682,
+      "ram_kb": 194.7,
+      "flash_kb": 6.6,
+      "mflops_s": 18.52,
+      "nota": "estimativa analítica; inclui o rastreador (15.79 MFLOP/s); N=2560 (f_o=25 Hz, FFT não potência de 2: no MCU, Goertzel nos K=240 bins ou FFT fixa + interpolação); kNN guarda os pontos de treino em 2-D (8 B por janela de treino, fora de 'params')"
+    },
+    "p20b_so_frot": {
+      "params": 6,
+      "ram_kb": 167.2,
+      "flash_kb": 0.1,
+      "mflops_s": 15.79,
+      "nota": "custo = rastreador (como p11); kNN guarda os pontos de treino em 3-D (12 B por janela de treino, fora de 'params')"
+    },
+    "p21_envelope": {
+      "params": 228,
+      "ram_kb": 24.2,
+      "flash_kb": 1.4,
+      "mflops_s": 3.14,
+      "nota": "estimativa analítica, janela de 1 s (buffer de envelope 1024 floats por banda; 3 s triplica a RAM do buffer); params = LR (3 classes) + média/desvio do scaler"
+    },
+    "p30_anomalia": {
+      "params": 1122,
+      "ram_kb": 8.2,
+      "flash_kb": 4.4,
+      "mflops_s": 1.67,
+      "nota": "estimativa analítica; inv(Sigma) 32x32 em float32 = 4 kB; d2 de Mahalanobis ~2 kFLOP por janela"
+    },
+    "p30b_ae": {
+      "params": 50760,
+      "ram_kb": 12.2,
+      "flash_kb": 49.6,
+      "mflops_s": 4.8,
+      "nota": "estimativa analítica; flash em int8 (×4 em float32); AE por quadro de 32 ms com contexto de 5 quadros"
+    }
+  },
+  "tempos_s": {
+    "b00_nivel/idmt/blocos/True": 3.1,
+    "b00_nivel/idmt/aleatorio/True": 2.4,
+    "b00_nivel/idmt/blocos/False": 0.1,
+    "b00_nivel/a2212/arquivo/True": 0.1,
+    "b00_nivel/a2212/motor/True": 0.1,
+    "b00_nivel/a2212/aleatorio/True": 0.1,
+    "b00_nivel/a2212/arquivo/False": 0.1,
+    "b01_forma_espectral/idmt/blocos/True": 0.3,
+    "b01_forma_espectral/idmt/aleatorio/True": 0.2,
+    "b01_forma_espectral/idmt/blocos/False": 0.1,
+    "b01_forma_espectral/a2212/arquivo/True": 0.2,
+    "b01_forma_espectral/a2212/motor/True": 0.1,
+    "b01_forma_espectral/a2212/aleatorio/True": 0.1,
+    "b01_forma_espectral/a2212/arquivo/False": 0.1,
+    "p03_etnext/idmt/blocos/True": 16.2,
+    "p03_etnext/idmt/aleatorio/True": 13.0,
+    "p03_etnext/idmt/blocos/False": 15.8,
+    "p03_etnext/a2212/arquivo/True": 47.0,
+    "p03_etnext/a2212/motor/True": 54.9,
+    "p03_etnext/a2212/aleatorio/True": 108.2,
+    "p03_etnext/a2212/arquivo/False": 51.5,
+    "p03b_etnext_knn/idmt/blocos/True": 16.6,
+    "p03b_etnext_knn/idmt/aleatorio/True": 16.4,
+    "p03b_etnext_knn/idmt/blocos/False": 19.2,
+    "p03b_etnext_knn/a2212/arquivo/True": 49.7,
+    "p03b_etnext_knn/a2212/motor/True": 76.9,
+    "p03b_etnext_knn/a2212/aleatorio/True": 117.3,
+    "p03b_etnext_knn/a2212/arquivo/False": 43.7,
+    "p04_classicas/idmt/blocos/True": 0.7,
+    "p04_classicas/idmt/aleatorio/True": 0.7,
+    "p04_classicas/idmt/blocos/False": 1.1,
+    "p04_classicas/a2212/arquivo/True": 0.8,
+    "p04_classicas/a2212/motor/True": 0.6,
+    "p04_classicas/a2212/aleatorio/True": 0.8,
+    "p04_classicas/a2212/arquivo/False": 2.1,
+    "p04b_msaf/idmt/blocos/True": 0.2,
+    "p04b_msaf/idmt/aleatorio/True": 0.1,
+    "p04b_msaf/idmt/blocos/False": 0.4,
+    "p04b_msaf/a2212/arquivo/True": 0.2,
+    "p04b_msaf/a2212/motor/True": 0.1,
+    "p04b_msaf/a2212/aleatorio/True": 0.2,
+    "p04b_msaf/a2212/arquivo/False": 0.3,
+    "p04c_classicas_lr/idmt/blocos/True": 0.1,
+    "p04c_classicas_lr/idmt/aleatorio/True": 0.1,
+    "p04c_classicas_lr/idmt/blocos/False": 0.5,
+    "p04c_classicas_lr/a2212/arquivo/True": 0.1,
+    "p04c_classicas_lr/a2212/motor/True": 0.1,
+    "p04c_classicas_lr/a2212/aleatorio/True": 0.1,
+    "p04c_classicas_lr/a2212/arquivo/False": 0.3,
+    "p10_decifrae_pyin_viterbi/idmt/blocos/True": 21.6,
+    "p10_decifrae_pyin_viterbi/idmt/aleatorio/True": 0.0,
+    "p10_decifrae_pyin_viterbi/idmt/blocos/False": 21.1,
+    "p10_decifrae_pyin_viterbi/a2212/arquivo/True": 5.2,
+    "p10_decifrae_pyin_viterbi/a2212/motor/True": 0.1,
+    "p10_decifrae_pyin_viterbi/a2212/aleatorio/True": 0.0,
+    "p10_decifrae_pyin_viterbi/a2212/arquivo/False": 5.4,
+    "p11_decifrae_harmsum/idmt/blocos/True": 14.2,
+    "p11_decifrae_harmsum/idmt/aleatorio/True": 0.0,
+    "p11_decifrae_harmsum/idmt/blocos/False": 14.3,
+    "p11_decifrae_harmsum/a2212/arquivo/True": 2.5,
+    "p11_decifrae_harmsum/a2212/motor/True": 0.0,
+    "p11_decifrae_harmsum/a2212/aleatorio/True": 0.1,
+    "p11_decifrae_harmsum/a2212/arquivo/False": 2.6,
+    "p11a_grade10/idmt/blocos/True": 4.3,
+    "p11a_grade10/idmt/aleatorio/True": 0.0,
+    "p11a_grade10/idmt/blocos/False": 4.3,
+    "p11a_grade10/a2212/arquivo/True": 1.0,
+    "p11a_grade10/a2212/motor/True": 0.0,
+    "p11a_grade10/a2212/aleatorio/True": 0.0,
+    "p11a_grade10/a2212/arquivo/False": 0.9,
+    "p12_decifrae_sem_viterbi/idmt/blocos/True": 4.9,
+    "p12_decifrae_sem_viterbi/idmt/aleatorio/True": 0.0,
+    "p12_decifrae_sem_viterbi/idmt/blocos/False": 4.9,
+    "p12_decifrae_sem_viterbi/a2212/arquivo/True": 1.2,
+    "p12_decifrae_sem_viterbi/a2212/motor/True": 0.0,
+    "p12_decifrae_sem_viterbi/a2212/aleatorio/True": 0.0,
+    "p12_decifrae_sem_viterbi/a2212/arquivo/False": 1.2,
+    "p20_hfs/idmt/blocos/True": 14.8,
+    "p20_hfs/idmt/aleatorio/True": 1.0,
+    "p20_hfs/idmt/blocos/False": 14.7,
+    "p20_hfs/a2212/arquivo/True": 3.4,
+    "p20_hfs/a2212/motor/True": 0.9,
+    "p20_hfs/a2212/aleatorio/True": 1.0,
+    "p20_hfs/a2212/arquivo/False": 3.5,
+    "p20b_so_frot/idmt/blocos/True": 14.2,
+    "p20b_so_frot/idmt/aleatorio/True": 0.9,
+    "p20b_so_frot/idmt/blocos/False": 13.8,
+    "p20b_so_frot/a2212/arquivo/True": 3.2,
+    "p20b_so_frot/a2212/motor/True": 0.9,
+    "p20b_so_frot/a2212/aleatorio/True": 0.9,
+    "p20b_so_frot/a2212/arquivo/False": 3.3,
+    "p21_envelope/idmt/blocos/True": 0.1,
+    "p21_envelope/idmt/aleatorio/True": 0.1,
+    "p21_envelope/idmt/blocos/False": 0.7,
+    "p21_envelope/a2212/arquivo/True": 0.1,
+    "p21_envelope/a2212/motor/True": 0.1,
+    "p21_envelope/a2212/aleatorio/True": 0.1,
+    "p21_envelope/a2212/arquivo/False": 0.5,
+    "p30_anomalia/idmt/blocos/True": 0.1,
+    "p30_anomalia/idmt/aleatorio/True": 0.1,
+    "p30_anomalia/idmt/blocos/False": 0.3,
+    "p30_anomalia/a2212/arquivo/True": 0.1,
+    "p30_anomalia/a2212/motor/True": 0.1,
+    "p30_anomalia/a2212/aleatorio/True": 0.1,
+    "p30_anomalia/a2212/arquivo/False": 0.3,
+    "p30b_ae/idmt/blocos/True": 15.2,
+    "p30b_ae/idmt/aleatorio/True": 11.1,
+    "p30b_ae/idmt/blocos/False": 10.9,
+    "p30b_ae/a2212/arquivo/True": 7.0,
+    "p30b_ae/a2212/motor/True": 5.3,
+    "p30b_ae/a2212/aleatorio/True": 7.2,
+    "p30b_ae/a2212/arquivo/False": 7.2
+  },
+  "segundos": 916.2,
+  "nota": "validação apenas; test/ do IDMT trancado por motorsound.io"
+}

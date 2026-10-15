@@ -1,0 +1,66 @@
+{
+  "gerado_em": "2026-10-14T18:54:15",
+  "projeto": {
+    "commit": "3e26062",
+    "sujo": true
+  },
+  "python": "3.12.13",
+  "numpy": "2.5.4",
+  "script": "experimentos/bancada_sintetica.py",
+  "argv": [],
+  "seeds": "np.random.default_rng([semente, idx_disturbio, snr*10+1000]), semente = 0..9",
+  "sr": 16000,
+  "n_fft": 8192,
+  "hop": 1024,
+  "fmin": 15.0,
+  "fmax": 60.0,
+  "tau_s": 0.1,
+  "variantes": {
+    "viterbi": {
+      "passo_cents": 10.0,
+      "max_salto": 10
+    },
+    "argmax": {
+      "usar_viterbi": false,
+      "passo_cents": 10.0,
+      "max_salto": 10
+    },
+    "pyin": {
+      "usar_pyin": true,
+      "passo_cents": 10.0,
+      "max_salto": 10
+    },
+    "viterbi_2c": {
+      "passo_cents": 2.0,
+      "max_salto": 50
+    },
+    "argmax_2c": {
+      "usar_viterbi": false,
+      "passo_cents": 2.0,
+      "max_salto": 50
+    },
+    "pyin_2c": {
+      "usar_pyin": true,
+      "passo_cents": 2.0,
+      "max_salto": 50
+    }
+  },
+  "tol_razao": 0.03,
+  "tol_atraso": 0.05,
+  "n_seguidos": 3,
+  "amplitudes": {
+    "4": 0.3,
+    "8": 0.35,
+    "12": 0.6,
+    "16": 0.5,
+    "20": 0.3,
+    "24": 1.0,
+    "28": 0.25,
+    "32": 0.3,
+    "36": 0.25,
+    "40": 0.2,
+    "44": 0.2,
+    "48": 0.5
+  },
+  "duracao_s": 392.0
+}

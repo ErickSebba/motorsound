@@ -31,8 +31,8 @@ FIG = RAIZ / "out" / "figuras"
 SERIES = ["#2a78d6", "#eb6834", "#1baf7a", "#eda100", "#e87ba4", "#008300"]
 CINZA = "#b4b2a9"
 TEXTO, TEXTO2 = "#1f1e1d", "#5f5e5a"
-DESTAQUE = ["p11_decifrae_harmsum", "p10_decifrae_pyin_viterbi", "p00_logmel_cnn",
-            "p02_grollmisch", "p04_classicas", "b01_forma_espectral"]
+DESTAQUE = ["p11_decifrae_harmsum", "p20b_so_frot", "p00_logmel_cnn",
+            "p02_grollmisch", "p21_envelope", "b01_forma_espectral"]
 
 
 def ultimo(padrao):

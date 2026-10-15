@@ -27,7 +27,7 @@ PENALIDADES = [0.5, 1.0, 2.0, 4.0, 8.0, 16.0]
 
 def main(argv=None):
     ap = argparse.ArgumentParser()
-    ap.add_argument("--csv", required=True)
+    ap.add_argument("--csv", required=True, nargs="+")
     ap.add_argument("--base", default="idmt")
     ap.add_argument("--split", default=None)
     ap.add_argument("--condicao", default=None,
@@ -36,7 +36,7 @@ def main(argv=None):
     ap.add_argument("--seed", type=int, default=0)
     a = ap.parse_args(argv)
     t0 = time.perf_counter()
-    df = pd.read_csv(a.csv)
+    df = pd.concat([pd.read_csv(c) for c in a.csv], ignore_index=True)
     df = df[df.base == a.base]
     split = a.split or ("blocos" if a.base == "idmt" else "arquivo")
     df = df[df.split == split]
@@ -59,7 +59,7 @@ def main(argv=None):
     out = pd.concat(linhas, ignore_index=True)
     out["condicao_sintetica"] = a.condicao or "limpo"
     caminho = runner.escrever(out, f"sequencias_{a.base}", {
-        "argv": sys.argv, "entrada": Path(a.csv).name, "split": split,
+        "argv": sys.argv, "entradas": [Path(c).name for c in a.csv], "split": split,
         "condicao": a.condicao, "n_seq": a.n_seq, "seed": a.seed, "passo_s": passo,
         "permanencia_janelas": [dmin, dmax], "penalidades": PENALIDADES,
         "segundos": round(time.perf_counter() - t0, 1)})

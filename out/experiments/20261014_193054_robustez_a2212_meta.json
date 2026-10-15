@@ -1,0 +1,135 @@
+{
+  "gerado_em": "2026-10-14T19:30:55",
+  "projeto": {
+    "commit": "3e26062",
+    "sujo": true
+  },
+  "python": "3.12.13",
+  "numpy": "2.5.4",
+  "argv": [
+    "experimentos/robustez.py",
+    "--pipelines",
+    "b00_nivel",
+    "b01_forma_espectral",
+    "p03_etnext",
+    "p03b_etnext_knn",
+    "p04_classicas",
+    "p04b_msaf",
+    "p04c_classicas_lr",
+    "p10_decifrae_pyin_viterbi",
+    "p11_decifrae_harmsum",
+    "p11a_grade10",
+    "p12_decifrae_sem_viterbi",
+    "p20_hfs",
+    "p20b_so_frot",
+    "p21_envelope",
+    "p30_anomalia",
+    "p30b_ae",
+    "--base",
+    "a2212",
+    "--n-jobs",
+    "6"
+  ],
+  "pipelines": [
+    "b00_nivel",
+    "b01_forma_espectral",
+    "p03_etnext",
+    "p03b_etnext_knn",
+    "p04_classicas",
+    "p04b_msaf",
+    "p04c_classicas_lr",
+    "p10_decifrae_pyin_viterbi",
+    "p11_decifrae_harmsum",
+    "p11a_grade10",
+    "p12_decifrae_sem_viterbi",
+    "p20_hfs",
+    "p20b_so_frot",
+    "p21_envelope",
+    "p30_anomalia",
+    "p30b_ae"
+  ],
+  "base": "a2212",
+  "split": "arquivo",
+  "condicoes": [
+    {
+      "tipo": "limpo"
+    },
+    {
+      "tipo": "branco",
+      "snr_db": 30.0
+    },
+    {
+      "tipo": "branco",
+      "snr_db": 20.0
+    },
+    {
+      "tipo": "branco",
+      "snr_db": 15.0
+    },
+    {
+      "tipo": "branco",
+      "snr_db": 10.0
+    },
+    {
+      "tipo": "branco",
+      "snr_db": 5.0
+    },
+    {
+      "tipo": "branco",
+      "snr_db": 0.0
+    },
+    {
+      "tipo": "branco",
+      "snr_db": -5.0
+    },
+    {
+      "tipo": "rosa",
+      "snr_db": 30.0
+    },
+    {
+      "tipo": "rosa",
+      "snr_db": 20.0
+    },
+    {
+      "tipo": "rosa",
+      "snr_db": 15.0
+    },
+    {
+      "tipo": "rosa",
+      "snr_db": 10.0
+    },
+    {
+      "tipo": "rosa",
+      "snr_db": 5.0
+    },
+    {
+      "tipo": "rosa",
+      "snr_db": 0.0
+    },
+    {
+      "tipo": "rosa",
+      "snr_db": -5.0
+    },
+    {
+      "tipo": "marrom",
+      "snr_db": 0.0
+    },
+    {
+      "tipo": "percussivo",
+      "hits_por_s": 1.5,
+      "amp_rel": 8.0
+    },
+    {
+      "tipo": "reverb",
+      "decay": 0.35
+    },
+    {
+      "tipo": "ganho",
+      "db": 6.0
+    }
+  ],
+  "seed_splits": 20261014,
+  "falhas": [],
+  "segundos": 421.8,
+  "nota": "treino limpo, validação perturbada; semente da perturbação = crc32(rec#idx)"
+}

@@ -1,0 +1,53 @@
+{
+  "gerado_em": "2026-10-14T18:47:38",
+  "projeto": {
+    "commit": "3e26062",
+    "sujo": true
+  },
+  "python": "3.12.13",
+  "numpy": "2.5.4",
+  "argv": [
+    "experimentos/anomalia.py"
+  ],
+  "pipelines": [
+    "p30_anomalia",
+    "p30b_ae"
+  ],
+  "cenarios": [
+    "idmt_limpo",
+    "idmt_rosa10",
+    "a2212_arquivo",
+    "a2212_m1m2"
+  ],
+  "seed_splits": 20261014,
+  "percentil": 95.0,
+  "max_fpr": 0.1,
+  "falhas": [],
+  "custo_mcu": {
+    "p30_anomalia": {
+      "params": 1122,
+      "ram_kb": 8.2,
+      "flash_kb": 4.4,
+      "mflops_s": 1.67,
+      "nota": "estimativa analítica; inv(Sigma) 32x32 em float32 = 4 kB; d2 de Mahalanobis ~2 kFLOP por janela"
+    },
+    "p30b_ae": {
+      "params": 50760,
+      "ram_kb": 12.2,
+      "flash_kb": 49.6,
+      "mflops_s": 4.8,
+      "nota": "estimativa analítica; flash em int8 (×4 em float32); AE por quadro de 32 ms com contexto de 5 quadros"
+    }
+  },
+  "t_extracao_s": {
+    "p30_anomalia/idmt_limpo": 2.9,
+    "p30_anomalia/idmt_rosa10": 0.0,
+    "p30_anomalia/a2212_arquivo": 0.1,
+    "p30_anomalia/a2212_m1m2": 0.0,
+    "p30b_ae/idmt_limpo": 0.0,
+    "p30b_ae/idmt_rosa10": 0.1,
+    "p30b_ae/a2212_arquivo": 0.2,
+    "p30b_ae/a2212_m1m2": 0.0
+  },
+  "segundos": 68.4
+}
