@@ -8,6 +8,13 @@ cortar o caso síncrono. Nenhum parâmetro do rastreador é ajustado nesta base:
 `lib.rotacao.rastrear` com os padrões do Artigo3 (grade de 2 cents, harmônicos 1–48,
 n_fft 8192, hop 1024, Viterbi, sem pYIN), só trocando fmin/fmax pela regra acima.
 
+SEGUNDA REGRA (`--faixa-base`), fixada em 23/10/2026 antes de rodar em qualquer base com
+tacômetro (MaFaulDa ainda não baixada): para bases com rotação medida (`rot_esperada_hz`) e
+sem f_alim, a faixa é ÚNICA para a base inteira:
+    fmin = 0,9 · min(rot_esperada_hz)     fmax = 1,1 · max(rot_esperada_hz)
+sobre todos os arquivos do índice. O rastreador não recebe nenhuma informação do próprio
+arquivo; o teste é "rastrear sem saber a velocidade, dentro da faixa de operação da bancada".
+
 Referência para o erro, em ordem de preferência:
   1. `rot_esperada_hz` do índice (tacômetro ou outra medida direta), se houver;
   2. rotação síncrona f_alim / p, com p = pares de polos da placa (`--pares-polos`).
@@ -46,10 +53,16 @@ def main():
     ap.add_argument("--pares-polos", type=int, default=None)
     ap.add_argument("--max-s", type=float, default=60.0)
     ap.add_argument("--filtro", default="", help="consulta pandas opcional sobre o índice")
+    ap.add_argument("--faixa-base", action="store_true",
+                    help="segunda regra: faixa única da base a partir de rot_esperada_hz")
     args = ap.parse_args()
     t0 = time.time()
     idx = ler_indice(args.base)
-    idx = idx[idx["f_alim_hz"].notna() & (idx["f_alim_hz"] > 0)]
+    if args.faixa_base:
+        idx = idx[idx["rot_esperada_hz"].notna() & (idx["rot_esperada_hz"] > 0)]
+        faixa = (0.9 * idx["rot_esperada_hz"].min(), 1.1 * idx["rot_esperada_hz"].max())
+    else:
+        idx = idx[idx["f_alim_hz"].notna() & (idx["f_alim_hz"] > 0)]
     if args.filtro:
         idx = idx.query(args.filtro)
     ld = carregador(args.base)
@@ -58,7 +71,7 @@ def main():
         y, sr = ld.carregar(DATA / args.base / r.arquivo)
         y = para_16k(np.asarray(y, dtype=np.float32), sr)[: int(args.max_s * SR)]
         fa = float(r.f_alim_hz)
-        fmin, fmax = FMIN_FATOR * fa, FMAX_FATOR * fa
+        fmin, fmax = faixa if args.faixa_base else (FMIN_FATOR * fa, FMAX_FATOR * fa)
         f_rot, _, _ = rastrear(y, SR, fmin=fmin, fmax=fmax)
         if np.isfinite(r.rot_esperada_hz):
             ref, fonte = float(r.rot_esperada_hz), "indice"
@@ -76,6 +89,7 @@ def main():
         linhas.append(dict(
             base=args.base, arquivo=r.arquivo, classe=r.classe, unidade=r.unidade,
             condicao=r.condicao, velocidade=r.velocidade, carga=r.carga, f_alim_hz=fa,
+            regra="faixa_base" if args.faixa_base else "f_alim",
             fmin=fmin, fmax=fmax, ref_hz=ref, fonte_ref=fonte,
             n_quadros=len(f_rot), frac_sil=float(np.mean(~np.isfinite(f_rot))),
             f_rot_mediana=fm,
@@ -93,11 +107,13 @@ def main():
     salvar(df, "exp4_rastreador", args.base,
            {"fmin_fator": FMIN_FATOR, "fmax_fator": FMAX_FATOR, "tol": TOL,
             "pares_polos": args.pares_polos, "max_s": args.max_s, "filtro": args.filtro,
+            "faixa_base": [float(x) for x in faixa] if args.faixa_base else None,
             "rastrear": "padrões de lib.rotacao.rastrear (2 cents, h 1-48, nfft 8192, hop 1024, Viterbi)"},
            t0)
     if len(df):
-        print(df.groupby("f_alim_hz")[["f_rot_mediana", "razao_alim_rot", "erro_rel_arquivo",
-                                        "frac_seg_2pct"]].median().round(3))
+        chave = "classe" if args.faixa_base else "f_alim_hz"
+        print(df.groupby(chave)[["f_rot_mediana", "razao_alim_rot", "erro_rel_arquivo",
+                                 "frac_seg_2pct"]].median().round(3))
 
 
 if __name__ == "__main__":
