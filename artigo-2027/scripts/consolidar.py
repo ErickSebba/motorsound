@@ -78,6 +78,18 @@ def main():
         L.append(f"| {b} | {_f(r['aleatorio'][0])} | {_f(r['gravacao'][0])} | {_f(r['unidade'][0])} | "
                  f"{_f(r['aleatorio'][1])} | {_rel(p)} |")
 
+    p = ultimo_csv("ref_artigo3", "idmt_a2212")
+    if p:
+        ref = pd.read_csv(p)
+        L += [f"\nReferência IDMT e A2212 (protocolo do Artigo3, não reanalisadas; {_rel(p)}): "
+              "acurácia balanceada com RMS normalizado.\n",
+              "| base | pipeline | aleatório | por gravação/blocos | por unidade (motor fora) | acaso |",
+              "|---|---|---|---|---|---|"]
+        for (b, pl), g in ref[ref.normalizar_rms].groupby(["base", "pipeline"]):
+            v = {s: g.loc[g.split == s, "bacc"].mean() for s in ("aleatorio", "gravacao", "unidade")}
+            L.append(f"| {b} | {pl} | {_f(v['aleatorio'])} | {_f(v['gravacao'])} | {_f(v['unidade'])} | "
+                     f"{_f(g.acaso.iloc[0])} |")
+
     L += ["\n## 3. Exp2 — rótulos permutados (média de 5 permutações, tarefa `todas`)\n",
           "Permutação por segmento tem de dar o acaso em todo split. Permutação por gravação "
           "acima do acaso no split aleatório significa que as features reconhecem a gravação.\n",
