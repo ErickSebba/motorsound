@@ -128,7 +128,7 @@ def exp1(base, tab, args):
     df = pd.DataFrame(linhas); df.insert(0, "features", "nivel"); df.insert(0, "base", base)
     salvar(df, "exp1_nivel", base, {"features": FEATS["nivel"], "n_dobras": N_DOBRAS,
                                     "modelo": "StandardScaler+LogReg(balanced)",
-                                    "max_seg": args.max_seg}, t0)
+                                    "max_seg": args.max_seg, "filtro": args.filtro}, t0)
     _resumo(df, "tarefa")
 
 
@@ -155,7 +155,7 @@ def exp2(base, tab, args):
                     linhas.append(dict(features=feats, permutacao=modo, rep=rep, split=tipo, **l))
     df = pd.DataFrame(linhas); df.insert(0, "base", base)
     salvar(df, "exp2_permutado", base, {"n_perm": N_PERM, "seeds": [SEED + r for r in range(N_PERM)],
-                                        "max_seg": args.max_seg}, t0)
+                                        "max_seg": args.max_seg, "filtro": args.filtro}, t0)
     print(df.groupby(["features", "permutacao", "split"])[["bacc", "acaso"]].mean().round(3))
 
 
@@ -180,7 +180,7 @@ def exp3(base, espectros, freqs, args):
     df = pd.DataFrame(linhas); df.insert(0, "base", base)
     salvar(df, "exp3_espectros", base, {"welch_nperseg": 2048, "banda_hz": [50, 7900],
                                         "dist": "RMS da diferença em dB após remover a média",
-                                        "max_seg": args.max_seg}, t0)
+                                        "max_seg": args.max_seg, "filtro": args.filtro}, t0)
     if len(df):
         print(df.groupby("tipo_par")["dist_db_rms"].agg(["median", "count"]).round(2))
     _figura_espectros(base, media, freqs)
@@ -243,7 +243,7 @@ def exp5(base, tab, args):
                 for l in avaliar(X, y, dobras):
                     linhas.append(dict(tarefa=nome_t, features=feats, split=tipo, **l))
     df = pd.DataFrame(linhas); df.insert(0, "base", base); df.insert(1, "alvo", "unidade")
-    salvar(df, "exp5_unidade", base, {"n_dobras": N_DOBRAS, "max_seg": args.max_seg}, t0)
+    salvar(df, "exp5_unidade", base, {"n_dobras": N_DOBRAS, "max_seg": args.max_seg, "filtro": args.filtro}, t0)
     tot = df[df.get("dobra", pd.Series(dtype=str)) == "total"]
     if len(tot):
         print(tot[["tarefa", "features", "split", "bacc", "acaso"]].round(3).to_string(index=False))
@@ -261,8 +261,13 @@ def main():
     ap.add_argument("exps", nargs="*", default=["exp1", "exp2", "exp3", "exp5"])
     ap.add_argument("--max-seg", type=int, default=30, help="segmentos de 1 s por arquivo (0 = todos)")
     ap.add_argument("--forcar", action="store_true", help="refaz o cache de features")
+    ap.add_argument("--filtro", default="", help="consulta pandas sobre classe/unidade/condicao")
     args = ap.parse_args()
     tab, espectros, freqs = extrair_base(args.base, args.max_seg or None, args.forcar)
+    if args.filtro:
+        tab = tab.query(args.filtro)
+        espectros = {k: v for k, v in espectros.items()
+                     if not pd.DataFrame([dict(classe=k[0], unidade=k[1], condicao=k[2])]).query(args.filtro).empty}
     tab["tipo"] = tab["unidade"].str.split("_").str[0]
     print(f"{args.base}: {len(tab)} segmentos, {tab['arquivo'].nunique()} arquivos, "
           f"{tab['gravacao_id'].nunique()} gravações, {tab['unidade'].nunique()} unidades, "
