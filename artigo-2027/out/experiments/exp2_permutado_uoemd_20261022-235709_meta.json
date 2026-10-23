@@ -1,0 +1,22 @@
+{
+  "experimento": "exp2_permutado",
+  "base": "uoemd",
+  "commit": "126fbbf+sujo",
+  "seed": 20261022,
+  "config": {
+    "n_perm": 5,
+    "seeds": [
+      20261022,
+      20261023,
+      20261024,
+      20261025,
+      20261026
+    ],
+    "max_seg": 0
+  },
+  "duracao_s": 15.6,
+  "linhas": 60,
+  "python": "3.12.13",
+  "plataforma": "Windows-11-10.0.26200-SP0",
+  "gerado_em": "20261022-235709"
+}

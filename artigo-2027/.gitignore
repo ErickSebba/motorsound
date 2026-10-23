@@ -1,0 +1,25 @@
+# dados nunca entram no git
+data/
+*.wav
+*.flac
+*.zip
+*.7z
+*.rar
+*.tar
+*.tar.gz
+*.mat
+*.h5
+*.hdf5
+*.npy
+*.npz
+*.tdms
+# CSV grandes de dados brutos (os de out/experiments/ são pequenos e versionados)
+data/**/*.csv
+# ambiente e caches
+.venv/
+__pycache__/
+*.pyc
+.pytest_cache/
+cache/
+.ipynb_checkpoints/
+.claude/
