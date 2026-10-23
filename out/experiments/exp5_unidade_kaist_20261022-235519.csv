@@ -1,0 +1,44 @@
+base,alvo,tarefa,features,split,dobra,n_treino,n_teste,classes_teste,classes_ausentes_treino,acc,bacc,f1_macro,acaso,obs
+kaist,unidade,todas,forma,aleatorio,k0,240.0,60.0,5.0,,1.0,1.0,1.0,0.2,
+kaist,unidade,todas,forma,aleatorio,k1,240.0,60.0,5.0,,1.0,1.0,1.0,0.2,
+kaist,unidade,todas,forma,aleatorio,k2,240.0,60.0,5.0,,1.0,1.0,1.0,0.2,
+kaist,unidade,todas,forma,aleatorio,k3,240.0,60.0,5.0,,1.0,1.0,1.0,0.2,
+kaist,unidade,todas,forma,aleatorio,k4,240.0,60.0,5.0,,1.0,1.0,1.0,0.2,
+kaist,unidade,todas,forma,aleatorio,total,,300.0,5.0,,1.0,1.0,1.0,0.2,
+kaist,unidade,todas,forma,gravacao,,,,,,,,,,não se aplica: classe com 1 gravação(ões)
+kaist,unidade,todas,forma+nivel,aleatorio,k0,240.0,60.0,5.0,,1.0,1.0,1.0,0.2,
+kaist,unidade,todas,forma+nivel,aleatorio,k1,240.0,60.0,5.0,,1.0,1.0,1.0,0.2,
+kaist,unidade,todas,forma+nivel,aleatorio,k2,240.0,60.0,5.0,,1.0,1.0,1.0,0.2,
+kaist,unidade,todas,forma+nivel,aleatorio,k3,240.0,60.0,5.0,,1.0,1.0,1.0,0.2,
+kaist,unidade,todas,forma+nivel,aleatorio,k4,240.0,60.0,5.0,,1.0,1.0,1.0,0.2,
+kaist,unidade,todas,forma+nivel,aleatorio,total,,300.0,5.0,,1.0,1.0,1.0,0.2,
+kaist,unidade,todas,forma+nivel,gravacao,,,,,,,,,,não se aplica: classe com 1 gravação(ões)
+kaist,unidade,classe=normal,,,,,,,,,,,,menos de 2 unidades
+kaist,unidade,classe=rolamento_externo,forma,aleatorio,k0,96.0,24.0,2.0,,1.0,1.0,1.0,0.5,
+kaist,unidade,classe=rolamento_externo,forma,aleatorio,k1,96.0,24.0,2.0,,1.0,1.0,1.0,0.5,
+kaist,unidade,classe=rolamento_externo,forma,aleatorio,k2,96.0,24.0,2.0,,1.0,1.0,1.0,0.5,
+kaist,unidade,classe=rolamento_externo,forma,aleatorio,k3,96.0,24.0,2.0,,1.0,1.0,1.0,0.5,
+kaist,unidade,classe=rolamento_externo,forma,aleatorio,k4,96.0,24.0,2.0,,1.0,1.0,1.0,0.5,
+kaist,unidade,classe=rolamento_externo,forma,aleatorio,total,,120.0,2.0,,1.0,1.0,1.0,0.5,
+kaist,unidade,classe=rolamento_externo,forma,gravacao,,,,,,,,,,não se aplica: classe com 1 gravação(ões)
+kaist,unidade,classe=rolamento_externo,forma+nivel,aleatorio,k0,96.0,24.0,2.0,,1.0,1.0,1.0,0.5,
+kaist,unidade,classe=rolamento_externo,forma+nivel,aleatorio,k1,96.0,24.0,2.0,,1.0,1.0,1.0,0.5,
+kaist,unidade,classe=rolamento_externo,forma+nivel,aleatorio,k2,96.0,24.0,2.0,,1.0,1.0,1.0,0.5,
+kaist,unidade,classe=rolamento_externo,forma+nivel,aleatorio,k3,96.0,24.0,2.0,,1.0,1.0,1.0,0.5,
+kaist,unidade,classe=rolamento_externo,forma+nivel,aleatorio,k4,96.0,24.0,2.0,,1.0,1.0,1.0,0.5,
+kaist,unidade,classe=rolamento_externo,forma+nivel,aleatorio,total,,120.0,2.0,,1.0,1.0,1.0,0.5,
+kaist,unidade,classe=rolamento_externo,forma+nivel,gravacao,,,,,,,,,,não se aplica: classe com 1 gravação(ões)
+kaist,unidade,classe=rolamento_interno,forma,aleatorio,k0,96.0,24.0,2.0,,1.0,1.0,1.0,0.5,
+kaist,unidade,classe=rolamento_interno,forma,aleatorio,k1,96.0,24.0,2.0,,1.0,1.0,1.0,0.5,
+kaist,unidade,classe=rolamento_interno,forma,aleatorio,k2,96.0,24.0,2.0,,1.0,1.0,1.0,0.5,
+kaist,unidade,classe=rolamento_interno,forma,aleatorio,k3,96.0,24.0,2.0,,1.0,1.0,1.0,0.5,
+kaist,unidade,classe=rolamento_interno,forma,aleatorio,k4,96.0,24.0,2.0,,1.0,1.0,1.0,0.5,
+kaist,unidade,classe=rolamento_interno,forma,aleatorio,total,,120.0,2.0,,1.0,1.0,1.0,0.5,
+kaist,unidade,classe=rolamento_interno,forma,gravacao,,,,,,,,,,não se aplica: classe com 1 gravação(ões)
+kaist,unidade,classe=rolamento_interno,forma+nivel,aleatorio,k0,96.0,24.0,2.0,,1.0,1.0,1.0,0.5,
+kaist,unidade,classe=rolamento_interno,forma+nivel,aleatorio,k1,96.0,24.0,2.0,,1.0,1.0,1.0,0.5,
+kaist,unidade,classe=rolamento_interno,forma+nivel,aleatorio,k2,96.0,24.0,2.0,,1.0,1.0,1.0,0.5,
+kaist,unidade,classe=rolamento_interno,forma+nivel,aleatorio,k3,96.0,24.0,2.0,,1.0,1.0,1.0,0.5,
+kaist,unidade,classe=rolamento_interno,forma+nivel,aleatorio,k4,96.0,24.0,2.0,,1.0,1.0,1.0,0.5,
+kaist,unidade,classe=rolamento_interno,forma+nivel,aleatorio,total,,120.0,2.0,,1.0,1.0,1.0,0.5,
+kaist,unidade,classe=rolamento_interno,forma+nivel,gravacao,,,,,,,,,,não se aplica: classe com 1 gravação(ões)
