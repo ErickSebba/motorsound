@@ -1,6 +1,6 @@
 # Procedência: escrito do zero em 22/10/2026 para a auditoria da base `kaist`
 # (Jung et al., Data in Brief 48:109049, 2023; Mendeley ztmf3m7h5x v6). Não copia código
-# de ../Artigo3(MotorSound).
+# de ../motorsound/.
 """Leitura do canal acústico da base KAIST (bancada de máquina rotativa, 0 Nm).
 
 Formato real (medido): cada `.mat` (MAT v5, exportado pelo Siemens Simcenter Test.Lab)
