@@ -218,7 +218,12 @@ def _figura_espectros(base, media, freqs):
             ax.set_xlabel("frequência (Hz)", fontsize=8)
         for ax in axs[:, 0]:
             ax.set_ylabel("PSD (dB)", fontsize=8)
-        h, lab = axs.flat[0].get_legend_handles_labels()
+        visto = {}
+        for ax in axs.flat[:n]:
+            for hh, ll in zip(*ax.get_legend_handles_labels()):
+                visto.setdefault(ll, hh)
+        ordem = [str(l) for l in linhas_por if str(l) in visto]
+        h, lab = [visto[l] for l in ordem], ordem
         titulo = "uma curva por classe, um painel por unidade" if nome == "por_unidade" else \
                  "uma curva por unidade, um painel por classe"
         fig.suptitle(f"{base}: espectro médio (1 s, 16 kHz) — {titulo}", fontsize=9, y=0.995)
