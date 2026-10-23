@@ -123,7 +123,10 @@ def main():
         L.append(f"| {b} | {cel('classe_diferente_mesma_unidade')} | {cel('unidade_diferente_mesma_classe')} | "
                  f"{cel('ambas_diferentes')} | {_rel(p)} |")
 
-    L += ["\n## 5. Exp4 — rastreador (regra pré-registrada: 0,40–1,05 × f_alim)\n",
+    L += ["\n## 5. Exp4 — rastreador (regras pré-registradas)\n",
+          "UOEMD e IM-VACD: faixa 0,40–1,05 × f_alim, referência = rotação síncrona f_alim (2 polos), "
+          "logo o erro inclui o escorregamento. MaFaulDa: faixa única da base (0,9 × mín a 1,1 × máx da "
+          "rotação medida), referência = tacômetro.\n",
           "`mod. oitava` é diagnóstico a posteriori: conta como acerto também f_ref/2 e 2·f_ref.\n",
           "| base | condição | arquivos | erro rel. mediano | frac. arquivos ≤2 % | frac. segmentos ≤2 % | f_alim/f_rot mediana | frac. ≤2 % mod. oitava | CSV |",
           "|---|---|---|---|---|---|---|---|---|"]
@@ -133,7 +136,15 @@ def main():
             continue
         df = pd.read_csv(p)
         df["oit"] = np.minimum.reduce([np.abs(df.f_rot_mediana - k * df.ref_hz) / (k * df.ref_hz) for k in (0.5, 1, 2)])
-        for nome, g in [("todas", df)] + [(f"{v}", g) for v, g in df.groupby("velocidade")]:
+        grupos = [("todas", df)]
+        if df["velocidade"].nunique() <= 8:
+            grupos += [(f"{v}", g) for v, g in df.groupby("velocidade")]
+        obs = ler_indice(b)[["arquivo", "obs"]]
+        df = df.merge(obs, on="arquivo", how="left")
+        defeito = df["obs"].str.contains("DEFEITUOSO", na=False)
+        if defeito.any():
+            grupos += [("sem canal defeituoso", df[~defeito]), ("só canal defeituoso", df[defeito])]
+        for nome, g in grupos:
             L.append(f"| {b} | {nome} | {len(g)} | {_f(g.erro_rel_arquivo.median())} | "
                      f"{_f((g.erro_rel_arquivo <= 0.02).mean())} | {_f(g.frac_seg_2pct.mean())} | "
                      f"{_f(g.razao_alim_rot.median())} | {_f((g.oit <= 0.02).mean())} | {_rel(p) if nome == 'todas' else ''} |")

@@ -36,7 +36,7 @@ from sklearn.model_selection import LeaveOneGroupOut, StratifiedGroupKFold, Stra
 from sklearn.pipeline import make_pipeline
 from sklearn.preprocessing import StandardScaler
 
-from lib.comum import FIGS, FORMA_NOMES, SEED, extrair_base, salvar
+from lib.comum import FIGS, FORMA_NOMES, SEED, extrair_base, ler_indice, salvar
 
 warnings.filterwarnings("ignore", category=UserWarning)
 
@@ -272,9 +272,14 @@ def main():
     args = ap.parse_args()
     tab, espectros, freqs = extrair_base(args.base, args.max_seg or None, args.forcar)
     if args.filtro:
+        tab = tab.merge(ler_indice(args.base)[["arquivo", "obs"]], on="arquivo", how="left")
         tab = tab.query(args.filtro)
-        espectros = {k: v for k, v in espectros.items()
-                     if not pd.DataFrame([dict(classe=k[0], unidade=k[1], condicao=k[2])]).query(args.filtro).empty}
+        try:
+            espectros = {k: v for k, v in espectros.items()
+                         if not pd.DataFrame([dict(classe=k[0], unidade=k[1], condicao=k[2])]).query(args.filtro).empty}
+        except pd.errors.UndefinedVariableError:
+            # espectros são agregados por (classe, unidade, condicao); filtro por outra coluna não se aplica
+            print("AVISO: filtro não se aplica aos espectros médios do exp3 (ficam sem filtro)")
     tab["tipo"] = tab["unidade"].str.split("_").str[0]
     print(f"{args.base}: {len(tab)} segmentos, {tab['arquivo'].nunique()} arquivos, "
           f"{tab['gravacao_id'].nunique()} gravações, {tab['unidade'].nunique()} unidades, "

@@ -1,0 +1,21 @@
+{
+  "experimento": "exp1_nivel",
+  "base": "mafaulda",
+  "commit": "0cf566d+sujo",
+  "seed": 20261022,
+  "config": {
+    "features": [
+      "rms_db",
+      "pico_db"
+    ],
+    "n_dobras": 5,
+    "modelo": "StandardScaler+LogReg(balanced)",
+    "max_seg": 0,
+    "filtro": ""
+  },
+  "duracao_s": 4.5,
+  "linhas": 113,
+  "python": "3.12.13",
+  "plataforma": "Windows-11-10.0.26200-SP0",
+  "gerado_em": "20261023-104554"
+}
