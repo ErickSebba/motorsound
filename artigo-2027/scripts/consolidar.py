@@ -68,15 +68,21 @@ def main():
                  f"{iv['unidades_com_2_classes']} | {iv['com_f_alim']} | {iv['com_rot']} |")
 
     L += ["\n## 2. Exp1 — controle de nível (RMS + pico → classe), tarefa `todas`\n",
-          "| base | aleatório | por gravação | por unidade (motor fora) | acaso | CSV |", "|---|---|---|---|---|---|"]
+          "A última coluna treina e testa dentro de cada unidade que tem ≥2 classes (split por "
+          "gravação) e dá mediana [mín–máx] entre unidades.\n",
+          "| base | aleatório | por gravação | por unidade (motor fora) | acaso | dentro da unidade | CSV |",
+          "|---|---|---|---|---|---|---|"]
     for b in bases:
         p = ultimo_csv("exp1_nivel", b)
         if not p:
-            L.append(f"| {b} | — | — | — | — | — |"); continue
-        df = pd.read_csv(p); df = df[df["tarefa"] == "todas"]
+            L.append(f"| {b} | — | — | — | — | — | — |"); continue
+        tudo = pd.read_csv(p); df = tudo[tudo["tarefa"] == "todas"]
         r = {s: bacc_total(df, split=s) for s in ("aleatorio", "gravacao", "unidade")}
+        u = tudo[tudo["tarefa"].str.startswith("unidade=") & (tudo["split"] == "gravacao")
+                 & (tudo["dobra"] == "total")]["bacc"]
+        dentro = f"{u.median():.3f} [{u.min():.3f}–{u.max():.3f}] (n={len(u)})" if len(u) else "—"
         L.append(f"| {b} | {_f(r['aleatorio'][0])} | {_f(r['gravacao'][0])} | {_f(r['unidade'][0])} | "
-                 f"{_f(r['aleatorio'][1])} | {_rel(p)} |")
+                 f"{_f(r['aleatorio'][1])} | {dentro} | {_rel(p)} |")
 
     p = ultimo_csv("ref_artigo3", "idmt_a2212")
     if p:

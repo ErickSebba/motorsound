@@ -111,6 +111,13 @@ def tarefas(tab: pd.DataFrame):
                 sub = tab[tab[col] == v]
                 if sub["classe"].nunique() >= 2:
                     yield f"{col}={v}", sub
+    # dentro de cada unidade que tem ≥2 classes (cenário de modelo por máquina; só split por gravação)
+    unidades = sorted(tab["unidade"].unique())
+    if len(unidades) <= 16:
+        for u in unidades:
+            sub = tab[tab["unidade"] == u]
+            if sub["classe"].nunique() >= 2:
+                yield f"unidade={u}", sub
 
 
 # --------------------------------------------------------------------------- experimentos
