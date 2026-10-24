@@ -81,8 +81,14 @@ class Placa:
         return self.cmd(f"MODEL {len(b)}", b, "@@OK MODEL")
 
     def janela(self, wid, y):
+        import zlib
         y = np.ascontiguousarray(y, dtype="<f4")
-        return self.json_de(self.cmd(f"WIN {wid} {y.size}", y.tobytes(), "@@RES", timeout=300))
+        b = y.tobytes()
+        r = self.json_de(self.cmd(f"WIN {wid} {y.size}", b, "@@RES", timeout=300))
+        if r["crc32"] != zlib.crc32(b):
+            raise RuntimeError(f"janela {wid}: CRC32 do chip {r['crc32']} != host {zlib.crc32(b)}"
+                               " (bytes perdidos ou trocados na serial)")
+        return r
 
     def fechar(self):
         self.s.close()
@@ -222,9 +228,18 @@ def cmd_lat(a):
     grava_meta(out, meta)
     res = {"meta": meta, "resumo": {}}
     for base, g in df[~df.aquecimento].groupby("base"):
+        com_init = g.total_ms + g.init_ms
+        livre_boot_int = b["esp_chip_info"]["heap_livre_interna"]
+        livre_boot_ps = b["esp_chip_info"]["heap_livre_psram"]
         d = {"total_ms": bc.resumo(g.total_ms),
+             "init_ms": bc.resumo(g.init_ms),
+             "total_com_init_ms": bc.resumo(com_init),
              "fator_tempo_real_mediana": float(np.median(g.total_ms) / 1e3 / bc.DUR_S[base]),
              "fator_tempo_real_max": float(g.total_ms.max() / 1e3 / bc.DUR_S[base]),
+             "fator_tempo_real_com_init_mediana": float(np.median(com_init) / 1e3 / bc.DUR_S[base]),
+             # pico de uso = heap livre no boot (INFO, antes de alocar) - mínimo livre na sessão
+             "pico_heap_interna_bytes": int(livre_boot_int - g.heap_min_livre_interna.min()),
+             "pico_heap_psram_bytes": int(livre_boot_ps - g.heap_min_livre_psram.min()),
              "ws_bytes": int(g.ws_bytes.iloc[0]), "ws_na_psram": int(g.ws_na_psram.iloc[0]),
              "heap_min_livre_interna": int(g.heap_min_livre_interna.min()),
              "heap_min_livre_psram": int(g.heap_min_livre_psram.min()),
@@ -320,7 +335,8 @@ def main(argv=None):
     for nome in ("info", "equiv", "lat", "seq"):
         p = sp.add_parser(nome)
         p.add_argument("--porta", required=True)
-        p.add_argument("--alvo", required=True, choices=["esp32", "esp32s3"])
+        # esp32s3oct = ESP32-S3 com PSRAM octal (build_fw.bat esp32s3oct)
+        p.add_argument("--alvo", required=True, choices=["esp32", "esp32s3", "esp32s3oct"])
         if nome == "lat":
             p.add_argument("--n", type=int, default=200)
             p.add_argument("--aquecimento", type=int, default=5)

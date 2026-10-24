@@ -1,0 +1,4 @@
+# Acréscimo para ESP32-S3 com PSRAM octal (módulos N8R8, N16R8, N32R8): sem isso a PSRAM não
+# é detectada e o workspace da p11 não cabe (auditoria F, portão D).
+CONFIG_SPIRAM_MODE_OCT=y
+CONFIG_SPIRAM_SPEED_80M=y

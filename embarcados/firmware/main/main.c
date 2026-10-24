@@ -29,6 +29,7 @@
 #include "esp_system.h"
 #include "esp_idf_version.h"
 #include "esp_private/esp_clk.h"
+#include "esp_rom_crc.h"
 
 #include "p11.h"
 #ifdef P11_USAR_ESP_DSP
@@ -264,6 +265,7 @@ static void cmd_win(int id, int n)
     resultado_t r;
     sb_t b = { g_out, SAIDA_MAX, 0 };
     int rc;
+    uint32_t crc;
     if (!g_tem_modelo) { escreve_str("@@ERRO WIN sem modelo\n"); return; }
     if (prepara_buffers(n) != 0) {
         /* consome os bytes para manter o protocolo em sincronia */
@@ -278,13 +280,16 @@ static void cmd_win(int id, int n)
         return;
     }
     le_exato(g_audio, sizeof(float) * (size_t)n);
+    /* CRC32 (o mesmo de zlib.crc32) dos bytes recebidos, fora do tempo medido: o host
+     * descarta a janela se a serial perdeu ou trocou algum byte */
+    crc = esp_rom_crc32_le(0, (const uint8_t *)g_audio, sizeof(float) * (size_t)n);
     rc = roda_janela(g_audio, n, &r);
     if (rc != 0) {
         snprintf(g_out, SAIDA_MAX, "@@ERRO WIN %d rc=%d\n", id, rc);
         escreve_str(g_out);
         return;
     }
-    sb_add(&b, "@@RES {\"id\":%d,\"n\":%d,", id, n);
+    sb_add(&b, "@@RES {\"id\":%d,\"n\":%d,\"crc32\":%" PRIu32 ",", id, n, crc);
     sb_resultado(&b, &r);
     sb_add(&b, ",");
     sb_memoria(&b);
