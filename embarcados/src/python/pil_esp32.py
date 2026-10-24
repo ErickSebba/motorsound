@@ -26,7 +26,9 @@ import pandas as pd
 
 import bancada_comum as bc
 
-BAUD = 921600
+# 115200: o build atual não ligou CONFIG_ESP_CONSOLE_UART_CUSTOM, então o console (e o
+# uart_param_config do firmware) ficou no padrão; a medição de tempo não depende da serial.
+BAUD = 115200
 ETAPAS = ["prep", "rastreio", "viterbi", "sal_caminho", "envelope", "features", "cosseno"]
 
 
@@ -50,8 +52,9 @@ class Placa:
             if not b:
                 continue
             l = b.decode("utf-8", "replace").strip()
-            if l.startswith("@@"):
-                return l
+            # o log do boot pode grudar na mesma linha antes do "@@" (sem quebra de linha)
+            if "@@" in l:
+                return l[l.index("@@"):]
         raise TimeoutError("sem resposta do firmware")
 
     def espera(self, prefixo, timeout=120):
@@ -195,6 +198,37 @@ def cmd_equiv(a):
           f"--c-out {cout.parent}")
 
 
+def cmd_mem(a):
+    """Tenta uma janela de cada base e registra se o workspace coube (resposta do chip)."""
+    import re
+    b = bancada(a.alvo)
+    pl = Placa(a.porta)
+    linhas = []
+    for base in ("a2212", "idmt"):
+        pl.modelo(bc.modelo_bin(base))
+        cid = bc.casos_latencia(base, 1, 0)[0][0]
+        lin = {"base": base, "janela": cid, "n_amostras": int(bc.audio(cid).size)}
+        try:
+            r = pl.janela(0, bc.audio(cid))
+            lin.update({"coube": 1, "ws_bytes": r["ws_bytes"], "ws_na_psram": r["ws_na_psram"],
+                        "heap_min_livre_interna": r["heap_min_livre_interna"]})
+        except RuntimeError as e:
+            m = re.search(r"para (\d+) bytes.*interna (\d+), psram (\d+)", str(e))
+            lin.update({"coube": 0, "resposta": str(e)})
+            if m:
+                lin.update({"ws_bytes": int(m.group(1)), "maior_bloco_livre_interna": int(m.group(2)),
+                            "maior_bloco_livre_psram": int(m.group(3))})
+        linhas.append(lin)
+        print(lin, flush=True)
+    pl.fechar()
+    out = bc.EMB / "results" / "csv" / f"esp32_memoria_{a.alvo}_{bc.carimbo()}.csv"
+    pd.DataFrame(linhas).to_csv(out, index=False)
+    grava_meta(out, {"categoria": "medicao_no_ESP32", "sessao_bancada": b["sessao"],
+                     "chip": b["chip_modelo"], "psram_mb": b["psram_mb"], "variante": b["variante"],
+                     "heap_livre_interna_boot": b["esp_chip_info"]["heap_livre_interna"],
+                     "projeto": bc.commit()})
+
+
 def cmd_lat(a):
     b = bancada(a.alvo)
     pl = Placa(a.porta)
@@ -332,7 +366,7 @@ def main(argv=None):
     ap = argparse.ArgumentParser()
     sp = ap.add_subparsers(dest="cmd", required=True)
     sp.add_parser("portas")
-    for nome in ("info", "equiv", "lat", "seq"):
+    for nome in ("info", "mem", "equiv", "lat", "seq"):
         p = sp.add_parser(nome)
         p.add_argument("--porta", required=True)
         # esp32s3oct = ESP32-S3 com PSRAM octal (build_fw.bat esp32s3oct)
@@ -349,7 +383,7 @@ def main(argv=None):
     p = sp.add_parser("seq-imagem")
     p.add_argument("--por-classe", type=int, default=8)
     a = ap.parse_args(argv)
-    {"portas": cmd_portas, "info": cmd_info, "equiv": cmd_equiv, "lat": cmd_lat,
+    {"portas": cmd_portas, "info": cmd_info, "mem": cmd_mem, "equiv": cmd_equiv, "lat": cmd_lat,
      "seq-imagem": cmd_seq_imagem, "seq": cmd_seq}[a.cmd](a)
 
 
