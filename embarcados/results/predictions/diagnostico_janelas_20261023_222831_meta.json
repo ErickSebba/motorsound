@@ -1,0 +1,128 @@
+{
+  "gerado_em": "2026-10-23T22:29:28",
+  "projeto": {
+    "commit": "9081500",
+    "sujo": true
+  },
+  "script": "embarcados/src/python/diagnostico.py",
+  "argv": [
+    "embarcados/src/python/diagnostico.py",
+    "--n-jobs",
+    "4"
+  ],
+  "seed_boot": 20261023,
+  "n_boot": 2000,
+  "seed_splits": 20261014,
+  "variantes": [
+    [
+      "b00_rmspico_norm",
+      "b00_nivel",
+      true
+    ],
+    [
+      "b00_rmspico_bruto",
+      "b00_nivel",
+      false
+    ],
+    [
+      "p04_classicas",
+      "p04_classicas",
+      true
+    ],
+    [
+      "p11_decifrae_harmsum",
+      "p11_decifrae_harmsum",
+      true
+    ]
+  ],
+  "protocolos": {
+    "idmt": [
+      "aleatorio",
+      "blocos"
+    ],
+    "a2212": [
+      "aleatorio",
+      "arquivo",
+      "motor"
+    ]
+  },
+  "avals": {
+    "b00_rmspico_norm/idmt": {
+      "seg_s": 3.0,
+      "normalizar_rms": true,
+      "rms_alvo": 0.1
+    },
+    "b00_rmspico_bruto/idmt": {
+      "seg_s": 3.0,
+      "normalizar_rms": false,
+      "rms_alvo": 0.1
+    },
+    "p04_classicas/idmt": {
+      "seg_s": 3.0,
+      "normalizar_rms": true,
+      "rms_alvo": 0.1
+    },
+    "p11_decifrae_harmsum/idmt": {
+      "seg_s": 3.0,
+      "normalizar_rms": true,
+      "rms_alvo": 0.1
+    },
+    "b00_rmspico_norm/a2212": {
+      "seg_s": 1.0,
+      "normalizar_rms": true,
+      "rms_alvo": 0.1
+    },
+    "b00_rmspico_bruto/a2212": {
+      "seg_s": 1.0,
+      "normalizar_rms": false,
+      "rms_alvo": 0.1
+    },
+    "p04_classicas/a2212": {
+      "seg_s": 1.0,
+      "normalizar_rms": true,
+      "rms_alvo": 0.1
+    },
+    "p11_decifrae_harmsum/a2212": {
+      "seg_s": 1.0,
+      "normalizar_rms": true,
+      "rms_alvo": 0.1
+    }
+  },
+  "bootstrap": "reamostra grupos com reposição, estratificado pela classe do grupo; grupo = (gravação, bloco) no IDMT e arquivo no A2212; IC percentil 95 %",
+  "usar_cache": false,
+  "n_jobs": 4,
+  "tempos_s": {
+    "extracao/b00_rmspico_norm/idmt": 3.2,
+    "avaliacao/b00_rmspico_norm/idmt/aleatorio": 0.06,
+    "avaliacao/b00_rmspico_norm/idmt/blocos": 0.04,
+    "extracao/b00_rmspico_bruto/idmt": 2.5,
+    "avaliacao/b00_rmspico_bruto/idmt/aleatorio": 0.05,
+    "avaliacao/b00_rmspico_bruto/idmt/blocos": 0.05,
+    "extracao/p04_classicas/idmt": 1.1,
+    "avaliacao/p04_classicas/idmt/aleatorio": 0.8,
+    "avaliacao/p04_classicas/idmt/blocos": 0.62,
+    "extracao/p11_decifrae_harmsum/idmt": 13.3,
+    "avaliacao/p11_decifrae_harmsum/idmt/aleatorio": 0.04,
+    "avaliacao/p11_decifrae_harmsum/idmt/blocos": 0.01,
+    "extracao/b00_rmspico_norm/a2212": 0.1,
+    "avaliacao/b00_rmspico_norm/a2212/aleatorio": 0.05,
+    "avaliacao/b00_rmspico_norm/a2212/arquivo": 0.07,
+    "avaliacao/b00_rmspico_norm/a2212/motor": 0.05,
+    "extracao/b00_rmspico_bruto/a2212": 0.0,
+    "avaliacao/b00_rmspico_bruto/a2212/aleatorio": 0.05,
+    "avaliacao/b00_rmspico_bruto/a2212/arquivo": 0.06,
+    "avaliacao/b00_rmspico_bruto/a2212/motor": 0.05,
+    "extracao/p04_classicas/a2212": 0.1,
+    "avaliacao/p04_classicas/a2212/aleatorio": 0.77,
+    "avaliacao/p04_classicas/a2212/arquivo": 0.78,
+    "avaliacao/p04_classicas/a2212/motor": 0.59,
+    "extracao/p11_decifrae_harmsum/a2212": 3.0,
+    "avaliacao/p11_decifrae_harmsum/a2212/aleatorio": 0.03,
+    "avaliacao/p11_decifrae_harmsum/a2212/arquivo": 0.04,
+    "avaliacao/p11_decifrae_harmsum/a2212/motor": 0.03,
+    "total": 57.4
+  },
+  "python": "3.12.13",
+  "numpy": "2.5.4",
+  "nota": "validação apenas; test/ do IDMT não lido (io.py trava)"
+}
