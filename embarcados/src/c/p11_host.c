@@ -10,6 +10,7 @@
  * no Windows, clock_gettime noutros), nunca no ESP32.
  */
 #include "p11.h"
+#include "p11_lowmem.h"
 
 #include <math.h>
 #include <stdio.h>
@@ -274,6 +275,90 @@ static int cmd_caso(const char *dir_caso, const char *mod_path, const char *dir_
 }
 
 /* ------------------------------------------------------------------ seq */
+/* ------------------------------------------------------------------ lowmem */
+/* Variante p11_c_lowmem (p11_lowmem.h) com um pool de blocos que imita a RAM do chip:
+ * blocos = "tam:so32,tam:so32,..." (so32 = 1 para memória só de 32 bits, como a IRAM).
+ * Grava as etapas que a variante expõe (sem stft_S e sal, que ela nunca guarda inteiros). */
+static int cmd_lowmem(const char *dir_caso, const char *mod_path, const char *dir_out,
+                      const char *blocos)
+{
+    int n, T, J = P11_J, C, nw, nd, t;
+    float *audio = ler_audio(dir_caso, &n);
+    p11_modelo mod;
+    lm_pool pool;
+    p11_lm lm;
+    char buf[512], *tok;
+    void *mems[LM_MAX_BLOCOS];
+    int nb = 0, rc;
+    p11_real *e_norm, *custo, *f_rot, *env_abs, *env_dec, *wf, *wP, *g;
+    p11_real min_delta, score, env_mod[2], feat[P11_N_FEAT], z[P11_N_FEAT];
+    p11_real cosv[P11_MAX_CLASSES], probs[P11_MAX_CLASSES];
+    saida_t s;
+    int shp[2];
+
+    ler_modelo(mod_path, &mod);
+    C = mod.C;
+    lm_pool_vazio(&pool);
+    snprintf(buf, sizeof buf, "%s", blocos);
+    for (tok = strtok(buf, ","); tok && nb < LM_MAX_BLOCOS; tok = strtok(NULL, ",")) {
+        size_t tam = (size_t)strtoul(tok, NULL, 10);
+        const char *dp = strchr(tok, ':');
+        int so32 = dp ? atoi(dp + 1) : 0;
+        mems[nb] = malloc(tam);
+        lm_pool_add(&pool, mems[nb], tam, so32);
+        ++nb;
+    }
+    rc = p11_lm_init(&lm, &pool, n);
+    if (rc != 0) { fprintf(stderr, "erro lm_init %d (faltou %zu bytes)\n", rc, pool.falhou_bytes); return 3; }
+    T = lm.ws.T;
+    nd = lm.ws.n_dec;
+    nw = p11_n_welch(n);
+    e_norm = (p11_real *)malloc(sizeof(p11_real) * (size_t)T * J);
+    custo = (p11_real *)malloc(sizeof(p11_real) * (size_t)T * (J + 1));
+    f_rot = (p11_real *)malloc(sizeof(p11_real) * (size_t)T);
+    env_abs = (p11_real *)malloc(sizeof(p11_real) * (size_t)n);
+    env_dec = (p11_real *)malloc(sizeof(p11_real) * (size_t)nd);
+    wf = (p11_real *)malloc(sizeof(p11_real) * (size_t)nw);
+    wP = (p11_real *)malloc(sizeof(p11_real) * (size_t)nw);
+    g = (p11_real *)malloc(sizeof(p11_real) * (size_t)J);
+
+    abre_saida(&s, dir_out);
+    /* no firmware (float) é no lugar sobre ws.y; aqui lê do áudio float para valer também no
+     * build double, em que ws.y é double. A conta é a mesma. */
+    p11_preparar(audio, n, lm.ws.y);
+    shp[0] = n; grava_real(&s, "y_prep", lm.ws.y, 1, shp);
+    for (t = 0; t < J; ++t) g[t] = (p11_real)lm.ws.grade[t];
+    shp[0] = J; grava_real(&s, "grade", g, 1, shp);
+    rc = p11_lm_rastrear(&lm, &min_delta, &score, e_norm, custo);
+    if (rc != 0) { fprintf(stderr, "erro lm_rastrear %d (faltou %zu bytes)\n", rc, pool.falhou_bytes); return 3; }
+    shp[0] = T; shp[1] = J; grava_real(&s, "e_norm", e_norm, 2, shp);
+    shp[0] = T; shp[1] = J + 1; grava_real(&s, "custo", custo, 2, shp);
+    shp[0] = T; grava_i32(&s, "vit_path", lm.ws.path, 1, shp);
+    shp[0] = 1; grava_real(&s, "vit_score", &score, 1, shp);
+    grava_real(&s, "vit_min_delta", &min_delta, 1, shp);
+    p11_f_rot(&lm.ws, f_rot);
+    shp[0] = T; grava_real(&s, "f_rot", f_rot, 1, shp);
+    shp[0] = P11_F; grava_real(&s, "P_mean", lm.ws.P_mean, 1, shp);
+    rc = p11_lm_envelope(&lm, env_abs, env_dec, wf, wP, env_mod);
+    if (rc != 0) { fprintf(stderr, "erro lm_envelope %d (faltou %zu bytes)\n", rc, pool.falhou_bytes); return 3; }
+    shp[0] = n; grava_real(&s, "env_abs", env_abs, 1, shp);
+    shp[0] = nd; grava_real(&s, "env_dec", env_dec, 1, shp);
+    shp[0] = nw; grava_real(&s, "welch_f", wf, 1, shp);
+    grava_real(&s, "welch_P", wP, 1, shp);
+    shp[0] = 2; grava_real(&s, "env_mod", env_mod, 1, shp);
+    p11_lm_features(&lm, env_mod, feat);
+    shp[0] = P11_N_FEAT; grava_real(&s, "features", feat, 1, shp);
+    p11_cosseno(&mod, feat, z, cosv, probs);
+    grava_real(&s, "z", z, 1, shp);
+    shp[0] = C; grava_real(&s, "cos", cosv, 1, shp);
+    grava_real(&s, "probs", probs, 1, shp);
+    fecha_saida(&s);
+    printf("{\"categoria\": \"estimativa_no_PC_do_pool\", \"n\": %d, \"T\": %d, \"persist\": %zu, "
+           "\"pico_faseA\": %zu, \"pico_faseB\": %zu, \"pico_faseC\": %zu, \"pico_total\": %zu}\n",
+           n, T, lm.bytes_persist, lm.bytes_faseA, lm.bytes_faseB, lm.bytes_faseC, pool.pico);
+    return 0;
+}
+
 static int cmd_seq(char **a)
 {
     const char *probs_path = a[0];
@@ -391,6 +476,9 @@ int main(int argc, char **argv)
     if (argc >= 5 && strcmp(argv[1], "caso") == 0) return cmd_caso(argv[2], argv[3], argv[4]);
     if (argc >= 11 && strcmp(argv[1], "seq") == 0) return cmd_seq(argv + 2);
     if (argc >= 5 && strcmp(argv[1], "bench") == 0) return cmd_bench(argv[2], argv[3], atoi(argv[4]));
+    if (argc >= 5 && strcmp(argv[1], "lowmem") == 0)
+        return cmd_lowmem(argv[2], argv[3], argv[4], argc >= 6 ? argv[5]
+                          : "110592:0,65536:0,49152:0,32768:0,65536:1");
     if (argc >= 3 && strcmp(argv[1], "ws") == 0) {
         int n = atoi(argv[2]);
         size_t p, a, b;

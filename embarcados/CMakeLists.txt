@@ -20,7 +20,8 @@ endif()
 add_library(p11 STATIC
   src/c/p11_fft.c
   src/c/p11_core.c
-  src/c/p11_decisao.c)
+  src/c/p11_decisao.c
+  src/c/p11_lowmem.c)
 target_include_directories(p11 PUBLIC src/c)
 target_compile_definitions(p11 PUBLIC P11_REAL=${P11_REAL} P11_REAL_EH_DOUBLE=${P11_EH_DOUBLE}
                            _CRT_SECURE_NO_WARNINGS _USE_MATH_DEFINES)
