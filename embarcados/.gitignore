@@ -1,0 +1,16 @@
+# vetores de ouro e saídas do C contêm trechos de áudio: regeneráveis, nunca commitados
+gold/
+results/c_out/
+build/
+build-*/
+firmware/build/
+firmware/managed_components/
+firmware/sdkconfig.old
+*.f32
+*.f64
+*.i32
+*.exe
+*.obj
+*.pdb
+*.ilk
+__pycache__/
