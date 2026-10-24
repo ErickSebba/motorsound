@@ -1,0 +1,22 @@
+% Gerado por embarcados/src/python/gerar_artigo_tabelas.py a partir de embarcados/paper/numeros.json.
+% NÃO EDITAR À MÃO.
+
+\begin{table}[t]
+\centering
+\scriptsize
+\setlength{\tabcolsep}{3pt}
+\caption{Datasets and evaluation protocols. IDMT: \texttt{train/} only, 3 recordings of 3 motors, 357 windows of 3\,s. A2212: 43 files of 4 motors (22 Healthy, 14 Propeller, 7 Bearing), 430 windows of 1\,s. $g$: groups used by the bootstrap. $^\dagger$Intentional leakage, reported only to measure inflation.}
+\label{tab:protocols}
+\begin{tabular}{@{}p{1.55cm}p{1.35cm}r p{3.75cm}@{}}
+\toprule
+Protocol & Split unit & $g$ & What it can / cannot support \\
+\midrule
+IDMT random$^\dagger$ & window & 18 & Upper bound only: neighbouring windows of one recording on both sides. \\
+IDMT blocks & contiguous block & 15 & One recording per class: class = motor = recording. Measures recording identity, not operating state. \\
+A2212 random$^\dagger$ & window & 43 & Upper bound only: windows of one file on both sides. \\
+A2212 file & file & 43 & State of a \emph{known} motor (same motors in training and test). Bearing exists only on motor M4. \\
+A2212 motor-out & motor & 43 & Unseen motor. With M4 held out, Bearing has no training data (recall 0.000 by construction). Only 4 motors: no motor-level CI. \\
+A2212 motor-out w/o M4 & motor (M1--M3) & 36 & Healthy vs.\ Propeller on an unseen motor; 3 folds. \\
+\bottomrule
+\end{tabular}
+\end{table}

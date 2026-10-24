@@ -1,0 +1,4620 @@
+{
+ "gerado_por": "embarcados/src/python/gerar_artigo_numeros.py",
+ "projeto": {
+  "commit": "9df3b2c280b69b02703d2c61d277e2bdf02cafad",
+  "sujo": true
+ },
+ "chip_medido": false,
+ "categorias": {
+  "codigo": "parâmetro lido do código Python da referência",
+  "dados": "contagem lida das predições/CSV do experimento",
+  "estimativa": "1 · estimativa analítica",
+  "pc": "2 · medição no PC",
+  "build": "3 · build do firmware (idf.py size)",
+  "esp32": "4 · medição no ESP32 físico",
+  "diagnostico": "resultado de classificação (validação, PC)",
+  "equivalencia": "equivalência Python × C (PC)"
+ },
+ "fontes": {
+  "C:/Espressif/build_p11_esp32/size.txt": "9369aa4e5736a65c64b8813dcb5768bc217b6ca23c6a9a7984c71567fd4e8b0a",
+  "C:/Espressif/build_p11_esp32s3/project_description.json": "6dab41c43b43ac6b282dfc85b77f6337fd840c2c7e8690c675ad740a75c14cfc",
+  "C:/Espressif/build_p11_esp32s3/size.txt": "ad50f5a002f63a3fbe921066bd41bf8e1046b3723d819a95391685778cfd1f2d",
+  "embarcados/configs/embedded/tolerancias.json": "d74dae800cebfe4d670c33ba2c0a72639ad1e04e95bcbd9a904be13c294c1b5d",
+  "embarcados/gold/manifest.json": "a681abee826d5b8ede688d4d67ea159495898ea48e0c131f729d8406437ba876",
+  "embarcados/gold/seqs/idmt_seq00/params.json": "a50569ecb0951b7b171019e4ccbe89eebd51eff92893532f03a8490dcd38cf78",
+  "embarcados/paper/fontes/ws_double_16000.json": "3023074d0581ae3a1103bb5b42d4704fcb05631eada2a86eecdc1846ad8b293e",
+  "embarcados/paper/fontes/ws_double_48000.json": "dc2a3113667b36f99073b7782f28f4e018e1e13f865c3dd63bf97070c05f53f9",
+  "embarcados/paper/fontes/ws_float_16000.json": "95a67377c7eb2eb4ab886a73da7c0accffb11978a41718e5e942cff74afd01c7",
+  "embarcados/paper/fontes/ws_float_48000.json": "3d3878646c51b96e1e1ab4c8fd935bb8a069e95c7ec7b95fe3a59ea8e0f5d838",
+  "embarcados/results/csv/bench_pc_20261024-091911.csv": "15ea3f2990bea2c2c39ffb0a256ae2d195e18808d11ae365a3874095fff2ced2",
+  "embarcados/results/csv/diagnostico_20261023_222831.csv": "83e602a7680c87ae7f429840d4db57c49b80a7f4c1c8e45900005ce7e269a7ff",
+  "embarcados/results/csv/diagnostico_20261023_222831_meta.json": "6e0879c7cccc78fab5a87687a16b468c6cd6140283d905611271178d98b55775",
+  "embarcados/results/csv/equivalencia_double_20261024-091106.csv": "0462b21cd040d8987e25988c7b603e2dfc9009f57ec9b9382dda2e1ac4310cf3",
+  "embarcados/results/csv/equivalencia_emul_double_20261024-090737_meta.json": "e23e090ee472c5a8a1451189a9331ee135b2d9a1516091195c434a0ab471db4a",
+  "embarcados/results/csv/equivalencia_emul_float_20261024-090743_meta.json": "d46c9c2aa501b61a966d439995c2adeaf961781059bcc096083722e00735ccc9",
+  "embarcados/results/csv/equivalencia_float-sosd_20261024-091222.csv": "fb79aad99d6e607a132af89358182c74f4eeec2ac31e97410c5fab486e945ce9",
+  "embarcados/results/csv/equivalencia_float_20261024-091122.csv": "38e87620d895ce26c9c0bbfa5bd0df7af3686607d525235e3fa5c9d287612314",
+  "embarcados/results/csv/equivalencia_resumo_por_build_20261024-091729.csv": "bc42bdf549e15875a3762c4907610f49a8ff0cb08c2fc10e3fafd5e59d84eb35",
+  "embarcados/results/csv/p11_features_20261023_222831.csv": "eb64ba855c885bf0ad428487067476095314ec200965130fa606c5ecf3649ef7",
+  "embarcados/results/csv/seq_pc_20261024-092103.csv": "eaba0cbe2d39af3e1d7f7cbdc8afbbdff87e832a5f8d4d6c636a3995f756a658",
+  "embarcados/results/csv/seq_pc_20261024-092103_meta.json": "2be9a1842106537bbc699026c93bc96c024c98a8f36618cd5a470f0df8d59ee8",
+  "embarcados/results/manifests/bancada.json": null,
+  "embarcados/results/metrics/bench_pc_20261024-091911.json": "c119b18fff7eb6b4c1e208ada15b9204bea9cb2c001931dd910203671ab602cd",
+  "embarcados/results/predictions/diagnostico_janelas_20261023_222831.csv": "6426a95a9ceb73ad3e4a9f4a8d83f8194a3ce6b7d1605c0bfdd151384454102b",
+  "motorsound/config.py": "533b6f9cb12228d8c2fcf492b48c5d1950d0e4cf71fac47b4e4573ea86f9e56f",
+  "motorsound/rotacao.py": "45715cbb50101879834b020a01c9fd48bb888e0c6f086b063b35c1f75efe63a9",
+  "pipelines/_classicas.py": "1b759d56815a2760579fde90f43271a739211d9cf931f6419b583f92bf8d8623",
+  "pipelines/_decifrae.py": "d40385a87dd38c5b010180386f12bc078daeae33c56fc26e7f19455a0a30e7e2"
+ },
+ "numeros": {
+  "VParSr": {
+   "valor": 16000,
+   "tex": "16{,}000",
+   "pt": "16 000",
+   "status": "ok",
+   "fonte": [
+    "pipelines/_decifrae.py"
+   ],
+   "coluna": "PreDecifrae.sr",
+   "categoria": "codigo",
+   "nota": ""
+  },
+  "VParSrKhz": {
+   "valor": 16.0,
+   "tex": "16",
+   "pt": "16",
+   "status": "ok",
+   "fonte": [
+    "pipelines/_decifrae.py"
+   ],
+   "coluna": "PreDecifrae.sr/1000",
+   "categoria": "codigo",
+   "nota": ""
+  },
+  "VParNfft": {
+   "valor": 8192,
+   "tex": "8{,}192",
+   "pt": "8 192",
+   "status": "ok",
+   "fonte": [
+    "pipelines/_decifrae.py"
+   ],
+   "coluna": "PreDecifrae.n_fft",
+   "categoria": "codigo",
+   "nota": ""
+  },
+  "VParHop": {
+   "valor": 1024,
+   "tex": "1{,}024",
+   "pt": "1 024",
+   "status": "ok",
+   "fonte": [
+    "pipelines/_decifrae.py"
+   ],
+   "coluna": "PreDecifrae.hop",
+   "categoria": "codigo",
+   "nota": ""
+  },
+  "VParFmin": {
+   "valor": 15.0,
+   "tex": "15",
+   "pt": "15",
+   "status": "ok",
+   "fonte": [
+    "pipelines/_decifrae.py"
+   ],
+   "coluna": "PreDecifrae.fmin",
+   "categoria": "codigo",
+   "nota": ""
+  },
+  "VParFmax": {
+   "valor": 60.0,
+   "tex": "60",
+   "pt": "60",
+   "status": "ok",
+   "fonte": [
+    "pipelines/_decifrae.py"
+   ],
+   "coluna": "PreDecifrae.fmax",
+   "categoria": "codigo",
+   "nota": ""
+  },
+  "VParStepCents": {
+   "valor": 2.0,
+   "tex": "2",
+   "pt": "2",
+   "status": "ok",
+   "fonte": [
+    "pipelines/_decifrae.py"
+   ],
+   "coluna": "PreDecifrae.passo_cents",
+   "categoria": "codigo",
+   "nota": ""
+  },
+  "VParJ": {
+   "valor": 1201,
+   "tex": "1{,}201",
+   "pt": "1 201",
+   "status": "ok",
+   "fonte": [
+    "motorsound/rotacao.py"
+   ],
+   "coluna": "len(rotacao.grade(fmin,fmax,passo))",
+   "categoria": "codigo",
+   "nota": ""
+  },
+  "VParNbins": {
+   "valor": 4097,
+   "tex": "4{,}097",
+   "pt": "4 097",
+   "status": "ok",
+   "fonte": [
+    "motorsound/rotacao.py"
+   ],
+   "coluna": "n_fft//2+1 (rfft)",
+   "categoria": "codigo",
+   "nota": ""
+  },
+  "VParDf": {
+   "valor": 1.953125,
+   "tex": "1.95",
+   "pt": "1,95",
+   "status": "ok",
+   "fonte": [
+    "motorsound/rotacao.py"
+   ],
+   "coluna": "sr/n_fft",
+   "categoria": "codigo",
+   "nota": ""
+  },
+  "VParNharm": {
+   "valor": 48,
+   "tex": "48",
+   "pt": "48",
+   "status": "ok",
+   "fonte": [
+    "pipelines/_decifrae.py"
+   ],
+   "coluna": "N_HARM",
+   "categoria": "codigo",
+   "nota": ""
+  },
+  "VParGroupOneLo": {
+   "valor": 1,
+   "tex": "1",
+   "pt": "1",
+   "status": "ok",
+   "fonte": [
+    "pipelines/_decifrae.py"
+   ],
+   "coluna": "GRUPOS[0][0]",
+   "categoria": "codigo",
+   "nota": ""
+  },
+  "VParGroupOneHi": {
+   "valor": 4,
+   "tex": "4",
+   "pt": "4",
+   "status": "ok",
+   "fonte": [
+    "pipelines/_decifrae.py"
+   ],
+   "coluna": "GRUPOS[0][1]",
+   "categoria": "codigo",
+   "nota": ""
+  },
+  "VParGroupTwoLo": {
+   "valor": 5,
+   "tex": "5",
+   "pt": "5",
+   "status": "ok",
+   "fonte": [
+    "pipelines/_decifrae.py"
+   ],
+   "coluna": "GRUPOS[1][0]",
+   "categoria": "codigo",
+   "nota": ""
+  },
+  "VParGroupTwoHi": {
+   "valor": 12,
+   "tex": "12",
+   "pt": "12",
+   "status": "ok",
+   "fonte": [
+    "pipelines/_decifrae.py"
+   ],
+   "coluna": "GRUPOS[1][1]",
+   "categoria": "codigo",
+   "nota": ""
+  },
+  "VParGroupThreeLo": {
+   "valor": 13,
+   "tex": "13",
+   "pt": "13",
+   "status": "ok",
+   "fonte": [
+    "pipelines/_decifrae.py"
+   ],
+   "coluna": "GRUPOS[2][0]",
+   "categoria": "codigo",
+   "nota": ""
+  },
+  "VParGroupThreeHi": {
+   "valor": 24,
+   "tex": "24",
+   "pt": "24",
+   "status": "ok",
+   "fonte": [
+    "pipelines/_decifrae.py"
+   ],
+   "coluna": "GRUPOS[2][1]",
+   "categoria": "codigo",
+   "nota": ""
+  },
+  "VParGroupFourLo": {
+   "valor": 25,
+   "tex": "25",
+   "pt": "25",
+   "status": "ok",
+   "fonte": [
+    "pipelines/_decifrae.py"
+   ],
+   "coluna": "GRUPOS[3][0]",
+   "categoria": "codigo",
+   "nota": ""
+  },
+  "VParGroupFourHi": {
+   "valor": 48,
+   "tex": "48",
+   "pt": "48",
+   "status": "ok",
+   "fonte": [
+    "pipelines/_decifrae.py"
+   ],
+   "coluna": "GRUPOS[3][1]",
+   "categoria": "codigo",
+   "nota": ""
+  },
+  "VParMaxJump": {
+   "valor": 50,
+   "tex": "50",
+   "pt": "50",
+   "status": "ok",
+   "fonte": [
+    "pipelines/_decifrae.py"
+   ],
+   "coluna": "PreDecifrae.max_salto",
+   "categoria": "codigo",
+   "nota": ""
+  },
+  "VParMaxJumpCents": {
+   "valor": 100.0,
+   "tex": "100",
+   "pt": "100",
+   "status": "ok",
+   "fonte": [
+    "pipelines/_decifrae.py"
+   ],
+   "coluna": "max_salto*passo_cents",
+   "categoria": "codigo",
+   "nota": ""
+  },
+  "VParOctStates": {
+   "valor": 600,
+   "tex": "600",
+   "pt": "600",
+   "status": "ok",
+   "fonte": [
+    "motorsound/rotacao.py"
+   ],
+   "coluna": "viterbi_rotacao: k_oct = round(1200/passo)",
+   "categoria": "codigo",
+   "nota": ""
+  },
+  "VParWStep": {
+   "valor": 0.55,
+   "tex": "0.55",
+   "pt": "0,55",
+   "status": "ok",
+   "fonte": [
+    "motorsound/rotacao.py"
+   ],
+   "coluna": "VIT_W_STEP",
+   "categoria": "codigo",
+   "nota": ""
+  },
+  "VParWOct": {
+   "valor": 7.0,
+   "tex": "7.0",
+   "pt": "7,0",
+   "status": "ok",
+   "fonte": [
+    "motorsound/rotacao.py"
+   ],
+   "coluna": "VIT_W_OCTAVE",
+   "categoria": "codigo",
+   "nota": ""
+  },
+  "VParWSil": {
+   "valor": 3.2,
+   "tex": "3.2",
+   "pt": "3,2",
+   "status": "ok",
+   "fonte": [
+    "motorsound/rotacao.py"
+   ],
+   "coluna": "VIT_W_SIL",
+   "categoria": "codigo",
+   "nota": ""
+  },
+  "VParWEnergy": {
+   "valor": 0.45,
+   "tex": "0.45",
+   "pt": "0,45",
+   "status": "ok",
+   "fonte": [
+    "motorsound/rotacao.py"
+   ],
+   "coluna": "emissao_baixo: peso de e_norm",
+   "categoria": "codigo",
+   "nota": ""
+  },
+  "VParEmisEps": {
+   "valor": 0.001,
+   "tex": "\\ensuremath{10^{-3}}",
+   "pt": "10^{-3}",
+   "status": "ok",
+   "fonte": [
+    "motorsound/rotacao.py"
+   ],
+   "coluna": "emissao_baixo: eps do -log",
+   "categoria": "codigo",
+   "nota": "1e-3"
+  },
+  "VParTempCos": {
+   "valor": 0.1,
+   "tex": "0.1",
+   "pt": "0,1",
+   "status": "ok",
+   "fonte": [
+    "pipelines/_decifrae.py"
+   ],
+   "coluna": "PostDecifrae.temp_cos",
+   "categoria": "codigo",
+   "nota": ""
+  },
+  "VParButterOrder": {
+   "valor": 4,
+   "tex": "4",
+   "pt": "4",
+   "status": "ok",
+   "fonte": [
+    "pipelines/_decifrae.py"
+   ],
+   "coluna": "_envelope_mod: butter(ordem, fc)",
+   "categoria": "codigo",
+   "nota": ""
+  },
+  "VParButterFc": {
+   "valor": 200,
+   "tex": "200",
+   "pt": "200",
+   "status": "ok",
+   "fonte": [
+    "pipelines/_decifrae.py"
+   ],
+   "coluna": "_envelope_mod: butter(ordem, fc)",
+   "categoria": "codigo",
+   "nota": ""
+  },
+  "VParModLo": {
+   "valor": 2,
+   "tex": "2",
+   "pt": "2",
+   "status": "ok",
+   "fonte": [
+    "pipelines/_decifrae.py"
+   ],
+   "coluna": "_envelope_mod: banda",
+   "categoria": "codigo",
+   "nota": ""
+  },
+  "VParModHi": {
+   "valor": 100,
+   "tex": "100",
+   "pt": "100",
+   "status": "ok",
+   "fonte": [
+    "pipelines/_decifrae.py"
+   ],
+   "coluna": "_envelope_mod: banda",
+   "categoria": "codigo",
+   "nota": ""
+  },
+  "VParEnvRateHz": {
+   "valor": 1000,
+   "tex": "1{,}000",
+   "pt": "1 000",
+   "status": "ok",
+   "fonte": [
+    "pipelines/_decifrae.py"
+   ],
+   "coluna": "_envelope_mod: [:: sr//1000]",
+   "categoria": "codigo",
+   "nota": ""
+  },
+  "VParDecim": {
+   "valor": 16,
+   "tex": "16",
+   "pt": "16",
+   "status": "ok",
+   "fonte": [
+    "pipelines/_decifrae.py"
+   ],
+   "coluna": "sr // 1000",
+   "categoria": "codigo",
+   "nota": ""
+  },
+  "VParBandLo": {
+   "valor": 10,
+   "tex": "10",
+   "pt": "10",
+   "status": "ok",
+   "fonte": [
+    "pipelines/_decifrae.py"
+   ],
+   "coluna": "extrair: banda das features",
+   "categoria": "codigo",
+   "nota": ""
+  },
+  "VParBandHi": {
+   "valor": 4000,
+   "tex": "4{,}000",
+   "pt": "4 000",
+   "status": "ok",
+   "fonte": [
+    "pipelines/_decifrae.py"
+   ],
+   "coluna": "extrair: banda das features",
+   "categoria": "codigo",
+   "nota": ""
+  },
+  "VParSegIdmt": {
+   "valor": 3.0,
+   "tex": "3",
+   "pt": "3",
+   "status": "ok",
+   "fonte": [
+    "motorsound/config.py"
+   ],
+   "coluna": "AVAL_IDMT.seg_s",
+   "categoria": "codigo",
+   "nota": ""
+  },
+  "VParSegBldc": {
+   "valor": 1.0,
+   "tex": "1",
+   "pt": "1",
+   "status": "ok",
+   "fonte": [
+    "motorsound/config.py"
+   ],
+   "coluna": "AVAL_A2212.seg_s",
+   "categoria": "codigo",
+   "nota": ""
+  },
+  "VParRmsTarget": {
+   "valor": 0.1,
+   "tex": "0.1",
+   "pt": "0,1",
+   "status": "ok",
+   "fonte": [
+    "motorsound/config.py"
+   ],
+   "coluna": "AvaliacaoConfig.rms_alvo",
+   "categoria": "codigo",
+   "nota": ""
+  },
+  "VParFramesIdmt": {
+   "valor": 39,
+   "tex": "39",
+   "pt": "39",
+   "status": "ok",
+   "fonte": [
+    "motorsound/rotacao.py"
+   ],
+   "coluna": "1+(N-n_fft)//hop (stft_mag)",
+   "categoria": "codigo",
+   "nota": ""
+  },
+  "VParFramesBldc": {
+   "valor": 8,
+   "tex": "8",
+   "pt": "8",
+   "status": "ok",
+   "fonte": [
+    "motorsound/rotacao.py"
+   ],
+   "coluna": "1+(N-n_fft)//hop (stft_mag)",
+   "categoria": "codigo",
+   "nota": ""
+  },
+  "VParNClassicFeat": {
+   "valor": 32,
+   "tex": "32",
+   "pt": "32",
+   "status": "ok",
+   "fonte": [
+    "pipelines/_classicas.py"
+   ],
+   "coluna": "N_FEATURES",
+   "categoria": "codigo",
+   "nota": ""
+  },
+  "VParNChangePen": {
+   "valor": 6,
+   "tex": "6",
+   "pt": "6",
+   "status": "ok",
+   "fonte": [
+    "embarcados/gold/seqs/idmt_seq00/params.json"
+   ],
+   "coluna": "change_penalties",
+   "categoria": "codigo",
+   "nota": ""
+  },
+  "VParCpMin": {
+   "valor": 0.5,
+   "tex": "0.5",
+   "pt": "0,5",
+   "status": "ok",
+   "fonte": [
+    "embarcados/gold/seqs/idmt_seq00/params.json"
+   ],
+   "coluna": "change_penalties",
+   "categoria": "codigo",
+   "nota": ""
+  },
+  "VParCpMax": {
+   "valor": 16.0,
+   "tex": "16",
+   "pt": "16",
+   "status": "ok",
+   "fonte": [
+    "embarcados/gold/seqs/idmt_seq00/params.json"
+   ],
+   "coluna": "change_penalties",
+   "categoria": "codigo",
+   "nota": ""
+  },
+  "VParNLogprob": {
+   "valor": -50.0,
+   "tex": "-50",
+   "pt": "-50",
+   "status": "ok",
+   "fonte": [
+    "embarcados/gold/seqs/idmt_seq00/params.json"
+   ],
+   "coluna": "n_logprob",
+   "categoria": "codigo",
+   "nota": ""
+  },
+  "VParHmmTemp": {
+   "valor": 1.0,
+   "tex": "1",
+   "pt": "1",
+   "status": "ok",
+   "fonte": [
+    "embarcados/gold/seqs/idmt_seq00/params.json"
+   ],
+   "coluna": "temp",
+   "categoria": "codigo",
+   "nota": ""
+  },
+  "VDataIdmtWindows": {
+   "valor": 357,
+   "tex": "357",
+   "pt": "357",
+   "status": "ok",
+   "fonte": [
+    "embarcados/results/predictions/diagnostico_janelas_20261023_222831.csv"
+   ],
+   "coluna": "len(unique(rec_id,idx)) da p11",
+   "categoria": "dados",
+   "nota": ""
+  },
+  "VDataIdmtRecordings": {
+   "valor": 3,
+   "tex": "3",
+   "pt": "3",
+   "status": "ok",
+   "fonte": [
+    "embarcados/results/predictions/diagnostico_janelas_20261023_222831.csv"
+   ],
+   "coluna": "nunique(rec_id)",
+   "categoria": "dados",
+   "nota": ""
+  },
+  "VDataIdmtMotors": {
+   "valor": 3,
+   "tex": "3",
+   "pt": "3",
+   "status": "ok",
+   "fonte": [
+    "embarcados/results/predictions/diagnostico_janelas_20261023_222831.csv"
+   ],
+   "coluna": "nunique(motor)",
+   "categoria": "dados",
+   "nota": ""
+  },
+  "VDataIdmtClasses": {
+   "valor": 3,
+   "tex": "3",
+   "pt": "3",
+   "status": "ok",
+   "fonte": [
+    "embarcados/results/predictions/diagnostico_janelas_20261023_222831.csv"
+   ],
+   "coluna": "nunique(classe)",
+   "categoria": "dados",
+   "nota": ""
+  },
+  "VDataBldcWindows": {
+   "valor": 430,
+   "tex": "430",
+   "pt": "430",
+   "status": "ok",
+   "fonte": [
+    "embarcados/results/predictions/diagnostico_janelas_20261023_222831.csv"
+   ],
+   "coluna": "len(unique(rec_id,idx)) da p11",
+   "categoria": "dados",
+   "nota": ""
+  },
+  "VDataBldcRecordings": {
+   "valor": 43,
+   "tex": "43",
+   "pt": "43",
+   "status": "ok",
+   "fonte": [
+    "embarcados/results/predictions/diagnostico_janelas_20261023_222831.csv"
+   ],
+   "coluna": "nunique(rec_id)",
+   "categoria": "dados",
+   "nota": ""
+  },
+  "VDataBldcMotors": {
+   "valor": 4,
+   "tex": "4",
+   "pt": "4",
+   "status": "ok",
+   "fonte": [
+    "embarcados/results/predictions/diagnostico_janelas_20261023_222831.csv"
+   ],
+   "coluna": "nunique(motor)",
+   "categoria": "dados",
+   "nota": ""
+  },
+  "VDataBldcClasses": {
+   "valor": 3,
+   "tex": "3",
+   "pt": "3",
+   "status": "ok",
+   "fonte": [
+    "embarcados/results/predictions/diagnostico_janelas_20261023_222831.csv"
+   ],
+   "coluna": "nunique(classe)",
+   "categoria": "dados",
+   "nota": ""
+  },
+  "VDataBldcFilesHealthy": {
+   "valor": 22,
+   "tex": "22",
+   "pt": "22",
+   "status": "ok",
+   "fonte": [
+    "embarcados/results/predictions/diagnostico_janelas_20261023_222831.csv"
+   ],
+   "coluna": "nunique(rec_id) por classe",
+   "categoria": "dados",
+   "nota": ""
+  },
+  "VDataBldcFilesPropeller": {
+   "valor": 14,
+   "tex": "14",
+   "pt": "14",
+   "status": "ok",
+   "fonte": [
+    "embarcados/results/predictions/diagnostico_janelas_20261023_222831.csv"
+   ],
+   "coluna": "nunique(rec_id) por classe",
+   "categoria": "dados",
+   "nota": ""
+  },
+  "VDataBldcFilesBearing": {
+   "valor": 7,
+   "tex": "7",
+   "pt": "7",
+   "status": "ok",
+   "fonte": [
+    "embarcados/results/predictions/diagnostico_janelas_20261023_222831.csv"
+   ],
+   "coluna": "nunique(rec_id) por classe",
+   "categoria": "dados",
+   "nota": ""
+  },
+  "VDataIdmtRandGroups": {
+   "valor": 18,
+   "tex": "18",
+   "pt": "18",
+   "status": "ok",
+   "fonte": [
+    "embarcados/results/csv/diagnostico_20261023_222831.csv"
+   ],
+   "coluna": "n_grupos",
+   "categoria": "dados",
+   "nota": ""
+  },
+  "VDataIdmtBlkGroups": {
+   "valor": 15,
+   "tex": "15",
+   "pt": "15",
+   "status": "ok",
+   "fonte": [
+    "embarcados/results/csv/diagnostico_20261023_222831.csv"
+   ],
+   "coluna": "n_grupos",
+   "categoria": "dados",
+   "nota": ""
+  },
+  "VDataBldcRandGroups": {
+   "valor": 43,
+   "tex": "43",
+   "pt": "43",
+   "status": "ok",
+   "fonte": [
+    "embarcados/results/csv/diagnostico_20261023_222831.csv"
+   ],
+   "coluna": "n_grupos",
+   "categoria": "dados",
+   "nota": ""
+  },
+  "VDataBldcFileGroups": {
+   "valor": 43,
+   "tex": "43",
+   "pt": "43",
+   "status": "ok",
+   "fonte": [
+    "embarcados/results/csv/diagnostico_20261023_222831.csv"
+   ],
+   "coluna": "n_grupos",
+   "categoria": "dados",
+   "nota": ""
+  },
+  "VDataBldcMotorGroups": {
+   "valor": 43,
+   "tex": "43",
+   "pt": "43",
+   "status": "ok",
+   "fonte": [
+    "embarcados/results/csv/diagnostico_20261023_222831.csv"
+   ],
+   "coluna": "n_grupos",
+   "categoria": "dados",
+   "nota": ""
+  },
+  "VDataBldcNoMfourGroups": {
+   "valor": 36,
+   "tex": "36",
+   "pt": "36",
+   "status": "ok",
+   "fonte": [
+    "embarcados/results/csv/diagnostico_20261023_222831.csv"
+   ],
+   "coluna": "n_grupos",
+   "categoria": "dados",
+   "nota": ""
+  },
+  "VDataNBoot": {
+   "valor": 2000,
+   "tex": "2{,}000",
+   "pt": "2 000",
+   "status": "ok",
+   "fonte": [
+    "embarcados/results/csv/diagnostico_20261023_222831_meta.json"
+   ],
+   "coluna": "n_boot",
+   "categoria": "dados",
+   "nota": ""
+  },
+  "VDataCiLevel": {
+   "valor": 95,
+   "tex": "95",
+   "pt": "95",
+   "status": "ok",
+   "fonte": [
+    "embarcados/results/csv/diagnostico_20261023_222831.csv"
+   ],
+   "coluna": "nível do IC no nome da coluna ic<nível>_lo",
+   "categoria": "dados",
+   "nota": ""
+  },
+  "VDataSeedBoot": {
+   "valor": 20261023,
+   "tex": "20261023",
+   "pt": "20261023",
+   "status": "ok",
+   "fonte": [
+    "embarcados/results/csv/diagnostico_20261023_222831_meta.json"
+   ],
+   "coluna": "seed_boot",
+   "categoria": "dados",
+   "nota": ""
+  },
+  "VDiagBalRmsNormIdmtRand": {
+   "valor": 0.9916170634920636,
+   "tex": "0.992",
+   "pt": "0,992",
+   "status": "ok",
+   "fonte": [
+    "embarcados/results/csv/diagnostico_20261023_222831.csv"
+   ],
+   "coluna": "valor[b00_rmspico_norm,idmt,aleatorio,acuracia_balanceada,_macro]",
+   "categoria": "diagnostico",
+   "nota": ""
+  },
+  "VDiagBalRmsNormIdmtRandLo": {
+   "valor": 0.9831611992574923,
+   "tex": "0.983",
+   "pt": "0,983",
+   "status": "ok",
+   "fonte": [
+    "embarcados/results/csv/diagnostico_20261023_222831.csv"
+   ],
+   "coluna": "ic95_lo[b00_rmspico_norm,idmt,aleatorio,acuracia_balanceada,_macro]",
+   "categoria": "diagnostico",
+   "nota": ""
+  },
+  "VDiagBalRmsNormIdmtRandHi": {
+   "valor": 1.0,
+   "tex": "1.000",
+   "pt": "1,000",
+   "status": "ok",
+   "fonte": [
+    "embarcados/results/csv/diagnostico_20261023_222831.csv"
+   ],
+   "coluna": "ic95_hi[b00_rmspico_norm,idmt,aleatorio,acuracia_balanceada,_macro]",
+   "categoria": "diagnostico",
+   "nota": ""
+  },
+  "VDiagAucRmsNormIdmtRand": {
+   "valor": 0.9984914571751046,
+   "tex": "0.998",
+   "pt": "0,998",
+   "status": "ok",
+   "fonte": [
+    "embarcados/results/csv/diagnostico_20261023_222831.csv"
+   ],
+   "coluna": "valor[b00_rmspico_norm,idmt,aleatorio,roc_auc_ovr_macro,_macro]",
+   "categoria": "diagnostico",
+   "nota": ""
+  },
+  "VDiagFoneRmsNormIdmtRand": {
+   "valor": 0.9915340582427196,
+   "tex": "0.992",
+   "pt": "0,992",
+   "status": "ok",
+   "fonte": [
+    "embarcados/results/csv/diagnostico_20261023_222831.csv"
+   ],
+   "coluna": "valor[b00_rmspico_norm,idmt,aleatorio,f1_macro,_macro]",
+   "categoria": "diagnostico",
+   "nota": ""
+  },
+  "VDiagBalRmsRawIdmtRand": {
+   "valor": 0.9968253968253968,
+   "tex": "0.997",
+   "pt": "0,997",
+   "status": "ok",
+   "fonte": [
+    "embarcados/results/csv/diagnostico_20261023_222831.csv"
+   ],
+   "coluna": "valor[b00_rmspico_bruto,idmt,aleatorio,acuracia_balanceada,_macro]",
+   "categoria": "diagnostico",
+   "nota": ""
+  },
+  "VDiagBalRmsRawIdmtRandLo": {
+   "valor": 0.9903846153846154,
+   "tex": "0.990",
+   "pt": "0,990",
+   "status": "ok",
+   "fonte": [
+    "embarcados/results/csv/diagnostico_20261023_222831.csv"
+   ],
+   "coluna": "ic95_lo[b00_rmspico_bruto,idmt,aleatorio,acuracia_balanceada,_macro]",
+   "categoria": "diagnostico",
+   "nota": ""
+  },
+  "VDiagBalRmsRawIdmtRandHi": {
+   "valor": 1.0,
+   "tex": "1.000",
+   "pt": "1,000",
+   "status": "ok",
+   "fonte": [
+    "embarcados/results/csv/diagnostico_20261023_222831.csv"
+   ],
+   "coluna": "ic95_hi[b00_rmspico_bruto,idmt,aleatorio,acuracia_balanceada,_macro]",
+   "categoria": "diagnostico",
+   "nota": ""
+  },
+  "VDiagAucRmsRawIdmtRand": {
+   "valor": 1.0,
+   "tex": "1.000",
+   "pt": "1,000",
+   "status": "ok",
+   "fonte": [
+    "embarcados/results/csv/diagnostico_20261023_222831.csv"
+   ],
+   "coluna": "valor[b00_rmspico_bruto,idmt,aleatorio,roc_auc_ovr_macro,_macro]",
+   "categoria": "diagnostico",
+   "nota": ""
+  },
+  "VDiagFoneRmsRawIdmtRand": {
+   "valor": 0.9970664155825856,
+   "tex": "0.997",
+   "pt": "0,997",
+   "status": "ok",
+   "fonte": [
+    "embarcados/results/csv/diagnostico_20261023_222831.csv"
+   ],
+   "coluna": "valor[b00_rmspico_bruto,idmt,aleatorio,f1_macro,_macro]",
+   "categoria": "diagnostico",
+   "nota": ""
+  },
+  "VDiagBalClsIdmtRand": {
+   "valor": 1.0,
+   "tex": "1.000",
+   "pt": "1,000",
+   "status": "ok",
+   "fonte": [
+    "embarcados/results/csv/diagnostico_20261023_222831.csv"
+   ],
+   "coluna": "valor[p04_classicas,idmt,aleatorio,acuracia_balanceada,_macro]",
+   "categoria": "diagnostico",
+   "nota": ""
+  },
+  "VDiagBalClsIdmtRandLo": {
+   "valor": 1.0,
+   "tex": "1.000",
+   "pt": "1,000",
+   "status": "ok",
+   "fonte": [
+    "embarcados/results/csv/diagnostico_20261023_222831.csv"
+   ],
+   "coluna": "ic95_lo[p04_classicas,idmt,aleatorio,acuracia_balanceada,_macro]",
+   "categoria": "diagnostico",
+   "nota": ""
+  },
+  "VDiagBalClsIdmtRandHi": {
+   "valor": 1.0,
+   "tex": "1.000",
+   "pt": "1,000",
+   "status": "ok",
+   "fonte": [
+    "embarcados/results/csv/diagnostico_20261023_222831.csv"
+   ],
+   "coluna": "ic95_hi[p04_classicas,idmt,aleatorio,acuracia_balanceada,_macro]",
+   "categoria": "diagnostico",
+   "nota": ""
+  },
+  "VDiagAucClsIdmtRand": {
+   "valor": 1.0,
+   "tex": "1.000",
+   "pt": "1,000",
+   "status": "ok",
+   "fonte": [
+    "embarcados/results/csv/diagnostico_20261023_222831.csv"
+   ],
+   "coluna": "valor[p04_classicas,idmt,aleatorio,roc_auc_ovr_macro,_macro]",
+   "categoria": "diagnostico",
+   "nota": ""
+  },
+  "VDiagFoneClsIdmtRand": {
+   "valor": 1.0,
+   "tex": "1.000",
+   "pt": "1,000",
+   "status": "ok",
+   "fonte": [
+    "embarcados/results/csv/diagnostico_20261023_222831.csv"
+   ],
+   "coluna": "valor[p04_classicas,idmt,aleatorio,f1_macro,_macro]",
+   "categoria": "diagnostico",
+   "nota": ""
+  },
+  "VDiagBalDecIdmtRand": {
+   "valor": 1.0,
+   "tex": "1.000",
+   "pt": "1,000",
+   "status": "ok",
+   "fonte": [
+    "embarcados/results/csv/diagnostico_20261023_222831.csv"
+   ],
+   "coluna": "valor[p11_decifrae_harmsum,idmt,aleatorio,acuracia_balanceada,_macro]",
+   "categoria": "diagnostico",
+   "nota": ""
+  },
+  "VDiagBalDecIdmtRandLo": {
+   "valor": 1.0,
+   "tex": "1.000",
+   "pt": "1,000",
+   "status": "ok",
+   "fonte": [
+    "embarcados/results/csv/diagnostico_20261023_222831.csv"
+   ],
+   "coluna": "ic95_lo[p11_decifrae_harmsum,idmt,aleatorio,acuracia_balanceada,_macro]",
+   "categoria": "diagnostico",
+   "nota": ""
+  },
+  "VDiagBalDecIdmtRandHi": {
+   "valor": 1.0,
+   "tex": "1.000",
+   "pt": "1,000",
+   "status": "ok",
+   "fonte": [
+    "embarcados/results/csv/diagnostico_20261023_222831.csv"
+   ],
+   "coluna": "ic95_hi[p11_decifrae_harmsum,idmt,aleatorio,acuracia_balanceada,_macro]",
+   "categoria": "diagnostico",
+   "nota": ""
+  },
+  "VDiagAucDecIdmtRand": {
+   "valor": 1.0,
+   "tex": "1.000",
+   "pt": "1,000",
+   "status": "ok",
+   "fonte": [
+    "embarcados/results/csv/diagnostico_20261023_222831.csv"
+   ],
+   "coluna": "valor[p11_decifrae_harmsum,idmt,aleatorio,roc_auc_ovr_macro,_macro]",
+   "categoria": "diagnostico",
+   "nota": ""
+  },
+  "VDiagFoneDecIdmtRand": {
+   "valor": 1.0,
+   "tex": "1.000",
+   "pt": "1,000",
+   "status": "ok",
+   "fonte": [
+    "embarcados/results/csv/diagnostico_20261023_222831.csv"
+   ],
+   "coluna": "valor[p11_decifrae_harmsum,idmt,aleatorio,f1_macro,_macro]",
+   "categoria": "diagnostico",
+   "nota": ""
+  },
+  "VDiagBalRmsNormIdmtBlk": {
+   "valor": 0.9913233258809752,
+   "tex": "0.991",
+   "pt": "0,991",
+   "status": "ok",
+   "fonte": [
+    "embarcados/results/csv/diagnostico_20261023_222831.csv"
+   ],
+   "coluna": "valor[b00_rmspico_norm,idmt,blocos,acuracia_balanceada,_macro]",
+   "categoria": "diagnostico",
+   "nota": ""
+  },
+  "VDiagBalRmsNormIdmtBlkLo": {
+   "valor": 0.9823140495867768,
+   "tex": "0.982",
+   "pt": "0,982",
+   "status": "ok",
+   "fonte": [
+    "embarcados/results/csv/diagnostico_20261023_222831.csv"
+   ],
+   "coluna": "ic95_lo[b00_rmspico_norm,idmt,blocos,acuracia_balanceada,_macro]",
+   "categoria": "diagnostico",
+   "nota": ""
+  },
+  "VDiagBalRmsNormIdmtBlkHi": {
+   "valor": 0.9973544973544972,
+   "tex": "0.997",
+   "pt": "0,997",
+   "status": "ok",
+   "fonte": [
+    "embarcados/results/csv/diagnostico_20261023_222831.csv"
+   ],
+   "coluna": "ic95_hi[b00_rmspico_norm,idmt,blocos,acuracia_balanceada,_macro]",
+   "categoria": "diagnostico",
+   "nota": ""
+  },
+  "VDiagAucRmsNormIdmtBlk": {
+   "valor": 0.9984739978577114,
+   "tex": "0.998",
+   "pt": "0,998",
+   "status": "ok",
+   "fonte": [
+    "embarcados/results/csv/diagnostico_20261023_222831.csv"
+   ],
+   "coluna": "valor[b00_rmspico_norm,idmt,blocos,roc_auc_ovr_macro,_macro]",
+   "categoria": "diagnostico",
+   "nota": ""
+  },
+  "VDiagFoneRmsNormIdmtBlk": {
+   "valor": 0.9912348219300866,
+   "tex": "0.991",
+   "pt": "0,991",
+   "status": "ok",
+   "fonte": [
+    "embarcados/results/csv/diagnostico_20261023_222831.csv"
+   ],
+   "coluna": "valor[b00_rmspico_norm,idmt,blocos,f1_macro,_macro]",
+   "categoria": "diagnostico",
+   "nota": ""
+  },
+  "VDiagBalRmsRawIdmtBlk": {
+   "valor": 0.9933993399339934,
+   "tex": "0.993",
+   "pt": "0,993",
+   "status": "ok",
+   "fonte": [
+    "embarcados/results/csv/diagnostico_20261023_222831.csv"
+   ],
+   "coluna": "valor[b00_rmspico_bruto,idmt,blocos,acuracia_balanceada,_macro]",
+   "categoria": "diagnostico",
+   "nota": ""
+  },
+  "VDiagBalRmsRawIdmtBlkLo": {
+   "valor": 0.9866666666666668,
+   "tex": "0.987",
+   "pt": "0,987",
+   "status": "ok",
+   "fonte": [
+    "embarcados/results/csv/diagnostico_20261023_222831.csv"
+   ],
+   "coluna": "ic95_lo[b00_rmspico_bruto,idmt,blocos,acuracia_balanceada,_macro]",
+   "categoria": "diagnostico",
+   "nota": ""
+  },
+  "VDiagBalRmsRawIdmtBlkHi": {
+   "valor": 1.0,
+   "tex": "1.000",
+   "pt": "1,000",
+   "status": "ok",
+   "fonte": [
+    "embarcados/results/csv/diagnostico_20261023_222831.csv"
+   ],
+   "coluna": "ic95_hi[b00_rmspico_bruto,idmt,blocos,acuracia_balanceada,_macro]",
+   "categoria": "diagnostico",
+   "nota": ""
+  },
+  "VDiagAucRmsRawIdmtBlk": {
+   "valor": 1.0,
+   "tex": "1.000",
+   "pt": "1,000",
+   "status": "ok",
+   "fonte": [
+    "embarcados/results/csv/diagnostico_20261023_222831.csv"
+   ],
+   "coluna": "valor[b00_rmspico_bruto,idmt,blocos,roc_auc_ovr_macro,_macro]",
+   "categoria": "diagnostico",
+   "nota": ""
+  },
+  "VDiagFoneRmsRawIdmtBlk": {
+   "valor": 0.9939118457300276,
+   "tex": "0.994",
+   "pt": "0,994",
+   "status": "ok",
+   "fonte": [
+    "embarcados/results/csv/diagnostico_20261023_222831.csv"
+   ],
+   "coluna": "valor[b00_rmspico_bruto,idmt,blocos,f1_macro,_macro]",
+   "categoria": "diagnostico",
+   "nota": ""
+  },
+  "VDiagBalClsIdmtBlk": {
+   "valor": 1.0,
+   "tex": "1.000",
+   "pt": "1,000",
+   "status": "ok",
+   "fonte": [
+    "embarcados/results/csv/diagnostico_20261023_222831.csv"
+   ],
+   "coluna": "valor[p04_classicas,idmt,blocos,acuracia_balanceada,_macro]",
+   "categoria": "diagnostico",
+   "nota": ""
+  },
+  "VDiagBalClsIdmtBlkLo": {
+   "valor": 1.0,
+   "tex": "1.000",
+   "pt": "1,000",
+   "status": "ok",
+   "fonte": [
+    "embarcados/results/csv/diagnostico_20261023_222831.csv"
+   ],
+   "coluna": "ic95_lo[p04_classicas,idmt,blocos,acuracia_balanceada,_macro]",
+   "categoria": "diagnostico",
+   "nota": ""
+  },
+  "VDiagBalClsIdmtBlkHi": {
+   "valor": 1.0,
+   "tex": "1.000",
+   "pt": "1,000",
+   "status": "ok",
+   "fonte": [
+    "embarcados/results/csv/diagnostico_20261023_222831.csv"
+   ],
+   "coluna": "ic95_hi[p04_classicas,idmt,blocos,acuracia_balanceada,_macro]",
+   "categoria": "diagnostico",
+   "nota": ""
+  },
+  "VDiagAucClsIdmtBlk": {
+   "valor": 1.0,
+   "tex": "1.000",
+   "pt": "1,000",
+   "status": "ok",
+   "fonte": [
+    "embarcados/results/csv/diagnostico_20261023_222831.csv"
+   ],
+   "coluna": "valor[p04_classicas,idmt,blocos,roc_auc_ovr_macro,_macro]",
+   "categoria": "diagnostico",
+   "nota": ""
+  },
+  "VDiagFoneClsIdmtBlk": {
+   "valor": 1.0,
+   "tex": "1.000",
+   "pt": "1,000",
+   "status": "ok",
+   "fonte": [
+    "embarcados/results/csv/diagnostico_20261023_222831.csv"
+   ],
+   "coluna": "valor[p04_classicas,idmt,blocos,f1_macro,_macro]",
+   "categoria": "diagnostico",
+   "nota": ""
+  },
+  "VDiagBalDecIdmtBlk": {
+   "valor": 1.0,
+   "tex": "1.000",
+   "pt": "1,000",
+   "status": "ok",
+   "fonte": [
+    "embarcados/results/csv/diagnostico_20261023_222831.csv"
+   ],
+   "coluna": "valor[p11_decifrae_harmsum,idmt,blocos,acuracia_balanceada,_macro]",
+   "categoria": "diagnostico",
+   "nota": ""
+  },
+  "VDiagBalDecIdmtBlkLo": {
+   "valor": 1.0,
+   "tex": "1.000",
+   "pt": "1,000",
+   "status": "ok",
+   "fonte": [
+    "embarcados/results/csv/diagnostico_20261023_222831.csv"
+   ],
+   "coluna": "ic95_lo[p11_decifrae_harmsum,idmt,blocos,acuracia_balanceada,_macro]",
+   "categoria": "diagnostico",
+   "nota": ""
+  },
+  "VDiagBalDecIdmtBlkHi": {
+   "valor": 1.0,
+   "tex": "1.000",
+   "pt": "1,000",
+   "status": "ok",
+   "fonte": [
+    "embarcados/results/csv/diagnostico_20261023_222831.csv"
+   ],
+   "coluna": "ic95_hi[p11_decifrae_harmsum,idmt,blocos,acuracia_balanceada,_macro]",
+   "categoria": "diagnostico",
+   "nota": ""
+  },
+  "VDiagAucDecIdmtBlk": {
+   "valor": 1.0,
+   "tex": "1.000",
+   "pt": "1,000",
+   "status": "ok",
+   "fonte": [
+    "embarcados/results/csv/diagnostico_20261023_222831.csv"
+   ],
+   "coluna": "valor[p11_decifrae_harmsum,idmt,blocos,roc_auc_ovr_macro,_macro]",
+   "categoria": "diagnostico",
+   "nota": ""
+  },
+  "VDiagFoneDecIdmtBlk": {
+   "valor": 1.0,
+   "tex": "1.000",
+   "pt": "1,000",
+   "status": "ok",
+   "fonte": [
+    "embarcados/results/csv/diagnostico_20261023_222831.csv"
+   ],
+   "coluna": "valor[p11_decifrae_harmsum,idmt,blocos,f1_macro,_macro]",
+   "categoria": "diagnostico",
+   "nota": ""
+  },
+  "VDiagBalRmsNormBldcRand": {
+   "valor": 0.564069264069264,
+   "tex": "0.564",
+   "pt": "0,564",
+   "status": "ok",
+   "fonte": [
+    "embarcados/results/csv/diagnostico_20261023_222831.csv"
+   ],
+   "coluna": "valor[b00_rmspico_norm,a2212,aleatorio,acuracia_balanceada,_macro]",
+   "categoria": "diagnostico",
+   "nota": ""
+  },
+  "VDiagBalRmsNormBldcRandLo": {
+   "valor": 0.5147023809523811,
+   "tex": "0.515",
+   "pt": "0,515",
+   "status": "ok",
+   "fonte": [
+    "embarcados/results/csv/diagnostico_20261023_222831.csv"
+   ],
+   "coluna": "ic95_lo[b00_rmspico_norm,a2212,aleatorio,acuracia_balanceada,_macro]",
+   "categoria": "diagnostico",
+   "nota": ""
+  },
+  "VDiagBalRmsNormBldcRandHi": {
+   "valor": 0.6069372294372293,
+   "tex": "0.607",
+   "pt": "0,607",
+   "status": "ok",
+   "fonte": [
+    "embarcados/results/csv/diagnostico_20261023_222831.csv"
+   ],
+   "coluna": "ic95_hi[b00_rmspico_norm,a2212,aleatorio,acuracia_balanceada,_macro]",
+   "categoria": "diagnostico",
+   "nota": ""
+  },
+  "VDiagAucRmsNormBldcRand": {
+   "valor": 0.7837914862914864,
+   "tex": "0.784",
+   "pt": "0,784",
+   "status": "ok",
+   "fonte": [
+    "embarcados/results/csv/diagnostico_20261023_222831.csv"
+   ],
+   "coluna": "valor[b00_rmspico_norm,a2212,aleatorio,roc_auc_ovr_macro,_macro]",
+   "categoria": "diagnostico",
+   "nota": ""
+  },
+  "VDiagFoneRmsNormBldcRand": {
+   "valor": 0.5331303111610454,
+   "tex": "0.533",
+   "pt": "0,533",
+   "status": "ok",
+   "fonte": [
+    "embarcados/results/csv/diagnostico_20261023_222831.csv"
+   ],
+   "coluna": "valor[b00_rmspico_norm,a2212,aleatorio,f1_macro,_macro]",
+   "categoria": "diagnostico",
+   "nota": ""
+  },
+  "VDiagBalRmsRawBldcRand": {
+   "valor": 0.6246753246753247,
+   "tex": "0.625",
+   "pt": "0,625",
+   "status": "ok",
+   "fonte": [
+    "embarcados/results/csv/diagnostico_20261023_222831.csv"
+   ],
+   "coluna": "valor[b00_rmspico_bruto,a2212,aleatorio,acuracia_balanceada,_macro]",
+   "categoria": "diagnostico",
+   "nota": ""
+  },
+  "VDiagBalRmsRawBldcRandLo": {
+   "valor": 0.5714123376623378,
+   "tex": "0.571",
+   "pt": "0,571",
+   "status": "ok",
+   "fonte": [
+    "embarcados/results/csv/diagnostico_20261023_222831.csv"
+   ],
+   "coluna": "ic95_lo[b00_rmspico_bruto,a2212,aleatorio,acuracia_balanceada,_macro]",
+   "categoria": "diagnostico",
+   "nota": ""
+  },
+  "VDiagBalRmsRawBldcRandHi": {
+   "valor": 0.6603896103896104,
+   "tex": "0.660",
+   "pt": "0,660",
+   "status": "ok",
+   "fonte": [
+    "embarcados/results/csv/diagnostico_20261023_222831.csv"
+   ],
+   "coluna": "ic95_hi[b00_rmspico_bruto,a2212,aleatorio,acuracia_balanceada,_macro]",
+   "categoria": "diagnostico",
+   "nota": ""
+  },
+  "VDiagAucRmsRawBldcRand": {
+   "valor": 0.7860309996516893,
+   "tex": "0.786",
+   "pt": "0,786",
+   "status": "ok",
+   "fonte": [
+    "embarcados/results/csv/diagnostico_20261023_222831.csv"
+   ],
+   "coluna": "valor[b00_rmspico_bruto,a2212,aleatorio,roc_auc_ovr_macro,_macro]",
+   "categoria": "diagnostico",
+   "nota": ""
+  },
+  "VDiagFoneRmsRawBldcRand": {
+   "valor": 0.587529200359389,
+   "tex": "0.588",
+   "pt": "0,588",
+   "status": "ok",
+   "fonte": [
+    "embarcados/results/csv/diagnostico_20261023_222831.csv"
+   ],
+   "coluna": "valor[b00_rmspico_bruto,a2212,aleatorio,f1_macro,_macro]",
+   "categoria": "diagnostico",
+   "nota": ""
+  },
+  "VDiagBalClsBldcRand": {
+   "valor": 0.9984848484848484,
+   "tex": "0.998",
+   "pt": "0,998",
+   "status": "ok",
+   "fonte": [
+    "embarcados/results/csv/diagnostico_20261023_222831.csv"
+   ],
+   "coluna": "valor[p04_classicas,a2212,aleatorio,acuracia_balanceada,_macro]",
+   "categoria": "diagnostico",
+   "nota": ""
+  },
+  "VDiagBalClsBldcRandLo": {
+   "valor": 0.9954545454545456,
+   "tex": "0.995",
+   "pt": "0,995",
+   "status": "ok",
+   "fonte": [
+    "embarcados/results/csv/diagnostico_20261023_222831.csv"
+   ],
+   "coluna": "ic95_lo[p04_classicas,a2212,aleatorio,acuracia_balanceada,_macro]",
+   "categoria": "diagnostico",
+   "nota": ""
+  },
+  "VDiagBalClsBldcRandHi": {
+   "valor": 1.0,
+   "tex": "1.000",
+   "pt": "1,000",
+   "status": "ok",
+   "fonte": [
+    "embarcados/results/csv/diagnostico_20261023_222831.csv"
+   ],
+   "coluna": "ic95_hi[p04_classicas,a2212,aleatorio,acuracia_balanceada,_macro]",
+   "categoria": "diagnostico",
+   "nota": ""
+  },
+  "VDiagAucClsBldcRand": {
+   "valor": 1.0,
+   "tex": "1.000",
+   "pt": "1,000",
+   "status": "ok",
+   "fonte": [
+    "embarcados/results/csv/diagnostico_20261023_222831.csv"
+   ],
+   "coluna": "valor[p04_classicas,a2212,aleatorio,roc_auc_ovr_macro,_macro]",
+   "categoria": "diagnostico",
+   "nota": ""
+  },
+  "VDiagFoneClsBldcRand": {
+   "valor": 0.998054458936924,
+   "tex": "0.998",
+   "pt": "0,998",
+   "status": "ok",
+   "fonte": [
+    "embarcados/results/csv/diagnostico_20261023_222831.csv"
+   ],
+   "coluna": "valor[p04_classicas,a2212,aleatorio,f1_macro,_macro]",
+   "categoria": "diagnostico",
+   "nota": ""
+  },
+  "VDiagBalDecBldcRand": {
+   "valor": 0.8493506493506494,
+   "tex": "0.849",
+   "pt": "0,849",
+   "status": "ok",
+   "fonte": [
+    "embarcados/results/csv/diagnostico_20261023_222831.csv"
+   ],
+   "coluna": "valor[p11_decifrae_harmsum,a2212,aleatorio,acuracia_balanceada,_macro]",
+   "categoria": "diagnostico",
+   "nota": ""
+  },
+  "VDiagBalDecBldcRandLo": {
+   "valor": 0.7902543290043291,
+   "tex": "0.790",
+   "pt": "0,790",
+   "status": "ok",
+   "fonte": [
+    "embarcados/results/csv/diagnostico_20261023_222831.csv"
+   ],
+   "coluna": "ic95_lo[p11_decifrae_harmsum,a2212,aleatorio,acuracia_balanceada,_macro]",
+   "categoria": "diagnostico",
+   "nota": ""
+  },
+  "VDiagBalDecBldcRandHi": {
+   "valor": 0.9049837662337662,
+   "tex": "0.905",
+   "pt": "0,905",
+   "status": "ok",
+   "fonte": [
+    "embarcados/results/csv/diagnostico_20261023_222831.csv"
+   ],
+   "coluna": "ic95_hi[p11_decifrae_harmsum,a2212,aleatorio,acuracia_balanceada,_macro]",
+   "categoria": "diagnostico",
+   "nota": ""
+  },
+  "VDiagAucDecBldcRand": {
+   "valor": 0.9549586588379692,
+   "tex": "0.955",
+   "pt": "0,955",
+   "status": "ok",
+   "fonte": [
+    "embarcados/results/csv/diagnostico_20261023_222831.csv"
+   ],
+   "coluna": "valor[p11_decifrae_harmsum,a2212,aleatorio,roc_auc_ovr_macro,_macro]",
+   "categoria": "diagnostico",
+   "nota": ""
+  },
+  "VDiagFoneDecBldcRand": {
+   "valor": 0.7894281846202057,
+   "tex": "0.789",
+   "pt": "0,789",
+   "status": "ok",
+   "fonte": [
+    "embarcados/results/csv/diagnostico_20261023_222831.csv"
+   ],
+   "coluna": "valor[p11_decifrae_harmsum,a2212,aleatorio,f1_macro,_macro]",
+   "categoria": "diagnostico",
+   "nota": ""
+  },
+  "VDiagBalRmsNormBldcFile": {
+   "valor": 0.5616883116883117,
+   "tex": "0.562",
+   "pt": "0,562",
+   "status": "ok",
+   "fonte": [
+    "embarcados/results/csv/diagnostico_20261023_222831.csv"
+   ],
+   "coluna": "valor[b00_rmspico_norm,a2212,arquivo,acuracia_balanceada,_macro]",
+   "categoria": "diagnostico",
+   "nota": ""
+  },
+  "VDiagBalRmsNormBldcFileLo": {
+   "valor": 0.5119047619047619,
+   "tex": "0.512",
+   "pt": "0,512",
+   "status": "ok",
+   "fonte": [
+    "embarcados/results/csv/diagnostico_20261023_222831.csv"
+   ],
+   "coluna": "ic95_lo[b00_rmspico_norm,a2212,arquivo,acuracia_balanceada,_macro]",
+   "categoria": "diagnostico",
+   "nota": ""
+  },
+  "VDiagBalRmsNormBldcFileHi": {
+   "valor": 0.6058441558441559,
+   "tex": "0.606",
+   "pt": "0,606",
+   "status": "ok",
+   "fonte": [
+    "embarcados/results/csv/diagnostico_20261023_222831.csv"
+   ],
+   "coluna": "ic95_hi[b00_rmspico_norm,a2212,arquivo,acuracia_balanceada,_macro]",
+   "categoria": "diagnostico",
+   "nota": ""
+  },
+  "VDiagAucRmsNormBldcFile": {
+   "valor": 0.7585087741122224,
+   "tex": "0.759",
+   "pt": "0,759",
+   "status": "ok",
+   "fonte": [
+    "embarcados/results/csv/diagnostico_20261023_222831.csv"
+   ],
+   "coluna": "valor[b00_rmspico_norm,a2212,arquivo,roc_auc_ovr_macro,_macro]",
+   "categoria": "diagnostico",
+   "nota": ""
+  },
+  "VDiagFoneRmsNormBldcFile": {
+   "valor": 0.5316596020557894,
+   "tex": "0.532",
+   "pt": "0,532",
+   "status": "ok",
+   "fonte": [
+    "embarcados/results/csv/diagnostico_20261023_222831.csv"
+   ],
+   "coluna": "valor[b00_rmspico_norm,a2212,arquivo,f1_macro,_macro]",
+   "categoria": "diagnostico",
+   "nota": ""
+  },
+  "VDiagBalRmsRawBldcFile": {
+   "valor": 0.6084415584415584,
+   "tex": "0.608",
+   "pt": "0,608",
+   "status": "ok",
+   "fonte": [
+    "embarcados/results/csv/diagnostico_20261023_222831.csv"
+   ],
+   "coluna": "valor[b00_rmspico_bruto,a2212,arquivo,acuracia_balanceada,_macro]",
+   "categoria": "diagnostico",
+   "nota": ""
+  },
+  "VDiagBalRmsRawBldcFileLo": {
+   "valor": 0.5441558441558442,
+   "tex": "0.544",
+   "pt": "0,544",
+   "status": "ok",
+   "fonte": [
+    "embarcados/results/csv/diagnostico_20261023_222831.csv"
+   ],
+   "coluna": "ic95_lo[b00_rmspico_bruto,a2212,arquivo,acuracia_balanceada,_macro]",
+   "categoria": "diagnostico",
+   "nota": ""
+  },
+  "VDiagBalRmsRawBldcFileHi": {
+   "valor": 0.6556385281385281,
+   "tex": "0.656",
+   "pt": "0,656",
+   "status": "ok",
+   "fonte": [
+    "embarcados/results/csv/diagnostico_20261023_222831.csv"
+   ],
+   "coluna": "ic95_hi[b00_rmspico_bruto,a2212,arquivo,acuracia_balanceada,_macro]",
+   "categoria": "diagnostico",
+   "nota": ""
+  },
+  "VDiagAucRmsRawBldcFile": {
+   "valor": 0.705528188286809,
+   "tex": "0.706",
+   "pt": "0,706",
+   "status": "ok",
+   "fonte": [
+    "embarcados/results/csv/diagnostico_20261023_222831.csv"
+   ],
+   "coluna": "valor[b00_rmspico_bruto,a2212,arquivo,roc_auc_ovr_macro,_macro]",
+   "categoria": "diagnostico",
+   "nota": ""
+  },
+  "VDiagFoneRmsRawBldcFile": {
+   "valor": 0.5762131608466996,
+   "tex": "0.576",
+   "pt": "0,576",
+   "status": "ok",
+   "fonte": [
+    "embarcados/results/csv/diagnostico_20261023_222831.csv"
+   ],
+   "coluna": "valor[b00_rmspico_bruto,a2212,arquivo,f1_macro,_macro]",
+   "categoria": "diagnostico",
+   "nota": ""
+  },
+  "VDiagBalClsBldcFile": {
+   "valor": 0.9811688311688312,
+   "tex": "0.981",
+   "pt": "0,981",
+   "status": "ok",
+   "fonte": [
+    "embarcados/results/csv/diagnostico_20261023_222831.csv"
+   ],
+   "coluna": "valor[p04_classicas,a2212,arquivo,acuracia_balanceada,_macro]",
+   "categoria": "diagnostico",
+   "nota": ""
+  },
+  "VDiagBalClsBldcFileLo": {
+   "valor": 0.9495670995670996,
+   "tex": "0.950",
+   "pt": "0,950",
+   "status": "ok",
+   "fonte": [
+    "embarcados/results/csv/diagnostico_20261023_222831.csv"
+   ],
+   "coluna": "ic95_lo[p04_classicas,a2212,arquivo,acuracia_balanceada,_macro]",
+   "categoria": "diagnostico",
+   "nota": ""
+  },
+  "VDiagBalClsBldcFileHi": {
+   "valor": 0.9984848484848484,
+   "tex": "0.998",
+   "pt": "0,998",
+   "status": "ok",
+   "fonte": [
+    "embarcados/results/csv/diagnostico_20261023_222831.csv"
+   ],
+   "coluna": "ic95_hi[p04_classicas,a2212,arquivo,acuracia_balanceada,_macro]",
+   "categoria": "diagnostico",
+   "nota": ""
+  },
+  "VDiagAucClsBldcFile": {
+   "valor": 0.9964977359804946,
+   "tex": "0.996",
+   "pt": "0,996",
+   "status": "ok",
+   "fonte": [
+    "embarcados/results/csv/diagnostico_20261023_222831.csv"
+   ],
+   "coluna": "valor[p04_classicas,a2212,arquivo,roc_auc_ovr_macro,_macro]",
+   "categoria": "diagnostico",
+   "nota": ""
+  },
+  "VDiagFoneClsBldcFile": {
+   "valor": 0.9823976660609074,
+   "tex": "0.982",
+   "pt": "0,982",
+   "status": "ok",
+   "fonte": [
+    "embarcados/results/csv/diagnostico_20261023_222831.csv"
+   ],
+   "coluna": "valor[p04_classicas,a2212,arquivo,f1_macro,_macro]",
+   "categoria": "diagnostico",
+   "nota": ""
+  },
+  "VDiagBalDecBldcFile": {
+   "valor": 0.8162337662337663,
+   "tex": "0.816",
+   "pt": "0,816",
+   "status": "ok",
+   "fonte": [
+    "embarcados/results/csv/diagnostico_20261023_222831.csv"
+   ],
+   "coluna": "valor[p11_decifrae_harmsum,a2212,arquivo,acuracia_balanceada,_macro]",
+   "categoria": "diagnostico",
+   "nota": ""
+  },
+  "VDiagBalDecBldcFileLo": {
+   "valor": 0.7467532467532467,
+   "tex": "0.747",
+   "pt": "0,747",
+   "status": "ok",
+   "fonte": [
+    "embarcados/results/csv/diagnostico_20261023_222831.csv"
+   ],
+   "coluna": "ic95_lo[p11_decifrae_harmsum,a2212,arquivo,acuracia_balanceada,_macro]",
+   "categoria": "diagnostico",
+   "nota": ""
+  },
+  "VDiagBalDecBldcFileHi": {
+   "valor": 0.8813852813852813,
+   "tex": "0.881",
+   "pt": "0,881",
+   "status": "ok",
+   "fonte": [
+    "embarcados/results/csv/diagnostico_20261023_222831.csv"
+   ],
+   "coluna": "ic95_hi[p11_decifrae_harmsum,a2212,arquivo,acuracia_balanceada,_macro]",
+   "categoria": "diagnostico",
+   "nota": ""
+  },
+  "VDiagAucDecBldcFile": {
+   "valor": 0.9345528354149044,
+   "tex": "0.935",
+   "pt": "0,935",
+   "status": "ok",
+   "fonte": [
+    "embarcados/results/csv/diagnostico_20261023_222831.csv"
+   ],
+   "coluna": "valor[p11_decifrae_harmsum,a2212,arquivo,roc_auc_ovr_macro,_macro]",
+   "categoria": "diagnostico",
+   "nota": ""
+  },
+  "VDiagFoneDecBldcFile": {
+   "valor": 0.7532040456092112,
+   "tex": "0.753",
+   "pt": "0,753",
+   "status": "ok",
+   "fonte": [
+    "embarcados/results/csv/diagnostico_20261023_222831.csv"
+   ],
+   "coluna": "valor[p11_decifrae_harmsum,a2212,arquivo,f1_macro,_macro]",
+   "categoria": "diagnostico",
+   "nota": ""
+  },
+  "VDiagBalRmsNormBldcMotor": {
+   "valor": 0.5424242424242425,
+   "tex": "0.542",
+   "pt": "0,542",
+   "status": "ok",
+   "fonte": [
+    "embarcados/results/csv/diagnostico_20261023_222831.csv"
+   ],
+   "coluna": "valor[b00_rmspico_norm,a2212,motor,acuracia_balanceada,_macro]",
+   "categoria": "diagnostico",
+   "nota": ""
+  },
+  "VDiagBalRmsNormBldcMotorLo": {
+   "valor": 0.4846212121212122,
+   "tex": "0.485",
+   "pt": "0,485",
+   "status": "ok",
+   "fonte": [
+    "embarcados/results/csv/diagnostico_20261023_222831.csv"
+   ],
+   "coluna": "ic95_lo[b00_rmspico_norm,a2212,motor,acuracia_balanceada,_macro]",
+   "categoria": "diagnostico",
+   "nota": ""
+  },
+  "VDiagBalRmsNormBldcMotorHi": {
+   "valor": 0.5958874458874459,
+   "tex": "0.596",
+   "pt": "0,596",
+   "status": "ok",
+   "fonte": [
+    "embarcados/results/csv/diagnostico_20261023_222831.csv"
+   ],
+   "coluna": "ic95_hi[b00_rmspico_norm,a2212,motor,acuracia_balanceada,_macro]",
+   "categoria": "diagnostico",
+   "nota": ""
+  },
+  "VDiagAucRmsNormBldcMotor": {
+   "valor": 0.4887421008110664,
+   "tex": "0.489",
+   "pt": "0,489",
+   "status": "ok",
+   "fonte": [
+    "embarcados/results/csv/diagnostico_20261023_222831.csv"
+   ],
+   "coluna": "valor[b00_rmspico_norm,a2212,motor,roc_auc_ovr_macro,_macro]",
+   "categoria": "diagnostico",
+   "nota": ""
+  },
+  "VDiagFoneRmsNormBldcMotor": {
+   "valor": 0.509146809408695,
+   "tex": "0.509",
+   "pt": "0,509",
+   "status": "ok",
+   "fonte": [
+    "embarcados/results/csv/diagnostico_20261023_222831.csv"
+   ],
+   "coluna": "valor[b00_rmspico_norm,a2212,motor,f1_macro,_macro]",
+   "categoria": "diagnostico",
+   "nota": ""
+  },
+  "VDiagBalRmsRawBldcMotor": {
+   "valor": 0.5025974025974026,
+   "tex": "0.503",
+   "pt": "0,503",
+   "status": "ok",
+   "fonte": [
+    "embarcados/results/csv/diagnostico_20261023_222831.csv"
+   ],
+   "coluna": "valor[b00_rmspico_bruto,a2212,motor,acuracia_balanceada,_macro]",
+   "categoria": "diagnostico",
+   "nota": ""
+  },
+  "VDiagBalRmsRawBldcMotorLo": {
+   "valor": 0.4116666666666667,
+   "tex": "0.412",
+   "pt": "0,412",
+   "status": "ok",
+   "fonte": [
+    "embarcados/results/csv/diagnostico_20261023_222831.csv"
+   ],
+   "coluna": "ic95_lo[b00_rmspico_bruto,a2212,motor,acuracia_balanceada,_macro]",
+   "categoria": "diagnostico",
+   "nota": ""
+  },
+  "VDiagBalRmsRawBldcMotorHi": {
+   "valor": 0.5803138528138527,
+   "tex": "0.580",
+   "pt": "0,580",
+   "status": "ok",
+   "fonte": [
+    "embarcados/results/csv/diagnostico_20261023_222831.csv"
+   ],
+   "coluna": "ic95_hi[b00_rmspico_bruto,a2212,motor,acuracia_balanceada,_macro]",
+   "categoria": "diagnostico",
+   "nota": ""
+  },
+  "VDiagAucRmsRawBldcMotor": {
+   "valor": 0.5083385579937304,
+   "tex": "0.508",
+   "pt": "0,508",
+   "status": "ok",
+   "fonte": [
+    "embarcados/results/csv/diagnostico_20261023_222831.csv"
+   ],
+   "coluna": "valor[b00_rmspico_bruto,a2212,motor,roc_auc_ovr_macro,_macro]",
+   "categoria": "diagnostico",
+   "nota": ""
+  },
+  "VDiagFoneRmsRawBldcMotor": {
+   "valor": 0.5089229665500851,
+   "tex": "0.509",
+   "pt": "0,509",
+   "status": "ok",
+   "fonte": [
+    "embarcados/results/csv/diagnostico_20261023_222831.csv"
+   ],
+   "coluna": "valor[b00_rmspico_bruto,a2212,motor,f1_macro,_macro]",
+   "categoria": "diagnostico",
+   "nota": ""
+  },
+  "VDiagBalClsBldcMotor": {
+   "valor": 0.6134199134199134,
+   "tex": "0.613",
+   "pt": "0,613",
+   "status": "ok",
+   "fonte": [
+    "embarcados/results/csv/diagnostico_20261023_222831.csv"
+   ],
+   "coluna": "valor[p04_classicas,a2212,motor,acuracia_balanceada,_macro]",
+   "categoria": "diagnostico",
+   "nota": ""
+  },
+  "VDiagBalClsBldcMotorLo": {
+   "valor": 0.5787878787878787,
+   "tex": "0.579",
+   "pt": "0,579",
+   "status": "ok",
+   "fonte": [
+    "embarcados/results/csv/diagnostico_20261023_222831.csv"
+   ],
+   "coluna": "ic95_lo[p04_classicas,a2212,motor,acuracia_balanceada,_macro]",
+   "categoria": "diagnostico",
+   "nota": ""
+  },
+  "VDiagBalClsBldcMotorHi": {
+   "valor": 0.6406980519480518,
+   "tex": "0.641",
+   "pt": "0,641",
+   "status": "ok",
+   "fonte": [
+    "embarcados/results/csv/diagnostico_20261023_222831.csv"
+   ],
+   "coluna": "ic95_hi[p04_classicas,a2212,motor,acuracia_balanceada,_macro]",
+   "categoria": "diagnostico",
+   "nota": ""
+  },
+  "VDiagAucClsBldcMotor": {
+   "valor": 0.6184385729213315,
+   "tex": "0.618",
+   "pt": "0,618",
+   "status": "ok",
+   "fonte": [
+    "embarcados/results/csv/diagnostico_20261023_222831.csv"
+   ],
+   "coluna": "valor[p04_classicas,a2212,motor,roc_auc_ovr_macro,_macro]",
+   "categoria": "diagnostico",
+   "nota": ""
+  },
+  "VDiagFoneClsBldcMotor": {
+   "valor": 0.5634372028381245,
+   "tex": "0.563",
+   "pt": "0,563",
+   "status": "ok",
+   "fonte": [
+    "embarcados/results/csv/diagnostico_20261023_222831.csv"
+   ],
+   "coluna": "valor[p04_classicas,a2212,motor,f1_macro,_macro]",
+   "categoria": "diagnostico",
+   "nota": ""
+  },
+  "VDiagBalDecBldcMotor": {
+   "valor": 0.4564935064935065,
+   "tex": "0.456",
+   "pt": "0,456",
+   "status": "ok",
+   "fonte": [
+    "embarcados/results/csv/diagnostico_20261023_222831.csv"
+   ],
+   "coluna": "valor[p11_decifrae_harmsum,a2212,motor,acuracia_balanceada,_macro]",
+   "categoria": "diagnostico",
+   "nota": ""
+  },
+  "VDiagBalDecBldcMotorLo": {
+   "valor": 0.3965313852813852,
+   "tex": "0.397",
+   "pt": "0,397",
+   "status": "ok",
+   "fonte": [
+    "embarcados/results/csv/diagnostico_20261023_222831.csv"
+   ],
+   "coluna": "ic95_lo[p11_decifrae_harmsum,a2212,motor,acuracia_balanceada,_macro]",
+   "categoria": "diagnostico",
+   "nota": ""
+  },
+  "VDiagBalDecBldcMotorHi": {
+   "valor": 0.5194859307359307,
+   "tex": "0.519",
+   "pt": "0,519",
+   "status": "ok",
+   "fonte": [
+    "embarcados/results/csv/diagnostico_20261023_222831.csv"
+   ],
+   "coluna": "ic95_hi[p11_decifrae_harmsum,a2212,motor,acuracia_balanceada,_macro]",
+   "categoria": "diagnostico",
+   "nota": ""
+  },
+  "VDiagAucDecBldcMotor": {
+   "valor": 0.4836236751753993,
+   "tex": "0.484",
+   "pt": "0,484",
+   "status": "ok",
+   "fonte": [
+    "embarcados/results/csv/diagnostico_20261023_222831.csv"
+   ],
+   "coluna": "valor[p11_decifrae_harmsum,a2212,motor,roc_auc_ovr_macro,_macro]",
+   "categoria": "diagnostico",
+   "nota": ""
+  },
+  "VDiagFoneDecBldcMotor": {
+   "valor": 0.4180573416861574,
+   "tex": "0.418",
+   "pt": "0,418",
+   "status": "ok",
+   "fonte": [
+    "embarcados/results/csv/diagnostico_20261023_222831.csv"
+   ],
+   "coluna": "valor[p11_decifrae_harmsum,a2212,motor,f1_macro,_macro]",
+   "categoria": "diagnostico",
+   "nota": ""
+  },
+  "VDiagBalRmsNormBldcNoMfour": {
+   "valor": 0.8136363636363637,
+   "tex": "0.814",
+   "pt": "0,814",
+   "status": "ok",
+   "fonte": [
+    "embarcados/results/csv/diagnostico_20261023_222831.csv"
+   ],
+   "coluna": "valor[b00_rmspico_norm,a2212,motor_sem_M4,acuracia_balanceada,_macro]",
+   "categoria": "diagnostico",
+   "nota": ""
+  },
+  "VDiagBalRmsNormBldcNoMfourLo": {
+   "valor": 0.7197970779220779,
+   "tex": "0.720",
+   "pt": "0,720",
+   "status": "ok",
+   "fonte": [
+    "embarcados/results/csv/diagnostico_20261023_222831.csv"
+   ],
+   "coluna": "ic95_lo[b00_rmspico_norm,a2212,motor_sem_M4,acuracia_balanceada,_macro]",
+   "categoria": "diagnostico",
+   "nota": ""
+  },
+  "VDiagBalRmsNormBldcNoMfourHi": {
+   "valor": 0.887012987012987,
+   "tex": "0.887",
+   "pt": "0,887",
+   "status": "ok",
+   "fonte": [
+    "embarcados/results/csv/diagnostico_20261023_222831.csv"
+   ],
+   "coluna": "ic95_hi[b00_rmspico_norm,a2212,motor_sem_M4,acuracia_balanceada,_macro]",
+   "categoria": "diagnostico",
+   "nota": ""
+  },
+  "VDiagAucRmsNormBldcNoMfour": {
+   "valor": 0.870616883116883,
+   "tex": "0.871",
+   "pt": "0,871",
+   "status": "ok",
+   "fonte": [
+    "embarcados/results/csv/diagnostico_20261023_222831.csv"
+   ],
+   "coluna": "valor[b00_rmspico_norm,a2212,motor_sem_M4,roc_auc_ovr_macro,_macro]",
+   "categoria": "diagnostico",
+   "nota": ""
+  },
+  "VDiagFoneRmsNormBldcNoMfour": {
+   "valor": 0.8236711351207149,
+   "tex": "0.824",
+   "pt": "0,824",
+   "status": "ok",
+   "fonte": [
+    "embarcados/results/csv/diagnostico_20261023_222831.csv"
+   ],
+   "coluna": "valor[b00_rmspico_norm,a2212,motor_sem_M4,f1_macro,_macro]",
+   "categoria": "diagnostico",
+   "nota": ""
+  },
+  "VDiagBalRmsRawBldcNoMfour": {
+   "valor": 0.7538961038961038,
+   "tex": "0.754",
+   "pt": "0,754",
+   "status": "ok",
+   "fonte": [
+    "embarcados/results/csv/diagnostico_20261023_222831.csv"
+   ],
+   "coluna": "valor[b00_rmspico_bruto,a2212,motor_sem_M4,acuracia_balanceada,_macro]",
+   "categoria": "diagnostico",
+   "nota": ""
+  },
+  "VDiagBalRmsRawBldcNoMfourLo": {
+   "valor": 0.622702922077922,
+   "tex": "0.623",
+   "pt": "0,623",
+   "status": "ok",
+   "fonte": [
+    "embarcados/results/csv/diagnostico_20261023_222831.csv"
+   ],
+   "coluna": "ic95_lo[b00_rmspico_bruto,a2212,motor_sem_M4,acuracia_balanceada,_macro]",
+   "categoria": "diagnostico",
+   "nota": ""
+  },
+  "VDiagBalRmsRawBldcNoMfourHi": {
+   "valor": 0.8730519480519481,
+   "tex": "0.873",
+   "pt": "0,873",
+   "status": "ok",
+   "fonte": [
+    "embarcados/results/csv/diagnostico_20261023_222831.csv"
+   ],
+   "coluna": "ic95_hi[b00_rmspico_bruto,a2212,motor_sem_M4,acuracia_balanceada,_macro]",
+   "categoria": "diagnostico",
+   "nota": ""
+  },
+  "VDiagAucRmsRawBldcNoMfour": {
+   "valor": 0.9124837662337664,
+   "tex": "0.912",
+   "pt": "0,912",
+   "status": "ok",
+   "fonte": [
+    "embarcados/results/csv/diagnostico_20261023_222831.csv"
+   ],
+   "coluna": "valor[b00_rmspico_bruto,a2212,motor_sem_M4,roc_auc_ovr_macro,_macro]",
+   "categoria": "diagnostico",
+   "nota": ""
+  },
+  "VDiagFoneRmsRawBldcNoMfour": {
+   "valor": 0.8229885057471265,
+   "tex": "0.823",
+   "pt": "0,823",
+   "status": "ok",
+   "fonte": [
+    "embarcados/results/csv/diagnostico_20261023_222831.csv"
+   ],
+   "coluna": "valor[b00_rmspico_bruto,a2212,motor_sem_M4,f1_macro,_macro]",
+   "categoria": "diagnostico",
+   "nota": ""
+  },
+  "VDiagBalClsBldcNoMfour": {
+   "valor": 0.92012987012987,
+   "tex": "0.920",
+   "pt": "0,920",
+   "status": "ok",
+   "fonte": [
+    "embarcados/results/csv/diagnostico_20261023_222831.csv"
+   ],
+   "coluna": "valor[p04_classicas,a2212,motor_sem_M4,acuracia_balanceada,_macro]",
+   "categoria": "diagnostico",
+   "nota": ""
+  },
+  "VDiagBalClsBldcNoMfourLo": {
+   "valor": 0.8678327922077922,
+   "tex": "0.868",
+   "pt": "0,868",
+   "status": "ok",
+   "fonte": [
+    "embarcados/results/csv/diagnostico_20261023_222831.csv"
+   ],
+   "coluna": "ic95_lo[p04_classicas,a2212,motor_sem_M4,acuracia_balanceada,_macro]",
+   "categoria": "diagnostico",
+   "nota": ""
+  },
+  "VDiagBalClsBldcNoMfourHi": {
+   "valor": 0.9623376623376624,
+   "tex": "0.962",
+   "pt": "0,962",
+   "status": "ok",
+   "fonte": [
+    "embarcados/results/csv/diagnostico_20261023_222831.csv"
+   ],
+   "coluna": "ic95_hi[p04_classicas,a2212,motor_sem_M4,acuracia_balanceada,_macro]",
+   "categoria": "diagnostico",
+   "nota": ""
+  },
+  "VDiagAucClsBldcNoMfour": {
+   "valor": 0.9837662337662338,
+   "tex": "0.984",
+   "pt": "0,984",
+   "status": "ok",
+   "fonte": [
+    "embarcados/results/csv/diagnostico_20261023_222831.csv"
+   ],
+   "coluna": "valor[p04_classicas,a2212,motor_sem_M4,roc_auc_ovr_macro,_macro]",
+   "categoria": "diagnostico",
+   "nota": ""
+  },
+  "VDiagFoneClsBldcNoMfour": {
+   "valor": 0.9234067624627672,
+   "tex": "0.923",
+   "pt": "0,923",
+   "status": "ok",
+   "fonte": [
+    "embarcados/results/csv/diagnostico_20261023_222831.csv"
+   ],
+   "coluna": "valor[p04_classicas,a2212,motor_sem_M4,f1_macro,_macro]",
+   "categoria": "diagnostico",
+   "nota": ""
+  },
+  "VDiagBalDecBldcNoMfour": {
+   "valor": 0.6847402597402598,
+   "tex": "0.685",
+   "pt": "0,685",
+   "status": "ok",
+   "fonte": [
+    "embarcados/results/csv/diagnostico_20261023_222831.csv"
+   ],
+   "coluna": "valor[p11_decifrae_harmsum,a2212,motor_sem_M4,acuracia_balanceada,_macro]",
+   "categoria": "diagnostico",
+   "nota": ""
+  },
+  "VDiagBalDecBldcNoMfourLo": {
+   "valor": 0.5928571428571429,
+   "tex": "0.593",
+   "pt": "0,593",
+   "status": "ok",
+   "fonte": [
+    "embarcados/results/csv/diagnostico_20261023_222831.csv"
+   ],
+   "coluna": "ic95_lo[p11_decifrae_harmsum,a2212,motor_sem_M4,acuracia_balanceada,_macro]",
+   "categoria": "diagnostico",
+   "nota": ""
+  },
+  "VDiagBalDecBldcNoMfourHi": {
+   "valor": 0.7743587662337662,
+   "tex": "0.774",
+   "pt": "0,774",
+   "status": "ok",
+   "fonte": [
+    "embarcados/results/csv/diagnostico_20261023_222831.csv"
+   ],
+   "coluna": "ic95_hi[p11_decifrae_harmsum,a2212,motor_sem_M4,acuracia_balanceada,_macro]",
+   "categoria": "diagnostico",
+   "nota": ""
+  },
+  "VDiagAucDecBldcNoMfour": {
+   "valor": 0.8216396103896104,
+   "tex": "0.822",
+   "pt": "0,822",
+   "status": "ok",
+   "fonte": [
+    "embarcados/results/csv/diagnostico_20261023_222831.csv"
+   ],
+   "coluna": "valor[p11_decifrae_harmsum,a2212,motor_sem_M4,roc_auc_ovr_macro,_macro]",
+   "categoria": "diagnostico",
+   "nota": ""
+  },
+  "VDiagFoneDecBldcNoMfour": {
+   "valor": 0.6854779411764707,
+   "tex": "0.685",
+   "pt": "0,685",
+   "status": "ok",
+   "fonte": [
+    "embarcados/results/csv/diagnostico_20261023_222831.csv"
+   ],
+   "coluna": "valor[p11_decifrae_harmsum,a2212,motor_sem_M4,f1_macro,_macro]",
+   "categoria": "diagnostico",
+   "nota": ""
+  },
+  "VDiagRecDecBldcFileHealthy": {
+   "valor": 0.5772727272727273,
+   "tex": "0.577",
+   "pt": "0,577",
+   "status": "ok",
+   "fonte": [
+    "embarcados/results/csv/diagnostico_20261023_222831.csv"
+   ],
+   "coluna": "valor[p11,a2212,arquivo,sensibilidade,Healthy]",
+   "categoria": "diagnostico",
+   "nota": ""
+  },
+  "VDiagRecDecBldcFilePropeller": {
+   "valor": 0.9285714285714286,
+   "tex": "0.929",
+   "pt": "0,929",
+   "status": "ok",
+   "fonte": [
+    "embarcados/results/csv/diagnostico_20261023_222831.csv"
+   ],
+   "coluna": "valor[p11,a2212,arquivo,sensibilidade,Propeller]",
+   "categoria": "diagnostico",
+   "nota": ""
+  },
+  "VDiagRecDecBldcFileBearing": {
+   "valor": 0.9428571428571428,
+   "tex": "0.943",
+   "pt": "0,943",
+   "status": "ok",
+   "fonte": [
+    "embarcados/results/csv/diagnostico_20261023_222831.csv"
+   ],
+   "coluna": "valor[p11,a2212,arquivo,sensibilidade,Bearing]",
+   "categoria": "diagnostico",
+   "nota": ""
+  },
+  "VDiagRecDecBldcMotorHealthy": {
+   "valor": 0.4409090909090909,
+   "tex": "0.441",
+   "pt": "0,441",
+   "status": "ok",
+   "fonte": [
+    "embarcados/results/csv/diagnostico_20261023_222831.csv"
+   ],
+   "coluna": "valor[p11,a2212,motor,sensibilidade,Healthy]",
+   "categoria": "diagnostico",
+   "nota": ""
+  },
+  "VDiagRecDecBldcMotorPropeller": {
+   "valor": 0.9285714285714286,
+   "tex": "0.929",
+   "pt": "0,929",
+   "status": "ok",
+   "fonte": [
+    "embarcados/results/csv/diagnostico_20261023_222831.csv"
+   ],
+   "coluna": "valor[p11,a2212,motor,sensibilidade,Propeller]",
+   "categoria": "diagnostico",
+   "nota": ""
+  },
+  "VDiagRecDecBldcMotorBearing": {
+   "valor": 0.0,
+   "tex": "0.000",
+   "pt": "0,000",
+   "status": "ok",
+   "fonte": [
+    "embarcados/results/csv/diagnostico_20261023_222831.csv"
+   ],
+   "coluna": "valor[p11,a2212,motor,sensibilidade,Bearing]",
+   "categoria": "diagnostico",
+   "nota": ""
+  },
+  "VDiagInflRmsNormBldc": {
+   "valor": 0.0023809523809523725,
+   "tex": "0.002",
+   "pt": "0,002",
+   "status": "ok",
+   "fonte": [
+    "embarcados/results/csv/diagnostico_20261023_222831.csv"
+   ],
+   "coluna": "Bal[aleatorio]-Bal[arquivo] (a2212)",
+   "categoria": "diagnostico",
+   "nota": ""
+  },
+  "VDiagDropRmsNormBldc": {
+   "valor": 0.019264069264069206,
+   "tex": "0.019",
+   "pt": "0,019",
+   "status": "ok",
+   "fonte": [
+    "embarcados/results/csv/diagnostico_20261023_222831.csv"
+   ],
+   "coluna": "Bal[arquivo]-Bal[motor] (a2212)",
+   "categoria": "diagnostico",
+   "nota": ""
+  },
+  "VDiagInflRmsRawBldc": {
+   "valor": 0.016233766233766267,
+   "tex": "0.016",
+   "pt": "0,016",
+   "status": "ok",
+   "fonte": [
+    "embarcados/results/csv/diagnostico_20261023_222831.csv"
+   ],
+   "coluna": "Bal[aleatorio]-Bal[arquivo] (a2212)",
+   "categoria": "diagnostico",
+   "nota": ""
+  },
+  "VDiagDropRmsRawBldc": {
+   "valor": 0.10584415584415585,
+   "tex": "0.106",
+   "pt": "0,106",
+   "status": "ok",
+   "fonte": [
+    "embarcados/results/csv/diagnostico_20261023_222831.csv"
+   ],
+   "coluna": "Bal[arquivo]-Bal[motor] (a2212)",
+   "categoria": "diagnostico",
+   "nota": ""
+  },
+  "VDiagInflClsBldc": {
+   "valor": 0.017316017316017174,
+   "tex": "0.017",
+   "pt": "0,017",
+   "status": "ok",
+   "fonte": [
+    "embarcados/results/csv/diagnostico_20261023_222831.csv"
+   ],
+   "coluna": "Bal[aleatorio]-Bal[arquivo] (a2212)",
+   "categoria": "diagnostico",
+   "nota": ""
+  },
+  "VDiagDropClsBldc": {
+   "valor": 0.3677489177489178,
+   "tex": "0.368",
+   "pt": "0,368",
+   "status": "ok",
+   "fonte": [
+    "embarcados/results/csv/diagnostico_20261023_222831.csv"
+   ],
+   "coluna": "Bal[arquivo]-Bal[motor] (a2212)",
+   "categoria": "diagnostico",
+   "nota": ""
+  },
+  "VDiagInflDecBldc": {
+   "valor": 0.0331168831168831,
+   "tex": "0.033",
+   "pt": "0,033",
+   "status": "ok",
+   "fonte": [
+    "embarcados/results/csv/diagnostico_20261023_222831.csv"
+   ],
+   "coluna": "Bal[aleatorio]-Bal[arquivo] (a2212)",
+   "categoria": "diagnostico",
+   "nota": ""
+  },
+  "VDiagDropDecBldc": {
+   "valor": 0.3597402597402598,
+   "tex": "0.360",
+   "pt": "0,360",
+   "status": "ok",
+   "fonte": [
+    "embarcados/results/csv/diagnostico_20261023_222831.csv"
+   ],
+   "coluna": "Bal[arquivo]-Bal[motor] (a2212)",
+   "categoria": "diagnostico",
+   "nota": ""
+  },
+  "VParNFeat": {
+   "valor": 13,
+   "tex": "13",
+   "pt": "13",
+   "status": "ok",
+   "fonte": [
+    "embarcados/results/csv/p11_features_20261023_222831.csv"
+   ],
+   "coluna": "nº de colunas f0..f12",
+   "categoria": "codigo",
+   "nota": ""
+  },
+  "VRotIdmtGoodMed": {
+   "valor": 25.75696309313261,
+   "tex": "25.76",
+   "pt": "25,76",
+   "status": "ok",
+   "fonte": [
+    "embarcados/results/csv/p11_features_20261023_222831.csv"
+   ],
+   "coluna": "mediana de f0 (idmt, good)",
+   "categoria": "dados",
+   "nota": ""
+  },
+  "VRotIdmtGoodIqr": {
+   "valor": 0.17874039065203462,
+   "tex": "0.18",
+   "pt": "0,18",
+   "status": "ok",
+   "fonte": [
+    "embarcados/results/csv/p11_features_20261023_222831.csv"
+   ],
+   "coluna": "IQR de f0 (idmt, good)",
+   "categoria": "dados",
+   "nota": ""
+  },
+  "VRotIdmtBrokenMed": {
+   "valor": 27.990989746104223,
+   "tex": "27.99",
+   "pt": "27,99",
+   "status": "ok",
+   "fonte": [
+    "embarcados/results/csv/p11_features_20261023_222831.csv"
+   ],
+   "coluna": "mediana de f0 (idmt, broken)",
+   "categoria": "dados",
+   "nota": ""
+  },
+  "VRotIdmtBrokenIqr": {
+   "valor": 0.03235514483876756,
+   "tex": "0.03",
+   "pt": "0,03",
+   "status": "ok",
+   "fonte": [
+    "embarcados/results/csv/p11_features_20261023_222831.csv"
+   ],
+   "coluna": "IQR de f0 (idmt, broken)",
+   "categoria": "dados",
+   "nota": ""
+  },
+  "VRotIdmtHeavyMed": {
+   "valor": 24.65070943757371,
+   "tex": "24.65",
+   "pt": "24,65",
+   "status": "ok",
+   "fonte": [
+    "embarcados/results/csv/p11_features_20261023_222831.csv"
+   ],
+   "coluna": "mediana de f0 (idmt, heavyload)",
+   "categoria": "dados",
+   "nota": ""
+  },
+  "VRotIdmtHeavyIqr": {
+   "valor": 0.19922874458835338,
+   "tex": "0.20",
+   "pt": "0,20",
+   "status": "ok",
+   "fonte": [
+    "embarcados/results/csv/p11_features_20261023_222831.csv"
+   ],
+   "coluna": "IQR de f0 (idmt, heavyload)",
+   "categoria": "dados",
+   "nota": ""
+  },
+  "VRotOctThr": {
+   "valor": 1.5,
+   "tex": "1.5",
+   "pt": "1,5",
+   "status": "ok",
+   "fonte": [
+    "embarcados/results/csv/p11_features_20261023_222831.csv"
+   ],
+   "coluna": "limiar: f0 > LIM_OIT·mediana da classe",
+   "categoria": "dados",
+   "nota": ""
+  },
+  "VRotCeilPctThr": {
+   "valor": 1.0000000000000009,
+   "tex": "1",
+   "pt": "1",
+   "status": "ok",
+   "fonte": [
+    "embarcados/results/csv/p11_features_20261023_222831.csv"
+   ],
+   "coluna": "limiar: f0 >= LIM_TETO·fmax",
+   "categoria": "dados",
+   "nota": ""
+  },
+  "VRotIdmtGoodOctPct": {
+   "valor": 8.571428571428571,
+   "tex": "8.6",
+   "pt": "8,6",
+   "status": "ok",
+   "fonte": [
+    "embarcados/results/csv/p11_features_20261023_222831.csv"
+   ],
+   "coluna": "% janelas good com f0 > LIM_OIT·mediana da classe (salto de oitava)",
+   "categoria": "dados",
+   "nota": ""
+  },
+  "VRotBldcCeilPct": {
+   "valor": 3.7209302325581395,
+   "tex": "3.7",
+   "pt": "3,7",
+   "status": "ok",
+   "fonte": [
+    "embarcados/results/csv/p11_features_20261023_222831.csv"
+   ],
+   "coluna": "% janelas A2212 com f0 >= 0,99·fmax",
+   "categoria": "dados",
+   "nota": ""
+  },
+  "VRotBldcSpearman": {
+   "valor": 0.01801086287093575,
+   "tex": "0.02",
+   "pt": "0,02",
+   "status": "ok",
+   "fonte": [
+    "embarcados/results/csv/p11_features_20261023_222831.csv",
+    "embarcados/results/predictions/diagnostico_janelas_20261023_222831.csv"
+   ],
+   "coluna": "Spearman(velocidade nominal do arquivo, mediana de f0 do arquivo), 43 arquivos",
+   "categoria": "dados",
+   "nota": "arquivos do mesmo motor não são independentes"
+  },
+  "VRotBldcSpearmanMOne": {
+   "valor": 0.3031040213755868,
+   "tex": "0.30",
+   "pt": "0,30",
+   "status": "ok",
+   "fonte": [
+    "embarcados/results/csv/p11_features_20261023_222831.csv",
+    "embarcados/results/predictions/diagnostico_janelas_20261023_222831.csv"
+   ],
+   "coluna": "Spearman por motor M1 (14 arquivos)",
+   "categoria": "dados",
+   "nota": ""
+  },
+  "VRotBldcFilesMOne": {
+   "valor": 14,
+   "tex": "14",
+   "pt": "14",
+   "status": "ok",
+   "fonte": [
+    "embarcados/results/csv/p11_features_20261023_222831.csv",
+    "embarcados/results/predictions/diagnostico_janelas_20261023_222831.csv"
+   ],
+   "coluna": "nº de arquivos do M1",
+   "categoria": "dados",
+   "nota": ""
+  },
+  "VRotBldcSpearmanMTwo": {
+   "valor": 0.3017804310611087,
+   "tex": "0.30",
+   "pt": "0,30",
+   "status": "ok",
+   "fonte": [
+    "embarcados/results/csv/p11_features_20261023_222831.csv",
+    "embarcados/results/predictions/diagnostico_janelas_20261023_222831.csv"
+   ],
+   "coluna": "Spearman por motor M2 (16 arquivos)",
+   "categoria": "dados",
+   "nota": ""
+  },
+  "VRotBldcFilesMTwo": {
+   "valor": 16,
+   "tex": "16",
+   "pt": "16",
+   "status": "ok",
+   "fonte": [
+    "embarcados/results/csv/p11_features_20261023_222831.csv",
+    "embarcados/results/predictions/diagnostico_janelas_20261023_222831.csv"
+   ],
+   "coluna": "nº de arquivos do M2",
+   "categoria": "dados",
+   "nota": ""
+  },
+  "VRotBldcSpearmanMThree": {
+   "valor": 0.5428571428571429,
+   "tex": "0.54",
+   "pt": "0,54",
+   "status": "ok",
+   "fonte": [
+    "embarcados/results/csv/p11_features_20261023_222831.csv",
+    "embarcados/results/predictions/diagnostico_janelas_20261023_222831.csv"
+   ],
+   "coluna": "Spearman por motor M3 (6 arquivos)",
+   "categoria": "dados",
+   "nota": ""
+  },
+  "VRotBldcFilesMThree": {
+   "valor": 6,
+   "tex": "6",
+   "pt": "6",
+   "status": "ok",
+   "fonte": [
+    "embarcados/results/csv/p11_features_20261023_222831.csv",
+    "embarcados/results/predictions/diagnostico_janelas_20261023_222831.csv"
+   ],
+   "coluna": "nº de arquivos do M3",
+   "categoria": "dados",
+   "nota": ""
+  },
+  "VRotBldcSpearmanMFour": {
+   "valor": 1.0,
+   "tex": "1.00",
+   "pt": "1,00",
+   "status": "ok",
+   "fonte": [
+    "embarcados/results/csv/p11_features_20261023_222831.csv",
+    "embarcados/results/predictions/diagnostico_janelas_20261023_222831.csv"
+   ],
+   "coluna": "Spearman por motor M4 (7 arquivos)",
+   "categoria": "dados",
+   "nota": ""
+  },
+  "VRotBldcFilesMFour": {
+   "valor": 7,
+   "tex": "7",
+   "pt": "7",
+   "status": "ok",
+   "fonte": [
+    "embarcados/results/csv/p11_features_20261023_222831.csv",
+    "embarcados/results/predictions/diagnostico_janelas_20261023_222831.csv"
+   ],
+   "coluna": "nº de arquivos do M4",
+   "categoria": "dados",
+   "nota": ""
+  },
+  "VEqStagesTotal": {
+   "valor": 26,
+   "tex": "26",
+   "pt": "26",
+   "status": "ok",
+   "fonte": [
+    "embarcados/results/csv/equivalencia_resumo_por_build_20261024-091729.csv"
+   ],
+   "coluna": "nº de etapas por build",
+   "categoria": "equivalencia",
+   "nota": ""
+  },
+  "VEqStagesCase": {
+   "valor": 20,
+   "tex": "20",
+   "pt": "20",
+   "status": "ok",
+   "fonte": [
+    "embarcados/results/csv/equivalencia_resumo_por_build_20261024-091729.csv"
+   ],
+   "coluna": "etapas de janela",
+   "categoria": "equivalencia",
+   "nota": ""
+  },
+  "VEqStagesSeq": {
+   "valor": 6,
+   "tex": "6",
+   "pt": "6",
+   "status": "ok",
+   "fonte": [
+    "embarcados/results/csv/equivalencia_resumo_por_build_20261024-091729.csv"
+   ],
+   "coluna": "etapas de sequência",
+   "categoria": "equivalencia",
+   "nota": ""
+  },
+  "VEqCases": {
+   "valor": 164,
+   "tex": "164",
+   "pt": "164",
+   "status": "ok",
+   "fonte": [
+    "embarcados/results/csv/equivalencia_resumo_por_build_20261024-091729.csv"
+   ],
+   "coluna": "n[y_prep]",
+   "categoria": "equivalencia",
+   "nota": ""
+  },
+  "VEqSeqCombos": {
+   "valor": 240,
+   "tex": "240",
+   "pt": "240",
+   "status": "ok",
+   "fonte": [
+    "embarcados/results/csv/equivalencia_resumo_por_build_20261024-091729.csv"
+   ],
+   "coluna": "n[absorb]",
+   "categoria": "equivalencia",
+   "nota": ""
+  },
+  "VEqDoubleStagesPass": {
+   "valor": 26,
+   "tex": "26",
+   "pt": "26",
+   "status": "ok",
+   "fonte": [
+    "embarcados/results/csv/equivalencia_resumo_por_build_20261024-091729.csv"
+   ],
+   "coluna": "nº de etapas com veredito PASS (double)",
+   "categoria": "equivalencia",
+   "nota": ""
+  },
+  "VEqDoubleMaxRatio": {
+   "valor": 0.5459081029379753,
+   "tex": "0.55",
+   "pt": "0,55",
+   "status": "ok",
+   "fonte": [
+    "embarcados/results/csv/equivalencia_resumo_por_build_20261024-091729.csv"
+   ],
+   "coluna": "máx razao_tol_max nas etapas sem empate/FAIL (double)",
+   "categoria": "equivalencia",
+   "nota": ""
+  },
+  "VEqDoubleDecisionPass": {
+   "valor": 164,
+   "tex": "164",
+   "pt": "164",
+   "status": "ok",
+   "fonte": [
+    "embarcados/results/csv/equivalencia_resumo_por_build_20261024-091729.csv"
+   ],
+   "coluna": "pass+pass_empate[decisao] (double)",
+   "categoria": "equivalencia",
+   "nota": ""
+  },
+  "VEqFloatStagesPass": {
+   "valor": 25,
+   "tex": "25",
+   "pt": "25",
+   "status": "ok",
+   "fonte": [
+    "embarcados/results/csv/equivalencia_resumo_por_build_20261024-091729.csv"
+   ],
+   "coluna": "nº de etapas com veredito PASS (float)",
+   "categoria": "equivalencia",
+   "nota": ""
+  },
+  "VEqFloatMaxRatio": {
+   "valor": 0.3421261810853317,
+   "tex": "0.34",
+   "pt": "0,34",
+   "status": "ok",
+   "fonte": [
+    "embarcados/results/csv/equivalencia_resumo_por_build_20261024-091729.csv"
+   ],
+   "coluna": "máx razao_tol_max nas etapas sem empate/FAIL (float)",
+   "categoria": "equivalencia",
+   "nota": ""
+  },
+  "VEqFloatDecisionPass": {
+   "valor": 164,
+   "tex": "164",
+   "pt": "164",
+   "status": "ok",
+   "fonte": [
+    "embarcados/results/csv/equivalencia_resumo_por_build_20261024-091729.csv"
+   ],
+   "coluna": "pass+pass_empate[decisao] (float)",
+   "categoria": "equivalencia",
+   "nota": ""
+  },
+  "VEqSosdStagesPass": {
+   "valor": 26,
+   "tex": "26",
+   "pt": "26",
+   "status": "ok",
+   "fonte": [
+    "embarcados/results/csv/equivalencia_resumo_por_build_20261024-091729.csv"
+   ],
+   "coluna": "nº de etapas com veredito PASS (float-sosd)",
+   "categoria": "equivalencia",
+   "nota": ""
+  },
+  "VEqSosdMaxRatio": {
+   "valor": 0.2292486339650068,
+   "tex": "0.23",
+   "pt": "0,23",
+   "status": "ok",
+   "fonte": [
+    "embarcados/results/csv/equivalencia_resumo_por_build_20261024-091729.csv"
+   ],
+   "coluna": "máx razao_tol_max nas etapas sem empate/FAIL (float-sosd)",
+   "categoria": "equivalencia",
+   "nota": ""
+  },
+  "VEqSosdDecisionPass": {
+   "valor": 164,
+   "tex": "164",
+   "pt": "164",
+   "status": "ok",
+   "fonte": [
+    "embarcados/results/csv/equivalencia_resumo_por_build_20261024-091729.csv"
+   ],
+   "coluna": "pass+pass_empate[decisao] (float-sosd)",
+   "categoria": "equivalencia",
+   "nota": ""
+  },
+  "VEqFloatZFail": {
+   "valor": 2,
+   "tex": "2",
+   "pt": "2",
+   "status": "ok",
+   "fonte": [
+    "embarcados/results/csv/equivalencia_resumo_por_build_20261024-091729.csv"
+   ],
+   "coluna": "fail[float,z]",
+   "categoria": "equivalencia",
+   "nota": ""
+  },
+  "VEqFloatZPass": {
+   "valor": 162,
+   "tex": "162",
+   "pt": "162",
+   "status": "ok",
+   "fonte": [
+    "embarcados/results/csv/equivalencia_resumo_por_build_20261024-091729.csv"
+   ],
+   "coluna": "pass[float,z]",
+   "categoria": "equivalencia",
+   "nota": ""
+  },
+  "VEqFloatFailStages": {
+   "valor": "z",
+   "tex": "z",
+   "pt": "z",
+   "status": "ok",
+   "fonte": [
+    "embarcados/results/csv/equivalencia_resumo_por_build_20261024-091729.csv"
+   ],
+   "coluna": "etapas sem PASS (float)",
+   "categoria": "equivalencia",
+   "nota": ""
+  },
+  "VEqFloatTieStages": {
+   "valor": 2,
+   "tex": "2",
+   "pt": "2",
+   "status": "ok",
+   "fonte": [
+    "embarcados/results/csv/equivalencia_resumo_por_build_20261024-091729.csv"
+   ],
+   "coluna": "nº de etapas com PASS_EMPATE (float)",
+   "categoria": "equivalencia",
+   "nota": ""
+  },
+  "VEqFloatTieCases": {
+   "valor": 2,
+   "tex": "2",
+   "pt": "2",
+   "status": "ok",
+   "fonte": [
+    "embarcados/results/csv/equivalencia_float_20261024-091122.csv"
+   ],
+   "coluna": "ids com PASS_EMPATE em env_mod",
+   "categoria": "equivalencia",
+   "nota": ""
+  },
+  "VEqFloatTieCaseIds": {
+   "valor": "borda_dc_ruido3s_ma2212, borda_dc_ruido3s_midmt",
+   "tex": "borda\\_dc\\_ruido3s\\_ma2212, borda\\_dc\\_ruido3s\\_midmt",
+   "pt": "borda\\_dc\\_ruido3s\\_ma2212, borda\\_dc\\_ruido3s\\_midmt",
+   "status": "ok",
+   "fonte": [
+    "embarcados/results/csv/equivalencia_float_20261024-091122.csv"
+   ],
+   "coluna": "id",
+   "categoria": "equivalencia",
+   "nota": ""
+  },
+  "VEqFloatTieGap": {
+   "valor": 9.414e-16,
+   "tex": "\\ensuremath{9.4\\times10^{-16}}",
+   "pt": "9,4 × 10^-16",
+   "status": "ok",
+   "fonte": [
+    "embarcados/results/csv/equivalencia_float_20261024-091122.csv"
+   ],
+   "coluna": "detalhe[env_mod]: P_ref[ref]-P_ref[C]",
+   "categoria": "equivalencia",
+   "nota": ""
+  },
+  "VEqFloatTieTol": {
+   "valor": 6.335e-11,
+   "tex": "\\ensuremath{6.3\\times10^{-11}}",
+   "pt": "6,3 × 10^-11",
+   "status": "ok",
+   "fonte": [
+    "embarcados/results/csv/equivalencia_float_20261024-091122.csv"
+   ],
+   "coluna": "detalhe[env_mod]: 2·tol",
+   "categoria": "equivalencia",
+   "nota": ""
+  },
+  "VEqFloatFmodErr": {
+   "valor": 37.109375,
+   "tex": "37.1",
+   "pt": "37,1",
+   "status": "ok",
+   "fonte": [
+    "embarcados/results/csv/equivalencia_float_20261024-091122.csv"
+   ],
+   "coluna": "err_max[features[9]:f_mod] (empate)",
+   "categoria": "equivalencia",
+   "nota": ""
+  },
+  "VEqFloatZErrMax": {
+   "valor": 1.6072882061759008,
+   "tex": "1.61",
+   "pt": "1,61",
+   "status": "ok",
+   "fonte": [
+    "embarcados/results/csv/equivalencia_float_20261024-091122.csv"
+   ],
+   "coluna": "err_max[z] (FAIL)",
+   "categoria": "equivalencia",
+   "nota": ""
+  },
+  "VEqFloatZFailIsEdge": {
+   "valor": 1,
+   "tex": "1",
+   "pt": "1",
+   "status": "ok",
+   "fonte": [
+    "embarcados/results/csv/equivalencia_float_20261024-091122.csv"
+   ],
+   "coluna": "todos os FAIL de z são casos de borda (1=sim)",
+   "categoria": "equivalencia",
+   "nota": ""
+  },
+  "VEqEnvDecFloatMed": {
+   "valor": 1.232452449514619e-05,
+   "tex": "\\ensuremath{1.2\\times10^{-5}}",
+   "pt": "1,2 × 10^-5",
+   "status": "ok",
+   "fonte": [
+    "embarcados/results/csv/equivalencia_float_20261024-091122.csv"
+   ],
+   "coluna": "mediana err_rel_max[env_dec]",
+   "categoria": "equivalencia",
+   "nota": ""
+  },
+  "VEqEnvDecSosdMed": {
+   "valor": 1.1741707912000167e-07,
+   "tex": "\\ensuremath{1.2\\times10^{-7}}",
+   "pt": "1,2 × 10^-7",
+   "status": "ok",
+   "fonte": [
+    "embarcados/results/csv/equivalencia_float-sosd_20261024-091222.csv"
+   ],
+   "coluna": "mediana err_rel_max[env_dec]",
+   "categoria": "equivalencia",
+   "nota": ""
+  },
+  "VEqEnvDecDoubleMed": {
+   "valor": 1.1034853848283797e-07,
+   "tex": "\\ensuremath{1.1\\times10^{-7}}",
+   "pt": "1,1 × 10^-7",
+   "status": "ok",
+   "fonte": [
+    "embarcados/results/csv/equivalencia_double_20261024-091106.csv"
+   ],
+   "coluna": "mediana err_rel_max[env_dec]",
+   "categoria": "equivalencia",
+   "nota": ""
+  },
+  "VEqTolSha": {
+   "valor": "d74dae800ceb",
+   "tex": "d74dae800ceb",
+   "pt": "d74dae800ceb",
+   "status": "ok",
+   "fonte": [
+    "embarcados/configs/embedded/tolerancias.json"
+   ],
+   "coluna": "sha256 (12 primeiros)",
+   "categoria": "equivalencia",
+   "nota": ""
+  },
+  "VEqTolShaRec": {
+   "valor": "d74dae800ceb",
+   "tex": "d74dae800ceb",
+   "pt": "d74dae800ceb",
+   "status": "ok",
+   "fonte": [
+    "embarcados/results/csv/equivalencia_resumo_por_build_20261024-091729.csv"
+   ],
+   "coluna": "sha256_tolerancias gravado no _meta da comparação",
+   "categoria": "equivalencia",
+   "nota": ""
+  },
+  "VEqTolCommit": {
+   "valor": "447a7c2",
+   "tex": "447a7c2",
+   "pt": "447a7c2",
+   "status": "ok",
+   "fonte": [
+    "embarcados/configs/embedded/tolerancias.json"
+   ],
+   "coluna": "git log -1 do tolerancias.json",
+   "categoria": "equivalencia",
+   "nota": ""
+  },
+  "VEqTolCommitTime": {
+   "valor": "2026-10-24 09:10",
+   "tex": "2026-10-24 09:10",
+   "pt": "2026-10-24 09:10",
+   "status": "ok",
+   "fonte": [
+    "embarcados/configs/embedded/tolerancias.json"
+   ],
+   "coluna": "data do commit do tolerancias.json",
+   "categoria": "equivalencia",
+   "nota": ""
+  },
+  "VEqRunTime": {
+   "valor": "2026-10-24 09:11",
+   "tex": "2026-10-24 09:11",
+   "pt": "2026-10-24 09:11",
+   "status": "ok",
+   "fonte": [
+    "embarcados/results/csv/equivalencia_resumo_por_build_20261024-091729.csv"
+   ],
+   "coluna": "data da comparação formal (float)",
+   "categoria": "equivalencia",
+   "nota": ""
+  },
+  "VEqGoldClean": {
+   "valor": 60,
+   "tex": "60",
+   "pt": "60",
+   "status": "ok",
+   "fonte": [
+    "embarcados/gold/manifest.json"
+   ],
+   "coluna": "casos tipo limpo",
+   "categoria": "equivalencia",
+   "nota": ""
+  },
+  "VEqGoldNoisy": {
+   "valor": 90,
+   "tex": "90",
+   "pt": "90",
+   "status": "ok",
+   "fonte": [
+    "embarcados/gold/manifest.json"
+   ],
+   "coluna": "casos tipo ruidoso",
+   "categoria": "equivalencia",
+   "nota": ""
+  },
+  "VEqGoldEdge": {
+   "valor": 14,
+   "tex": "14",
+   "pt": "14",
+   "status": "ok",
+   "fonte": [
+    "embarcados/gold/manifest.json"
+   ],
+   "coluna": "casos tipo borda",
+   "categoria": "equivalencia",
+   "nota": ""
+  },
+  "VEqGoldSeqs": {
+   "valor": 20,
+   "tex": "20",
+   "pt": "20",
+   "status": "ok",
+   "fonte": [
+    "embarcados/gold/manifest.json"
+   ],
+   "coluna": "n_seqs",
+   "categoria": "equivalencia",
+   "nota": ""
+  },
+  "VEqGoldPerts": {
+   "valor": 5,
+   "tex": "5",
+   "pt": "5",
+   "status": "ok",
+   "fonte": [
+    "embarcados/gold/manifest.json"
+   ],
+   "coluna": "nº de perturbações",
+   "categoria": "equivalencia",
+   "nota": ""
+  },
+  "VEqMinDurValues": {
+   "valor": 2,
+   "tex": "2",
+   "pt": "2",
+   "status": "ok",
+   "fonte": [
+    "embarcados/gold/seqs/idmt_seq00/params.json"
+   ],
+   "coluna": "len(min_durs_s)",
+   "categoria": "equivalencia",
+   "nota": ""
+  },
+  "VEqEmulDoubleRows": {
+   "valor": 6852,
+   "tex": "6{,}852",
+   "pt": "6 852",
+   "status": "ok",
+   "fonte": [
+    "embarcados/results/csv/equivalencia_emul_double_20261024-090737_meta.json"
+   ],
+   "coluna": "n_linhas",
+   "categoria": "equivalencia",
+   "nota": ""
+  },
+  "VEqEmulDoublePass": {
+   "valor": 6852,
+   "tex": "6{,}852",
+   "pt": "6 852",
+   "status": "ok",
+   "fonte": [
+    "embarcados/results/csv/equivalencia_emul_double_20261024-090737_meta.json"
+   ],
+   "coluna": "contagem_status.PASS",
+   "categoria": "equivalencia",
+   "nota": ""
+  },
+  "VEqEmulFloatRows": {
+   "valor": 6852,
+   "tex": "6{,}852",
+   "pt": "6 852",
+   "status": "ok",
+   "fonte": [
+    "embarcados/results/csv/equivalencia_emul_float_20261024-090743_meta.json"
+   ],
+   "coluna": "n_linhas",
+   "categoria": "equivalencia",
+   "nota": ""
+  },
+  "VEqEmulFloatPass": {
+   "valor": 6852,
+   "tex": "6{,}852",
+   "pt": "6 852",
+   "status": "ok",
+   "fonte": [
+    "embarcados/results/csv/equivalencia_emul_float_20261024-090743_meta.json"
+   ],
+   "coluna": "contagem_status.PASS",
+   "categoria": "equivalencia",
+   "nota": ""
+  },
+  "VPcCIdmtMed": {
+   "valor": 13.29005,
+   "tex": "13.29",
+   "pt": "13,29",
+   "status": "ok",
+   "fonte": [
+    "embarcados/results/metrics/bench_pc_20261024-091911.json"
+   ],
+   "coluna": "resumo.c_float_pc/idmt.total_ms.mediana",
+   "categoria": "pc",
+   "nota": ""
+  },
+  "VPcPyIdmtMed": {
+   "valor": 95.32214999489952,
+   "tex": "95.3",
+   "pt": "95,3",
+   "status": "ok",
+   "fonte": [
+    "embarcados/results/metrics/bench_pc_20261024-091911.json"
+   ],
+   "coluna": "resumo.python_ref/idmt.total_ms.mediana",
+   "categoria": "pc",
+   "nota": ""
+  },
+  "VPcCIdmtPninetyfive": {
+   "valor": 14.99725,
+   "tex": "15.00",
+   "pt": "15,00",
+   "status": "ok",
+   "fonte": [
+    "embarcados/results/metrics/bench_pc_20261024-091911.json"
+   ],
+   "coluna": "resumo.c_float_pc/idmt.total_ms.p95",
+   "categoria": "pc",
+   "nota": ""
+  },
+  "VPcPyIdmtPninetyfive": {
+   "valor": 100.16770999209255,
+   "tex": "100.2",
+   "pt": "100,2",
+   "status": "ok",
+   "fonte": [
+    "embarcados/results/metrics/bench_pc_20261024-091911.json"
+   ],
+   "coluna": "resumo.python_ref/idmt.total_ms.p95",
+   "categoria": "pc",
+   "nota": ""
+  },
+  "VPcCIdmtMax": {
+   "valor": 15.7989,
+   "tex": "15.80",
+   "pt": "15,80",
+   "status": "ok",
+   "fonte": [
+    "embarcados/results/metrics/bench_pc_20261024-091911.json"
+   ],
+   "coluna": "resumo.c_float_pc/idmt.total_ms.max",
+   "categoria": "pc",
+   "nota": ""
+  },
+  "VPcPyIdmtMax": {
+   "valor": 110.21889999392442,
+   "tex": "110.2",
+   "pt": "110,2",
+   "status": "ok",
+   "fonte": [
+    "embarcados/results/metrics/bench_pc_20261024-091911.json"
+   ],
+   "coluna": "resumo.python_ref/idmt.total_ms.max",
+   "categoria": "pc",
+   "nota": ""
+  },
+  "VPcCIdmtRtf": {
+   "valor": 0.004430016666666667,
+   "tex": "0.0044",
+   "pt": "0,0044",
+   "status": "ok",
+   "fonte": [
+    "embarcados/results/metrics/bench_pc_20261024-091911.json"
+   ],
+   "coluna": "fator_tempo_real_mediana",
+   "categoria": "pc",
+   "nota": ""
+  },
+  "VPcPyIdmtRtf": {
+   "valor": 0.03177404999829984,
+   "tex": "0.032",
+   "pt": "0,032",
+   "status": "ok",
+   "fonte": [
+    "embarcados/results/metrics/bench_pc_20261024-091911.json"
+   ],
+   "coluna": "fator_tempo_real_mediana",
+   "categoria": "pc",
+   "nota": ""
+  },
+  "VPcSpeedupIdmt": {
+   "valor": 7.172444798544739,
+   "tex": "7.2",
+   "pt": "7,2",
+   "status": "ok",
+   "fonte": [
+    "embarcados/results/metrics/bench_pc_20261024-091911.json"
+   ],
+   "coluna": "mediana Python / mediana C",
+   "categoria": "pc",
+   "nota": ""
+  },
+  "VPcCIdmtTrackMed": {
+   "valor": 5.45165,
+   "tex": "5.45",
+   "pt": "5,45",
+   "status": "ok",
+   "fonte": [
+    "embarcados/results/metrics/bench_pc_20261024-091911.json"
+   ],
+   "coluna": "rastrear_quadros_ms.mediana",
+   "categoria": "pc",
+   "nota": ""
+  },
+  "VPcCIdmtTrackPct": {
+   "valor": 41.020537921226776,
+   "tex": "41",
+   "pt": "41",
+   "status": "ok",
+   "fonte": [
+    "embarcados/results/metrics/bench_pc_20261024-091911.json"
+   ],
+   "coluna": "100·rastrear_quadros_ms.mediana/total_ms.mediana",
+   "categoria": "pc",
+   "nota": ""
+  },
+  "VPcCIdmtVitMed": {
+   "valor": 5.3472,
+   "tex": "5.35",
+   "pt": "5,35",
+   "status": "ok",
+   "fonte": [
+    "embarcados/results/metrics/bench_pc_20261024-091911.json"
+   ],
+   "coluna": "viterbi_ms.mediana",
+   "categoria": "pc",
+   "nota": ""
+  },
+  "VPcCIdmtVitPct": {
+   "valor": 40.23461160793225,
+   "tex": "40",
+   "pt": "40",
+   "status": "ok",
+   "fonte": [
+    "embarcados/results/metrics/bench_pc_20261024-091911.json"
+   ],
+   "coluna": "100·viterbi_ms.mediana/total_ms.mediana",
+   "categoria": "pc",
+   "nota": ""
+  },
+  "VPcCIdmtEnvMed": {
+   "valor": 2.26745,
+   "tex": "2.27",
+   "pt": "2,27",
+   "status": "ok",
+   "fonte": [
+    "embarcados/results/metrics/bench_pc_20261024-091911.json"
+   ],
+   "coluna": "envelope_mod_ms.mediana",
+   "categoria": "pc",
+   "nota": ""
+  },
+  "VPcCIdmtEnvPct": {
+   "valor": 17.06126011565043,
+   "tex": "17",
+   "pt": "17",
+   "status": "ok",
+   "fonte": [
+    "embarcados/results/metrics/bench_pc_20261024-091911.json"
+   ],
+   "coluna": "100·envelope_mod_ms.mediana/total_ms.mediana",
+   "categoria": "pc",
+   "nota": ""
+  },
+  "VPcCIdmtFeatMed": {
+   "valor": 0.0128,
+   "tex": "0.013",
+   "pt": "0,013",
+   "status": "ok",
+   "fonte": [
+    "embarcados/results/metrics/bench_pc_20261024-091911.json"
+   ],
+   "coluna": "features_ms.mediana",
+   "categoria": "pc",
+   "nota": ""
+  },
+  "VPcCIdmtFeatPct": {
+   "valor": 0.0963126549561514,
+   "tex": "0",
+   "pt": "0",
+   "status": "ok",
+   "fonte": [
+    "embarcados/results/metrics/bench_pc_20261024-091911.json"
+   ],
+   "coluna": "100·features_ms.mediana/total_ms.mediana",
+   "categoria": "pc",
+   "nota": ""
+  },
+  "VPcCIdmtCosMed": {
+   "valor": 0.0019,
+   "tex": "0.002",
+   "pt": "0,002",
+   "status": "ok",
+   "fonte": [
+    "embarcados/results/metrics/bench_pc_20261024-091911.json"
+   ],
+   "coluna": "cosseno_ms.mediana",
+   "categoria": "pc",
+   "nota": ""
+  },
+  "VPcCIdmtCosPct": {
+   "valor": 0.014296409720053724,
+   "tex": "0",
+   "pt": "0",
+   "status": "ok",
+   "fonte": [
+    "embarcados/results/metrics/bench_pc_20261024-091911.json"
+   ],
+   "coluna": "100·cosseno_ms.mediana/total_ms.mediana",
+   "categoria": "pc",
+   "nota": ""
+  },
+  "VPcNIdmt": {
+   "valor": 200,
+   "tex": "200",
+   "pt": "200",
+   "status": "ok",
+   "fonte": [
+    "embarcados/results/metrics/bench_pc_20261024-091911.json"
+   ],
+   "coluna": "total_ms.n",
+   "categoria": "pc",
+   "nota": ""
+  },
+  "VPcCBldcMed": {
+   "valor": 3.1763500000000002,
+   "tex": "3.18",
+   "pt": "3,18",
+   "status": "ok",
+   "fonte": [
+    "embarcados/results/metrics/bench_pc_20261024-091911.json"
+   ],
+   "coluna": "resumo.c_float_pc/a2212.total_ms.mediana",
+   "categoria": "pc",
+   "nota": ""
+  },
+  "VPcPyBldcMed": {
+   "valor": 22.056899993913248,
+   "tex": "22.1",
+   "pt": "22,1",
+   "status": "ok",
+   "fonte": [
+    "embarcados/results/metrics/bench_pc_20261024-091911.json"
+   ],
+   "coluna": "resumo.python_ref/a2212.total_ms.mediana",
+   "categoria": "pc",
+   "nota": ""
+  },
+  "VPcCBldcPninetyfive": {
+   "valor": 3.8385599999999993,
+   "tex": "3.84",
+   "pt": "3,84",
+   "status": "ok",
+   "fonte": [
+    "embarcados/results/metrics/bench_pc_20261024-091911.json"
+   ],
+   "coluna": "resumo.c_float_pc/a2212.total_ms.p95",
+   "categoria": "pc",
+   "nota": ""
+  },
+  "VPcPyBldcPninetyfive": {
+   "valor": 23.0936200110591,
+   "tex": "23.1",
+   "pt": "23,1",
+   "status": "ok",
+   "fonte": [
+    "embarcados/results/metrics/bench_pc_20261024-091911.json"
+   ],
+   "coluna": "resumo.python_ref/a2212.total_ms.p95",
+   "categoria": "pc",
+   "nota": ""
+  },
+  "VPcCBldcMax": {
+   "valor": 4.4524,
+   "tex": "4.45",
+   "pt": "4,45",
+   "status": "ok",
+   "fonte": [
+    "embarcados/results/metrics/bench_pc_20261024-091911.json"
+   ],
+   "coluna": "resumo.c_float_pc/a2212.total_ms.max",
+   "categoria": "pc",
+   "nota": ""
+  },
+  "VPcPyBldcMax": {
+   "valor": 25.338499995996244,
+   "tex": "25.3",
+   "pt": "25,3",
+   "status": "ok",
+   "fonte": [
+    "embarcados/results/metrics/bench_pc_20261024-091911.json"
+   ],
+   "coluna": "resumo.python_ref/a2212.total_ms.max",
+   "categoria": "pc",
+   "nota": ""
+  },
+  "VPcCBldcRtf": {
+   "valor": 0.00317635,
+   "tex": "0.0032",
+   "pt": "0,0032",
+   "status": "ok",
+   "fonte": [
+    "embarcados/results/metrics/bench_pc_20261024-091911.json"
+   ],
+   "coluna": "fator_tempo_real_mediana",
+   "categoria": "pc",
+   "nota": ""
+  },
+  "VPcPyBldcRtf": {
+   "valor": 0.022056899993913248,
+   "tex": "0.022",
+   "pt": "0,022",
+   "status": "ok",
+   "fonte": [
+    "embarcados/results/metrics/bench_pc_20261024-091911.json"
+   ],
+   "coluna": "fator_tempo_real_mediana",
+   "categoria": "pc",
+   "nota": ""
+  },
+  "VPcSpeedupBldc": {
+   "valor": 6.944102505678923,
+   "tex": "6.9",
+   "pt": "6,9",
+   "status": "ok",
+   "fonte": [
+    "embarcados/results/metrics/bench_pc_20261024-091911.json"
+   ],
+   "coluna": "mediana Python / mediana C",
+   "categoria": "pc",
+   "nota": ""
+  },
+  "VPcCBldcTrackMed": {
+   "valor": 1.24255,
+   "tex": "1.24",
+   "pt": "1,24",
+   "status": "ok",
+   "fonte": [
+    "embarcados/results/metrics/bench_pc_20261024-091911.json"
+   ],
+   "coluna": "rastrear_quadros_ms.mediana",
+   "categoria": "pc",
+   "nota": ""
+  },
+  "VPcCBldcTrackPct": {
+   "valor": 39.11879988036583,
+   "tex": "39",
+   "pt": "39",
+   "status": "ok",
+   "fonte": [
+    "embarcados/results/metrics/bench_pc_20261024-091911.json"
+   ],
+   "coluna": "100·rastrear_quadros_ms.mediana/total_ms.mediana",
+   "categoria": "pc",
+   "nota": ""
+  },
+  "VPcCBldcVitMed": {
+   "valor": 1.1412499999999999,
+   "tex": "1.14",
+   "pt": "1,14",
+   "status": "ok",
+   "fonte": [
+    "embarcados/results/metrics/bench_pc_20261024-091911.json"
+   ],
+   "coluna": "viterbi_ms.mediana",
+   "categoria": "pc",
+   "nota": ""
+  },
+  "VPcCBldcVitPct": {
+   "valor": 35.92960473499456,
+   "tex": "36",
+   "pt": "36",
+   "status": "ok",
+   "fonte": [
+    "embarcados/results/metrics/bench_pc_20261024-091911.json"
+   ],
+   "coluna": "100·viterbi_ms.mediana/total_ms.mediana",
+   "categoria": "pc",
+   "nota": ""
+  },
+  "VPcCBldcEnvMed": {
+   "valor": 0.6662,
+   "tex": "0.67",
+   "pt": "0,67",
+   "status": "ok",
+   "fonte": [
+    "embarcados/results/metrics/bench_pc_20261024-091911.json"
+   ],
+   "coluna": "envelope_mod_ms.mediana",
+   "categoria": "pc",
+   "nota": ""
+  },
+  "VPcCBldcEnvPct": {
+   "valor": 20.97375918900625,
+   "tex": "21",
+   "pt": "21",
+   "status": "ok",
+   "fonte": [
+    "embarcados/results/metrics/bench_pc_20261024-091911.json"
+   ],
+   "coluna": "100·envelope_mod_ms.mediana/total_ms.mediana",
+   "categoria": "pc",
+   "nota": ""
+  },
+  "VPcCBldcFeatMed": {
+   "valor": 0.0125,
+   "tex": "0.013",
+   "pt": "0,013",
+   "status": "ok",
+   "fonte": [
+    "embarcados/results/metrics/bench_pc_20261024-091911.json"
+   ],
+   "coluna": "features_ms.mediana",
+   "categoria": "pc",
+   "nota": ""
+  },
+  "VPcCBldcFeatPct": {
+   "valor": 0.3935334582146174,
+   "tex": "0",
+   "pt": "0",
+   "status": "ok",
+   "fonte": [
+    "embarcados/results/metrics/bench_pc_20261024-091911.json"
+   ],
+   "coluna": "100·features_ms.mediana/total_ms.mediana",
+   "categoria": "pc",
+   "nota": ""
+  },
+  "VPcCBldcCosMed": {
+   "valor": 0.0018,
+   "tex": "0.002",
+   "pt": "0,002",
+   "status": "ok",
+   "fonte": [
+    "embarcados/results/metrics/bench_pc_20261024-091911.json"
+   ],
+   "coluna": "cosseno_ms.mediana",
+   "categoria": "pc",
+   "nota": ""
+  },
+  "VPcCBldcCosPct": {
+   "valor": 0.0566688179829049,
+   "tex": "0",
+   "pt": "0",
+   "status": "ok",
+   "fonte": [
+    "embarcados/results/metrics/bench_pc_20261024-091911.json"
+   ],
+   "coluna": "100·cosseno_ms.mediana/total_ms.mediana",
+   "categoria": "pc",
+   "nota": ""
+  },
+  "VPcNBldc": {
+   "valor": 200,
+   "tex": "200",
+   "pt": "200",
+   "status": "ok",
+   "fonte": [
+    "embarcados/results/metrics/bench_pc_20261024-091911.json"
+   ],
+   "coluna": "total_ms.n",
+   "categoria": "pc",
+   "nota": ""
+  },
+  "VPcWarmup": {
+   "valor": 5,
+   "tex": "5",
+   "pt": "5",
+   "status": "ok",
+   "fonte": [
+    "embarcados/results/metrics/bench_pc_20261024-091911.json"
+   ],
+   "coluna": "meta.argv.aquecimento",
+   "categoria": "pc",
+   "nota": ""
+  },
+  "VPcDistinctIdmt": {
+   "valor": 75,
+   "tex": "75",
+   "pt": "75",
+   "status": "ok",
+   "fonte": [
+    "embarcados/results/csv/bench_pc_20261024-091911.csv"
+   ],
+   "coluna": "n_janelas_distintas",
+   "categoria": "pc",
+   "nota": ""
+  },
+  "VPcDistinctBldc": {
+   "valor": 75,
+   "tex": "75",
+   "pt": "75",
+   "status": "ok",
+   "fonte": [
+    "embarcados/results/csv/bench_pc_20261024-091911.csv"
+   ],
+   "coluna": "n_janelas_distintas",
+   "categoria": "pc",
+   "nota": ""
+  },
+  "VPcCompiler": {
+   "valor": "MSVC 19.44 x64 \\slash{}O2 \\slash{}fp:precise",
+   "tex": "MSVC 19.44 x64 \\slash{}O2 \\slash{}fp:precise",
+   "pt": "MSVC 19,44 x64 \\slash{}O2 \\slash{}fp:precise",
+   "status": "ok",
+   "fonte": [
+    "embarcados/results/metrics/bench_pc_20261024-091911.json"
+   ],
+   "coluna": "meta.compilador",
+   "categoria": "pc",
+   "nota": ""
+  },
+  "VPcNcpu": {
+   "valor": 16,
+   "tex": "16",
+   "pt": "16",
+   "status": "ok",
+   "fonte": [
+    "embarcados/results/metrics/bench_pc_20261024-091911.json"
+   ],
+   "coluna": "meta.maquina.n_cpu",
+   "categoria": "pc",
+   "nota": ""
+  },
+  "VPcOs": {
+   "valor": "Windows 11",
+   "tex": "Windows 11",
+   "pt": "Windows 11",
+   "status": "ok",
+   "fonte": [
+    "embarcados/results/metrics/bench_pc_20261024-091911.json"
+   ],
+   "coluna": "meta.maquina.plataforma",
+   "categoria": "pc",
+   "nota": ""
+  },
+  "VPcSeqWindows": {
+   "valor": 24,
+   "tex": "24",
+   "pt": "24",
+   "status": "ok",
+   "fonte": [
+    "embarcados/results/csv/seq_pc_20261024-092103.csv"
+   ],
+   "coluna": "nº de linhas (janelas)",
+   "categoria": "pc",
+   "nota": ""
+  },
+  "VPcSeqSwitches": {
+   "valor": 2,
+   "tex": "2",
+   "pt": "2",
+   "status": "ok",
+   "fonte": [
+    "embarcados/results/csv/seq_pc_20261024-092103_meta.json"
+   ],
+   "coluna": "len(deteccao_online_c)",
+   "categoria": "pc",
+   "nota": ""
+  },
+  "VPcSeqDelayC": {
+   "valor": 0,
+   "tex": "0",
+   "pt": "0",
+   "status": "ok",
+   "fonte": [
+    "embarcados/results/csv/seq_pc_20261024-092103_meta.json"
+   ],
+   "coluna": "max atraso_janelas (C)",
+   "categoria": "pc",
+   "nota": ""
+  },
+  "VPcSeqDelayPy": {
+   "valor": 0,
+   "tex": "0",
+   "pt": "0",
+   "status": "ok",
+   "fonte": [
+    "embarcados/results/csv/seq_pc_20261024-092103_meta.json"
+   ],
+   "coluna": "max atraso_janelas (Python)",
+   "categoria": "pc",
+   "nota": ""
+  },
+  "VPcSeqSameDecisions": {
+   "valor": 1,
+   "tex": "1",
+   "pt": "1",
+   "status": "ok",
+   "fonte": [
+    "embarcados/results/csv/seq_pc_20261024-092103_meta.json"
+   ],
+   "coluna": "decisoes_iguais_python_c (1=sim)",
+   "categoria": "pc",
+   "nota": ""
+  },
+  "VPcSeqMaxProbDiff": {
+   "valor": 3.1722096913711084e-06,
+   "tex": "\\ensuremath{3.2\\times10^{-6}}",
+   "pt": "3,2 × 10^-6",
+   "status": "ok",
+   "fonte": [
+    "embarcados/results/csv/seq_pc_20261024-092103_meta.json"
+   ],
+   "coluna": "max_abs_dif_probs",
+   "categoria": "pc",
+   "nota": ""
+  },
+  "VPcSeqCp": {
+   "valor": 2.0,
+   "tex": "2",
+   "pt": "2",
+   "status": "ok",
+   "fonte": [
+    "embarcados/results/csv/seq_pc_20261024-092103_meta.json"
+   ],
+   "coluna": "cp",
+   "categoria": "pc",
+   "nota": ""
+  },
+  "VPcSeqPerClass": {
+   "valor": 8,
+   "tex": "8",
+   "pt": "8",
+   "status": "ok",
+   "fonte": [
+    "embarcados/results/csv/seq_pc_20261024-092103.csv"
+   ],
+   "coluna": "janelas por classe",
+   "categoria": "pc",
+   "nota": ""
+  },
+  "VEstWsFloatOneMb": {
+   "valor": 0.95848,
+   "tex": "0.96",
+   "pt": "0,96",
+   "status": "ok",
+   "fonte": [
+    "embarcados/paper/fontes/ws_float_16000.json"
+   ],
+   "coluna": "total_com_tabela/1e6",
+   "categoria": "estimativa",
+   "nota": ""
+  },
+  "VEstWsFloatOneNoTabMb": {
+   "valor": 0.612592,
+   "tex": "0.61",
+   "pt": "0,61",
+   "status": "ok",
+   "fonte": [
+    "embarcados/paper/fontes/ws_float_16000.json"
+   ],
+   "coluna": "total_sem_tabela/1e6",
+   "categoria": "estimativa",
+   "nota": ""
+  },
+  "VEstWsFloatOnePhaseBPct": {
+   "valor": 44.24746260683761,
+   "tex": "44",
+   "pt": "44",
+   "status": "ok",
+   "fonte": [
+    "embarcados/paper/fontes/ws_float_16000.json"
+   ],
+   "coluna": "faseB/(persistente+max(faseA,faseB))",
+   "categoria": "estimativa",
+   "nota": ""
+  },
+  "VEstWsFloatThreeMb": {
+   "valor": 1.863984,
+   "tex": "1.86",
+   "pt": "1,86",
+   "status": "ok",
+   "fonte": [
+    "embarcados/paper/fontes/ws_float_48000.json"
+   ],
+   "coluna": "total_com_tabela/1e6",
+   "categoria": "estimativa",
+   "nota": ""
+  },
+  "VEstWsFloatThreeNoTabMb": {
+   "valor": 1.518096,
+   "tex": "1.52",
+   "pt": "1,52",
+   "status": "ok",
+   "fonte": [
+    "embarcados/paper/fontes/ws_float_48000.json"
+   ],
+   "coluna": "total_sem_tabela/1e6",
+   "categoria": "estimativa",
+   "nota": ""
+  },
+  "VEstWsFloatThreePhaseBPct": {
+   "valor": 64.4302906487665,
+   "tex": "64",
+   "pt": "64",
+   "status": "ok",
+   "fonte": [
+    "embarcados/paper/fontes/ws_float_48000.json"
+   ],
+   "coluna": "faseB/(persistente+max(faseA,faseB))",
+   "categoria": "estimativa",
+   "nota": ""
+  },
+  "VEstWsDoubleOneMb": {
+   "valor": 1.787824,
+   "tex": "1.79",
+   "pt": "1,79",
+   "status": "ok",
+   "fonte": [
+    "embarcados/paper/fontes/ws_double_16000.json"
+   ],
+   "coluna": "total_com_tabela/1e6",
+   "categoria": "estimativa",
+   "nota": ""
+  },
+  "VEstWsDoubleOneNoTabMb": {
+   "valor": 1.211344,
+   "tex": "1.21",
+   "pt": "1,21",
+   "status": "ok",
+   "fonte": [
+    "embarcados/paper/fontes/ws_double_16000.json"
+   ],
+   "coluna": "total_sem_tabela/1e6",
+   "categoria": "estimativa",
+   "nota": ""
+  },
+  "VEstWsDoubleOnePhaseBPct": {
+   "valor": 47.214018507580235,
+   "tex": "47",
+   "pt": "47",
+   "status": "ok",
+   "fonte": [
+    "embarcados/paper/fontes/ws_double_16000.json"
+   ],
+   "coluna": "faseB/(persistente+max(faseA,faseB))",
+   "categoria": "estimativa",
+   "nota": ""
+  },
+  "VEstWsDoubleThreeMb": {
+   "valor": 3.598352,
+   "tex": "3.60",
+   "pt": "3,60",
+   "status": "ok",
+   "fonte": [
+    "embarcados/paper/fontes/ws_double_48000.json"
+   ],
+   "coluna": "total_com_tabela/1e6",
+   "categoria": "estimativa",
+   "nota": ""
+  },
+  "VEstWsDoubleThreeNoTabMb": {
+   "valor": 3.021872,
+   "tex": "3.02",
+   "pt": "3,02",
+   "status": "ok",
+   "fonte": [
+    "embarcados/paper/fontes/ws_double_48000.json"
+   ],
+   "coluna": "total_sem_tabela/1e6",
+   "categoria": "estimativa",
+   "nota": ""
+  },
+  "VEstWsDoubleThreePhaseBPct": {
+   "valor": 66.63435543540125,
+   "tex": "67",
+   "pt": "67",
+   "status": "ok",
+   "fonte": [
+    "embarcados/paper/fontes/ws_double_48000.json"
+   ],
+   "coluna": "faseB/(persistente+max(faseA,faseB))",
+   "categoria": "estimativa",
+   "nota": ""
+  },
+  "VEstHarmTableMb": {
+   "valor": 0.345888,
+   "tex": "0.35",
+   "pt": "0,35",
+   "status": "ok",
+   "fonte": [
+    "embarcados/paper/fontes/ws_float_16000.json"
+   ],
+   "coluna": "total_com_tabela - total_sem_tabela",
+   "categoria": "estimativa",
+   "nota": ""
+  },
+  "VBuildIdf": {
+   "valor": "v5.5.6",
+   "tex": "v5.5.6",
+   "pt": "v5,5.6",
+   "status": "ok",
+   "fonte": [
+    "C:/Espressif/build_p11_esp32s3/project_description.json"
+   ],
+   "coluna": "git_revision",
+   "categoria": "build",
+   "nota": ""
+  },
+  "VBuildGcc": {
+   "valor": "14.2.0",
+   "tex": "14.2.0",
+   "pt": "14,2.0",
+   "status": "ok",
+   "fonte": [
+    "C:/Espressif/build_p11_esp32s3/project_description.json"
+   ],
+   "coluna": "c_compiler (versão do toolchain esp-)",
+   "categoria": "build",
+   "nota": ""
+  },
+  "VBuildEspBinKb": {
+   "valor": 208.65625,
+   "tex": "209",
+   "pt": "209",
+   "status": "ok",
+   "fonte": [
+    "C:/Espressif/build_p11_esp32/size.txt"
+   ],
+   "coluna": "binary size (hex)/1024",
+   "categoria": "build",
+   "nota": ""
+  },
+  "VBuildEspBinPct": {
+   "valor": 20.3765869140625,
+   "tex": "20",
+   "pt": "20",
+   "status": "ok",
+   "fonte": [
+    "C:/Espressif/build_p11_esp32/size.txt"
+   ],
+   "coluna": "bin/partição app",
+   "categoria": "build",
+   "nota": ""
+  },
+  "VBuildEspFlashCodeKb": {
+   "valor": 124.1396484375,
+   "tex": "124",
+   "pt": "124",
+   "status": "ok",
+   "fonte": [
+    "C:/Espressif/build_p11_esp32/size.txt"
+   ],
+   "coluna": "Flash Code Used/1024",
+   "categoria": "build",
+   "nota": ""
+  },
+  "VBuildEspFlashDataKb": {
+   "valor": 19.1328125,
+   "tex": "19",
+   "pt": "19",
+   "status": "ok",
+   "fonte": [
+    "C:/Espressif/build_p11_esp32/size.txt"
+   ],
+   "coluna": "Flash Data Used/1024",
+   "categoria": "build",
+   "nota": ""
+  },
+  "VBuildEspDramKb": {
+   "valor": 14.75,
+   "tex": "15",
+   "pt": "15",
+   "status": "ok",
+   "fonte": [
+    "C:/Espressif/build_p11_esp32/size.txt"
+   ],
+   "coluna": "DRAM Used/1024",
+   "categoria": "build",
+   "nota": ""
+  },
+  "VBuildEspDramTotalKb": {
+   "valor": 176.5,
+   "tex": "176",
+   "pt": "176",
+   "status": "ok",
+   "fonte": [
+    "C:/Espressif/build_p11_esp32/size.txt"
+   ],
+   "coluna": "DRAM Total/1024",
+   "categoria": "build",
+   "nota": ""
+  },
+  "VBuildEspIramKb": {
+   "valor": 57.7021484375,
+   "tex": "58",
+   "pt": "58",
+   "status": "ok",
+   "fonte": [
+    "C:/Espressif/build_p11_esp32/size.txt"
+   ],
+   "coluna": "IRAM Used/1024",
+   "categoria": "build",
+   "nota": ""
+  },
+  "VBuildEspDramName": {
+   "valor": "DRAM",
+   "tex": "DRAM",
+   "pt": "DRAM",
+   "status": "ok",
+   "fonte": [
+    "C:/Espressif/build_p11_esp32/size.txt"
+   ],
+   "coluna": "nome da região de dados interna",
+   "categoria": "build",
+   "nota": ""
+  },
+  "VBuildEspWsRatio": {
+   "valor": 10.313296742209632,
+   "tex": "10.3",
+   "pt": "10,3",
+   "status": "ok",
+   "fonte": [
+    "C:/Espressif/build_p11_esp32/size.txt"
+   ],
+   "coluna": "estimativa ws float 3 s / DRAM total",
+   "categoria": "estimativa",
+   "nota": "razão entre estimativa analítica (cat. 1) e capacidade do build (cat. 3)"
+  },
+  "VBuildEspWsRatioOne": {
+   "valor": 5.3032046742209635,
+   "tex": "5.3",
+   "pt": "5,3",
+   "status": "ok",
+   "fonte": [
+    "C:/Espressif/build_p11_esp32/size.txt"
+   ],
+   "coluna": "estimativa ws float 1 s / DRAM total",
+   "categoria": "estimativa",
+   "nota": ""
+  },
+  "VBuildEspsBinKb": {
+   "valor": 232.6875,
+   "tex": "233",
+   "pt": "233",
+   "status": "ok",
+   "fonte": [
+    "C:/Espressif/build_p11_esp32s3/size.txt"
+   ],
+   "coluna": "binary size (hex)/1024",
+   "categoria": "build",
+   "nota": ""
+  },
+  "VBuildEspsBinPct": {
+   "valor": 22.723388671875,
+   "tex": "23",
+   "pt": "23",
+   "status": "ok",
+   "fonte": [
+    "C:/Espressif/build_p11_esp32s3/size.txt"
+   ],
+   "coluna": "bin/partição app",
+   "categoria": "build",
+   "nota": ""
+  },
+  "VBuildEspsFlashCodeKb": {
+   "valor": 139.30078125,
+   "tex": "139",
+   "pt": "139",
+   "status": "ok",
+   "fonte": [
+    "C:/Espressif/build_p11_esp32s3/size.txt"
+   ],
+   "coluna": "Flash Code Used/1024",
+   "categoria": "build",
+   "nota": ""
+  },
+  "VBuildEspsFlashDataKb": {
+   "valor": 30.265625,
+   "tex": "30",
+   "pt": "30",
+   "status": "ok",
+   "fonte": [
+    "C:/Espressif/build_p11_esp32s3/size.txt"
+   ],
+   "coluna": "Flash Data Used/1024",
+   "categoria": "build",
+   "nota": ""
+  },
+  "VBuildEspsDramKb": {
+   "valor": 54.2060546875,
+   "tex": "54",
+   "pt": "54",
+   "status": "ok",
+   "fonte": [
+    "C:/Espressif/build_p11_esp32s3/size.txt"
+   ],
+   "coluna": "DIRAM Used/1024",
+   "categoria": "build",
+   "nota": ""
+  },
+  "VBuildEspsDramTotalKb": {
+   "valor": 333.75,
+   "tex": "334",
+   "pt": "334",
+   "status": "ok",
+   "fonte": [
+    "C:/Espressif/build_p11_esp32s3/size.txt"
+   ],
+   "coluna": "DIRAM Total/1024",
+   "categoria": "build",
+   "nota": ""
+  },
+  "VBuildEspsIramKb": {
+   "valor": 16.0,
+   "tex": "16",
+   "pt": "16",
+   "status": "ok",
+   "fonte": [
+    "C:/Espressif/build_p11_esp32s3/size.txt"
+   ],
+   "coluna": "IRAM Used/1024",
+   "categoria": "build",
+   "nota": ""
+  },
+  "VBuildEspsDramName": {
+   "valor": "DIRAM",
+   "tex": "DIRAM",
+   "pt": "DIRAM",
+   "status": "ok",
+   "fonte": [
+    "C:/Espressif/build_p11_esp32s3/size.txt"
+   ],
+   "coluna": "nome da região de dados interna",
+   "categoria": "build",
+   "nota": ""
+  },
+  "VBuildEspsWsRatio": {
+   "valor": 5.454073033707865,
+   "tex": "5.5",
+   "pt": "5,5",
+   "status": "ok",
+   "fonte": [
+    "C:/Espressif/build_p11_esp32s3/size.txt"
+   ],
+   "coluna": "estimativa ws float 3 s / DIRAM total",
+   "categoria": "estimativa",
+   "nota": "razão entre estimativa analítica (cat. 1) e capacidade do build (cat. 3)"
+  },
+  "VBuildEspsWsRatioOne": {
+   "valor": 2.8045411985018727,
+   "tex": "2.8",
+   "pt": "2,8",
+   "status": "ok",
+   "fonte": [
+    "C:/Espressif/build_p11_esp32s3/size.txt"
+   ],
+   "coluna": "estimativa ws float 1 s / DIRAM total",
+   "categoria": "estimativa",
+   "nota": ""
+  },
+  "VChipModel": {
+   "valor": null,
+   "tex": "\\textbf{[pending]}",
+   "pt": "**[pendente]**",
+   "status": "pending",
+   "fonte": [
+    "embarcados/results/manifests/bancada.json"
+   ],
+   "coluna": "chip_modelo",
+   "categoria": "esp32",
+   "nota": ""
+  },
+  "VChipCpuMhz": {
+   "valor": null,
+   "tex": "\\textbf{[pending]}",
+   "pt": "**[pendente]**",
+   "status": "pending",
+   "fonte": [
+    "embarcados/results/manifests/bancada.json"
+   ],
+   "coluna": "cpu_mhz",
+   "categoria": "esp32",
+   "nota": ""
+  },
+  "VChipPsramMb": {
+   "valor": null,
+   "tex": "\\textbf{[pending]}",
+   "pt": "**[pendente]**",
+   "status": "pending",
+   "fonte": [
+    "embarcados/results/manifests/bancada.json"
+   ],
+   "coluna": "psram_mb",
+   "categoria": "esp32",
+   "nota": ""
+  },
+  "VChipLatIdmtMed": {
+   "valor": null,
+   "tex": "\\textbf{[pending]}",
+   "pt": "**[pendente]**",
+   "status": "pending",
+   "fonte": [
+    "embarcados/results/manifests/bancada.json"
+   ],
+   "coluna": "resumo.idmt.total_ms.mediana",
+   "categoria": "esp32",
+   "nota": ""
+  },
+  "VChipLatIdmtPninetyfive": {
+   "valor": null,
+   "tex": "\\textbf{[pending]}",
+   "pt": "**[pendente]**",
+   "status": "pending",
+   "fonte": [
+    "embarcados/results/manifests/bancada.json"
+   ],
+   "coluna": "resumo.idmt.total_ms.p95",
+   "categoria": "esp32",
+   "nota": ""
+  },
+  "VChipLatIdmtMax": {
+   "valor": null,
+   "tex": "\\textbf{[pending]}",
+   "pt": "**[pendente]**",
+   "status": "pending",
+   "fonte": [
+    "embarcados/results/manifests/bancada.json"
+   ],
+   "coluna": "resumo.idmt.total_ms.max",
+   "categoria": "esp32",
+   "nota": ""
+  },
+  "VChipLatIdmtN": {
+   "valor": null,
+   "tex": "\\textbf{[pending]}",
+   "pt": "**[pendente]**",
+   "status": "pending",
+   "fonte": [
+    "embarcados/results/manifests/bancada.json"
+   ],
+   "coluna": "resumo.idmt.total_ms.n",
+   "categoria": "esp32",
+   "nota": ""
+  },
+  "VChipRtfIdmt": {
+   "valor": null,
+   "tex": "\\textbf{[pending]}",
+   "pt": "**[pendente]**",
+   "status": "pending",
+   "fonte": [
+    "embarcados/results/manifests/bancada.json"
+   ],
+   "coluna": "fator_tempo_real_mediana",
+   "categoria": "esp32",
+   "nota": ""
+  },
+  "VChipRtfMaxIdmt": {
+   "valor": null,
+   "tex": "\\textbf{[pending]}",
+   "pt": "**[pendente]**",
+   "status": "pending",
+   "fonte": [
+    "embarcados/results/manifests/bancada.json"
+   ],
+   "coluna": "fator_tempo_real_max",
+   "categoria": "esp32",
+   "nota": ""
+  },
+  "VChipHeapIntIdmtKb": {
+   "valor": null,
+   "tex": "\\textbf{[pending]}",
+   "pt": "**[pendente]**",
+   "status": "pending",
+   "fonte": [
+    "embarcados/results/manifests/bancada.json"
+   ],
+   "coluna": "heap_min_livre_interna/1024",
+   "categoria": "esp32",
+   "nota": ""
+  },
+  "VChipStackIdmt": {
+   "valor": null,
+   "tex": "\\textbf{[pending]}",
+   "pt": "**[pendente]**",
+   "status": "pending",
+   "fonte": [
+    "embarcados/results/manifests/bancada.json"
+   ],
+   "coluna": "pilha_folga_bytes_min",
+   "categoria": "esp32",
+   "nota": ""
+  },
+  "VChipWsPsramIdmt": {
+   "valor": null,
+   "tex": "\\textbf{[pending]}",
+   "pt": "**[pendente]**",
+   "status": "pending",
+   "fonte": [
+    "embarcados/results/manifests/bancada.json"
+   ],
+   "coluna": "ws_na_psram",
+   "categoria": "esp32",
+   "nota": ""
+  },
+  "VChipWsIdmtMb": {
+   "valor": null,
+   "tex": "\\textbf{[pending]}",
+   "pt": "**[pendente]**",
+   "status": "pending",
+   "fonte": [
+    "embarcados/results/manifests/bancada.json"
+   ],
+   "coluna": "ws_bytes/1e6",
+   "categoria": "esp32",
+   "nota": ""
+  },
+  "VChipLatBldcMed": {
+   "valor": null,
+   "tex": "\\textbf{[pending]}",
+   "pt": "**[pendente]**",
+   "status": "pending",
+   "fonte": [
+    "embarcados/results/manifests/bancada.json"
+   ],
+   "coluna": "resumo.a2212.total_ms.mediana",
+   "categoria": "esp32",
+   "nota": ""
+  },
+  "VChipLatBldcPninetyfive": {
+   "valor": null,
+   "tex": "\\textbf{[pending]}",
+   "pt": "**[pendente]**",
+   "status": "pending",
+   "fonte": [
+    "embarcados/results/manifests/bancada.json"
+   ],
+   "coluna": "resumo.a2212.total_ms.p95",
+   "categoria": "esp32",
+   "nota": ""
+  },
+  "VChipLatBldcMax": {
+   "valor": null,
+   "tex": "\\textbf{[pending]}",
+   "pt": "**[pendente]**",
+   "status": "pending",
+   "fonte": [
+    "embarcados/results/manifests/bancada.json"
+   ],
+   "coluna": "resumo.a2212.total_ms.max",
+   "categoria": "esp32",
+   "nota": ""
+  },
+  "VChipLatBldcN": {
+   "valor": null,
+   "tex": "\\textbf{[pending]}",
+   "pt": "**[pendente]**",
+   "status": "pending",
+   "fonte": [
+    "embarcados/results/manifests/bancada.json"
+   ],
+   "coluna": "resumo.a2212.total_ms.n",
+   "categoria": "esp32",
+   "nota": ""
+  },
+  "VChipRtfBldc": {
+   "valor": null,
+   "tex": "\\textbf{[pending]}",
+   "pt": "**[pendente]**",
+   "status": "pending",
+   "fonte": [
+    "embarcados/results/manifests/bancada.json"
+   ],
+   "coluna": "fator_tempo_real_mediana",
+   "categoria": "esp32",
+   "nota": ""
+  },
+  "VChipRtfMaxBldc": {
+   "valor": null,
+   "tex": "\\textbf{[pending]}",
+   "pt": "**[pendente]**",
+   "status": "pending",
+   "fonte": [
+    "embarcados/results/manifests/bancada.json"
+   ],
+   "coluna": "fator_tempo_real_max",
+   "categoria": "esp32",
+   "nota": ""
+  },
+  "VChipHeapIntBldcKb": {
+   "valor": null,
+   "tex": "\\textbf{[pending]}",
+   "pt": "**[pendente]**",
+   "status": "pending",
+   "fonte": [
+    "embarcados/results/manifests/bancada.json"
+   ],
+   "coluna": "heap_min_livre_interna/1024",
+   "categoria": "esp32",
+   "nota": ""
+  },
+  "VChipStackBldc": {
+   "valor": null,
+   "tex": "\\textbf{[pending]}",
+   "pt": "**[pendente]**",
+   "status": "pending",
+   "fonte": [
+    "embarcados/results/manifests/bancada.json"
+   ],
+   "coluna": "pilha_folga_bytes_min",
+   "categoria": "esp32",
+   "nota": ""
+  },
+  "VChipWsPsramBldc": {
+   "valor": null,
+   "tex": "\\textbf{[pending]}",
+   "pt": "**[pendente]**",
+   "status": "pending",
+   "fonte": [
+    "embarcados/results/manifests/bancada.json"
+   ],
+   "coluna": "ws_na_psram",
+   "categoria": "esp32",
+   "nota": ""
+  },
+  "VChipWsBldcMb": {
+   "valor": null,
+   "tex": "\\textbf{[pending]}",
+   "pt": "**[pendente]**",
+   "status": "pending",
+   "fonte": [
+    "embarcados/results/manifests/bancada.json"
+   ],
+   "coluna": "ws_bytes/1e6",
+   "categoria": "esp32",
+   "nota": ""
+  },
+  "VChipEqStagesPass": {
+   "valor": null,
+   "tex": "\\textbf{[pending]}",
+   "pt": "**[pendente]**",
+   "status": "pending",
+   "fonte": [
+    "embarcados/results/manifests/bancada.json"
+   ],
+   "coluna": "equivalência no chip não rodou",
+   "categoria": "esp32",
+   "nota": ""
+  },
+  "VChipEqStages": {
+   "valor": null,
+   "tex": "\\textbf{[pending]}",
+   "pt": "**[pendente]**",
+   "status": "pending",
+   "fonte": [
+    "embarcados/results/manifests/bancada.json"
+   ],
+   "coluna": "equivalência no chip não rodou",
+   "categoria": "esp32",
+   "nota": ""
+  },
+  "VChipEqDecisionPass": {
+   "valor": null,
+   "tex": "\\textbf{[pending]}",
+   "pt": "**[pendente]**",
+   "status": "pending",
+   "fonte": [
+    "embarcados/results/manifests/bancada.json"
+   ],
+   "coluna": "equivalência no chip não rodou",
+   "categoria": "esp32",
+   "nota": ""
+  },
+  "VChipSeqDelay": {
+   "valor": null,
+   "tex": "\\textbf{[pending]}",
+   "pt": "**[pendente]**",
+   "status": "pending",
+   "fonte": [
+    "embarcados/results/manifests/bancada.json"
+   ],
+   "coluna": "fluxo contínuo no chip não rodou",
+   "categoria": "esp32",
+   "nota": ""
+  }
+ }
+}

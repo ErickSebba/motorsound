@@ -1,0 +1,13 @@
+{
+ "categoria": "estimativa_analitica",
+ "real": "float32",
+ "n": 48000,
+ "T": 39,
+ "total_com_tabela": 1863984,
+ "total_sem_tabela": 1518096,
+ "persistente": 663008,
+ "faseA_rastreio": 410280,
+ "faseB_envelope": 1200960,
+ "comando": "embarcados/build-float/p11_host.exe ws 48000",
+ "sha256_executavel": "2f2fc44af529c5fdcb309ba2f81af189577a306932d34ec311b0798937446651"
+}

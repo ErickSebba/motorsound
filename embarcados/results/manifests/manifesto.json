@@ -1,0 +1,5387 @@
+{
+ "gerado_em": "2026-10-24T09:49:08",
+ "gerado_por": "embarcados/src/python/gerar_artigo_manifesto.py",
+ "projeto": {
+  "commit": "9df3b2c280b69b02703d2c61d277e2bdf02cafad",
+  "sujo": true
+ },
+ "chip_medido": false,
+ "categorias": {
+  "codigo": "parâmetro lido do código Python da referência",
+  "dados": "contagem lida das predições/CSV do experimento",
+  "estimativa": "1 · estimativa analítica",
+  "pc": "2 · medição no PC",
+  "build": "3 · build do firmware (idf.py size)",
+  "esp32": "4 · medição no ESP32 físico",
+  "diagnostico": "resultado de classificação (validação, PC)",
+  "equivalencia": "equivalência Python × C (PC)"
+ },
+ "tabelas": [
+  {
+   "arquivo": "embarcados/tables/latex/bases_protocolos.tex",
+   "sha256": "809e149f1330e65c01f4ab2741d3a83d964d6f3c59906a1f257811f026a84ab9",
+   "existe": true,
+   "script": "embarcados/src/python/gerar_artigo_tabelas.py",
+   "fontes": [
+    {
+     "arquivo": "embarcados/paper/numeros.json",
+     "sha256": "82abbec3edf57c156ff220ebabba152c98e3341cc2efd6adcb25288156a2b85e"
+    },
+    {
+     "arquivo": "embarcados/paper/numeros.json.",
+     "sha256": "82abbec3edf57c156ff220ebabba152c98e3341cc2efd6adcb25288156a2b85e"
+    }
+   ]
+  },
+  {
+   "arquivo": "embarcados/tables/latex/parametros_features.tex",
+   "sha256": "e3948334cbb9d1d278e8f27da17161d57a2103c466bb37bd8355dd25fca8f56a",
+   "existe": true,
+   "script": "embarcados/src/python/gerar_artigo_tabelas.py",
+   "fontes": [
+    {
+     "arquivo": "embarcados/paper/numeros.json",
+     "sha256": "82abbec3edf57c156ff220ebabba152c98e3341cc2efd6adcb25288156a2b85e"
+    },
+    {
+     "arquivo": "embarcados/paper/numeros.json.",
+     "sha256": "82abbec3edf57c156ff220ebabba152c98e3341cc2efd6adcb25288156a2b85e"
+    }
+   ]
+  },
+  {
+   "arquivo": "embarcados/tables/latex/recursos.tex",
+   "sha256": "017adcf8fd67a59b34b768b91ed6236e4b065e6cffae318f2be68f4988ed7ff5",
+   "existe": true,
+   "script": "embarcados/src/python/gerar_artigo_tabelas.py",
+   "fontes": [
+    {
+     "arquivo": "embarcados/paper/numeros.json",
+     "sha256": "82abbec3edf57c156ff220ebabba152c98e3341cc2efd6adcb25288156a2b85e"
+    },
+    {
+     "arquivo": "embarcados/paper/numeros.json.",
+     "sha256": "82abbec3edf57c156ff220ebabba152c98e3341cc2efd6adcb25288156a2b85e"
+    }
+   ]
+  },
+  {
+   "arquivo": "embarcados/tables/latex/desempenho_compacto.tex",
+   "sha256": "003cb9864d2be78059eb734798c618320189b66e4a48bd8322df6837c6ef3848",
+   "existe": true,
+   "script": "embarcados/src/python/gerar_artigo_tabelas.py",
+   "fontes": [
+    {
+     "arquivo": "embarcados/paper/numeros.json",
+     "sha256": "82abbec3edf57c156ff220ebabba152c98e3341cc2efd6adcb25288156a2b85e"
+    },
+    {
+     "arquivo": "embarcados/paper/numeros.json.",
+     "sha256": "82abbec3edf57c156ff220ebabba152c98e3341cc2efd6adcb25288156a2b85e"
+    }
+   ]
+  },
+  {
+   "arquivo": "embarcados/tables/latex/equivalencia_compacta.tex",
+   "sha256": "32c64615561a888dec79672ff45f05322acd9fd3961161b281e5ce8bb0121d0e",
+   "existe": true,
+   "script": "embarcados/src/python/gerar_artigo_tabelas.py",
+   "fontes": [
+    {
+     "arquivo": "embarcados/paper/numeros.json",
+     "sha256": "82abbec3edf57c156ff220ebabba152c98e3341cc2efd6adcb25288156a2b85e"
+    },
+    {
+     "arquivo": "embarcados/results/csv/equivalencia_resumo_por_build_20261024-091729.csv",
+     "sha256": "bc42bdf549e15875a3762c4907610f49a8ff0cb08c2fc10e3fafd5e59d84eb35"
+    }
+   ]
+  },
+  {
+   "arquivo": "embarcados/tables/latex/desempenho.tex",
+   "sha256": "ee0657be67e2be288c1baa05b17a32ded204a37825015273f77d2180674da8d0",
+   "existe": true,
+   "script": "embarcados/src/python/diagnostico_saidas.py",
+   "fontes": [
+    {
+     "arquivo": "embarcados/results/csv/diagnostico_20261023_222831.csv",
+     "sha256": "83e602a7680c87ae7f429840d4db57c49b80a7f4c1c8e45900005ce7e269a7ff"
+    }
+   ]
+  },
+  {
+   "arquivo": "embarcados/tables/latex/equivalencia.tex",
+   "sha256": "f808298b824675751f35f403f7731af13edfab91e8194e36b31ba39b23bc2acf",
+   "existe": true,
+   "script": "embarcados/tests/equivalence/resumo_equivalencia.py",
+   "fontes": [
+    {
+     "arquivo": "embarcados/results/csv/equivalencia_double_20261024-091106.csv",
+     "sha256": "0462b21cd040d8987e25988c7b603e2dfc9009f57ec9b9382dda2e1ac4310cf3"
+    },
+    {
+     "arquivo": "embarcados/results/csv/equivalencia_float-sosd_20261024-091222.csv",
+     "sha256": "fb79aad99d6e607a132af89358182c74f4eeec2ac31e97410c5fab486e945ce9"
+    },
+    {
+     "arquivo": "embarcados/results/csv/equivalencia_float_20261024-091122.csv",
+     "sha256": "38e87620d895ce26c9c0bbfa5bd0df7af3686607d525235e3fa5c9d287612314"
+    },
+    {
+     "arquivo": "embarcados/results/csv/equivalencia_resumo_por_build_20261024-091729.csv",
+     "sha256": "bc42bdf549e15875a3762c4907610f49a8ff0cb08c2fc10e3fafd5e59d84eb35"
+    }
+   ]
+  }
+ ],
+ "figuras": [
+  {
+   "arquivo": "embarcados/figures/pdf/arquitetura.pdf",
+   "sha256": "84238d39153cc79ab0e4b4feb18963912239183ddfd0a56dd701e549a5686f8a",
+   "existe": true,
+   "script": "embarcados/src/python/gerar_artigo_figuras.py",
+   "fontes": [
+    {
+     "arquivo": "embarcados/paper/numeros.json",
+     "sha256": "82abbec3edf57c156ff220ebabba152c98e3341cc2efd6adcb25288156a2b85e"
+    }
+   ],
+   "dados_brutos_lidos": []
+  },
+  {
+   "arquivo": "embarcados/figures/png/arquitetura.png",
+   "sha256": "57acb77f16b03ff8ca04f4247e47db98f91df7152af5257b8f43b71b7513605b",
+   "existe": true,
+   "script": "embarcados/src/python/gerar_artigo_figuras.py",
+   "fontes": [
+    {
+     "arquivo": "embarcados/paper/numeros.json",
+     "sha256": "82abbec3edf57c156ff220ebabba152c98e3341cc2efd6adcb25288156a2b85e"
+    }
+   ],
+   "dados_brutos_lidos": []
+  },
+  {
+   "arquivo": "embarcados/figures/pdf/diag_balacc_en_20261023_222831.pdf",
+   "sha256": "ff1fa5872a45737fa683650ba83de22a02625ef1dce9d9b849d379048c559b97",
+   "existe": true,
+   "script": "embarcados/src/python/gerar_artigo_figuras.py",
+   "fontes": [
+    {
+     "arquivo": "embarcados/results/csv/diagnostico_20261023_222831.csv",
+     "sha256": "83e602a7680c87ae7f429840d4db57c49b80a7f4c1c8e45900005ce7e269a7ff"
+    }
+   ],
+   "dados_brutos_lidos": []
+  },
+  {
+   "arquivo": "embarcados/figures/png/diag_balacc_en_20261023_222831.png",
+   "sha256": "10519095b6b3a14b4f3c0895a9769f1e73d0d16e3a243c5e4f76dbe8d295d3b4",
+   "existe": true,
+   "script": "embarcados/src/python/gerar_artigo_figuras.py",
+   "fontes": [
+    {
+     "arquivo": "embarcados/results/csv/diagnostico_20261023_222831.csv",
+     "sha256": "83e602a7680c87ae7f429840d4db57c49b80a7f4c1c8e45900005ce7e269a7ff"
+    }
+   ],
+   "dados_brutos_lidos": []
+  },
+  {
+   "arquivo": "embarcados/figures/pdf/diag_confusao_p11_en_20261023_222831.pdf",
+   "sha256": "4407761a5abf9ef0942c00d9ac8999cea608ad3e84d054b520dc52d8d7b5018f",
+   "existe": true,
+   "script": "embarcados/src/python/gerar_artigo_figuras.py",
+   "fontes": [
+    {
+     "arquivo": "embarcados/results/metrics/diagnostico_20261023_222831.json",
+     "sha256": "eba8d63e666f0baae45431c79f6223c41bfb36e05d6523db559e0549771fe2ff"
+    }
+   ],
+   "dados_brutos_lidos": []
+  },
+  {
+   "arquivo": "embarcados/figures/png/diag_confusao_p11_en_20261023_222831.png",
+   "sha256": "85b204f7c1185dea7ec78201f4a05c4cdc4a66ebb6ecfd1abc81d59cd7c8f050",
+   "existe": true,
+   "script": "embarcados/src/python/gerar_artigo_figuras.py",
+   "fontes": [
+    {
+     "arquivo": "embarcados/results/metrics/diagnostico_20261023_222831.json",
+     "sha256": "eba8d63e666f0baae45431c79f6223c41bfb36e05d6523db559e0549771fe2ff"
+    }
+   ],
+   "dados_brutos_lidos": []
+  },
+  {
+   "arquivo": "embarcados/figures/pdf/equivalencia_erro_etapas_en.pdf",
+   "sha256": "28595bd90ca3fb77fa6dada236049e6484215d9426613be8f0c6f167f21d3736",
+   "existe": true,
+   "script": "embarcados/src/python/gerar_artigo_figuras.py",
+   "fontes": [
+    {
+     "arquivo": "embarcados/results/csv/equivalencia_resumo_por_build_20261024-091729.csv",
+     "sha256": "bc42bdf549e15875a3762c4907610f49a8ff0cb08c2fc10e3fafd5e59d84eb35"
+    }
+   ],
+   "dados_brutos_lidos": []
+  },
+  {
+   "arquivo": "embarcados/figures/png/equivalencia_erro_etapas_en.png",
+   "sha256": "2f0963b6242a767b441988b4c250a9fa8599fdddbbf8c2ce789108c636e6eb81",
+   "existe": true,
+   "script": "embarcados/src/python/gerar_artigo_figuras.py",
+   "fontes": [
+    {
+     "arquivo": "embarcados/results/csv/equivalencia_resumo_por_build_20261024-091729.csv",
+     "sha256": "bc42bdf549e15875a3762c4907610f49a8ff0cb08c2fc10e3fafd5e59d84eb35"
+    }
+   ],
+   "dados_brutos_lidos": []
+  }
+ ],
+ "macros": {
+  "VParSr": {
+   "valor": 16000,
+   "status": "ok",
+   "categoria": "codigo",
+   "coluna": "PreDecifrae.sr",
+   "script": "embarcados/src/python/gerar_artigo_numeros.py",
+   "fontes": [
+    {
+     "arquivo": "pipelines/_decifrae.py",
+     "sha256": "d40385a87dd38c5b010180386f12bc078daeae33c56fc26e7f19455a0a30e7e2"
+    }
+   ]
+  },
+  "VParSrKhz": {
+   "valor": 16.0,
+   "status": "ok",
+   "categoria": "codigo",
+   "coluna": "PreDecifrae.sr/1000",
+   "script": "embarcados/src/python/gerar_artigo_numeros.py",
+   "fontes": [
+    {
+     "arquivo": "pipelines/_decifrae.py",
+     "sha256": "d40385a87dd38c5b010180386f12bc078daeae33c56fc26e7f19455a0a30e7e2"
+    }
+   ]
+  },
+  "VParNfft": {
+   "valor": 8192,
+   "status": "ok",
+   "categoria": "codigo",
+   "coluna": "PreDecifrae.n_fft",
+   "script": "embarcados/src/python/gerar_artigo_numeros.py",
+   "fontes": [
+    {
+     "arquivo": "pipelines/_decifrae.py",
+     "sha256": "d40385a87dd38c5b010180386f12bc078daeae33c56fc26e7f19455a0a30e7e2"
+    }
+   ]
+  },
+  "VParHop": {
+   "valor": 1024,
+   "status": "ok",
+   "categoria": "codigo",
+   "coluna": "PreDecifrae.hop",
+   "script": "embarcados/src/python/gerar_artigo_numeros.py",
+   "fontes": [
+    {
+     "arquivo": "pipelines/_decifrae.py",
+     "sha256": "d40385a87dd38c5b010180386f12bc078daeae33c56fc26e7f19455a0a30e7e2"
+    }
+   ]
+  },
+  "VParFmin": {
+   "valor": 15.0,
+   "status": "ok",
+   "categoria": "codigo",
+   "coluna": "PreDecifrae.fmin",
+   "script": "embarcados/src/python/gerar_artigo_numeros.py",
+   "fontes": [
+    {
+     "arquivo": "pipelines/_decifrae.py",
+     "sha256": "d40385a87dd38c5b010180386f12bc078daeae33c56fc26e7f19455a0a30e7e2"
+    }
+   ]
+  },
+  "VParFmax": {
+   "valor": 60.0,
+   "status": "ok",
+   "categoria": "codigo",
+   "coluna": "PreDecifrae.fmax",
+   "script": "embarcados/src/python/gerar_artigo_numeros.py",
+   "fontes": [
+    {
+     "arquivo": "pipelines/_decifrae.py",
+     "sha256": "d40385a87dd38c5b010180386f12bc078daeae33c56fc26e7f19455a0a30e7e2"
+    }
+   ]
+  },
+  "VParStepCents": {
+   "valor": 2.0,
+   "status": "ok",
+   "categoria": "codigo",
+   "coluna": "PreDecifrae.passo_cents",
+   "script": "embarcados/src/python/gerar_artigo_numeros.py",
+   "fontes": [
+    {
+     "arquivo": "pipelines/_decifrae.py",
+     "sha256": "d40385a87dd38c5b010180386f12bc078daeae33c56fc26e7f19455a0a30e7e2"
+    }
+   ]
+  },
+  "VParJ": {
+   "valor": 1201,
+   "status": "ok",
+   "categoria": "codigo",
+   "coluna": "len(rotacao.grade(fmin,fmax,passo))",
+   "script": "embarcados/src/python/gerar_artigo_numeros.py",
+   "fontes": [
+    {
+     "arquivo": "motorsound/rotacao.py",
+     "sha256": "45715cbb50101879834b020a01c9fd48bb888e0c6f086b063b35c1f75efe63a9"
+    }
+   ]
+  },
+  "VParNbins": {
+   "valor": 4097,
+   "status": "ok",
+   "categoria": "codigo",
+   "coluna": "n_fft//2+1 (rfft)",
+   "script": "embarcados/src/python/gerar_artigo_numeros.py",
+   "fontes": [
+    {
+     "arquivo": "motorsound/rotacao.py",
+     "sha256": "45715cbb50101879834b020a01c9fd48bb888e0c6f086b063b35c1f75efe63a9"
+    }
+   ]
+  },
+  "VParDf": {
+   "valor": 1.953125,
+   "status": "ok",
+   "categoria": "codigo",
+   "coluna": "sr/n_fft",
+   "script": "embarcados/src/python/gerar_artigo_numeros.py",
+   "fontes": [
+    {
+     "arquivo": "motorsound/rotacao.py",
+     "sha256": "45715cbb50101879834b020a01c9fd48bb888e0c6f086b063b35c1f75efe63a9"
+    }
+   ]
+  },
+  "VParNharm": {
+   "valor": 48,
+   "status": "ok",
+   "categoria": "codigo",
+   "coluna": "N_HARM",
+   "script": "embarcados/src/python/gerar_artigo_numeros.py",
+   "fontes": [
+    {
+     "arquivo": "pipelines/_decifrae.py",
+     "sha256": "d40385a87dd38c5b010180386f12bc078daeae33c56fc26e7f19455a0a30e7e2"
+    }
+   ]
+  },
+  "VParGroupOneLo": {
+   "valor": 1,
+   "status": "ok",
+   "categoria": "codigo",
+   "coluna": "GRUPOS[0][0]",
+   "script": "embarcados/src/python/gerar_artigo_numeros.py",
+   "fontes": [
+    {
+     "arquivo": "pipelines/_decifrae.py",
+     "sha256": "d40385a87dd38c5b010180386f12bc078daeae33c56fc26e7f19455a0a30e7e2"
+    }
+   ]
+  },
+  "VParGroupOneHi": {
+   "valor": 4,
+   "status": "ok",
+   "categoria": "codigo",
+   "coluna": "GRUPOS[0][1]",
+   "script": "embarcados/src/python/gerar_artigo_numeros.py",
+   "fontes": [
+    {
+     "arquivo": "pipelines/_decifrae.py",
+     "sha256": "d40385a87dd38c5b010180386f12bc078daeae33c56fc26e7f19455a0a30e7e2"
+    }
+   ]
+  },
+  "VParGroupTwoLo": {
+   "valor": 5,
+   "status": "ok",
+   "categoria": "codigo",
+   "coluna": "GRUPOS[1][0]",
+   "script": "embarcados/src/python/gerar_artigo_numeros.py",
+   "fontes": [
+    {
+     "arquivo": "pipelines/_decifrae.py",
+     "sha256": "d40385a87dd38c5b010180386f12bc078daeae33c56fc26e7f19455a0a30e7e2"
+    }
+   ]
+  },
+  "VParGroupTwoHi": {
+   "valor": 12,
+   "status": "ok",
+   "categoria": "codigo",
+   "coluna": "GRUPOS[1][1]",
+   "script": "embarcados/src/python/gerar_artigo_numeros.py",
+   "fontes": [
+    {
+     "arquivo": "pipelines/_decifrae.py",
+     "sha256": "d40385a87dd38c5b010180386f12bc078daeae33c56fc26e7f19455a0a30e7e2"
+    }
+   ]
+  },
+  "VParGroupThreeLo": {
+   "valor": 13,
+   "status": "ok",
+   "categoria": "codigo",
+   "coluna": "GRUPOS[2][0]",
+   "script": "embarcados/src/python/gerar_artigo_numeros.py",
+   "fontes": [
+    {
+     "arquivo": "pipelines/_decifrae.py",
+     "sha256": "d40385a87dd38c5b010180386f12bc078daeae33c56fc26e7f19455a0a30e7e2"
+    }
+   ]
+  },
+  "VParGroupThreeHi": {
+   "valor": 24,
+   "status": "ok",
+   "categoria": "codigo",
+   "coluna": "GRUPOS[2][1]",
+   "script": "embarcados/src/python/gerar_artigo_numeros.py",
+   "fontes": [
+    {
+     "arquivo": "pipelines/_decifrae.py",
+     "sha256": "d40385a87dd38c5b010180386f12bc078daeae33c56fc26e7f19455a0a30e7e2"
+    }
+   ]
+  },
+  "VParGroupFourLo": {
+   "valor": 25,
+   "status": "ok",
+   "categoria": "codigo",
+   "coluna": "GRUPOS[3][0]",
+   "script": "embarcados/src/python/gerar_artigo_numeros.py",
+   "fontes": [
+    {
+     "arquivo": "pipelines/_decifrae.py",
+     "sha256": "d40385a87dd38c5b010180386f12bc078daeae33c56fc26e7f19455a0a30e7e2"
+    }
+   ]
+  },
+  "VParGroupFourHi": {
+   "valor": 48,
+   "status": "ok",
+   "categoria": "codigo",
+   "coluna": "GRUPOS[3][1]",
+   "script": "embarcados/src/python/gerar_artigo_numeros.py",
+   "fontes": [
+    {
+     "arquivo": "pipelines/_decifrae.py",
+     "sha256": "d40385a87dd38c5b010180386f12bc078daeae33c56fc26e7f19455a0a30e7e2"
+    }
+   ]
+  },
+  "VParMaxJump": {
+   "valor": 50,
+   "status": "ok",
+   "categoria": "codigo",
+   "coluna": "PreDecifrae.max_salto",
+   "script": "embarcados/src/python/gerar_artigo_numeros.py",
+   "fontes": [
+    {
+     "arquivo": "pipelines/_decifrae.py",
+     "sha256": "d40385a87dd38c5b010180386f12bc078daeae33c56fc26e7f19455a0a30e7e2"
+    }
+   ]
+  },
+  "VParMaxJumpCents": {
+   "valor": 100.0,
+   "status": "ok",
+   "categoria": "codigo",
+   "coluna": "max_salto*passo_cents",
+   "script": "embarcados/src/python/gerar_artigo_numeros.py",
+   "fontes": [
+    {
+     "arquivo": "pipelines/_decifrae.py",
+     "sha256": "d40385a87dd38c5b010180386f12bc078daeae33c56fc26e7f19455a0a30e7e2"
+    }
+   ]
+  },
+  "VParOctStates": {
+   "valor": 600,
+   "status": "ok",
+   "categoria": "codigo",
+   "coluna": "viterbi_rotacao: k_oct = round(1200/passo)",
+   "script": "embarcados/src/python/gerar_artigo_numeros.py",
+   "fontes": [
+    {
+     "arquivo": "motorsound/rotacao.py",
+     "sha256": "45715cbb50101879834b020a01c9fd48bb888e0c6f086b063b35c1f75efe63a9"
+    }
+   ]
+  },
+  "VParWStep": {
+   "valor": 0.55,
+   "status": "ok",
+   "categoria": "codigo",
+   "coluna": "VIT_W_STEP",
+   "script": "embarcados/src/python/gerar_artigo_numeros.py",
+   "fontes": [
+    {
+     "arquivo": "motorsound/rotacao.py",
+     "sha256": "45715cbb50101879834b020a01c9fd48bb888e0c6f086b063b35c1f75efe63a9"
+    }
+   ]
+  },
+  "VParWOct": {
+   "valor": 7.0,
+   "status": "ok",
+   "categoria": "codigo",
+   "coluna": "VIT_W_OCTAVE",
+   "script": "embarcados/src/python/gerar_artigo_numeros.py",
+   "fontes": [
+    {
+     "arquivo": "motorsound/rotacao.py",
+     "sha256": "45715cbb50101879834b020a01c9fd48bb888e0c6f086b063b35c1f75efe63a9"
+    }
+   ]
+  },
+  "VParWSil": {
+   "valor": 3.2,
+   "status": "ok",
+   "categoria": "codigo",
+   "coluna": "VIT_W_SIL",
+   "script": "embarcados/src/python/gerar_artigo_numeros.py",
+   "fontes": [
+    {
+     "arquivo": "motorsound/rotacao.py",
+     "sha256": "45715cbb50101879834b020a01c9fd48bb888e0c6f086b063b35c1f75efe63a9"
+    }
+   ]
+  },
+  "VParWEnergy": {
+   "valor": 0.45,
+   "status": "ok",
+   "categoria": "codigo",
+   "coluna": "emissao_baixo: peso de e_norm",
+   "script": "embarcados/src/python/gerar_artigo_numeros.py",
+   "fontes": [
+    {
+     "arquivo": "motorsound/rotacao.py",
+     "sha256": "45715cbb50101879834b020a01c9fd48bb888e0c6f086b063b35c1f75efe63a9"
+    }
+   ]
+  },
+  "VParEmisEps": {
+   "valor": 0.001,
+   "status": "ok",
+   "categoria": "codigo",
+   "coluna": "emissao_baixo: eps do -log",
+   "script": "embarcados/src/python/gerar_artigo_numeros.py",
+   "fontes": [
+    {
+     "arquivo": "motorsound/rotacao.py",
+     "sha256": "45715cbb50101879834b020a01c9fd48bb888e0c6f086b063b35c1f75efe63a9"
+    }
+   ]
+  },
+  "VParTempCos": {
+   "valor": 0.1,
+   "status": "ok",
+   "categoria": "codigo",
+   "coluna": "PostDecifrae.temp_cos",
+   "script": "embarcados/src/python/gerar_artigo_numeros.py",
+   "fontes": [
+    {
+     "arquivo": "pipelines/_decifrae.py",
+     "sha256": "d40385a87dd38c5b010180386f12bc078daeae33c56fc26e7f19455a0a30e7e2"
+    }
+   ]
+  },
+  "VParButterOrder": {
+   "valor": 4,
+   "status": "ok",
+   "categoria": "codigo",
+   "coluna": "_envelope_mod: butter(ordem, fc)",
+   "script": "embarcados/src/python/gerar_artigo_numeros.py",
+   "fontes": [
+    {
+     "arquivo": "pipelines/_decifrae.py",
+     "sha256": "d40385a87dd38c5b010180386f12bc078daeae33c56fc26e7f19455a0a30e7e2"
+    }
+   ]
+  },
+  "VParButterFc": {
+   "valor": 200,
+   "status": "ok",
+   "categoria": "codigo",
+   "coluna": "_envelope_mod: butter(ordem, fc)",
+   "script": "embarcados/src/python/gerar_artigo_numeros.py",
+   "fontes": [
+    {
+     "arquivo": "pipelines/_decifrae.py",
+     "sha256": "d40385a87dd38c5b010180386f12bc078daeae33c56fc26e7f19455a0a30e7e2"
+    }
+   ]
+  },
+  "VParModLo": {
+   "valor": 2,
+   "status": "ok",
+   "categoria": "codigo",
+   "coluna": "_envelope_mod: banda",
+   "script": "embarcados/src/python/gerar_artigo_numeros.py",
+   "fontes": [
+    {
+     "arquivo": "pipelines/_decifrae.py",
+     "sha256": "d40385a87dd38c5b010180386f12bc078daeae33c56fc26e7f19455a0a30e7e2"
+    }
+   ]
+  },
+  "VParModHi": {
+   "valor": 100,
+   "status": "ok",
+   "categoria": "codigo",
+   "coluna": "_envelope_mod: banda",
+   "script": "embarcados/src/python/gerar_artigo_numeros.py",
+   "fontes": [
+    {
+     "arquivo": "pipelines/_decifrae.py",
+     "sha256": "d40385a87dd38c5b010180386f12bc078daeae33c56fc26e7f19455a0a30e7e2"
+    }
+   ]
+  },
+  "VParEnvRateHz": {
+   "valor": 1000,
+   "status": "ok",
+   "categoria": "codigo",
+   "coluna": "_envelope_mod: [:: sr//1000]",
+   "script": "embarcados/src/python/gerar_artigo_numeros.py",
+   "fontes": [
+    {
+     "arquivo": "pipelines/_decifrae.py",
+     "sha256": "d40385a87dd38c5b010180386f12bc078daeae33c56fc26e7f19455a0a30e7e2"
+    }
+   ]
+  },
+  "VParDecim": {
+   "valor": 16,
+   "status": "ok",
+   "categoria": "codigo",
+   "coluna": "sr // 1000",
+   "script": "embarcados/src/python/gerar_artigo_numeros.py",
+   "fontes": [
+    {
+     "arquivo": "pipelines/_decifrae.py",
+     "sha256": "d40385a87dd38c5b010180386f12bc078daeae33c56fc26e7f19455a0a30e7e2"
+    }
+   ]
+  },
+  "VParBandLo": {
+   "valor": 10,
+   "status": "ok",
+   "categoria": "codigo",
+   "coluna": "extrair: banda das features",
+   "script": "embarcados/src/python/gerar_artigo_numeros.py",
+   "fontes": [
+    {
+     "arquivo": "pipelines/_decifrae.py",
+     "sha256": "d40385a87dd38c5b010180386f12bc078daeae33c56fc26e7f19455a0a30e7e2"
+    }
+   ]
+  },
+  "VParBandHi": {
+   "valor": 4000,
+   "status": "ok",
+   "categoria": "codigo",
+   "coluna": "extrair: banda das features",
+   "script": "embarcados/src/python/gerar_artigo_numeros.py",
+   "fontes": [
+    {
+     "arquivo": "pipelines/_decifrae.py",
+     "sha256": "d40385a87dd38c5b010180386f12bc078daeae33c56fc26e7f19455a0a30e7e2"
+    }
+   ]
+  },
+  "VParSegIdmt": {
+   "valor": 3.0,
+   "status": "ok",
+   "categoria": "codigo",
+   "coluna": "AVAL_IDMT.seg_s",
+   "script": "embarcados/src/python/gerar_artigo_numeros.py",
+   "fontes": [
+    {
+     "arquivo": "motorsound/config.py",
+     "sha256": "533b6f9cb12228d8c2fcf492b48c5d1950d0e4cf71fac47b4e4573ea86f9e56f"
+    }
+   ]
+  },
+  "VParSegBldc": {
+   "valor": 1.0,
+   "status": "ok",
+   "categoria": "codigo",
+   "coluna": "AVAL_A2212.seg_s",
+   "script": "embarcados/src/python/gerar_artigo_numeros.py",
+   "fontes": [
+    {
+     "arquivo": "motorsound/config.py",
+     "sha256": "533b6f9cb12228d8c2fcf492b48c5d1950d0e4cf71fac47b4e4573ea86f9e56f"
+    }
+   ]
+  },
+  "VParRmsTarget": {
+   "valor": 0.1,
+   "status": "ok",
+   "categoria": "codigo",
+   "coluna": "AvaliacaoConfig.rms_alvo",
+   "script": "embarcados/src/python/gerar_artigo_numeros.py",
+   "fontes": [
+    {
+     "arquivo": "motorsound/config.py",
+     "sha256": "533b6f9cb12228d8c2fcf492b48c5d1950d0e4cf71fac47b4e4573ea86f9e56f"
+    }
+   ]
+  },
+  "VParFramesIdmt": {
+   "valor": 39,
+   "status": "ok",
+   "categoria": "codigo",
+   "coluna": "1+(N-n_fft)//hop (stft_mag)",
+   "script": "embarcados/src/python/gerar_artigo_numeros.py",
+   "fontes": [
+    {
+     "arquivo": "motorsound/rotacao.py",
+     "sha256": "45715cbb50101879834b020a01c9fd48bb888e0c6f086b063b35c1f75efe63a9"
+    }
+   ]
+  },
+  "VParFramesBldc": {
+   "valor": 8,
+   "status": "ok",
+   "categoria": "codigo",
+   "coluna": "1+(N-n_fft)//hop (stft_mag)",
+   "script": "embarcados/src/python/gerar_artigo_numeros.py",
+   "fontes": [
+    {
+     "arquivo": "motorsound/rotacao.py",
+     "sha256": "45715cbb50101879834b020a01c9fd48bb888e0c6f086b063b35c1f75efe63a9"
+    }
+   ]
+  },
+  "VParNClassicFeat": {
+   "valor": 32,
+   "status": "ok",
+   "categoria": "codigo",
+   "coluna": "N_FEATURES",
+   "script": "embarcados/src/python/gerar_artigo_numeros.py",
+   "fontes": [
+    {
+     "arquivo": "pipelines/_classicas.py",
+     "sha256": "1b759d56815a2760579fde90f43271a739211d9cf931f6419b583f92bf8d8623"
+    }
+   ]
+  },
+  "VParNChangePen": {
+   "valor": 6,
+   "status": "ok",
+   "categoria": "codigo",
+   "coluna": "change_penalties",
+   "script": "embarcados/src/python/gerar_artigo_numeros.py",
+   "fontes": [
+    {
+     "arquivo": "embarcados/gold/seqs/idmt_seq00/params.json",
+     "sha256": "a50569ecb0951b7b171019e4ccbe89eebd51eff92893532f03a8490dcd38cf78"
+    }
+   ]
+  },
+  "VParCpMin": {
+   "valor": 0.5,
+   "status": "ok",
+   "categoria": "codigo",
+   "coluna": "change_penalties",
+   "script": "embarcados/src/python/gerar_artigo_numeros.py",
+   "fontes": [
+    {
+     "arquivo": "embarcados/gold/seqs/idmt_seq00/params.json",
+     "sha256": "a50569ecb0951b7b171019e4ccbe89eebd51eff92893532f03a8490dcd38cf78"
+    }
+   ]
+  },
+  "VParCpMax": {
+   "valor": 16.0,
+   "status": "ok",
+   "categoria": "codigo",
+   "coluna": "change_penalties",
+   "script": "embarcados/src/python/gerar_artigo_numeros.py",
+   "fontes": [
+    {
+     "arquivo": "embarcados/gold/seqs/idmt_seq00/params.json",
+     "sha256": "a50569ecb0951b7b171019e4ccbe89eebd51eff92893532f03a8490dcd38cf78"
+    }
+   ]
+  },
+  "VParNLogprob": {
+   "valor": -50.0,
+   "status": "ok",
+   "categoria": "codigo",
+   "coluna": "n_logprob",
+   "script": "embarcados/src/python/gerar_artigo_numeros.py",
+   "fontes": [
+    {
+     "arquivo": "embarcados/gold/seqs/idmt_seq00/params.json",
+     "sha256": "a50569ecb0951b7b171019e4ccbe89eebd51eff92893532f03a8490dcd38cf78"
+    }
+   ]
+  },
+  "VParHmmTemp": {
+   "valor": 1.0,
+   "status": "ok",
+   "categoria": "codigo",
+   "coluna": "temp",
+   "script": "embarcados/src/python/gerar_artigo_numeros.py",
+   "fontes": [
+    {
+     "arquivo": "embarcados/gold/seqs/idmt_seq00/params.json",
+     "sha256": "a50569ecb0951b7b171019e4ccbe89eebd51eff92893532f03a8490dcd38cf78"
+    }
+   ]
+  },
+  "VDataIdmtWindows": {
+   "valor": 357,
+   "status": "ok",
+   "categoria": "dados",
+   "coluna": "len(unique(rec_id,idx)) da p11",
+   "script": "embarcados/src/python/gerar_artigo_numeros.py",
+   "fontes": [
+    {
+     "arquivo": "embarcados/results/predictions/diagnostico_janelas_20261023_222831.csv",
+     "sha256": "6426a95a9ceb73ad3e4a9f4a8d83f8194a3ce6b7d1605c0bfdd151384454102b"
+    }
+   ]
+  },
+  "VDataIdmtRecordings": {
+   "valor": 3,
+   "status": "ok",
+   "categoria": "dados",
+   "coluna": "nunique(rec_id)",
+   "script": "embarcados/src/python/gerar_artigo_numeros.py",
+   "fontes": [
+    {
+     "arquivo": "embarcados/results/predictions/diagnostico_janelas_20261023_222831.csv",
+     "sha256": "6426a95a9ceb73ad3e4a9f4a8d83f8194a3ce6b7d1605c0bfdd151384454102b"
+    }
+   ]
+  },
+  "VDataIdmtMotors": {
+   "valor": 3,
+   "status": "ok",
+   "categoria": "dados",
+   "coluna": "nunique(motor)",
+   "script": "embarcados/src/python/gerar_artigo_numeros.py",
+   "fontes": [
+    {
+     "arquivo": "embarcados/results/predictions/diagnostico_janelas_20261023_222831.csv",
+     "sha256": "6426a95a9ceb73ad3e4a9f4a8d83f8194a3ce6b7d1605c0bfdd151384454102b"
+    }
+   ]
+  },
+  "VDataIdmtClasses": {
+   "valor": 3,
+   "status": "ok",
+   "categoria": "dados",
+   "coluna": "nunique(classe)",
+   "script": "embarcados/src/python/gerar_artigo_numeros.py",
+   "fontes": [
+    {
+     "arquivo": "embarcados/results/predictions/diagnostico_janelas_20261023_222831.csv",
+     "sha256": "6426a95a9ceb73ad3e4a9f4a8d83f8194a3ce6b7d1605c0bfdd151384454102b"
+    }
+   ]
+  },
+  "VDataBldcWindows": {
+   "valor": 430,
+   "status": "ok",
+   "categoria": "dados",
+   "coluna": "len(unique(rec_id,idx)) da p11",
+   "script": "embarcados/src/python/gerar_artigo_numeros.py",
+   "fontes": [
+    {
+     "arquivo": "embarcados/results/predictions/diagnostico_janelas_20261023_222831.csv",
+     "sha256": "6426a95a9ceb73ad3e4a9f4a8d83f8194a3ce6b7d1605c0bfdd151384454102b"
+    }
+   ]
+  },
+  "VDataBldcRecordings": {
+   "valor": 43,
+   "status": "ok",
+   "categoria": "dados",
+   "coluna": "nunique(rec_id)",
+   "script": "embarcados/src/python/gerar_artigo_numeros.py",
+   "fontes": [
+    {
+     "arquivo": "embarcados/results/predictions/diagnostico_janelas_20261023_222831.csv",
+     "sha256": "6426a95a9ceb73ad3e4a9f4a8d83f8194a3ce6b7d1605c0bfdd151384454102b"
+    }
+   ]
+  },
+  "VDataBldcMotors": {
+   "valor": 4,
+   "status": "ok",
+   "categoria": "dados",
+   "coluna": "nunique(motor)",
+   "script": "embarcados/src/python/gerar_artigo_numeros.py",
+   "fontes": [
+    {
+     "arquivo": "embarcados/results/predictions/diagnostico_janelas_20261023_222831.csv",
+     "sha256": "6426a95a9ceb73ad3e4a9f4a8d83f8194a3ce6b7d1605c0bfdd151384454102b"
+    }
+   ]
+  },
+  "VDataBldcClasses": {
+   "valor": 3,
+   "status": "ok",
+   "categoria": "dados",
+   "coluna": "nunique(classe)",
+   "script": "embarcados/src/python/gerar_artigo_numeros.py",
+   "fontes": [
+    {
+     "arquivo": "embarcados/results/predictions/diagnostico_janelas_20261023_222831.csv",
+     "sha256": "6426a95a9ceb73ad3e4a9f4a8d83f8194a3ce6b7d1605c0bfdd151384454102b"
+    }
+   ]
+  },
+  "VDataBldcFilesHealthy": {
+   "valor": 22,
+   "status": "ok",
+   "categoria": "dados",
+   "coluna": "nunique(rec_id) por classe",
+   "script": "embarcados/src/python/gerar_artigo_numeros.py",
+   "fontes": [
+    {
+     "arquivo": "embarcados/results/predictions/diagnostico_janelas_20261023_222831.csv",
+     "sha256": "6426a95a9ceb73ad3e4a9f4a8d83f8194a3ce6b7d1605c0bfdd151384454102b"
+    }
+   ]
+  },
+  "VDataBldcFilesPropeller": {
+   "valor": 14,
+   "status": "ok",
+   "categoria": "dados",
+   "coluna": "nunique(rec_id) por classe",
+   "script": "embarcados/src/python/gerar_artigo_numeros.py",
+   "fontes": [
+    {
+     "arquivo": "embarcados/results/predictions/diagnostico_janelas_20261023_222831.csv",
+     "sha256": "6426a95a9ceb73ad3e4a9f4a8d83f8194a3ce6b7d1605c0bfdd151384454102b"
+    }
+   ]
+  },
+  "VDataBldcFilesBearing": {
+   "valor": 7,
+   "status": "ok",
+   "categoria": "dados",
+   "coluna": "nunique(rec_id) por classe",
+   "script": "embarcados/src/python/gerar_artigo_numeros.py",
+   "fontes": [
+    {
+     "arquivo": "embarcados/results/predictions/diagnostico_janelas_20261023_222831.csv",
+     "sha256": "6426a95a9ceb73ad3e4a9f4a8d83f8194a3ce6b7d1605c0bfdd151384454102b"
+    }
+   ]
+  },
+  "VDataIdmtRandGroups": {
+   "valor": 18,
+   "status": "ok",
+   "categoria": "dados",
+   "coluna": "n_grupos",
+   "script": "embarcados/src/python/gerar_artigo_numeros.py",
+   "fontes": [
+    {
+     "arquivo": "embarcados/results/csv/diagnostico_20261023_222831.csv",
+     "sha256": "83e602a7680c87ae7f429840d4db57c49b80a7f4c1c8e45900005ce7e269a7ff"
+    }
+   ]
+  },
+  "VDataIdmtBlkGroups": {
+   "valor": 15,
+   "status": "ok",
+   "categoria": "dados",
+   "coluna": "n_grupos",
+   "script": "embarcados/src/python/gerar_artigo_numeros.py",
+   "fontes": [
+    {
+     "arquivo": "embarcados/results/csv/diagnostico_20261023_222831.csv",
+     "sha256": "83e602a7680c87ae7f429840d4db57c49b80a7f4c1c8e45900005ce7e269a7ff"
+    }
+   ]
+  },
+  "VDataBldcRandGroups": {
+   "valor": 43,
+   "status": "ok",
+   "categoria": "dados",
+   "coluna": "n_grupos",
+   "script": "embarcados/src/python/gerar_artigo_numeros.py",
+   "fontes": [
+    {
+     "arquivo": "embarcados/results/csv/diagnostico_20261023_222831.csv",
+     "sha256": "83e602a7680c87ae7f429840d4db57c49b80a7f4c1c8e45900005ce7e269a7ff"
+    }
+   ]
+  },
+  "VDataBldcFileGroups": {
+   "valor": 43,
+   "status": "ok",
+   "categoria": "dados",
+   "coluna": "n_grupos",
+   "script": "embarcados/src/python/gerar_artigo_numeros.py",
+   "fontes": [
+    {
+     "arquivo": "embarcados/results/csv/diagnostico_20261023_222831.csv",
+     "sha256": "83e602a7680c87ae7f429840d4db57c49b80a7f4c1c8e45900005ce7e269a7ff"
+    }
+   ]
+  },
+  "VDataBldcMotorGroups": {
+   "valor": 43,
+   "status": "ok",
+   "categoria": "dados",
+   "coluna": "n_grupos",
+   "script": "embarcados/src/python/gerar_artigo_numeros.py",
+   "fontes": [
+    {
+     "arquivo": "embarcados/results/csv/diagnostico_20261023_222831.csv",
+     "sha256": "83e602a7680c87ae7f429840d4db57c49b80a7f4c1c8e45900005ce7e269a7ff"
+    }
+   ]
+  },
+  "VDataBldcNoMfourGroups": {
+   "valor": 36,
+   "status": "ok",
+   "categoria": "dados",
+   "coluna": "n_grupos",
+   "script": "embarcados/src/python/gerar_artigo_numeros.py",
+   "fontes": [
+    {
+     "arquivo": "embarcados/results/csv/diagnostico_20261023_222831.csv",
+     "sha256": "83e602a7680c87ae7f429840d4db57c49b80a7f4c1c8e45900005ce7e269a7ff"
+    }
+   ]
+  },
+  "VDataNBoot": {
+   "valor": 2000,
+   "status": "ok",
+   "categoria": "dados",
+   "coluna": "n_boot",
+   "script": "embarcados/src/python/gerar_artigo_numeros.py",
+   "fontes": [
+    {
+     "arquivo": "embarcados/results/csv/diagnostico_20261023_222831_meta.json",
+     "sha256": "6e0879c7cccc78fab5a87687a16b468c6cd6140283d905611271178d98b55775"
+    }
+   ]
+  },
+  "VDataCiLevel": {
+   "valor": 95,
+   "status": "ok",
+   "categoria": "dados",
+   "coluna": "nível do IC no nome da coluna ic<nível>_lo",
+   "script": "embarcados/src/python/gerar_artigo_numeros.py",
+   "fontes": [
+    {
+     "arquivo": "embarcados/results/csv/diagnostico_20261023_222831.csv",
+     "sha256": "83e602a7680c87ae7f429840d4db57c49b80a7f4c1c8e45900005ce7e269a7ff"
+    }
+   ]
+  },
+  "VDataSeedBoot": {
+   "valor": 20261023,
+   "status": "ok",
+   "categoria": "dados",
+   "coluna": "seed_boot",
+   "script": "embarcados/src/python/gerar_artigo_numeros.py",
+   "fontes": [
+    {
+     "arquivo": "embarcados/results/csv/diagnostico_20261023_222831_meta.json",
+     "sha256": "6e0879c7cccc78fab5a87687a16b468c6cd6140283d905611271178d98b55775"
+    }
+   ]
+  },
+  "VDiagBalRmsNormIdmtRand": {
+   "valor": 0.9916170634920636,
+   "status": "ok",
+   "categoria": "diagnostico",
+   "coluna": "valor[b00_rmspico_norm,idmt,aleatorio,acuracia_balanceada,_macro]",
+   "script": "embarcados/src/python/gerar_artigo_numeros.py",
+   "fontes": [
+    {
+     "arquivo": "embarcados/results/csv/diagnostico_20261023_222831.csv",
+     "sha256": "83e602a7680c87ae7f429840d4db57c49b80a7f4c1c8e45900005ce7e269a7ff"
+    }
+   ]
+  },
+  "VDiagBalRmsNormIdmtRandLo": {
+   "valor": 0.9831611992574923,
+   "status": "ok",
+   "categoria": "diagnostico",
+   "coluna": "ic95_lo[b00_rmspico_norm,idmt,aleatorio,acuracia_balanceada,_macro]",
+   "script": "embarcados/src/python/gerar_artigo_numeros.py",
+   "fontes": [
+    {
+     "arquivo": "embarcados/results/csv/diagnostico_20261023_222831.csv",
+     "sha256": "83e602a7680c87ae7f429840d4db57c49b80a7f4c1c8e45900005ce7e269a7ff"
+    }
+   ]
+  },
+  "VDiagBalRmsNormIdmtRandHi": {
+   "valor": 1.0,
+   "status": "ok",
+   "categoria": "diagnostico",
+   "coluna": "ic95_hi[b00_rmspico_norm,idmt,aleatorio,acuracia_balanceada,_macro]",
+   "script": "embarcados/src/python/gerar_artigo_numeros.py",
+   "fontes": [
+    {
+     "arquivo": "embarcados/results/csv/diagnostico_20261023_222831.csv",
+     "sha256": "83e602a7680c87ae7f429840d4db57c49b80a7f4c1c8e45900005ce7e269a7ff"
+    }
+   ]
+  },
+  "VDiagAucRmsNormIdmtRand": {
+   "valor": 0.9984914571751046,
+   "status": "ok",
+   "categoria": "diagnostico",
+   "coluna": "valor[b00_rmspico_norm,idmt,aleatorio,roc_auc_ovr_macro,_macro]",
+   "script": "embarcados/src/python/gerar_artigo_numeros.py",
+   "fontes": [
+    {
+     "arquivo": "embarcados/results/csv/diagnostico_20261023_222831.csv",
+     "sha256": "83e602a7680c87ae7f429840d4db57c49b80a7f4c1c8e45900005ce7e269a7ff"
+    }
+   ]
+  },
+  "VDiagFoneRmsNormIdmtRand": {
+   "valor": 0.9915340582427196,
+   "status": "ok",
+   "categoria": "diagnostico",
+   "coluna": "valor[b00_rmspico_norm,idmt,aleatorio,f1_macro,_macro]",
+   "script": "embarcados/src/python/gerar_artigo_numeros.py",
+   "fontes": [
+    {
+     "arquivo": "embarcados/results/csv/diagnostico_20261023_222831.csv",
+     "sha256": "83e602a7680c87ae7f429840d4db57c49b80a7f4c1c8e45900005ce7e269a7ff"
+    }
+   ]
+  },
+  "VDiagBalRmsRawIdmtRand": {
+   "valor": 0.9968253968253968,
+   "status": "ok",
+   "categoria": "diagnostico",
+   "coluna": "valor[b00_rmspico_bruto,idmt,aleatorio,acuracia_balanceada,_macro]",
+   "script": "embarcados/src/python/gerar_artigo_numeros.py",
+   "fontes": [
+    {
+     "arquivo": "embarcados/results/csv/diagnostico_20261023_222831.csv",
+     "sha256": "83e602a7680c87ae7f429840d4db57c49b80a7f4c1c8e45900005ce7e269a7ff"
+    }
+   ]
+  },
+  "VDiagBalRmsRawIdmtRandLo": {
+   "valor": 0.9903846153846154,
+   "status": "ok",
+   "categoria": "diagnostico",
+   "coluna": "ic95_lo[b00_rmspico_bruto,idmt,aleatorio,acuracia_balanceada,_macro]",
+   "script": "embarcados/src/python/gerar_artigo_numeros.py",
+   "fontes": [
+    {
+     "arquivo": "embarcados/results/csv/diagnostico_20261023_222831.csv",
+     "sha256": "83e602a7680c87ae7f429840d4db57c49b80a7f4c1c8e45900005ce7e269a7ff"
+    }
+   ]
+  },
+  "VDiagBalRmsRawIdmtRandHi": {
+   "valor": 1.0,
+   "status": "ok",
+   "categoria": "diagnostico",
+   "coluna": "ic95_hi[b00_rmspico_bruto,idmt,aleatorio,acuracia_balanceada,_macro]",
+   "script": "embarcados/src/python/gerar_artigo_numeros.py",
+   "fontes": [
+    {
+     "arquivo": "embarcados/results/csv/diagnostico_20261023_222831.csv",
+     "sha256": "83e602a7680c87ae7f429840d4db57c49b80a7f4c1c8e45900005ce7e269a7ff"
+    }
+   ]
+  },
+  "VDiagAucRmsRawIdmtRand": {
+   "valor": 1.0,
+   "status": "ok",
+   "categoria": "diagnostico",
+   "coluna": "valor[b00_rmspico_bruto,idmt,aleatorio,roc_auc_ovr_macro,_macro]",
+   "script": "embarcados/src/python/gerar_artigo_numeros.py",
+   "fontes": [
+    {
+     "arquivo": "embarcados/results/csv/diagnostico_20261023_222831.csv",
+     "sha256": "83e602a7680c87ae7f429840d4db57c49b80a7f4c1c8e45900005ce7e269a7ff"
+    }
+   ]
+  },
+  "VDiagFoneRmsRawIdmtRand": {
+   "valor": 0.9970664155825856,
+   "status": "ok",
+   "categoria": "diagnostico",
+   "coluna": "valor[b00_rmspico_bruto,idmt,aleatorio,f1_macro,_macro]",
+   "script": "embarcados/src/python/gerar_artigo_numeros.py",
+   "fontes": [
+    {
+     "arquivo": "embarcados/results/csv/diagnostico_20261023_222831.csv",
+     "sha256": "83e602a7680c87ae7f429840d4db57c49b80a7f4c1c8e45900005ce7e269a7ff"
+    }
+   ]
+  },
+  "VDiagBalClsIdmtRand": {
+   "valor": 1.0,
+   "status": "ok",
+   "categoria": "diagnostico",
+   "coluna": "valor[p04_classicas,idmt,aleatorio,acuracia_balanceada,_macro]",
+   "script": "embarcados/src/python/gerar_artigo_numeros.py",
+   "fontes": [
+    {
+     "arquivo": "embarcados/results/csv/diagnostico_20261023_222831.csv",
+     "sha256": "83e602a7680c87ae7f429840d4db57c49b80a7f4c1c8e45900005ce7e269a7ff"
+    }
+   ]
+  },
+  "VDiagBalClsIdmtRandLo": {
+   "valor": 1.0,
+   "status": "ok",
+   "categoria": "diagnostico",
+   "coluna": "ic95_lo[p04_classicas,idmt,aleatorio,acuracia_balanceada,_macro]",
+   "script": "embarcados/src/python/gerar_artigo_numeros.py",
+   "fontes": [
+    {
+     "arquivo": "embarcados/results/csv/diagnostico_20261023_222831.csv",
+     "sha256": "83e602a7680c87ae7f429840d4db57c49b80a7f4c1c8e45900005ce7e269a7ff"
+    }
+   ]
+  },
+  "VDiagBalClsIdmtRandHi": {
+   "valor": 1.0,
+   "status": "ok",
+   "categoria": "diagnostico",
+   "coluna": "ic95_hi[p04_classicas,idmt,aleatorio,acuracia_balanceada,_macro]",
+   "script": "embarcados/src/python/gerar_artigo_numeros.py",
+   "fontes": [
+    {
+     "arquivo": "embarcados/results/csv/diagnostico_20261023_222831.csv",
+     "sha256": "83e602a7680c87ae7f429840d4db57c49b80a7f4c1c8e45900005ce7e269a7ff"
+    }
+   ]
+  },
+  "VDiagAucClsIdmtRand": {
+   "valor": 1.0,
+   "status": "ok",
+   "categoria": "diagnostico",
+   "coluna": "valor[p04_classicas,idmt,aleatorio,roc_auc_ovr_macro,_macro]",
+   "script": "embarcados/src/python/gerar_artigo_numeros.py",
+   "fontes": [
+    {
+     "arquivo": "embarcados/results/csv/diagnostico_20261023_222831.csv",
+     "sha256": "83e602a7680c87ae7f429840d4db57c49b80a7f4c1c8e45900005ce7e269a7ff"
+    }
+   ]
+  },
+  "VDiagFoneClsIdmtRand": {
+   "valor": 1.0,
+   "status": "ok",
+   "categoria": "diagnostico",
+   "coluna": "valor[p04_classicas,idmt,aleatorio,f1_macro,_macro]",
+   "script": "embarcados/src/python/gerar_artigo_numeros.py",
+   "fontes": [
+    {
+     "arquivo": "embarcados/results/csv/diagnostico_20261023_222831.csv",
+     "sha256": "83e602a7680c87ae7f429840d4db57c49b80a7f4c1c8e45900005ce7e269a7ff"
+    }
+   ]
+  },
+  "VDiagBalDecIdmtRand": {
+   "valor": 1.0,
+   "status": "ok",
+   "categoria": "diagnostico",
+   "coluna": "valor[p11_decifrae_harmsum,idmt,aleatorio,acuracia_balanceada,_macro]",
+   "script": "embarcados/src/python/gerar_artigo_numeros.py",
+   "fontes": [
+    {
+     "arquivo": "embarcados/results/csv/diagnostico_20261023_222831.csv",
+     "sha256": "83e602a7680c87ae7f429840d4db57c49b80a7f4c1c8e45900005ce7e269a7ff"
+    }
+   ]
+  },
+  "VDiagBalDecIdmtRandLo": {
+   "valor": 1.0,
+   "status": "ok",
+   "categoria": "diagnostico",
+   "coluna": "ic95_lo[p11_decifrae_harmsum,idmt,aleatorio,acuracia_balanceada,_macro]",
+   "script": "embarcados/src/python/gerar_artigo_numeros.py",
+   "fontes": [
+    {
+     "arquivo": "embarcados/results/csv/diagnostico_20261023_222831.csv",
+     "sha256": "83e602a7680c87ae7f429840d4db57c49b80a7f4c1c8e45900005ce7e269a7ff"
+    }
+   ]
+  },
+  "VDiagBalDecIdmtRandHi": {
+   "valor": 1.0,
+   "status": "ok",
+   "categoria": "diagnostico",
+   "coluna": "ic95_hi[p11_decifrae_harmsum,idmt,aleatorio,acuracia_balanceada,_macro]",
+   "script": "embarcados/src/python/gerar_artigo_numeros.py",
+   "fontes": [
+    {
+     "arquivo": "embarcados/results/csv/diagnostico_20261023_222831.csv",
+     "sha256": "83e602a7680c87ae7f429840d4db57c49b80a7f4c1c8e45900005ce7e269a7ff"
+    }
+   ]
+  },
+  "VDiagAucDecIdmtRand": {
+   "valor": 1.0,
+   "status": "ok",
+   "categoria": "diagnostico",
+   "coluna": "valor[p11_decifrae_harmsum,idmt,aleatorio,roc_auc_ovr_macro,_macro]",
+   "script": "embarcados/src/python/gerar_artigo_numeros.py",
+   "fontes": [
+    {
+     "arquivo": "embarcados/results/csv/diagnostico_20261023_222831.csv",
+     "sha256": "83e602a7680c87ae7f429840d4db57c49b80a7f4c1c8e45900005ce7e269a7ff"
+    }
+   ]
+  },
+  "VDiagFoneDecIdmtRand": {
+   "valor": 1.0,
+   "status": "ok",
+   "categoria": "diagnostico",
+   "coluna": "valor[p11_decifrae_harmsum,idmt,aleatorio,f1_macro,_macro]",
+   "script": "embarcados/src/python/gerar_artigo_numeros.py",
+   "fontes": [
+    {
+     "arquivo": "embarcados/results/csv/diagnostico_20261023_222831.csv",
+     "sha256": "83e602a7680c87ae7f429840d4db57c49b80a7f4c1c8e45900005ce7e269a7ff"
+    }
+   ]
+  },
+  "VDiagBalRmsNormIdmtBlk": {
+   "valor": 0.9913233258809752,
+   "status": "ok",
+   "categoria": "diagnostico",
+   "coluna": "valor[b00_rmspico_norm,idmt,blocos,acuracia_balanceada,_macro]",
+   "script": "embarcados/src/python/gerar_artigo_numeros.py",
+   "fontes": [
+    {
+     "arquivo": "embarcados/results/csv/diagnostico_20261023_222831.csv",
+     "sha256": "83e602a7680c87ae7f429840d4db57c49b80a7f4c1c8e45900005ce7e269a7ff"
+    }
+   ]
+  },
+  "VDiagBalRmsNormIdmtBlkLo": {
+   "valor": 0.9823140495867768,
+   "status": "ok",
+   "categoria": "diagnostico",
+   "coluna": "ic95_lo[b00_rmspico_norm,idmt,blocos,acuracia_balanceada,_macro]",
+   "script": "embarcados/src/python/gerar_artigo_numeros.py",
+   "fontes": [
+    {
+     "arquivo": "embarcados/results/csv/diagnostico_20261023_222831.csv",
+     "sha256": "83e602a7680c87ae7f429840d4db57c49b80a7f4c1c8e45900005ce7e269a7ff"
+    }
+   ]
+  },
+  "VDiagBalRmsNormIdmtBlkHi": {
+   "valor": 0.9973544973544972,
+   "status": "ok",
+   "categoria": "diagnostico",
+   "coluna": "ic95_hi[b00_rmspico_norm,idmt,blocos,acuracia_balanceada,_macro]",
+   "script": "embarcados/src/python/gerar_artigo_numeros.py",
+   "fontes": [
+    {
+     "arquivo": "embarcados/results/csv/diagnostico_20261023_222831.csv",
+     "sha256": "83e602a7680c87ae7f429840d4db57c49b80a7f4c1c8e45900005ce7e269a7ff"
+    }
+   ]
+  },
+  "VDiagAucRmsNormIdmtBlk": {
+   "valor": 0.9984739978577114,
+   "status": "ok",
+   "categoria": "diagnostico",
+   "coluna": "valor[b00_rmspico_norm,idmt,blocos,roc_auc_ovr_macro,_macro]",
+   "script": "embarcados/src/python/gerar_artigo_numeros.py",
+   "fontes": [
+    {
+     "arquivo": "embarcados/results/csv/diagnostico_20261023_222831.csv",
+     "sha256": "83e602a7680c87ae7f429840d4db57c49b80a7f4c1c8e45900005ce7e269a7ff"
+    }
+   ]
+  },
+  "VDiagFoneRmsNormIdmtBlk": {
+   "valor": 0.9912348219300866,
+   "status": "ok",
+   "categoria": "diagnostico",
+   "coluna": "valor[b00_rmspico_norm,idmt,blocos,f1_macro,_macro]",
+   "script": "embarcados/src/python/gerar_artigo_numeros.py",
+   "fontes": [
+    {
+     "arquivo": "embarcados/results/csv/diagnostico_20261023_222831.csv",
+     "sha256": "83e602a7680c87ae7f429840d4db57c49b80a7f4c1c8e45900005ce7e269a7ff"
+    }
+   ]
+  },
+  "VDiagBalRmsRawIdmtBlk": {
+   "valor": 0.9933993399339934,
+   "status": "ok",
+   "categoria": "diagnostico",
+   "coluna": "valor[b00_rmspico_bruto,idmt,blocos,acuracia_balanceada,_macro]",
+   "script": "embarcados/src/python/gerar_artigo_numeros.py",
+   "fontes": [
+    {
+     "arquivo": "embarcados/results/csv/diagnostico_20261023_222831.csv",
+     "sha256": "83e602a7680c87ae7f429840d4db57c49b80a7f4c1c8e45900005ce7e269a7ff"
+    }
+   ]
+  },
+  "VDiagBalRmsRawIdmtBlkLo": {
+   "valor": 0.9866666666666668,
+   "status": "ok",
+   "categoria": "diagnostico",
+   "coluna": "ic95_lo[b00_rmspico_bruto,idmt,blocos,acuracia_balanceada,_macro]",
+   "script": "embarcados/src/python/gerar_artigo_numeros.py",
+   "fontes": [
+    {
+     "arquivo": "embarcados/results/csv/diagnostico_20261023_222831.csv",
+     "sha256": "83e602a7680c87ae7f429840d4db57c49b80a7f4c1c8e45900005ce7e269a7ff"
+    }
+   ]
+  },
+  "VDiagBalRmsRawIdmtBlkHi": {
+   "valor": 1.0,
+   "status": "ok",
+   "categoria": "diagnostico",
+   "coluna": "ic95_hi[b00_rmspico_bruto,idmt,blocos,acuracia_balanceada,_macro]",
+   "script": "embarcados/src/python/gerar_artigo_numeros.py",
+   "fontes": [
+    {
+     "arquivo": "embarcados/results/csv/diagnostico_20261023_222831.csv",
+     "sha256": "83e602a7680c87ae7f429840d4db57c49b80a7f4c1c8e45900005ce7e269a7ff"
+    }
+   ]
+  },
+  "VDiagAucRmsRawIdmtBlk": {
+   "valor": 1.0,
+   "status": "ok",
+   "categoria": "diagnostico",
+   "coluna": "valor[b00_rmspico_bruto,idmt,blocos,roc_auc_ovr_macro,_macro]",
+   "script": "embarcados/src/python/gerar_artigo_numeros.py",
+   "fontes": [
+    {
+     "arquivo": "embarcados/results/csv/diagnostico_20261023_222831.csv",
+     "sha256": "83e602a7680c87ae7f429840d4db57c49b80a7f4c1c8e45900005ce7e269a7ff"
+    }
+   ]
+  },
+  "VDiagFoneRmsRawIdmtBlk": {
+   "valor": 0.9939118457300276,
+   "status": "ok",
+   "categoria": "diagnostico",
+   "coluna": "valor[b00_rmspico_bruto,idmt,blocos,f1_macro,_macro]",
+   "script": "embarcados/src/python/gerar_artigo_numeros.py",
+   "fontes": [
+    {
+     "arquivo": "embarcados/results/csv/diagnostico_20261023_222831.csv",
+     "sha256": "83e602a7680c87ae7f429840d4db57c49b80a7f4c1c8e45900005ce7e269a7ff"
+    }
+   ]
+  },
+  "VDiagBalClsIdmtBlk": {
+   "valor": 1.0,
+   "status": "ok",
+   "categoria": "diagnostico",
+   "coluna": "valor[p04_classicas,idmt,blocos,acuracia_balanceada,_macro]",
+   "script": "embarcados/src/python/gerar_artigo_numeros.py",
+   "fontes": [
+    {
+     "arquivo": "embarcados/results/csv/diagnostico_20261023_222831.csv",
+     "sha256": "83e602a7680c87ae7f429840d4db57c49b80a7f4c1c8e45900005ce7e269a7ff"
+    }
+   ]
+  },
+  "VDiagBalClsIdmtBlkLo": {
+   "valor": 1.0,
+   "status": "ok",
+   "categoria": "diagnostico",
+   "coluna": "ic95_lo[p04_classicas,idmt,blocos,acuracia_balanceada,_macro]",
+   "script": "embarcados/src/python/gerar_artigo_numeros.py",
+   "fontes": [
+    {
+     "arquivo": "embarcados/results/csv/diagnostico_20261023_222831.csv",
+     "sha256": "83e602a7680c87ae7f429840d4db57c49b80a7f4c1c8e45900005ce7e269a7ff"
+    }
+   ]
+  },
+  "VDiagBalClsIdmtBlkHi": {
+   "valor": 1.0,
+   "status": "ok",
+   "categoria": "diagnostico",
+   "coluna": "ic95_hi[p04_classicas,idmt,blocos,acuracia_balanceada,_macro]",
+   "script": "embarcados/src/python/gerar_artigo_numeros.py",
+   "fontes": [
+    {
+     "arquivo": "embarcados/results/csv/diagnostico_20261023_222831.csv",
+     "sha256": "83e602a7680c87ae7f429840d4db57c49b80a7f4c1c8e45900005ce7e269a7ff"
+    }
+   ]
+  },
+  "VDiagAucClsIdmtBlk": {
+   "valor": 1.0,
+   "status": "ok",
+   "categoria": "diagnostico",
+   "coluna": "valor[p04_classicas,idmt,blocos,roc_auc_ovr_macro,_macro]",
+   "script": "embarcados/src/python/gerar_artigo_numeros.py",
+   "fontes": [
+    {
+     "arquivo": "embarcados/results/csv/diagnostico_20261023_222831.csv",
+     "sha256": "83e602a7680c87ae7f429840d4db57c49b80a7f4c1c8e45900005ce7e269a7ff"
+    }
+   ]
+  },
+  "VDiagFoneClsIdmtBlk": {
+   "valor": 1.0,
+   "status": "ok",
+   "categoria": "diagnostico",
+   "coluna": "valor[p04_classicas,idmt,blocos,f1_macro,_macro]",
+   "script": "embarcados/src/python/gerar_artigo_numeros.py",
+   "fontes": [
+    {
+     "arquivo": "embarcados/results/csv/diagnostico_20261023_222831.csv",
+     "sha256": "83e602a7680c87ae7f429840d4db57c49b80a7f4c1c8e45900005ce7e269a7ff"
+    }
+   ]
+  },
+  "VDiagBalDecIdmtBlk": {
+   "valor": 1.0,
+   "status": "ok",
+   "categoria": "diagnostico",
+   "coluna": "valor[p11_decifrae_harmsum,idmt,blocos,acuracia_balanceada,_macro]",
+   "script": "embarcados/src/python/gerar_artigo_numeros.py",
+   "fontes": [
+    {
+     "arquivo": "embarcados/results/csv/diagnostico_20261023_222831.csv",
+     "sha256": "83e602a7680c87ae7f429840d4db57c49b80a7f4c1c8e45900005ce7e269a7ff"
+    }
+   ]
+  },
+  "VDiagBalDecIdmtBlkLo": {
+   "valor": 1.0,
+   "status": "ok",
+   "categoria": "diagnostico",
+   "coluna": "ic95_lo[p11_decifrae_harmsum,idmt,blocos,acuracia_balanceada,_macro]",
+   "script": "embarcados/src/python/gerar_artigo_numeros.py",
+   "fontes": [
+    {
+     "arquivo": "embarcados/results/csv/diagnostico_20261023_222831.csv",
+     "sha256": "83e602a7680c87ae7f429840d4db57c49b80a7f4c1c8e45900005ce7e269a7ff"
+    }
+   ]
+  },
+  "VDiagBalDecIdmtBlkHi": {
+   "valor": 1.0,
+   "status": "ok",
+   "categoria": "diagnostico",
+   "coluna": "ic95_hi[p11_decifrae_harmsum,idmt,blocos,acuracia_balanceada,_macro]",
+   "script": "embarcados/src/python/gerar_artigo_numeros.py",
+   "fontes": [
+    {
+     "arquivo": "embarcados/results/csv/diagnostico_20261023_222831.csv",
+     "sha256": "83e602a7680c87ae7f429840d4db57c49b80a7f4c1c8e45900005ce7e269a7ff"
+    }
+   ]
+  },
+  "VDiagAucDecIdmtBlk": {
+   "valor": 1.0,
+   "status": "ok",
+   "categoria": "diagnostico",
+   "coluna": "valor[p11_decifrae_harmsum,idmt,blocos,roc_auc_ovr_macro,_macro]",
+   "script": "embarcados/src/python/gerar_artigo_numeros.py",
+   "fontes": [
+    {
+     "arquivo": "embarcados/results/csv/diagnostico_20261023_222831.csv",
+     "sha256": "83e602a7680c87ae7f429840d4db57c49b80a7f4c1c8e45900005ce7e269a7ff"
+    }
+   ]
+  },
+  "VDiagFoneDecIdmtBlk": {
+   "valor": 1.0,
+   "status": "ok",
+   "categoria": "diagnostico",
+   "coluna": "valor[p11_decifrae_harmsum,idmt,blocos,f1_macro,_macro]",
+   "script": "embarcados/src/python/gerar_artigo_numeros.py",
+   "fontes": [
+    {
+     "arquivo": "embarcados/results/csv/diagnostico_20261023_222831.csv",
+     "sha256": "83e602a7680c87ae7f429840d4db57c49b80a7f4c1c8e45900005ce7e269a7ff"
+    }
+   ]
+  },
+  "VDiagBalRmsNormBldcRand": {
+   "valor": 0.564069264069264,
+   "status": "ok",
+   "categoria": "diagnostico",
+   "coluna": "valor[b00_rmspico_norm,a2212,aleatorio,acuracia_balanceada,_macro]",
+   "script": "embarcados/src/python/gerar_artigo_numeros.py",
+   "fontes": [
+    {
+     "arquivo": "embarcados/results/csv/diagnostico_20261023_222831.csv",
+     "sha256": "83e602a7680c87ae7f429840d4db57c49b80a7f4c1c8e45900005ce7e269a7ff"
+    }
+   ]
+  },
+  "VDiagBalRmsNormBldcRandLo": {
+   "valor": 0.5147023809523811,
+   "status": "ok",
+   "categoria": "diagnostico",
+   "coluna": "ic95_lo[b00_rmspico_norm,a2212,aleatorio,acuracia_balanceada,_macro]",
+   "script": "embarcados/src/python/gerar_artigo_numeros.py",
+   "fontes": [
+    {
+     "arquivo": "embarcados/results/csv/diagnostico_20261023_222831.csv",
+     "sha256": "83e602a7680c87ae7f429840d4db57c49b80a7f4c1c8e45900005ce7e269a7ff"
+    }
+   ]
+  },
+  "VDiagBalRmsNormBldcRandHi": {
+   "valor": 0.6069372294372293,
+   "status": "ok",
+   "categoria": "diagnostico",
+   "coluna": "ic95_hi[b00_rmspico_norm,a2212,aleatorio,acuracia_balanceada,_macro]",
+   "script": "embarcados/src/python/gerar_artigo_numeros.py",
+   "fontes": [
+    {
+     "arquivo": "embarcados/results/csv/diagnostico_20261023_222831.csv",
+     "sha256": "83e602a7680c87ae7f429840d4db57c49b80a7f4c1c8e45900005ce7e269a7ff"
+    }
+   ]
+  },
+  "VDiagAucRmsNormBldcRand": {
+   "valor": 0.7837914862914864,
+   "status": "ok",
+   "categoria": "diagnostico",
+   "coluna": "valor[b00_rmspico_norm,a2212,aleatorio,roc_auc_ovr_macro,_macro]",
+   "script": "embarcados/src/python/gerar_artigo_numeros.py",
+   "fontes": [
+    {
+     "arquivo": "embarcados/results/csv/diagnostico_20261023_222831.csv",
+     "sha256": "83e602a7680c87ae7f429840d4db57c49b80a7f4c1c8e45900005ce7e269a7ff"
+    }
+   ]
+  },
+  "VDiagFoneRmsNormBldcRand": {
+   "valor": 0.5331303111610454,
+   "status": "ok",
+   "categoria": "diagnostico",
+   "coluna": "valor[b00_rmspico_norm,a2212,aleatorio,f1_macro,_macro]",
+   "script": "embarcados/src/python/gerar_artigo_numeros.py",
+   "fontes": [
+    {
+     "arquivo": "embarcados/results/csv/diagnostico_20261023_222831.csv",
+     "sha256": "83e602a7680c87ae7f429840d4db57c49b80a7f4c1c8e45900005ce7e269a7ff"
+    }
+   ]
+  },
+  "VDiagBalRmsRawBldcRand": {
+   "valor": 0.6246753246753247,
+   "status": "ok",
+   "categoria": "diagnostico",
+   "coluna": "valor[b00_rmspico_bruto,a2212,aleatorio,acuracia_balanceada,_macro]",
+   "script": "embarcados/src/python/gerar_artigo_numeros.py",
+   "fontes": [
+    {
+     "arquivo": "embarcados/results/csv/diagnostico_20261023_222831.csv",
+     "sha256": "83e602a7680c87ae7f429840d4db57c49b80a7f4c1c8e45900005ce7e269a7ff"
+    }
+   ]
+  },
+  "VDiagBalRmsRawBldcRandLo": {
+   "valor": 0.5714123376623378,
+   "status": "ok",
+   "categoria": "diagnostico",
+   "coluna": "ic95_lo[b00_rmspico_bruto,a2212,aleatorio,acuracia_balanceada,_macro]",
+   "script": "embarcados/src/python/gerar_artigo_numeros.py",
+   "fontes": [
+    {
+     "arquivo": "embarcados/results/csv/diagnostico_20261023_222831.csv",
+     "sha256": "83e602a7680c87ae7f429840d4db57c49b80a7f4c1c8e45900005ce7e269a7ff"
+    }
+   ]
+  },
+  "VDiagBalRmsRawBldcRandHi": {
+   "valor": 0.6603896103896104,
+   "status": "ok",
+   "categoria": "diagnostico",
+   "coluna": "ic95_hi[b00_rmspico_bruto,a2212,aleatorio,acuracia_balanceada,_macro]",
+   "script": "embarcados/src/python/gerar_artigo_numeros.py",
+   "fontes": [
+    {
+     "arquivo": "embarcados/results/csv/diagnostico_20261023_222831.csv",
+     "sha256": "83e602a7680c87ae7f429840d4db57c49b80a7f4c1c8e45900005ce7e269a7ff"
+    }
+   ]
+  },
+  "VDiagAucRmsRawBldcRand": {
+   "valor": 0.7860309996516893,
+   "status": "ok",
+   "categoria": "diagnostico",
+   "coluna": "valor[b00_rmspico_bruto,a2212,aleatorio,roc_auc_ovr_macro,_macro]",
+   "script": "embarcados/src/python/gerar_artigo_numeros.py",
+   "fontes": [
+    {
+     "arquivo": "embarcados/results/csv/diagnostico_20261023_222831.csv",
+     "sha256": "83e602a7680c87ae7f429840d4db57c49b80a7f4c1c8e45900005ce7e269a7ff"
+    }
+   ]
+  },
+  "VDiagFoneRmsRawBldcRand": {
+   "valor": 0.587529200359389,
+   "status": "ok",
+   "categoria": "diagnostico",
+   "coluna": "valor[b00_rmspico_bruto,a2212,aleatorio,f1_macro,_macro]",
+   "script": "embarcados/src/python/gerar_artigo_numeros.py",
+   "fontes": [
+    {
+     "arquivo": "embarcados/results/csv/diagnostico_20261023_222831.csv",
+     "sha256": "83e602a7680c87ae7f429840d4db57c49b80a7f4c1c8e45900005ce7e269a7ff"
+    }
+   ]
+  },
+  "VDiagBalClsBldcRand": {
+   "valor": 0.9984848484848484,
+   "status": "ok",
+   "categoria": "diagnostico",
+   "coluna": "valor[p04_classicas,a2212,aleatorio,acuracia_balanceada,_macro]",
+   "script": "embarcados/src/python/gerar_artigo_numeros.py",
+   "fontes": [
+    {
+     "arquivo": "embarcados/results/csv/diagnostico_20261023_222831.csv",
+     "sha256": "83e602a7680c87ae7f429840d4db57c49b80a7f4c1c8e45900005ce7e269a7ff"
+    }
+   ]
+  },
+  "VDiagBalClsBldcRandLo": {
+   "valor": 0.9954545454545456,
+   "status": "ok",
+   "categoria": "diagnostico",
+   "coluna": "ic95_lo[p04_classicas,a2212,aleatorio,acuracia_balanceada,_macro]",
+   "script": "embarcados/src/python/gerar_artigo_numeros.py",
+   "fontes": [
+    {
+     "arquivo": "embarcados/results/csv/diagnostico_20261023_222831.csv",
+     "sha256": "83e602a7680c87ae7f429840d4db57c49b80a7f4c1c8e45900005ce7e269a7ff"
+    }
+   ]
+  },
+  "VDiagBalClsBldcRandHi": {
+   "valor": 1.0,
+   "status": "ok",
+   "categoria": "diagnostico",
+   "coluna": "ic95_hi[p04_classicas,a2212,aleatorio,acuracia_balanceada,_macro]",
+   "script": "embarcados/src/python/gerar_artigo_numeros.py",
+   "fontes": [
+    {
+     "arquivo": "embarcados/results/csv/diagnostico_20261023_222831.csv",
+     "sha256": "83e602a7680c87ae7f429840d4db57c49b80a7f4c1c8e45900005ce7e269a7ff"
+    }
+   ]
+  },
+  "VDiagAucClsBldcRand": {
+   "valor": 1.0,
+   "status": "ok",
+   "categoria": "diagnostico",
+   "coluna": "valor[p04_classicas,a2212,aleatorio,roc_auc_ovr_macro,_macro]",
+   "script": "embarcados/src/python/gerar_artigo_numeros.py",
+   "fontes": [
+    {
+     "arquivo": "embarcados/results/csv/diagnostico_20261023_222831.csv",
+     "sha256": "83e602a7680c87ae7f429840d4db57c49b80a7f4c1c8e45900005ce7e269a7ff"
+    }
+   ]
+  },
+  "VDiagFoneClsBldcRand": {
+   "valor": 0.998054458936924,
+   "status": "ok",
+   "categoria": "diagnostico",
+   "coluna": "valor[p04_classicas,a2212,aleatorio,f1_macro,_macro]",
+   "script": "embarcados/src/python/gerar_artigo_numeros.py",
+   "fontes": [
+    {
+     "arquivo": "embarcados/results/csv/diagnostico_20261023_222831.csv",
+     "sha256": "83e602a7680c87ae7f429840d4db57c49b80a7f4c1c8e45900005ce7e269a7ff"
+    }
+   ]
+  },
+  "VDiagBalDecBldcRand": {
+   "valor": 0.8493506493506494,
+   "status": "ok",
+   "categoria": "diagnostico",
+   "coluna": "valor[p11_decifrae_harmsum,a2212,aleatorio,acuracia_balanceada,_macro]",
+   "script": "embarcados/src/python/gerar_artigo_numeros.py",
+   "fontes": [
+    {
+     "arquivo": "embarcados/results/csv/diagnostico_20261023_222831.csv",
+     "sha256": "83e602a7680c87ae7f429840d4db57c49b80a7f4c1c8e45900005ce7e269a7ff"
+    }
+   ]
+  },
+  "VDiagBalDecBldcRandLo": {
+   "valor": 0.7902543290043291,
+   "status": "ok",
+   "categoria": "diagnostico",
+   "coluna": "ic95_lo[p11_decifrae_harmsum,a2212,aleatorio,acuracia_balanceada,_macro]",
+   "script": "embarcados/src/python/gerar_artigo_numeros.py",
+   "fontes": [
+    {
+     "arquivo": "embarcados/results/csv/diagnostico_20261023_222831.csv",
+     "sha256": "83e602a7680c87ae7f429840d4db57c49b80a7f4c1c8e45900005ce7e269a7ff"
+    }
+   ]
+  },
+  "VDiagBalDecBldcRandHi": {
+   "valor": 0.9049837662337662,
+   "status": "ok",
+   "categoria": "diagnostico",
+   "coluna": "ic95_hi[p11_decifrae_harmsum,a2212,aleatorio,acuracia_balanceada,_macro]",
+   "script": "embarcados/src/python/gerar_artigo_numeros.py",
+   "fontes": [
+    {
+     "arquivo": "embarcados/results/csv/diagnostico_20261023_222831.csv",
+     "sha256": "83e602a7680c87ae7f429840d4db57c49b80a7f4c1c8e45900005ce7e269a7ff"
+    }
+   ]
+  },
+  "VDiagAucDecBldcRand": {
+   "valor": 0.9549586588379692,
+   "status": "ok",
+   "categoria": "diagnostico",
+   "coluna": "valor[p11_decifrae_harmsum,a2212,aleatorio,roc_auc_ovr_macro,_macro]",
+   "script": "embarcados/src/python/gerar_artigo_numeros.py",
+   "fontes": [
+    {
+     "arquivo": "embarcados/results/csv/diagnostico_20261023_222831.csv",
+     "sha256": "83e602a7680c87ae7f429840d4db57c49b80a7f4c1c8e45900005ce7e269a7ff"
+    }
+   ]
+  },
+  "VDiagFoneDecBldcRand": {
+   "valor": 0.7894281846202057,
+   "status": "ok",
+   "categoria": "diagnostico",
+   "coluna": "valor[p11_decifrae_harmsum,a2212,aleatorio,f1_macro,_macro]",
+   "script": "embarcados/src/python/gerar_artigo_numeros.py",
+   "fontes": [
+    {
+     "arquivo": "embarcados/results/csv/diagnostico_20261023_222831.csv",
+     "sha256": "83e602a7680c87ae7f429840d4db57c49b80a7f4c1c8e45900005ce7e269a7ff"
+    }
+   ]
+  },
+  "VDiagBalRmsNormBldcFile": {
+   "valor": 0.5616883116883117,
+   "status": "ok",
+   "categoria": "diagnostico",
+   "coluna": "valor[b00_rmspico_norm,a2212,arquivo,acuracia_balanceada,_macro]",
+   "script": "embarcados/src/python/gerar_artigo_numeros.py",
+   "fontes": [
+    {
+     "arquivo": "embarcados/results/csv/diagnostico_20261023_222831.csv",
+     "sha256": "83e602a7680c87ae7f429840d4db57c49b80a7f4c1c8e45900005ce7e269a7ff"
+    }
+   ]
+  },
+  "VDiagBalRmsNormBldcFileLo": {
+   "valor": 0.5119047619047619,
+   "status": "ok",
+   "categoria": "diagnostico",
+   "coluna": "ic95_lo[b00_rmspico_norm,a2212,arquivo,acuracia_balanceada,_macro]",
+   "script": "embarcados/src/python/gerar_artigo_numeros.py",
+   "fontes": [
+    {
+     "arquivo": "embarcados/results/csv/diagnostico_20261023_222831.csv",
+     "sha256": "83e602a7680c87ae7f429840d4db57c49b80a7f4c1c8e45900005ce7e269a7ff"
+    }
+   ]
+  },
+  "VDiagBalRmsNormBldcFileHi": {
+   "valor": 0.6058441558441559,
+   "status": "ok",
+   "categoria": "diagnostico",
+   "coluna": "ic95_hi[b00_rmspico_norm,a2212,arquivo,acuracia_balanceada,_macro]",
+   "script": "embarcados/src/python/gerar_artigo_numeros.py",
+   "fontes": [
+    {
+     "arquivo": "embarcados/results/csv/diagnostico_20261023_222831.csv",
+     "sha256": "83e602a7680c87ae7f429840d4db57c49b80a7f4c1c8e45900005ce7e269a7ff"
+    }
+   ]
+  },
+  "VDiagAucRmsNormBldcFile": {
+   "valor": 0.7585087741122224,
+   "status": "ok",
+   "categoria": "diagnostico",
+   "coluna": "valor[b00_rmspico_norm,a2212,arquivo,roc_auc_ovr_macro,_macro]",
+   "script": "embarcados/src/python/gerar_artigo_numeros.py",
+   "fontes": [
+    {
+     "arquivo": "embarcados/results/csv/diagnostico_20261023_222831.csv",
+     "sha256": "83e602a7680c87ae7f429840d4db57c49b80a7f4c1c8e45900005ce7e269a7ff"
+    }
+   ]
+  },
+  "VDiagFoneRmsNormBldcFile": {
+   "valor": 0.5316596020557894,
+   "status": "ok",
+   "categoria": "diagnostico",
+   "coluna": "valor[b00_rmspico_norm,a2212,arquivo,f1_macro,_macro]",
+   "script": "embarcados/src/python/gerar_artigo_numeros.py",
+   "fontes": [
+    {
+     "arquivo": "embarcados/results/csv/diagnostico_20261023_222831.csv",
+     "sha256": "83e602a7680c87ae7f429840d4db57c49b80a7f4c1c8e45900005ce7e269a7ff"
+    }
+   ]
+  },
+  "VDiagBalRmsRawBldcFile": {
+   "valor": 0.6084415584415584,
+   "status": "ok",
+   "categoria": "diagnostico",
+   "coluna": "valor[b00_rmspico_bruto,a2212,arquivo,acuracia_balanceada,_macro]",
+   "script": "embarcados/src/python/gerar_artigo_numeros.py",
+   "fontes": [
+    {
+     "arquivo": "embarcados/results/csv/diagnostico_20261023_222831.csv",
+     "sha256": "83e602a7680c87ae7f429840d4db57c49b80a7f4c1c8e45900005ce7e269a7ff"
+    }
+   ]
+  },
+  "VDiagBalRmsRawBldcFileLo": {
+   "valor": 0.5441558441558442,
+   "status": "ok",
+   "categoria": "diagnostico",
+   "coluna": "ic95_lo[b00_rmspico_bruto,a2212,arquivo,acuracia_balanceada,_macro]",
+   "script": "embarcados/src/python/gerar_artigo_numeros.py",
+   "fontes": [
+    {
+     "arquivo": "embarcados/results/csv/diagnostico_20261023_222831.csv",
+     "sha256": "83e602a7680c87ae7f429840d4db57c49b80a7f4c1c8e45900005ce7e269a7ff"
+    }
+   ]
+  },
+  "VDiagBalRmsRawBldcFileHi": {
+   "valor": 0.6556385281385281,
+   "status": "ok",
+   "categoria": "diagnostico",
+   "coluna": "ic95_hi[b00_rmspico_bruto,a2212,arquivo,acuracia_balanceada,_macro]",
+   "script": "embarcados/src/python/gerar_artigo_numeros.py",
+   "fontes": [
+    {
+     "arquivo": "embarcados/results/csv/diagnostico_20261023_222831.csv",
+     "sha256": "83e602a7680c87ae7f429840d4db57c49b80a7f4c1c8e45900005ce7e269a7ff"
+    }
+   ]
+  },
+  "VDiagAucRmsRawBldcFile": {
+   "valor": 0.705528188286809,
+   "status": "ok",
+   "categoria": "diagnostico",
+   "coluna": "valor[b00_rmspico_bruto,a2212,arquivo,roc_auc_ovr_macro,_macro]",
+   "script": "embarcados/src/python/gerar_artigo_numeros.py",
+   "fontes": [
+    {
+     "arquivo": "embarcados/results/csv/diagnostico_20261023_222831.csv",
+     "sha256": "83e602a7680c87ae7f429840d4db57c49b80a7f4c1c8e45900005ce7e269a7ff"
+    }
+   ]
+  },
+  "VDiagFoneRmsRawBldcFile": {
+   "valor": 0.5762131608466996,
+   "status": "ok",
+   "categoria": "diagnostico",
+   "coluna": "valor[b00_rmspico_bruto,a2212,arquivo,f1_macro,_macro]",
+   "script": "embarcados/src/python/gerar_artigo_numeros.py",
+   "fontes": [
+    {
+     "arquivo": "embarcados/results/csv/diagnostico_20261023_222831.csv",
+     "sha256": "83e602a7680c87ae7f429840d4db57c49b80a7f4c1c8e45900005ce7e269a7ff"
+    }
+   ]
+  },
+  "VDiagBalClsBldcFile": {
+   "valor": 0.9811688311688312,
+   "status": "ok",
+   "categoria": "diagnostico",
+   "coluna": "valor[p04_classicas,a2212,arquivo,acuracia_balanceada,_macro]",
+   "script": "embarcados/src/python/gerar_artigo_numeros.py",
+   "fontes": [
+    {
+     "arquivo": "embarcados/results/csv/diagnostico_20261023_222831.csv",
+     "sha256": "83e602a7680c87ae7f429840d4db57c49b80a7f4c1c8e45900005ce7e269a7ff"
+    }
+   ]
+  },
+  "VDiagBalClsBldcFileLo": {
+   "valor": 0.9495670995670996,
+   "status": "ok",
+   "categoria": "diagnostico",
+   "coluna": "ic95_lo[p04_classicas,a2212,arquivo,acuracia_balanceada,_macro]",
+   "script": "embarcados/src/python/gerar_artigo_numeros.py",
+   "fontes": [
+    {
+     "arquivo": "embarcados/results/csv/diagnostico_20261023_222831.csv",
+     "sha256": "83e602a7680c87ae7f429840d4db57c49b80a7f4c1c8e45900005ce7e269a7ff"
+    }
+   ]
+  },
+  "VDiagBalClsBldcFileHi": {
+   "valor": 0.9984848484848484,
+   "status": "ok",
+   "categoria": "diagnostico",
+   "coluna": "ic95_hi[p04_classicas,a2212,arquivo,acuracia_balanceada,_macro]",
+   "script": "embarcados/src/python/gerar_artigo_numeros.py",
+   "fontes": [
+    {
+     "arquivo": "embarcados/results/csv/diagnostico_20261023_222831.csv",
+     "sha256": "83e602a7680c87ae7f429840d4db57c49b80a7f4c1c8e45900005ce7e269a7ff"
+    }
+   ]
+  },
+  "VDiagAucClsBldcFile": {
+   "valor": 0.9964977359804946,
+   "status": "ok",
+   "categoria": "diagnostico",
+   "coluna": "valor[p04_classicas,a2212,arquivo,roc_auc_ovr_macro,_macro]",
+   "script": "embarcados/src/python/gerar_artigo_numeros.py",
+   "fontes": [
+    {
+     "arquivo": "embarcados/results/csv/diagnostico_20261023_222831.csv",
+     "sha256": "83e602a7680c87ae7f429840d4db57c49b80a7f4c1c8e45900005ce7e269a7ff"
+    }
+   ]
+  },
+  "VDiagFoneClsBldcFile": {
+   "valor": 0.9823976660609074,
+   "status": "ok",
+   "categoria": "diagnostico",
+   "coluna": "valor[p04_classicas,a2212,arquivo,f1_macro,_macro]",
+   "script": "embarcados/src/python/gerar_artigo_numeros.py",
+   "fontes": [
+    {
+     "arquivo": "embarcados/results/csv/diagnostico_20261023_222831.csv",
+     "sha256": "83e602a7680c87ae7f429840d4db57c49b80a7f4c1c8e45900005ce7e269a7ff"
+    }
+   ]
+  },
+  "VDiagBalDecBldcFile": {
+   "valor": 0.8162337662337663,
+   "status": "ok",
+   "categoria": "diagnostico",
+   "coluna": "valor[p11_decifrae_harmsum,a2212,arquivo,acuracia_balanceada,_macro]",
+   "script": "embarcados/src/python/gerar_artigo_numeros.py",
+   "fontes": [
+    {
+     "arquivo": "embarcados/results/csv/diagnostico_20261023_222831.csv",
+     "sha256": "83e602a7680c87ae7f429840d4db57c49b80a7f4c1c8e45900005ce7e269a7ff"
+    }
+   ]
+  },
+  "VDiagBalDecBldcFileLo": {
+   "valor": 0.7467532467532467,
+   "status": "ok",
+   "categoria": "diagnostico",
+   "coluna": "ic95_lo[p11_decifrae_harmsum,a2212,arquivo,acuracia_balanceada,_macro]",
+   "script": "embarcados/src/python/gerar_artigo_numeros.py",
+   "fontes": [
+    {
+     "arquivo": "embarcados/results/csv/diagnostico_20261023_222831.csv",
+     "sha256": "83e602a7680c87ae7f429840d4db57c49b80a7f4c1c8e45900005ce7e269a7ff"
+    }
+   ]
+  },
+  "VDiagBalDecBldcFileHi": {
+   "valor": 0.8813852813852813,
+   "status": "ok",
+   "categoria": "diagnostico",
+   "coluna": "ic95_hi[p11_decifrae_harmsum,a2212,arquivo,acuracia_balanceada,_macro]",
+   "script": "embarcados/src/python/gerar_artigo_numeros.py",
+   "fontes": [
+    {
+     "arquivo": "embarcados/results/csv/diagnostico_20261023_222831.csv",
+     "sha256": "83e602a7680c87ae7f429840d4db57c49b80a7f4c1c8e45900005ce7e269a7ff"
+    }
+   ]
+  },
+  "VDiagAucDecBldcFile": {
+   "valor": 0.9345528354149044,
+   "status": "ok",
+   "categoria": "diagnostico",
+   "coluna": "valor[p11_decifrae_harmsum,a2212,arquivo,roc_auc_ovr_macro,_macro]",
+   "script": "embarcados/src/python/gerar_artigo_numeros.py",
+   "fontes": [
+    {
+     "arquivo": "embarcados/results/csv/diagnostico_20261023_222831.csv",
+     "sha256": "83e602a7680c87ae7f429840d4db57c49b80a7f4c1c8e45900005ce7e269a7ff"
+    }
+   ]
+  },
+  "VDiagFoneDecBldcFile": {
+   "valor": 0.7532040456092112,
+   "status": "ok",
+   "categoria": "diagnostico",
+   "coluna": "valor[p11_decifrae_harmsum,a2212,arquivo,f1_macro,_macro]",
+   "script": "embarcados/src/python/gerar_artigo_numeros.py",
+   "fontes": [
+    {
+     "arquivo": "embarcados/results/csv/diagnostico_20261023_222831.csv",
+     "sha256": "83e602a7680c87ae7f429840d4db57c49b80a7f4c1c8e45900005ce7e269a7ff"
+    }
+   ]
+  },
+  "VDiagBalRmsNormBldcMotor": {
+   "valor": 0.5424242424242425,
+   "status": "ok",
+   "categoria": "diagnostico",
+   "coluna": "valor[b00_rmspico_norm,a2212,motor,acuracia_balanceada,_macro]",
+   "script": "embarcados/src/python/gerar_artigo_numeros.py",
+   "fontes": [
+    {
+     "arquivo": "embarcados/results/csv/diagnostico_20261023_222831.csv",
+     "sha256": "83e602a7680c87ae7f429840d4db57c49b80a7f4c1c8e45900005ce7e269a7ff"
+    }
+   ]
+  },
+  "VDiagBalRmsNormBldcMotorLo": {
+   "valor": 0.4846212121212122,
+   "status": "ok",
+   "categoria": "diagnostico",
+   "coluna": "ic95_lo[b00_rmspico_norm,a2212,motor,acuracia_balanceada,_macro]",
+   "script": "embarcados/src/python/gerar_artigo_numeros.py",
+   "fontes": [
+    {
+     "arquivo": "embarcados/results/csv/diagnostico_20261023_222831.csv",
+     "sha256": "83e602a7680c87ae7f429840d4db57c49b80a7f4c1c8e45900005ce7e269a7ff"
+    }
+   ]
+  },
+  "VDiagBalRmsNormBldcMotorHi": {
+   "valor": 0.5958874458874459,
+   "status": "ok",
+   "categoria": "diagnostico",
+   "coluna": "ic95_hi[b00_rmspico_norm,a2212,motor,acuracia_balanceada,_macro]",
+   "script": "embarcados/src/python/gerar_artigo_numeros.py",
+   "fontes": [
+    {
+     "arquivo": "embarcados/results/csv/diagnostico_20261023_222831.csv",
+     "sha256": "83e602a7680c87ae7f429840d4db57c49b80a7f4c1c8e45900005ce7e269a7ff"
+    }
+   ]
+  },
+  "VDiagAucRmsNormBldcMotor": {
+   "valor": 0.4887421008110664,
+   "status": "ok",
+   "categoria": "diagnostico",
+   "coluna": "valor[b00_rmspico_norm,a2212,motor,roc_auc_ovr_macro,_macro]",
+   "script": "embarcados/src/python/gerar_artigo_numeros.py",
+   "fontes": [
+    {
+     "arquivo": "embarcados/results/csv/diagnostico_20261023_222831.csv",
+     "sha256": "83e602a7680c87ae7f429840d4db57c49b80a7f4c1c8e45900005ce7e269a7ff"
+    }
+   ]
+  },
+  "VDiagFoneRmsNormBldcMotor": {
+   "valor": 0.509146809408695,
+   "status": "ok",
+   "categoria": "diagnostico",
+   "coluna": "valor[b00_rmspico_norm,a2212,motor,f1_macro,_macro]",
+   "script": "embarcados/src/python/gerar_artigo_numeros.py",
+   "fontes": [
+    {
+     "arquivo": "embarcados/results/csv/diagnostico_20261023_222831.csv",
+     "sha256": "83e602a7680c87ae7f429840d4db57c49b80a7f4c1c8e45900005ce7e269a7ff"
+    }
+   ]
+  },
+  "VDiagBalRmsRawBldcMotor": {
+   "valor": 0.5025974025974026,
+   "status": "ok",
+   "categoria": "diagnostico",
+   "coluna": "valor[b00_rmspico_bruto,a2212,motor,acuracia_balanceada,_macro]",
+   "script": "embarcados/src/python/gerar_artigo_numeros.py",
+   "fontes": [
+    {
+     "arquivo": "embarcados/results/csv/diagnostico_20261023_222831.csv",
+     "sha256": "83e602a7680c87ae7f429840d4db57c49b80a7f4c1c8e45900005ce7e269a7ff"
+    }
+   ]
+  },
+  "VDiagBalRmsRawBldcMotorLo": {
+   "valor": 0.4116666666666667,
+   "status": "ok",
+   "categoria": "diagnostico",
+   "coluna": "ic95_lo[b00_rmspico_bruto,a2212,motor,acuracia_balanceada,_macro]",
+   "script": "embarcados/src/python/gerar_artigo_numeros.py",
+   "fontes": [
+    {
+     "arquivo": "embarcados/results/csv/diagnostico_20261023_222831.csv",
+     "sha256": "83e602a7680c87ae7f429840d4db57c49b80a7f4c1c8e45900005ce7e269a7ff"
+    }
+   ]
+  },
+  "VDiagBalRmsRawBldcMotorHi": {
+   "valor": 0.5803138528138527,
+   "status": "ok",
+   "categoria": "diagnostico",
+   "coluna": "ic95_hi[b00_rmspico_bruto,a2212,motor,acuracia_balanceada,_macro]",
+   "script": "embarcados/src/python/gerar_artigo_numeros.py",
+   "fontes": [
+    {
+     "arquivo": "embarcados/results/csv/diagnostico_20261023_222831.csv",
+     "sha256": "83e602a7680c87ae7f429840d4db57c49b80a7f4c1c8e45900005ce7e269a7ff"
+    }
+   ]
+  },
+  "VDiagAucRmsRawBldcMotor": {
+   "valor": 0.5083385579937304,
+   "status": "ok",
+   "categoria": "diagnostico",
+   "coluna": "valor[b00_rmspico_bruto,a2212,motor,roc_auc_ovr_macro,_macro]",
+   "script": "embarcados/src/python/gerar_artigo_numeros.py",
+   "fontes": [
+    {
+     "arquivo": "embarcados/results/csv/diagnostico_20261023_222831.csv",
+     "sha256": "83e602a7680c87ae7f429840d4db57c49b80a7f4c1c8e45900005ce7e269a7ff"
+    }
+   ]
+  },
+  "VDiagFoneRmsRawBldcMotor": {
+   "valor": 0.5089229665500851,
+   "status": "ok",
+   "categoria": "diagnostico",
+   "coluna": "valor[b00_rmspico_bruto,a2212,motor,f1_macro,_macro]",
+   "script": "embarcados/src/python/gerar_artigo_numeros.py",
+   "fontes": [
+    {
+     "arquivo": "embarcados/results/csv/diagnostico_20261023_222831.csv",
+     "sha256": "83e602a7680c87ae7f429840d4db57c49b80a7f4c1c8e45900005ce7e269a7ff"
+    }
+   ]
+  },
+  "VDiagBalClsBldcMotor": {
+   "valor": 0.6134199134199134,
+   "status": "ok",
+   "categoria": "diagnostico",
+   "coluna": "valor[p04_classicas,a2212,motor,acuracia_balanceada,_macro]",
+   "script": "embarcados/src/python/gerar_artigo_numeros.py",
+   "fontes": [
+    {
+     "arquivo": "embarcados/results/csv/diagnostico_20261023_222831.csv",
+     "sha256": "83e602a7680c87ae7f429840d4db57c49b80a7f4c1c8e45900005ce7e269a7ff"
+    }
+   ]
+  },
+  "VDiagBalClsBldcMotorLo": {
+   "valor": 0.5787878787878787,
+   "status": "ok",
+   "categoria": "diagnostico",
+   "coluna": "ic95_lo[p04_classicas,a2212,motor,acuracia_balanceada,_macro]",
+   "script": "embarcados/src/python/gerar_artigo_numeros.py",
+   "fontes": [
+    {
+     "arquivo": "embarcados/results/csv/diagnostico_20261023_222831.csv",
+     "sha256": "83e602a7680c87ae7f429840d4db57c49b80a7f4c1c8e45900005ce7e269a7ff"
+    }
+   ]
+  },
+  "VDiagBalClsBldcMotorHi": {
+   "valor": 0.6406980519480518,
+   "status": "ok",
+   "categoria": "diagnostico",
+   "coluna": "ic95_hi[p04_classicas,a2212,motor,acuracia_balanceada,_macro]",
+   "script": "embarcados/src/python/gerar_artigo_numeros.py",
+   "fontes": [
+    {
+     "arquivo": "embarcados/results/csv/diagnostico_20261023_222831.csv",
+     "sha256": "83e602a7680c87ae7f429840d4db57c49b80a7f4c1c8e45900005ce7e269a7ff"
+    }
+   ]
+  },
+  "VDiagAucClsBldcMotor": {
+   "valor": 0.6184385729213315,
+   "status": "ok",
+   "categoria": "diagnostico",
+   "coluna": "valor[p04_classicas,a2212,motor,roc_auc_ovr_macro,_macro]",
+   "script": "embarcados/src/python/gerar_artigo_numeros.py",
+   "fontes": [
+    {
+     "arquivo": "embarcados/results/csv/diagnostico_20261023_222831.csv",
+     "sha256": "83e602a7680c87ae7f429840d4db57c49b80a7f4c1c8e45900005ce7e269a7ff"
+    }
+   ]
+  },
+  "VDiagFoneClsBldcMotor": {
+   "valor": 0.5634372028381245,
+   "status": "ok",
+   "categoria": "diagnostico",
+   "coluna": "valor[p04_classicas,a2212,motor,f1_macro,_macro]",
+   "script": "embarcados/src/python/gerar_artigo_numeros.py",
+   "fontes": [
+    {
+     "arquivo": "embarcados/results/csv/diagnostico_20261023_222831.csv",
+     "sha256": "83e602a7680c87ae7f429840d4db57c49b80a7f4c1c8e45900005ce7e269a7ff"
+    }
+   ]
+  },
+  "VDiagBalDecBldcMotor": {
+   "valor": 0.4564935064935065,
+   "status": "ok",
+   "categoria": "diagnostico",
+   "coluna": "valor[p11_decifrae_harmsum,a2212,motor,acuracia_balanceada,_macro]",
+   "script": "embarcados/src/python/gerar_artigo_numeros.py",
+   "fontes": [
+    {
+     "arquivo": "embarcados/results/csv/diagnostico_20261023_222831.csv",
+     "sha256": "83e602a7680c87ae7f429840d4db57c49b80a7f4c1c8e45900005ce7e269a7ff"
+    }
+   ]
+  },
+  "VDiagBalDecBldcMotorLo": {
+   "valor": 0.3965313852813852,
+   "status": "ok",
+   "categoria": "diagnostico",
+   "coluna": "ic95_lo[p11_decifrae_harmsum,a2212,motor,acuracia_balanceada,_macro]",
+   "script": "embarcados/src/python/gerar_artigo_numeros.py",
+   "fontes": [
+    {
+     "arquivo": "embarcados/results/csv/diagnostico_20261023_222831.csv",
+     "sha256": "83e602a7680c87ae7f429840d4db57c49b80a7f4c1c8e45900005ce7e269a7ff"
+    }
+   ]
+  },
+  "VDiagBalDecBldcMotorHi": {
+   "valor": 0.5194859307359307,
+   "status": "ok",
+   "categoria": "diagnostico",
+   "coluna": "ic95_hi[p11_decifrae_harmsum,a2212,motor,acuracia_balanceada,_macro]",
+   "script": "embarcados/src/python/gerar_artigo_numeros.py",
+   "fontes": [
+    {
+     "arquivo": "embarcados/results/csv/diagnostico_20261023_222831.csv",
+     "sha256": "83e602a7680c87ae7f429840d4db57c49b80a7f4c1c8e45900005ce7e269a7ff"
+    }
+   ]
+  },
+  "VDiagAucDecBldcMotor": {
+   "valor": 0.4836236751753993,
+   "status": "ok",
+   "categoria": "diagnostico",
+   "coluna": "valor[p11_decifrae_harmsum,a2212,motor,roc_auc_ovr_macro,_macro]",
+   "script": "embarcados/src/python/gerar_artigo_numeros.py",
+   "fontes": [
+    {
+     "arquivo": "embarcados/results/csv/diagnostico_20261023_222831.csv",
+     "sha256": "83e602a7680c87ae7f429840d4db57c49b80a7f4c1c8e45900005ce7e269a7ff"
+    }
+   ]
+  },
+  "VDiagFoneDecBldcMotor": {
+   "valor": 0.4180573416861574,
+   "status": "ok",
+   "categoria": "diagnostico",
+   "coluna": "valor[p11_decifrae_harmsum,a2212,motor,f1_macro,_macro]",
+   "script": "embarcados/src/python/gerar_artigo_numeros.py",
+   "fontes": [
+    {
+     "arquivo": "embarcados/results/csv/diagnostico_20261023_222831.csv",
+     "sha256": "83e602a7680c87ae7f429840d4db57c49b80a7f4c1c8e45900005ce7e269a7ff"
+    }
+   ]
+  },
+  "VDiagBalRmsNormBldcNoMfour": {
+   "valor": 0.8136363636363637,
+   "status": "ok",
+   "categoria": "diagnostico",
+   "coluna": "valor[b00_rmspico_norm,a2212,motor_sem_M4,acuracia_balanceada,_macro]",
+   "script": "embarcados/src/python/gerar_artigo_numeros.py",
+   "fontes": [
+    {
+     "arquivo": "embarcados/results/csv/diagnostico_20261023_222831.csv",
+     "sha256": "83e602a7680c87ae7f429840d4db57c49b80a7f4c1c8e45900005ce7e269a7ff"
+    }
+   ]
+  },
+  "VDiagBalRmsNormBldcNoMfourLo": {
+   "valor": 0.7197970779220779,
+   "status": "ok",
+   "categoria": "diagnostico",
+   "coluna": "ic95_lo[b00_rmspico_norm,a2212,motor_sem_M4,acuracia_balanceada,_macro]",
+   "script": "embarcados/src/python/gerar_artigo_numeros.py",
+   "fontes": [
+    {
+     "arquivo": "embarcados/results/csv/diagnostico_20261023_222831.csv",
+     "sha256": "83e602a7680c87ae7f429840d4db57c49b80a7f4c1c8e45900005ce7e269a7ff"
+    }
+   ]
+  },
+  "VDiagBalRmsNormBldcNoMfourHi": {
+   "valor": 0.887012987012987,
+   "status": "ok",
+   "categoria": "diagnostico",
+   "coluna": "ic95_hi[b00_rmspico_norm,a2212,motor_sem_M4,acuracia_balanceada,_macro]",
+   "script": "embarcados/src/python/gerar_artigo_numeros.py",
+   "fontes": [
+    {
+     "arquivo": "embarcados/results/csv/diagnostico_20261023_222831.csv",
+     "sha256": "83e602a7680c87ae7f429840d4db57c49b80a7f4c1c8e45900005ce7e269a7ff"
+    }
+   ]
+  },
+  "VDiagAucRmsNormBldcNoMfour": {
+   "valor": 0.870616883116883,
+   "status": "ok",
+   "categoria": "diagnostico",
+   "coluna": "valor[b00_rmspico_norm,a2212,motor_sem_M4,roc_auc_ovr_macro,_macro]",
+   "script": "embarcados/src/python/gerar_artigo_numeros.py",
+   "fontes": [
+    {
+     "arquivo": "embarcados/results/csv/diagnostico_20261023_222831.csv",
+     "sha256": "83e602a7680c87ae7f429840d4db57c49b80a7f4c1c8e45900005ce7e269a7ff"
+    }
+   ]
+  },
+  "VDiagFoneRmsNormBldcNoMfour": {
+   "valor": 0.8236711351207149,
+   "status": "ok",
+   "categoria": "diagnostico",
+   "coluna": "valor[b00_rmspico_norm,a2212,motor_sem_M4,f1_macro,_macro]",
+   "script": "embarcados/src/python/gerar_artigo_numeros.py",
+   "fontes": [
+    {
+     "arquivo": "embarcados/results/csv/diagnostico_20261023_222831.csv",
+     "sha256": "83e602a7680c87ae7f429840d4db57c49b80a7f4c1c8e45900005ce7e269a7ff"
+    }
+   ]
+  },
+  "VDiagBalRmsRawBldcNoMfour": {
+   "valor": 0.7538961038961038,
+   "status": "ok",
+   "categoria": "diagnostico",
+   "coluna": "valor[b00_rmspico_bruto,a2212,motor_sem_M4,acuracia_balanceada,_macro]",
+   "script": "embarcados/src/python/gerar_artigo_numeros.py",
+   "fontes": [
+    {
+     "arquivo": "embarcados/results/csv/diagnostico_20261023_222831.csv",
+     "sha256": "83e602a7680c87ae7f429840d4db57c49b80a7f4c1c8e45900005ce7e269a7ff"
+    }
+   ]
+  },
+  "VDiagBalRmsRawBldcNoMfourLo": {
+   "valor": 0.622702922077922,
+   "status": "ok",
+   "categoria": "diagnostico",
+   "coluna": "ic95_lo[b00_rmspico_bruto,a2212,motor_sem_M4,acuracia_balanceada,_macro]",
+   "script": "embarcados/src/python/gerar_artigo_numeros.py",
+   "fontes": [
+    {
+     "arquivo": "embarcados/results/csv/diagnostico_20261023_222831.csv",
+     "sha256": "83e602a7680c87ae7f429840d4db57c49b80a7f4c1c8e45900005ce7e269a7ff"
+    }
+   ]
+  },
+  "VDiagBalRmsRawBldcNoMfourHi": {
+   "valor": 0.8730519480519481,
+   "status": "ok",
+   "categoria": "diagnostico",
+   "coluna": "ic95_hi[b00_rmspico_bruto,a2212,motor_sem_M4,acuracia_balanceada,_macro]",
+   "script": "embarcados/src/python/gerar_artigo_numeros.py",
+   "fontes": [
+    {
+     "arquivo": "embarcados/results/csv/diagnostico_20261023_222831.csv",
+     "sha256": "83e602a7680c87ae7f429840d4db57c49b80a7f4c1c8e45900005ce7e269a7ff"
+    }
+   ]
+  },
+  "VDiagAucRmsRawBldcNoMfour": {
+   "valor": 0.9124837662337664,
+   "status": "ok",
+   "categoria": "diagnostico",
+   "coluna": "valor[b00_rmspico_bruto,a2212,motor_sem_M4,roc_auc_ovr_macro,_macro]",
+   "script": "embarcados/src/python/gerar_artigo_numeros.py",
+   "fontes": [
+    {
+     "arquivo": "embarcados/results/csv/diagnostico_20261023_222831.csv",
+     "sha256": "83e602a7680c87ae7f429840d4db57c49b80a7f4c1c8e45900005ce7e269a7ff"
+    }
+   ]
+  },
+  "VDiagFoneRmsRawBldcNoMfour": {
+   "valor": 0.8229885057471265,
+   "status": "ok",
+   "categoria": "diagnostico",
+   "coluna": "valor[b00_rmspico_bruto,a2212,motor_sem_M4,f1_macro,_macro]",
+   "script": "embarcados/src/python/gerar_artigo_numeros.py",
+   "fontes": [
+    {
+     "arquivo": "embarcados/results/csv/diagnostico_20261023_222831.csv",
+     "sha256": "83e602a7680c87ae7f429840d4db57c49b80a7f4c1c8e45900005ce7e269a7ff"
+    }
+   ]
+  },
+  "VDiagBalClsBldcNoMfour": {
+   "valor": 0.92012987012987,
+   "status": "ok",
+   "categoria": "diagnostico",
+   "coluna": "valor[p04_classicas,a2212,motor_sem_M4,acuracia_balanceada,_macro]",
+   "script": "embarcados/src/python/gerar_artigo_numeros.py",
+   "fontes": [
+    {
+     "arquivo": "embarcados/results/csv/diagnostico_20261023_222831.csv",
+     "sha256": "83e602a7680c87ae7f429840d4db57c49b80a7f4c1c8e45900005ce7e269a7ff"
+    }
+   ]
+  },
+  "VDiagBalClsBldcNoMfourLo": {
+   "valor": 0.8678327922077922,
+   "status": "ok",
+   "categoria": "diagnostico",
+   "coluna": "ic95_lo[p04_classicas,a2212,motor_sem_M4,acuracia_balanceada,_macro]",
+   "script": "embarcados/src/python/gerar_artigo_numeros.py",
+   "fontes": [
+    {
+     "arquivo": "embarcados/results/csv/diagnostico_20261023_222831.csv",
+     "sha256": "83e602a7680c87ae7f429840d4db57c49b80a7f4c1c8e45900005ce7e269a7ff"
+    }
+   ]
+  },
+  "VDiagBalClsBldcNoMfourHi": {
+   "valor": 0.9623376623376624,
+   "status": "ok",
+   "categoria": "diagnostico",
+   "coluna": "ic95_hi[p04_classicas,a2212,motor_sem_M4,acuracia_balanceada,_macro]",
+   "script": "embarcados/src/python/gerar_artigo_numeros.py",
+   "fontes": [
+    {
+     "arquivo": "embarcados/results/csv/diagnostico_20261023_222831.csv",
+     "sha256": "83e602a7680c87ae7f429840d4db57c49b80a7f4c1c8e45900005ce7e269a7ff"
+    }
+   ]
+  },
+  "VDiagAucClsBldcNoMfour": {
+   "valor": 0.9837662337662338,
+   "status": "ok",
+   "categoria": "diagnostico",
+   "coluna": "valor[p04_classicas,a2212,motor_sem_M4,roc_auc_ovr_macro,_macro]",
+   "script": "embarcados/src/python/gerar_artigo_numeros.py",
+   "fontes": [
+    {
+     "arquivo": "embarcados/results/csv/diagnostico_20261023_222831.csv",
+     "sha256": "83e602a7680c87ae7f429840d4db57c49b80a7f4c1c8e45900005ce7e269a7ff"
+    }
+   ]
+  },
+  "VDiagFoneClsBldcNoMfour": {
+   "valor": 0.9234067624627672,
+   "status": "ok",
+   "categoria": "diagnostico",
+   "coluna": "valor[p04_classicas,a2212,motor_sem_M4,f1_macro,_macro]",
+   "script": "embarcados/src/python/gerar_artigo_numeros.py",
+   "fontes": [
+    {
+     "arquivo": "embarcados/results/csv/diagnostico_20261023_222831.csv",
+     "sha256": "83e602a7680c87ae7f429840d4db57c49b80a7f4c1c8e45900005ce7e269a7ff"
+    }
+   ]
+  },
+  "VDiagBalDecBldcNoMfour": {
+   "valor": 0.6847402597402598,
+   "status": "ok",
+   "categoria": "diagnostico",
+   "coluna": "valor[p11_decifrae_harmsum,a2212,motor_sem_M4,acuracia_balanceada,_macro]",
+   "script": "embarcados/src/python/gerar_artigo_numeros.py",
+   "fontes": [
+    {
+     "arquivo": "embarcados/results/csv/diagnostico_20261023_222831.csv",
+     "sha256": "83e602a7680c87ae7f429840d4db57c49b80a7f4c1c8e45900005ce7e269a7ff"
+    }
+   ]
+  },
+  "VDiagBalDecBldcNoMfourLo": {
+   "valor": 0.5928571428571429,
+   "status": "ok",
+   "categoria": "diagnostico",
+   "coluna": "ic95_lo[p11_decifrae_harmsum,a2212,motor_sem_M4,acuracia_balanceada,_macro]",
+   "script": "embarcados/src/python/gerar_artigo_numeros.py",
+   "fontes": [
+    {
+     "arquivo": "embarcados/results/csv/diagnostico_20261023_222831.csv",
+     "sha256": "83e602a7680c87ae7f429840d4db57c49b80a7f4c1c8e45900005ce7e269a7ff"
+    }
+   ]
+  },
+  "VDiagBalDecBldcNoMfourHi": {
+   "valor": 0.7743587662337662,
+   "status": "ok",
+   "categoria": "diagnostico",
+   "coluna": "ic95_hi[p11_decifrae_harmsum,a2212,motor_sem_M4,acuracia_balanceada,_macro]",
+   "script": "embarcados/src/python/gerar_artigo_numeros.py",
+   "fontes": [
+    {
+     "arquivo": "embarcados/results/csv/diagnostico_20261023_222831.csv",
+     "sha256": "83e602a7680c87ae7f429840d4db57c49b80a7f4c1c8e45900005ce7e269a7ff"
+    }
+   ]
+  },
+  "VDiagAucDecBldcNoMfour": {
+   "valor": 0.8216396103896104,
+   "status": "ok",
+   "categoria": "diagnostico",
+   "coluna": "valor[p11_decifrae_harmsum,a2212,motor_sem_M4,roc_auc_ovr_macro,_macro]",
+   "script": "embarcados/src/python/gerar_artigo_numeros.py",
+   "fontes": [
+    {
+     "arquivo": "embarcados/results/csv/diagnostico_20261023_222831.csv",
+     "sha256": "83e602a7680c87ae7f429840d4db57c49b80a7f4c1c8e45900005ce7e269a7ff"
+    }
+   ]
+  },
+  "VDiagFoneDecBldcNoMfour": {
+   "valor": 0.6854779411764707,
+   "status": "ok",
+   "categoria": "diagnostico",
+   "coluna": "valor[p11_decifrae_harmsum,a2212,motor_sem_M4,f1_macro,_macro]",
+   "script": "embarcados/src/python/gerar_artigo_numeros.py",
+   "fontes": [
+    {
+     "arquivo": "embarcados/results/csv/diagnostico_20261023_222831.csv",
+     "sha256": "83e602a7680c87ae7f429840d4db57c49b80a7f4c1c8e45900005ce7e269a7ff"
+    }
+   ]
+  },
+  "VDiagRecDecBldcFileHealthy": {
+   "valor": 0.5772727272727273,
+   "status": "ok",
+   "categoria": "diagnostico",
+   "coluna": "valor[p11,a2212,arquivo,sensibilidade,Healthy]",
+   "script": "embarcados/src/python/gerar_artigo_numeros.py",
+   "fontes": [
+    {
+     "arquivo": "embarcados/results/csv/diagnostico_20261023_222831.csv",
+     "sha256": "83e602a7680c87ae7f429840d4db57c49b80a7f4c1c8e45900005ce7e269a7ff"
+    }
+   ]
+  },
+  "VDiagRecDecBldcFilePropeller": {
+   "valor": 0.9285714285714286,
+   "status": "ok",
+   "categoria": "diagnostico",
+   "coluna": "valor[p11,a2212,arquivo,sensibilidade,Propeller]",
+   "script": "embarcados/src/python/gerar_artigo_numeros.py",
+   "fontes": [
+    {
+     "arquivo": "embarcados/results/csv/diagnostico_20261023_222831.csv",
+     "sha256": "83e602a7680c87ae7f429840d4db57c49b80a7f4c1c8e45900005ce7e269a7ff"
+    }
+   ]
+  },
+  "VDiagRecDecBldcFileBearing": {
+   "valor": 0.9428571428571428,
+   "status": "ok",
+   "categoria": "diagnostico",
+   "coluna": "valor[p11,a2212,arquivo,sensibilidade,Bearing]",
+   "script": "embarcados/src/python/gerar_artigo_numeros.py",
+   "fontes": [
+    {
+     "arquivo": "embarcados/results/csv/diagnostico_20261023_222831.csv",
+     "sha256": "83e602a7680c87ae7f429840d4db57c49b80a7f4c1c8e45900005ce7e269a7ff"
+    }
+   ]
+  },
+  "VDiagRecDecBldcMotorHealthy": {
+   "valor": 0.4409090909090909,
+   "status": "ok",
+   "categoria": "diagnostico",
+   "coluna": "valor[p11,a2212,motor,sensibilidade,Healthy]",
+   "script": "embarcados/src/python/gerar_artigo_numeros.py",
+   "fontes": [
+    {
+     "arquivo": "embarcados/results/csv/diagnostico_20261023_222831.csv",
+     "sha256": "83e602a7680c87ae7f429840d4db57c49b80a7f4c1c8e45900005ce7e269a7ff"
+    }
+   ]
+  },
+  "VDiagRecDecBldcMotorPropeller": {
+   "valor": 0.9285714285714286,
+   "status": "ok",
+   "categoria": "diagnostico",
+   "coluna": "valor[p11,a2212,motor,sensibilidade,Propeller]",
+   "script": "embarcados/src/python/gerar_artigo_numeros.py",
+   "fontes": [
+    {
+     "arquivo": "embarcados/results/csv/diagnostico_20261023_222831.csv",
+     "sha256": "83e602a7680c87ae7f429840d4db57c49b80a7f4c1c8e45900005ce7e269a7ff"
+    }
+   ]
+  },
+  "VDiagRecDecBldcMotorBearing": {
+   "valor": 0.0,
+   "status": "ok",
+   "categoria": "diagnostico",
+   "coluna": "valor[p11,a2212,motor,sensibilidade,Bearing]",
+   "script": "embarcados/src/python/gerar_artigo_numeros.py",
+   "fontes": [
+    {
+     "arquivo": "embarcados/results/csv/diagnostico_20261023_222831.csv",
+     "sha256": "83e602a7680c87ae7f429840d4db57c49b80a7f4c1c8e45900005ce7e269a7ff"
+    }
+   ]
+  },
+  "VDiagInflRmsNormBldc": {
+   "valor": 0.0023809523809523725,
+   "status": "ok",
+   "categoria": "diagnostico",
+   "coluna": "Bal[aleatorio]-Bal[arquivo] (a2212)",
+   "script": "embarcados/src/python/gerar_artigo_numeros.py",
+   "fontes": [
+    {
+     "arquivo": "embarcados/results/csv/diagnostico_20261023_222831.csv",
+     "sha256": "83e602a7680c87ae7f429840d4db57c49b80a7f4c1c8e45900005ce7e269a7ff"
+    }
+   ]
+  },
+  "VDiagDropRmsNormBldc": {
+   "valor": 0.019264069264069206,
+   "status": "ok",
+   "categoria": "diagnostico",
+   "coluna": "Bal[arquivo]-Bal[motor] (a2212)",
+   "script": "embarcados/src/python/gerar_artigo_numeros.py",
+   "fontes": [
+    {
+     "arquivo": "embarcados/results/csv/diagnostico_20261023_222831.csv",
+     "sha256": "83e602a7680c87ae7f429840d4db57c49b80a7f4c1c8e45900005ce7e269a7ff"
+    }
+   ]
+  },
+  "VDiagInflRmsRawBldc": {
+   "valor": 0.016233766233766267,
+   "status": "ok",
+   "categoria": "diagnostico",
+   "coluna": "Bal[aleatorio]-Bal[arquivo] (a2212)",
+   "script": "embarcados/src/python/gerar_artigo_numeros.py",
+   "fontes": [
+    {
+     "arquivo": "embarcados/results/csv/diagnostico_20261023_222831.csv",
+     "sha256": "83e602a7680c87ae7f429840d4db57c49b80a7f4c1c8e45900005ce7e269a7ff"
+    }
+   ]
+  },
+  "VDiagDropRmsRawBldc": {
+   "valor": 0.10584415584415585,
+   "status": "ok",
+   "categoria": "diagnostico",
+   "coluna": "Bal[arquivo]-Bal[motor] (a2212)",
+   "script": "embarcados/src/python/gerar_artigo_numeros.py",
+   "fontes": [
+    {
+     "arquivo": "embarcados/results/csv/diagnostico_20261023_222831.csv",
+     "sha256": "83e602a7680c87ae7f429840d4db57c49b80a7f4c1c8e45900005ce7e269a7ff"
+    }
+   ]
+  },
+  "VDiagInflClsBldc": {
+   "valor": 0.017316017316017174,
+   "status": "ok",
+   "categoria": "diagnostico",
+   "coluna": "Bal[aleatorio]-Bal[arquivo] (a2212)",
+   "script": "embarcados/src/python/gerar_artigo_numeros.py",
+   "fontes": [
+    {
+     "arquivo": "embarcados/results/csv/diagnostico_20261023_222831.csv",
+     "sha256": "83e602a7680c87ae7f429840d4db57c49b80a7f4c1c8e45900005ce7e269a7ff"
+    }
+   ]
+  },
+  "VDiagDropClsBldc": {
+   "valor": 0.3677489177489178,
+   "status": "ok",
+   "categoria": "diagnostico",
+   "coluna": "Bal[arquivo]-Bal[motor] (a2212)",
+   "script": "embarcados/src/python/gerar_artigo_numeros.py",
+   "fontes": [
+    {
+     "arquivo": "embarcados/results/csv/diagnostico_20261023_222831.csv",
+     "sha256": "83e602a7680c87ae7f429840d4db57c49b80a7f4c1c8e45900005ce7e269a7ff"
+    }
+   ]
+  },
+  "VDiagInflDecBldc": {
+   "valor": 0.0331168831168831,
+   "status": "ok",
+   "categoria": "diagnostico",
+   "coluna": "Bal[aleatorio]-Bal[arquivo] (a2212)",
+   "script": "embarcados/src/python/gerar_artigo_numeros.py",
+   "fontes": [
+    {
+     "arquivo": "embarcados/results/csv/diagnostico_20261023_222831.csv",
+     "sha256": "83e602a7680c87ae7f429840d4db57c49b80a7f4c1c8e45900005ce7e269a7ff"
+    }
+   ]
+  },
+  "VDiagDropDecBldc": {
+   "valor": 0.3597402597402598,
+   "status": "ok",
+   "categoria": "diagnostico",
+   "coluna": "Bal[arquivo]-Bal[motor] (a2212)",
+   "script": "embarcados/src/python/gerar_artigo_numeros.py",
+   "fontes": [
+    {
+     "arquivo": "embarcados/results/csv/diagnostico_20261023_222831.csv",
+     "sha256": "83e602a7680c87ae7f429840d4db57c49b80a7f4c1c8e45900005ce7e269a7ff"
+    }
+   ]
+  },
+  "VParNFeat": {
+   "valor": 13,
+   "status": "ok",
+   "categoria": "codigo",
+   "coluna": "nº de colunas f0..f12",
+   "script": "embarcados/src/python/gerar_artigo_numeros.py",
+   "fontes": [
+    {
+     "arquivo": "embarcados/results/csv/p11_features_20261023_222831.csv",
+     "sha256": "eb64ba855c885bf0ad428487067476095314ec200965130fa606c5ecf3649ef7"
+    }
+   ]
+  },
+  "VRotIdmtGoodMed": {
+   "valor": 25.75696309313261,
+   "status": "ok",
+   "categoria": "dados",
+   "coluna": "mediana de f0 (idmt, good)",
+   "script": "embarcados/src/python/gerar_artigo_numeros.py",
+   "fontes": [
+    {
+     "arquivo": "embarcados/results/csv/p11_features_20261023_222831.csv",
+     "sha256": "eb64ba855c885bf0ad428487067476095314ec200965130fa606c5ecf3649ef7"
+    }
+   ]
+  },
+  "VRotIdmtGoodIqr": {
+   "valor": 0.17874039065203462,
+   "status": "ok",
+   "categoria": "dados",
+   "coluna": "IQR de f0 (idmt, good)",
+   "script": "embarcados/src/python/gerar_artigo_numeros.py",
+   "fontes": [
+    {
+     "arquivo": "embarcados/results/csv/p11_features_20261023_222831.csv",
+     "sha256": "eb64ba855c885bf0ad428487067476095314ec200965130fa606c5ecf3649ef7"
+    }
+   ]
+  },
+  "VRotIdmtBrokenMed": {
+   "valor": 27.990989746104223,
+   "status": "ok",
+   "categoria": "dados",
+   "coluna": "mediana de f0 (idmt, broken)",
+   "script": "embarcados/src/python/gerar_artigo_numeros.py",
+   "fontes": [
+    {
+     "arquivo": "embarcados/results/csv/p11_features_20261023_222831.csv",
+     "sha256": "eb64ba855c885bf0ad428487067476095314ec200965130fa606c5ecf3649ef7"
+    }
+   ]
+  },
+  "VRotIdmtBrokenIqr": {
+   "valor": 0.03235514483876756,
+   "status": "ok",
+   "categoria": "dados",
+   "coluna": "IQR de f0 (idmt, broken)",
+   "script": "embarcados/src/python/gerar_artigo_numeros.py",
+   "fontes": [
+    {
+     "arquivo": "embarcados/results/csv/p11_features_20261023_222831.csv",
+     "sha256": "eb64ba855c885bf0ad428487067476095314ec200965130fa606c5ecf3649ef7"
+    }
+   ]
+  },
+  "VRotIdmtHeavyMed": {
+   "valor": 24.65070943757371,
+   "status": "ok",
+   "categoria": "dados",
+   "coluna": "mediana de f0 (idmt, heavyload)",
+   "script": "embarcados/src/python/gerar_artigo_numeros.py",
+   "fontes": [
+    {
+     "arquivo": "embarcados/results/csv/p11_features_20261023_222831.csv",
+     "sha256": "eb64ba855c885bf0ad428487067476095314ec200965130fa606c5ecf3649ef7"
+    }
+   ]
+  },
+  "VRotIdmtHeavyIqr": {
+   "valor": 0.19922874458835338,
+   "status": "ok",
+   "categoria": "dados",
+   "coluna": "IQR de f0 (idmt, heavyload)",
+   "script": "embarcados/src/python/gerar_artigo_numeros.py",
+   "fontes": [
+    {
+     "arquivo": "embarcados/results/csv/p11_features_20261023_222831.csv",
+     "sha256": "eb64ba855c885bf0ad428487067476095314ec200965130fa606c5ecf3649ef7"
+    }
+   ]
+  },
+  "VRotOctThr": {
+   "valor": 1.5,
+   "status": "ok",
+   "categoria": "dados",
+   "coluna": "limiar: f0 > LIM_OIT·mediana da classe",
+   "script": "embarcados/src/python/gerar_artigo_numeros.py",
+   "fontes": [
+    {
+     "arquivo": "embarcados/results/csv/p11_features_20261023_222831.csv",
+     "sha256": "eb64ba855c885bf0ad428487067476095314ec200965130fa606c5ecf3649ef7"
+    }
+   ]
+  },
+  "VRotCeilPctThr": {
+   "valor": 1.0000000000000009,
+   "status": "ok",
+   "categoria": "dados",
+   "coluna": "limiar: f0 >= LIM_TETO·fmax",
+   "script": "embarcados/src/python/gerar_artigo_numeros.py",
+   "fontes": [
+    {
+     "arquivo": "embarcados/results/csv/p11_features_20261023_222831.csv",
+     "sha256": "eb64ba855c885bf0ad428487067476095314ec200965130fa606c5ecf3649ef7"
+    }
+   ]
+  },
+  "VRotIdmtGoodOctPct": {
+   "valor": 8.571428571428571,
+   "status": "ok",
+   "categoria": "dados",
+   "coluna": "% janelas good com f0 > LIM_OIT·mediana da classe (salto de oitava)",
+   "script": "embarcados/src/python/gerar_artigo_numeros.py",
+   "fontes": [
+    {
+     "arquivo": "embarcados/results/csv/p11_features_20261023_222831.csv",
+     "sha256": "eb64ba855c885bf0ad428487067476095314ec200965130fa606c5ecf3649ef7"
+    }
+   ]
+  },
+  "VRotBldcCeilPct": {
+   "valor": 3.7209302325581395,
+   "status": "ok",
+   "categoria": "dados",
+   "coluna": "% janelas A2212 com f0 >= 0,99·fmax",
+   "script": "embarcados/src/python/gerar_artigo_numeros.py",
+   "fontes": [
+    {
+     "arquivo": "embarcados/results/csv/p11_features_20261023_222831.csv",
+     "sha256": "eb64ba855c885bf0ad428487067476095314ec200965130fa606c5ecf3649ef7"
+    }
+   ]
+  },
+  "VRotBldcSpearman": {
+   "valor": 0.01801086287093575,
+   "status": "ok",
+   "categoria": "dados",
+   "coluna": "Spearman(velocidade nominal do arquivo, mediana de f0 do arquivo), 43 arquivos",
+   "script": "embarcados/src/python/gerar_artigo_numeros.py",
+   "fontes": [
+    {
+     "arquivo": "embarcados/results/csv/p11_features_20261023_222831.csv",
+     "sha256": "eb64ba855c885bf0ad428487067476095314ec200965130fa606c5ecf3649ef7"
+    },
+    {
+     "arquivo": "embarcados/results/predictions/diagnostico_janelas_20261023_222831.csv",
+     "sha256": "6426a95a9ceb73ad3e4a9f4a8d83f8194a3ce6b7d1605c0bfdd151384454102b"
+    }
+   ]
+  },
+  "VRotBldcSpearmanMOne": {
+   "valor": 0.3031040213755868,
+   "status": "ok",
+   "categoria": "dados",
+   "coluna": "Spearman por motor M1 (14 arquivos)",
+   "script": "embarcados/src/python/gerar_artigo_numeros.py",
+   "fontes": [
+    {
+     "arquivo": "embarcados/results/csv/p11_features_20261023_222831.csv",
+     "sha256": "eb64ba855c885bf0ad428487067476095314ec200965130fa606c5ecf3649ef7"
+    },
+    {
+     "arquivo": "embarcados/results/predictions/diagnostico_janelas_20261023_222831.csv",
+     "sha256": "6426a95a9ceb73ad3e4a9f4a8d83f8194a3ce6b7d1605c0bfdd151384454102b"
+    }
+   ]
+  },
+  "VRotBldcFilesMOne": {
+   "valor": 14,
+   "status": "ok",
+   "categoria": "dados",
+   "coluna": "nº de arquivos do M1",
+   "script": "embarcados/src/python/gerar_artigo_numeros.py",
+   "fontes": [
+    {
+     "arquivo": "embarcados/results/csv/p11_features_20261023_222831.csv",
+     "sha256": "eb64ba855c885bf0ad428487067476095314ec200965130fa606c5ecf3649ef7"
+    },
+    {
+     "arquivo": "embarcados/results/predictions/diagnostico_janelas_20261023_222831.csv",
+     "sha256": "6426a95a9ceb73ad3e4a9f4a8d83f8194a3ce6b7d1605c0bfdd151384454102b"
+    }
+   ]
+  },
+  "VRotBldcSpearmanMTwo": {
+   "valor": 0.3017804310611087,
+   "status": "ok",
+   "categoria": "dados",
+   "coluna": "Spearman por motor M2 (16 arquivos)",
+   "script": "embarcados/src/python/gerar_artigo_numeros.py",
+   "fontes": [
+    {
+     "arquivo": "embarcados/results/csv/p11_features_20261023_222831.csv",
+     "sha256": "eb64ba855c885bf0ad428487067476095314ec200965130fa606c5ecf3649ef7"
+    },
+    {
+     "arquivo": "embarcados/results/predictions/diagnostico_janelas_20261023_222831.csv",
+     "sha256": "6426a95a9ceb73ad3e4a9f4a8d83f8194a3ce6b7d1605c0bfdd151384454102b"
+    }
+   ]
+  },
+  "VRotBldcFilesMTwo": {
+   "valor": 16,
+   "status": "ok",
+   "categoria": "dados",
+   "coluna": "nº de arquivos do M2",
+   "script": "embarcados/src/python/gerar_artigo_numeros.py",
+   "fontes": [
+    {
+     "arquivo": "embarcados/results/csv/p11_features_20261023_222831.csv",
+     "sha256": "eb64ba855c885bf0ad428487067476095314ec200965130fa606c5ecf3649ef7"
+    },
+    {
+     "arquivo": "embarcados/results/predictions/diagnostico_janelas_20261023_222831.csv",
+     "sha256": "6426a95a9ceb73ad3e4a9f4a8d83f8194a3ce6b7d1605c0bfdd151384454102b"
+    }
+   ]
+  },
+  "VRotBldcSpearmanMThree": {
+   "valor": 0.5428571428571429,
+   "status": "ok",
+   "categoria": "dados",
+   "coluna": "Spearman por motor M3 (6 arquivos)",
+   "script": "embarcados/src/python/gerar_artigo_numeros.py",
+   "fontes": [
+    {
+     "arquivo": "embarcados/results/csv/p11_features_20261023_222831.csv",
+     "sha256": "eb64ba855c885bf0ad428487067476095314ec200965130fa606c5ecf3649ef7"
+    },
+    {
+     "arquivo": "embarcados/results/predictions/diagnostico_janelas_20261023_222831.csv",
+     "sha256": "6426a95a9ceb73ad3e4a9f4a8d83f8194a3ce6b7d1605c0bfdd151384454102b"
+    }
+   ]
+  },
+  "VRotBldcFilesMThree": {
+   "valor": 6,
+   "status": "ok",
+   "categoria": "dados",
+   "coluna": "nº de arquivos do M3",
+   "script": "embarcados/src/python/gerar_artigo_numeros.py",
+   "fontes": [
+    {
+     "arquivo": "embarcados/results/csv/p11_features_20261023_222831.csv",
+     "sha256": "eb64ba855c885bf0ad428487067476095314ec200965130fa606c5ecf3649ef7"
+    },
+    {
+     "arquivo": "embarcados/results/predictions/diagnostico_janelas_20261023_222831.csv",
+     "sha256": "6426a95a9ceb73ad3e4a9f4a8d83f8194a3ce6b7d1605c0bfdd151384454102b"
+    }
+   ]
+  },
+  "VRotBldcSpearmanMFour": {
+   "valor": 1.0,
+   "status": "ok",
+   "categoria": "dados",
+   "coluna": "Spearman por motor M4 (7 arquivos)",
+   "script": "embarcados/src/python/gerar_artigo_numeros.py",
+   "fontes": [
+    {
+     "arquivo": "embarcados/results/csv/p11_features_20261023_222831.csv",
+     "sha256": "eb64ba855c885bf0ad428487067476095314ec200965130fa606c5ecf3649ef7"
+    },
+    {
+     "arquivo": "embarcados/results/predictions/diagnostico_janelas_20261023_222831.csv",
+     "sha256": "6426a95a9ceb73ad3e4a9f4a8d83f8194a3ce6b7d1605c0bfdd151384454102b"
+    }
+   ]
+  },
+  "VRotBldcFilesMFour": {
+   "valor": 7,
+   "status": "ok",
+   "categoria": "dados",
+   "coluna": "nº de arquivos do M4",
+   "script": "embarcados/src/python/gerar_artigo_numeros.py",
+   "fontes": [
+    {
+     "arquivo": "embarcados/results/csv/p11_features_20261023_222831.csv",
+     "sha256": "eb64ba855c885bf0ad428487067476095314ec200965130fa606c5ecf3649ef7"
+    },
+    {
+     "arquivo": "embarcados/results/predictions/diagnostico_janelas_20261023_222831.csv",
+     "sha256": "6426a95a9ceb73ad3e4a9f4a8d83f8194a3ce6b7d1605c0bfdd151384454102b"
+    }
+   ]
+  },
+  "VEqStagesTotal": {
+   "valor": 26,
+   "status": "ok",
+   "categoria": "equivalencia",
+   "coluna": "nº de etapas por build",
+   "script": "embarcados/src/python/gerar_artigo_numeros.py",
+   "fontes": [
+    {
+     "arquivo": "embarcados/results/csv/equivalencia_resumo_por_build_20261024-091729.csv",
+     "sha256": "bc42bdf549e15875a3762c4907610f49a8ff0cb08c2fc10e3fafd5e59d84eb35"
+    }
+   ]
+  },
+  "VEqStagesCase": {
+   "valor": 20,
+   "status": "ok",
+   "categoria": "equivalencia",
+   "coluna": "etapas de janela",
+   "script": "embarcados/src/python/gerar_artigo_numeros.py",
+   "fontes": [
+    {
+     "arquivo": "embarcados/results/csv/equivalencia_resumo_por_build_20261024-091729.csv",
+     "sha256": "bc42bdf549e15875a3762c4907610f49a8ff0cb08c2fc10e3fafd5e59d84eb35"
+    }
+   ]
+  },
+  "VEqStagesSeq": {
+   "valor": 6,
+   "status": "ok",
+   "categoria": "equivalencia",
+   "coluna": "etapas de sequência",
+   "script": "embarcados/src/python/gerar_artigo_numeros.py",
+   "fontes": [
+    {
+     "arquivo": "embarcados/results/csv/equivalencia_resumo_por_build_20261024-091729.csv",
+     "sha256": "bc42bdf549e15875a3762c4907610f49a8ff0cb08c2fc10e3fafd5e59d84eb35"
+    }
+   ]
+  },
+  "VEqCases": {
+   "valor": 164,
+   "status": "ok",
+   "categoria": "equivalencia",
+   "coluna": "n[y_prep]",
+   "script": "embarcados/src/python/gerar_artigo_numeros.py",
+   "fontes": [
+    {
+     "arquivo": "embarcados/results/csv/equivalencia_resumo_por_build_20261024-091729.csv",
+     "sha256": "bc42bdf549e15875a3762c4907610f49a8ff0cb08c2fc10e3fafd5e59d84eb35"
+    }
+   ]
+  },
+  "VEqSeqCombos": {
+   "valor": 240,
+   "status": "ok",
+   "categoria": "equivalencia",
+   "coluna": "n[absorb]",
+   "script": "embarcados/src/python/gerar_artigo_numeros.py",
+   "fontes": [
+    {
+     "arquivo": "embarcados/results/csv/equivalencia_resumo_por_build_20261024-091729.csv",
+     "sha256": "bc42bdf549e15875a3762c4907610f49a8ff0cb08c2fc10e3fafd5e59d84eb35"
+    }
+   ]
+  },
+  "VEqDoubleStagesPass": {
+   "valor": 26,
+   "status": "ok",
+   "categoria": "equivalencia",
+   "coluna": "nº de etapas com veredito PASS (double)",
+   "script": "embarcados/src/python/gerar_artigo_numeros.py",
+   "fontes": [
+    {
+     "arquivo": "embarcados/results/csv/equivalencia_resumo_por_build_20261024-091729.csv",
+     "sha256": "bc42bdf549e15875a3762c4907610f49a8ff0cb08c2fc10e3fafd5e59d84eb35"
+    }
+   ]
+  },
+  "VEqDoubleMaxRatio": {
+   "valor": 0.5459081029379753,
+   "status": "ok",
+   "categoria": "equivalencia",
+   "coluna": "máx razao_tol_max nas etapas sem empate/FAIL (double)",
+   "script": "embarcados/src/python/gerar_artigo_numeros.py",
+   "fontes": [
+    {
+     "arquivo": "embarcados/results/csv/equivalencia_resumo_por_build_20261024-091729.csv",
+     "sha256": "bc42bdf549e15875a3762c4907610f49a8ff0cb08c2fc10e3fafd5e59d84eb35"
+    }
+   ]
+  },
+  "VEqDoubleDecisionPass": {
+   "valor": 164,
+   "status": "ok",
+   "categoria": "equivalencia",
+   "coluna": "pass+pass_empate[decisao] (double)",
+   "script": "embarcados/src/python/gerar_artigo_numeros.py",
+   "fontes": [
+    {
+     "arquivo": "embarcados/results/csv/equivalencia_resumo_por_build_20261024-091729.csv",
+     "sha256": "bc42bdf549e15875a3762c4907610f49a8ff0cb08c2fc10e3fafd5e59d84eb35"
+    }
+   ]
+  },
+  "VEqFloatStagesPass": {
+   "valor": 25,
+   "status": "ok",
+   "categoria": "equivalencia",
+   "coluna": "nº de etapas com veredito PASS (float)",
+   "script": "embarcados/src/python/gerar_artigo_numeros.py",
+   "fontes": [
+    {
+     "arquivo": "embarcados/results/csv/equivalencia_resumo_por_build_20261024-091729.csv",
+     "sha256": "bc42bdf549e15875a3762c4907610f49a8ff0cb08c2fc10e3fafd5e59d84eb35"
+    }
+   ]
+  },
+  "VEqFloatMaxRatio": {
+   "valor": 0.3421261810853317,
+   "status": "ok",
+   "categoria": "equivalencia",
+   "coluna": "máx razao_tol_max nas etapas sem empate/FAIL (float)",
+   "script": "embarcados/src/python/gerar_artigo_numeros.py",
+   "fontes": [
+    {
+     "arquivo": "embarcados/results/csv/equivalencia_resumo_por_build_20261024-091729.csv",
+     "sha256": "bc42bdf549e15875a3762c4907610f49a8ff0cb08c2fc10e3fafd5e59d84eb35"
+    }
+   ]
+  },
+  "VEqFloatDecisionPass": {
+   "valor": 164,
+   "status": "ok",
+   "categoria": "equivalencia",
+   "coluna": "pass+pass_empate[decisao] (float)",
+   "script": "embarcados/src/python/gerar_artigo_numeros.py",
+   "fontes": [
+    {
+     "arquivo": "embarcados/results/csv/equivalencia_resumo_por_build_20261024-091729.csv",
+     "sha256": "bc42bdf549e15875a3762c4907610f49a8ff0cb08c2fc10e3fafd5e59d84eb35"
+    }
+   ]
+  },
+  "VEqSosdStagesPass": {
+   "valor": 26,
+   "status": "ok",
+   "categoria": "equivalencia",
+   "coluna": "nº de etapas com veredito PASS (float-sosd)",
+   "script": "embarcados/src/python/gerar_artigo_numeros.py",
+   "fontes": [
+    {
+     "arquivo": "embarcados/results/csv/equivalencia_resumo_por_build_20261024-091729.csv",
+     "sha256": "bc42bdf549e15875a3762c4907610f49a8ff0cb08c2fc10e3fafd5e59d84eb35"
+    }
+   ]
+  },
+  "VEqSosdMaxRatio": {
+   "valor": 0.2292486339650068,
+   "status": "ok",
+   "categoria": "equivalencia",
+   "coluna": "máx razao_tol_max nas etapas sem empate/FAIL (float-sosd)",
+   "script": "embarcados/src/python/gerar_artigo_numeros.py",
+   "fontes": [
+    {
+     "arquivo": "embarcados/results/csv/equivalencia_resumo_por_build_20261024-091729.csv",
+     "sha256": "bc42bdf549e15875a3762c4907610f49a8ff0cb08c2fc10e3fafd5e59d84eb35"
+    }
+   ]
+  },
+  "VEqSosdDecisionPass": {
+   "valor": 164,
+   "status": "ok",
+   "categoria": "equivalencia",
+   "coluna": "pass+pass_empate[decisao] (float-sosd)",
+   "script": "embarcados/src/python/gerar_artigo_numeros.py",
+   "fontes": [
+    {
+     "arquivo": "embarcados/results/csv/equivalencia_resumo_por_build_20261024-091729.csv",
+     "sha256": "bc42bdf549e15875a3762c4907610f49a8ff0cb08c2fc10e3fafd5e59d84eb35"
+    }
+   ]
+  },
+  "VEqFloatZFail": {
+   "valor": 2,
+   "status": "ok",
+   "categoria": "equivalencia",
+   "coluna": "fail[float,z]",
+   "script": "embarcados/src/python/gerar_artigo_numeros.py",
+   "fontes": [
+    {
+     "arquivo": "embarcados/results/csv/equivalencia_resumo_por_build_20261024-091729.csv",
+     "sha256": "bc42bdf549e15875a3762c4907610f49a8ff0cb08c2fc10e3fafd5e59d84eb35"
+    }
+   ]
+  },
+  "VEqFloatZPass": {
+   "valor": 162,
+   "status": "ok",
+   "categoria": "equivalencia",
+   "coluna": "pass[float,z]",
+   "script": "embarcados/src/python/gerar_artigo_numeros.py",
+   "fontes": [
+    {
+     "arquivo": "embarcados/results/csv/equivalencia_resumo_por_build_20261024-091729.csv",
+     "sha256": "bc42bdf549e15875a3762c4907610f49a8ff0cb08c2fc10e3fafd5e59d84eb35"
+    }
+   ]
+  },
+  "VEqFloatFailStages": {
+   "valor": "z",
+   "status": "ok",
+   "categoria": "equivalencia",
+   "coluna": "etapas sem PASS (float)",
+   "script": "embarcados/src/python/gerar_artigo_numeros.py",
+   "fontes": [
+    {
+     "arquivo": "embarcados/results/csv/equivalencia_resumo_por_build_20261024-091729.csv",
+     "sha256": "bc42bdf549e15875a3762c4907610f49a8ff0cb08c2fc10e3fafd5e59d84eb35"
+    }
+   ]
+  },
+  "VEqFloatTieStages": {
+   "valor": 2,
+   "status": "ok",
+   "categoria": "equivalencia",
+   "coluna": "nº de etapas com PASS_EMPATE (float)",
+   "script": "embarcados/src/python/gerar_artigo_numeros.py",
+   "fontes": [
+    {
+     "arquivo": "embarcados/results/csv/equivalencia_resumo_por_build_20261024-091729.csv",
+     "sha256": "bc42bdf549e15875a3762c4907610f49a8ff0cb08c2fc10e3fafd5e59d84eb35"
+    }
+   ]
+  },
+  "VEqFloatTieCases": {
+   "valor": 2,
+   "status": "ok",
+   "categoria": "equivalencia",
+   "coluna": "ids com PASS_EMPATE em env_mod",
+   "script": "embarcados/src/python/gerar_artigo_numeros.py",
+   "fontes": [
+    {
+     "arquivo": "embarcados/results/csv/equivalencia_float_20261024-091122.csv",
+     "sha256": "38e87620d895ce26c9c0bbfa5bd0df7af3686607d525235e3fa5c9d287612314"
+    }
+   ]
+  },
+  "VEqFloatTieCaseIds": {
+   "valor": "borda_dc_ruido3s_ma2212, borda_dc_ruido3s_midmt",
+   "status": "ok",
+   "categoria": "equivalencia",
+   "coluna": "id",
+   "script": "embarcados/src/python/gerar_artigo_numeros.py",
+   "fontes": [
+    {
+     "arquivo": "embarcados/results/csv/equivalencia_float_20261024-091122.csv",
+     "sha256": "38e87620d895ce26c9c0bbfa5bd0df7af3686607d525235e3fa5c9d287612314"
+    }
+   ]
+  },
+  "VEqFloatTieGap": {
+   "valor": 9.414e-16,
+   "status": "ok",
+   "categoria": "equivalencia",
+   "coluna": "detalhe[env_mod]: P_ref[ref]-P_ref[C]",
+   "script": "embarcados/src/python/gerar_artigo_numeros.py",
+   "fontes": [
+    {
+     "arquivo": "embarcados/results/csv/equivalencia_float_20261024-091122.csv",
+     "sha256": "38e87620d895ce26c9c0bbfa5bd0df7af3686607d525235e3fa5c9d287612314"
+    }
+   ]
+  },
+  "VEqFloatTieTol": {
+   "valor": 6.335e-11,
+   "status": "ok",
+   "categoria": "equivalencia",
+   "coluna": "detalhe[env_mod]: 2·tol",
+   "script": "embarcados/src/python/gerar_artigo_numeros.py",
+   "fontes": [
+    {
+     "arquivo": "embarcados/results/csv/equivalencia_float_20261024-091122.csv",
+     "sha256": "38e87620d895ce26c9c0bbfa5bd0df7af3686607d525235e3fa5c9d287612314"
+    }
+   ]
+  },
+  "VEqFloatFmodErr": {
+   "valor": 37.109375,
+   "status": "ok",
+   "categoria": "equivalencia",
+   "coluna": "err_max[features[9]:f_mod] (empate)",
+   "script": "embarcados/src/python/gerar_artigo_numeros.py",
+   "fontes": [
+    {
+     "arquivo": "embarcados/results/csv/equivalencia_float_20261024-091122.csv",
+     "sha256": "38e87620d895ce26c9c0bbfa5bd0df7af3686607d525235e3fa5c9d287612314"
+    }
+   ]
+  },
+  "VEqFloatZErrMax": {
+   "valor": 1.6072882061759008,
+   "status": "ok",
+   "categoria": "equivalencia",
+   "coluna": "err_max[z] (FAIL)",
+   "script": "embarcados/src/python/gerar_artigo_numeros.py",
+   "fontes": [
+    {
+     "arquivo": "embarcados/results/csv/equivalencia_float_20261024-091122.csv",
+     "sha256": "38e87620d895ce26c9c0bbfa5bd0df7af3686607d525235e3fa5c9d287612314"
+    }
+   ]
+  },
+  "VEqFloatZFailIsEdge": {
+   "valor": 1,
+   "status": "ok",
+   "categoria": "equivalencia",
+   "coluna": "todos os FAIL de z são casos de borda (1=sim)",
+   "script": "embarcados/src/python/gerar_artigo_numeros.py",
+   "fontes": [
+    {
+     "arquivo": "embarcados/results/csv/equivalencia_float_20261024-091122.csv",
+     "sha256": "38e87620d895ce26c9c0bbfa5bd0df7af3686607d525235e3fa5c9d287612314"
+    }
+   ]
+  },
+  "VEqEnvDecFloatMed": {
+   "valor": 1.232452449514619e-05,
+   "status": "ok",
+   "categoria": "equivalencia",
+   "coluna": "mediana err_rel_max[env_dec]",
+   "script": "embarcados/src/python/gerar_artigo_numeros.py",
+   "fontes": [
+    {
+     "arquivo": "embarcados/results/csv/equivalencia_float_20261024-091122.csv",
+     "sha256": "38e87620d895ce26c9c0bbfa5bd0df7af3686607d525235e3fa5c9d287612314"
+    }
+   ]
+  },
+  "VEqEnvDecSosdMed": {
+   "valor": 1.1741707912000167e-07,
+   "status": "ok",
+   "categoria": "equivalencia",
+   "coluna": "mediana err_rel_max[env_dec]",
+   "script": "embarcados/src/python/gerar_artigo_numeros.py",
+   "fontes": [
+    {
+     "arquivo": "embarcados/results/csv/equivalencia_float-sosd_20261024-091222.csv",
+     "sha256": "fb79aad99d6e607a132af89358182c74f4eeec2ac31e97410c5fab486e945ce9"
+    }
+   ]
+  },
+  "VEqEnvDecDoubleMed": {
+   "valor": 1.1034853848283797e-07,
+   "status": "ok",
+   "categoria": "equivalencia",
+   "coluna": "mediana err_rel_max[env_dec]",
+   "script": "embarcados/src/python/gerar_artigo_numeros.py",
+   "fontes": [
+    {
+     "arquivo": "embarcados/results/csv/equivalencia_double_20261024-091106.csv",
+     "sha256": "0462b21cd040d8987e25988c7b603e2dfc9009f57ec9b9382dda2e1ac4310cf3"
+    }
+   ]
+  },
+  "VEqTolSha": {
+   "valor": "d74dae800ceb",
+   "status": "ok",
+   "categoria": "equivalencia",
+   "coluna": "sha256 (12 primeiros)",
+   "script": "embarcados/src/python/gerar_artigo_numeros.py",
+   "fontes": [
+    {
+     "arquivo": "embarcados/configs/embedded/tolerancias.json",
+     "sha256": "d74dae800cebfe4d670c33ba2c0a72639ad1e04e95bcbd9a904be13c294c1b5d"
+    }
+   ]
+  },
+  "VEqTolShaRec": {
+   "valor": "d74dae800ceb",
+   "status": "ok",
+   "categoria": "equivalencia",
+   "coluna": "sha256_tolerancias gravado no _meta da comparação",
+   "script": "embarcados/src/python/gerar_artigo_numeros.py",
+   "fontes": [
+    {
+     "arquivo": "embarcados/results/csv/equivalencia_resumo_por_build_20261024-091729.csv",
+     "sha256": "bc42bdf549e15875a3762c4907610f49a8ff0cb08c2fc10e3fafd5e59d84eb35"
+    }
+   ]
+  },
+  "VEqTolCommit": {
+   "valor": "447a7c2",
+   "status": "ok",
+   "categoria": "equivalencia",
+   "coluna": "git log -1 do tolerancias.json",
+   "script": "embarcados/src/python/gerar_artigo_numeros.py",
+   "fontes": [
+    {
+     "arquivo": "embarcados/configs/embedded/tolerancias.json",
+     "sha256": "d74dae800cebfe4d670c33ba2c0a72639ad1e04e95bcbd9a904be13c294c1b5d"
+    }
+   ]
+  },
+  "VEqTolCommitTime": {
+   "valor": "2026-10-24 09:10",
+   "status": "ok",
+   "categoria": "equivalencia",
+   "coluna": "data do commit do tolerancias.json",
+   "script": "embarcados/src/python/gerar_artigo_numeros.py",
+   "fontes": [
+    {
+     "arquivo": "embarcados/configs/embedded/tolerancias.json",
+     "sha256": "d74dae800cebfe4d670c33ba2c0a72639ad1e04e95bcbd9a904be13c294c1b5d"
+    }
+   ]
+  },
+  "VEqRunTime": {
+   "valor": "2026-10-24 09:11",
+   "status": "ok",
+   "categoria": "equivalencia",
+   "coluna": "data da comparação formal (float)",
+   "script": "embarcados/src/python/gerar_artigo_numeros.py",
+   "fontes": [
+    {
+     "arquivo": "embarcados/results/csv/equivalencia_resumo_por_build_20261024-091729.csv",
+     "sha256": "bc42bdf549e15875a3762c4907610f49a8ff0cb08c2fc10e3fafd5e59d84eb35"
+    }
+   ]
+  },
+  "VEqGoldClean": {
+   "valor": 60,
+   "status": "ok",
+   "categoria": "equivalencia",
+   "coluna": "casos tipo limpo",
+   "script": "embarcados/src/python/gerar_artigo_numeros.py",
+   "fontes": [
+    {
+     "arquivo": "embarcados/gold/manifest.json",
+     "sha256": "a681abee826d5b8ede688d4d67ea159495898ea48e0c131f729d8406437ba876"
+    }
+   ]
+  },
+  "VEqGoldNoisy": {
+   "valor": 90,
+   "status": "ok",
+   "categoria": "equivalencia",
+   "coluna": "casos tipo ruidoso",
+   "script": "embarcados/src/python/gerar_artigo_numeros.py",
+   "fontes": [
+    {
+     "arquivo": "embarcados/gold/manifest.json",
+     "sha256": "a681abee826d5b8ede688d4d67ea159495898ea48e0c131f729d8406437ba876"
+    }
+   ]
+  },
+  "VEqGoldEdge": {
+   "valor": 14,
+   "status": "ok",
+   "categoria": "equivalencia",
+   "coluna": "casos tipo borda",
+   "script": "embarcados/src/python/gerar_artigo_numeros.py",
+   "fontes": [
+    {
+     "arquivo": "embarcados/gold/manifest.json",
+     "sha256": "a681abee826d5b8ede688d4d67ea159495898ea48e0c131f729d8406437ba876"
+    }
+   ]
+  },
+  "VEqGoldSeqs": {
+   "valor": 20,
+   "status": "ok",
+   "categoria": "equivalencia",
+   "coluna": "n_seqs",
+   "script": "embarcados/src/python/gerar_artigo_numeros.py",
+   "fontes": [
+    {
+     "arquivo": "embarcados/gold/manifest.json",
+     "sha256": "a681abee826d5b8ede688d4d67ea159495898ea48e0c131f729d8406437ba876"
+    }
+   ]
+  },
+  "VEqGoldPerts": {
+   "valor": 5,
+   "status": "ok",
+   "categoria": "equivalencia",
+   "coluna": "nº de perturbações",
+   "script": "embarcados/src/python/gerar_artigo_numeros.py",
+   "fontes": [
+    {
+     "arquivo": "embarcados/gold/manifest.json",
+     "sha256": "a681abee826d5b8ede688d4d67ea159495898ea48e0c131f729d8406437ba876"
+    }
+   ]
+  },
+  "VEqMinDurValues": {
+   "valor": 2,
+   "status": "ok",
+   "categoria": "equivalencia",
+   "coluna": "len(min_durs_s)",
+   "script": "embarcados/src/python/gerar_artigo_numeros.py",
+   "fontes": [
+    {
+     "arquivo": "embarcados/gold/seqs/idmt_seq00/params.json",
+     "sha256": "a50569ecb0951b7b171019e4ccbe89eebd51eff92893532f03a8490dcd38cf78"
+    }
+   ]
+  },
+  "VEqEmulDoubleRows": {
+   "valor": 6852,
+   "status": "ok",
+   "categoria": "equivalencia",
+   "coluna": "n_linhas",
+   "script": "embarcados/src/python/gerar_artigo_numeros.py",
+   "fontes": [
+    {
+     "arquivo": "embarcados/results/csv/equivalencia_emul_double_20261024-090737_meta.json",
+     "sha256": "e23e090ee472c5a8a1451189a9331ee135b2d9a1516091195c434a0ab471db4a"
+    }
+   ]
+  },
+  "VEqEmulDoublePass": {
+   "valor": 6852,
+   "status": "ok",
+   "categoria": "equivalencia",
+   "coluna": "contagem_status.PASS",
+   "script": "embarcados/src/python/gerar_artigo_numeros.py",
+   "fontes": [
+    {
+     "arquivo": "embarcados/results/csv/equivalencia_emul_double_20261024-090737_meta.json",
+     "sha256": "e23e090ee472c5a8a1451189a9331ee135b2d9a1516091195c434a0ab471db4a"
+    }
+   ]
+  },
+  "VEqEmulFloatRows": {
+   "valor": 6852,
+   "status": "ok",
+   "categoria": "equivalencia",
+   "coluna": "n_linhas",
+   "script": "embarcados/src/python/gerar_artigo_numeros.py",
+   "fontes": [
+    {
+     "arquivo": "embarcados/results/csv/equivalencia_emul_float_20261024-090743_meta.json",
+     "sha256": "d46c9c2aa501b61a966d439995c2adeaf961781059bcc096083722e00735ccc9"
+    }
+   ]
+  },
+  "VEqEmulFloatPass": {
+   "valor": 6852,
+   "status": "ok",
+   "categoria": "equivalencia",
+   "coluna": "contagem_status.PASS",
+   "script": "embarcados/src/python/gerar_artigo_numeros.py",
+   "fontes": [
+    {
+     "arquivo": "embarcados/results/csv/equivalencia_emul_float_20261024-090743_meta.json",
+     "sha256": "d46c9c2aa501b61a966d439995c2adeaf961781059bcc096083722e00735ccc9"
+    }
+   ]
+  },
+  "VPcCIdmtMed": {
+   "valor": 13.29005,
+   "status": "ok",
+   "categoria": "pc",
+   "coluna": "resumo.c_float_pc/idmt.total_ms.mediana",
+   "script": "embarcados/src/python/gerar_artigo_numeros.py",
+   "fontes": [
+    {
+     "arquivo": "embarcados/results/metrics/bench_pc_20261024-091911.json",
+     "sha256": "c119b18fff7eb6b4c1e208ada15b9204bea9cb2c001931dd910203671ab602cd"
+    }
+   ]
+  },
+  "VPcPyIdmtMed": {
+   "valor": 95.32214999489952,
+   "status": "ok",
+   "categoria": "pc",
+   "coluna": "resumo.python_ref/idmt.total_ms.mediana",
+   "script": "embarcados/src/python/gerar_artigo_numeros.py",
+   "fontes": [
+    {
+     "arquivo": "embarcados/results/metrics/bench_pc_20261024-091911.json",
+     "sha256": "c119b18fff7eb6b4c1e208ada15b9204bea9cb2c001931dd910203671ab602cd"
+    }
+   ]
+  },
+  "VPcCIdmtPninetyfive": {
+   "valor": 14.99725,
+   "status": "ok",
+   "categoria": "pc",
+   "coluna": "resumo.c_float_pc/idmt.total_ms.p95",
+   "script": "embarcados/src/python/gerar_artigo_numeros.py",
+   "fontes": [
+    {
+     "arquivo": "embarcados/results/metrics/bench_pc_20261024-091911.json",
+     "sha256": "c119b18fff7eb6b4c1e208ada15b9204bea9cb2c001931dd910203671ab602cd"
+    }
+   ]
+  },
+  "VPcPyIdmtPninetyfive": {
+   "valor": 100.16770999209255,
+   "status": "ok",
+   "categoria": "pc",
+   "coluna": "resumo.python_ref/idmt.total_ms.p95",
+   "script": "embarcados/src/python/gerar_artigo_numeros.py",
+   "fontes": [
+    {
+     "arquivo": "embarcados/results/metrics/bench_pc_20261024-091911.json",
+     "sha256": "c119b18fff7eb6b4c1e208ada15b9204bea9cb2c001931dd910203671ab602cd"
+    }
+   ]
+  },
+  "VPcCIdmtMax": {
+   "valor": 15.7989,
+   "status": "ok",
+   "categoria": "pc",
+   "coluna": "resumo.c_float_pc/idmt.total_ms.max",
+   "script": "embarcados/src/python/gerar_artigo_numeros.py",
+   "fontes": [
+    {
+     "arquivo": "embarcados/results/metrics/bench_pc_20261024-091911.json",
+     "sha256": "c119b18fff7eb6b4c1e208ada15b9204bea9cb2c001931dd910203671ab602cd"
+    }
+   ]
+  },
+  "VPcPyIdmtMax": {
+   "valor": 110.21889999392442,
+   "status": "ok",
+   "categoria": "pc",
+   "coluna": "resumo.python_ref/idmt.total_ms.max",
+   "script": "embarcados/src/python/gerar_artigo_numeros.py",
+   "fontes": [
+    {
+     "arquivo": "embarcados/results/metrics/bench_pc_20261024-091911.json",
+     "sha256": "c119b18fff7eb6b4c1e208ada15b9204bea9cb2c001931dd910203671ab602cd"
+    }
+   ]
+  },
+  "VPcCIdmtRtf": {
+   "valor": 0.004430016666666667,
+   "status": "ok",
+   "categoria": "pc",
+   "coluna": "fator_tempo_real_mediana",
+   "script": "embarcados/src/python/gerar_artigo_numeros.py",
+   "fontes": [
+    {
+     "arquivo": "embarcados/results/metrics/bench_pc_20261024-091911.json",
+     "sha256": "c119b18fff7eb6b4c1e208ada15b9204bea9cb2c001931dd910203671ab602cd"
+    }
+   ]
+  },
+  "VPcPyIdmtRtf": {
+   "valor": 0.03177404999829984,
+   "status": "ok",
+   "categoria": "pc",
+   "coluna": "fator_tempo_real_mediana",
+   "script": "embarcados/src/python/gerar_artigo_numeros.py",
+   "fontes": [
+    {
+     "arquivo": "embarcados/results/metrics/bench_pc_20261024-091911.json",
+     "sha256": "c119b18fff7eb6b4c1e208ada15b9204bea9cb2c001931dd910203671ab602cd"
+    }
+   ]
+  },
+  "VPcSpeedupIdmt": {
+   "valor": 7.172444798544739,
+   "status": "ok",
+   "categoria": "pc",
+   "coluna": "mediana Python / mediana C",
+   "script": "embarcados/src/python/gerar_artigo_numeros.py",
+   "fontes": [
+    {
+     "arquivo": "embarcados/results/metrics/bench_pc_20261024-091911.json",
+     "sha256": "c119b18fff7eb6b4c1e208ada15b9204bea9cb2c001931dd910203671ab602cd"
+    }
+   ]
+  },
+  "VPcCIdmtTrackMed": {
+   "valor": 5.45165,
+   "status": "ok",
+   "categoria": "pc",
+   "coluna": "rastrear_quadros_ms.mediana",
+   "script": "embarcados/src/python/gerar_artigo_numeros.py",
+   "fontes": [
+    {
+     "arquivo": "embarcados/results/metrics/bench_pc_20261024-091911.json",
+     "sha256": "c119b18fff7eb6b4c1e208ada15b9204bea9cb2c001931dd910203671ab602cd"
+    }
+   ]
+  },
+  "VPcCIdmtTrackPct": {
+   "valor": 41.020537921226776,
+   "status": "ok",
+   "categoria": "pc",
+   "coluna": "100·rastrear_quadros_ms.mediana/total_ms.mediana",
+   "script": "embarcados/src/python/gerar_artigo_numeros.py",
+   "fontes": [
+    {
+     "arquivo": "embarcados/results/metrics/bench_pc_20261024-091911.json",
+     "sha256": "c119b18fff7eb6b4c1e208ada15b9204bea9cb2c001931dd910203671ab602cd"
+    }
+   ]
+  },
+  "VPcCIdmtVitMed": {
+   "valor": 5.3472,
+   "status": "ok",
+   "categoria": "pc",
+   "coluna": "viterbi_ms.mediana",
+   "script": "embarcados/src/python/gerar_artigo_numeros.py",
+   "fontes": [
+    {
+     "arquivo": "embarcados/results/metrics/bench_pc_20261024-091911.json",
+     "sha256": "c119b18fff7eb6b4c1e208ada15b9204bea9cb2c001931dd910203671ab602cd"
+    }
+   ]
+  },
+  "VPcCIdmtVitPct": {
+   "valor": 40.23461160793225,
+   "status": "ok",
+   "categoria": "pc",
+   "coluna": "100·viterbi_ms.mediana/total_ms.mediana",
+   "script": "embarcados/src/python/gerar_artigo_numeros.py",
+   "fontes": [
+    {
+     "arquivo": "embarcados/results/metrics/bench_pc_20261024-091911.json",
+     "sha256": "c119b18fff7eb6b4c1e208ada15b9204bea9cb2c001931dd910203671ab602cd"
+    }
+   ]
+  },
+  "VPcCIdmtEnvMed": {
+   "valor": 2.26745,
+   "status": "ok",
+   "categoria": "pc",
+   "coluna": "envelope_mod_ms.mediana",
+   "script": "embarcados/src/python/gerar_artigo_numeros.py",
+   "fontes": [
+    {
+     "arquivo": "embarcados/results/metrics/bench_pc_20261024-091911.json",
+     "sha256": "c119b18fff7eb6b4c1e208ada15b9204bea9cb2c001931dd910203671ab602cd"
+    }
+   ]
+  },
+  "VPcCIdmtEnvPct": {
+   "valor": 17.06126011565043,
+   "status": "ok",
+   "categoria": "pc",
+   "coluna": "100·envelope_mod_ms.mediana/total_ms.mediana",
+   "script": "embarcados/src/python/gerar_artigo_numeros.py",
+   "fontes": [
+    {
+     "arquivo": "embarcados/results/metrics/bench_pc_20261024-091911.json",
+     "sha256": "c119b18fff7eb6b4c1e208ada15b9204bea9cb2c001931dd910203671ab602cd"
+    }
+   ]
+  },
+  "VPcCIdmtFeatMed": {
+   "valor": 0.0128,
+   "status": "ok",
+   "categoria": "pc",
+   "coluna": "features_ms.mediana",
+   "script": "embarcados/src/python/gerar_artigo_numeros.py",
+   "fontes": [
+    {
+     "arquivo": "embarcados/results/metrics/bench_pc_20261024-091911.json",
+     "sha256": "c119b18fff7eb6b4c1e208ada15b9204bea9cb2c001931dd910203671ab602cd"
+    }
+   ]
+  },
+  "VPcCIdmtFeatPct": {
+   "valor": 0.0963126549561514,
+   "status": "ok",
+   "categoria": "pc",
+   "coluna": "100·features_ms.mediana/total_ms.mediana",
+   "script": "embarcados/src/python/gerar_artigo_numeros.py",
+   "fontes": [
+    {
+     "arquivo": "embarcados/results/metrics/bench_pc_20261024-091911.json",
+     "sha256": "c119b18fff7eb6b4c1e208ada15b9204bea9cb2c001931dd910203671ab602cd"
+    }
+   ]
+  },
+  "VPcCIdmtCosMed": {
+   "valor": 0.0019,
+   "status": "ok",
+   "categoria": "pc",
+   "coluna": "cosseno_ms.mediana",
+   "script": "embarcados/src/python/gerar_artigo_numeros.py",
+   "fontes": [
+    {
+     "arquivo": "embarcados/results/metrics/bench_pc_20261024-091911.json",
+     "sha256": "c119b18fff7eb6b4c1e208ada15b9204bea9cb2c001931dd910203671ab602cd"
+    }
+   ]
+  },
+  "VPcCIdmtCosPct": {
+   "valor": 0.014296409720053724,
+   "status": "ok",
+   "categoria": "pc",
+   "coluna": "100·cosseno_ms.mediana/total_ms.mediana",
+   "script": "embarcados/src/python/gerar_artigo_numeros.py",
+   "fontes": [
+    {
+     "arquivo": "embarcados/results/metrics/bench_pc_20261024-091911.json",
+     "sha256": "c119b18fff7eb6b4c1e208ada15b9204bea9cb2c001931dd910203671ab602cd"
+    }
+   ]
+  },
+  "VPcNIdmt": {
+   "valor": 200,
+   "status": "ok",
+   "categoria": "pc",
+   "coluna": "total_ms.n",
+   "script": "embarcados/src/python/gerar_artigo_numeros.py",
+   "fontes": [
+    {
+     "arquivo": "embarcados/results/metrics/bench_pc_20261024-091911.json",
+     "sha256": "c119b18fff7eb6b4c1e208ada15b9204bea9cb2c001931dd910203671ab602cd"
+    }
+   ]
+  },
+  "VPcCBldcMed": {
+   "valor": 3.1763500000000002,
+   "status": "ok",
+   "categoria": "pc",
+   "coluna": "resumo.c_float_pc/a2212.total_ms.mediana",
+   "script": "embarcados/src/python/gerar_artigo_numeros.py",
+   "fontes": [
+    {
+     "arquivo": "embarcados/results/metrics/bench_pc_20261024-091911.json",
+     "sha256": "c119b18fff7eb6b4c1e208ada15b9204bea9cb2c001931dd910203671ab602cd"
+    }
+   ]
+  },
+  "VPcPyBldcMed": {
+   "valor": 22.056899993913248,
+   "status": "ok",
+   "categoria": "pc",
+   "coluna": "resumo.python_ref/a2212.total_ms.mediana",
+   "script": "embarcados/src/python/gerar_artigo_numeros.py",
+   "fontes": [
+    {
+     "arquivo": "embarcados/results/metrics/bench_pc_20261024-091911.json",
+     "sha256": "c119b18fff7eb6b4c1e208ada15b9204bea9cb2c001931dd910203671ab602cd"
+    }
+   ]
+  },
+  "VPcCBldcPninetyfive": {
+   "valor": 3.8385599999999993,
+   "status": "ok",
+   "categoria": "pc",
+   "coluna": "resumo.c_float_pc/a2212.total_ms.p95",
+   "script": "embarcados/src/python/gerar_artigo_numeros.py",
+   "fontes": [
+    {
+     "arquivo": "embarcados/results/metrics/bench_pc_20261024-091911.json",
+     "sha256": "c119b18fff7eb6b4c1e208ada15b9204bea9cb2c001931dd910203671ab602cd"
+    }
+   ]
+  },
+  "VPcPyBldcPninetyfive": {
+   "valor": 23.0936200110591,
+   "status": "ok",
+   "categoria": "pc",
+   "coluna": "resumo.python_ref/a2212.total_ms.p95",
+   "script": "embarcados/src/python/gerar_artigo_numeros.py",
+   "fontes": [
+    {
+     "arquivo": "embarcados/results/metrics/bench_pc_20261024-091911.json",
+     "sha256": "c119b18fff7eb6b4c1e208ada15b9204bea9cb2c001931dd910203671ab602cd"
+    }
+   ]
+  },
+  "VPcCBldcMax": {
+   "valor": 4.4524,
+   "status": "ok",
+   "categoria": "pc",
+   "coluna": "resumo.c_float_pc/a2212.total_ms.max",
+   "script": "embarcados/src/python/gerar_artigo_numeros.py",
+   "fontes": [
+    {
+     "arquivo": "embarcados/results/metrics/bench_pc_20261024-091911.json",
+     "sha256": "c119b18fff7eb6b4c1e208ada15b9204bea9cb2c001931dd910203671ab602cd"
+    }
+   ]
+  },
+  "VPcPyBldcMax": {
+   "valor": 25.338499995996244,
+   "status": "ok",
+   "categoria": "pc",
+   "coluna": "resumo.python_ref/a2212.total_ms.max",
+   "script": "embarcados/src/python/gerar_artigo_numeros.py",
+   "fontes": [
+    {
+     "arquivo": "embarcados/results/metrics/bench_pc_20261024-091911.json",
+     "sha256": "c119b18fff7eb6b4c1e208ada15b9204bea9cb2c001931dd910203671ab602cd"
+    }
+   ]
+  },
+  "VPcCBldcRtf": {
+   "valor": 0.00317635,
+   "status": "ok",
+   "categoria": "pc",
+   "coluna": "fator_tempo_real_mediana",
+   "script": "embarcados/src/python/gerar_artigo_numeros.py",
+   "fontes": [
+    {
+     "arquivo": "embarcados/results/metrics/bench_pc_20261024-091911.json",
+     "sha256": "c119b18fff7eb6b4c1e208ada15b9204bea9cb2c001931dd910203671ab602cd"
+    }
+   ]
+  },
+  "VPcPyBldcRtf": {
+   "valor": 0.022056899993913248,
+   "status": "ok",
+   "categoria": "pc",
+   "coluna": "fator_tempo_real_mediana",
+   "script": "embarcados/src/python/gerar_artigo_numeros.py",
+   "fontes": [
+    {
+     "arquivo": "embarcados/results/metrics/bench_pc_20261024-091911.json",
+     "sha256": "c119b18fff7eb6b4c1e208ada15b9204bea9cb2c001931dd910203671ab602cd"
+    }
+   ]
+  },
+  "VPcSpeedupBldc": {
+   "valor": 6.944102505678923,
+   "status": "ok",
+   "categoria": "pc",
+   "coluna": "mediana Python / mediana C",
+   "script": "embarcados/src/python/gerar_artigo_numeros.py",
+   "fontes": [
+    {
+     "arquivo": "embarcados/results/metrics/bench_pc_20261024-091911.json",
+     "sha256": "c119b18fff7eb6b4c1e208ada15b9204bea9cb2c001931dd910203671ab602cd"
+    }
+   ]
+  },
+  "VPcCBldcTrackMed": {
+   "valor": 1.24255,
+   "status": "ok",
+   "categoria": "pc",
+   "coluna": "rastrear_quadros_ms.mediana",
+   "script": "embarcados/src/python/gerar_artigo_numeros.py",
+   "fontes": [
+    {
+     "arquivo": "embarcados/results/metrics/bench_pc_20261024-091911.json",
+     "sha256": "c119b18fff7eb6b4c1e208ada15b9204bea9cb2c001931dd910203671ab602cd"
+    }
+   ]
+  },
+  "VPcCBldcTrackPct": {
+   "valor": 39.11879988036583,
+   "status": "ok",
+   "categoria": "pc",
+   "coluna": "100·rastrear_quadros_ms.mediana/total_ms.mediana",
+   "script": "embarcados/src/python/gerar_artigo_numeros.py",
+   "fontes": [
+    {
+     "arquivo": "embarcados/results/metrics/bench_pc_20261024-091911.json",
+     "sha256": "c119b18fff7eb6b4c1e208ada15b9204bea9cb2c001931dd910203671ab602cd"
+    }
+   ]
+  },
+  "VPcCBldcVitMed": {
+   "valor": 1.1412499999999999,
+   "status": "ok",
+   "categoria": "pc",
+   "coluna": "viterbi_ms.mediana",
+   "script": "embarcados/src/python/gerar_artigo_numeros.py",
+   "fontes": [
+    {
+     "arquivo": "embarcados/results/metrics/bench_pc_20261024-091911.json",
+     "sha256": "c119b18fff7eb6b4c1e208ada15b9204bea9cb2c001931dd910203671ab602cd"
+    }
+   ]
+  },
+  "VPcCBldcVitPct": {
+   "valor": 35.92960473499456,
+   "status": "ok",
+   "categoria": "pc",
+   "coluna": "100·viterbi_ms.mediana/total_ms.mediana",
+   "script": "embarcados/src/python/gerar_artigo_numeros.py",
+   "fontes": [
+    {
+     "arquivo": "embarcados/results/metrics/bench_pc_20261024-091911.json",
+     "sha256": "c119b18fff7eb6b4c1e208ada15b9204bea9cb2c001931dd910203671ab602cd"
+    }
+   ]
+  },
+  "VPcCBldcEnvMed": {
+   "valor": 0.6662,
+   "status": "ok",
+   "categoria": "pc",
+   "coluna": "envelope_mod_ms.mediana",
+   "script": "embarcados/src/python/gerar_artigo_numeros.py",
+   "fontes": [
+    {
+     "arquivo": "embarcados/results/metrics/bench_pc_20261024-091911.json",
+     "sha256": "c119b18fff7eb6b4c1e208ada15b9204bea9cb2c001931dd910203671ab602cd"
+    }
+   ]
+  },
+  "VPcCBldcEnvPct": {
+   "valor": 20.97375918900625,
+   "status": "ok",
+   "categoria": "pc",
+   "coluna": "100·envelope_mod_ms.mediana/total_ms.mediana",
+   "script": "embarcados/src/python/gerar_artigo_numeros.py",
+   "fontes": [
+    {
+     "arquivo": "embarcados/results/metrics/bench_pc_20261024-091911.json",
+     "sha256": "c119b18fff7eb6b4c1e208ada15b9204bea9cb2c001931dd910203671ab602cd"
+    }
+   ]
+  },
+  "VPcCBldcFeatMed": {
+   "valor": 0.0125,
+   "status": "ok",
+   "categoria": "pc",
+   "coluna": "features_ms.mediana",
+   "script": "embarcados/src/python/gerar_artigo_numeros.py",
+   "fontes": [
+    {
+     "arquivo": "embarcados/results/metrics/bench_pc_20261024-091911.json",
+     "sha256": "c119b18fff7eb6b4c1e208ada15b9204bea9cb2c001931dd910203671ab602cd"
+    }
+   ]
+  },
+  "VPcCBldcFeatPct": {
+   "valor": 0.3935334582146174,
+   "status": "ok",
+   "categoria": "pc",
+   "coluna": "100·features_ms.mediana/total_ms.mediana",
+   "script": "embarcados/src/python/gerar_artigo_numeros.py",
+   "fontes": [
+    {
+     "arquivo": "embarcados/results/metrics/bench_pc_20261024-091911.json",
+     "sha256": "c119b18fff7eb6b4c1e208ada15b9204bea9cb2c001931dd910203671ab602cd"
+    }
+   ]
+  },
+  "VPcCBldcCosMed": {
+   "valor": 0.0018,
+   "status": "ok",
+   "categoria": "pc",
+   "coluna": "cosseno_ms.mediana",
+   "script": "embarcados/src/python/gerar_artigo_numeros.py",
+   "fontes": [
+    {
+     "arquivo": "embarcados/results/metrics/bench_pc_20261024-091911.json",
+     "sha256": "c119b18fff7eb6b4c1e208ada15b9204bea9cb2c001931dd910203671ab602cd"
+    }
+   ]
+  },
+  "VPcCBldcCosPct": {
+   "valor": 0.0566688179829049,
+   "status": "ok",
+   "categoria": "pc",
+   "coluna": "100·cosseno_ms.mediana/total_ms.mediana",
+   "script": "embarcados/src/python/gerar_artigo_numeros.py",
+   "fontes": [
+    {
+     "arquivo": "embarcados/results/metrics/bench_pc_20261024-091911.json",
+     "sha256": "c119b18fff7eb6b4c1e208ada15b9204bea9cb2c001931dd910203671ab602cd"
+    }
+   ]
+  },
+  "VPcNBldc": {
+   "valor": 200,
+   "status": "ok",
+   "categoria": "pc",
+   "coluna": "total_ms.n",
+   "script": "embarcados/src/python/gerar_artigo_numeros.py",
+   "fontes": [
+    {
+     "arquivo": "embarcados/results/metrics/bench_pc_20261024-091911.json",
+     "sha256": "c119b18fff7eb6b4c1e208ada15b9204bea9cb2c001931dd910203671ab602cd"
+    }
+   ]
+  },
+  "VPcWarmup": {
+   "valor": 5,
+   "status": "ok",
+   "categoria": "pc",
+   "coluna": "meta.argv.aquecimento",
+   "script": "embarcados/src/python/gerar_artigo_numeros.py",
+   "fontes": [
+    {
+     "arquivo": "embarcados/results/metrics/bench_pc_20261024-091911.json",
+     "sha256": "c119b18fff7eb6b4c1e208ada15b9204bea9cb2c001931dd910203671ab602cd"
+    }
+   ]
+  },
+  "VPcDistinctIdmt": {
+   "valor": 75,
+   "status": "ok",
+   "categoria": "pc",
+   "coluna": "n_janelas_distintas",
+   "script": "embarcados/src/python/gerar_artigo_numeros.py",
+   "fontes": [
+    {
+     "arquivo": "embarcados/results/csv/bench_pc_20261024-091911.csv",
+     "sha256": "15ea3f2990bea2c2c39ffb0a256ae2d195e18808d11ae365a3874095fff2ced2"
+    }
+   ]
+  },
+  "VPcDistinctBldc": {
+   "valor": 75,
+   "status": "ok",
+   "categoria": "pc",
+   "coluna": "n_janelas_distintas",
+   "script": "embarcados/src/python/gerar_artigo_numeros.py",
+   "fontes": [
+    {
+     "arquivo": "embarcados/results/csv/bench_pc_20261024-091911.csv",
+     "sha256": "15ea3f2990bea2c2c39ffb0a256ae2d195e18808d11ae365a3874095fff2ced2"
+    }
+   ]
+  },
+  "VPcCompiler": {
+   "valor": "MSVC 19.44 x64 \\slash{}O2 \\slash{}fp:precise",
+   "status": "ok",
+   "categoria": "pc",
+   "coluna": "meta.compilador",
+   "script": "embarcados/src/python/gerar_artigo_numeros.py",
+   "fontes": [
+    {
+     "arquivo": "embarcados/results/metrics/bench_pc_20261024-091911.json",
+     "sha256": "c119b18fff7eb6b4c1e208ada15b9204bea9cb2c001931dd910203671ab602cd"
+    }
+   ]
+  },
+  "VPcNcpu": {
+   "valor": 16,
+   "status": "ok",
+   "categoria": "pc",
+   "coluna": "meta.maquina.n_cpu",
+   "script": "embarcados/src/python/gerar_artigo_numeros.py",
+   "fontes": [
+    {
+     "arquivo": "embarcados/results/metrics/bench_pc_20261024-091911.json",
+     "sha256": "c119b18fff7eb6b4c1e208ada15b9204bea9cb2c001931dd910203671ab602cd"
+    }
+   ]
+  },
+  "VPcOs": {
+   "valor": "Windows 11",
+   "status": "ok",
+   "categoria": "pc",
+   "coluna": "meta.maquina.plataforma",
+   "script": "embarcados/src/python/gerar_artigo_numeros.py",
+   "fontes": [
+    {
+     "arquivo": "embarcados/results/metrics/bench_pc_20261024-091911.json",
+     "sha256": "c119b18fff7eb6b4c1e208ada15b9204bea9cb2c001931dd910203671ab602cd"
+    }
+   ]
+  },
+  "VPcSeqWindows": {
+   "valor": 24,
+   "status": "ok",
+   "categoria": "pc",
+   "coluna": "nº de linhas (janelas)",
+   "script": "embarcados/src/python/gerar_artigo_numeros.py",
+   "fontes": [
+    {
+     "arquivo": "embarcados/results/csv/seq_pc_20261024-092103.csv",
+     "sha256": "eaba0cbe2d39af3e1d7f7cbdc8afbbdff87e832a5f8d4d6c636a3995f756a658"
+    }
+   ]
+  },
+  "VPcSeqSwitches": {
+   "valor": 2,
+   "status": "ok",
+   "categoria": "pc",
+   "coluna": "len(deteccao_online_c)",
+   "script": "embarcados/src/python/gerar_artigo_numeros.py",
+   "fontes": [
+    {
+     "arquivo": "embarcados/results/csv/seq_pc_20261024-092103_meta.json",
+     "sha256": "2be9a1842106537bbc699026c93bc96c024c98a8f36618cd5a470f0df8d59ee8"
+    }
+   ]
+  },
+  "VPcSeqDelayC": {
+   "valor": 0,
+   "status": "ok",
+   "categoria": "pc",
+   "coluna": "max atraso_janelas (C)",
+   "script": "embarcados/src/python/gerar_artigo_numeros.py",
+   "fontes": [
+    {
+     "arquivo": "embarcados/results/csv/seq_pc_20261024-092103_meta.json",
+     "sha256": "2be9a1842106537bbc699026c93bc96c024c98a8f36618cd5a470f0df8d59ee8"
+    }
+   ]
+  },
+  "VPcSeqDelayPy": {
+   "valor": 0,
+   "status": "ok",
+   "categoria": "pc",
+   "coluna": "max atraso_janelas (Python)",
+   "script": "embarcados/src/python/gerar_artigo_numeros.py",
+   "fontes": [
+    {
+     "arquivo": "embarcados/results/csv/seq_pc_20261024-092103_meta.json",
+     "sha256": "2be9a1842106537bbc699026c93bc96c024c98a8f36618cd5a470f0df8d59ee8"
+    }
+   ]
+  },
+  "VPcSeqSameDecisions": {
+   "valor": 1,
+   "status": "ok",
+   "categoria": "pc",
+   "coluna": "decisoes_iguais_python_c (1=sim)",
+   "script": "embarcados/src/python/gerar_artigo_numeros.py",
+   "fontes": [
+    {
+     "arquivo": "embarcados/results/csv/seq_pc_20261024-092103_meta.json",
+     "sha256": "2be9a1842106537bbc699026c93bc96c024c98a8f36618cd5a470f0df8d59ee8"
+    }
+   ]
+  },
+  "VPcSeqMaxProbDiff": {
+   "valor": 3.1722096913711084e-06,
+   "status": "ok",
+   "categoria": "pc",
+   "coluna": "max_abs_dif_probs",
+   "script": "embarcados/src/python/gerar_artigo_numeros.py",
+   "fontes": [
+    {
+     "arquivo": "embarcados/results/csv/seq_pc_20261024-092103_meta.json",
+     "sha256": "2be9a1842106537bbc699026c93bc96c024c98a8f36618cd5a470f0df8d59ee8"
+    }
+   ]
+  },
+  "VPcSeqCp": {
+   "valor": 2.0,
+   "status": "ok",
+   "categoria": "pc",
+   "coluna": "cp",
+   "script": "embarcados/src/python/gerar_artigo_numeros.py",
+   "fontes": [
+    {
+     "arquivo": "embarcados/results/csv/seq_pc_20261024-092103_meta.json",
+     "sha256": "2be9a1842106537bbc699026c93bc96c024c98a8f36618cd5a470f0df8d59ee8"
+    }
+   ]
+  },
+  "VPcSeqPerClass": {
+   "valor": 8,
+   "status": "ok",
+   "categoria": "pc",
+   "coluna": "janelas por classe",
+   "script": "embarcados/src/python/gerar_artigo_numeros.py",
+   "fontes": [
+    {
+     "arquivo": "embarcados/results/csv/seq_pc_20261024-092103.csv",
+     "sha256": "eaba0cbe2d39af3e1d7f7cbdc8afbbdff87e832a5f8d4d6c636a3995f756a658"
+    }
+   ]
+  },
+  "VEstWsFloatOneMb": {
+   "valor": 0.95848,
+   "status": "ok",
+   "categoria": "estimativa",
+   "coluna": "total_com_tabela/1e6",
+   "script": "embarcados/src/python/gerar_artigo_numeros.py",
+   "fontes": [
+    {
+     "arquivo": "embarcados/paper/fontes/ws_float_16000.json",
+     "sha256": "95a67377c7eb2eb4ab886a73da7c0accffb11978a41718e5e942cff74afd01c7"
+    }
+   ]
+  },
+  "VEstWsFloatOneNoTabMb": {
+   "valor": 0.612592,
+   "status": "ok",
+   "categoria": "estimativa",
+   "coluna": "total_sem_tabela/1e6",
+   "script": "embarcados/src/python/gerar_artigo_numeros.py",
+   "fontes": [
+    {
+     "arquivo": "embarcados/paper/fontes/ws_float_16000.json",
+     "sha256": "95a67377c7eb2eb4ab886a73da7c0accffb11978a41718e5e942cff74afd01c7"
+    }
+   ]
+  },
+  "VEstWsFloatOnePhaseBPct": {
+   "valor": 44.24746260683761,
+   "status": "ok",
+   "categoria": "estimativa",
+   "coluna": "faseB/(persistente+max(faseA,faseB))",
+   "script": "embarcados/src/python/gerar_artigo_numeros.py",
+   "fontes": [
+    {
+     "arquivo": "embarcados/paper/fontes/ws_float_16000.json",
+     "sha256": "95a67377c7eb2eb4ab886a73da7c0accffb11978a41718e5e942cff74afd01c7"
+    }
+   ]
+  },
+  "VEstWsFloatThreeMb": {
+   "valor": 1.863984,
+   "status": "ok",
+   "categoria": "estimativa",
+   "coluna": "total_com_tabela/1e6",
+   "script": "embarcados/src/python/gerar_artigo_numeros.py",
+   "fontes": [
+    {
+     "arquivo": "embarcados/paper/fontes/ws_float_48000.json",
+     "sha256": "3d3878646c51b96e1e1ab4c8fd935bb8a069e95c7ec7b95fe3a59ea8e0f5d838"
+    }
+   ]
+  },
+  "VEstWsFloatThreeNoTabMb": {
+   "valor": 1.518096,
+   "status": "ok",
+   "categoria": "estimativa",
+   "coluna": "total_sem_tabela/1e6",
+   "script": "embarcados/src/python/gerar_artigo_numeros.py",
+   "fontes": [
+    {
+     "arquivo": "embarcados/paper/fontes/ws_float_48000.json",
+     "sha256": "3d3878646c51b96e1e1ab4c8fd935bb8a069e95c7ec7b95fe3a59ea8e0f5d838"
+    }
+   ]
+  },
+  "VEstWsFloatThreePhaseBPct": {
+   "valor": 64.4302906487665,
+   "status": "ok",
+   "categoria": "estimativa",
+   "coluna": "faseB/(persistente+max(faseA,faseB))",
+   "script": "embarcados/src/python/gerar_artigo_numeros.py",
+   "fontes": [
+    {
+     "arquivo": "embarcados/paper/fontes/ws_float_48000.json",
+     "sha256": "3d3878646c51b96e1e1ab4c8fd935bb8a069e95c7ec7b95fe3a59ea8e0f5d838"
+    }
+   ]
+  },
+  "VEstWsDoubleOneMb": {
+   "valor": 1.787824,
+   "status": "ok",
+   "categoria": "estimativa",
+   "coluna": "total_com_tabela/1e6",
+   "script": "embarcados/src/python/gerar_artigo_numeros.py",
+   "fontes": [
+    {
+     "arquivo": "embarcados/paper/fontes/ws_double_16000.json",
+     "sha256": "3023074d0581ae3a1103bb5b42d4704fcb05631eada2a86eecdc1846ad8b293e"
+    }
+   ]
+  },
+  "VEstWsDoubleOneNoTabMb": {
+   "valor": 1.211344,
+   "status": "ok",
+   "categoria": "estimativa",
+   "coluna": "total_sem_tabela/1e6",
+   "script": "embarcados/src/python/gerar_artigo_numeros.py",
+   "fontes": [
+    {
+     "arquivo": "embarcados/paper/fontes/ws_double_16000.json",
+     "sha256": "3023074d0581ae3a1103bb5b42d4704fcb05631eada2a86eecdc1846ad8b293e"
+    }
+   ]
+  },
+  "VEstWsDoubleOnePhaseBPct": {
+   "valor": 47.214018507580235,
+   "status": "ok",
+   "categoria": "estimativa",
+   "coluna": "faseB/(persistente+max(faseA,faseB))",
+   "script": "embarcados/src/python/gerar_artigo_numeros.py",
+   "fontes": [
+    {
+     "arquivo": "embarcados/paper/fontes/ws_double_16000.json",
+     "sha256": "3023074d0581ae3a1103bb5b42d4704fcb05631eada2a86eecdc1846ad8b293e"
+    }
+   ]
+  },
+  "VEstWsDoubleThreeMb": {
+   "valor": 3.598352,
+   "status": "ok",
+   "categoria": "estimativa",
+   "coluna": "total_com_tabela/1e6",
+   "script": "embarcados/src/python/gerar_artigo_numeros.py",
+   "fontes": [
+    {
+     "arquivo": "embarcados/paper/fontes/ws_double_48000.json",
+     "sha256": "dc2a3113667b36f99073b7782f28f4e018e1e13f865c3dd63bf97070c05f53f9"
+    }
+   ]
+  },
+  "VEstWsDoubleThreeNoTabMb": {
+   "valor": 3.021872,
+   "status": "ok",
+   "categoria": "estimativa",
+   "coluna": "total_sem_tabela/1e6",
+   "script": "embarcados/src/python/gerar_artigo_numeros.py",
+   "fontes": [
+    {
+     "arquivo": "embarcados/paper/fontes/ws_double_48000.json",
+     "sha256": "dc2a3113667b36f99073b7782f28f4e018e1e13f865c3dd63bf97070c05f53f9"
+    }
+   ]
+  },
+  "VEstWsDoubleThreePhaseBPct": {
+   "valor": 66.63435543540125,
+   "status": "ok",
+   "categoria": "estimativa",
+   "coluna": "faseB/(persistente+max(faseA,faseB))",
+   "script": "embarcados/src/python/gerar_artigo_numeros.py",
+   "fontes": [
+    {
+     "arquivo": "embarcados/paper/fontes/ws_double_48000.json",
+     "sha256": "dc2a3113667b36f99073b7782f28f4e018e1e13f865c3dd63bf97070c05f53f9"
+    }
+   ]
+  },
+  "VEstHarmTableMb": {
+   "valor": 0.345888,
+   "status": "ok",
+   "categoria": "estimativa",
+   "coluna": "total_com_tabela - total_sem_tabela",
+   "script": "embarcados/src/python/gerar_artigo_numeros.py",
+   "fontes": [
+    {
+     "arquivo": "embarcados/paper/fontes/ws_float_16000.json",
+     "sha256": "95a67377c7eb2eb4ab886a73da7c0accffb11978a41718e5e942cff74afd01c7"
+    }
+   ]
+  },
+  "VBuildIdf": {
+   "valor": "v5.5.6",
+   "status": "ok",
+   "categoria": "build",
+   "coluna": "git_revision",
+   "script": "embarcados/src/python/gerar_artigo_numeros.py",
+   "fontes": [
+    {
+     "arquivo": "C:/Espressif/build_p11_esp32s3/project_description.json",
+     "sha256": "6dab41c43b43ac6b282dfc85b77f6337fd840c2c7e8690c675ad740a75c14cfc"
+    }
+   ]
+  },
+  "VBuildGcc": {
+   "valor": "14.2.0",
+   "status": "ok",
+   "categoria": "build",
+   "coluna": "c_compiler (versão do toolchain esp-)",
+   "script": "embarcados/src/python/gerar_artigo_numeros.py",
+   "fontes": [
+    {
+     "arquivo": "C:/Espressif/build_p11_esp32s3/project_description.json",
+     "sha256": "6dab41c43b43ac6b282dfc85b77f6337fd840c2c7e8690c675ad740a75c14cfc"
+    }
+   ]
+  },
+  "VBuildEspBinKb": {
+   "valor": 208.65625,
+   "status": "ok",
+   "categoria": "build",
+   "coluna": "binary size (hex)/1024",
+   "script": "embarcados/src/python/gerar_artigo_numeros.py",
+   "fontes": [
+    {
+     "arquivo": "C:/Espressif/build_p11_esp32/size.txt",
+     "sha256": "9369aa4e5736a65c64b8813dcb5768bc217b6ca23c6a9a7984c71567fd4e8b0a"
+    }
+   ]
+  },
+  "VBuildEspBinPct": {
+   "valor": 20.3765869140625,
+   "status": "ok",
+   "categoria": "build",
+   "coluna": "bin/partição app",
+   "script": "embarcados/src/python/gerar_artigo_numeros.py",
+   "fontes": [
+    {
+     "arquivo": "C:/Espressif/build_p11_esp32/size.txt",
+     "sha256": "9369aa4e5736a65c64b8813dcb5768bc217b6ca23c6a9a7984c71567fd4e8b0a"
+    }
+   ]
+  },
+  "VBuildEspFlashCodeKb": {
+   "valor": 124.1396484375,
+   "status": "ok",
+   "categoria": "build",
+   "coluna": "Flash Code Used/1024",
+   "script": "embarcados/src/python/gerar_artigo_numeros.py",
+   "fontes": [
+    {
+     "arquivo": "C:/Espressif/build_p11_esp32/size.txt",
+     "sha256": "9369aa4e5736a65c64b8813dcb5768bc217b6ca23c6a9a7984c71567fd4e8b0a"
+    }
+   ]
+  },
+  "VBuildEspFlashDataKb": {
+   "valor": 19.1328125,
+   "status": "ok",
+   "categoria": "build",
+   "coluna": "Flash Data Used/1024",
+   "script": "embarcados/src/python/gerar_artigo_numeros.py",
+   "fontes": [
+    {
+     "arquivo": "C:/Espressif/build_p11_esp32/size.txt",
+     "sha256": "9369aa4e5736a65c64b8813dcb5768bc217b6ca23c6a9a7984c71567fd4e8b0a"
+    }
+   ]
+  },
+  "VBuildEspDramKb": {
+   "valor": 14.75,
+   "status": "ok",
+   "categoria": "build",
+   "coluna": "DRAM Used/1024",
+   "script": "embarcados/src/python/gerar_artigo_numeros.py",
+   "fontes": [
+    {
+     "arquivo": "C:/Espressif/build_p11_esp32/size.txt",
+     "sha256": "9369aa4e5736a65c64b8813dcb5768bc217b6ca23c6a9a7984c71567fd4e8b0a"
+    }
+   ]
+  },
+  "VBuildEspDramTotalKb": {
+   "valor": 176.5,
+   "status": "ok",
+   "categoria": "build",
+   "coluna": "DRAM Total/1024",
+   "script": "embarcados/src/python/gerar_artigo_numeros.py",
+   "fontes": [
+    {
+     "arquivo": "C:/Espressif/build_p11_esp32/size.txt",
+     "sha256": "9369aa4e5736a65c64b8813dcb5768bc217b6ca23c6a9a7984c71567fd4e8b0a"
+    }
+   ]
+  },
+  "VBuildEspIramKb": {
+   "valor": 57.7021484375,
+   "status": "ok",
+   "categoria": "build",
+   "coluna": "IRAM Used/1024",
+   "script": "embarcados/src/python/gerar_artigo_numeros.py",
+   "fontes": [
+    {
+     "arquivo": "C:/Espressif/build_p11_esp32/size.txt",
+     "sha256": "9369aa4e5736a65c64b8813dcb5768bc217b6ca23c6a9a7984c71567fd4e8b0a"
+    }
+   ]
+  },
+  "VBuildEspDramName": {
+   "valor": "DRAM",
+   "status": "ok",
+   "categoria": "build",
+   "coluna": "nome da região de dados interna",
+   "script": "embarcados/src/python/gerar_artigo_numeros.py",
+   "fontes": [
+    {
+     "arquivo": "C:/Espressif/build_p11_esp32/size.txt",
+     "sha256": "9369aa4e5736a65c64b8813dcb5768bc217b6ca23c6a9a7984c71567fd4e8b0a"
+    }
+   ]
+  },
+  "VBuildEspWsRatio": {
+   "valor": 10.313296742209632,
+   "status": "ok",
+   "categoria": "estimativa",
+   "coluna": "estimativa ws float 3 s / DRAM total",
+   "script": "embarcados/src/python/gerar_artigo_numeros.py",
+   "fontes": [
+    {
+     "arquivo": "C:/Espressif/build_p11_esp32/size.txt",
+     "sha256": "9369aa4e5736a65c64b8813dcb5768bc217b6ca23c6a9a7984c71567fd4e8b0a"
+    }
+   ]
+  },
+  "VBuildEspWsRatioOne": {
+   "valor": 5.3032046742209635,
+   "status": "ok",
+   "categoria": "estimativa",
+   "coluna": "estimativa ws float 1 s / DRAM total",
+   "script": "embarcados/src/python/gerar_artigo_numeros.py",
+   "fontes": [
+    {
+     "arquivo": "C:/Espressif/build_p11_esp32/size.txt",
+     "sha256": "9369aa4e5736a65c64b8813dcb5768bc217b6ca23c6a9a7984c71567fd4e8b0a"
+    }
+   ]
+  },
+  "VBuildEspsBinKb": {
+   "valor": 232.6875,
+   "status": "ok",
+   "categoria": "build",
+   "coluna": "binary size (hex)/1024",
+   "script": "embarcados/src/python/gerar_artigo_numeros.py",
+   "fontes": [
+    {
+     "arquivo": "C:/Espressif/build_p11_esp32s3/size.txt",
+     "sha256": "ad50f5a002f63a3fbe921066bd41bf8e1046b3723d819a95391685778cfd1f2d"
+    }
+   ]
+  },
+  "VBuildEspsBinPct": {
+   "valor": 22.723388671875,
+   "status": "ok",
+   "categoria": "build",
+   "coluna": "bin/partição app",
+   "script": "embarcados/src/python/gerar_artigo_numeros.py",
+   "fontes": [
+    {
+     "arquivo": "C:/Espressif/build_p11_esp32s3/size.txt",
+     "sha256": "ad50f5a002f63a3fbe921066bd41bf8e1046b3723d819a95391685778cfd1f2d"
+    }
+   ]
+  },
+  "VBuildEspsFlashCodeKb": {
+   "valor": 139.30078125,
+   "status": "ok",
+   "categoria": "build",
+   "coluna": "Flash Code Used/1024",
+   "script": "embarcados/src/python/gerar_artigo_numeros.py",
+   "fontes": [
+    {
+     "arquivo": "C:/Espressif/build_p11_esp32s3/size.txt",
+     "sha256": "ad50f5a002f63a3fbe921066bd41bf8e1046b3723d819a95391685778cfd1f2d"
+    }
+   ]
+  },
+  "VBuildEspsFlashDataKb": {
+   "valor": 30.265625,
+   "status": "ok",
+   "categoria": "build",
+   "coluna": "Flash Data Used/1024",
+   "script": "embarcados/src/python/gerar_artigo_numeros.py",
+   "fontes": [
+    {
+     "arquivo": "C:/Espressif/build_p11_esp32s3/size.txt",
+     "sha256": "ad50f5a002f63a3fbe921066bd41bf8e1046b3723d819a95391685778cfd1f2d"
+    }
+   ]
+  },
+  "VBuildEspsDramKb": {
+   "valor": 54.2060546875,
+   "status": "ok",
+   "categoria": "build",
+   "coluna": "DIRAM Used/1024",
+   "script": "embarcados/src/python/gerar_artigo_numeros.py",
+   "fontes": [
+    {
+     "arquivo": "C:/Espressif/build_p11_esp32s3/size.txt",
+     "sha256": "ad50f5a002f63a3fbe921066bd41bf8e1046b3723d819a95391685778cfd1f2d"
+    }
+   ]
+  },
+  "VBuildEspsDramTotalKb": {
+   "valor": 333.75,
+   "status": "ok",
+   "categoria": "build",
+   "coluna": "DIRAM Total/1024",
+   "script": "embarcados/src/python/gerar_artigo_numeros.py",
+   "fontes": [
+    {
+     "arquivo": "C:/Espressif/build_p11_esp32s3/size.txt",
+     "sha256": "ad50f5a002f63a3fbe921066bd41bf8e1046b3723d819a95391685778cfd1f2d"
+    }
+   ]
+  },
+  "VBuildEspsIramKb": {
+   "valor": 16.0,
+   "status": "ok",
+   "categoria": "build",
+   "coluna": "IRAM Used/1024",
+   "script": "embarcados/src/python/gerar_artigo_numeros.py",
+   "fontes": [
+    {
+     "arquivo": "C:/Espressif/build_p11_esp32s3/size.txt",
+     "sha256": "ad50f5a002f63a3fbe921066bd41bf8e1046b3723d819a95391685778cfd1f2d"
+    }
+   ]
+  },
+  "VBuildEspsDramName": {
+   "valor": "DIRAM",
+   "status": "ok",
+   "categoria": "build",
+   "coluna": "nome da região de dados interna",
+   "script": "embarcados/src/python/gerar_artigo_numeros.py",
+   "fontes": [
+    {
+     "arquivo": "C:/Espressif/build_p11_esp32s3/size.txt",
+     "sha256": "ad50f5a002f63a3fbe921066bd41bf8e1046b3723d819a95391685778cfd1f2d"
+    }
+   ]
+  },
+  "VBuildEspsWsRatio": {
+   "valor": 5.454073033707865,
+   "status": "ok",
+   "categoria": "estimativa",
+   "coluna": "estimativa ws float 3 s / DIRAM total",
+   "script": "embarcados/src/python/gerar_artigo_numeros.py",
+   "fontes": [
+    {
+     "arquivo": "C:/Espressif/build_p11_esp32s3/size.txt",
+     "sha256": "ad50f5a002f63a3fbe921066bd41bf8e1046b3723d819a95391685778cfd1f2d"
+    }
+   ]
+  },
+  "VBuildEspsWsRatioOne": {
+   "valor": 2.8045411985018727,
+   "status": "ok",
+   "categoria": "estimativa",
+   "coluna": "estimativa ws float 1 s / DIRAM total",
+   "script": "embarcados/src/python/gerar_artigo_numeros.py",
+   "fontes": [
+    {
+     "arquivo": "C:/Espressif/build_p11_esp32s3/size.txt",
+     "sha256": "ad50f5a002f63a3fbe921066bd41bf8e1046b3723d819a95391685778cfd1f2d"
+    }
+   ]
+  },
+  "VChipModel": {
+   "valor": null,
+   "status": "pending",
+   "categoria": "esp32",
+   "coluna": "chip_modelo",
+   "script": "embarcados/src/python/gerar_artigo_numeros.py",
+   "fontes": [
+    {
+     "arquivo": "embarcados/results/manifests/bancada.json",
+     "sha256": null
+    }
+   ]
+  },
+  "VChipCpuMhz": {
+   "valor": null,
+   "status": "pending",
+   "categoria": "esp32",
+   "coluna": "cpu_mhz",
+   "script": "embarcados/src/python/gerar_artigo_numeros.py",
+   "fontes": [
+    {
+     "arquivo": "embarcados/results/manifests/bancada.json",
+     "sha256": null
+    }
+   ]
+  },
+  "VChipPsramMb": {
+   "valor": null,
+   "status": "pending",
+   "categoria": "esp32",
+   "coluna": "psram_mb",
+   "script": "embarcados/src/python/gerar_artigo_numeros.py",
+   "fontes": [
+    {
+     "arquivo": "embarcados/results/manifests/bancada.json",
+     "sha256": null
+    }
+   ]
+  },
+  "VChipLatIdmtMed": {
+   "valor": null,
+   "status": "pending",
+   "categoria": "esp32",
+   "coluna": "resumo.idmt.total_ms.mediana",
+   "script": "embarcados/src/python/gerar_artigo_numeros.py",
+   "fontes": [
+    {
+     "arquivo": "embarcados/results/manifests/bancada.json",
+     "sha256": null
+    }
+   ]
+  },
+  "VChipLatIdmtPninetyfive": {
+   "valor": null,
+   "status": "pending",
+   "categoria": "esp32",
+   "coluna": "resumo.idmt.total_ms.p95",
+   "script": "embarcados/src/python/gerar_artigo_numeros.py",
+   "fontes": [
+    {
+     "arquivo": "embarcados/results/manifests/bancada.json",
+     "sha256": null
+    }
+   ]
+  },
+  "VChipLatIdmtMax": {
+   "valor": null,
+   "status": "pending",
+   "categoria": "esp32",
+   "coluna": "resumo.idmt.total_ms.max",
+   "script": "embarcados/src/python/gerar_artigo_numeros.py",
+   "fontes": [
+    {
+     "arquivo": "embarcados/results/manifests/bancada.json",
+     "sha256": null
+    }
+   ]
+  },
+  "VChipLatIdmtN": {
+   "valor": null,
+   "status": "pending",
+   "categoria": "esp32",
+   "coluna": "resumo.idmt.total_ms.n",
+   "script": "embarcados/src/python/gerar_artigo_numeros.py",
+   "fontes": [
+    {
+     "arquivo": "embarcados/results/manifests/bancada.json",
+     "sha256": null
+    }
+   ]
+  },
+  "VChipRtfIdmt": {
+   "valor": null,
+   "status": "pending",
+   "categoria": "esp32",
+   "coluna": "fator_tempo_real_mediana",
+   "script": "embarcados/src/python/gerar_artigo_numeros.py",
+   "fontes": [
+    {
+     "arquivo": "embarcados/results/manifests/bancada.json",
+     "sha256": null
+    }
+   ]
+  },
+  "VChipRtfMaxIdmt": {
+   "valor": null,
+   "status": "pending",
+   "categoria": "esp32",
+   "coluna": "fator_tempo_real_max",
+   "script": "embarcados/src/python/gerar_artigo_numeros.py",
+   "fontes": [
+    {
+     "arquivo": "embarcados/results/manifests/bancada.json",
+     "sha256": null
+    }
+   ]
+  },
+  "VChipHeapIntIdmtKb": {
+   "valor": null,
+   "status": "pending",
+   "categoria": "esp32",
+   "coluna": "heap_min_livre_interna/1024",
+   "script": "embarcados/src/python/gerar_artigo_numeros.py",
+   "fontes": [
+    {
+     "arquivo": "embarcados/results/manifests/bancada.json",
+     "sha256": null
+    }
+   ]
+  },
+  "VChipStackIdmt": {
+   "valor": null,
+   "status": "pending",
+   "categoria": "esp32",
+   "coluna": "pilha_folga_bytes_min",
+   "script": "embarcados/src/python/gerar_artigo_numeros.py",
+   "fontes": [
+    {
+     "arquivo": "embarcados/results/manifests/bancada.json",
+     "sha256": null
+    }
+   ]
+  },
+  "VChipWsPsramIdmt": {
+   "valor": null,
+   "status": "pending",
+   "categoria": "esp32",
+   "coluna": "ws_na_psram",
+   "script": "embarcados/src/python/gerar_artigo_numeros.py",
+   "fontes": [
+    {
+     "arquivo": "embarcados/results/manifests/bancada.json",
+     "sha256": null
+    }
+   ]
+  },
+  "VChipWsIdmtMb": {
+   "valor": null,
+   "status": "pending",
+   "categoria": "esp32",
+   "coluna": "ws_bytes/1e6",
+   "script": "embarcados/src/python/gerar_artigo_numeros.py",
+   "fontes": [
+    {
+     "arquivo": "embarcados/results/manifests/bancada.json",
+     "sha256": null
+    }
+   ]
+  },
+  "VChipLatBldcMed": {
+   "valor": null,
+   "status": "pending",
+   "categoria": "esp32",
+   "coluna": "resumo.a2212.total_ms.mediana",
+   "script": "embarcados/src/python/gerar_artigo_numeros.py",
+   "fontes": [
+    {
+     "arquivo": "embarcados/results/manifests/bancada.json",
+     "sha256": null
+    }
+   ]
+  },
+  "VChipLatBldcPninetyfive": {
+   "valor": null,
+   "status": "pending",
+   "categoria": "esp32",
+   "coluna": "resumo.a2212.total_ms.p95",
+   "script": "embarcados/src/python/gerar_artigo_numeros.py",
+   "fontes": [
+    {
+     "arquivo": "embarcados/results/manifests/bancada.json",
+     "sha256": null
+    }
+   ]
+  },
+  "VChipLatBldcMax": {
+   "valor": null,
+   "status": "pending",
+   "categoria": "esp32",
+   "coluna": "resumo.a2212.total_ms.max",
+   "script": "embarcados/src/python/gerar_artigo_numeros.py",
+   "fontes": [
+    {
+     "arquivo": "embarcados/results/manifests/bancada.json",
+     "sha256": null
+    }
+   ]
+  },
+  "VChipLatBldcN": {
+   "valor": null,
+   "status": "pending",
+   "categoria": "esp32",
+   "coluna": "resumo.a2212.total_ms.n",
+   "script": "embarcados/src/python/gerar_artigo_numeros.py",
+   "fontes": [
+    {
+     "arquivo": "embarcados/results/manifests/bancada.json",
+     "sha256": null
+    }
+   ]
+  },
+  "VChipRtfBldc": {
+   "valor": null,
+   "status": "pending",
+   "categoria": "esp32",
+   "coluna": "fator_tempo_real_mediana",
+   "script": "embarcados/src/python/gerar_artigo_numeros.py",
+   "fontes": [
+    {
+     "arquivo": "embarcados/results/manifests/bancada.json",
+     "sha256": null
+    }
+   ]
+  },
+  "VChipRtfMaxBldc": {
+   "valor": null,
+   "status": "pending",
+   "categoria": "esp32",
+   "coluna": "fator_tempo_real_max",
+   "script": "embarcados/src/python/gerar_artigo_numeros.py",
+   "fontes": [
+    {
+     "arquivo": "embarcados/results/manifests/bancada.json",
+     "sha256": null
+    }
+   ]
+  },
+  "VChipHeapIntBldcKb": {
+   "valor": null,
+   "status": "pending",
+   "categoria": "esp32",
+   "coluna": "heap_min_livre_interna/1024",
+   "script": "embarcados/src/python/gerar_artigo_numeros.py",
+   "fontes": [
+    {
+     "arquivo": "embarcados/results/manifests/bancada.json",
+     "sha256": null
+    }
+   ]
+  },
+  "VChipStackBldc": {
+   "valor": null,
+   "status": "pending",
+   "categoria": "esp32",
+   "coluna": "pilha_folga_bytes_min",
+   "script": "embarcados/src/python/gerar_artigo_numeros.py",
+   "fontes": [
+    {
+     "arquivo": "embarcados/results/manifests/bancada.json",
+     "sha256": null
+    }
+   ]
+  },
+  "VChipWsPsramBldc": {
+   "valor": null,
+   "status": "pending",
+   "categoria": "esp32",
+   "coluna": "ws_na_psram",
+   "script": "embarcados/src/python/gerar_artigo_numeros.py",
+   "fontes": [
+    {
+     "arquivo": "embarcados/results/manifests/bancada.json",
+     "sha256": null
+    }
+   ]
+  },
+  "VChipWsBldcMb": {
+   "valor": null,
+   "status": "pending",
+   "categoria": "esp32",
+   "coluna": "ws_bytes/1e6",
+   "script": "embarcados/src/python/gerar_artigo_numeros.py",
+   "fontes": [
+    {
+     "arquivo": "embarcados/results/manifests/bancada.json",
+     "sha256": null
+    }
+   ]
+  },
+  "VChipEqStagesPass": {
+   "valor": null,
+   "status": "pending",
+   "categoria": "esp32",
+   "coluna": "equivalência no chip não rodou",
+   "script": "embarcados/src/python/gerar_artigo_numeros.py",
+   "fontes": [
+    {
+     "arquivo": "embarcados/results/manifests/bancada.json",
+     "sha256": null
+    }
+   ]
+  },
+  "VChipEqStages": {
+   "valor": null,
+   "status": "pending",
+   "categoria": "esp32",
+   "coluna": "equivalência no chip não rodou",
+   "script": "embarcados/src/python/gerar_artigo_numeros.py",
+   "fontes": [
+    {
+     "arquivo": "embarcados/results/manifests/bancada.json",
+     "sha256": null
+    }
+   ]
+  },
+  "VChipEqDecisionPass": {
+   "valor": null,
+   "status": "pending",
+   "categoria": "esp32",
+   "coluna": "equivalência no chip não rodou",
+   "script": "embarcados/src/python/gerar_artigo_numeros.py",
+   "fontes": [
+    {
+     "arquivo": "embarcados/results/manifests/bancada.json",
+     "sha256": null
+    }
+   ]
+  },
+  "VChipSeqDelay": {
+   "valor": null,
+   "status": "pending",
+   "categoria": "esp32",
+   "coluna": "fluxo contínuo no chip não rodou",
+   "script": "embarcados/src/python/gerar_artigo_numeros.py",
+   "fontes": [
+    {
+     "arquivo": "embarcados/results/manifests/bancada.json",
+     "sha256": null
+    }
+   ]
+  }
+ },
+ "textos": [
+  {
+   "arquivo": "embarcados/paper/METODOLOGIA.md",
+   "sha256": "7242f32a7954976b0e77080483191862310d5c975cb8e83c14f199e8edca02ca",
+   "existe": true,
+   "script": "embarcados/src/python/gerar_artigo_textos.py",
+   "fontes": [
+    {
+     "arquivo": "embarcados/paper/numeros.json",
+     "sha256": "82abbec3edf57c156ff220ebabba152c98e3341cc2efd6adcb25288156a2b85e"
+    }
+   ]
+  },
+  {
+   "arquivo": "embarcados/paper/RESULTADOS.md",
+   "sha256": "d0c24a1653fffe8fb02e1df777afe2b1a73d514a29fe4c58e14274e2a51b6e63",
+   "existe": true,
+   "script": "embarcados/src/python/gerar_artigo_textos.py",
+   "fontes": [
+    {
+     "arquivo": "embarcados/paper/numeros.json",
+     "sha256": "82abbec3edf57c156ff220ebabba152c98e3341cc2efd6adcb25288156a2b85e"
+    }
+   ]
+  },
+  {
+   "arquivo": "embarcados/paper/main.tex",
+   "sha256": "56828984d3ed963c492eefd03f14bff87150ce683ee1fb35d98004a479b7129f",
+   "existe": true,
+   "script": "redigido à mão; números só por macro",
+   "fontes": [
+    {
+     "arquivo": "embarcados/paper/figuras.tex",
+     "sha256": "cff871901fa4c4b2cc20c3d9be12b6d77c9a9e4f78c6cd8315654f0c89e9d49a"
+    },
+    {
+     "arquivo": "embarcados/paper/numeros.tex",
+     "sha256": "3c6b069d8a9a3ad34a70c69904c43f9163baa5a7e50b3d649c67b4383ba70591"
+    }
+   ]
+  }
+ ],
+ "numeros_tex": {
+  "arquivo": "embarcados/paper/numeros.tex",
+  "sha256": "3c6b069d8a9a3ad34a70c69904c43f9163baa5a7e50b3d649c67b4383ba70591",
+  "existe": true,
+  "script": "embarcados/src/python/gerar_artigo_numeros.py",
+  "fontes": [
+   {
+    "arquivo": "C:/Espressif/build_p11_esp32/size.txt",
+    "sha256": "9369aa4e5736a65c64b8813dcb5768bc217b6ca23c6a9a7984c71567fd4e8b0a"
+   },
+   {
+    "arquivo": "C:/Espressif/build_p11_esp32s3/project_description.json",
+    "sha256": "6dab41c43b43ac6b282dfc85b77f6337fd840c2c7e8690c675ad740a75c14cfc"
+   },
+   {
+    "arquivo": "C:/Espressif/build_p11_esp32s3/size.txt",
+    "sha256": "ad50f5a002f63a3fbe921066bd41bf8e1046b3723d819a95391685778cfd1f2d"
+   },
+   {
+    "arquivo": "embarcados/configs/embedded/tolerancias.json",
+    "sha256": "d74dae800cebfe4d670c33ba2c0a72639ad1e04e95bcbd9a904be13c294c1b5d"
+   },
+   {
+    "arquivo": "embarcados/gold/manifest.json",
+    "sha256": "a681abee826d5b8ede688d4d67ea159495898ea48e0c131f729d8406437ba876"
+   },
+   {
+    "arquivo": "embarcados/gold/seqs/idmt_seq00/params.json",
+    "sha256": "a50569ecb0951b7b171019e4ccbe89eebd51eff92893532f03a8490dcd38cf78"
+   },
+   {
+    "arquivo": "embarcados/paper/fontes/ws_double_16000.json",
+    "sha256": "3023074d0581ae3a1103bb5b42d4704fcb05631eada2a86eecdc1846ad8b293e"
+   },
+   {
+    "arquivo": "embarcados/paper/fontes/ws_double_48000.json",
+    "sha256": "dc2a3113667b36f99073b7782f28f4e018e1e13f865c3dd63bf97070c05f53f9"
+   },
+   {
+    "arquivo": "embarcados/paper/fontes/ws_float_16000.json",
+    "sha256": "95a67377c7eb2eb4ab886a73da7c0accffb11978a41718e5e942cff74afd01c7"
+   },
+   {
+    "arquivo": "embarcados/paper/fontes/ws_float_48000.json",
+    "sha256": "3d3878646c51b96e1e1ab4c8fd935bb8a069e95c7ec7b95fe3a59ea8e0f5d838"
+   },
+   {
+    "arquivo": "embarcados/results/csv/bench_pc_20261024-091911.csv",
+    "sha256": "15ea3f2990bea2c2c39ffb0a256ae2d195e18808d11ae365a3874095fff2ced2"
+   },
+   {
+    "arquivo": "embarcados/results/csv/diagnostico_20261023_222831.csv",
+    "sha256": "83e602a7680c87ae7f429840d4db57c49b80a7f4c1c8e45900005ce7e269a7ff"
+   },
+   {
+    "arquivo": "embarcados/results/csv/diagnostico_20261023_222831_meta.json",
+    "sha256": "6e0879c7cccc78fab5a87687a16b468c6cd6140283d905611271178d98b55775"
+   },
+   {
+    "arquivo": "embarcados/results/csv/equivalencia_double_20261024-091106.csv",
+    "sha256": "0462b21cd040d8987e25988c7b603e2dfc9009f57ec9b9382dda2e1ac4310cf3"
+   },
+   {
+    "arquivo": "embarcados/results/csv/equivalencia_emul_double_20261024-090737_meta.json",
+    "sha256": "e23e090ee472c5a8a1451189a9331ee135b2d9a1516091195c434a0ab471db4a"
+   },
+   {
+    "arquivo": "embarcados/results/csv/equivalencia_emul_float_20261024-090743_meta.json",
+    "sha256": "d46c9c2aa501b61a966d439995c2adeaf961781059bcc096083722e00735ccc9"
+   },
+   {
+    "arquivo": "embarcados/results/csv/equivalencia_float-sosd_20261024-091222.csv",
+    "sha256": "fb79aad99d6e607a132af89358182c74f4eeec2ac31e97410c5fab486e945ce9"
+   },
+   {
+    "arquivo": "embarcados/results/csv/equivalencia_float_20261024-091122.csv",
+    "sha256": "38e87620d895ce26c9c0bbfa5bd0df7af3686607d525235e3fa5c9d287612314"
+   },
+   {
+    "arquivo": "embarcados/results/csv/equivalencia_resumo_por_build_20261024-091729.csv",
+    "sha256": "bc42bdf549e15875a3762c4907610f49a8ff0cb08c2fc10e3fafd5e59d84eb35"
+   },
+   {
+    "arquivo": "embarcados/results/csv/p11_features_20261023_222831.csv",
+    "sha256": "eb64ba855c885bf0ad428487067476095314ec200965130fa606c5ecf3649ef7"
+   },
+   {
+    "arquivo": "embarcados/results/csv/seq_pc_20261024-092103.csv",
+    "sha256": "eaba0cbe2d39af3e1d7f7cbdc8afbbdff87e832a5f8d4d6c636a3995f756a658"
+   },
+   {
+    "arquivo": "embarcados/results/csv/seq_pc_20261024-092103_meta.json",
+    "sha256": "2be9a1842106537bbc699026c93bc96c024c98a8f36618cd5a470f0df8d59ee8"
+   },
+   {
+    "arquivo": "embarcados/results/manifests/bancada.json",
+    "sha256": null
+   },
+   {
+    "arquivo": "embarcados/results/metrics/bench_pc_20261024-091911.json",
+    "sha256": "c119b18fff7eb6b4c1e208ada15b9204bea9cb2c001931dd910203671ab602cd"
+   },
+   {
+    "arquivo": "embarcados/results/predictions/diagnostico_janelas_20261023_222831.csv",
+    "sha256": "6426a95a9ceb73ad3e4a9f4a8d83f8194a3ce6b7d1605c0bfdd151384454102b"
+   },
+   {
+    "arquivo": "motorsound/config.py",
+    "sha256": "533b6f9cb12228d8c2fcf492b48c5d1950d0e4cf71fac47b4e4573ea86f9e56f"
+   },
+   {
+    "arquivo": "motorsound/rotacao.py",
+    "sha256": "45715cbb50101879834b020a01c9fd48bb888e0c6f086b063b35c1f75efe63a9"
+   },
+   {
+    "arquivo": "pipelines/_classicas.py",
+    "sha256": "1b759d56815a2760579fde90f43271a739211d9cf931f6419b583f92bf8d8623"
+   },
+   {
+    "arquivo": "pipelines/_decifrae.py",
+    "sha256": "d40385a87dd38c5b010180386f12bc078daeae33c56fc26e7f19455a0a30e7e2"
+   }
+  ]
+ }
+}

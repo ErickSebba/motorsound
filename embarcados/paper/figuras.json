@@ -1,0 +1,26 @@
+{
+ "arquitetura": {
+  "pdf": "embarcados/figures/pdf/arquitetura.pdf",
+  "fontes": [
+   "embarcados/paper/numeros.json"
+  ]
+ },
+ "diag_balacc_en_20261023_222831": {
+  "pdf": "embarcados/figures/pdf/diag_balacc_en_20261023_222831.pdf",
+  "fontes": [
+   "embarcados/results/csv/diagnostico_20261023_222831.csv"
+  ]
+ },
+ "diag_confusao_p11_en_20261023_222831": {
+  "pdf": "embarcados/figures/pdf/diag_confusao_p11_en_20261023_222831.pdf",
+  "fontes": [
+   "embarcados/results/metrics/diagnostico_20261023_222831.json"
+  ]
+ },
+ "equivalencia_erro_etapas_en": {
+  "pdf": "embarcados/figures/pdf/equivalencia_erro_etapas_en.pdf",
+  "fontes": [
+   "embarcados/results/csv/equivalencia_resumo_por_build_20261024-091729.csv"
+  ]
+ }
+}

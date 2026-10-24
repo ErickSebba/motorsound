@@ -1,0 +1,22 @@
+% Gerado por embarcados/src/python/gerar_artigo_tabelas.py a partir de embarcados/paper/numeros.json.
+% NÃO EDITAR À MÃO.
+
+\begin{table}[t]
+\centering
+\scriptsize
+\setlength{\tabcolsep}{3pt}
+\caption{Balanced accuracy on the same windows (validation only); $g$ = groups. 95\% CIs from a group bootstrap (2{,}000 resamples) are shown in Fig.~\ref{fig:balacc}. $^\dagger$Intentional leakage.}
+\label{tab:desempenho-compacto}
+\begin{tabular}{@{}lrcccc@{}}
+\toprule
+Protocol & $g$ & RMS/pk (norm.) & RMS/pk (raw) & Classical & p11 \\
+\midrule
+IDMT random$^\dagger$ & 18 & 0.992 & 0.997 & 1.000 & 1.000 \\
+IDMT blocks & 15 & 0.991 & 0.993 & 1.000 & 1.000 \\
+A2212 random$^\dagger$ & 43 & 0.564 & 0.625 & 0.998 & 0.849 \\
+A2212 file & 43 & 0.562 & 0.608 & 0.981 & 0.816 \\
+A2212 motor-out & 43 & 0.542 & 0.503 & 0.613 & 0.456 \\
+A2212 w/o M4 & 36 & 0.814 & 0.754 & 0.920 & 0.685 \\
+\bottomrule
+\end{tabular}
+\end{table}

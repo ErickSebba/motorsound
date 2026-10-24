@@ -1,0 +1,25 @@
+% Gerado por embarcados/src/python/gerar_artigo_tabelas.py a partir de embarcados/paper/numeros.json.
+% NÃO EDITAR À MÃO.
+
+\begin{table*}[t]
+\centering
+\scriptsize
+\setlength{\tabcolsep}{4pt}
+\caption{Resources, separated by evidence category. (1) analytical estimate (\texttt{p11\_host ws}, same layout function as the arena); (2) measured on the PC (Windows 11, MSVC 19.44 x64 \slash{}O2 \slash{}fp:precise; 200 timed windows per dataset after 5 warm-up); (3) firmware build, \texttt{idf.py size} (ESP-IDF v5.5.6), static only; (4) measured on the ESP32. Only column (4) is a measurement on the microcontroller.}
+\label{tab:resources}
+\begin{tabular}{@{}lllll@{}}
+\toprule
+Quantity & (1) Estimate & (2) PC & (3) Build & (4) ESP32 \\
+\midrule
+Latency, C float32, median [p95] (ms), 3\,s / 1\,s & -- & 13.29 [15.00] / 3.18 [3.84] & -- & \textbf{[pending]} / \textbf{[pending]} \\
+Latency, Python reference, median (ms), 3\,s / 1\,s & -- & 95.3 / 22.1 & -- & -- \\
+Real-time factor (C), 3\,s / 1\,s & -- & 0.0044 / 0.0032 & -- & \textbf{[pending]} / \textbf{[pending]} \\
+Working memory, float32 (MB), 3\,s / 1\,s & 1.86 / 0.96 & -- & -- & \textbf{[pending]} / \textbf{[pending]} \\
+\quad without harmonic table (MB) & 1.52 / 0.61 & -- & -- & -- \\
+Min.\ free internal heap (KiB) & -- & -- & -- & \textbf{[pending]} \\
+Stack headroom (B) & -- & -- & -- & \textbf{[pending]} \\
+App binary (KiB), ESP32 / -S3 & -- & -- & 209 / 233 & -- \\
+Static internal RAM used / region (KiB), ESP32 / -S3 & -- & -- & 15/176 / 54/334 & -- \\
+\bottomrule
+\end{tabular}
+\end{table*}

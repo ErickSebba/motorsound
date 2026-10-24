@@ -1,0 +1,16 @@
+% Gerado por embarcados/src/python/gerar_artigo_tabelas.py a partir de embarcados/results/csv/equivalencia_resumo_por_build_20261024-091729.csv (veredito por etapa).
+% NÃO EDITAR À MÃO.
+
+\begin{tabular}{@{}lccc@{}}
+\toprule
+Stage group (\#stages) & C double & C float32 & float32+SOS64 \\
+\midrule
+Front end (6) & 6/6 & 6/6 & 6/6 \\
+Rotation Viterbi (3) & 3/3 & 3/3 & 3/3 \\
+Spectrum, envelope (6) & 6/6 & 6/6$^\ddagger$ & 6/6 \\
+13 features (1) & 1/1 & 1/1$^\ddagger$ & 1/1 \\
+z-score (1) & 1/1 & 0/1 (FAIL in 2/164) & 1/1 \\
+Cosine, softmax, decision (3) & 3/3 & 3/3 & 3/3 \\
+Sequences (HMM) (6) & 6/6 & 6/6 & 6/6 \\
+\bottomrule
+\end{tabular}
