@@ -1,0 +1,332 @@
+{
+  "meta": {
+    "categoria": "medicao_no_PC",
+    "gerado_em": "20261024-091911",
+    "projeto": {
+      "commit": "93a2917e8cb6dcf250746e4423257d4efe0a786b",
+      "sujo": true
+    },
+    "argv": {
+      "n": 200,
+      "aquecimento": 5,
+      "build": "float"
+    },
+    "maquina": {
+      "plataforma": "Windows-11-10.0.26200-SP0",
+      "processador": "AMD64 Family 25 Model 80 Stepping 0, AuthenticAMD",
+      "n_cpu": 16,
+      "python": "3.12.13",
+      "numpy": "2.5.4"
+    },
+    "executavel": "C:\\Users\\erick\\dev\\Decifrae-Artigo\\Artigo3(MotorSound)\\embarcados\\build-float\\p11_host.exe",
+    "compilador": "MSVC 19.44 x64 /O2 /fp:precise (embarcados/CMakeLists.txt)",
+    "segundos": 31.9,
+    "nota": "janelas = casos nao-borda do ouro percorridos em ciclo; aquecimento excluido"
+  },
+  "resumo": {
+    "c_float_pc/a2212": {
+      "total_ms": {
+        "n": 200,
+        "mediana": 3.1763500000000002,
+        "p95": 3.8385599999999993,
+        "max": 4.4524,
+        "min": 2.7356,
+        "media": 3.2216049999999994
+      },
+      "fator_tempo_real_mediana": 0.00317635,
+      "duracao_janela_s": 1.0,
+      "preparar_ms": {
+        "n": 200,
+        "mediana": 0.0307,
+        "p95": 0.037114999999999995,
+        "max": 0.1375,
+        "min": 0.0215,
+        "media": 0.031149
+      },
+      "rastrear_quadros_ms": {
+        "n": 200,
+        "mediana": 1.24255,
+        "p95": 1.7051450000000001,
+        "max": 2.0466,
+        "min": 1.0179,
+        "media": 1.2921865
+      },
+      "viterbi_ms": {
+        "n": 200,
+        "mediana": 1.1412499999999999,
+        "p95": 1.48174,
+        "max": 1.664,
+        "min": 0.962,
+        "media": 1.1658435
+      },
+      "saliencia_caminho_ms": {
+        "n": 200,
+        "mediana": 0.0001,
+        "p95": 0.0001,
+        "max": 0.0001,
+        "min": 0.0,
+        "media": 6.850000000000003e-05
+      },
+      "envelope_mod_ms": {
+        "n": 200,
+        "mediana": 0.6662,
+        "p95": 0.9215749999999995,
+        "max": 1.0874,
+        "min": 0.6492,
+        "media": 0.716796
+      },
+      "features_ms": {
+        "n": 200,
+        "mediana": 0.0125,
+        "p95": 0.017804999999999998,
+        "max": 0.1314,
+        "min": 0.0118,
+        "media": 0.0137315
+      },
+      "cosseno_ms": {
+        "n": 200,
+        "mediana": 0.0018,
+        "p95": 0.0024049999999999983,
+        "max": 0.0057,
+        "min": 0.0014,
+        "media": 0.00183
+      },
+      "total_sem_init_ms": {
+        "n": 200,
+        "mediana": 3.1763500000000002,
+        "p95": 3.8385599999999993,
+        "max": 4.4524,
+        "min": 2.7356,
+        "media": 3.2216049999999994
+      }
+    },
+    "c_float_pc/idmt": {
+      "total_ms": {
+        "n": 200,
+        "mediana": 13.29005,
+        "p95": 14.99725,
+        "max": 15.7989,
+        "min": 11.2641,
+        "media": 13.336787999999999
+      },
+      "fator_tempo_real_mediana": 0.004430016666666667,
+      "duracao_janela_s": 3.0,
+      "preparar_ms": {
+        "n": 200,
+        "mediana": 0.0583,
+        "p95": 0.077105,
+        "max": 0.2232,
+        "min": 0.0481,
+        "media": 0.0628065
+      },
+      "rastrear_quadros_ms": {
+        "n": 200,
+        "mediana": 5.45165,
+        "p95": 6.537529999999997,
+        "max": 7.7247,
+        "min": 4.7727,
+        "media": 5.5794165
+      },
+      "viterbi_ms": {
+        "n": 200,
+        "mediana": 5.3472,
+        "p95": 6.36943,
+        "max": 6.8729,
+        "min": 4.0306,
+        "media": 5.328381500000001
+      },
+      "saliencia_caminho_ms": {
+        "n": 200,
+        "mediana": 0.0001,
+        "p95": 0.0002,
+        "max": 0.0007,
+        "min": 0.0001,
+        "media": 0.00015250000000000002
+      },
+      "envelope_mod_ms": {
+        "n": 200,
+        "mediana": 2.26745,
+        "p95": 2.750325,
+        "max": 3.0787,
+        "min": 2.1375,
+        "media": 2.3504165
+      },
+      "features_ms": {
+        "n": 200,
+        "mediana": 0.0128,
+        "p95": 0.019409999999999997,
+        "max": 0.0271,
+        "min": 0.012,
+        "media": 0.013632499999999999
+      },
+      "cosseno_ms": {
+        "n": 200,
+        "mediana": 0.0019,
+        "p95": 0.0025049999999999985,
+        "max": 0.0109,
+        "min": 0.0014,
+        "media": 0.0019820000000000003
+      },
+      "total_sem_init_ms": {
+        "n": 200,
+        "mediana": 13.29005,
+        "p95": 14.99725,
+        "max": 15.7989,
+        "min": 11.2641,
+        "media": 13.336787999999999
+      }
+    },
+    "python_ref/a2212": {
+      "total_ms": {
+        "n": 200,
+        "mediana": 22.056899993913248,
+        "p95": 23.0936200110591,
+        "max": 25.338499995996244,
+        "min": 20.905199999106117,
+        "media": 22.125368500637705
+      },
+      "fator_tempo_real_mediana": 0.022056899993913248,
+      "duracao_janela_s": 1.0,
+      "preparar_ms": {
+        "n": 200,
+        "mediana": NaN,
+        "p95": NaN,
+        "max": NaN,
+        "min": NaN,
+        "media": NaN
+      },
+      "rastrear_quadros_ms": {
+        "n": 200,
+        "mediana": NaN,
+        "p95": NaN,
+        "max": NaN,
+        "min": NaN,
+        "media": NaN
+      },
+      "viterbi_ms": {
+        "n": 200,
+        "mediana": NaN,
+        "p95": NaN,
+        "max": NaN,
+        "min": NaN,
+        "media": NaN
+      },
+      "saliencia_caminho_ms": {
+        "n": 200,
+        "mediana": NaN,
+        "p95": NaN,
+        "max": NaN,
+        "min": NaN,
+        "media": NaN
+      },
+      "envelope_mod_ms": {
+        "n": 200,
+        "mediana": NaN,
+        "p95": NaN,
+        "max": NaN,
+        "min": NaN,
+        "media": NaN
+      },
+      "features_ms": {
+        "n": 200,
+        "mediana": NaN,
+        "p95": NaN,
+        "max": NaN,
+        "min": NaN,
+        "media": NaN
+      },
+      "cosseno_ms": {
+        "n": 200,
+        "mediana": NaN,
+        "p95": NaN,
+        "max": NaN,
+        "min": NaN,
+        "media": NaN
+      },
+      "total_sem_init_ms": {
+        "n": 200,
+        "mediana": NaN,
+        "p95": NaN,
+        "max": NaN,
+        "min": NaN,
+        "media": NaN
+      }
+    },
+    "python_ref/idmt": {
+      "total_ms": {
+        "n": 200,
+        "mediana": 95.32214999489952,
+        "p95": 100.16770999209255,
+        "max": 110.21889999392442,
+        "min": 90.51300000282936,
+        "media": 95.6690069999604
+      },
+      "fator_tempo_real_mediana": 0.03177404999829984,
+      "duracao_janela_s": 3.0,
+      "preparar_ms": {
+        "n": 200,
+        "mediana": NaN,
+        "p95": NaN,
+        "max": NaN,
+        "min": NaN,
+        "media": NaN
+      },
+      "rastrear_quadros_ms": {
+        "n": 200,
+        "mediana": NaN,
+        "p95": NaN,
+        "max": NaN,
+        "min": NaN,
+        "media": NaN
+      },
+      "viterbi_ms": {
+        "n": 200,
+        "mediana": NaN,
+        "p95": NaN,
+        "max": NaN,
+        "min": NaN,
+        "media": NaN
+      },
+      "saliencia_caminho_ms": {
+        "n": 200,
+        "mediana": NaN,
+        "p95": NaN,
+        "max": NaN,
+        "min": NaN,
+        "media": NaN
+      },
+      "envelope_mod_ms": {
+        "n": 200,
+        "mediana": NaN,
+        "p95": NaN,
+        "max": NaN,
+        "min": NaN,
+        "media": NaN
+      },
+      "features_ms": {
+        "n": 200,
+        "mediana": NaN,
+        "p95": NaN,
+        "max": NaN,
+        "min": NaN,
+        "media": NaN
+      },
+      "cosseno_ms": {
+        "n": 200,
+        "mediana": NaN,
+        "p95": NaN,
+        "max": NaN,
+        "min": NaN,
+        "media": NaN
+      },
+      "total_sem_init_ms": {
+        "n": 200,
+        "mediana": NaN,
+        "p95": NaN,
+        "max": NaN,
+        "min": NaN,
+        "media": NaN
+      }
+    }
+  }
+}

@@ -1,0 +1,24 @@
+{
+  "categoria": "medicao_no_PC",
+  "gerado_em": "20261024-091911",
+  "projeto": {
+    "commit": "93a2917e8cb6dcf250746e4423257d4efe0a786b",
+    "sujo": true
+  },
+  "argv": {
+    "n": 200,
+    "aquecimento": 5,
+    "build": "float"
+  },
+  "maquina": {
+    "plataforma": "Windows-11-10.0.26200-SP0",
+    "processador": "AMD64 Family 25 Model 80 Stepping 0, AuthenticAMD",
+    "n_cpu": 16,
+    "python": "3.12.13",
+    "numpy": "2.5.4"
+  },
+  "executavel": "C:\\Users\\erick\\dev\\Decifrae-Artigo\\Artigo3(MotorSound)\\embarcados\\build-float\\p11_host.exe",
+  "compilador": "MSVC 19.44 x64 /O2 /fp:precise (embarcados/CMakeLists.txt)",
+  "segundos": 31.9,
+  "nota": "janelas = casos nao-borda do ouro percorridos em ciclo; aquecimento excluido"
+}
