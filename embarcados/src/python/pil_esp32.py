@@ -29,6 +29,7 @@ import bancada_comum as bc
 # 921600 a partir do firmware com CONFIG_ESP_CONSOLE_UART_CUSTOM (o primeiro build, sem essa
 # opção, ficou em 115200: use --baud 115200 com ele). A medição de tempo não depende da serial.
 BAUD = 921600
+CONF_BYTES = 1024
 ETAPAS = ["prep", "rastreio", "viterbi", "sal_caminho", "envelope", "features", "cosseno"]
 
 
@@ -87,7 +88,21 @@ class Placa:
         import zlib
         y = np.ascontiguousarray(y, dtype="<f4")
         b = y.tobytes()
-        r = self.json_de(self.cmd(f"WIN {wid} {y.size}", b, "@@RES", timeout=300))
+        # pedaços de 1 KB com confirmação "@@A" do firmware (main.c::le_confirmado)
+        self.s.write(f"WIN {wid} {y.size}\n".encode())
+        for k in range(0, len(b), CONF_BYTES):
+            self.s.write(b[k:k + CONF_BYTES])
+            l = self.linha(30)
+            if l.startswith("@@ERRO"):
+                raise RuntimeError(l)
+            if l != "@@A":
+                raise RuntimeError(f"esperava @@A, veio {l[:120]}")
+        l = self.linha(300)
+        if l.startswith("@@ERRO"):
+            raise RuntimeError(l)
+        if not l.startswith("@@RES"):
+            raise RuntimeError(f"esperava @@RES, veio {l[:200]}")
+        r = self.json_de(l)
         if r["crc32"] != zlib.crc32(b):
             raise RuntimeError(f"janela {wid}: CRC32 do chip {r['crc32']} != host {zlib.crc32(b)}"
                                " (bytes perdidos ou trocados na serial)")

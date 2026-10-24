@@ -94,6 +94,38 @@ void lm_volta(lm_pool *pl)
     do { (ptr) = (tipo *)lm_corta(lm->pool, sizeof(tipo) * (size_t)(n), (a32)); \
          if (!(ptr)) return -10; } while (0)
 
+/* Pedidos de uma fase atendidos do maior para o menor (melhor encaixe em cada um): com a
+ * RAM fragmentada do chip, a ordem do código deixava sobras inúteis (24/10: o e_norm de
+ * 38 432 B não achou bloco com ~70 KB livres no total). */
+typedef struct { void **dst; size_t bytes; int a32; } lm_ped;
+#define LM_MAX_PED (LM_MAX_LINHAS + 32)
+static lm_ped g_ped[LM_MAX_PED];
+static int g_nped;
+
+#define PED(ptr, tipo, cnt, aceita) \
+    do { g_ped[g_nped].dst = (void **)(void *)&(ptr); \
+         g_ped[g_nped].bytes = sizeof(tipo) * (size_t)(cnt); g_ped[g_nped].a32 = (aceita); \
+         ++g_nped; } while (0)
+
+static int atende(lm_pool *pl)
+{
+    static int ord[LM_MAX_PED];
+    int i, k;
+    for (i = 0; i < g_nped; ++i) {
+        int x = i;
+        k = i - 1;
+        while (k >= 0 && g_ped[ord[k]].bytes < g_ped[x].bytes) { ord[k + 1] = ord[k]; --k; }
+        ord[k + 1] = x;
+    }
+    for (i = 0; i < g_nped; ++i) {
+        void *p = lm_corta(pl, g_ped[ord[i]].bytes, g_ped[ord[i]].a32);
+        if (!p) { g_nped = 0; return -10; }
+        *g_ped[ord[i]].dst = p;
+    }
+    g_nped = 0;
+    return 0;
+}
+
 /* ======================================================================== init */
 static int n_dec_de(int n) { return (n + P11_DECIM - 1) / P11_DECIM; }
 
@@ -119,19 +151,21 @@ int p11_lm_init(p11_lm *lm, lm_pool *pool, int n)
     ws->nperseg = nd < 1024 ? nd : 1024;
     if (ws->nperseg % 2) return -2;   /* p11_welch exige nperseg par */
 
-    CORTA(ws->y, p11_real, n, 0);                 /* recebe bytes da serial */
-    CORTA(ws->grade, double, P11_J, 0);
-    CORTA(ws->janela, p11_real, P11_N_FFT, 1);
-    CORTA(ws->P_mean, p11_real, P11_F, 0);
-    CORTA(ws->e_q, p11_real, ws->T, 0);
-    CORTA(ws->path, int32_t, ws->T, 0);
-    CORTA(ws->fbuf, double, ws->T, 0);
-    CORTA(ws->rbuf, p11_real, ws->T, 0);
-    CORTA(ws->env_dec, p11_real, nd, 0);
-    CORTA(tw_meia, p11_cpx, h, 1);
-    CORTA(tw_r, p11_cpx, h, 1);
-    CORTA(lm->tw_r128, p11_cpx, LM_N2, 1);
-    CORTA(lm->tw_q, p11_cpx, lm->n1, 1);
+    g_nped = 0;
+    PED(ws->y, p11_real, n, 0);                   /* recebe bytes da serial */
+    PED(ws->grade, double, P11_J, 0);
+    PED(ws->janela, p11_real, P11_N_FFT, 1);
+    PED(ws->P_mean, p11_real, P11_F, 0);
+    PED(ws->e_q, p11_real, ws->T, 0);
+    PED(ws->path, int32_t, ws->T, 0);
+    PED(ws->fbuf, double, ws->T, 0);
+    PED(ws->rbuf, p11_real, ws->T, 0);
+    PED(ws->env_dec, p11_real, nd, 0);
+    PED(tw_meia, p11_cpx, h, 1);
+    PED(tw_r, p11_cpx, h, 1);
+    PED(lm->tw_r128, p11_cpx, LM_N2, 1);
+    PED(lm->tw_q, p11_cpx, lm->n1, 1);
+    if (atende(pool) != 0) return -10;
 
     /* grade e janela: mesmas contas de p11_ws_init (calc_grade e np.hanning) */
     for (j = 0; j < P11_J; ++j)
@@ -178,12 +212,14 @@ int p11_lm_rastrear(p11_lm *lm, p11_real *min_delta, p11_real *score,
     /* qz guarda o quadro empacotado (H2 complexos) e depois a rfft (F = H2+1 complexos):
      * p11_rfft lê só Z ao escrever out, então out pode ser o próprio z. |X| vai para os
      * primeiros F reais do mesmo vetor: qS[f] (bytes 4f) só sobrescreve qX[f/2], já lido. */
-    CORTA(ws->qX, p11_cpx, P11_F, 0);     /* acesso por byte: abriga o psi (int16) depois */
+    g_nped = 0;
+    PED(ws->qX, p11_cpx, P11_F, 0);       /* acesso por byte: abriga o psi (int16) depois */
+    PED(ws->qZ, p11_cpx, P11_N_FFT / 2, 1);
+    PED(ws->sal_q, p11_real, J, 1);
+    PED(ws->e_norm, p11_real, (size_t)T * J, 1);
+    if (atende(lm->pool) != 0) return -10;
     ws->qz = ws->qX;
     ws->qS = (p11_real *)ws->qX;
-    CORTA(ws->qZ, p11_cpx, P11_N_FFT / 2, 1);
-    CORTA(ws->sal_q, p11_real, J, 1);
-    CORTA(ws->e_norm, p11_real, (size_t)T * J, 1);
     /* psi e delta só são usados por p11_viterbi, depois do último quadro da STFT, quando qX
      * já está livre: moram dentro dele se couberem (T = 8 em 1 s: 28 848 B de 32 776 B) */
     {

@@ -70,6 +70,21 @@ static void le_exato(void *dst, size_t n)
     }
 }
 
+/* Leitura com confirmação: depois de cada pedaço de CONF_BYTES o firmware responde "@@A" e o
+ * host só manda o próximo depois disso. Sem isso, a 921600 baud bytes se perdiam (24/10). */
+#define CONF_BYTES 1024
+static void le_confirmado(void *dst, size_t n)
+{
+    uint8_t *p = (uint8_t *)dst;
+    while (n) {
+        size_t k = n > CONF_BYTES ? CONF_BYTES : n;
+        le_exato(p, k);
+        p += k;
+        n -= k;
+        uart_write_bytes(UART_P11, "@@A\n", 4);
+    }
+}
+
 static int le_linha(char *buf, int cap)
 {
     int i = 0;
@@ -142,7 +157,9 @@ static int prepara_buffers(int n)
 /* ------------------------------------------------------------------ variante lowmem */
 /* Pool montado no boot com todos os blocos livres: DRAM (acesso por byte) deixando
  * LM_RESERVA para o sistema, depois IRAM (só 32 bits, MALLOC_CAP_EXEC no ESP32). */
-#define LM_RESERVA (20 * 1024)
+/* 12 KB: no chip o firmware funcionou com 6 KB livres (só MODEL e SEQ alocam depois, < 3 KB);
+ * mais reserva tirava a folga do pool (a fase A não cabe com o 2o bloco de DRAM < ~100 KB) */
+#define LM_RESERVA (12 * 1024)
 static lm_pool g_pool;
 static p11_lm g_lm;
 static int g_lm_n = 0;
@@ -159,6 +176,19 @@ static void marcador(void *ctx, int e)
 static void monta_pool(void)
 {
     lm_pool_vazio(&g_pool);
+    /* IRAM primeiro: no chip, tirar a IRAM depois da DRAM consumiu a reserva (24/10:
+     * sobraram 6 KB de heap de byte em vez de 20 KB) */
+    for (;;) {
+        size_t maior = heap_caps_get_largest_free_block(MALLOC_CAP_EXEC);
+        size_t t;
+        void *p;
+        if (g_pool.nb >= LM_MAX_BLOCOS || maior < 4096) break;
+        t = (maior - 64) & ~(size_t)15;
+        p = heap_caps_malloc(t, MALLOC_CAP_EXEC);
+        if (!p) break;
+        lm_pool_add(&g_pool, p, t, 1);
+        g_pool_32bit += t;
+    }
     for (;;) {
         size_t livre = heap_caps_get_free_size(MALLOC_CAP_8BIT);
         size_t maior = heap_caps_get_largest_free_block(MALLOC_CAP_8BIT);
@@ -173,17 +203,6 @@ static void monta_pool(void)
         if (!p) break;
         lm_pool_add(&g_pool, p, t, 0);
         g_pool_8bit += t;
-    }
-    for (;;) {
-        size_t maior = heap_caps_get_largest_free_block(MALLOC_CAP_EXEC);
-        size_t t;
-        void *p;
-        if (g_pool.nb >= LM_MAX_BLOCOS || maior < 4096) break;
-        t = (maior - 64) & ~(size_t)15;
-        p = heap_caps_malloc(t, MALLOC_CAP_EXEC);
-        if (!p) break;
-        lm_pool_add(&g_pool, p, t, 1);
-        g_pool_32bit += t;
     }
 }
 
@@ -417,7 +436,13 @@ static void cmd_win(int id, int n)
         /* consome os bytes para manter o protocolo em sincronia */
         uint8_t lixo[256];
         size_t falta = sizeof(float) * (size_t)n;
-        while (falta) { size_t k = falta > sizeof lixo ? sizeof lixo : falta; le_exato(lixo, k); falta -= k; }
+        /* mesmo ritmo de confirmação do caminho normal */
+        while (falta) {
+            size_t k = falta > CONF_BYTES ? CONF_BYTES : falta, j;
+            for (j = 0; j < k; j += sizeof lixo) le_exato(lixo, k - j > sizeof lixo ? sizeof lixo : k - j);
+            falta -= k;
+            uart_write_bytes(UART_P11, "@@A\n", 4);
+        }
 #ifdef P11_LOWMEM
         /* "para X bytes": o pedido do pool que não coube; "livre interna": total do pool */
         snprintf(g_out, SAIDA_MAX, "@@ERRO WIN %d sem memoria para %u bytes de workspace "
@@ -432,7 +457,7 @@ static void cmd_win(int id, int n)
         escreve_str(g_out);
         return;
     }
-    le_exato(audio_buf(), sizeof(float) * (size_t)n);
+    le_confirmado(audio_buf(), sizeof(float) * (size_t)n);
     /* CRC32 (o mesmo de zlib.crc32) dos bytes recebidos, fora do tempo medido: o host
      * descarta a janela se a serial perdeu ou trocou algum byte */
     crc = esp_rom_crc32_le(0, (const uint8_t *)audio_buf(), sizeof(float) * (size_t)n);
@@ -550,6 +575,8 @@ void app_main(void)
      * de 4 KB acumularem */
     uart_driver_install(UART_P11, 4 * 1024, 2 * 1024, 0, NULL, 0);
     uart_param_config(UART_P11, &cfg);
+    /* interrupção com o FIFO (128 B) em 32 B, não 120: ~1 ms de folga a 921600 baud */
+    uart_set_rx_full_threshold(UART_P11, 32);
     /* núcleo 1 no ESP32/ESP32-S3 (o 0 fica com o sistema); prioridade acima do idle */
     xTaskCreatePinnedToCore(tarefa_bancada, "p11", PILHA_TAREFA, NULL, 5, NULL,
                             portNUM_PROCESSORS > 1 ? 1 : 0);
