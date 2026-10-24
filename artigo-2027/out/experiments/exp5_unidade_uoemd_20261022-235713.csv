@@ -1,0 +1,33 @@
+base,alvo,tarefa,features,split,dobra,n_treino,n_teste,classes_teste,classes_ausentes_treino,acc,bacc,f1_macro,acaso,obs
+uoemd,unidade,todas,forma,aleatorio,k0,1024.0,256.0,8.0,,0.7265625,0.7265625,0.7220770548895549,0.125,
+uoemd,unidade,todas,forma,aleatorio,k1,1024.0,256.0,8.0,,0.703125,0.703125,0.6982987861290599,0.125,
+uoemd,unidade,todas,forma,aleatorio,k2,1024.0,256.0,8.0,,0.6875,0.6875,0.6852450783836295,0.125,
+uoemd,unidade,todas,forma,aleatorio,k3,1024.0,256.0,8.0,,0.7265625,0.7265625,0.7275527492040508,0.125,
+uoemd,unidade,todas,forma,aleatorio,k4,1024.0,256.0,8.0,,0.68359375,0.68359375,0.6846431902985075,0.125,
+uoemd,unidade,todas,forma,aleatorio,total,,1280.0,8.0,,0.70546875,0.70546875,0.7043598492645797,0.125,
+uoemd,unidade,todas,forma,gravacao,k0,1020.0,260.0,8.0,,0.4653846153846154,0.48750000000000004,0.4707927804106312,0.125,
+uoemd,unidade,todas,forma,gravacao,k1,1020.0,260.0,8.0,,0.4576923076923077,0.44166666666666665,0.41447192431409136,0.125,
+uoemd,unidade,todas,forma,gravacao,k2,1020.0,260.0,8.0,,0.3730769230769231,0.3697916666666667,0.3714071016702596,0.125,
+uoemd,unidade,todas,forma,gravacao,k3,1030.0,250.0,8.0,,0.508,0.5041666666666667,0.49976868450604905,0.125,
+uoemd,unidade,todas,forma,gravacao,k4,1030.0,250.0,8.0,,0.432,0.421875,0.4219172477404636,0.125,
+uoemd,unidade,todas,forma,gravacao,total,,1280.0,8.0,,0.446875,0.44687499999999997,0.44279249422821054,0.125,
+uoemd,unidade,todas,forma+nivel,aleatorio,k0,1024.0,256.0,8.0,,0.7578125,0.7578125,0.7557458344307335,0.125,
+uoemd,unidade,todas,forma+nivel,aleatorio,k1,1024.0,256.0,8.0,,0.703125,0.703125,0.6955145011656335,0.125,
+uoemd,unidade,todas,forma+nivel,aleatorio,k2,1024.0,256.0,8.0,,0.69921875,0.69921875,0.6958356763829344,0.125,
+uoemd,unidade,todas,forma+nivel,aleatorio,k3,1024.0,256.0,8.0,,0.73828125,0.73828125,0.7394572888675103,0.125,
+uoemd,unidade,todas,forma+nivel,aleatorio,k4,1024.0,256.0,8.0,,0.6953125,0.6953125,0.6936641128202877,0.125,
+uoemd,unidade,todas,forma+nivel,aleatorio,total,,1280.0,8.0,,0.71875,0.71875,0.7170784473597955,0.125,
+uoemd,unidade,todas,forma+nivel,gravacao,k0,1020.0,260.0,8.0,,0.46923076923076923,0.4947916666666667,0.47269441984081095,0.125,
+uoemd,unidade,todas,forma+nivel,gravacao,k1,1020.0,260.0,8.0,,0.5346153846153846,0.5249999999999999,0.5022914365968842,0.125,
+uoemd,unidade,todas,forma+nivel,gravacao,k2,1020.0,260.0,8.0,,0.3730769230769231,0.3697916666666667,0.37185259419858135,0.125,
+uoemd,unidade,todas,forma+nivel,gravacao,k3,1030.0,250.0,8.0,,0.484,0.4822916666666667,0.4780243520490972,0.125,
+uoemd,unidade,todas,forma+nivel,gravacao,k4,1030.0,250.0,8.0,,0.428,0.41250000000000003,0.41822516439764557,0.125,
+uoemd,unidade,todas,forma+nivel,gravacao,total,,1280.0,8.0,,0.4578125,0.4578125,0.45321730416447836,0.125,
+uoemd,unidade,classe=barras_rotor_quebradas,,,,,,,,,,,,menos de 2 unidades
+uoemd,unidade,classe=desalinhamento_rotor,,,,,,,,,,,,menos de 2 unidades
+uoemd,unidade,classe=desequilibrio_rotor,,,,,,,,,,,,menos de 2 unidades
+uoemd,unidade,classe=desequilibrio_tensao_e_falta_fase,,,,,,,,,,,,menos de 2 unidades
+uoemd,unidade,classe=falha_enrolamento_estator,,,,,,,,,,,,menos de 2 unidades
+uoemd,unidade,classe=rolamento_defeituoso,,,,,,,,,,,,menos de 2 unidades
+uoemd,unidade,classe=rotor_empenado,,,,,,,,,,,,menos de 2 unidades
+uoemd,unidade,classe=saudavel,,,,,,,,,,,,menos de 2 unidades

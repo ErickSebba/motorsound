@@ -1,0 +1,21 @@
+{
+  "experimento": "exp4_rastreador",
+  "base": "imvacd",
+  "commit": "0bc759d+sujo",
+  "seed": 20261022,
+  "config": {
+    "fmin_fator": 0.4,
+    "fmax_fator": 1.05,
+    "tol": 0.02,
+    "pares_polos": 1,
+    "max_s": 60.0,
+    "filtro": "",
+    "faixa_base": null,
+    "rastrear": "padrões de lib.rotacao.rastrear (2 cents, h 1-48, nfft 8192, hop 1024, Viterbi)"
+  },
+  "duracao_s": 106.4,
+  "linhas": 256,
+  "python": "3.12.13",
+  "plataforma": "Windows-11-10.0.26200-SP0",
+  "gerado_em": "20261023-084932"
+}

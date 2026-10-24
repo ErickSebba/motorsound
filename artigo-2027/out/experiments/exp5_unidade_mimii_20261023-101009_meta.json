@@ -1,0 +1,16 @@
+{
+  "experimento": "exp5_unidade",
+  "base": "mimii",
+  "commit": "2c04b85+sujo",
+  "seed": 20261022,
+  "config": {
+    "n_dobras": 5,
+    "max_seg": 3,
+    "filtro": "unidade.str.contains('_id_')"
+  },
+  "duracao_s": 17.4,
+  "linhas": 72,
+  "python": "3.12.13",
+  "plataforma": "Windows-11-10.0.26200-SP0",
+  "gerado_em": "20261023-101009"
+}

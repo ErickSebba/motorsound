@@ -1,0 +1,21 @@
+{
+  "experimento": "exp1_nivel",
+  "base": "toycar",
+  "commit": "2c04b85+sujo",
+  "seed": 20261022,
+  "config": {
+    "features": [
+      "rms_db",
+      "pico_db"
+    ],
+    "n_dobras": 5,
+    "modelo": "StandardScaler+LogReg(balanced)",
+    "max_seg": 5,
+    "filtro": "not unidade.str.startswith('desconhecida')"
+  },
+  "duracao_s": 4.3,
+  "linhas": 103,
+  "python": "3.12.13",
+  "plataforma": "Windows-11-10.0.26200-SP0",
+  "gerado_em": "20261023-101124"
+}

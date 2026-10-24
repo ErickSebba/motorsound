@@ -1,0 +1,15 @@
+{
+  "experimento": "exp5_unidade",
+  "base": "kaist",
+  "commit": "2562a48+sujo",
+  "seed": 20261022,
+  "config": {
+    "n_dobras": 5,
+    "max_seg": 0
+  },
+  "duracao_s": 0.4,
+  "linhas": 43,
+  "python": "3.12.13",
+  "plataforma": "Windows-11-10.0.26200-SP0",
+  "gerado_em": "20261022-235519"
+}
