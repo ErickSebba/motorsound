@@ -1,0 +1,5 @@
+# ESP-DSP só é usada pela variante p11_c_espdsp (main/CMakeLists.txt); a referência não a
+# chama. Versão fixada para o build ser reproduzível.
+dependencies:
+  idf: ">=5.0"
+  espressif/esp-dsp: "1.5.2"

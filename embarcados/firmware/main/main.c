@@ -31,6 +31,9 @@
 #include "esp_private/esp_clk.h"
 
 #include "p11.h"
+#ifdef P11_USAR_ESP_DSP
+#include "dsps_fft2r.h"
+#endif
 
 #define UART_P11 UART_NUM_0
 #define PILHA_TAREFA (24 * 1024)
@@ -378,6 +381,10 @@ void app_main(void)
         .flow_ctrl = UART_HW_FLOWCTRL_DISABLE,
         .source_clk = UART_SCLK_DEFAULT,
     };
+#ifdef P11_USAR_ESP_DSP
+    /* tabela da ESP-DSP para o maior N potência de 2 usado (4096: meia rfft de 8192) */
+    if (dsps_fft2r_init_fc32(NULL, 4096) != ESP_OK) abort();
+#endif
     uart_driver_install(UART_P11, 32 * 1024, 8 * 1024, 0, NULL, 0);
     uart_param_config(UART_P11, &cfg);
     /* núcleo 1 no ESP32/ESP32-S3 (o 0 fica com o sistema); prioridade acima do idle */
