@@ -1,0 +1,12 @@
+{
+  "script": "embarcados\\tests\\equivalence\\estudo_tolerancias.py",
+  "commit": "a5475936f62b200f85e2279e442510cac61cea2b",
+  "seed": 20261023,
+  "data": "20261023-223624",
+  "duracao_s": 34.4,
+  "n_casos": 54,
+  "numpy": "2.5.4",
+  "scipy": "1.18.1",
+  "sha256_csv": "133b1fc2db00a16e02fa2a85eea4020d4b8e0b85be14c4a4359d29eebe79dbea",
+  "nota": "emula\u00e7\u00e3o f64/f32 em numpy/scipy (pocketfft); n\u00e3o \u00e9 o porte C"
+}
