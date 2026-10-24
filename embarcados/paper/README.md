@@ -35,7 +35,7 @@ pdflatex -jobname=main "\input{main}"            ; bibtex main      ; pdflatex �
 pdflatex -jobname=main_wip "\def\usewip{1}\input{main}" ; bibtex main_wip ; pdflatex ×2 → WiP
 ```
 
-Estado em 24/10: regular = 6 páginas, WiP = 4 páginas, sem referência indefinida e sem erro.
+Estado em 24/10 (após a auditoria F): regular = 6 páginas, WiP = 4 páginas, sem referência indefinida e sem erro.
 
 Pré-requisitos já existentes (não são deste agente): `diagnostico.py` + `diagnostico_saidas.py`
 (gera `desempenho.tex`, `diag_*` em PT), `comparar.py` + `resumo_equivalencia.py`
@@ -60,7 +60,7 @@ exata das que o `main.tex` usa está no fim de `checagem_latex.txt`.
 
 - As figuras `diag_*_<ts>` originais (de `diagnostico_saidas.py`) têm rótulos em português; o
   artigo usa as versões `_en` geradas aqui a partir dos mesmos CSV/JSON.
-- `desempenho.tex` (tabela completa com F1/AUC e ICs) e a matriz de confusão continuam gerados,
+- `desempenho.tex` (tabela completa com F1/AUC e ICs), a matriz de confusão e o espectro continuam gerados,
   mas saíram do texto por espaço; o artigo usa `desempenho_compacto.tex` + Fig. de acurácia com IC.
 - Referências: só as com ficha em `docs/literatura/`; `references.bib` anota a ficha e o tipo de
   leitura de cada uma (`vanaraj2026` e `xi2015` foram lidas só no resumo e são citadas só pelo

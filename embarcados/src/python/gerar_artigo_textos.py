@@ -65,8 +65,11 @@ arena fornecida pelo chamador, cujo tamanho sai da mesma função de layout que 
 ponteiros. O tipo real é escolhido na compilação (float32 para o microcontrolador, double para a
 verificação), e as decisões que mudam inteiros (grade, medianas, arredondamento das posições
 harmônicas) são feitas em double nos dois builds, reproduzindo o arredondamento meio-para-par e o
-desempate pelo primeiro índice da referência. A única aproximação usada é a variante nomeada
-`p11_c_sosd`, que mantém em double o estado do filtro do envelope dentro do build float32.
+desempate pelo primeiro índice da referência. Toda mudança de aritmética é uma variante nomeada.
+A avaliada aqui, `p11_c_sosd`, mantém em double o estado do filtro do envelope dentro do build
+float32, como o scipy faz; ela é mais precisa, não uma aproximação. Existe no firmware a opção
+`p11_c_espdsp` (FFTs de potência de dois pela ESP-DSP), que nunca foi comparada com a referência e
+não é usada.
 
 ## Bases, protocolos e métricas
 
@@ -100,24 +103,31 @@ perturbações: ruído branco em três SNRs e os distúrbios sintéticos de afun
 com ruído mínimo). As etapas do HMM foram conferidas em {VEqGoldSeqs} sequências de probabilidade,
 {VParNChangePen} penalidades e {VEqMinDurValues} durações mínimas ({VEqSeqCombos} configurações). As
 tolerâncias de cada etapa vêm de uma análise de arredondamento de primeira ordem e de uma emulação
-numérica independente de cada build; foram commitadas no commit `{VEqTolCommit}` ({VEqTolCommitTime},
-sha256 `{VEqTolSha}…`) antes da comparação formal ({VEqRunTime}), e o hash vai em cada linha do
+numérica independente de cada build; foram congeladas antes da comparação formal, no commit
+`{VEqTolCommit}` ({VEqTolCommitTime}, sha256 `{VEqTolSha}…`; comparação em {VEqRunTime}), e o hash vai em cada linha do
 resultado. As duas emulações passaram em todas as linhas ({VEqEmulDoublePass} e {VEqEmulFloatPass}
 de {VEqEmulFloatRows}) antes de o C ser comparado. Etapas contínuas são comparadas pelo erro
 máximo relativo à escala da etapa; saídas discretas (caminho de rotação, decisão, estados do HMM)
 têm de coincidir exatamente, salvo empate demonstrado com os valores da própria referência. Uma
-falha numa etapa marca as seguintes como "a jusante". Uma ressalva de cronologia: o porte em C foi
-depurado contra os vetores de ouro pelo agente C antes do congelamento (commit do porte anterior
-ao das tolerâncias); o "pré-registro" vale para a comparação formal do agente D.
+falha numa etapa marca as seguintes como "a jusante". Cronologia: o porte em C foi depurado contra
+os mesmos vetores de ouro pelo seu desenvolvedor antes do congelamento (commit do porte anterior ao
+das tolerâncias). Por isso falamos em tolerâncias "congeladas antes da comparação formal", não em
+pré-registro. A auditoria independente (`reports/independent_scientific_audit.md`) conferiu também
+janelas fora do ouro, que passaram com as tolerâncias congeladas; o número dessas janelas não está
+em CSV do repositório e não é citado. As tolerâncias dos casos de borda foram calibradas no erro da
+emulação nos mesmos sinais, evidência mais fraca, e algumas são largas no float32 (proeminência de
+modulação e grupos de ordens). A grade de {VParStepCents} cents e a faixa de {VParFmin} a
+{VParFmax} Hz do rastreador foram escolhidas olhando o `train/` do IDMT.
 
 ## Categorias de custo
 
 Separamos quatro categorias, também nos nomes das macros. A estimativa analítica (`VEst…`) é o
 tamanho da arena devolvido pela função de layout do C (`p11_host ws <n>`). A medição no PC
-(`VPc…`) cronometra {VPcNIdmt} janelas por base depois de {VPcWarmup} de aquecimento, em ciclo sobre
-{VPcDistinctIdmt} janelas distintas, dentro do executável e em torno das chamadas do núcleo
-({VPcCompiler}, {VPcOs}, {VPcNcpu} CPUs lógicas); a referência Python é cronometrada nas mesmas
-janelas. O build do firmware (`VBuild…`) é o `idf.py size` para ESP32 e ESP32-S3 (ESP-IDF
+(`VPc…`) faz {VPcNIdmt} medições por base depois de {VPcWarmup} de aquecimento, em ciclo sobre
+{VPcDistinctIdmt} janelas distintas ({VPcCompiler}, {VPcOs}, {VPcNcpu} CPUs lógicas). O executável C
+roda num processo novo por janela (o aquecimento não aquece o C) e o tempo é tomado dentro dele, em
+torno das chamadas do núcleo, sem a inicialização do workspace; a referência Python é cronometrada
+nas mesmas janelas e não tem como excluir a própria inicialização. O build do firmware (`VBuild…`) é o `idf.py size` para ESP32 e ESP32-S3 (ESP-IDF
 {VBuildIdf}, GCC {VBuildGcc}), só estático. A medição no ESP32 (`VChip…`) manda as janelas pela
 serial e mede com o temporizador do chip só em torno do processamento, junto com as marcas de heap
 e de pilha. Só essa última categoria pode ser chamada de "medido no ESP32", e ela ainda está
@@ -135,22 +145,27 @@ RESULTADOS = """# Resultados (artigo ICIT 2027, `embarcados/`)
 Em double, as {VEqStagesTotal} verificações de etapa passam em todas as {VEqCases} janelas e nas
 {VEqSeqCombos} configurações de sequência ({VEqDoubleStagesPass} de {VEqStagesTotal}); a maior razão
 erro/tolerância é {VEqDoubleMaxRatio}. Caminho de rotação, decisão e todas as saídas do HMM
-coincidem exatamente. Em float32, que é o build do microcontrolador, passam {VEqFloatStagesPass} de
-{VEqStagesTotal} verificações. A exceção é o z-score, que falha em {VEqFloatZFail} de {VEqCases}
-janelas, ambas o caso de borda sintético de nível constante com ruído (uma por modelo:
-{VEqFloatTieCaseIds}). Ali o envelope é quase constante e o espectro de Welch tem dois picos cujas
-potências na referência diferem de {VEqFloatTieGap} (tolerância de empate {VEqFloatTieTol}); o C
-escolhe o outro pico, a feature de frequência de modulação muda {VEqFloatFmodErr} Hz e o z-score,
-cuja tolerância é propagada das features e não herda a exceção de empate, falha (erro máximo
-{VEqFloatZErrMax}). Cossenos, probabilidades e decisão passam em todas as janelas
-({VEqFloatDecisionPass} de {VEqCases}). Com a variante nomeada `p11_c_sosd`, as {VEqSosdStagesPass}
-verificações passam; ela reduz o erro do envelope dizimado (máximo relativo ao pico, mediana entre
+coincidem exatamente. Em float32, que é o build do microcontrolador, as {VEqFloatRealAllPass} de
+{VEqRealCases} janelas de áudio real (limpas e ruidosas) passam em todas as etapas. As falhas
+restantes estão em {VEqFloatBadCases} janelas, ambas o caso de borda sintético de nível constante
+com ruído (uma por modelo: {VEqFloatTieCaseIds}). Ali o envelope é quase constante e o espectro de
+modulação fica no piso de arredondamento do float32 nas duas implementações, de modo que a posição
+do pico é indeterminada nessa precisão: o pico da referência vale {VEqDcRefPeakRatio} vezes a
+potência da referência no bin escolhido pelo C, então não é empate. A frequência de modulação muda
+{VEqFloatFmodErr} Hz. Sob a regra congelada o comparador marcou PASS_EMPATE em `env_mod` e
+`features` e FAIL em `z`; adotamos a leitura conservadora e contamos as três etapas
+({VEqFloatStrictFailStages}) como FAIL nesses casos, o que deixa {VEqFloatStagesPassStrict} de
+{VEqStagesTotal} etapas passando em todas as janelas (erro máximo de z {VEqFloatZErrMax}). As
+tolerâncias e o comparador não foram alterados. Cossenos, probabilidades e decisão passam em
+todas as janelas ({VEqFloatDecisionPass} de {VEqCases}). Com a variante nomeada `p11_c_sosd`, as
+{VEqSosdStagesPass} verificações passam; ela reduz o erro do envelope dizimado (máximo relativo ao pico, mediana entre
 janelas) de {VEqEnvDecFloatMed} para {VEqEnvDecSosdMed}, porque os polos do passa-baixa ficam perto
 do círculo unitário e o arredondamento em float32 se acumula no estado do filtro. A afirmação que os
-dados sustentam é concordância etapa a etapa dentro das tolerâncias pré-registradas, com a exceção
-acima; não é equivalência incondicional. A mesma comparação no chip está pendente
-({VChipEqStagesPass} de {VChipEqStages} etapas; decisão {VChipEqDecisionPass}), e a auditoria
-independente (agente F) também.
+dados sustentam é concordância etapa a etapa dentro de tolerâncias congeladas antes da comparação
+formal, com a exceção acima; não é equivalência incondicional. A auditoria independente (agente F)
+reproduziu a comparação a partir de um build limpo, e as correções dela estão aplicadas aqui. A
+mesma comparação no chip está pendente ({VChipEqStagesPass} de {VChipEqStages} etapas; decisão
+{VChipEqDecisionPass}) e não foi coberta pela auditoria.
 
 ## Custo
 
@@ -166,10 +181,12 @@ A estimativa analítica da arena em float32 é {VEstWsFloatThreeMb} MB para {VPa
 {VEstWsFloatOneMb} MB para {VParSegBldc} s ({VEstWsFloatThreeNoTabMb} e {VEstWsFloatOneNoTabMb} MB
 sem a tabela de interpolação harmônica, que ocupa {VEstHarmTableMb} MB); os buffers do Hilbert
 dominam (fase do envelope = {VEstWsFloatThreePhaseBPct} % do total em {VParSegIdmt} s). Em double
-seriam {VEstWsDoubleThreeMb} e {VEstWsDoubleOneMb} MB. Isso é {VBuildEspsWsRatio} e
-{VBuildEspsWsRatioOne} vezes a região DIRAM interna que o build reporta para o ESP32-S3
-({VBuildEspsDramTotalKb} KiB), e {VBuildEspWsRatio} e {VBuildEspWsRatioOne} vezes a DRAM do ESP32
-({VBuildEspDramTotalKb} KiB): a referência exige PSRAM, e qualquer redução (Hilbert por blocos,
+seriam {VEstWsDoubleThreeMb} e {VEstWsDoubleOneMb} MB. Numa unidade só, a arena
+({VEstWsFloatThreeKib} e {VEstWsFloatOneKib} KiB) é pelo menos {VBuildEspsWsRatio} e
+{VBuildEspsWsRatioOne} vezes a região DIRAM interna inteira que o build reporta para o ESP32-S3
+({VBuildEspsDramTotalKb} KiB, dos quais só {VBuildEspsDramFreeKib} KiB sobram depois da alocação
+estática; a IRAM do S3 está {VBuildEspsIramPct} % usada), e {VBuildEspWsRatio} e
+{VBuildEspWsRatioOne} vezes a DRAM do ESP32 ({VBuildEspDramTotalKb} KiB): a referência exige PSRAM, e qualquer redução (Hilbert por blocos,
 tabelas menores) muda a aritmética e teria de ser verificada como variante nomeada. No build do
 firmware, a imagem ocupa {VBuildEspBinKb} KiB (ESP32, {VBuildEspBinPct} % da partição) e
 {VBuildEspsBinKb} KiB (ESP32-S3, {VBuildEspsBinPct} %); o uso estático de RAM interna é
@@ -199,23 +216,32 @@ motor fora, todos caem: as clássicas para {VDiagBalClsBldcMotor} e a p11 para
 {VDiagBalDecBldcMotor}, com sensibilidade de Bearing {VDiagRecDecBldcMotorBearing} por construção.
 Sem o fold do M4 (Healthy × Propeller em motor não visto), as clássicas ficam em
 {VDiagBalClsBldcNoMfour}, o nível com RMS normalizado em {VDiagBalRmsNormBldcNoMfour} e a p11 em
-{VDiagBalDecBldcNoMfour}. A p11 não supera as features clássicas em nenhum protocolo e, com motor
-fora, fica abaixo também do baseline de nível. ROC-AUC macro da p11 por arquivo:
-{VDiagAucDecBldcFile}; das clássicas: {VDiagAucClsBldcFile}.
+{VDiagBalDecBldcNoMfour}. Comparando igual por igual (Healthy e Propeller dos motores M1–M3 no
+split por arquivo: clássicas {VDiagBalClsBldcFileHP}, p11 {VDiagBalDecBldcFileHP}, nível com RMS
+normalizado {VDiagBalRmsNormBldcFileHP}), tirar o motor custa {VDiagDropHPClsBldc} às clássicas e
+{VDiagDropHPDecBldc} à p11; a queda grande do protocolo de motor fora completo vem sobretudo da
+classe Bearing, que perde o seu único motor de treino. A p11 não supera as features clássicas em
+nenhum protocolo (empata no teto do IDMT) e, com motor fora, a estimativa pontual dela fica abaixo
+também do baseline de nível, com intervalos sobrepostos. ROC-AUC macro da p11 por arquivo:
+{VDiagAucDecBldcFile}; das clássicas: {VDiagAucClsBldcFile}. No protocolo de motor fora a AUC junta
+scores de modelos de folds diferentes e, no fold do M4, p_Bearing = 0 é imposto; por isso não a
+usamos para ordenar métodos. Em toda linha com Bearing, a classe está confundida com o motor M4.
 
 ## Rotação estimada (interpretabilidade)
 
 No IDMT a rotação mediana rastreada é {VRotIdmtGoodMed}, {VRotIdmtBrokenMed} e {VRotIdmtHeavyMed}
 Hz para good, broken e heavyload, com IQR de {VRotIdmtGoodIqr}, {VRotIdmtBrokenIqr} e
 {VRotIdmtHeavyIqr} Hz; {VRotIdmtGoodOctPct} % das janelas good ficam acima de {VRotOctThr} vezes a
-mediana da classe, um erro do tipo oitava. Como classe = motor no IDMT, essas diferenças não podem
-ser atribuídas ao estado. No A2212 a rotação rastreada não acompanha a velocidade que dá nome aos
-arquivos: a correlação de postos entre a mediana por arquivo e esse rótulo é {VRotBldcSpearman} nos
-{VDataBldcRecordings} arquivos (por motor: M1 {VRotBldcSpearmanMOne}, M2 {VRotBldcSpearmanMTwo}, M3
-{VRotBldcSpearmanMThree}, M4 {VRotBldcSpearmanMFour}; {VRotBldcFilesMOne}, {VRotBldcFilesMTwo},
-{VRotBldcFilesMThree} e {VRotBldcFilesMFour} arquivos), e {VRotBldcCeilPct} % das janelas ficam a
-menos de {VRotCeilPctThr} % do limite superior da faixa. A faixa foi escolhida no IDMT; no A2212 a
-saída do rastreador não deve ser lida como a velocidade do eixo. Arquivos do mesmo motor não são
+mediana da classe (todas entre {VRotOctRatioMin} e {VRotOctRatioMax} vezes), um erro de oitava.
+Como classe = motor no IDMT, essas diferenças não podem ser atribuídas ao estado. No A2212, juntando
+os {VDataBldcRecordings} arquivos, a correlação de postos entre a mediana por arquivo e a velocidade
+que dá nome aos arquivos é {VRotBldcSpearman}, mas dentro de cada motor ela é positiva (M1
+{VRotBldcSpearmanMOne}, M2 {VRotBldcSpearmanMTwo}, M3 {VRotBldcSpearmanMThree}, M4
+{VRotBldcSpearmanMFour}; {VRotBldcFilesMOne}, {VRotBldcFilesMTwo}, {VRotBldcFilesMThree} e
+{VRotBldcFilesMFour} arquivos): o valor global perto de zero vem de diferenças de nível entre
+motores (efeito de Simpson). O nível absoluto não é comparável entre motores e {VRotBldcCeilPct} %
+das janelas ficam a menos de {VRotCeilPctThr} % do limite superior da faixa. A faixa e a grade foram
+escolhidas no IDMT; no A2212 a saída do rastreador não deve ser lida como a velocidade do eixo. Arquivos do mesmo motor não são
 independentes, então a correlação é descritiva.
 
 ## Decisão em fluxo
@@ -236,8 +262,10 @@ um motor novo é a pergunta relevante para um monitor implantado, e com {VDataBl
 um defeito de rolamento num só deles e faixas de velocidade diferentes por classe, os dados só
 mostram que todo método piora. Nenhum experimento trata de predição de falha futura e nenhum usa
 motores industriais. Nos nossos dados o split aleatório inflou pouco a acurácia do A2212
-({VDiagInflClsBldc} a {VDiagInflDecBldc}), enquanto tirar o motor custou {VDiagDropClsBldc} às
-clássicas e {VDiagDropDecBldc} à p11.
+({VDiagInflClsBldc} a {VDiagInflDecBldc}), e tirar o motor, igual por igual em Healthy × Propeller,
+custou um valor parecido ({VDiagDropHPClsBldc} às clássicas, {VDiagDropHPDecBldc} à p11); a queda
+de {VDiagDropClsBldc} e {VDiagDropDecBldc} do protocolo de motor fora completo é dominada pela
+classe Bearing, que só existe no M4.
 """
 
 

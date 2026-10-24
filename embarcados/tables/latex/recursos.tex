@@ -5,7 +5,7 @@
 \centering
 \scriptsize
 \setlength{\tabcolsep}{4pt}
-\caption{Resources, separated by evidence category. (1) analytical estimate (\texttt{p11\_host ws}, same layout function as the arena); (2) measured on the PC (Windows 11, MSVC 19.44 x64 \slash{}O2 \slash{}fp:precise; 200 timed windows per dataset after 5 warm-up); (3) firmware build, \texttt{idf.py size} (ESP-IDF v5.5.6), static only; (4) measured on the ESP32. Only column (4) is a measurement on the microcontroller.}
+\caption{Resources, separated by evidence category. (1) analytical estimate (\texttt{p11\_host ws}, same layout function as the arena); (2) measured on the PC (Windows 11, MSVC 19.44 x64 \slash{}O2 \slash{}fp:precise; 200 measurements per dataset cycling over 75 distinct windows after 5 warm-up; the C executable runs as a new process per window and its time excludes the workspace initialisation, which the Python timing cannot exclude); (3) firmware build, \texttt{idf.py size} (ESP-IDF v5.5.6), static only; (4) measured on the ESP32. Only column (4) is a measurement on the microcontroller.}
 \label{tab:resources}
 \begin{tabular}{@{}lllll@{}}
 \toprule

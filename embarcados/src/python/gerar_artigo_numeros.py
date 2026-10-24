@@ -567,6 +567,95 @@ def escrever(R, chip_medido):
                                                      default=float), encoding="utf-8")
 
 
+# ------------------------------------------------------------------ 10. correções da auditoria F
+def _vetor(pasta, etapa):
+    d = C.ler_json(pasta / "etapas.json")[etapa]
+    return np.fromfile(pasta / d["arquivo"], dtype={"float32": "<f4", "float64": "<f8",
+                                                    "int32": "<i4"}[d["dtype"]])
+
+
+def auditoria(R):
+    """M1 (leitura conservadora dos 2 casos DC), M3 (queda igual por igual), m4, m7.
+
+    M1: o comparador congelado marcou PASS_EMPATE em env_mod/features e FAIL em z. Recalculamos o
+    critério do auditor: P_ref no bin escolhido pela referência × P_ref no bin escolhido pelo C. Se a
+    razão não for ~1, não é empate, e o artigo conta env_mod, features e z como FAIL nesses casos.
+    """
+    fres = C.mais_recente(C.RES / "csv", "equivalencia_resumo_por_build_*.csv")
+    meta = C.ler_json(fres.with_name(fres.stem + "_meta.json"))["fontes"]
+    ff = C.RES / "csv" / meta["float"]["csv"]
+    D = pd.read_csv(ff)
+    casos = D[D.tipo_item == "caso"]
+    nao_pass = casos[casos.status != "PASS"]
+    ids_ruins = sorted(nao_pass.id.unique())
+    R.num("VEqFloatBadCases", len(ids_ruins), ff, "ids com status != PASS (casos)", "equivalencia", 0)
+    R.num("VEqFloatBadAreEdge", int((nao_pass.tipo_caso == "borda").all()), ff,
+          "todos os ids != PASS são borda (1=sim)", "equivalencia", 0)
+    reais = casos[casos.tipo_caso != "borda"]
+    ok_reais = reais.groupby("id").status.apply(lambda s: bool((s == "PASS").all()))
+    R.num("VEqRealCases", len(ok_reais), ff, "nº de casos limpos+ruidosos", "equivalencia", 0)
+    R.num("VEqFloatRealAllPass", int(ok_reais.sum()), ff,
+          "casos limpos+ruidosos com PASS em todas as etapas (float)", "equivalencia", 0)
+    # etapas com veredito estrito (PASS_EMPATE conta como FAIL)
+    S = pd.read_csv(fres)
+    for b, nm in (("double", "Double"), ("float", "Float"), ("float-sosd", "Sosd")):
+        s = S[S.build == b]
+        R.num(f"VEq{nm}StagesPassStrict", int(((s.fail == 0) & (s.pass_empate == 0)).sum()), fres,
+              f"etapas sem FAIL e sem PASS_EMPATE ({b})", "equivalencia", 0)
+    s = S[(S.build == "float") & ((S.fail > 0) | (S.pass_empate > 0))]
+    R.txt("VEqFloatStrictFailStages", ", ".join(s.etapa), fres,
+          "etapas com FAIL ou PASS_EMPATE (float)", "equivalencia")
+    R.num("VEqFloatStrictFailN", int((s.fail + s.pass_empate).max()), fres,
+          "casos afetados por etapa (máx de fail+pass_empate)", "equivalencia", 0)
+    # critério do auditor nos vetores (ouro × saída do C float)
+    razoes, razoes_c = [], []
+    fontes = [ff]
+    for cid in ids_ruins:
+        g = C.EMB / "gold" / "casos" / cid
+        c = C.RES / "c_out" / "float" / "casos" / cid
+        f = _vetor(g, "welch_f")
+        Pr, Pc = _vetor(g, "welch_P").astype(float), _vetor(c, "welch_P").astype(float)
+        m = np.where((f >= 2) & (f <= 100))[0]
+        ir, ic = m[np.argmax(Pr[m])], m[np.argmax(Pc[m])]
+        razoes.append(Pr[ir] / Pr[ic])
+        razoes_c.append(Pc[ic] / Pr[ic])
+        fontes += [g / "welch_P.f64", c / "welch_P.f32"]
+    R.num("VEqDcRefPeakRatio", float(min(razoes)), fontes,
+          "P_ref[bin da ref]/P_ref[bin do C], mínimo nos casos DC (critério do auditor)",
+          "equivalencia", 1)
+    R.num("VEqDcCOverRef", float(min(razoes_c)), fontes,
+          "P_C[bin do C]/P_ref[bin do C], mínimo nos casos DC", "equivalencia", 0)
+    # M3: queda igual por igual (Healthy/Propeller de M1-M3), arquivo × motor sem M4
+    fpred = C.mais_recente(C.RES / "predictions", "diagnostico_janelas_*.csv")
+    P = pd.read_csv(fpred, usecols=["variante", "base", "split", "fold", "classe", "motor", "pred"])
+    P = P[(P.base == "a2212") & P.classe.isin(["Healthy", "Propeller"]) & (P.motor != "M4")]
+    for v, vn in VARS.items():
+        q = P[(P.variante == v) & (P.split == "arquivo")]
+        bal = float(np.mean([np.mean(q[q.classe == k].pred == k) for k in ("Healthy", "Propeller")]))
+        R.num(f"VDiagBal{vn}BldcFileHP", bal, fpred,
+              "acurácia balanceada (Healthy, Propeller) do split arquivo, só M1-M3", "diagnostico", 3)
+        R.num(f"VDiagDropHP{vn}Bldc", bal - R.n[f"VDiagBal{vn}BldcNoMfour"]["valor"], fpred,
+              "Bal[arquivo, H/P, M1-M3] - Bal[motor sem M4]", "diagnostico", 3)
+    # m7: as janelas good acima do limiar estão a quantas vezes a mediana?
+    fft = C.mais_recente(C.RES / "csv", "p11_features_*.csv")
+    F = pd.read_csv(fft)
+    xg = F[(F.base == "idmt") & (F.classe == "good")].f0
+    r = xg[xg > R.n["VRotOctThr"]["valor"] * np.median(xg)] / np.median(xg)
+    R.num("VRotOctRatioMin", float(r.min()), fft, "min f0/mediana entre as janelas acima do limiar",
+          "dados", 2)
+    R.num("VRotOctRatioMax", float(r.max()), fft, "max f0/mediana entre as janelas acima do limiar",
+          "dados", 2)
+    # m4: arena em KiB (uma unidade só) e IRAM do S3
+    for nn, (n, b) in (("Three", (48000, "float")), ("One", (16000, "float"))):
+        f = C.PAPER / "fontes" / f"ws_{b}_{n}.json"
+        R.num(f"VEstWsFloat{nn}Kib", C.ler_json(f)["total_com_tabela"] / 1024, f,
+              "total_com_tabela/1024", "estimativa", 0)
+    d, f = _size("esp32s3")
+    if d is not None:
+        R.num("VBuildEspsIramPct", float(d["IRAM"][1]), f, "IRAM Used [%] (S3)", "build", 0)
+        R.num("VBuildEspsDramFreeKib", int(d["DIRAM"][2]) / 1024, f, "DIRAM Remain/1024", "build", 0)
+
+
 RAIZ_PY = C.RAIZ
 COMMIT = C.commit()
 
@@ -582,6 +671,7 @@ def main():
     pc(R)
     estimativa(R)
     build(R)
+    auditoria(R)
     chip = esp32(R)
     escrever(R, chip)
     pend = [k for k, v in R.n.items() if v["status"] == "pending"]

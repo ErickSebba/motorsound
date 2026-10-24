@@ -49,7 +49,7 @@ def main():
                  "equivalencia_compacta"):
         p = C.TABS / f"{nome}.tex"
         txt = p.read_text(encoding="utf-8")
-        cab = re.search(r"a partir de (\S+)", txt).group(1)
+        cab = re.search(r"a partir de (\S+)", txt).group(1).rstrip(".")
         fontes = [cab] if cab != "embarcados/paper/numeros.json" else todas
         out["tabelas"].append(item(C.rel(p), S_TAB, fontes + ["embarcados/paper/numeros.json"]))
     # tabelas reaproveitadas (geradas por outros scripts)

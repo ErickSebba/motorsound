@@ -262,11 +262,9 @@ def fig_equivalencia_en():
         r = np.array([max(float(s.loc[e, "razao_tol_max"]), 1e-6) for e in etapas])
         ax.bar(x + (j - 1) * w, r, w * 0.95, color=cor[b], label=rot[b], zorder=2)
         for i, e in enumerate(etapas):
-            if s.loc[e, "fail"] > 0:
+            # auditoria F (M1): PASS_EMPATE dos casos DC não é empate real → marcado como F
+            if s.loc[e, "fail"] > 0 or s.loc[e, "pass_empate"] > 0:
                 ax.text(x[i] + (j - 1) * w, r[i] * 2, "F", ha="center", fontsize=5.5,
-                        color=cor[b])
-            elif s.loc[e, "pass_empate"] > 0:
-                ax.text(x[i] + (j - 1) * w, r[i] * 2, "T", ha="center", fontsize=5.5,
                         color=cor[b])
     ax.axhline(1, color="#0b0b0b", lw=0.6, ls="--", zorder=3)
     ax.set_yscale("log")

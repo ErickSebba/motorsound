@@ -1,8 +1,8 @@
 {
- "gerado_em": "2026-10-24T09:49:08",
+ "gerado_em": "2026-10-24T10:17:36",
  "gerado_por": "embarcados/src/python/gerar_artigo_manifesto.py",
  "projeto": {
-  "commit": "9df3b2c280b69b02703d2c61d277e2bdf02cafad",
+  "commit": "8c97c004e43bbe76a61d67f40b0cf358aedaa9e5",
   "sujo": true
  },
  "chip_medido": false,
@@ -24,12 +24,140 @@
    "script": "embarcados/src/python/gerar_artigo_tabelas.py",
    "fontes": [
     {
-     "arquivo": "embarcados/paper/numeros.json",
-     "sha256": "82abbec3edf57c156ff220ebabba152c98e3341cc2efd6adcb25288156a2b85e"
+     "arquivo": "C:/Espressif/build_p11_esp32/size.txt",
+     "sha256": "1833cfe3c6b8ccfa1ba29cdf70b26c2303ebf0e1333dd1acfccbbf5a944fda6d"
     },
     {
-     "arquivo": "embarcados/paper/numeros.json.",
-     "sha256": "82abbec3edf57c156ff220ebabba152c98e3341cc2efd6adcb25288156a2b85e"
+     "arquivo": "C:/Espressif/build_p11_esp32s3/project_description.json",
+     "sha256": "c29aea3ee65ea3ee800ba659e38c1c15ddef418c9246358af63f568ab4cb8fa9"
+    },
+    {
+     "arquivo": "C:/Espressif/build_p11_esp32s3/size.txt",
+     "sha256": "e3046a1fae2ef97b783500d27cfcb9fd17d65d388cafe42fd0a8be9d1be1ce81"
+    },
+    {
+     "arquivo": "embarcados/configs/embedded/tolerancias.json",
+     "sha256": "d74dae800cebfe4d670c33ba2c0a72639ad1e04e95bcbd9a904be13c294c1b5d"
+    },
+    {
+     "arquivo": "embarcados/gold/casos/borda_dc_ruido3s_ma2212/welch_P.f64",
+     "sha256": "fd12e9a5fa88895e8ca13b9aacecfa19f90b4198770d7fde5602289ee894517f"
+    },
+    {
+     "arquivo": "embarcados/gold/casos/borda_dc_ruido3s_midmt/welch_P.f64",
+     "sha256": "fd12e9a5fa88895e8ca13b9aacecfa19f90b4198770d7fde5602289ee894517f"
+    },
+    {
+     "arquivo": "embarcados/gold/manifest.json",
+     "sha256": "a681abee826d5b8ede688d4d67ea159495898ea48e0c131f729d8406437ba876"
+    },
+    {
+     "arquivo": "embarcados/gold/seqs/idmt_seq00/params.json",
+     "sha256": "a50569ecb0951b7b171019e4ccbe89eebd51eff92893532f03a8490dcd38cf78"
+    },
+    {
+     "arquivo": "embarcados/paper/fontes/ws_double_16000.json",
+     "sha256": "3023074d0581ae3a1103bb5b42d4704fcb05631eada2a86eecdc1846ad8b293e"
+    },
+    {
+     "arquivo": "embarcados/paper/fontes/ws_double_48000.json",
+     "sha256": "dc2a3113667b36f99073b7782f28f4e018e1e13f865c3dd63bf97070c05f53f9"
+    },
+    {
+     "arquivo": "embarcados/paper/fontes/ws_float_16000.json",
+     "sha256": "95a67377c7eb2eb4ab886a73da7c0accffb11978a41718e5e942cff74afd01c7"
+    },
+    {
+     "arquivo": "embarcados/paper/fontes/ws_float_48000.json",
+     "sha256": "3d3878646c51b96e1e1ab4c8fd935bb8a069e95c7ec7b95fe3a59ea8e0f5d838"
+    },
+    {
+     "arquivo": "embarcados/paper/numeros.json",
+     "sha256": "0c52f2a794c10d4bb040c725895907fc3a8048cfc6cbb4325e8aa49e37f19a5a"
+    },
+    {
+     "arquivo": "embarcados/results/c_out/float/casos/borda_dc_ruido3s_ma2212/welch_P.f32",
+     "sha256": "842711aa94501c776403c53dba815dcae1c8c1344ae0f2ffd425015c61b6e530"
+    },
+    {
+     "arquivo": "embarcados/results/c_out/float/casos/borda_dc_ruido3s_midmt/welch_P.f32",
+     "sha256": "842711aa94501c776403c53dba815dcae1c8c1344ae0f2ffd425015c61b6e530"
+    },
+    {
+     "arquivo": "embarcados/results/csv/bench_pc_20261024-091911.csv",
+     "sha256": "15ea3f2990bea2c2c39ffb0a256ae2d195e18808d11ae365a3874095fff2ced2"
+    },
+    {
+     "arquivo": "embarcados/results/csv/diagnostico_20261023_222831.csv",
+     "sha256": "83e602a7680c87ae7f429840d4db57c49b80a7f4c1c8e45900005ce7e269a7ff"
+    },
+    {
+     "arquivo": "embarcados/results/csv/diagnostico_20261023_222831_meta.json",
+     "sha256": "6e0879c7cccc78fab5a87687a16b468c6cd6140283d905611271178d98b55775"
+    },
+    {
+     "arquivo": "embarcados/results/csv/equivalencia_double_20261024-091106.csv",
+     "sha256": "0462b21cd040d8987e25988c7b603e2dfc9009f57ec9b9382dda2e1ac4310cf3"
+    },
+    {
+     "arquivo": "embarcados/results/csv/equivalencia_emul_double_20261024-090737_meta.json",
+     "sha256": "e23e090ee472c5a8a1451189a9331ee135b2d9a1516091195c434a0ab471db4a"
+    },
+    {
+     "arquivo": "embarcados/results/csv/equivalencia_emul_float_20261024-090743_meta.json",
+     "sha256": "d46c9c2aa501b61a966d439995c2adeaf961781059bcc096083722e00735ccc9"
+    },
+    {
+     "arquivo": "embarcados/results/csv/equivalencia_float-sosd_20261024-091222.csv",
+     "sha256": "fb79aad99d6e607a132af89358182c74f4eeec2ac31e97410c5fab486e945ce9"
+    },
+    {
+     "arquivo": "embarcados/results/csv/equivalencia_float_20261024-091122.csv",
+     "sha256": "38e87620d895ce26c9c0bbfa5bd0df7af3686607d525235e3fa5c9d287612314"
+    },
+    {
+     "arquivo": "embarcados/results/csv/equivalencia_resumo_por_build_20261024-091729.csv",
+     "sha256": "bc42bdf549e15875a3762c4907610f49a8ff0cb08c2fc10e3fafd5e59d84eb35"
+    },
+    {
+     "arquivo": "embarcados/results/csv/p11_features_20261023_222831.csv",
+     "sha256": "eb64ba855c885bf0ad428487067476095314ec200965130fa606c5ecf3649ef7"
+    },
+    {
+     "arquivo": "embarcados/results/csv/seq_pc_20261024-092103.csv",
+     "sha256": "eaba0cbe2d39af3e1d7f7cbdc8afbbdff87e832a5f8d4d6c636a3995f756a658"
+    },
+    {
+     "arquivo": "embarcados/results/csv/seq_pc_20261024-092103_meta.json",
+     "sha256": "2be9a1842106537bbc699026c93bc96c024c98a8f36618cd5a470f0df8d59ee8"
+    },
+    {
+     "arquivo": "embarcados/results/manifests/bancada.json",
+     "sha256": null
+    },
+    {
+     "arquivo": "embarcados/results/metrics/bench_pc_20261024-091911.json",
+     "sha256": "c119b18fff7eb6b4c1e208ada15b9204bea9cb2c001931dd910203671ab602cd"
+    },
+    {
+     "arquivo": "embarcados/results/predictions/diagnostico_janelas_20261023_222831.csv",
+     "sha256": "6426a95a9ceb73ad3e4a9f4a8d83f8194a3ce6b7d1605c0bfdd151384454102b"
+    },
+    {
+     "arquivo": "motorsound/config.py",
+     "sha256": "533b6f9cb12228d8c2fcf492b48c5d1950d0e4cf71fac47b4e4573ea86f9e56f"
+    },
+    {
+     "arquivo": "motorsound/rotacao.py",
+     "sha256": "45715cbb50101879834b020a01c9fd48bb888e0c6f086b063b35c1f75efe63a9"
+    },
+    {
+     "arquivo": "pipelines/_classicas.py",
+     "sha256": "1b759d56815a2760579fde90f43271a739211d9cf931f6419b583f92bf8d8623"
+    },
+    {
+     "arquivo": "pipelines/_decifrae.py",
+     "sha256": "d40385a87dd38c5b010180386f12bc078daeae33c56fc26e7f19455a0a30e7e2"
     }
    ]
   },
@@ -40,56 +168,440 @@
    "script": "embarcados/src/python/gerar_artigo_tabelas.py",
    "fontes": [
     {
-     "arquivo": "embarcados/paper/numeros.json",
-     "sha256": "82abbec3edf57c156ff220ebabba152c98e3341cc2efd6adcb25288156a2b85e"
+     "arquivo": "C:/Espressif/build_p11_esp32/size.txt",
+     "sha256": "1833cfe3c6b8ccfa1ba29cdf70b26c2303ebf0e1333dd1acfccbbf5a944fda6d"
     },
     {
-     "arquivo": "embarcados/paper/numeros.json.",
-     "sha256": "82abbec3edf57c156ff220ebabba152c98e3341cc2efd6adcb25288156a2b85e"
+     "arquivo": "C:/Espressif/build_p11_esp32s3/project_description.json",
+     "sha256": "c29aea3ee65ea3ee800ba659e38c1c15ddef418c9246358af63f568ab4cb8fa9"
+    },
+    {
+     "arquivo": "C:/Espressif/build_p11_esp32s3/size.txt",
+     "sha256": "e3046a1fae2ef97b783500d27cfcb9fd17d65d388cafe42fd0a8be9d1be1ce81"
+    },
+    {
+     "arquivo": "embarcados/configs/embedded/tolerancias.json",
+     "sha256": "d74dae800cebfe4d670c33ba2c0a72639ad1e04e95bcbd9a904be13c294c1b5d"
+    },
+    {
+     "arquivo": "embarcados/gold/casos/borda_dc_ruido3s_ma2212/welch_P.f64",
+     "sha256": "fd12e9a5fa88895e8ca13b9aacecfa19f90b4198770d7fde5602289ee894517f"
+    },
+    {
+     "arquivo": "embarcados/gold/casos/borda_dc_ruido3s_midmt/welch_P.f64",
+     "sha256": "fd12e9a5fa88895e8ca13b9aacecfa19f90b4198770d7fde5602289ee894517f"
+    },
+    {
+     "arquivo": "embarcados/gold/manifest.json",
+     "sha256": "a681abee826d5b8ede688d4d67ea159495898ea48e0c131f729d8406437ba876"
+    },
+    {
+     "arquivo": "embarcados/gold/seqs/idmt_seq00/params.json",
+     "sha256": "a50569ecb0951b7b171019e4ccbe89eebd51eff92893532f03a8490dcd38cf78"
+    },
+    {
+     "arquivo": "embarcados/paper/fontes/ws_double_16000.json",
+     "sha256": "3023074d0581ae3a1103bb5b42d4704fcb05631eada2a86eecdc1846ad8b293e"
+    },
+    {
+     "arquivo": "embarcados/paper/fontes/ws_double_48000.json",
+     "sha256": "dc2a3113667b36f99073b7782f28f4e018e1e13f865c3dd63bf97070c05f53f9"
+    },
+    {
+     "arquivo": "embarcados/paper/fontes/ws_float_16000.json",
+     "sha256": "95a67377c7eb2eb4ab886a73da7c0accffb11978a41718e5e942cff74afd01c7"
+    },
+    {
+     "arquivo": "embarcados/paper/fontes/ws_float_48000.json",
+     "sha256": "3d3878646c51b96e1e1ab4c8fd935bb8a069e95c7ec7b95fe3a59ea8e0f5d838"
+    },
+    {
+     "arquivo": "embarcados/paper/numeros.json",
+     "sha256": "0c52f2a794c10d4bb040c725895907fc3a8048cfc6cbb4325e8aa49e37f19a5a"
+    },
+    {
+     "arquivo": "embarcados/results/c_out/float/casos/borda_dc_ruido3s_ma2212/welch_P.f32",
+     "sha256": "842711aa94501c776403c53dba815dcae1c8c1344ae0f2ffd425015c61b6e530"
+    },
+    {
+     "arquivo": "embarcados/results/c_out/float/casos/borda_dc_ruido3s_midmt/welch_P.f32",
+     "sha256": "842711aa94501c776403c53dba815dcae1c8c1344ae0f2ffd425015c61b6e530"
+    },
+    {
+     "arquivo": "embarcados/results/csv/bench_pc_20261024-091911.csv",
+     "sha256": "15ea3f2990bea2c2c39ffb0a256ae2d195e18808d11ae365a3874095fff2ced2"
+    },
+    {
+     "arquivo": "embarcados/results/csv/diagnostico_20261023_222831.csv",
+     "sha256": "83e602a7680c87ae7f429840d4db57c49b80a7f4c1c8e45900005ce7e269a7ff"
+    },
+    {
+     "arquivo": "embarcados/results/csv/diagnostico_20261023_222831_meta.json",
+     "sha256": "6e0879c7cccc78fab5a87687a16b468c6cd6140283d905611271178d98b55775"
+    },
+    {
+     "arquivo": "embarcados/results/csv/equivalencia_double_20261024-091106.csv",
+     "sha256": "0462b21cd040d8987e25988c7b603e2dfc9009f57ec9b9382dda2e1ac4310cf3"
+    },
+    {
+     "arquivo": "embarcados/results/csv/equivalencia_emul_double_20261024-090737_meta.json",
+     "sha256": "e23e090ee472c5a8a1451189a9331ee135b2d9a1516091195c434a0ab471db4a"
+    },
+    {
+     "arquivo": "embarcados/results/csv/equivalencia_emul_float_20261024-090743_meta.json",
+     "sha256": "d46c9c2aa501b61a966d439995c2adeaf961781059bcc096083722e00735ccc9"
+    },
+    {
+     "arquivo": "embarcados/results/csv/equivalencia_float-sosd_20261024-091222.csv",
+     "sha256": "fb79aad99d6e607a132af89358182c74f4eeec2ac31e97410c5fab486e945ce9"
+    },
+    {
+     "arquivo": "embarcados/results/csv/equivalencia_float_20261024-091122.csv",
+     "sha256": "38e87620d895ce26c9c0bbfa5bd0df7af3686607d525235e3fa5c9d287612314"
+    },
+    {
+     "arquivo": "embarcados/results/csv/equivalencia_resumo_por_build_20261024-091729.csv",
+     "sha256": "bc42bdf549e15875a3762c4907610f49a8ff0cb08c2fc10e3fafd5e59d84eb35"
+    },
+    {
+     "arquivo": "embarcados/results/csv/p11_features_20261023_222831.csv",
+     "sha256": "eb64ba855c885bf0ad428487067476095314ec200965130fa606c5ecf3649ef7"
+    },
+    {
+     "arquivo": "embarcados/results/csv/seq_pc_20261024-092103.csv",
+     "sha256": "eaba0cbe2d39af3e1d7f7cbdc8afbbdff87e832a5f8d4d6c636a3995f756a658"
+    },
+    {
+     "arquivo": "embarcados/results/csv/seq_pc_20261024-092103_meta.json",
+     "sha256": "2be9a1842106537bbc699026c93bc96c024c98a8f36618cd5a470f0df8d59ee8"
+    },
+    {
+     "arquivo": "embarcados/results/manifests/bancada.json",
+     "sha256": null
+    },
+    {
+     "arquivo": "embarcados/results/metrics/bench_pc_20261024-091911.json",
+     "sha256": "c119b18fff7eb6b4c1e208ada15b9204bea9cb2c001931dd910203671ab602cd"
+    },
+    {
+     "arquivo": "embarcados/results/predictions/diagnostico_janelas_20261023_222831.csv",
+     "sha256": "6426a95a9ceb73ad3e4a9f4a8d83f8194a3ce6b7d1605c0bfdd151384454102b"
+    },
+    {
+     "arquivo": "motorsound/config.py",
+     "sha256": "533b6f9cb12228d8c2fcf492b48c5d1950d0e4cf71fac47b4e4573ea86f9e56f"
+    },
+    {
+     "arquivo": "motorsound/rotacao.py",
+     "sha256": "45715cbb50101879834b020a01c9fd48bb888e0c6f086b063b35c1f75efe63a9"
+    },
+    {
+     "arquivo": "pipelines/_classicas.py",
+     "sha256": "1b759d56815a2760579fde90f43271a739211d9cf931f6419b583f92bf8d8623"
+    },
+    {
+     "arquivo": "pipelines/_decifrae.py",
+     "sha256": "d40385a87dd38c5b010180386f12bc078daeae33c56fc26e7f19455a0a30e7e2"
     }
    ]
   },
   {
    "arquivo": "embarcados/tables/latex/recursos.tex",
-   "sha256": "017adcf8fd67a59b34b768b91ed6236e4b065e6cffae318f2be68f4988ed7ff5",
+   "sha256": "d894b116456680700a3573e79bf788abc86264d4b8916bc49bbe63b14acfa0f5",
    "existe": true,
    "script": "embarcados/src/python/gerar_artigo_tabelas.py",
    "fontes": [
     {
-     "arquivo": "embarcados/paper/numeros.json",
-     "sha256": "82abbec3edf57c156ff220ebabba152c98e3341cc2efd6adcb25288156a2b85e"
+     "arquivo": "C:/Espressif/build_p11_esp32/size.txt",
+     "sha256": "1833cfe3c6b8ccfa1ba29cdf70b26c2303ebf0e1333dd1acfccbbf5a944fda6d"
     },
     {
-     "arquivo": "embarcados/paper/numeros.json.",
-     "sha256": "82abbec3edf57c156ff220ebabba152c98e3341cc2efd6adcb25288156a2b85e"
+     "arquivo": "C:/Espressif/build_p11_esp32s3/project_description.json",
+     "sha256": "c29aea3ee65ea3ee800ba659e38c1c15ddef418c9246358af63f568ab4cb8fa9"
+    },
+    {
+     "arquivo": "C:/Espressif/build_p11_esp32s3/size.txt",
+     "sha256": "e3046a1fae2ef97b783500d27cfcb9fd17d65d388cafe42fd0a8be9d1be1ce81"
+    },
+    {
+     "arquivo": "embarcados/configs/embedded/tolerancias.json",
+     "sha256": "d74dae800cebfe4d670c33ba2c0a72639ad1e04e95bcbd9a904be13c294c1b5d"
+    },
+    {
+     "arquivo": "embarcados/gold/casos/borda_dc_ruido3s_ma2212/welch_P.f64",
+     "sha256": "fd12e9a5fa88895e8ca13b9aacecfa19f90b4198770d7fde5602289ee894517f"
+    },
+    {
+     "arquivo": "embarcados/gold/casos/borda_dc_ruido3s_midmt/welch_P.f64",
+     "sha256": "fd12e9a5fa88895e8ca13b9aacecfa19f90b4198770d7fde5602289ee894517f"
+    },
+    {
+     "arquivo": "embarcados/gold/manifest.json",
+     "sha256": "a681abee826d5b8ede688d4d67ea159495898ea48e0c131f729d8406437ba876"
+    },
+    {
+     "arquivo": "embarcados/gold/seqs/idmt_seq00/params.json",
+     "sha256": "a50569ecb0951b7b171019e4ccbe89eebd51eff92893532f03a8490dcd38cf78"
+    },
+    {
+     "arquivo": "embarcados/paper/fontes/ws_double_16000.json",
+     "sha256": "3023074d0581ae3a1103bb5b42d4704fcb05631eada2a86eecdc1846ad8b293e"
+    },
+    {
+     "arquivo": "embarcados/paper/fontes/ws_double_48000.json",
+     "sha256": "dc2a3113667b36f99073b7782f28f4e018e1e13f865c3dd63bf97070c05f53f9"
+    },
+    {
+     "arquivo": "embarcados/paper/fontes/ws_float_16000.json",
+     "sha256": "95a67377c7eb2eb4ab886a73da7c0accffb11978a41718e5e942cff74afd01c7"
+    },
+    {
+     "arquivo": "embarcados/paper/fontes/ws_float_48000.json",
+     "sha256": "3d3878646c51b96e1e1ab4c8fd935bb8a069e95c7ec7b95fe3a59ea8e0f5d838"
+    },
+    {
+     "arquivo": "embarcados/paper/numeros.json",
+     "sha256": "0c52f2a794c10d4bb040c725895907fc3a8048cfc6cbb4325e8aa49e37f19a5a"
+    },
+    {
+     "arquivo": "embarcados/results/c_out/float/casos/borda_dc_ruido3s_ma2212/welch_P.f32",
+     "sha256": "842711aa94501c776403c53dba815dcae1c8c1344ae0f2ffd425015c61b6e530"
+    },
+    {
+     "arquivo": "embarcados/results/c_out/float/casos/borda_dc_ruido3s_midmt/welch_P.f32",
+     "sha256": "842711aa94501c776403c53dba815dcae1c8c1344ae0f2ffd425015c61b6e530"
+    },
+    {
+     "arquivo": "embarcados/results/csv/bench_pc_20261024-091911.csv",
+     "sha256": "15ea3f2990bea2c2c39ffb0a256ae2d195e18808d11ae365a3874095fff2ced2"
+    },
+    {
+     "arquivo": "embarcados/results/csv/diagnostico_20261023_222831.csv",
+     "sha256": "83e602a7680c87ae7f429840d4db57c49b80a7f4c1c8e45900005ce7e269a7ff"
+    },
+    {
+     "arquivo": "embarcados/results/csv/diagnostico_20261023_222831_meta.json",
+     "sha256": "6e0879c7cccc78fab5a87687a16b468c6cd6140283d905611271178d98b55775"
+    },
+    {
+     "arquivo": "embarcados/results/csv/equivalencia_double_20261024-091106.csv",
+     "sha256": "0462b21cd040d8987e25988c7b603e2dfc9009f57ec9b9382dda2e1ac4310cf3"
+    },
+    {
+     "arquivo": "embarcados/results/csv/equivalencia_emul_double_20261024-090737_meta.json",
+     "sha256": "e23e090ee472c5a8a1451189a9331ee135b2d9a1516091195c434a0ab471db4a"
+    },
+    {
+     "arquivo": "embarcados/results/csv/equivalencia_emul_float_20261024-090743_meta.json",
+     "sha256": "d46c9c2aa501b61a966d439995c2adeaf961781059bcc096083722e00735ccc9"
+    },
+    {
+     "arquivo": "embarcados/results/csv/equivalencia_float-sosd_20261024-091222.csv",
+     "sha256": "fb79aad99d6e607a132af89358182c74f4eeec2ac31e97410c5fab486e945ce9"
+    },
+    {
+     "arquivo": "embarcados/results/csv/equivalencia_float_20261024-091122.csv",
+     "sha256": "38e87620d895ce26c9c0bbfa5bd0df7af3686607d525235e3fa5c9d287612314"
+    },
+    {
+     "arquivo": "embarcados/results/csv/equivalencia_resumo_por_build_20261024-091729.csv",
+     "sha256": "bc42bdf549e15875a3762c4907610f49a8ff0cb08c2fc10e3fafd5e59d84eb35"
+    },
+    {
+     "arquivo": "embarcados/results/csv/p11_features_20261023_222831.csv",
+     "sha256": "eb64ba855c885bf0ad428487067476095314ec200965130fa606c5ecf3649ef7"
+    },
+    {
+     "arquivo": "embarcados/results/csv/seq_pc_20261024-092103.csv",
+     "sha256": "eaba0cbe2d39af3e1d7f7cbdc8afbbdff87e832a5f8d4d6c636a3995f756a658"
+    },
+    {
+     "arquivo": "embarcados/results/csv/seq_pc_20261024-092103_meta.json",
+     "sha256": "2be9a1842106537bbc699026c93bc96c024c98a8f36618cd5a470f0df8d59ee8"
+    },
+    {
+     "arquivo": "embarcados/results/manifests/bancada.json",
+     "sha256": null
+    },
+    {
+     "arquivo": "embarcados/results/metrics/bench_pc_20261024-091911.json",
+     "sha256": "c119b18fff7eb6b4c1e208ada15b9204bea9cb2c001931dd910203671ab602cd"
+    },
+    {
+     "arquivo": "embarcados/results/predictions/diagnostico_janelas_20261023_222831.csv",
+     "sha256": "6426a95a9ceb73ad3e4a9f4a8d83f8194a3ce6b7d1605c0bfdd151384454102b"
+    },
+    {
+     "arquivo": "motorsound/config.py",
+     "sha256": "533b6f9cb12228d8c2fcf492b48c5d1950d0e4cf71fac47b4e4573ea86f9e56f"
+    },
+    {
+     "arquivo": "motorsound/rotacao.py",
+     "sha256": "45715cbb50101879834b020a01c9fd48bb888e0c6f086b063b35c1f75efe63a9"
+    },
+    {
+     "arquivo": "pipelines/_classicas.py",
+     "sha256": "1b759d56815a2760579fde90f43271a739211d9cf931f6419b583f92bf8d8623"
+    },
+    {
+     "arquivo": "pipelines/_decifrae.py",
+     "sha256": "d40385a87dd38c5b010180386f12bc078daeae33c56fc26e7f19455a0a30e7e2"
     }
    ]
   },
   {
    "arquivo": "embarcados/tables/latex/desempenho_compacto.tex",
-   "sha256": "003cb9864d2be78059eb734798c618320189b66e4a48bd8322df6837c6ef3848",
+   "sha256": "2fee86a5edae36182afeb6869e61f162042413e42f01a04b913fb5d763b318e7",
    "existe": true,
    "script": "embarcados/src/python/gerar_artigo_tabelas.py",
    "fontes": [
     {
-     "arquivo": "embarcados/paper/numeros.json",
-     "sha256": "82abbec3edf57c156ff220ebabba152c98e3341cc2efd6adcb25288156a2b85e"
+     "arquivo": "C:/Espressif/build_p11_esp32/size.txt",
+     "sha256": "1833cfe3c6b8ccfa1ba29cdf70b26c2303ebf0e1333dd1acfccbbf5a944fda6d"
     },
     {
-     "arquivo": "embarcados/paper/numeros.json.",
-     "sha256": "82abbec3edf57c156ff220ebabba152c98e3341cc2efd6adcb25288156a2b85e"
+     "arquivo": "C:/Espressif/build_p11_esp32s3/project_description.json",
+     "sha256": "c29aea3ee65ea3ee800ba659e38c1c15ddef418c9246358af63f568ab4cb8fa9"
+    },
+    {
+     "arquivo": "C:/Espressif/build_p11_esp32s3/size.txt",
+     "sha256": "e3046a1fae2ef97b783500d27cfcb9fd17d65d388cafe42fd0a8be9d1be1ce81"
+    },
+    {
+     "arquivo": "embarcados/configs/embedded/tolerancias.json",
+     "sha256": "d74dae800cebfe4d670c33ba2c0a72639ad1e04e95bcbd9a904be13c294c1b5d"
+    },
+    {
+     "arquivo": "embarcados/gold/casos/borda_dc_ruido3s_ma2212/welch_P.f64",
+     "sha256": "fd12e9a5fa88895e8ca13b9aacecfa19f90b4198770d7fde5602289ee894517f"
+    },
+    {
+     "arquivo": "embarcados/gold/casos/borda_dc_ruido3s_midmt/welch_P.f64",
+     "sha256": "fd12e9a5fa88895e8ca13b9aacecfa19f90b4198770d7fde5602289ee894517f"
+    },
+    {
+     "arquivo": "embarcados/gold/manifest.json",
+     "sha256": "a681abee826d5b8ede688d4d67ea159495898ea48e0c131f729d8406437ba876"
+    },
+    {
+     "arquivo": "embarcados/gold/seqs/idmt_seq00/params.json",
+     "sha256": "a50569ecb0951b7b171019e4ccbe89eebd51eff92893532f03a8490dcd38cf78"
+    },
+    {
+     "arquivo": "embarcados/paper/fontes/ws_double_16000.json",
+     "sha256": "3023074d0581ae3a1103bb5b42d4704fcb05631eada2a86eecdc1846ad8b293e"
+    },
+    {
+     "arquivo": "embarcados/paper/fontes/ws_double_48000.json",
+     "sha256": "dc2a3113667b36f99073b7782f28f4e018e1e13f865c3dd63bf97070c05f53f9"
+    },
+    {
+     "arquivo": "embarcados/paper/fontes/ws_float_16000.json",
+     "sha256": "95a67377c7eb2eb4ab886a73da7c0accffb11978a41718e5e942cff74afd01c7"
+    },
+    {
+     "arquivo": "embarcados/paper/fontes/ws_float_48000.json",
+     "sha256": "3d3878646c51b96e1e1ab4c8fd935bb8a069e95c7ec7b95fe3a59ea8e0f5d838"
+    },
+    {
+     "arquivo": "embarcados/paper/numeros.json",
+     "sha256": "0c52f2a794c10d4bb040c725895907fc3a8048cfc6cbb4325e8aa49e37f19a5a"
+    },
+    {
+     "arquivo": "embarcados/results/c_out/float/casos/borda_dc_ruido3s_ma2212/welch_P.f32",
+     "sha256": "842711aa94501c776403c53dba815dcae1c8c1344ae0f2ffd425015c61b6e530"
+    },
+    {
+     "arquivo": "embarcados/results/c_out/float/casos/borda_dc_ruido3s_midmt/welch_P.f32",
+     "sha256": "842711aa94501c776403c53dba815dcae1c8c1344ae0f2ffd425015c61b6e530"
+    },
+    {
+     "arquivo": "embarcados/results/csv/bench_pc_20261024-091911.csv",
+     "sha256": "15ea3f2990bea2c2c39ffb0a256ae2d195e18808d11ae365a3874095fff2ced2"
+    },
+    {
+     "arquivo": "embarcados/results/csv/diagnostico_20261023_222831.csv",
+     "sha256": "83e602a7680c87ae7f429840d4db57c49b80a7f4c1c8e45900005ce7e269a7ff"
+    },
+    {
+     "arquivo": "embarcados/results/csv/diagnostico_20261023_222831_meta.json",
+     "sha256": "6e0879c7cccc78fab5a87687a16b468c6cd6140283d905611271178d98b55775"
+    },
+    {
+     "arquivo": "embarcados/results/csv/equivalencia_double_20261024-091106.csv",
+     "sha256": "0462b21cd040d8987e25988c7b603e2dfc9009f57ec9b9382dda2e1ac4310cf3"
+    },
+    {
+     "arquivo": "embarcados/results/csv/equivalencia_emul_double_20261024-090737_meta.json",
+     "sha256": "e23e090ee472c5a8a1451189a9331ee135b2d9a1516091195c434a0ab471db4a"
+    },
+    {
+     "arquivo": "embarcados/results/csv/equivalencia_emul_float_20261024-090743_meta.json",
+     "sha256": "d46c9c2aa501b61a966d439995c2adeaf961781059bcc096083722e00735ccc9"
+    },
+    {
+     "arquivo": "embarcados/results/csv/equivalencia_float-sosd_20261024-091222.csv",
+     "sha256": "fb79aad99d6e607a132af89358182c74f4eeec2ac31e97410c5fab486e945ce9"
+    },
+    {
+     "arquivo": "embarcados/results/csv/equivalencia_float_20261024-091122.csv",
+     "sha256": "38e87620d895ce26c9c0bbfa5bd0df7af3686607d525235e3fa5c9d287612314"
+    },
+    {
+     "arquivo": "embarcados/results/csv/equivalencia_resumo_por_build_20261024-091729.csv",
+     "sha256": "bc42bdf549e15875a3762c4907610f49a8ff0cb08c2fc10e3fafd5e59d84eb35"
+    },
+    {
+     "arquivo": "embarcados/results/csv/p11_features_20261023_222831.csv",
+     "sha256": "eb64ba855c885bf0ad428487067476095314ec200965130fa606c5ecf3649ef7"
+    },
+    {
+     "arquivo": "embarcados/results/csv/seq_pc_20261024-092103.csv",
+     "sha256": "eaba0cbe2d39af3e1d7f7cbdc8afbbdff87e832a5f8d4d6c636a3995f756a658"
+    },
+    {
+     "arquivo": "embarcados/results/csv/seq_pc_20261024-092103_meta.json",
+     "sha256": "2be9a1842106537bbc699026c93bc96c024c98a8f36618cd5a470f0df8d59ee8"
+    },
+    {
+     "arquivo": "embarcados/results/manifests/bancada.json",
+     "sha256": null
+    },
+    {
+     "arquivo": "embarcados/results/metrics/bench_pc_20261024-091911.json",
+     "sha256": "c119b18fff7eb6b4c1e208ada15b9204bea9cb2c001931dd910203671ab602cd"
+    },
+    {
+     "arquivo": "embarcados/results/predictions/diagnostico_janelas_20261023_222831.csv",
+     "sha256": "6426a95a9ceb73ad3e4a9f4a8d83f8194a3ce6b7d1605c0bfdd151384454102b"
+    },
+    {
+     "arquivo": "motorsound/config.py",
+     "sha256": "533b6f9cb12228d8c2fcf492b48c5d1950d0e4cf71fac47b4e4573ea86f9e56f"
+    },
+    {
+     "arquivo": "motorsound/rotacao.py",
+     "sha256": "45715cbb50101879834b020a01c9fd48bb888e0c6f086b063b35c1f75efe63a9"
+    },
+    {
+     "arquivo": "pipelines/_classicas.py",
+     "sha256": "1b759d56815a2760579fde90f43271a739211d9cf931f6419b583f92bf8d8623"
+    },
+    {
+     "arquivo": "pipelines/_decifrae.py",
+     "sha256": "d40385a87dd38c5b010180386f12bc078daeae33c56fc26e7f19455a0a30e7e2"
     }
    ]
   },
   {
    "arquivo": "embarcados/tables/latex/equivalencia_compacta.tex",
-   "sha256": "32c64615561a888dec79672ff45f05322acd9fd3961161b281e5ce8bb0121d0e",
+   "sha256": "95d8b06be97697137147ebf95ab77798e289dc9242ab32511eb7bf671f70ae3d",
    "existe": true,
    "script": "embarcados/src/python/gerar_artigo_tabelas.py",
    "fontes": [
     {
      "arquivo": "embarcados/paper/numeros.json",
-     "sha256": "82abbec3edf57c156ff220ebabba152c98e3341cc2efd6adcb25288156a2b85e"
+     "sha256": "0c52f2a794c10d4bb040c725895907fc3a8048cfc6cbb4325e8aa49e37f19a5a"
     },
     {
      "arquivo": "embarcados/results/csv/equivalencia_resumo_por_build_20261024-091729.csv",
@@ -137,13 +649,13 @@
  "figuras": [
   {
    "arquivo": "embarcados/figures/pdf/arquitetura.pdf",
-   "sha256": "84238d39153cc79ab0e4b4feb18963912239183ddfd0a56dd701e549a5686f8a",
+   "sha256": "42c90de8fff9343d41fc4dd92125e29c3a50642a760bf1504339bb5f22553bf3",
    "existe": true,
    "script": "embarcados/src/python/gerar_artigo_figuras.py",
    "fontes": [
     {
      "arquivo": "embarcados/paper/numeros.json",
-     "sha256": "82abbec3edf57c156ff220ebabba152c98e3341cc2efd6adcb25288156a2b85e"
+     "sha256": "0c52f2a794c10d4bb040c725895907fc3a8048cfc6cbb4325e8aa49e37f19a5a"
     }
    ],
    "dados_brutos_lidos": []
@@ -156,14 +668,14 @@
    "fontes": [
     {
      "arquivo": "embarcados/paper/numeros.json",
-     "sha256": "82abbec3edf57c156ff220ebabba152c98e3341cc2efd6adcb25288156a2b85e"
+     "sha256": "0c52f2a794c10d4bb040c725895907fc3a8048cfc6cbb4325e8aa49e37f19a5a"
     }
    ],
    "dados_brutos_lidos": []
   },
   {
    "arquivo": "embarcados/figures/pdf/diag_balacc_en_20261023_222831.pdf",
-   "sha256": "ff1fa5872a45737fa683650ba83de22a02625ef1dce9d9b849d379048c559b97",
+   "sha256": "72edde5ad83f9891f4b33590deeb2f4889cb9964909ff3a90315544ef843df86",
    "existe": true,
    "script": "embarcados/src/python/gerar_artigo_figuras.py",
    "fontes": [
@@ -189,7 +701,7 @@
   },
   {
    "arquivo": "embarcados/figures/pdf/diag_confusao_p11_en_20261023_222831.pdf",
-   "sha256": "4407761a5abf9ef0942c00d9ac8999cea608ad3e84d054b520dc52d8d7b5018f",
+   "sha256": "70f8da0d868e728ce5e6fa02cb1081624664c4f0f5c06d434f8194d8d31927a4",
    "existe": true,
    "script": "embarcados/src/python/gerar_artigo_figuras.py",
    "fontes": [
@@ -215,7 +727,7 @@
   },
   {
    "arquivo": "embarcados/figures/pdf/equivalencia_erro_etapas_en.pdf",
-   "sha256": "28595bd90ca3fb77fa6dada236049e6484215d9426613be8f0c6f167f21d3736",
+   "sha256": "4980ebbaf999dea2bf721811ec81fd1bef837fa0d9e185b312ad4895531b4c53",
    "existe": true,
    "script": "embarcados/src/python/gerar_artigo_figuras.py",
    "fontes": [
@@ -228,7 +740,7 @@
   },
   {
    "arquivo": "embarcados/figures/png/equivalencia_erro_etapas_en.png",
-   "sha256": "2f0963b6242a767b441988b4c250a9fa8599fdddbbf8c2ce789108c636e6eb81",
+   "sha256": "3546c27112ca782ea77edfd5db25f6e3dcf32a73933eafee20ea7f351572261b",
    "existe": true,
    "script": "embarcados/src/python/gerar_artigo_figuras.py",
    "fontes": [
@@ -4589,7 +5101,7 @@
    "fontes": [
     {
      "arquivo": "C:/Espressif/build_p11_esp32s3/project_description.json",
-     "sha256": "6dab41c43b43ac6b282dfc85b77f6337fd840c2c7e8690c675ad740a75c14cfc"
+     "sha256": "c29aea3ee65ea3ee800ba659e38c1c15ddef418c9246358af63f568ab4cb8fa9"
     }
    ]
   },
@@ -4602,12 +5114,12 @@
    "fontes": [
     {
      "arquivo": "C:/Espressif/build_p11_esp32s3/project_description.json",
-     "sha256": "6dab41c43b43ac6b282dfc85b77f6337fd840c2c7e8690c675ad740a75c14cfc"
+     "sha256": "c29aea3ee65ea3ee800ba659e38c1c15ddef418c9246358af63f568ab4cb8fa9"
     }
    ]
   },
   "VBuildEspBinKb": {
-   "valor": 208.65625,
+   "valor": 208.703125,
    "status": "ok",
    "categoria": "build",
    "coluna": "binary size (hex)/1024",
@@ -4615,12 +5127,12 @@
    "fontes": [
     {
      "arquivo": "C:/Espressif/build_p11_esp32/size.txt",
-     "sha256": "9369aa4e5736a65c64b8813dcb5768bc217b6ca23c6a9a7984c71567fd4e8b0a"
+     "sha256": "1833cfe3c6b8ccfa1ba29cdf70b26c2303ebf0e1333dd1acfccbbf5a944fda6d"
     }
    ]
   },
   "VBuildEspBinPct": {
-   "valor": 20.3765869140625,
+   "valor": 20.38116455078125,
    "status": "ok",
    "categoria": "build",
    "coluna": "bin/partição app",
@@ -4628,12 +5140,12 @@
    "fontes": [
     {
      "arquivo": "C:/Espressif/build_p11_esp32/size.txt",
-     "sha256": "9369aa4e5736a65c64b8813dcb5768bc217b6ca23c6a9a7984c71567fd4e8b0a"
+     "sha256": "1833cfe3c6b8ccfa1ba29cdf70b26c2303ebf0e1333dd1acfccbbf5a944fda6d"
     }
    ]
   },
   "VBuildEspFlashCodeKb": {
-   "valor": 124.1396484375,
+   "valor": 124.1708984375,
    "status": "ok",
    "categoria": "build",
    "coluna": "Flash Code Used/1024",
@@ -4641,12 +5153,12 @@
    "fontes": [
     {
      "arquivo": "C:/Espressif/build_p11_esp32/size.txt",
-     "sha256": "9369aa4e5736a65c64b8813dcb5768bc217b6ca23c6a9a7984c71567fd4e8b0a"
+     "sha256": "1833cfe3c6b8ccfa1ba29cdf70b26c2303ebf0e1333dd1acfccbbf5a944fda6d"
     }
    ]
   },
   "VBuildEspFlashDataKb": {
-   "valor": 19.1328125,
+   "valor": 19.1484375,
    "status": "ok",
    "categoria": "build",
    "coluna": "Flash Data Used/1024",
@@ -4654,7 +5166,7 @@
    "fontes": [
     {
      "arquivo": "C:/Espressif/build_p11_esp32/size.txt",
-     "sha256": "9369aa4e5736a65c64b8813dcb5768bc217b6ca23c6a9a7984c71567fd4e8b0a"
+     "sha256": "1833cfe3c6b8ccfa1ba29cdf70b26c2303ebf0e1333dd1acfccbbf5a944fda6d"
     }
    ]
   },
@@ -4667,7 +5179,7 @@
    "fontes": [
     {
      "arquivo": "C:/Espressif/build_p11_esp32/size.txt",
-     "sha256": "9369aa4e5736a65c64b8813dcb5768bc217b6ca23c6a9a7984c71567fd4e8b0a"
+     "sha256": "1833cfe3c6b8ccfa1ba29cdf70b26c2303ebf0e1333dd1acfccbbf5a944fda6d"
     }
    ]
   },
@@ -4680,7 +5192,7 @@
    "fontes": [
     {
      "arquivo": "C:/Espressif/build_p11_esp32/size.txt",
-     "sha256": "9369aa4e5736a65c64b8813dcb5768bc217b6ca23c6a9a7984c71567fd4e8b0a"
+     "sha256": "1833cfe3c6b8ccfa1ba29cdf70b26c2303ebf0e1333dd1acfccbbf5a944fda6d"
     }
    ]
   },
@@ -4693,7 +5205,7 @@
    "fontes": [
     {
      "arquivo": "C:/Espressif/build_p11_esp32/size.txt",
-     "sha256": "9369aa4e5736a65c64b8813dcb5768bc217b6ca23c6a9a7984c71567fd4e8b0a"
+     "sha256": "1833cfe3c6b8ccfa1ba29cdf70b26c2303ebf0e1333dd1acfccbbf5a944fda6d"
     }
    ]
   },
@@ -4706,7 +5218,7 @@
    "fontes": [
     {
      "arquivo": "C:/Espressif/build_p11_esp32/size.txt",
-     "sha256": "9369aa4e5736a65c64b8813dcb5768bc217b6ca23c6a9a7984c71567fd4e8b0a"
+     "sha256": "1833cfe3c6b8ccfa1ba29cdf70b26c2303ebf0e1333dd1acfccbbf5a944fda6d"
     }
    ]
   },
@@ -4719,7 +5231,7 @@
    "fontes": [
     {
      "arquivo": "C:/Espressif/build_p11_esp32/size.txt",
-     "sha256": "9369aa4e5736a65c64b8813dcb5768bc217b6ca23c6a9a7984c71567fd4e8b0a"
+     "sha256": "1833cfe3c6b8ccfa1ba29cdf70b26c2303ebf0e1333dd1acfccbbf5a944fda6d"
     }
    ]
   },
@@ -4732,12 +5244,12 @@
    "fontes": [
     {
      "arquivo": "C:/Espressif/build_p11_esp32/size.txt",
-     "sha256": "9369aa4e5736a65c64b8813dcb5768bc217b6ca23c6a9a7984c71567fd4e8b0a"
+     "sha256": "1833cfe3c6b8ccfa1ba29cdf70b26c2303ebf0e1333dd1acfccbbf5a944fda6d"
     }
    ]
   },
   "VBuildEspsBinKb": {
-   "valor": 232.6875,
+   "valor": 232.734375,
    "status": "ok",
    "categoria": "build",
    "coluna": "binary size (hex)/1024",
@@ -4745,12 +5257,12 @@
    "fontes": [
     {
      "arquivo": "C:/Espressif/build_p11_esp32s3/size.txt",
-     "sha256": "ad50f5a002f63a3fbe921066bd41bf8e1046b3723d819a95391685778cfd1f2d"
+     "sha256": "e3046a1fae2ef97b783500d27cfcb9fd17d65d388cafe42fd0a8be9d1be1ce81"
     }
    ]
   },
   "VBuildEspsBinPct": {
-   "valor": 22.723388671875,
+   "valor": 22.72796630859375,
    "status": "ok",
    "categoria": "build",
    "coluna": "bin/partição app",
@@ -4758,12 +5270,12 @@
    "fontes": [
     {
      "arquivo": "C:/Espressif/build_p11_esp32s3/size.txt",
-     "sha256": "ad50f5a002f63a3fbe921066bd41bf8e1046b3723d819a95391685778cfd1f2d"
+     "sha256": "e3046a1fae2ef97b783500d27cfcb9fd17d65d388cafe42fd0a8be9d1be1ce81"
     }
    ]
   },
   "VBuildEspsFlashCodeKb": {
-   "valor": 139.30078125,
+   "valor": 139.328125,
    "status": "ok",
    "categoria": "build",
    "coluna": "Flash Code Used/1024",
@@ -4771,12 +5283,12 @@
    "fontes": [
     {
      "arquivo": "C:/Espressif/build_p11_esp32s3/size.txt",
-     "sha256": "ad50f5a002f63a3fbe921066bd41bf8e1046b3723d819a95391685778cfd1f2d"
+     "sha256": "e3046a1fae2ef97b783500d27cfcb9fd17d65d388cafe42fd0a8be9d1be1ce81"
     }
    ]
   },
   "VBuildEspsFlashDataKb": {
-   "valor": 30.265625,
+   "valor": 30.28125,
    "status": "ok",
    "categoria": "build",
    "coluna": "Flash Data Used/1024",
@@ -4784,7 +5296,7 @@
    "fontes": [
     {
      "arquivo": "C:/Espressif/build_p11_esp32s3/size.txt",
-     "sha256": "ad50f5a002f63a3fbe921066bd41bf8e1046b3723d819a95391685778cfd1f2d"
+     "sha256": "e3046a1fae2ef97b783500d27cfcb9fd17d65d388cafe42fd0a8be9d1be1ce81"
     }
    ]
   },
@@ -4797,7 +5309,7 @@
    "fontes": [
     {
      "arquivo": "C:/Espressif/build_p11_esp32s3/size.txt",
-     "sha256": "ad50f5a002f63a3fbe921066bd41bf8e1046b3723d819a95391685778cfd1f2d"
+     "sha256": "e3046a1fae2ef97b783500d27cfcb9fd17d65d388cafe42fd0a8be9d1be1ce81"
     }
    ]
   },
@@ -4810,7 +5322,7 @@
    "fontes": [
     {
      "arquivo": "C:/Espressif/build_p11_esp32s3/size.txt",
-     "sha256": "ad50f5a002f63a3fbe921066bd41bf8e1046b3723d819a95391685778cfd1f2d"
+     "sha256": "e3046a1fae2ef97b783500d27cfcb9fd17d65d388cafe42fd0a8be9d1be1ce81"
     }
    ]
   },
@@ -4823,7 +5335,7 @@
    "fontes": [
     {
      "arquivo": "C:/Espressif/build_p11_esp32s3/size.txt",
-     "sha256": "ad50f5a002f63a3fbe921066bd41bf8e1046b3723d819a95391685778cfd1f2d"
+     "sha256": "e3046a1fae2ef97b783500d27cfcb9fd17d65d388cafe42fd0a8be9d1be1ce81"
     }
    ]
   },
@@ -4836,7 +5348,7 @@
    "fontes": [
     {
      "arquivo": "C:/Espressif/build_p11_esp32s3/size.txt",
-     "sha256": "ad50f5a002f63a3fbe921066bd41bf8e1046b3723d819a95391685778cfd1f2d"
+     "sha256": "e3046a1fae2ef97b783500d27cfcb9fd17d65d388cafe42fd0a8be9d1be1ce81"
     }
    ]
   },
@@ -4849,7 +5361,7 @@
    "fontes": [
     {
      "arquivo": "C:/Espressif/build_p11_esp32s3/size.txt",
-     "sha256": "ad50f5a002f63a3fbe921066bd41bf8e1046b3723d819a95391685778cfd1f2d"
+     "sha256": "e3046a1fae2ef97b783500d27cfcb9fd17d65d388cafe42fd0a8be9d1be1ce81"
     }
    ]
   },
@@ -4862,7 +5374,364 @@
    "fontes": [
     {
      "arquivo": "C:/Espressif/build_p11_esp32s3/size.txt",
-     "sha256": "ad50f5a002f63a3fbe921066bd41bf8e1046b3723d819a95391685778cfd1f2d"
+     "sha256": "e3046a1fae2ef97b783500d27cfcb9fd17d65d388cafe42fd0a8be9d1be1ce81"
+    }
+   ]
+  },
+  "VEqFloatBadCases": {
+   "valor": 2,
+   "status": "ok",
+   "categoria": "equivalencia",
+   "coluna": "ids com status != PASS (casos)",
+   "script": "embarcados/src/python/gerar_artigo_numeros.py",
+   "fontes": [
+    {
+     "arquivo": "embarcados/results/csv/equivalencia_float_20261024-091122.csv",
+     "sha256": "38e87620d895ce26c9c0bbfa5bd0df7af3686607d525235e3fa5c9d287612314"
+    }
+   ]
+  },
+  "VEqFloatBadAreEdge": {
+   "valor": 1,
+   "status": "ok",
+   "categoria": "equivalencia",
+   "coluna": "todos os ids != PASS são borda (1=sim)",
+   "script": "embarcados/src/python/gerar_artigo_numeros.py",
+   "fontes": [
+    {
+     "arquivo": "embarcados/results/csv/equivalencia_float_20261024-091122.csv",
+     "sha256": "38e87620d895ce26c9c0bbfa5bd0df7af3686607d525235e3fa5c9d287612314"
+    }
+   ]
+  },
+  "VEqRealCases": {
+   "valor": 150,
+   "status": "ok",
+   "categoria": "equivalencia",
+   "coluna": "nº de casos limpos+ruidosos",
+   "script": "embarcados/src/python/gerar_artigo_numeros.py",
+   "fontes": [
+    {
+     "arquivo": "embarcados/results/csv/equivalencia_float_20261024-091122.csv",
+     "sha256": "38e87620d895ce26c9c0bbfa5bd0df7af3686607d525235e3fa5c9d287612314"
+    }
+   ]
+  },
+  "VEqFloatRealAllPass": {
+   "valor": 150,
+   "status": "ok",
+   "categoria": "equivalencia",
+   "coluna": "casos limpos+ruidosos com PASS em todas as etapas (float)",
+   "script": "embarcados/src/python/gerar_artigo_numeros.py",
+   "fontes": [
+    {
+     "arquivo": "embarcados/results/csv/equivalencia_float_20261024-091122.csv",
+     "sha256": "38e87620d895ce26c9c0bbfa5bd0df7af3686607d525235e3fa5c9d287612314"
+    }
+   ]
+  },
+  "VEqDoubleStagesPassStrict": {
+   "valor": 26,
+   "status": "ok",
+   "categoria": "equivalencia",
+   "coluna": "etapas sem FAIL e sem PASS_EMPATE (double)",
+   "script": "embarcados/src/python/gerar_artigo_numeros.py",
+   "fontes": [
+    {
+     "arquivo": "embarcados/results/csv/equivalencia_resumo_por_build_20261024-091729.csv",
+     "sha256": "bc42bdf549e15875a3762c4907610f49a8ff0cb08c2fc10e3fafd5e59d84eb35"
+    }
+   ]
+  },
+  "VEqFloatStagesPassStrict": {
+   "valor": 23,
+   "status": "ok",
+   "categoria": "equivalencia",
+   "coluna": "etapas sem FAIL e sem PASS_EMPATE (float)",
+   "script": "embarcados/src/python/gerar_artigo_numeros.py",
+   "fontes": [
+    {
+     "arquivo": "embarcados/results/csv/equivalencia_resumo_por_build_20261024-091729.csv",
+     "sha256": "bc42bdf549e15875a3762c4907610f49a8ff0cb08c2fc10e3fafd5e59d84eb35"
+    }
+   ]
+  },
+  "VEqSosdStagesPassStrict": {
+   "valor": 26,
+   "status": "ok",
+   "categoria": "equivalencia",
+   "coluna": "etapas sem FAIL e sem PASS_EMPATE (float-sosd)",
+   "script": "embarcados/src/python/gerar_artigo_numeros.py",
+   "fontes": [
+    {
+     "arquivo": "embarcados/results/csv/equivalencia_resumo_por_build_20261024-091729.csv",
+     "sha256": "bc42bdf549e15875a3762c4907610f49a8ff0cb08c2fc10e3fafd5e59d84eb35"
+    }
+   ]
+  },
+  "VEqFloatStrictFailStages": {
+   "valor": "env_mod, features, z",
+   "status": "ok",
+   "categoria": "equivalencia",
+   "coluna": "etapas com FAIL ou PASS_EMPATE (float)",
+   "script": "embarcados/src/python/gerar_artigo_numeros.py",
+   "fontes": [
+    {
+     "arquivo": "embarcados/results/csv/equivalencia_resumo_por_build_20261024-091729.csv",
+     "sha256": "bc42bdf549e15875a3762c4907610f49a8ff0cb08c2fc10e3fafd5e59d84eb35"
+    }
+   ]
+  },
+  "VEqFloatStrictFailN": {
+   "valor": 2,
+   "status": "ok",
+   "categoria": "equivalencia",
+   "coluna": "casos afetados por etapa (máx de fail+pass_empate)",
+   "script": "embarcados/src/python/gerar_artigo_numeros.py",
+   "fontes": [
+    {
+     "arquivo": "embarcados/results/csv/equivalencia_resumo_por_build_20261024-091729.csv",
+     "sha256": "bc42bdf549e15875a3762c4907610f49a8ff0cb08c2fc10e3fafd5e59d84eb35"
+    }
+   ]
+  },
+  "VEqDcRefPeakRatio": {
+   "valor": 4.0485306154097715,
+   "status": "ok",
+   "categoria": "equivalencia",
+   "coluna": "P_ref[bin da ref]/P_ref[bin do C], mínimo nos casos DC (critério do auditor)",
+   "script": "embarcados/src/python/gerar_artigo_numeros.py",
+   "fontes": [
+    {
+     "arquivo": "embarcados/results/csv/equivalencia_float_20261024-091122.csv",
+     "sha256": "38e87620d895ce26c9c0bbfa5bd0df7af3686607d525235e3fa5c9d287612314"
+    },
+    {
+     "arquivo": "embarcados/gold/casos/borda_dc_ruido3s_ma2212/welch_P.f64",
+     "sha256": "fd12e9a5fa88895e8ca13b9aacecfa19f90b4198770d7fde5602289ee894517f"
+    },
+    {
+     "arquivo": "embarcados/results/c_out/float/casos/borda_dc_ruido3s_ma2212/welch_P.f32",
+     "sha256": "842711aa94501c776403c53dba815dcae1c8c1344ae0f2ffd425015c61b6e530"
+    },
+    {
+     "arquivo": "embarcados/gold/casos/borda_dc_ruido3s_midmt/welch_P.f64",
+     "sha256": "fd12e9a5fa88895e8ca13b9aacecfa19f90b4198770d7fde5602289ee894517f"
+    },
+    {
+     "arquivo": "embarcados/results/c_out/float/casos/borda_dc_ruido3s_midmt/welch_P.f32",
+     "sha256": "842711aa94501c776403c53dba815dcae1c8c1344ae0f2ffd425015c61b6e530"
+    }
+   ]
+  },
+  "VEqDcCOverRef": {
+   "valor": 185.0785278059757,
+   "status": "ok",
+   "categoria": "equivalencia",
+   "coluna": "P_C[bin do C]/P_ref[bin do C], mínimo nos casos DC",
+   "script": "embarcados/src/python/gerar_artigo_numeros.py",
+   "fontes": [
+    {
+     "arquivo": "embarcados/results/csv/equivalencia_float_20261024-091122.csv",
+     "sha256": "38e87620d895ce26c9c0bbfa5bd0df7af3686607d525235e3fa5c9d287612314"
+    },
+    {
+     "arquivo": "embarcados/gold/casos/borda_dc_ruido3s_ma2212/welch_P.f64",
+     "sha256": "fd12e9a5fa88895e8ca13b9aacecfa19f90b4198770d7fde5602289ee894517f"
+    },
+    {
+     "arquivo": "embarcados/results/c_out/float/casos/borda_dc_ruido3s_ma2212/welch_P.f32",
+     "sha256": "842711aa94501c776403c53dba815dcae1c8c1344ae0f2ffd425015c61b6e530"
+    },
+    {
+     "arquivo": "embarcados/gold/casos/borda_dc_ruido3s_midmt/welch_P.f64",
+     "sha256": "fd12e9a5fa88895e8ca13b9aacecfa19f90b4198770d7fde5602289ee894517f"
+    },
+    {
+     "arquivo": "embarcados/results/c_out/float/casos/borda_dc_ruido3s_midmt/welch_P.f32",
+     "sha256": "842711aa94501c776403c53dba815dcae1c8c1344ae0f2ffd425015c61b6e530"
+    }
+   ]
+  },
+  "VDiagBalRmsNormBldcFileHP": {
+   "valor": 0.8425324675324675,
+   "status": "ok",
+   "categoria": "diagnostico",
+   "coluna": "acurácia balanceada (Healthy, Propeller) do split arquivo, só M1-M3",
+   "script": "embarcados/src/python/gerar_artigo_numeros.py",
+   "fontes": [
+    {
+     "arquivo": "embarcados/results/predictions/diagnostico_janelas_20261023_222831.csv",
+     "sha256": "6426a95a9ceb73ad3e4a9f4a8d83f8194a3ce6b7d1605c0bfdd151384454102b"
+    }
+   ]
+  },
+  "VDiagDropHPRmsNormBldc": {
+   "valor": 0.028896103896103753,
+   "status": "ok",
+   "categoria": "diagnostico",
+   "coluna": "Bal[arquivo, H/P, M1-M3] - Bal[motor sem M4]",
+   "script": "embarcados/src/python/gerar_artigo_numeros.py",
+   "fontes": [
+    {
+     "arquivo": "embarcados/results/predictions/diagnostico_janelas_20261023_222831.csv",
+     "sha256": "6426a95a9ceb73ad3e4a9f4a8d83f8194a3ce6b7d1605c0bfdd151384454102b"
+    }
+   ]
+  },
+  "VDiagBalRmsRawBldcFileHP": {
+   "valor": 0.9126623376623376,
+   "status": "ok",
+   "categoria": "diagnostico",
+   "coluna": "acurácia balanceada (Healthy, Propeller) do split arquivo, só M1-M3",
+   "script": "embarcados/src/python/gerar_artigo_numeros.py",
+   "fontes": [
+    {
+     "arquivo": "embarcados/results/predictions/diagnostico_janelas_20261023_222831.csv",
+     "sha256": "6426a95a9ceb73ad3e4a9f4a8d83f8194a3ce6b7d1605c0bfdd151384454102b"
+    }
+   ]
+  },
+  "VDiagDropHPRmsRawBldc": {
+   "valor": 0.15876623376623378,
+   "status": "ok",
+   "categoria": "diagnostico",
+   "coluna": "Bal[arquivo, H/P, M1-M3] - Bal[motor sem M4]",
+   "script": "embarcados/src/python/gerar_artigo_numeros.py",
+   "fontes": [
+    {
+     "arquivo": "embarcados/results/predictions/diagnostico_janelas_20261023_222831.csv",
+     "sha256": "6426a95a9ceb73ad3e4a9f4a8d83f8194a3ce6b7d1605c0bfdd151384454102b"
+    }
+   ]
+  },
+  "VDiagBalClsBldcFileHP": {
+   "valor": 0.9717532467532468,
+   "status": "ok",
+   "categoria": "diagnostico",
+   "coluna": "acurácia balanceada (Healthy, Propeller) do split arquivo, só M1-M3",
+   "script": "embarcados/src/python/gerar_artigo_numeros.py",
+   "fontes": [
+    {
+     "arquivo": "embarcados/results/predictions/diagnostico_janelas_20261023_222831.csv",
+     "sha256": "6426a95a9ceb73ad3e4a9f4a8d83f8194a3ce6b7d1605c0bfdd151384454102b"
+    }
+   ]
+  },
+  "VDiagDropHPClsBldc": {
+   "valor": 0.05162337662337679,
+   "status": "ok",
+   "categoria": "diagnostico",
+   "coluna": "Bal[arquivo, H/P, M1-M3] - Bal[motor sem M4]",
+   "script": "embarcados/src/python/gerar_artigo_numeros.py",
+   "fontes": [
+    {
+     "arquivo": "embarcados/results/predictions/diagnostico_janelas_20261023_222831.csv",
+     "sha256": "6426a95a9ceb73ad3e4a9f4a8d83f8194a3ce6b7d1605c0bfdd151384454102b"
+    }
+   ]
+  },
+  "VDiagBalDecBldcFileHP": {
+   "valor": 0.752922077922078,
+   "status": "ok",
+   "categoria": "diagnostico",
+   "coluna": "acurácia balanceada (Healthy, Propeller) do split arquivo, só M1-M3",
+   "script": "embarcados/src/python/gerar_artigo_numeros.py",
+   "fontes": [
+    {
+     "arquivo": "embarcados/results/predictions/diagnostico_janelas_20261023_222831.csv",
+     "sha256": "6426a95a9ceb73ad3e4a9f4a8d83f8194a3ce6b7d1605c0bfdd151384454102b"
+    }
+   ]
+  },
+  "VDiagDropHPDecBldc": {
+   "valor": 0.06818181818181823,
+   "status": "ok",
+   "categoria": "diagnostico",
+   "coluna": "Bal[arquivo, H/P, M1-M3] - Bal[motor sem M4]",
+   "script": "embarcados/src/python/gerar_artigo_numeros.py",
+   "fontes": [
+    {
+     "arquivo": "embarcados/results/predictions/diagnostico_janelas_20261023_222831.csv",
+     "sha256": "6426a95a9ceb73ad3e4a9f4a8d83f8194a3ce6b7d1605c0bfdd151384454102b"
+    }
+   ]
+  },
+  "VRotOctRatioMin": {
+   "valor": 2.004626323684346,
+   "status": "ok",
+   "categoria": "dados",
+   "coluna": "min f0/mediana entre as janelas acima do limiar",
+   "script": "embarcados/src/python/gerar_artigo_numeros.py",
+   "fontes": [
+    {
+     "arquivo": "embarcados/results/csv/p11_features_20261023_222831.csv",
+     "sha256": "eb64ba855c885bf0ad428487067476095314ec200965130fa606c5ecf3649ef7"
+    }
+   ]
+  },
+  "VRotOctRatioMax": {
+   "valor": 2.016239005840517,
+   "status": "ok",
+   "categoria": "dados",
+   "coluna": "max f0/mediana entre as janelas acima do limiar",
+   "script": "embarcados/src/python/gerar_artigo_numeros.py",
+   "fontes": [
+    {
+     "arquivo": "embarcados/results/csv/p11_features_20261023_222831.csv",
+     "sha256": "eb64ba855c885bf0ad428487067476095314ec200965130fa606c5ecf3649ef7"
+    }
+   ]
+  },
+  "VEstWsFloatThreeKib": {
+   "valor": 1820.296875,
+   "status": "ok",
+   "categoria": "estimativa",
+   "coluna": "total_com_tabela/1024",
+   "script": "embarcados/src/python/gerar_artigo_numeros.py",
+   "fontes": [
+    {
+     "arquivo": "embarcados/paper/fontes/ws_float_48000.json",
+     "sha256": "3d3878646c51b96e1e1ab4c8fd935bb8a069e95c7ec7b95fe3a59ea8e0f5d838"
+    }
+   ]
+  },
+  "VEstWsFloatOneKib": {
+   "valor": 936.015625,
+   "status": "ok",
+   "categoria": "estimativa",
+   "coluna": "total_com_tabela/1024",
+   "script": "embarcados/src/python/gerar_artigo_numeros.py",
+   "fontes": [
+    {
+     "arquivo": "embarcados/paper/fontes/ws_float_16000.json",
+     "sha256": "95a67377c7eb2eb4ab886a73da7c0accffb11978a41718e5e942cff74afd01c7"
+    }
+   ]
+  },
+  "VBuildEspsIramPct": {
+   "valor": 100.0,
+   "status": "ok",
+   "categoria": "build",
+   "coluna": "IRAM Used [%] (S3)",
+   "script": "embarcados/src/python/gerar_artigo_numeros.py",
+   "fontes": [
+    {
+     "arquivo": "C:/Espressif/build_p11_esp32s3/size.txt",
+     "sha256": "e3046a1fae2ef97b783500d27cfcb9fd17d65d388cafe42fd0a8be9d1be1ce81"
+    }
+   ]
+  },
+  "VBuildEspsDramFreeKib": {
+   "valor": 279.5439453125,
+   "status": "ok",
+   "categoria": "build",
+   "coluna": "DIRAM Remain/1024",
+   "script": "embarcados/src/python/gerar_artigo_numeros.py",
+   "fontes": [
+    {
+     "arquivo": "C:/Espressif/build_p11_esp32s3/size.txt",
+     "sha256": "e3046a1fae2ef97b783500d27cfcb9fd17d65d388cafe42fd0a8be9d1be1ce81"
     }
    ]
   },
@@ -5221,31 +6090,31 @@
  "textos": [
   {
    "arquivo": "embarcados/paper/METODOLOGIA.md",
-   "sha256": "7242f32a7954976b0e77080483191862310d5c975cb8e83c14f199e8edca02ca",
+   "sha256": "2f41f404402445f6309b209b456388e97802636ab710ddc635a435ac364ecf01",
    "existe": true,
    "script": "embarcados/src/python/gerar_artigo_textos.py",
    "fontes": [
     {
      "arquivo": "embarcados/paper/numeros.json",
-     "sha256": "82abbec3edf57c156ff220ebabba152c98e3341cc2efd6adcb25288156a2b85e"
+     "sha256": "0c52f2a794c10d4bb040c725895907fc3a8048cfc6cbb4325e8aa49e37f19a5a"
     }
    ]
   },
   {
    "arquivo": "embarcados/paper/RESULTADOS.md",
-   "sha256": "d0c24a1653fffe8fb02e1df777afe2b1a73d514a29fe4c58e14274e2a51b6e63",
+   "sha256": "336f589cc0993b4b9c73b3f5cf49197e7d1aa9744f48e4017c7e8cb312f7b045",
    "existe": true,
    "script": "embarcados/src/python/gerar_artigo_textos.py",
    "fontes": [
     {
      "arquivo": "embarcados/paper/numeros.json",
-     "sha256": "82abbec3edf57c156ff220ebabba152c98e3341cc2efd6adcb25288156a2b85e"
+     "sha256": "0c52f2a794c10d4bb040c725895907fc3a8048cfc6cbb4325e8aa49e37f19a5a"
     }
    ]
   },
   {
    "arquivo": "embarcados/paper/main.tex",
-   "sha256": "56828984d3ed963c492eefd03f14bff87150ce683ee1fb35d98004a479b7129f",
+   "sha256": "39ce02ab084ec6e705b7cf4da30c806c22a7a547b673e5d9b44d7f959592ff5a",
    "existe": true,
    "script": "redigido à mão; números só por macro",
    "fontes": [
@@ -5255,32 +6124,40 @@
     },
     {
      "arquivo": "embarcados/paper/numeros.tex",
-     "sha256": "3c6b069d8a9a3ad34a70c69904c43f9163baa5a7e50b3d649c67b4383ba70591"
+     "sha256": "786b25bda24bc4f5b0419a39b73ce2ac157727eae99cad765eac24c9878b0a9f"
     }
    ]
   }
  ],
  "numeros_tex": {
   "arquivo": "embarcados/paper/numeros.tex",
-  "sha256": "3c6b069d8a9a3ad34a70c69904c43f9163baa5a7e50b3d649c67b4383ba70591",
+  "sha256": "786b25bda24bc4f5b0419a39b73ce2ac157727eae99cad765eac24c9878b0a9f",
   "existe": true,
   "script": "embarcados/src/python/gerar_artigo_numeros.py",
   "fontes": [
    {
     "arquivo": "C:/Espressif/build_p11_esp32/size.txt",
-    "sha256": "9369aa4e5736a65c64b8813dcb5768bc217b6ca23c6a9a7984c71567fd4e8b0a"
+    "sha256": "1833cfe3c6b8ccfa1ba29cdf70b26c2303ebf0e1333dd1acfccbbf5a944fda6d"
    },
    {
     "arquivo": "C:/Espressif/build_p11_esp32s3/project_description.json",
-    "sha256": "6dab41c43b43ac6b282dfc85b77f6337fd840c2c7e8690c675ad740a75c14cfc"
+    "sha256": "c29aea3ee65ea3ee800ba659e38c1c15ddef418c9246358af63f568ab4cb8fa9"
    },
    {
     "arquivo": "C:/Espressif/build_p11_esp32s3/size.txt",
-    "sha256": "ad50f5a002f63a3fbe921066bd41bf8e1046b3723d819a95391685778cfd1f2d"
+    "sha256": "e3046a1fae2ef97b783500d27cfcb9fd17d65d388cafe42fd0a8be9d1be1ce81"
    },
    {
     "arquivo": "embarcados/configs/embedded/tolerancias.json",
     "sha256": "d74dae800cebfe4d670c33ba2c0a72639ad1e04e95bcbd9a904be13c294c1b5d"
+   },
+   {
+    "arquivo": "embarcados/gold/casos/borda_dc_ruido3s_ma2212/welch_P.f64",
+    "sha256": "fd12e9a5fa88895e8ca13b9aacecfa19f90b4198770d7fde5602289ee894517f"
+   },
+   {
+    "arquivo": "embarcados/gold/casos/borda_dc_ruido3s_midmt/welch_P.f64",
+    "sha256": "fd12e9a5fa88895e8ca13b9aacecfa19f90b4198770d7fde5602289ee894517f"
    },
    {
     "arquivo": "embarcados/gold/manifest.json",
@@ -5305,6 +6182,14 @@
    {
     "arquivo": "embarcados/paper/fontes/ws_float_48000.json",
     "sha256": "3d3878646c51b96e1e1ab4c8fd935bb8a069e95c7ec7b95fe3a59ea8e0f5d838"
+   },
+   {
+    "arquivo": "embarcados/results/c_out/float/casos/borda_dc_ruido3s_ma2212/welch_P.f32",
+    "sha256": "842711aa94501c776403c53dba815dcae1c8c1344ae0f2ffd425015c61b6e530"
+   },
+   {
+    "arquivo": "embarcados/results/c_out/float/casos/borda_dc_ruido3s_midmt/welch_P.f32",
+    "sha256": "842711aa94501c776403c53dba815dcae1c8c1344ae0f2ffd425015c61b6e530"
    },
    {
     "arquivo": "embarcados/results/csv/bench_pc_20261024-091911.csv",

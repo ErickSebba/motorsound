@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.141592653-2.6-1.40.28 (MiKTeX 25.12) (preloaded format=pdflatex 2026.10.24)  24 OCT 2026 09:48
+This is pdfTeX, Version 3.141592653-2.6-1.40.28 (MiKTeX 25.12) (preloaded format=pdflatex 2026.10.24)  24 OCT 2026 10:17
 entering extended mode
  restricted \write18 enabled.
  %&-line parsing enabled.
@@ -297,49 +297,46 @@ Package epstopdf-base Info: Redefining graphics rule for `.eps' on input line 4
 (C:\Users\erick\AppData\Local\Programs\MiKTeX\tex/latex/00miktex\epstopdf-sys.c
 fg
 File: epstopdf-sys.cfg 2021/03/18 v2.0 Configuration of epstopdf for MiKTeX
-))
-LaTeX Font Info:    Trying to load font information for U+msa on input line 88.
+)) [1{C:/Users/erick/AppData/Local/MiKTeX/fonts/map/pdftex/pdftex.map}{C:/Users
+/erick/AppData/Local/Programs/MiKTeX/fonts/enc/dvips/base/8r.enc}
 
- (C:\Users\erick\AppData\Local\Programs\MiKTeX\tex/latex/amsfonts\umsa.fd
+
+]
+<../figures/pdf/arquitetura.pdf, id=9, 198.92317pt x 200.44084pt>
+File: ../figures/pdf/arquitetura.pdf Graphic file (type pdf)
+<use ../figures/pdf/arquitetura.pdf>
+Package pdftex.def Info: ../figures/pdf/arquitetura.pdf  used on input line 167
+.
+(pdftex.def)             Requested size: 252.0pt x 253.92085pt.
+LaTeX Font Info:    Trying to load font information for U+msa on input line 175
+.
+
+(C:\Users\erick\AppData\Local\Programs\MiKTeX\tex/latex/amsfonts\umsa.fd
 File: umsa.fd 2013/01/14 v3.01 AMS symbols A
 )
-LaTeX Font Info:    Trying to load font information for U+msb on input line 88.
-
+LaTeX Font Info:    Trying to load font information for U+msb on input line 175
+.
 
 (C:\Users\erick\AppData\Local\Programs\MiKTeX\tex/latex/amsfonts\umsb.fd
 File: umsb.fd 2013/01/14 v3.01 AMS symbols B
 )
-LaTeX Font Info:    Trying to load font information for OT1+pcr on input line 9
-2.
+LaTeX Font Info:    Trying to load font information for OT1+pcr on input line 2
+05.
 
 (C:\Users\erick\AppData\Local\Programs\MiKTeX\tex/latex/psnfss\ot1pcr.fd
 File: ot1pcr.fd 2001/06/04 font definitions for OT1/pcr.
 )
-Underfull \vbox (badness 10000) has occurred while \output is active []
-
- [1{C:/Users/erick/AppData/Local/MiKTeX/fonts/map/pdftex/pdftex.map}{C:/Users/e
-rick/AppData/Local/Programs/MiKTeX/fonts/enc/dvips/base/8r.enc}
-
-
-]
-<../figures/pdf/arquitetura.pdf, id=11, 198.92317pt x 200.44084pt>
-File: ../figures/pdf/arquitetura.pdf Graphic file (type pdf)
-<use ../figures/pdf/arquitetura.pdf>
-Package pdftex.def Info: ../figures/pdf/arquitetura.pdf  used on input line 160
-.
-(pdftex.def)             Requested size: 252.0pt x 253.92085pt.
- [2 <../figures/pdf/arquitetura.pdf>] (../tables/latex/equivalencia_compacta.te
-x)
-(../tables/latex/desempenho_compacto.tex)
+[2 <../figures/pdf/arquitetura.pdf>] (../tables/latex/equivalencia_compacta.tex
+) (../tables/latex/desempenho_compacto.tex)
 <../figures/pdf/diag_balacc_en_20261023_222831.pdf, id=64, 229.16113pt x 170.34
 314pt>
 File: ../figures/pdf/diag_balacc_en_20261023_222831.pdf Graphic file (type pdf)
 
 <use ../figures/pdf/diag_balacc_en_20261023_222831.pdf>
 Package pdftex.def Info: ../figures/pdf/diag_balacc_en_20261023_222831.pdf  use
-d on input line 386.
+d on input line 428.
 (pdftex.def)             Requested size: 252.0pt x 187.32343pt.
- [3] (main_wip.bbl)
+ [3 <../figures/pdf/diag_balacc_en_20261023_222831.pdf>] (main_wip.bbl)
 
 ** Conference Paper **
 Before submitting the final camera ready copy, remember to:
@@ -351,20 +348,20 @@ Before submitting the final camera ready copy, remember to:
  uses only Type 1 fonts and that every step in the generation
  process uses the appropriate paper size.
 
-[4 <../figures/pdf/diag_balacc_en_20261023_222831.pdf>] (main_wip.aux)
+[4] (main_wip.aux)
  ***********
 LaTeX2e <2025-11-01>
 L3 programming layer <2025-12-24>
  ***********
  ) 
 Here is how much of TeX's memory you used:
- 4147 strings out of 467871
- 67927 string characters out of 5418375
- 481592 words of memory out of 5000000
- 32980 multiletter control sequences out of 15000+600000
+ 4170 strings out of 467871
+ 68353 string characters out of 5418375
+ 481258 words of memory out of 5000000
+ 33003 multiletter control sequences out of 15000+600000
  667447 words of font info for 115 fonts, out of 8000000 for 9000
  1141 hyphenation exceptions out of 8191
- 61i,9n,68p,386b,288s stack positions out of 10000i,1000n,20000p,200000b,200000s
+ 61i,9n,68p,531b,293s stack positions out of 10000i,1000n,20000p,200000b,200000s
 <C:/Users/erick/AppData/Local/Programs/MiKTeX/fonts/type1/public/amsfonts/cm/
 cmex10.pfb><C:/Users/erick/AppData/Local/Programs/MiKTeX/fonts/type1/public/ams
 fonts/cm/cmmi10.pfb><C:/Users/erick/AppData/Local/Programs/MiKTeX/fonts/type1/p
@@ -382,7 +379,7 @@ rick/AppData/Local/Programs/MiKTeX/fonts/type1/public/amsfonts/cm/cmsy6.pfb><C:
 i8a.pfb><C:/Users/erick/AppData/Local/Programs/MiKTeX/fonts/type1/urw/times/utm
 r8a.pfb><C:/Users/erick/AppData/Local/Programs/MiKTeX/fonts/type1/urw/times/utm
 ri8a.pfb>
-Output written on main_wip.pdf (4 pages, 302588 bytes).
+Output written on main_wip.pdf (4 pages, 300552 bytes).
 PDF statistics:
  153 PDF objects out of 1000 (max. 8388607)
  0 named destinations out of 1000 (max. 500000)

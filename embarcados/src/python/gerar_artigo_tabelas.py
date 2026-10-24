@@ -138,8 +138,11 @@ def recursos(n):
     L = [CAB, r"\begin{table*}[t]", r"\centering", r"\scriptsize", r"\setlength{\tabcolsep}{4pt}",
          (r"\caption{Resources, separated by evidence category. (1) analytical estimate "
           r"(\texttt{p11\_host ws}, same layout function as the arena); (2) measured on the PC "
-          f"({t('VPcOs')}, {t('VPcCompiler')}; {t('VPcNIdmt')} timed windows per dataset after "
-          f"{t('VPcWarmup')} warm-up); (3) firmware build, \\texttt{{idf.py size}} (ESP-IDF "
+          f"({t('VPcOs')}, {t('VPcCompiler')}; {t('VPcNIdmt')} measurements per dataset cycling "
+          f"over {t('VPcDistinctIdmt')} distinct windows after {t('VPcWarmup')} warm-up; the C "
+          r"executable runs as a new process per window and its time excludes the workspace "
+          r"initialisation, which the Python timing cannot exclude); (3) firmware build, "
+          r"\texttt{idf.py size} (ESP-IDF "
           f"{t('VBuildIdf')}), static only; (4) measured on the ESP32. Only column (4) is a "
           r"measurement on the microcontroller.}"),
          r"\label{tab:resources}", r"\begin{tabular}{@{}lllll@{}}", r"\toprule",
@@ -158,7 +161,9 @@ def desempenho_compacto(n):
     L = [CAB, r"\begin{table}[t]", r"\centering", r"\scriptsize", r"\setlength{\tabcolsep}{3pt}",
          (r"\caption{Balanced accuracy on the same windows (validation only); $g$ = groups. "
           f"{t('VDataCiLevel')}\\% CIs from a group bootstrap ({t('VDataNBoot')} resamples) are "
-          r"shown in Fig.~\ref{fig:balacc}. $^\dagger$Intentional leakage.}"),
+          r"shown in Fig.~\ref{fig:balacc}. $^\dagger$Intentional leakage. IDMT: class = motor = "
+          r"recording. A2212: Bearing exists only on motor M4 (confounded with motor identity); "
+          r"with M4 held out, Bearing recall is zero by construction.}"),
          r"\label{tab:desempenho-compacto}", r"\begin{tabular}{@{}lrcccc@{}}", r"\toprule",
          r"Protocol & $g$ & RMS/pk (norm.) & RMS/pk (raw) & Classical & p11 \\", r"\midrule"]
     for k, nome in prots:
@@ -188,15 +193,13 @@ def equivalencia_compacta(n):
     for nome, et in grupos:
         cel = []
         for b, _ in builds:
+            # leitura conservadora (auditoria F, M1): PASS_EMPATE conta como falha
             s = S[(S.build == b) & (S.etapa.isin(et))]
-            ok = int((s.veredito == "PASS").sum())
-            emp = int(s.pass_empate.sum())
-            fail = int(s.fail.sum())
+            ruim = s.fail + s.pass_empate
+            ok = int((ruim == 0).sum())
             c = f"{ok}/{len(s)}"
-            if fail:
-                c += f" (FAIL in {fail}/{int(s[s.fail > 0].n.iloc[0])})"
-            elif emp:
-                c += r"$^\ddagger$"
+            if ruim.sum():
+                c += f" (FAIL in {int(ruim.max())}/{int(s[ruim > 0].n.iloc[0])})"
             cel.append(c)
         L.append(f"{nome} ({len(et)}) & " + " & ".join(cel) + r" \\")
     L += [r"\bottomrule", r"\end{tabular}"]

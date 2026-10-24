@@ -1,7 +1,7 @@
 {
  "gerado_por": "embarcados/src/python/gerar_artigo_numeros.py",
  "projeto": {
-  "commit": "9df3b2c280b69b02703d2c61d277e2bdf02cafad",
+  "commit": "8c97c004e43bbe76a61d67f40b0cf358aedaa9e5",
   "sujo": true
  },
  "chip_medido": false,
@@ -16,16 +16,20 @@
   "equivalencia": "equivalência Python × C (PC)"
  },
  "fontes": {
-  "C:/Espressif/build_p11_esp32/size.txt": "9369aa4e5736a65c64b8813dcb5768bc217b6ca23c6a9a7984c71567fd4e8b0a",
-  "C:/Espressif/build_p11_esp32s3/project_description.json": "6dab41c43b43ac6b282dfc85b77f6337fd840c2c7e8690c675ad740a75c14cfc",
-  "C:/Espressif/build_p11_esp32s3/size.txt": "ad50f5a002f63a3fbe921066bd41bf8e1046b3723d819a95391685778cfd1f2d",
+  "C:/Espressif/build_p11_esp32/size.txt": "1833cfe3c6b8ccfa1ba29cdf70b26c2303ebf0e1333dd1acfccbbf5a944fda6d",
+  "C:/Espressif/build_p11_esp32s3/project_description.json": "c29aea3ee65ea3ee800ba659e38c1c15ddef418c9246358af63f568ab4cb8fa9",
+  "C:/Espressif/build_p11_esp32s3/size.txt": "e3046a1fae2ef97b783500d27cfcb9fd17d65d388cafe42fd0a8be9d1be1ce81",
   "embarcados/configs/embedded/tolerancias.json": "d74dae800cebfe4d670c33ba2c0a72639ad1e04e95bcbd9a904be13c294c1b5d",
+  "embarcados/gold/casos/borda_dc_ruido3s_ma2212/welch_P.f64": "fd12e9a5fa88895e8ca13b9aacecfa19f90b4198770d7fde5602289ee894517f",
+  "embarcados/gold/casos/borda_dc_ruido3s_midmt/welch_P.f64": "fd12e9a5fa88895e8ca13b9aacecfa19f90b4198770d7fde5602289ee894517f",
   "embarcados/gold/manifest.json": "a681abee826d5b8ede688d4d67ea159495898ea48e0c131f729d8406437ba876",
   "embarcados/gold/seqs/idmt_seq00/params.json": "a50569ecb0951b7b171019e4ccbe89eebd51eff92893532f03a8490dcd38cf78",
   "embarcados/paper/fontes/ws_double_16000.json": "3023074d0581ae3a1103bb5b42d4704fcb05631eada2a86eecdc1846ad8b293e",
   "embarcados/paper/fontes/ws_double_48000.json": "dc2a3113667b36f99073b7782f28f4e018e1e13f865c3dd63bf97070c05f53f9",
   "embarcados/paper/fontes/ws_float_16000.json": "95a67377c7eb2eb4ab886a73da7c0accffb11978a41718e5e942cff74afd01c7",
   "embarcados/paper/fontes/ws_float_48000.json": "3d3878646c51b96e1e1ab4c8fd935bb8a069e95c7ec7b95fe3a59ea8e0f5d838",
+  "embarcados/results/c_out/float/casos/borda_dc_ruido3s_ma2212/welch_P.f32": "842711aa94501c776403c53dba815dcae1c8c1344ae0f2ffd425015c61b6e530",
+  "embarcados/results/c_out/float/casos/borda_dc_ruido3s_midmt/welch_P.f32": "842711aa94501c776403c53dba815dcae1c8c1344ae0f2ffd425015c61b6e530",
   "embarcados/results/csv/bench_pc_20261024-091911.csv": "15ea3f2990bea2c2c39ffb0a256ae2d195e18808d11ae365a3874095fff2ced2",
   "embarcados/results/csv/diagnostico_20261023_222831.csv": "83e602a7680c87ae7f429840d4db57c49b80a7f4c1c8e45900005ce7e269a7ff",
   "embarcados/results/csv/diagnostico_20261023_222831_meta.json": "6e0879c7cccc78fab5a87687a16b468c6cd6140283d905611271178d98b55775",
@@ -4053,7 +4057,7 @@
    "nota": ""
   },
   "VBuildEspBinKb": {
-   "valor": 208.65625,
+   "valor": 208.703125,
    "tex": "209",
    "pt": "209",
    "status": "ok",
@@ -4065,7 +4069,7 @@
    "nota": ""
   },
   "VBuildEspBinPct": {
-   "valor": 20.3765869140625,
+   "valor": 20.38116455078125,
    "tex": "20",
    "pt": "20",
    "status": "ok",
@@ -4077,7 +4081,7 @@
    "nota": ""
   },
   "VBuildEspFlashCodeKb": {
-   "valor": 124.1396484375,
+   "valor": 124.1708984375,
    "tex": "124",
    "pt": "124",
    "status": "ok",
@@ -4089,7 +4093,7 @@
    "nota": ""
   },
   "VBuildEspFlashDataKb": {
-   "valor": 19.1328125,
+   "valor": 19.1484375,
    "tex": "19",
    "pt": "19",
    "status": "ok",
@@ -4173,7 +4177,7 @@
    "nota": ""
   },
   "VBuildEspsBinKb": {
-   "valor": 232.6875,
+   "valor": 232.734375,
    "tex": "233",
    "pt": "233",
    "status": "ok",
@@ -4185,7 +4189,7 @@
    "nota": ""
   },
   "VBuildEspsBinPct": {
-   "valor": 22.723388671875,
+   "valor": 22.72796630859375,
    "tex": "23",
    "pt": "23",
    "status": "ok",
@@ -4197,7 +4201,7 @@
    "nota": ""
   },
   "VBuildEspsFlashCodeKb": {
-   "valor": 139.30078125,
+   "valor": 139.328125,
    "tex": "139",
    "pt": "139",
    "status": "ok",
@@ -4209,7 +4213,7 @@
    "nota": ""
   },
   "VBuildEspsFlashDataKb": {
-   "valor": 30.265625,
+   "valor": 30.28125,
    "tex": "30",
    "pt": "30",
    "status": "ok",
@@ -4290,6 +4294,314 @@
    ],
    "coluna": "estimativa ws float 1 s / DIRAM total",
    "categoria": "estimativa",
+   "nota": ""
+  },
+  "VEqFloatBadCases": {
+   "valor": 2,
+   "tex": "2",
+   "pt": "2",
+   "status": "ok",
+   "fonte": [
+    "embarcados/results/csv/equivalencia_float_20261024-091122.csv"
+   ],
+   "coluna": "ids com status != PASS (casos)",
+   "categoria": "equivalencia",
+   "nota": ""
+  },
+  "VEqFloatBadAreEdge": {
+   "valor": 1,
+   "tex": "1",
+   "pt": "1",
+   "status": "ok",
+   "fonte": [
+    "embarcados/results/csv/equivalencia_float_20261024-091122.csv"
+   ],
+   "coluna": "todos os ids != PASS são borda (1=sim)",
+   "categoria": "equivalencia",
+   "nota": ""
+  },
+  "VEqRealCases": {
+   "valor": 150,
+   "tex": "150",
+   "pt": "150",
+   "status": "ok",
+   "fonte": [
+    "embarcados/results/csv/equivalencia_float_20261024-091122.csv"
+   ],
+   "coluna": "nº de casos limpos+ruidosos",
+   "categoria": "equivalencia",
+   "nota": ""
+  },
+  "VEqFloatRealAllPass": {
+   "valor": 150,
+   "tex": "150",
+   "pt": "150",
+   "status": "ok",
+   "fonte": [
+    "embarcados/results/csv/equivalencia_float_20261024-091122.csv"
+   ],
+   "coluna": "casos limpos+ruidosos com PASS em todas as etapas (float)",
+   "categoria": "equivalencia",
+   "nota": ""
+  },
+  "VEqDoubleStagesPassStrict": {
+   "valor": 26,
+   "tex": "26",
+   "pt": "26",
+   "status": "ok",
+   "fonte": [
+    "embarcados/results/csv/equivalencia_resumo_por_build_20261024-091729.csv"
+   ],
+   "coluna": "etapas sem FAIL e sem PASS_EMPATE (double)",
+   "categoria": "equivalencia",
+   "nota": ""
+  },
+  "VEqFloatStagesPassStrict": {
+   "valor": 23,
+   "tex": "23",
+   "pt": "23",
+   "status": "ok",
+   "fonte": [
+    "embarcados/results/csv/equivalencia_resumo_por_build_20261024-091729.csv"
+   ],
+   "coluna": "etapas sem FAIL e sem PASS_EMPATE (float)",
+   "categoria": "equivalencia",
+   "nota": ""
+  },
+  "VEqSosdStagesPassStrict": {
+   "valor": 26,
+   "tex": "26",
+   "pt": "26",
+   "status": "ok",
+   "fonte": [
+    "embarcados/results/csv/equivalencia_resumo_por_build_20261024-091729.csv"
+   ],
+   "coluna": "etapas sem FAIL e sem PASS_EMPATE (float-sosd)",
+   "categoria": "equivalencia",
+   "nota": ""
+  },
+  "VEqFloatStrictFailStages": {
+   "valor": "env_mod, features, z",
+   "tex": "env\\_mod, features, z",
+   "pt": "env\\_mod, features, z",
+   "status": "ok",
+   "fonte": [
+    "embarcados/results/csv/equivalencia_resumo_por_build_20261024-091729.csv"
+   ],
+   "coluna": "etapas com FAIL ou PASS_EMPATE (float)",
+   "categoria": "equivalencia",
+   "nota": ""
+  },
+  "VEqFloatStrictFailN": {
+   "valor": 2,
+   "tex": "2",
+   "pt": "2",
+   "status": "ok",
+   "fonte": [
+    "embarcados/results/csv/equivalencia_resumo_por_build_20261024-091729.csv"
+   ],
+   "coluna": "casos afetados por etapa (máx de fail+pass_empate)",
+   "categoria": "equivalencia",
+   "nota": ""
+  },
+  "VEqDcRefPeakRatio": {
+   "valor": 4.0485306154097715,
+   "tex": "4.0",
+   "pt": "4,0",
+   "status": "ok",
+   "fonte": [
+    "embarcados/results/csv/equivalencia_float_20261024-091122.csv",
+    "embarcados/gold/casos/borda_dc_ruido3s_ma2212/welch_P.f64",
+    "embarcados/results/c_out/float/casos/borda_dc_ruido3s_ma2212/welch_P.f32",
+    "embarcados/gold/casos/borda_dc_ruido3s_midmt/welch_P.f64",
+    "embarcados/results/c_out/float/casos/borda_dc_ruido3s_midmt/welch_P.f32"
+   ],
+   "coluna": "P_ref[bin da ref]/P_ref[bin do C], mínimo nos casos DC (critério do auditor)",
+   "categoria": "equivalencia",
+   "nota": ""
+  },
+  "VEqDcCOverRef": {
+   "valor": 185.0785278059757,
+   "tex": "185",
+   "pt": "185",
+   "status": "ok",
+   "fonte": [
+    "embarcados/results/csv/equivalencia_float_20261024-091122.csv",
+    "embarcados/gold/casos/borda_dc_ruido3s_ma2212/welch_P.f64",
+    "embarcados/results/c_out/float/casos/borda_dc_ruido3s_ma2212/welch_P.f32",
+    "embarcados/gold/casos/borda_dc_ruido3s_midmt/welch_P.f64",
+    "embarcados/results/c_out/float/casos/borda_dc_ruido3s_midmt/welch_P.f32"
+   ],
+   "coluna": "P_C[bin do C]/P_ref[bin do C], mínimo nos casos DC",
+   "categoria": "equivalencia",
+   "nota": ""
+  },
+  "VDiagBalRmsNormBldcFileHP": {
+   "valor": 0.8425324675324675,
+   "tex": "0.843",
+   "pt": "0,843",
+   "status": "ok",
+   "fonte": [
+    "embarcados/results/predictions/diagnostico_janelas_20261023_222831.csv"
+   ],
+   "coluna": "acurácia balanceada (Healthy, Propeller) do split arquivo, só M1-M3",
+   "categoria": "diagnostico",
+   "nota": ""
+  },
+  "VDiagDropHPRmsNormBldc": {
+   "valor": 0.028896103896103753,
+   "tex": "0.029",
+   "pt": "0,029",
+   "status": "ok",
+   "fonte": [
+    "embarcados/results/predictions/diagnostico_janelas_20261023_222831.csv"
+   ],
+   "coluna": "Bal[arquivo, H/P, M1-M3] - Bal[motor sem M4]",
+   "categoria": "diagnostico",
+   "nota": ""
+  },
+  "VDiagBalRmsRawBldcFileHP": {
+   "valor": 0.9126623376623376,
+   "tex": "0.913",
+   "pt": "0,913",
+   "status": "ok",
+   "fonte": [
+    "embarcados/results/predictions/diagnostico_janelas_20261023_222831.csv"
+   ],
+   "coluna": "acurácia balanceada (Healthy, Propeller) do split arquivo, só M1-M3",
+   "categoria": "diagnostico",
+   "nota": ""
+  },
+  "VDiagDropHPRmsRawBldc": {
+   "valor": 0.15876623376623378,
+   "tex": "0.159",
+   "pt": "0,159",
+   "status": "ok",
+   "fonte": [
+    "embarcados/results/predictions/diagnostico_janelas_20261023_222831.csv"
+   ],
+   "coluna": "Bal[arquivo, H/P, M1-M3] - Bal[motor sem M4]",
+   "categoria": "diagnostico",
+   "nota": ""
+  },
+  "VDiagBalClsBldcFileHP": {
+   "valor": 0.9717532467532468,
+   "tex": "0.972",
+   "pt": "0,972",
+   "status": "ok",
+   "fonte": [
+    "embarcados/results/predictions/diagnostico_janelas_20261023_222831.csv"
+   ],
+   "coluna": "acurácia balanceada (Healthy, Propeller) do split arquivo, só M1-M3",
+   "categoria": "diagnostico",
+   "nota": ""
+  },
+  "VDiagDropHPClsBldc": {
+   "valor": 0.05162337662337679,
+   "tex": "0.052",
+   "pt": "0,052",
+   "status": "ok",
+   "fonte": [
+    "embarcados/results/predictions/diagnostico_janelas_20261023_222831.csv"
+   ],
+   "coluna": "Bal[arquivo, H/P, M1-M3] - Bal[motor sem M4]",
+   "categoria": "diagnostico",
+   "nota": ""
+  },
+  "VDiagBalDecBldcFileHP": {
+   "valor": 0.752922077922078,
+   "tex": "0.753",
+   "pt": "0,753",
+   "status": "ok",
+   "fonte": [
+    "embarcados/results/predictions/diagnostico_janelas_20261023_222831.csv"
+   ],
+   "coluna": "acurácia balanceada (Healthy, Propeller) do split arquivo, só M1-M3",
+   "categoria": "diagnostico",
+   "nota": ""
+  },
+  "VDiagDropHPDecBldc": {
+   "valor": 0.06818181818181823,
+   "tex": "0.068",
+   "pt": "0,068",
+   "status": "ok",
+   "fonte": [
+    "embarcados/results/predictions/diagnostico_janelas_20261023_222831.csv"
+   ],
+   "coluna": "Bal[arquivo, H/P, M1-M3] - Bal[motor sem M4]",
+   "categoria": "diagnostico",
+   "nota": ""
+  },
+  "VRotOctRatioMin": {
+   "valor": 2.004626323684346,
+   "tex": "2.00",
+   "pt": "2,00",
+   "status": "ok",
+   "fonte": [
+    "embarcados/results/csv/p11_features_20261023_222831.csv"
+   ],
+   "coluna": "min f0/mediana entre as janelas acima do limiar",
+   "categoria": "dados",
+   "nota": ""
+  },
+  "VRotOctRatioMax": {
+   "valor": 2.016239005840517,
+   "tex": "2.02",
+   "pt": "2,02",
+   "status": "ok",
+   "fonte": [
+    "embarcados/results/csv/p11_features_20261023_222831.csv"
+   ],
+   "coluna": "max f0/mediana entre as janelas acima do limiar",
+   "categoria": "dados",
+   "nota": ""
+  },
+  "VEstWsFloatThreeKib": {
+   "valor": 1820.296875,
+   "tex": "1820",
+   "pt": "1820",
+   "status": "ok",
+   "fonte": [
+    "embarcados/paper/fontes/ws_float_48000.json"
+   ],
+   "coluna": "total_com_tabela/1024",
+   "categoria": "estimativa",
+   "nota": ""
+  },
+  "VEstWsFloatOneKib": {
+   "valor": 936.015625,
+   "tex": "936",
+   "pt": "936",
+   "status": "ok",
+   "fonte": [
+    "embarcados/paper/fontes/ws_float_16000.json"
+   ],
+   "coluna": "total_com_tabela/1024",
+   "categoria": "estimativa",
+   "nota": ""
+  },
+  "VBuildEspsIramPct": {
+   "valor": 100.0,
+   "tex": "100",
+   "pt": "100",
+   "status": "ok",
+   "fonte": [
+    "C:/Espressif/build_p11_esp32s3/size.txt"
+   ],
+   "coluna": "IRAM Used [%] (S3)",
+   "categoria": "build",
+   "nota": ""
+  },
+  "VBuildEspsDramFreeKib": {
+   "valor": 279.5439453125,
+   "tex": "280",
+   "pt": "280",
+   "status": "ok",
+   "fonte": [
+    "C:/Espressif/build_p11_esp32s3/size.txt"
+   ],
+   "coluna": "DIRAM Remain/1024",
+   "categoria": "build",
    "nota": ""
   },
   "VChipModel": {
