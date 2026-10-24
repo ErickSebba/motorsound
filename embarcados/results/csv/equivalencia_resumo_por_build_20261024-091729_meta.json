@@ -1,0 +1,64 @@
+{
+  "gerado_em": "20261024-091729",
+  "fontes": {
+    "double": {
+      "csv": "equivalencia_double_20261024-091106.csv",
+      "sha256_csv": "0462b21cd040d8987e25988c7b603e2dfc9009f57ec9b9382dda2e1ac4310cf3",
+      "script": "embarcados/tests/equivalence/comparar.py",
+      "commit": "447a7c220731bfd1393b046895a6b50c24301c21",
+      "arvore_suja": true,
+      "build": "double",
+      "tol_build": "double",
+      "tolerancias": "C:\\Users\\erick\\dev\\Decifrae-Artigo\\Artigo3(MotorSound)\\embarcados\\configs\\embedded\\tolerancias.json",
+      "sha256_tolerancias": "d74dae800cebfe4d670c33ba2c0a72639ad1e04e95bcbd9a904be13c294c1b5d",
+      "gold_manifest_sha256": "a681abee826d5b8ede688d4d67ea159495898ea48e0c131f729d8406437ba876",
+      "gold_gerado_em": "2026-10-23T22:34:37",
+      "c_out": "C:\\Users\\erick\\dev\\Decifrae-Artigo\\Artigo3(MotorSound)\\embarcados\\results\\c_out\\double",
+      "data": "2026-10-24T09:11:07",
+      "n_linhas": 6852,
+      "contagem_status": {
+        "PASS": 6852
+      }
+    },
+    "float": {
+      "csv": "equivalencia_float_20261024-091122.csv",
+      "sha256_csv": "38e87620d895ce26c9c0bbfa5bd0df7af3686607d525235e3fa5c9d287612314",
+      "script": "embarcados/tests/equivalence/comparar.py",
+      "commit": "447a7c220731bfd1393b046895a6b50c24301c21",
+      "arvore_suja": true,
+      "build": "float",
+      "tol_build": "float",
+      "tolerancias": "C:\\Users\\erick\\dev\\Decifrae-Artigo\\Artigo3(MotorSound)\\embarcados\\configs\\embedded\\tolerancias.json",
+      "sha256_tolerancias": "d74dae800cebfe4d670c33ba2c0a72639ad1e04e95bcbd9a904be13c294c1b5d",
+      "gold_manifest_sha256": "a681abee826d5b8ede688d4d67ea159495898ea48e0c131f729d8406437ba876",
+      "gold_gerado_em": "2026-10-23T22:34:37",
+      "c_out": "C:\\Users\\erick\\dev\\Decifrae-Artigo\\Artigo3(MotorSound)\\embarcados\\results\\c_out\\float",
+      "data": "2026-10-24T09:11:22",
+      "n_linhas": 6852,
+      "contagem_status": {
+        "PASS": 6844,
+        "PASS_EMPATE": 6,
+        "FAIL": 2
+      }
+    },
+    "float-sosd": {
+      "csv": "equivalencia_float-sosd_20261024-091222.csv",
+      "sha256_csv": "fb79aad99d6e607a132af89358182c74f4eeec2ac31e97410c5fab486e945ce9",
+      "script": "embarcados/tests/equivalence/comparar.py",
+      "commit": "447a7c220731bfd1393b046895a6b50c24301c21",
+      "arvore_suja": true,
+      "build": "float-sosd",
+      "tol_build": "float",
+      "tolerancias": "C:\\Users\\erick\\dev\\Decifrae-Artigo\\Artigo3(MotorSound)\\embarcados\\configs\\embedded\\tolerancias.json",
+      "sha256_tolerancias": "d74dae800cebfe4d670c33ba2c0a72639ad1e04e95bcbd9a904be13c294c1b5d",
+      "gold_manifest_sha256": "a681abee826d5b8ede688d4d67ea159495898ea48e0c131f729d8406437ba876",
+      "gold_gerado_em": "2026-10-23T22:34:37",
+      "c_out": "C:\\Users\\erick\\dev\\Decifrae-Artigo\\Artigo3(MotorSound)\\embarcados\\results\\c_out\\float-sosd",
+      "data": "2026-10-24T09:12:22",
+      "n_linhas": 6852,
+      "contagem_status": {
+        "PASS": 6852
+      }
+    }
+  }
+}

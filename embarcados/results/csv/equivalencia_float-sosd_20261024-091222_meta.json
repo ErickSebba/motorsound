@@ -1,0 +1,17 @@
+{
+  "script": "embarcados/tests/equivalence/comparar.py",
+  "commit": "447a7c220731bfd1393b046895a6b50c24301c21",
+  "arvore_suja": true,
+  "build": "float-sosd",
+  "tol_build": "float",
+  "tolerancias": "C:\\Users\\erick\\dev\\Decifrae-Artigo\\Artigo3(MotorSound)\\embarcados\\configs\\embedded\\tolerancias.json",
+  "sha256_tolerancias": "d74dae800cebfe4d670c33ba2c0a72639ad1e04e95bcbd9a904be13c294c1b5d",
+  "gold_manifest_sha256": "a681abee826d5b8ede688d4d67ea159495898ea48e0c131f729d8406437ba876",
+  "gold_gerado_em": "2026-10-23T22:34:37",
+  "c_out": "C:\\Users\\erick\\dev\\Decifrae-Artigo\\Artigo3(MotorSound)\\embarcados\\results\\c_out\\float-sosd",
+  "data": "2026-10-24T09:12:22",
+  "n_linhas": 6852,
+  "contagem_status": {
+    "PASS": 6852
+  }
+}
