@@ -26,9 +26,9 @@ import pandas as pd
 
 import bancada_comum as bc
 
-# 115200: o build atual não ligou CONFIG_ESP_CONSOLE_UART_CUSTOM, então o console (e o
-# uart_param_config do firmware) ficou no padrão; a medição de tempo não depende da serial.
-BAUD = 115200
+# 921600 a partir do firmware com CONFIG_ESP_CONSOLE_UART_CUSTOM (o primeiro build, sem essa
+# opção, ficou em 115200: use --baud 115200 com ele). A medição de tempo não depende da serial.
+BAUD = 921600
 ETAPAS = ["prep", "rastreio", "viterbi", "sal_caminho", "envelope", "features", "cosseno"]
 
 
@@ -124,10 +124,12 @@ def cmd_portas(a):
 
 
 def cmd_info(a):
-    pl = Placa(a.porta)
+    pl = Placa(a.porta, a.baud)
     info = pl.json_de(pl.cmd("INFO", prefixo="@@INFO"))
     pl.fechar()
-    build = Path(f"C:/Espressif/build_p11_{a.alvo}")
+    # diretório do build da variante que o chip diz estar rodando (build_fw.bat)
+    suf = {"p11_c_ref": "", "p11_c_lowmem": "_lowmem", "p11_c_espdsp": "_espdsp"}[info["variante"]]
+    build = Path(f"C:/Espressif/build_p11_{a.alvo}{suf}")
     sdk = {}
     for l in (build / "sdkconfig").read_text(encoding="utf-8").splitlines():
         if l.startswith("CONFIG_") and any(k in l for k in (
@@ -174,17 +176,25 @@ def _grava_saida_caso(dir_out: Path, r: dict, n_classes: int):
 def cmd_equiv(a):
     b = bancada(a.alvo)
     man = bc.manifesto()
-    pl = Placa(a.porta)
-    cout = bc.EMB / "results" / "c_out" / f"esp32_{a.alvo}" / "casos"
+    pl = Placa(a.porta, a.baud)
+    cout = bc.EMB / "results" / "c_out" / f"esp32_{a.alvo}_{b['variante']}" / "casos"
     linhas, mod_atual = [], None
     for c in man["casos"]:
         if c["modelo"] != mod_atual:
             pl.modelo(bc.GOLD / "modelos" / f"{c['modelo']}.bin")
             mod_atual = c["modelo"]
-        r = pl.janela(len(linhas), bc.audio(c["id"]))
+        try:
+            r = pl.janela(len(linhas), bc.audio(c["id"]))
+        except RuntimeError as e:
+            if "sem memoria" not in str(e):
+                raise
+            # janela que a variante não comporta (lowmem: 3 s); fica AUSENTE no comparador
+            linhas.append({"id": c["id"], "coube": 0, "resposta": str(e)})
+            print(c["id"], "nao coube", flush=True)
+            continue
         n_cl = json.loads((bc.GOLD / "modelos" / f"{c['modelo']}.json").read_text(encoding="utf-8"))["n_classes"]
         _grava_saida_caso(cout / c["id"], r, n_cl)
-        linhas.append({"id": c["id"], **{f"us_{k}": v for k, v in r["us"].items()},
+        linhas.append({"id": c["id"], "coube": 1, **{f"us_{k}": v for k, v in r["us"].items()},
                        "ws_bytes": r["ws_bytes"], "ws_na_psram": r["ws_na_psram"],
                        "heap_min_livre_interna": r["heap_min_livre_interna"]})
         print(c["id"], "ok", flush=True)
@@ -202,7 +212,7 @@ def cmd_mem(a):
     """Tenta uma janela de cada base e registra se o workspace coube (resposta do chip)."""
     import re
     b = bancada(a.alvo)
-    pl = Placa(a.porta)
+    pl = Placa(a.porta, a.baud)
     linhas = []
     for base in ("a2212", "idmt"):
         pl.modelo(bc.modelo_bin(base))
@@ -231,9 +241,9 @@ def cmd_mem(a):
 
 def cmd_lat(a):
     b = bancada(a.alvo)
-    pl = Placa(a.porta)
+    pl = Placa(a.porta, a.baud)
     linhas = []
-    for base in ("idmt", "a2212"):
+    for base in a.bases:
         pl.modelo(bc.modelo_bin(base))
         ids, n_dist = bc.casos_latencia(base, a.n, a.aquecimento)
         for k, cid in enumerate(ids):
@@ -289,16 +299,19 @@ def cmd_lat(a):
 
 
 def cmd_seq_imagem(a):
-    """Sequência good -> broken -> heavyload com janelas LIMPAS de validação do IDMT (ouro)."""
+    """Sequência com janelas LIMPAS de validação do ouro, uma classe depois da outra, na
+    ordem do modelo: IDMT good -> broken -> heavyload (3 s) ou A2212 Healthy -> Propeller ->
+    Bearing (1 s; Bearing = motor 4). A variante lowmem só roda a de 1 s."""
     man = bc.manifesto()
-    ordem = ["good", "broken", "heavyload"]
-    jan, rot = [], []
+    ordem = bc.modelo_json(a.base)["classes"]
+    jan, rot, ids_usados = [], [], []
     for ci, cl in enumerate(ordem):
-        ids = [c["id"] for c in man["casos"] if c["tipo"] == "limpo" and c["base"] == "idmt"
+        ids = [c["id"] for c in man["casos"] if c["tipo"] == "limpo" and c["base"] == a.base
                and c["classe"] == cl][:a.por_classe]
         for i in ids:
             jan.append(bc.audio(i))
             rot.append(ci)
+            ids_usados.append(i)
     x = np.stack(jan)
     escala = float(np.abs(x).max() / 32767.0)
     q = np.round(x / escala).astype("<i2")
@@ -310,14 +323,14 @@ def cmd_seq_imagem(a):
     ts = bc.carimbo()
     pasta = bc.EMB / "gold" / "seq_esp32"
     pasta.mkdir(parents=True, exist_ok=True)
-    arq = pasta / f"seq_idmt_{ts}.bin"
+    arq = pasta / f"seq_{a.base}_{ts}.bin"
     arq.write_bytes(img)
     # o mesmo áudio desquantizado, para a referência Python e o C do PC processarem igual
-    (q.astype(np.float32) * np.float32(escala)).astype("<f4").tofile(pasta / f"seq_idmt_{ts}_audio.f32")
-    (pasta / f"seq_idmt_{ts}.json").write_text(json.dumps(
-        {"n_jan": n_jan, "n_amostras": n_am, "escala": escala, "rotulos": rot, "classes": ordem,
-         "janelas": [c for c in []], "por_classe": a.por_classe, "bytes": len(img)}, indent=1),
-        encoding="utf-8")
+    (q.astype(np.float32) * np.float32(escala)).astype("<f4").tofile(arq.with_name(arq.stem + "_audio.f32"))
+    arq.with_suffix(".json").write_text(json.dumps(
+        {"base": a.base, "n_jan": n_jan, "n_amostras": n_am, "escala": escala, "rotulos": rot,
+         "classes": ordem, "janelas": ids_usados, "por_classe": a.por_classe,
+         "passo_s": bc.DUR_S[a.base], "bytes": len(img)}, indent=1), encoding="utf-8")
     print(arq, len(img), "bytes")
 
 
@@ -334,8 +347,9 @@ def deteccao(verdade, decisao):
 
 def cmd_seq(a):
     b = bancada(a.alvo)
-    pl = Placa(a.porta)
-    pl.modelo(bc.modelo_bin("idmt"))
+    info_img = json.loads(Path(a.imagem).with_suffix(".json").read_text(encoding="utf-8"))
+    pl = Placa(a.porta, a.baud)
+    pl.modelo(bc.modelo_bin(info_img["base"]))
     pl.s.write(f"SEQ {a.cp} {a.n_logprob} {a.temp}\n".encode())
     linhas = []
     while True:
@@ -358,7 +372,8 @@ def cmd_seq(a):
     grava_meta(out, {"categoria": "medicao_no_ESP32", "sessao_bancada": b["sessao"],
                      "chip": b["chip_modelo"], "imagem": a.imagem, "cp": a.cp,
                      "n_logprob": a.n_logprob, "temp": a.temp, "deteccao": det,
-                     "passo_s": 3.0, "projeto": bc.commit()})
+                     "base": info_img["base"], "passo_s": info_img["passo_s"],
+                     "variante": b["variante"], "projeto": bc.commit()})
     print(json.dumps(det))
 
 
@@ -371,9 +386,12 @@ def main(argv=None):
         p.add_argument("--porta", required=True)
         # esp32s3oct = ESP32-S3 com PSRAM octal (build_fw.bat esp32s3oct)
         p.add_argument("--alvo", required=True, choices=["esp32", "esp32s3", "esp32s3oct"])
+        p.add_argument("--baud", type=int, default=BAUD)
         if nome == "lat":
             p.add_argument("--n", type=int, default=200)
             p.add_argument("--aquecimento", type=int, default=5)
+            p.add_argument("--bases", nargs="+", default=["idmt", "a2212"],
+                           help="lowmem: só a2212 (janelas de 1 s)")
         if nome == "seq":
             p.add_argument("--imagem", required=True)
             # mesmos valores do HMM dos experimentos (sequencias.avaliar: temp=1, n_logprob=-50)
@@ -382,6 +400,7 @@ def main(argv=None):
             p.add_argument("--temp", type=float, default=1.0)
     p = sp.add_parser("seq-imagem")
     p.add_argument("--por-classe", type=int, default=8)
+    p.add_argument("--base", default="idmt", choices=["idmt", "a2212"])
     a = ap.parse_args(argv)
     {"portas": cmd_portas, "info": cmd_info, "mem": cmd_mem, "equiv": cmd_equiv, "lat": cmd_lat,
      "seq-imagem": cmd_seq_imagem, "seq": cmd_seq}[a.cmd](a)

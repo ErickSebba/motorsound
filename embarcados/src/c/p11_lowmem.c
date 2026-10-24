@@ -88,6 +88,8 @@ void lm_volta(lm_pool *pl)
     for (i = 0; i < pl->nb; ++i) pl->b[i].usado = pl->b[i].marca;
 }
 
+#define MARCA(e) do { if (lm->marca) lm->marca(lm->marca_ctx, (e)); } while (0)
+
 #define CORTA(ptr, tipo, n, a32) \
     do { (ptr) = (tipo *)lm_corta(lm->pool, sizeof(tipo) * (size_t)(n), (a32)); \
          if (!(ptr)) return -10; } while (0)
@@ -202,13 +204,16 @@ int p11_lm_rastrear(p11_lm *lm, p11_real *min_delta, p11_real *score,
     lm->bytes_faseA = lm_em_uso(lm->pool);
 
     if (p11_rastrear_quadros(ws, NULL, NULL) != 0) return -1;
+    MARCA(LM_T_STFT);
     if (dump_e_norm) for (t = 0; t < T * J; ++t) dump_e_norm[t] = ws->e_norm[t];
     if (dump_custo) {
         p11_real er = p11_e_ref(ws);
         for (t = 0; t < T; ++t) p11_custo_linha(ws, er, t, dump_custo + (size_t)t * (J + 1));
     }
     if (p11_viterbi(ws, min_delta, score) != 0) return -2;
+    MARCA(LM_T_VITERBI);
     p11_saliencia_caminho(ws);
+    MARCA(LM_T_SAL);
     lm_volta(lm->pool);
     ws->qz = ws->qZ = ws->qX = NULL; ws->qS = NULL; ws->sal_q = ws->e_norm = NULL;
     ws->psi = NULL; ws->delta_a = ws->delta_b = NULL;
@@ -330,6 +335,7 @@ int p11_lm_envelope(p11_lm *lm, p11_real *dump_env_abs, p11_real *dump_env_dec,
         p11_fft_inv(&lm->pl_n1, lm->col_a, lm->col_b);
         for (a = 0; a < n1; ++a) lm->lin[a][b] = lm->col_b[a];
     }
+    MARCA(LM_T_HILBERT);
     /* |.|, sosfilt (forma direta II transposta, zi = 0) e [::16] em fluxo: o mesmo laço de
      * p11_sosfilt_dec, na ordem natural das amostras */
     fator = (p11_real)(1.0 / (double)n);
@@ -359,6 +365,7 @@ int p11_lm_envelope(p11_lm *lm, p11_real *dump_env_abs, p11_real *dump_env_dec,
         p11_real m = p11_soma_pares(ws->env_dec, nd) / (p11_real)nd;
         for (i = 0; i < nd; ++i) ws->env_dec[i] -= m;
     }
+    MARCA(LM_T_SOS);
     lm_volta(lm->pool);
     for (a = 0; a < n1; ++a) lm->lin[a] = NULL;
 
@@ -402,6 +409,7 @@ int p11_lm_envelope(p11_lm *lm, p11_real *dump_env_abs, p11_real *dump_env_dec,
             }
         }
     }
+    MARCA(LM_T_WELCH);
     lm_volta(lm->pool);
     return 0;
 }

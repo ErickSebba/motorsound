@@ -4,6 +4,8 @@
 #   ref    (padrão) p11_c_ref    : mesmo núcleo e mesma FFT portável do PC
 #   espdsp          p11_c_espdsp : FFT de N potência de 2 pela ESP-DSP (dsps_fft2r_fc32);
 #                                  Hilbert (16000/48000) e Welch de 1000 seguem no C portável
+#   lowmem          p11_c_lowmem : a mesma conta em pool de blocos pequenos (ESP32 sem PSRAM;
+#                                  ver src/c/p11_lowmem.h); só janelas de 1 s cabem
 set(P11_SRC "${CMAKE_CURRENT_LIST_DIR}/../../src/c")
 set(P11_VAR "$ENV{P11_VARIANTE}")
 if(P11_VAR STREQUAL "")
@@ -20,6 +22,7 @@ idf_component_register(
          "${P11_SRC}/p11_fft.c"
          "${P11_SRC}/p11_core.c"
          "${P11_SRC}/p11_decisao.c"
+         "${P11_SRC}/p11_lowmem.c"
     INCLUDE_DIRS "." "${P11_SRC}"
     REQUIRES ${REQ})
 
@@ -34,6 +37,9 @@ target_compile_options(${COMPONENT_LIB} PRIVATE -O2 -ffp-contract=off -Wno-unuse
 if(P11_VAR STREQUAL "espdsp")
   target_compile_definitions(${COMPONENT_LIB} PRIVATE P11_USAR_ESP_DSP=1
       P11_VARIANTE="p11_c_espdsp" P11_FLAGS="-O2 -ffp-contract=off P11_REAL=float P11_USAR_ESP_DSP")
+elseif(P11_VAR STREQUAL "lowmem")
+  target_compile_definitions(${COMPONENT_LIB} PRIVATE P11_LOWMEM=1
+      P11_VARIANTE="p11_c_lowmem" P11_FLAGS="-O2 -ffp-contract=off P11_REAL=float P11_LOWMEM")
 else()
   target_compile_definitions(${COMPONENT_LIB} PRIVATE
       P11_VARIANTE="p11_c_ref" P11_FLAGS="-O2 -ffp-contract=off P11_REAL=float")

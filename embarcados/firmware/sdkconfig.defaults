@@ -12,6 +12,8 @@ CONFIG_SPIRAM_IGNORE_NOTFOUND=y
 CONFIG_SPIRAM_USE_CAPS_ALLOC=y
 # Serial: console em UART0 a 921600 baud; logs só de aviso para não sujar o protocolo
 CONFIG_ESP_CONSOLE_UART_DEFAULT=y
+# sem _CUSTOM o IDF ignora o BAUDRATE e fica em 115200 (visto no chip em 24/10)
+CONFIG_ESP_CONSOLE_UART_CUSTOM=y
 CONFIG_ESP_CONSOLE_UART_BAUDRATE=921600
 CONFIG_LOG_DEFAULT_LEVEL_WARN=y
 # Tarefa principal com pilha folgada; a medição usa uma tarefa própria (ver main.c)

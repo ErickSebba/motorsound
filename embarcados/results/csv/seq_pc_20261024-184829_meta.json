@@ -1,0 +1,43 @@
+{
+  "categoria": "medicao_no_PC",
+  "imagem": "..\\..\\gold\\seq_esp32\\seq_a2212_20261024-184818.bin",
+  "cp": 2.0,
+  "n_logprob": -50.0,
+  "temp": 1.0,
+  "passo_s": 1.0,
+  "base": "a2212",
+  "projeto": {
+    "commit": "14e7709065565933f0948b715e84e639af64b671",
+    "sujo": true
+  },
+  "deteccao_online_python": [
+    {
+      "troca_em": 10,
+      "de": 0,
+      "para": 1,
+      "atraso_janelas": 0
+    },
+    {
+      "troca_em": 20,
+      "de": 1,
+      "para": 2,
+      "atraso_janelas": 0
+    }
+  ],
+  "deteccao_online_c": [
+    {
+      "troca_em": 10,
+      "de": 0,
+      "para": 1,
+      "atraso_janelas": 0
+    },
+    {
+      "troca_em": 20,
+      "de": 1,
+      "para": 2,
+      "atraso_janelas": 0
+    }
+  ],
+  "decisoes_iguais_python_c": true,
+  "max_abs_dif_probs": 2.6791555292504654e-05
+}

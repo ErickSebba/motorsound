@@ -2,7 +2,7 @@
 para a flash do ESP32 (pil_esp32.py seq-imagem), já desquantizada, processada janela a janela
 pela p11 Python de referência e pela p11 em C (build float do PC), com o filtro online do HMM.
 
-    .venv\\Scripts\\python.exe embarcados\\src\\python\\seq_pc.py --imagem <seq_idmt_<ts>.bin> --cp 2
+    .venv\\Scripts\\python.exe embarcados\\src\\python\\seq_pc.py --imagem <seq_<base>_<ts>.bin> --cp 2
 
 Python: probabilidades por `_d.extrair` + `_d.prever`, decisões por `hmm.filtro_online`
 (referência). C: `p11_host caso` por janela (probs) e `p11_host seq` (filtro online em C).
@@ -24,7 +24,7 @@ from pil_esp32 import deteccao
 
 bc.garantir_raiz_no_path()
 from motorsound import hmm  # noqa: E402
-from motorsound.config import AVAL_IDMT  # noqa: E402
+from motorsound.config import AVAL_A2212, AVAL_IDMT  # noqa: E402
 from motorsound.runner import _preparar  # noqa: E402
 from pipelines import p11_decifrae_harmsum as p11  # noqa: E402
 
@@ -42,18 +42,21 @@ def main(argv=None):
     x = np.fromfile(img.with_name(img.stem + "_audio.f32"), dtype="<f4").reshape(info["n_jan"], -1)
     verdade = info["rotulos"]
     exe = bc.EMB / f"build-{a.build}" / "p11_host.exe"
-    mod = modelo_python("idmt")
+    base = info.get("base", "idmt")
+    aval = AVAL_IDMT if base == "idmt" else AVAL_A2212
+    passo = str(info.get("passo_s", 3.0))
+    mod = modelo_python(base)
     C = mod[1]
     P_py, P_c = [], []
     with tempfile.TemporaryDirectory() as td:
         td = Path(td)
         for j in range(info["n_jan"]):
-            feat = p11.extrair(_preparar(x[j], AVAL_IDMT), p11.PRE.sr, p11.PRE)
+            feat = p11.extrair(_preparar(x[j], aval), p11.PRE.sr, p11.PRE)
             P_py.append(p11.prever(mod, feat[None, :], p11.POST)[0])
             caso, saida = td / f"j{j}", td / f"o{j}"
             caso.mkdir()
             x[j].astype("<f4").tofile(caso / "audio.f32")
-            subprocess.run([str(exe), "caso", str(caso), str(bc.modelo_bin("idmt")), str(saida)],
+            subprocess.run([str(exe), "caso", str(caso), str(bc.modelo_bin(base)), str(saida)],
                            check=True, capture_output=True)
             ext = "f64" if a.build == "double" else "f32"
             P_c.append(np.fromfile(saida / f"probs.{ext}", dtype="<f8" if ext == "f64" else "<f4"))
@@ -64,7 +67,7 @@ def main(argv=None):
         # filtro online em C sobre as probabilidades do C
         P_c.astype("<f8").tofile(td / "probs.f64")
         subprocess.run([str(exe), "seq", str(td / "probs.f64"), str(len(P_c)), str(C), str(a.cp),
-                        str(a.temp), str(a.n_logprob), "0", "3.0", str(td / "seqout")],
+                        str(a.temp), str(a.n_logprob), "0", passo, str(td / "seqout")],
                        check=True, capture_output=True)
         on_c = np.fromfile(td / "seqout" / "hmm_online.i32", dtype="<i4").tolist()
     df = pd.DataFrame({"jan": range(len(verdade)), "verdade": verdade,
@@ -76,7 +79,7 @@ def main(argv=None):
     out = bc.EMB / "results" / "csv" / f"seq_pc_{ts}.csv"
     df.to_csv(out, index=False)
     meta = {"categoria": "medicao_no_PC", "imagem": str(img), "cp": a.cp, "n_logprob": a.n_logprob,
-            "temp": a.temp, "passo_s": 3.0, "projeto": bc.commit(),
+            "temp": a.temp, "passo_s": float(passo), "base": base, "projeto": bc.commit(),
             "deteccao_online_python": deteccao(verdade, on_py),
             "deteccao_online_c": deteccao(verdade, on_c),
             "decisoes_iguais_python_c": bool(on_py == on_c),

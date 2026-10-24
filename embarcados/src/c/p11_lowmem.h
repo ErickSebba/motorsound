@@ -51,8 +51,14 @@ void lm_marca(lm_pool *pl);       /* guarda o uso atual de cada bloco */
 void lm_volta(lm_pool *pl);       /* devolve tudo o que foi cortado depois da marca */
 size_t lm_em_uso(const lm_pool *pl);
 
+/* pontos de marcação de tempo (o firmware mede entre eles; NULL no PC) */
+enum { LM_T_STFT = 0, LM_T_VITERBI, LM_T_SAL, LM_T_HILBERT, LM_T_SOS, LM_T_WELCH, LM_N_T };
+typedef void (*lm_marcador)(void *ctx, int etapa);
+
 typedef struct {
     p11_ws ws;               /* os mesmos campos que p11_core.c usa, apontando para o pool */
+    lm_marcador marca;       /* chamado ao fim de cada etapa LM_T_* (opcional) */
+    void *marca_ctx;
     lm_pool *pool;
     int n1, n2;
     p11_fft_plano pl_n1, pl_n2;

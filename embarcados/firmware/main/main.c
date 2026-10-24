@@ -32,6 +32,9 @@
 #include "esp_rom_crc.h"
 
 #include "p11.h"
+#ifdef P11_LOWMEM
+#include "p11_lowmem.h"
+#endif
 #ifdef P11_USAR_ESP_DSP
 #include "dsps_fft2r.h"
 #endif
@@ -135,19 +138,131 @@ static int prepara_buffers(int n)
     return 0;
 }
 
+#ifdef P11_LOWMEM
+/* ------------------------------------------------------------------ variante lowmem */
+/* Pool montado no boot com todos os blocos livres: DRAM (acesso por byte) deixando
+ * LM_RESERVA para o sistema, depois IRAM (só 32 bits, MALLOC_CAP_EXEC no ESP32). */
+#define LM_RESERVA (20 * 1024)
+static lm_pool g_pool;
+static p11_lm g_lm;
+static int g_lm_n = 0;
+static int64_t g_lm_init_us = 0;
+static int64_t g_marcas[LM_N_T];
+static size_t g_pool_8bit = 0, g_pool_32bit = 0;
+
+static void marcador(void *ctx, int e)
+{
+    (void)ctx;
+    if (e >= 0 && e < LM_N_T) g_marcas[e] = esp_timer_get_time();
+}
+
+static void monta_pool(void)
+{
+    lm_pool_vazio(&g_pool);
+    for (;;) {
+        size_t livre = heap_caps_get_free_size(MALLOC_CAP_8BIT);
+        size_t maior = heap_caps_get_largest_free_block(MALLOC_CAP_8BIT);
+        size_t t;
+        void *p;
+        if (g_pool.nb >= LM_MAX_BLOCOS || livre < LM_RESERVA + 4096 || maior < 4096) break;
+        t = maior;
+        if (livre - t < LM_RESERVA) t = livre - LM_RESERVA;
+        t = (t - 64) & ~(size_t)15;
+        if (t < 4096) break;
+        p = heap_caps_malloc(t, MALLOC_CAP_8BIT);
+        if (!p) break;
+        lm_pool_add(&g_pool, p, t, 0);
+        g_pool_8bit += t;
+    }
+    for (;;) {
+        size_t maior = heap_caps_get_largest_free_block(MALLOC_CAP_EXEC);
+        size_t t;
+        void *p;
+        if (g_pool.nb >= LM_MAX_BLOCOS || maior < 4096) break;
+        t = (maior - 64) & ~(size_t)15;
+        p = heap_caps_malloc(t, MALLOC_CAP_EXEC);
+        if (!p) break;
+        lm_pool_add(&g_pool, p, t, 1);
+        g_pool_32bit += t;
+    }
+}
+
+/* tabelas (grade, janela, rfft, giros do Hilbert) uma vez por tamanho de janela */
+static int lm_prepara(int n)
+{
+    int i, rc;
+    int64_t t0;
+    if (g_lm_n == n) return 0;
+    for (i = 0; i < g_pool.nb; ++i) g_pool.b[i].usado = g_pool.b[i].marca = 0;
+    g_pool.pico = 0;
+    g_pool.falhou_bytes = 0;
+    g_lm_n = 0;
+    t0 = esp_timer_get_time();
+    rc = p11_lm_init(&g_lm, &g_pool, n);
+    g_lm_init_us = esp_timer_get_time() - t0;
+    if (rc != 0) return rc;
+    g_lm.marca = marcador;
+    g_lm.marca_ctx = NULL;
+    g_lm_n = n;
+    return 0;
+}
+
+static int prepara(int n) { return lm_prepara(n); }
+static float *audio_buf(void) { return (float *)g_lm.ws.y; }
+#else
+static int prepara(int n) { return prepara_buffers(n); }
+static float *audio_buf(void) { return g_audio; }
+#endif
+
 /* ------------------------------------------------------------------ pipeline */
 typedef struct {
     int64_t t_init, t_prep, t_rast, t_vit, t_sal, t_env, t_feat, t_cos;
+    int64_t t_hil, t_sos, t_welch;   /* partes do envelope (só na variante lowmem) */
     p11_real min_delta, score, env_mod[2], feat[P11_N_FEAT], z[P11_N_FEAT];
     p11_real cosv[P11_MAX_CLASSES], probs[P11_MAX_CLASSES];
     int T;
     int32_t path[64];
 } resultado_t;
 
+#ifdef P11_LOWMEM
+/* mesma sequência de p11_host.c::cmd_lowmem, sem dumps; o áudio já está em g_lm.ws.y */
+static int roda_janela(const float *audio, int n, resultado_t *r)
+{
+    int64_t t0, t1;
+    float *y;
+    memset(r, 0, sizeof(*r));
+    if (prepara(n) != 0) return -1;
+    y = audio_buf();
+    if (audio != y) memcpy(y, audio, sizeof(float) * (size_t)n);
+    t0 = esp_timer_get_time();
+    p11_preparar(y, n, y);
+    t1 = esp_timer_get_time(); r->t_prep = t1 - t0;
+    if (p11_lm_rastrear(&g_lm, &r->min_delta, &r->score, NULL, NULL) != 0) return -2;
+    r->t_rast = g_marcas[LM_T_STFT] - t1;
+    r->t_vit = g_marcas[LM_T_VITERBI] - g_marcas[LM_T_STFT];
+    r->t_sal = g_marcas[LM_T_SAL] - g_marcas[LM_T_VITERBI];
+    t0 = esp_timer_get_time();
+    if (p11_lm_envelope(&g_lm, NULL, NULL, NULL, NULL, r->env_mod) != 0) return -3;
+    t1 = esp_timer_get_time(); r->t_env = t1 - t0;
+    r->t_hil = g_marcas[LM_T_HILBERT] - t0;
+    r->t_sos = g_marcas[LM_T_SOS] - g_marcas[LM_T_HILBERT];
+    r->t_welch = g_marcas[LM_T_WELCH] - g_marcas[LM_T_SOS];
+    t0 = t1;
+    p11_lm_features(&g_lm, r->env_mod, r->feat);
+    t1 = esp_timer_get_time(); r->t_feat = t1 - t0; t0 = t1;
+    p11_cosseno(&g_mod, r->feat, r->z, r->cosv, r->probs);
+    t1 = esp_timer_get_time(); r->t_cos = t1 - t0;
+    r->T = g_lm.ws.T;
+    if (r->T > (int)(sizeof r->path / sizeof r->path[0])) return -4;
+    memcpy(r->path, g_lm.ws.path, sizeof(int32_t) * (size_t)r->T);
+    return 0;
+}
+#else
 static int roda_janela(const float *audio, int n, resultado_t *r)
 {
     p11_ws ws;
     int64_t t0, t1;
+    memset(r, 0, sizeof(*r));
     if (prepara_buffers(n) != 0) return -1;
     if (audio != g_audio) memcpy(g_audio, audio, sizeof(float) * (size_t)n);
 
@@ -174,14 +289,17 @@ static int roda_janela(const float *audio, int n, resultado_t *r)
     memcpy(r->path, ws.path, sizeof(int32_t) * (size_t)ws.T);
     return 0;
 }
+#endif
 
 static void sb_resultado(sb_t *b, const resultado_t *r)
 {
     int i;
     sb_add(b, "\"us\":{\"init\":%" PRId64 ",\"prep\":%" PRId64 ",\"rastreio\":%" PRId64
               ",\"viterbi\":%" PRId64 ",\"sal_caminho\":%" PRId64 ",\"envelope\":%" PRId64
-              ",\"features\":%" PRId64 ",\"cosseno\":%" PRId64 "},",
-           r->t_init, r->t_prep, r->t_rast, r->t_vit, r->t_sal, r->t_env, r->t_feat, r->t_cos);
+              ",\"features\":%" PRId64 ",\"cosseno\":%" PRId64 ",\"hilbert\":%" PRId64
+              ",\"sosfilt\":%" PRId64 ",\"welch\":%" PRId64 "},",
+           r->t_init, r->t_prep, r->t_rast, r->t_vit, r->t_sal, r->t_env, r->t_feat, r->t_cos,
+           r->t_hil, r->t_sos, r->t_welch);
     sb_add(b, "\"T\":%d,\"vit_path\":[", r->T);
     for (i = 0; i < r->T; ++i) sb_add(b, i ? ",%" PRId32 : "%" PRId32, r->path[i]);
     sb_add(b, "],\"vit_min_delta\":"); sb_real(b, r->min_delta);
@@ -195,12 +313,26 @@ static void sb_resultado(sb_t *b, const resultado_t *r)
 
 static void sb_memoria(sb_t *b)
 {
+#ifdef P11_LOWMEM
+    /* ws_bytes = pico do pool usado pela p11 (persistente + maior fase), medido no chip */
+    sb_add(b, "\"heap_min_livre_interna\":%u,\"heap_min_livre_psram\":%u,"
+              "\"pilha_folga_bytes\":%u,\"ws_bytes\":%u,\"ws_na_psram\":0,"
+              "\"pool_8bit\":%u,\"pool_32bit\":%u,\"pool_blocos\":%d,\"lm_init_us\":%" PRId64
+              ",\"lm_persist\":%u,\"lm_faseA\":%u,\"lm_faseB\":%u,\"lm_faseC\":%u",
+           (unsigned)heap_caps_get_minimum_free_size(MALLOC_CAP_INTERNAL),
+           (unsigned)heap_caps_get_minimum_free_size(MALLOC_CAP_SPIRAM),
+           (unsigned)uxTaskGetStackHighWaterMark(NULL), (unsigned)g_pool.pico,
+           (unsigned)g_pool_8bit, (unsigned)g_pool_32bit, g_pool.nb, g_lm_init_us,
+           (unsigned)g_lm.bytes_persist, (unsigned)g_lm.bytes_faseA, (unsigned)g_lm.bytes_faseB,
+           (unsigned)g_lm.bytes_faseC);
+#else
     sb_add(b, "\"heap_min_livre_interna\":%u,\"heap_min_livre_psram\":%u,"
               "\"pilha_folga_bytes\":%u,\"ws_bytes\":%u,\"ws_na_psram\":%d",
            (unsigned)heap_caps_get_minimum_free_size(MALLOC_CAP_INTERNAL),
            (unsigned)heap_caps_get_minimum_free_size(MALLOC_CAP_SPIRAM),
            (unsigned)uxTaskGetStackHighWaterMark(NULL),
            (unsigned)g_mem_bytes, g_mem_psram);
+#endif
 }
 
 /* ------------------------------------------------------------------ comandos */
@@ -219,9 +351,23 @@ static void cmd_info(void)
            esp_clk_cpu_freq(), flash, (int)esp_psram_is_initialized(),
            (unsigned)(esp_psram_is_initialized() ? esp_psram_get_size() : 0),
            esp_get_idf_version(), P11_FLAGS, P11_VARIANTE, __DATE__, __TIME__);
-    sb_add(&b, "\"heap_livre_interna\":%u,\"heap_livre_psram\":%u,",
+    sb_add(&b, "\"heap_livre_interna\":%u,\"heap_livre_psram\":%u,\"heap_livre_8bit\":%u,"
+               "\"heap_livre_exec\":%u,\"maior_bloco_8bit\":%u,",
            (unsigned)heap_caps_get_free_size(MALLOC_CAP_INTERNAL),
-           (unsigned)heap_caps_get_free_size(MALLOC_CAP_SPIRAM));
+           (unsigned)heap_caps_get_free_size(MALLOC_CAP_SPIRAM),
+           (unsigned)heap_caps_get_free_size(MALLOC_CAP_8BIT),
+           (unsigned)heap_caps_get_free_size(MALLOC_CAP_EXEC),
+           (unsigned)heap_caps_get_largest_free_block(MALLOC_CAP_8BIT));
+#ifdef P11_LOWMEM
+    {
+        int i;
+        sb_add(&b, "\"pool_8bit\":%u,\"pool_32bit\":%u,\"pool\":[",
+               (unsigned)g_pool_8bit, (unsigned)g_pool_32bit);
+        for (i = 0; i < g_pool.nb; ++i)
+            sb_add(&b, "%s[%u,%d]", i ? "," : "", (unsigned)g_pool.b[i].tam, g_pool.b[i].so32);
+        sb_add(&b, "],");
+    }
+#endif
     sb_add(&b, "\"ws_bytes_48000\":%u,\"ws_bytes_16000\":%u}\n",
            (unsigned)p11_ws_bytes(48000, 1), (unsigned)p11_ws_bytes(16000, 1));
     escreve(b.p, b.n);
@@ -267,23 +413,30 @@ static void cmd_win(int id, int n)
     int rc;
     uint32_t crc;
     if (!g_tem_modelo) { escreve_str("@@ERRO WIN sem modelo\n"); return; }
-    if (prepara_buffers(n) != 0) {
+    if (prepara(n) != 0) {
         /* consome os bytes para manter o protocolo em sincronia */
         uint8_t lixo[256];
         size_t falta = sizeof(float) * (size_t)n;
         while (falta) { size_t k = falta > sizeof lixo ? sizeof lixo : falta; le_exato(lixo, k); falta -= k; }
+#ifdef P11_LOWMEM
+        /* "para X bytes": o pedido do pool que não coube; "livre interna": total do pool */
+        snprintf(g_out, SAIDA_MAX, "@@ERRO WIN %d sem memoria para %u bytes de workspace "
+                 "(livre interna %u, psram 0)\n", id, (unsigned)g_pool.falhou_bytes,
+                 (unsigned)(g_pool_8bit + g_pool_32bit));
+#else
         snprintf(g_out, SAIDA_MAX, "@@ERRO WIN %d sem memoria para %u bytes de workspace "
                  "(livre interna %u, psram %u)\n", id, (unsigned)p11_ws_bytes(n, 1),
                  (unsigned)heap_caps_get_largest_free_block(MALLOC_CAP_8BIT),
                  (unsigned)heap_caps_get_largest_free_block(MALLOC_CAP_SPIRAM));
+#endif
         escreve_str(g_out);
         return;
     }
-    le_exato(g_audio, sizeof(float) * (size_t)n);
+    le_exato(audio_buf(), sizeof(float) * (size_t)n);
     /* CRC32 (o mesmo de zlib.crc32) dos bytes recebidos, fora do tempo medido: o host
      * descarta a janela se a serial perdeu ou trocou algum byte */
-    crc = esp_rom_crc32_le(0, (const uint8_t *)g_audio, sizeof(float) * (size_t)n);
-    rc = roda_janela(g_audio, n, &r);
+    crc = esp_rom_crc32_le(0, (const uint8_t *)audio_buf(), sizeof(float) * (size_t)n);
+    rc = roda_janela(audio_buf(), n, &r);
     if (rc != 0) {
         snprintf(g_out, SAIDA_MAX, "@@ERRO WIN %d rc=%d\n", id, rc);
         escreve_str(g_out);
@@ -319,7 +472,7 @@ static void cmd_seq(float cp, float n_logprob, float temp)
     memcpy(&escala, cab + 12, 4);
     rot = (uint32_t *)malloc(4 * n_jan);
     bloco = (int16_t *)malloc(2 * 1024);
-    if (!rot || !bloco || prepara_buffers((int)n_am) != 0) {
+    if (!rot || !bloco || prepara((int)n_am) != 0) {
         escreve_str("@@ERRO SEQ sem memoria\n");
         free(rot); free(bloco);
         return;
@@ -336,11 +489,11 @@ static void cmd_seq(float cp, float n_logprob, float temp)
         for (k = 0; k < n_am; k += 1024) {
             uint32_t m = n_am - k < 1024 ? n_am - k : 1024, i;
             esp_partition_read(pt, off + 2 * (size_t)k, bloco, 2 * m);
-            for (i = 0; i < m; ++i) g_audio[k + i] = (float)bloco[i] * escala;
+            for (i = 0; i < m; ++i) audio_buf()[k + i] = (float)bloco[i] * escala;
         }
         off += 2 * (size_t)n_am;
         t_le = esp_timer_get_time() - t0;
-        rc = roda_janela(g_audio, (int)n_am, &r);
+        rc = roda_janela(audio_buf(), (int)n_am, &r);
         if (rc != 0) { snprintf(g_out, SAIDA_MAX, "@@ERRO SEQ jan %u rc=%d\n", (unsigned)j, rc); escreve_str(g_out); break; }
         t0 = esp_timer_get_time();
         p11_hmm_log_em(r.probs, 1, g_mod.C, temp, n_logprob, le);
@@ -362,6 +515,9 @@ static void tarefa_bancada(void *arg)
 {
     char linha[LINHA_MAX];
     (void)arg;
+#ifdef P11_LOWMEM
+    monta_pool();   /* depois de a tarefa existir: a pilha dela já saiu do heap */
+#endif
     escreve_str("@@PRONTO p11\n");
     for (;;) {
         int a = 0, n = 0;
@@ -390,7 +546,9 @@ void app_main(void)
     /* tabela da ESP-DSP para o maior N potência de 2 usado (4096: meia rfft de 8192) */
     if (dsps_fft2r_init_fc32(NULL, 4096) != ESP_OK) abort();
 #endif
-    uart_driver_install(UART_P11, 32 * 1024, 8 * 1024, 0, NULL, 0);
+    /* buffers pequenos (RAM é o gargalo sem PSRAM); a 921600 baud a tarefa lê bem antes
+     * de 4 KB acumularem */
+    uart_driver_install(UART_P11, 4 * 1024, 2 * 1024, 0, NULL, 0);
     uart_param_config(UART_P11, &cfg);
     /* núcleo 1 no ESP32/ESP32-S3 (o 0 fica com o sistema); prioridade acima do idle */
     xTaskCreatePinnedToCore(tarefa_bancada, "p11", PILHA_TAREFA, NULL, 5, NULL,
