@@ -39,6 +39,40 @@ static int fatorar(int n, int *fat)
     return k;
 }
 
+/* ---------------- tabelas de giro (acesso em palavras inteiras) ---------------- */
+#if P11_REAL_EH_DOUBLE
+p11_cpx p11_tw_le(const p11_cpx *p) { return *p; }
+#else
+p11_cpx p11_tw_le(const p11_cpx *p)
+{
+    const volatile uint32_t *u = (const volatile uint32_t *)(const void *)p;
+    uint32_t a = u[0], b = u[1];
+    p11_cpx w;
+    memcpy(&w.re, &a, sizeof a);
+    memcpy(&w.im, &b, sizeof b);
+    return w;
+}
+#endif
+
+void p11_tw_grava(p11_cpx *p, double fase)
+{
+    p11_cpx w;
+    w.re = (p11_real)cos(fase);
+    w.im = (p11_real)sin(fase);
+#if P11_REAL_EH_DOUBLE
+    *p = w;
+#else
+    {
+        volatile uint32_t *u = (volatile uint32_t *)(void *)p;
+        uint32_t a, b;
+        memcpy(&a, &w.re, sizeof a);
+        memcpy(&b, &w.im, sizeof b);
+        u[0] = a;
+        u[1] = b;
+    }
+#endif
+}
+
 size_t p11_fft_bytes(int n)
 {
     return (size_t)(n > 0 ? n : 0) * sizeof(p11_cpx);
@@ -52,18 +86,14 @@ int p11_fft_init(p11_fft_plano *pl, int n, void *mem)
     if (fatorar(n, pl->fatores) < 0) return -1;
     pl->n = n;
     pl->tw = (p11_cpx *)mem;
-    for (k = 0; k < n; ++k) {
-        double fase = -2.0 * P11_PI * (double)k / (double)n;
-        pl->tw[k].re = (p11_real)cos(fase);
-        pl->tw[k].im = (p11_real)sin(fase);
-    }
+    for (k = 0; k < n; ++k) p11_tw_grava(&pl->tw[k], -2.0 * P11_PI * (double)k / (double)n);
     return 0;
 }
 
 /* ---------------- aritmética complexa ---------------- */
 static p11_cpx giro(const p11_fft_plano *pl, size_t idx, int inv)
 {
-    p11_cpx w = pl->tw[idx];
+    p11_cpx w = p11_tw_le(&pl->tw[idx]);
     if (inv) w.im = -w.im;
     return w;
 }
@@ -285,11 +315,7 @@ int p11_rfft_init(p11_rfft_plano *pl, int n, void *mem)
     pl->n = n;
     if (p11_fft_init(&pl->metade, h, b) != 0) return -1;
     pl->tw_r = (p11_cpx *)(b + p11_fft_bytes(h));
-    for (k = 0; k < h; ++k) {
-        double fase = -2.0 * P11_PI * (double)k / (double)n;
-        pl->tw_r[k].re = (p11_real)cos(fase);
-        pl->tw_r[k].im = (p11_real)sin(fase);
-    }
+    for (k = 0; k < h; ++k) p11_tw_grava(&pl->tw_r[k], -2.0 * P11_PI * (double)k / (double)n);
     return 0;
 }
 
@@ -308,7 +334,7 @@ void p11_rfft(const p11_rfft_plano *pl, const p11_cpx *z, p11_cpx *Z, p11_cpx *o
         p11_real di = (p11_real)0.5 * (a.im + b.im);
         /* impar = (dr + i di)/i = di - i dr */
         p11_cpx im; im.re = di; im.im = -dr;
-        im = cmul(im, pl->tw_r[k]);
+        im = cmul(im, p11_tw_le(&pl->tw_r[k]));
         out[k].re = pr + im.re;
         out[k].im = pi + im.im;
     }

@@ -30,6 +30,7 @@
 #include "esp_idf_version.h"
 #include "esp_private/esp_clk.h"
 #include "esp_rom_crc.h"
+#include "esp_memory_utils.h"
 
 #include "p11.h"
 #ifdef P11_LOWMEM
@@ -183,20 +184,26 @@ static void marcador(void *ctx, int e)
 
 static void monta_pool(void)
 {
+    void *diram[LM_MAX_BLOCOS];
+    int nd = 0, i;
     lm_pool_vazio(&g_pool);
     /* IRAM primeiro: no chip, tirar a IRAM depois da DRAM consumiu a reserva (24/10:
-     * sobraram 6 KB de heap de byte em vez de 20 KB) */
+     * sobraram 6 KB de heap de byte em vez de 20 KB). Blocos D/IRAM (que o heap devolve pelo
+     * endereço de IRAM) são soltos e voltam como DRAM no laço seguinte: na IRAM só cabem as
+     * tabelas de giro, e um bloco D/IRAM de 110 KB fazia falta para os vetores de float. */
     for (;;) {
         size_t maior = heap_caps_get_largest_free_block(MALLOC_CAP_EXEC);
         size_t t;
         void *p;
-        if (g_pool.nb >= LM_MAX_BLOCOS || maior < 4096) break;
+        if (g_pool.nb >= LM_MAX_BLOCOS || nd >= LM_MAX_BLOCOS || maior < 4096) break;
         t = (maior - 64) & ~(size_t)15;
         p = heap_caps_malloc(t, MALLOC_CAP_EXEC);
         if (!p) break;
+        if (esp_ptr_in_diram_iram(p)) { diram[nd++] = p; continue; }
         lm_pool_add(&g_pool, p, t, 1);
         g_pool_32bit += t;
     }
+    for (i = 0; i < nd; ++i) heap_caps_free(diram[i]);
     for (;;) {
         size_t livre = heap_caps_get_free_size(MALLOC_CAP_8BIT);
         size_t maior = heap_caps_get_largest_free_block(MALLOC_CAP_8BIT);

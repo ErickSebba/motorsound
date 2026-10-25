@@ -151,22 +151,23 @@ int p11_lm_init(p11_lm *lm, lm_pool *pool, int n)
     ws->nperseg = nd < 1024 ? nd : 1024;
     if (ws->nperseg % 2) return -2;   /* p11_welch exige nperseg par */
 
-    /* todos de 32 bits (float, int32, double = dois l32i): podem ir para a IRAM, que só
-     * aceita acesso em 32 bits; no ESP32 sem PSRAM a DRAM livre fica para o qX (24/10) */
+    /* Só as tabelas de giro aceitam IRAM (aceita = 1): o ESP32 não executa lsi/ssi (float) na
+     * IRAM, e só p11_tw_le/p11_tw_grava as tocam, em palavras inteiras. Medido no chip em 24/10:
+     * y na IRAM deu LoadStoreError em p11_preparar. */
     g_nped = 0;
-    PED(ws->y, p11_real, n, 1);                   /* serial copia em palavras de 32 bits (main.c) */
-    PED(ws->grade, double, P11_J, 1);
-    PED(ws->janela, p11_real, P11_N_FFT, 1);
-    PED(ws->P_mean, p11_real, P11_F, 1);
-    PED(ws->e_q, p11_real, ws->T, 1);
-    PED(ws->path, int32_t, ws->T, 1);
-    PED(ws->fbuf, double, ws->T, 1);
-    PED(ws->rbuf, p11_real, ws->T, 1);
-    PED(ws->env_dec, p11_real, nd, 1);
+    PED(ws->y, p11_real, n, 0);
+    PED(ws->grade, double, P11_J, 0);
+    PED(ws->janela, p11_real, P11_N_FFT, 0);
+    PED(ws->P_mean, p11_real, P11_F, 0);
+    PED(ws->e_q, p11_real, ws->T, 0);
+    PED(ws->path, int32_t, ws->T, 0);
+    PED(ws->fbuf, double, ws->T, 0);
+    PED(ws->rbuf, p11_real, ws->T, 0);
+    PED(ws->env_dec, p11_real, nd, 0);
     PED(tw_meia, p11_cpx, h, 1);
     PED(tw_r, p11_cpx, h, 1);
-    PED(lm->tw_r128, p11_cpx, LM_N2, 1);
-    PED(lm->tw_q, p11_cpx, lm->n1, 1);
+    PED(lm->tw_r128, p11_cpx, LM_N2, 0);
+    PED(lm->tw_q, p11_cpx, lm->n1, 0);
     if (atende(pool) != 0) return -10;
 
     /* grade e janela: mesmas contas de p11_ws_init (calc_grade e np.hanning) */
@@ -181,11 +182,7 @@ int p11_lm_init(p11_lm *lm, lm_pool *pool, int n)
     ws->rfft_stft.n = P11_N_FFT;
     if (p11_fft_init(&ws->rfft_stft.metade, h, tw_meia) != 0) return -3;
     ws->rfft_stft.tw_r = tw_r;
-    for (k = 0; k < h; ++k) {
-        double fase = -2.0 * LM_PI * (double)k / (double)P11_N_FFT;
-        tw_r[k].re = (p11_real)cos(fase);
-        tw_r[k].im = (p11_real)sin(fase);
-    }
+    for (k = 0; k < h; ++k) p11_tw_grava(&tw_r[k], -2.0 * LM_PI * (double)k / (double)P11_N_FFT);
     /* fatores do Hilbert em quatro passos: W_N^m = W_N^(N2*q) * W_N^r, m = N2*q + r */
     for (k = 0; k < LM_N2; ++k) {
         double fase = -2.0 * LM_PI * (double)k / (double)n;
@@ -216,9 +213,9 @@ int p11_lm_rastrear(p11_lm *lm, p11_real *min_delta, p11_real *score,
      * primeiros F reais do mesmo vetor: qS[f] (bytes 4f) só sobrescreve qX[f/2], já lido. */
     g_nped = 0;
     PED(ws->qX, p11_cpx, P11_F, 0);       /* acesso por byte: abriga o psi (int16) depois */
-    PED(ws->qZ, p11_cpx, P11_N_FFT / 2, 1);
-    PED(ws->sal_q, p11_real, J, 1);
-    PED(ws->e_norm, p11_real, (size_t)T * J, 1);
+    PED(ws->qZ, p11_cpx, P11_N_FFT / 2, 0);
+    PED(ws->sal_q, p11_real, J, 0);
+    PED(ws->e_norm, p11_real, (size_t)T * J, 0);
     if (atende(lm->pool) != 0) return -10;
     ws->qz = ws->qX;
     ws->qS = (p11_real *)ws->qX;
@@ -234,8 +231,8 @@ int p11_lm_rastrear(p11_lm *lm, p11_real *min_delta, p11_real *score,
             ws->delta_b = (p11_real *)(base + b_psi + b_del);
         } else {
             CORTA(ws->psi, int16_t, (size_t)T * (J + 1), 0);
-            CORTA(ws->delta_a, p11_real, J + 1, 1);
-            CORTA(ws->delta_b, p11_real, J + 1, 1);
+            CORTA(ws->delta_a, p11_real, J + 1, 0);
+            CORTA(ws->delta_b, p11_real, J + 1, 0);
         }
     }
     (void)u0;
@@ -319,16 +316,16 @@ int p11_lm_envelope(p11_lm *lm, p11_real *dump_env_abs, p11_real *dump_env_dec,
         if (no_y > n1) no_y = n1;
         for (a = 0; a < n1; ++a) {
             if (a < no_y) lm->lin[a] = (p11_cpx *)(void *)ws->y + (size_t)a * n2;
-            else CORTA(lm->lin[a], p11_cpx, n2, 1);
+            else CORTA(lm->lin[a], p11_cpx, n2, 0);
         }
     }
-    CORTA(lm->col_a, p11_cpx, n1, 1);
-    CORTA(lm->col_b, p11_cpx, n1, 1);
-    CORTA(lm->row_t, p11_cpx, n2, 1);
+    CORTA(lm->col_a, p11_cpx, n1, 0);
+    CORTA(lm->col_b, p11_cpx, n1, 0);
+    CORTA(lm->row_t, p11_cpx, n2, 0);
     {
         p11_cpx *m1, *m2;
-        CORTA(m1, p11_cpx, n1, 1);
-        CORTA(m2, p11_cpx, n2, 1);
+        CORTA(m1, p11_cpx, n1, 0);
+        CORTA(m2, p11_cpx, n2, 0);
         if (p11_fft_init(&lm->pl_n1, n1, m1) != 0) return -1;
         if (p11_fft_init(&lm->pl_n2, n2, m2) != 0) return -1;
     }
@@ -412,14 +409,14 @@ int p11_lm_envelope(p11_lm *lm, p11_real *dump_env_abs, p11_real *dump_env_dec,
         const int nps = ws->nperseg, nw = nps / 2 + 1;
         ws->mem_rfft_welch = lm_corta(lm->pool, p11_rfft_bytes(nps), 1);
         if (!ws->mem_rfft_welch) return -10;
-        CORTA(ws->w_welch, p11_real, nps, 1);
-        CORTA(ws->wz, p11_cpx, nps / 2 + 1, 1);
-        CORTA(ws->wZ, p11_cpx, nps / 2 + 1, 1);
-        CORTA(ws->wX, p11_cpx, nw, 1);
-        CORTA(ws->welch_P, p11_real, nw, 1);
+        CORTA(ws->w_welch, p11_real, nps, 0);
+        CORTA(ws->wz, p11_cpx, nps / 2 + 1, 0);
+        CORTA(ws->wZ, p11_cpx, nps / 2 + 1, 0);
+        CORTA(ws->wX, p11_cpx, nw, 0);
+        CORTA(ws->welch_P, p11_real, nw, 0);
         CORTA(ws->welch_f, double, nw, 0);
-        CORTA(ws->med_buf, p11_real, nw, 1);
-        CORTA(ws->seg_buf, p11_real, nps, 1);
+        CORTA(ws->med_buf, p11_real, nw, 0);
+        CORTA(ws->seg_buf, p11_real, nps, 0);
         lm->bytes_faseC = lm_em_uso(lm->pool);
         {
             int r = p11_welch(ws);
@@ -457,7 +454,7 @@ int p11_lm_features(p11_lm *lm, const p11_real env_mod[2], p11_real feat[P11_N_F
 {
     p11_ws *ws = &lm->ws;
     lm_volta(lm->pool);
-    CORTA(ws->qS, p11_real, P11_F, 1);     /* rascunho de F reais de p11_features */
+    CORTA(ws->qS, p11_real, P11_F, 0);     /* rascunho de F reais de p11_features */
     p11_features(ws, env_mod, feat);
     lm_volta(lm->pool);
     ws->qS = NULL;

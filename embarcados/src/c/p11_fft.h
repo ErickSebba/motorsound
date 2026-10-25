@@ -28,6 +28,12 @@ typedef struct {
     p11_cpx *tw;                            /* n fatores de giro exp(-2*pi*i*k/n) */
 } p11_fft_plano;
 
+/* Tabelas de fatores de giro só são lidas e escritas por estas duas funções, em palavras de
+ * 32 bits (l32i/s32i no Xtensa): assim podem morar na IRAM do ESP32, que não aceita as
+ * instruções de float (lsi/ssi). Os bits são os mesmos de um acesso direto. */
+p11_cpx p11_tw_le(const p11_cpx *p);
+void p11_tw_grava(p11_cpx *p, double fase);
+
 /* bytes de tabela para uma FFT complexa de comprimento n */
 size_t p11_fft_bytes(int n);
 /* devolve 0 se ok; -1 se n inválido ou fator primo > P11_FFT_MAX_PRIMO */
