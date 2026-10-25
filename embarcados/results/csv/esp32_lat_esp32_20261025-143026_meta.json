@@ -1,0 +1,25 @@
+{
+  "categoria": "medicao_no_ESP32",
+  "sessao_bancada": "esp32-20261025-141012",
+  "chip": "ESP32",
+  "cpu_mhz": 240.0,
+  "idf": "v5.5.6",
+  "flags": "-O2 -ffp-contract=off P11_REAL=float P11_LOWMEM",
+  "argv": {
+    "cmd": "lat",
+    "porta": "COM3",
+    "alvo": "esp32",
+    "baud": 921600,
+    "n": 200,
+    "aquecimento": 5,
+    "bases": [
+      "a2212"
+    ]
+  },
+  "projeto": {
+    "commit": "53a74af5f03108738c3110cfb1cb4ad3450ac37a",
+    "sujo": true
+  },
+  "relogio": "esp_timer_get_time em torno de cada chamada do nucleo",
+  "nota": "janelas = casos nao-borda do ouro em ciclo; aquecimento excluido do resumo"
+}
