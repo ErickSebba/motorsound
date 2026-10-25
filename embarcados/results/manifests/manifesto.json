@@ -1,11 +1,11 @@
 {
- "gerado_em": "2026-10-24T10:17:36",
+ "gerado_em": "2026-10-25T15:18:49",
  "gerado_por": "embarcados/src/python/gerar_artigo_manifesto.py",
  "projeto": {
-  "commit": "8c97c004e43bbe76a61d67f40b0cf358aedaa9e5",
+  "commit": "5cc552d71dd33d4bfe8c219e1a4ffdea8a01ff40",
   "sujo": true
  },
- "chip_medido": false,
+ "chip_medido": true,
  "categorias": {
   "codigo": "parâmetro lido do código Python da referência",
   "dados": "contagem lida das predições/CSV do experimento",
@@ -57,23 +57,23 @@
     },
     {
      "arquivo": "embarcados/paper/fontes/ws_double_16000.json",
-     "sha256": "3023074d0581ae3a1103bb5b42d4704fcb05631eada2a86eecdc1846ad8b293e"
+     "sha256": "bc0e0830eb9888248a061f13b0c91869f9b364b80a74a8268c655fe22b58690a"
     },
     {
      "arquivo": "embarcados/paper/fontes/ws_double_48000.json",
-     "sha256": "dc2a3113667b36f99073b7782f28f4e018e1e13f865c3dd63bf97070c05f53f9"
+     "sha256": "efaae503d4958053578b820f09d89905620d413b5c4ddf1eabe91fd3002fcb3d"
     },
     {
      "arquivo": "embarcados/paper/fontes/ws_float_16000.json",
-     "sha256": "95a67377c7eb2eb4ab886a73da7c0accffb11978a41718e5e942cff74afd01c7"
+     "sha256": "fba4c5e5160ccc79f1e76dcb3e2d40e9bc5622fbb63cf3d6d977e03e438346a1"
     },
     {
      "arquivo": "embarcados/paper/fontes/ws_float_48000.json",
-     "sha256": "3d3878646c51b96e1e1ab4c8fd935bb8a069e95c7ec7b95fe3a59ea8e0f5d838"
+     "sha256": "e1c11825ce3e5d25702b57dd3bd9d0bbc3c8844278281c226be7441a9cde6eb3"
     },
     {
      "arquivo": "embarcados/paper/numeros.json",
-     "sha256": "0c52f2a794c10d4bb040c725895907fc3a8048cfc6cbb4325e8aa49e37f19a5a"
+     "sha256": "cdfe34c918c6fa0c58dfe8d5822563a5ccaf2f3b88a2b68812c72b19fea7b156"
     },
     {
      "arquivo": "embarcados/results/c_out/float/casos/borda_dc_ruido3s_ma2212/welch_P.f32",
@@ -108,6 +108,18 @@
      "sha256": "d46c9c2aa501b61a966d439995c2adeaf961781059bcc096083722e00735ccc9"
     },
     {
+     "arquivo": "embarcados/results/csv/equivalencia_esp32_esp32_p11_c_lowmem_20261025-141829.csv",
+     "sha256": "bcad4cf8ffc56a4b2d871b51fc0faecbf0c227422da777c18220979209324902"
+    },
+    {
+     "arquivo": "embarcados/results/csv/equivalencia_esp32_esp32_p11_c_lowmem_20261025-141829_resumo.csv",
+     "sha256": "fddcc117da7fa805ad8b43ab0d2f3a3dc6fcdfe02a5003993210c4c4e5f9d564"
+    },
+    {
+     "arquivo": "embarcados/results/csv/equivalencia_float-lowmem_20261025-135553_resumo.csv",
+     "sha256": "017f32ab62e37eccd46937c75cd2a00758daf5ebd16e23217a2869d1e2445597"
+    },
+    {
      "arquivo": "embarcados/results/csv/equivalencia_float-sosd_20261024-091222.csv",
      "sha256": "fb79aad99d6e607a132af89358182c74f4eeec2ac31e97410c5fab486e945ce9"
     },
@@ -116,24 +128,48 @@
      "sha256": "38e87620d895ce26c9c0bbfa5bd0df7af3686607d525235e3fa5c9d287612314"
     },
     {
-     "arquivo": "embarcados/results/csv/equivalencia_resumo_por_build_20261024-091729.csv",
+     "arquivo": "embarcados/results/csv/equivalencia_resumo_por_build_20261024-101821.csv",
      "sha256": "bc42bdf549e15875a3762c4907610f49a8ff0cb08c2fc10e3fafd5e59d84eb35"
+    },
+    {
+     "arquivo": "embarcados/results/csv/esp32_lat_esp32_20261025-143026.csv",
+     "sha256": "c33d5055b4101eca0a54f1091c0f478bdb86c5b1b77afc593f084b83d66daf69"
+    },
+    {
+     "arquivo": "embarcados/results/csv/esp32_lat_esp32_20261025-143026_meta.json",
+     "sha256": "dfaa329d858d3505d830126bb616e2f159b7329f31df55c23027065fd052dccf"
+    },
+    {
+     "arquivo": "embarcados/results/csv/esp32_memoria_esp32_20261025-141018.csv",
+     "sha256": "77da4db54787b410063ec92b6c029cb4631b829c598d3f3b69fadd1703fd589c"
+    },
+    {
+     "arquivo": "embarcados/results/csv/esp32_seq_esp32_20261025-143251.csv",
+     "sha256": "d1dcbe589787955e7f6ad82a079516ee0d379f56d554c569fc4e960a2c1a65ec"
+    },
+    {
+     "arquivo": "embarcados/results/csv/esp32_seq_esp32_20261025-143251_meta.json",
+     "sha256": "61810c17d043b0abf607a7d75f1456a5e44659bb5ac61bac45a1e03299682271"
     },
     {
      "arquivo": "embarcados/results/csv/p11_features_20261023_222831.csv",
      "sha256": "eb64ba855c885bf0ad428487067476095314ec200965130fa606c5ecf3649ef7"
     },
     {
-     "arquivo": "embarcados/results/csv/seq_pc_20261024-092103.csv",
-     "sha256": "eaba0cbe2d39af3e1d7f7cbdc8afbbdff87e832a5f8d4d6c636a3995f756a658"
+     "arquivo": "embarcados/results/csv/seq_pc_20261024-184829.csv",
+     "sha256": "6b850b863fbd00ab5f1929d0cbecb71c92d5b533e9092a2f605394fd784acd76"
     },
     {
-     "arquivo": "embarcados/results/csv/seq_pc_20261024-092103_meta.json",
-     "sha256": "2be9a1842106537bbc699026c93bc96c024c98a8f36618cd5a470f0df8d59ee8"
+     "arquivo": "embarcados/results/csv/seq_pc_20261024-184829_meta.json",
+     "sha256": "4ea98bcd0d3754c7de921204ff64f51aa79dd10b515544f57e1c05aa5b8019da"
+    },
+    {
+     "arquivo": "embarcados/results/firmware/size_esp32_lowmem_20261025-135632.txt",
+     "sha256": "e7fcb9a5fe3c38cc50c527e2979e733c26d15cfd6ff95b74cc1695b20832e303"
     },
     {
      "arquivo": "embarcados/results/manifests/bancada.json",
-     "sha256": null
+     "sha256": "fc33676e8d02236ca62331e9ffa6b137520295be8eb25ecc5f0ad8c77519f426"
     },
     {
      "arquivo": "embarcados/results/metrics/bench_pc_20261024-091911.json",
@@ -201,23 +237,23 @@
     },
     {
      "arquivo": "embarcados/paper/fontes/ws_double_16000.json",
-     "sha256": "3023074d0581ae3a1103bb5b42d4704fcb05631eada2a86eecdc1846ad8b293e"
+     "sha256": "bc0e0830eb9888248a061f13b0c91869f9b364b80a74a8268c655fe22b58690a"
     },
     {
      "arquivo": "embarcados/paper/fontes/ws_double_48000.json",
-     "sha256": "dc2a3113667b36f99073b7782f28f4e018e1e13f865c3dd63bf97070c05f53f9"
+     "sha256": "efaae503d4958053578b820f09d89905620d413b5c4ddf1eabe91fd3002fcb3d"
     },
     {
      "arquivo": "embarcados/paper/fontes/ws_float_16000.json",
-     "sha256": "95a67377c7eb2eb4ab886a73da7c0accffb11978a41718e5e942cff74afd01c7"
+     "sha256": "fba4c5e5160ccc79f1e76dcb3e2d40e9bc5622fbb63cf3d6d977e03e438346a1"
     },
     {
      "arquivo": "embarcados/paper/fontes/ws_float_48000.json",
-     "sha256": "3d3878646c51b96e1e1ab4c8fd935bb8a069e95c7ec7b95fe3a59ea8e0f5d838"
+     "sha256": "e1c11825ce3e5d25702b57dd3bd9d0bbc3c8844278281c226be7441a9cde6eb3"
     },
     {
      "arquivo": "embarcados/paper/numeros.json",
-     "sha256": "0c52f2a794c10d4bb040c725895907fc3a8048cfc6cbb4325e8aa49e37f19a5a"
+     "sha256": "cdfe34c918c6fa0c58dfe8d5822563a5ccaf2f3b88a2b68812c72b19fea7b156"
     },
     {
      "arquivo": "embarcados/results/c_out/float/casos/borda_dc_ruido3s_ma2212/welch_P.f32",
@@ -252,6 +288,18 @@
      "sha256": "d46c9c2aa501b61a966d439995c2adeaf961781059bcc096083722e00735ccc9"
     },
     {
+     "arquivo": "embarcados/results/csv/equivalencia_esp32_esp32_p11_c_lowmem_20261025-141829.csv",
+     "sha256": "bcad4cf8ffc56a4b2d871b51fc0faecbf0c227422da777c18220979209324902"
+    },
+    {
+     "arquivo": "embarcados/results/csv/equivalencia_esp32_esp32_p11_c_lowmem_20261025-141829_resumo.csv",
+     "sha256": "fddcc117da7fa805ad8b43ab0d2f3a3dc6fcdfe02a5003993210c4c4e5f9d564"
+    },
+    {
+     "arquivo": "embarcados/results/csv/equivalencia_float-lowmem_20261025-135553_resumo.csv",
+     "sha256": "017f32ab62e37eccd46937c75cd2a00758daf5ebd16e23217a2869d1e2445597"
+    },
+    {
      "arquivo": "embarcados/results/csv/equivalencia_float-sosd_20261024-091222.csv",
      "sha256": "fb79aad99d6e607a132af89358182c74f4eeec2ac31e97410c5fab486e945ce9"
     },
@@ -260,24 +308,48 @@
      "sha256": "38e87620d895ce26c9c0bbfa5bd0df7af3686607d525235e3fa5c9d287612314"
     },
     {
-     "arquivo": "embarcados/results/csv/equivalencia_resumo_por_build_20261024-091729.csv",
+     "arquivo": "embarcados/results/csv/equivalencia_resumo_por_build_20261024-101821.csv",
      "sha256": "bc42bdf549e15875a3762c4907610f49a8ff0cb08c2fc10e3fafd5e59d84eb35"
+    },
+    {
+     "arquivo": "embarcados/results/csv/esp32_lat_esp32_20261025-143026.csv",
+     "sha256": "c33d5055b4101eca0a54f1091c0f478bdb86c5b1b77afc593f084b83d66daf69"
+    },
+    {
+     "arquivo": "embarcados/results/csv/esp32_lat_esp32_20261025-143026_meta.json",
+     "sha256": "dfaa329d858d3505d830126bb616e2f159b7329f31df55c23027065fd052dccf"
+    },
+    {
+     "arquivo": "embarcados/results/csv/esp32_memoria_esp32_20261025-141018.csv",
+     "sha256": "77da4db54787b410063ec92b6c029cb4631b829c598d3f3b69fadd1703fd589c"
+    },
+    {
+     "arquivo": "embarcados/results/csv/esp32_seq_esp32_20261025-143251.csv",
+     "sha256": "d1dcbe589787955e7f6ad82a079516ee0d379f56d554c569fc4e960a2c1a65ec"
+    },
+    {
+     "arquivo": "embarcados/results/csv/esp32_seq_esp32_20261025-143251_meta.json",
+     "sha256": "61810c17d043b0abf607a7d75f1456a5e44659bb5ac61bac45a1e03299682271"
     },
     {
      "arquivo": "embarcados/results/csv/p11_features_20261023_222831.csv",
      "sha256": "eb64ba855c885bf0ad428487067476095314ec200965130fa606c5ecf3649ef7"
     },
     {
-     "arquivo": "embarcados/results/csv/seq_pc_20261024-092103.csv",
-     "sha256": "eaba0cbe2d39af3e1d7f7cbdc8afbbdff87e832a5f8d4d6c636a3995f756a658"
+     "arquivo": "embarcados/results/csv/seq_pc_20261024-184829.csv",
+     "sha256": "6b850b863fbd00ab5f1929d0cbecb71c92d5b533e9092a2f605394fd784acd76"
     },
     {
-     "arquivo": "embarcados/results/csv/seq_pc_20261024-092103_meta.json",
-     "sha256": "2be9a1842106537bbc699026c93bc96c024c98a8f36618cd5a470f0df8d59ee8"
+     "arquivo": "embarcados/results/csv/seq_pc_20261024-184829_meta.json",
+     "sha256": "4ea98bcd0d3754c7de921204ff64f51aa79dd10b515544f57e1c05aa5b8019da"
+    },
+    {
+     "arquivo": "embarcados/results/firmware/size_esp32_lowmem_20261025-135632.txt",
+     "sha256": "e7fcb9a5fe3c38cc50c527e2979e733c26d15cfd6ff95b74cc1695b20832e303"
     },
     {
      "arquivo": "embarcados/results/manifests/bancada.json",
-     "sha256": null
+     "sha256": "fc33676e8d02236ca62331e9ffa6b137520295be8eb25ecc5f0ad8c77519f426"
     },
     {
      "arquivo": "embarcados/results/metrics/bench_pc_20261024-091911.json",
@@ -307,7 +379,7 @@
   },
   {
    "arquivo": "embarcados/tables/latex/recursos.tex",
-   "sha256": "d894b116456680700a3573e79bf788abc86264d4b8916bc49bbe63b14acfa0f5",
+   "sha256": "75a8f42723b15720fe5d2d1e3150110ca178cc831440197b82d46c7785d19cfe",
    "existe": true,
    "script": "embarcados/src/python/gerar_artigo_tabelas.py",
    "fontes": [
@@ -345,23 +417,23 @@
     },
     {
      "arquivo": "embarcados/paper/fontes/ws_double_16000.json",
-     "sha256": "3023074d0581ae3a1103bb5b42d4704fcb05631eada2a86eecdc1846ad8b293e"
+     "sha256": "bc0e0830eb9888248a061f13b0c91869f9b364b80a74a8268c655fe22b58690a"
     },
     {
      "arquivo": "embarcados/paper/fontes/ws_double_48000.json",
-     "sha256": "dc2a3113667b36f99073b7782f28f4e018e1e13f865c3dd63bf97070c05f53f9"
+     "sha256": "efaae503d4958053578b820f09d89905620d413b5c4ddf1eabe91fd3002fcb3d"
     },
     {
      "arquivo": "embarcados/paper/fontes/ws_float_16000.json",
-     "sha256": "95a67377c7eb2eb4ab886a73da7c0accffb11978a41718e5e942cff74afd01c7"
+     "sha256": "fba4c5e5160ccc79f1e76dcb3e2d40e9bc5622fbb63cf3d6d977e03e438346a1"
     },
     {
      "arquivo": "embarcados/paper/fontes/ws_float_48000.json",
-     "sha256": "3d3878646c51b96e1e1ab4c8fd935bb8a069e95c7ec7b95fe3a59ea8e0f5d838"
+     "sha256": "e1c11825ce3e5d25702b57dd3bd9d0bbc3c8844278281c226be7441a9cde6eb3"
     },
     {
      "arquivo": "embarcados/paper/numeros.json",
-     "sha256": "0c52f2a794c10d4bb040c725895907fc3a8048cfc6cbb4325e8aa49e37f19a5a"
+     "sha256": "cdfe34c918c6fa0c58dfe8d5822563a5ccaf2f3b88a2b68812c72b19fea7b156"
     },
     {
      "arquivo": "embarcados/results/c_out/float/casos/borda_dc_ruido3s_ma2212/welch_P.f32",
@@ -396,6 +468,18 @@
      "sha256": "d46c9c2aa501b61a966d439995c2adeaf961781059bcc096083722e00735ccc9"
     },
     {
+     "arquivo": "embarcados/results/csv/equivalencia_esp32_esp32_p11_c_lowmem_20261025-141829.csv",
+     "sha256": "bcad4cf8ffc56a4b2d871b51fc0faecbf0c227422da777c18220979209324902"
+    },
+    {
+     "arquivo": "embarcados/results/csv/equivalencia_esp32_esp32_p11_c_lowmem_20261025-141829_resumo.csv",
+     "sha256": "fddcc117da7fa805ad8b43ab0d2f3a3dc6fcdfe02a5003993210c4c4e5f9d564"
+    },
+    {
+     "arquivo": "embarcados/results/csv/equivalencia_float-lowmem_20261025-135553_resumo.csv",
+     "sha256": "017f32ab62e37eccd46937c75cd2a00758daf5ebd16e23217a2869d1e2445597"
+    },
+    {
      "arquivo": "embarcados/results/csv/equivalencia_float-sosd_20261024-091222.csv",
      "sha256": "fb79aad99d6e607a132af89358182c74f4eeec2ac31e97410c5fab486e945ce9"
     },
@@ -404,24 +488,48 @@
      "sha256": "38e87620d895ce26c9c0bbfa5bd0df7af3686607d525235e3fa5c9d287612314"
     },
     {
-     "arquivo": "embarcados/results/csv/equivalencia_resumo_por_build_20261024-091729.csv",
+     "arquivo": "embarcados/results/csv/equivalencia_resumo_por_build_20261024-101821.csv",
      "sha256": "bc42bdf549e15875a3762c4907610f49a8ff0cb08c2fc10e3fafd5e59d84eb35"
+    },
+    {
+     "arquivo": "embarcados/results/csv/esp32_lat_esp32_20261025-143026.csv",
+     "sha256": "c33d5055b4101eca0a54f1091c0f478bdb86c5b1b77afc593f084b83d66daf69"
+    },
+    {
+     "arquivo": "embarcados/results/csv/esp32_lat_esp32_20261025-143026_meta.json",
+     "sha256": "dfaa329d858d3505d830126bb616e2f159b7329f31df55c23027065fd052dccf"
+    },
+    {
+     "arquivo": "embarcados/results/csv/esp32_memoria_esp32_20261025-141018.csv",
+     "sha256": "77da4db54787b410063ec92b6c029cb4631b829c598d3f3b69fadd1703fd589c"
+    },
+    {
+     "arquivo": "embarcados/results/csv/esp32_seq_esp32_20261025-143251.csv",
+     "sha256": "d1dcbe589787955e7f6ad82a079516ee0d379f56d554c569fc4e960a2c1a65ec"
+    },
+    {
+     "arquivo": "embarcados/results/csv/esp32_seq_esp32_20261025-143251_meta.json",
+     "sha256": "61810c17d043b0abf607a7d75f1456a5e44659bb5ac61bac45a1e03299682271"
     },
     {
      "arquivo": "embarcados/results/csv/p11_features_20261023_222831.csv",
      "sha256": "eb64ba855c885bf0ad428487067476095314ec200965130fa606c5ecf3649ef7"
     },
     {
-     "arquivo": "embarcados/results/csv/seq_pc_20261024-092103.csv",
-     "sha256": "eaba0cbe2d39af3e1d7f7cbdc8afbbdff87e832a5f8d4d6c636a3995f756a658"
+     "arquivo": "embarcados/results/csv/seq_pc_20261024-184829.csv",
+     "sha256": "6b850b863fbd00ab5f1929d0cbecb71c92d5b533e9092a2f605394fd784acd76"
     },
     {
-     "arquivo": "embarcados/results/csv/seq_pc_20261024-092103_meta.json",
-     "sha256": "2be9a1842106537bbc699026c93bc96c024c98a8f36618cd5a470f0df8d59ee8"
+     "arquivo": "embarcados/results/csv/seq_pc_20261024-184829_meta.json",
+     "sha256": "4ea98bcd0d3754c7de921204ff64f51aa79dd10b515544f57e1c05aa5b8019da"
+    },
+    {
+     "arquivo": "embarcados/results/firmware/size_esp32_lowmem_20261025-135632.txt",
+     "sha256": "e7fcb9a5fe3c38cc50c527e2979e733c26d15cfd6ff95b74cc1695b20832e303"
     },
     {
      "arquivo": "embarcados/results/manifests/bancada.json",
-     "sha256": null
+     "sha256": "fc33676e8d02236ca62331e9ffa6b137520295be8eb25ecc5f0ad8c77519f426"
     },
     {
      "arquivo": "embarcados/results/metrics/bench_pc_20261024-091911.json",
@@ -489,23 +597,23 @@
     },
     {
      "arquivo": "embarcados/paper/fontes/ws_double_16000.json",
-     "sha256": "3023074d0581ae3a1103bb5b42d4704fcb05631eada2a86eecdc1846ad8b293e"
+     "sha256": "bc0e0830eb9888248a061f13b0c91869f9b364b80a74a8268c655fe22b58690a"
     },
     {
      "arquivo": "embarcados/paper/fontes/ws_double_48000.json",
-     "sha256": "dc2a3113667b36f99073b7782f28f4e018e1e13f865c3dd63bf97070c05f53f9"
+     "sha256": "efaae503d4958053578b820f09d89905620d413b5c4ddf1eabe91fd3002fcb3d"
     },
     {
      "arquivo": "embarcados/paper/fontes/ws_float_16000.json",
-     "sha256": "95a67377c7eb2eb4ab886a73da7c0accffb11978a41718e5e942cff74afd01c7"
+     "sha256": "fba4c5e5160ccc79f1e76dcb3e2d40e9bc5622fbb63cf3d6d977e03e438346a1"
     },
     {
      "arquivo": "embarcados/paper/fontes/ws_float_48000.json",
-     "sha256": "3d3878646c51b96e1e1ab4c8fd935bb8a069e95c7ec7b95fe3a59ea8e0f5d838"
+     "sha256": "e1c11825ce3e5d25702b57dd3bd9d0bbc3c8844278281c226be7441a9cde6eb3"
     },
     {
      "arquivo": "embarcados/paper/numeros.json",
-     "sha256": "0c52f2a794c10d4bb040c725895907fc3a8048cfc6cbb4325e8aa49e37f19a5a"
+     "sha256": "cdfe34c918c6fa0c58dfe8d5822563a5ccaf2f3b88a2b68812c72b19fea7b156"
     },
     {
      "arquivo": "embarcados/results/c_out/float/casos/borda_dc_ruido3s_ma2212/welch_P.f32",
@@ -540,6 +648,18 @@
      "sha256": "d46c9c2aa501b61a966d439995c2adeaf961781059bcc096083722e00735ccc9"
     },
     {
+     "arquivo": "embarcados/results/csv/equivalencia_esp32_esp32_p11_c_lowmem_20261025-141829.csv",
+     "sha256": "bcad4cf8ffc56a4b2d871b51fc0faecbf0c227422da777c18220979209324902"
+    },
+    {
+     "arquivo": "embarcados/results/csv/equivalencia_esp32_esp32_p11_c_lowmem_20261025-141829_resumo.csv",
+     "sha256": "fddcc117da7fa805ad8b43ab0d2f3a3dc6fcdfe02a5003993210c4c4e5f9d564"
+    },
+    {
+     "arquivo": "embarcados/results/csv/equivalencia_float-lowmem_20261025-135553_resumo.csv",
+     "sha256": "017f32ab62e37eccd46937c75cd2a00758daf5ebd16e23217a2869d1e2445597"
+    },
+    {
      "arquivo": "embarcados/results/csv/equivalencia_float-sosd_20261024-091222.csv",
      "sha256": "fb79aad99d6e607a132af89358182c74f4eeec2ac31e97410c5fab486e945ce9"
     },
@@ -548,24 +668,48 @@
      "sha256": "38e87620d895ce26c9c0bbfa5bd0df7af3686607d525235e3fa5c9d287612314"
     },
     {
-     "arquivo": "embarcados/results/csv/equivalencia_resumo_por_build_20261024-091729.csv",
+     "arquivo": "embarcados/results/csv/equivalencia_resumo_por_build_20261024-101821.csv",
      "sha256": "bc42bdf549e15875a3762c4907610f49a8ff0cb08c2fc10e3fafd5e59d84eb35"
+    },
+    {
+     "arquivo": "embarcados/results/csv/esp32_lat_esp32_20261025-143026.csv",
+     "sha256": "c33d5055b4101eca0a54f1091c0f478bdb86c5b1b77afc593f084b83d66daf69"
+    },
+    {
+     "arquivo": "embarcados/results/csv/esp32_lat_esp32_20261025-143026_meta.json",
+     "sha256": "dfaa329d858d3505d830126bb616e2f159b7329f31df55c23027065fd052dccf"
+    },
+    {
+     "arquivo": "embarcados/results/csv/esp32_memoria_esp32_20261025-141018.csv",
+     "sha256": "77da4db54787b410063ec92b6c029cb4631b829c598d3f3b69fadd1703fd589c"
+    },
+    {
+     "arquivo": "embarcados/results/csv/esp32_seq_esp32_20261025-143251.csv",
+     "sha256": "d1dcbe589787955e7f6ad82a079516ee0d379f56d554c569fc4e960a2c1a65ec"
+    },
+    {
+     "arquivo": "embarcados/results/csv/esp32_seq_esp32_20261025-143251_meta.json",
+     "sha256": "61810c17d043b0abf607a7d75f1456a5e44659bb5ac61bac45a1e03299682271"
     },
     {
      "arquivo": "embarcados/results/csv/p11_features_20261023_222831.csv",
      "sha256": "eb64ba855c885bf0ad428487067476095314ec200965130fa606c5ecf3649ef7"
     },
     {
-     "arquivo": "embarcados/results/csv/seq_pc_20261024-092103.csv",
-     "sha256": "eaba0cbe2d39af3e1d7f7cbdc8afbbdff87e832a5f8d4d6c636a3995f756a658"
+     "arquivo": "embarcados/results/csv/seq_pc_20261024-184829.csv",
+     "sha256": "6b850b863fbd00ab5f1929d0cbecb71c92d5b533e9092a2f605394fd784acd76"
     },
     {
-     "arquivo": "embarcados/results/csv/seq_pc_20261024-092103_meta.json",
-     "sha256": "2be9a1842106537bbc699026c93bc96c024c98a8f36618cd5a470f0df8d59ee8"
+     "arquivo": "embarcados/results/csv/seq_pc_20261024-184829_meta.json",
+     "sha256": "4ea98bcd0d3754c7de921204ff64f51aa79dd10b515544f57e1c05aa5b8019da"
+    },
+    {
+     "arquivo": "embarcados/results/firmware/size_esp32_lowmem_20261025-135632.txt",
+     "sha256": "e7fcb9a5fe3c38cc50c527e2979e733c26d15cfd6ff95b74cc1695b20832e303"
     },
     {
      "arquivo": "embarcados/results/manifests/bancada.json",
-     "sha256": null
+     "sha256": "fc33676e8d02236ca62331e9ffa6b137520295be8eb25ecc5f0ad8c77519f426"
     },
     {
      "arquivo": "embarcados/results/metrics/bench_pc_20261024-091911.json",
@@ -595,16 +739,16 @@
   },
   {
    "arquivo": "embarcados/tables/latex/equivalencia_compacta.tex",
-   "sha256": "95d8b06be97697137147ebf95ab77798e289dc9242ab32511eb7bf671f70ae3d",
+   "sha256": "e7ba45791f2e8d08d2272d7266debdec016e342579e31ac21c38657735607ca5",
    "existe": true,
    "script": "embarcados/src/python/gerar_artigo_tabelas.py",
    "fontes": [
     {
      "arquivo": "embarcados/paper/numeros.json",
-     "sha256": "0c52f2a794c10d4bb040c725895907fc3a8048cfc6cbb4325e8aa49e37f19a5a"
+     "sha256": "cdfe34c918c6fa0c58dfe8d5822563a5ccaf2f3b88a2b68812c72b19fea7b156"
     },
     {
-     "arquivo": "embarcados/results/csv/equivalencia_resumo_por_build_20261024-091729.csv",
+     "arquivo": "embarcados/results/csv/equivalencia_resumo_por_build_20261024-101821.csv",
      "sha256": "bc42bdf549e15875a3762c4907610f49a8ff0cb08c2fc10e3fafd5e59d84eb35"
     }
    ]
@@ -640,7 +784,7 @@
      "sha256": "38e87620d895ce26c9c0bbfa5bd0df7af3686607d525235e3fa5c9d287612314"
     },
     {
-     "arquivo": "embarcados/results/csv/equivalencia_resumo_por_build_20261024-091729.csv",
+     "arquivo": "embarcados/results/csv/equivalencia_resumo_por_build_20261024-101821.csv",
      "sha256": "bc42bdf549e15875a3762c4907610f49a8ff0cb08c2fc10e3fafd5e59d84eb35"
     }
    ]
@@ -649,33 +793,33 @@
  "figuras": [
   {
    "arquivo": "embarcados/figures/pdf/arquitetura.pdf",
-   "sha256": "42c90de8fff9343d41fc4dd92125e29c3a50642a760bf1504339bb5f22553bf3",
+   "sha256": "6cdc8a9a690d439d676d3fd113d6184aa808587e3cbc6fe218c9f682ad026cad",
    "existe": true,
    "script": "embarcados/src/python/gerar_artigo_figuras.py",
    "fontes": [
     {
      "arquivo": "embarcados/paper/numeros.json",
-     "sha256": "0c52f2a794c10d4bb040c725895907fc3a8048cfc6cbb4325e8aa49e37f19a5a"
+     "sha256": "cdfe34c918c6fa0c58dfe8d5822563a5ccaf2f3b88a2b68812c72b19fea7b156"
     }
    ],
    "dados_brutos_lidos": []
   },
   {
    "arquivo": "embarcados/figures/png/arquitetura.png",
-   "sha256": "57acb77f16b03ff8ca04f4247e47db98f91df7152af5257b8f43b71b7513605b",
+   "sha256": "490664058ead505cb2f700de89a602cbdfcd8133ff4a1eb9c349c722c1d16261",
    "existe": true,
    "script": "embarcados/src/python/gerar_artigo_figuras.py",
    "fontes": [
     {
      "arquivo": "embarcados/paper/numeros.json",
-     "sha256": "0c52f2a794c10d4bb040c725895907fc3a8048cfc6cbb4325e8aa49e37f19a5a"
+     "sha256": "cdfe34c918c6fa0c58dfe8d5822563a5ccaf2f3b88a2b68812c72b19fea7b156"
     }
    ],
    "dados_brutos_lidos": []
   },
   {
    "arquivo": "embarcados/figures/pdf/diag_balacc_en_20261023_222831.pdf",
-   "sha256": "72edde5ad83f9891f4b33590deeb2f4889cb9964909ff3a90315544ef843df86",
+   "sha256": "b8ffe6900278c25abfb80c1f0210a81326aec5a43c542ab8a94990d60bc91667",
    "existe": true,
    "script": "embarcados/src/python/gerar_artigo_figuras.py",
    "fontes": [
@@ -701,7 +845,7 @@
   },
   {
    "arquivo": "embarcados/figures/pdf/diag_confusao_p11_en_20261023_222831.pdf",
-   "sha256": "70f8da0d868e728ce5e6fa02cb1081624664c4f0f5c06d434f8194d8d31927a4",
+   "sha256": "6b63b58f1bcc8612935f7040534d9fbb4f97b9c065d5604cd086b56fed52ac94",
    "existe": true,
    "script": "embarcados/src/python/gerar_artigo_figuras.py",
    "fontes": [
@@ -727,12 +871,12 @@
   },
   {
    "arquivo": "embarcados/figures/pdf/equivalencia_erro_etapas_en.pdf",
-   "sha256": "4980ebbaf999dea2bf721811ec81fd1bef837fa0d9e185b312ad4895531b4c53",
+   "sha256": "a916779e012b46882c73c879c2f82b37a0628d1ec948a4f0b6a638fbf9e2882a",
    "existe": true,
    "script": "embarcados/src/python/gerar_artigo_figuras.py",
    "fontes": [
     {
-     "arquivo": "embarcados/results/csv/equivalencia_resumo_por_build_20261024-091729.csv",
+     "arquivo": "embarcados/results/csv/equivalencia_resumo_por_build_20261024-101821.csv",
      "sha256": "bc42bdf549e15875a3762c4907610f49a8ff0cb08c2fc10e3fafd5e59d84eb35"
     }
    ],
@@ -745,8 +889,74 @@
    "script": "embarcados/src/python/gerar_artigo_figuras.py",
    "fontes": [
     {
-     "arquivo": "embarcados/results/csv/equivalencia_resumo_por_build_20261024-091729.csv",
+     "arquivo": "embarcados/results/csv/equivalencia_resumo_por_build_20261024-101821.csv",
      "sha256": "bc42bdf549e15875a3762c4907610f49a8ff0cb08c2fc10e3fafd5e59d84eb35"
+    }
+   ],
+   "dados_brutos_lidos": []
+  },
+  {
+   "arquivo": "embarcados/figures/pdf/esp32_lat_ram_esp32_20261025-143026_en.pdf",
+   "sha256": "bf9da6bea6d61542cbc20163f4012b08545490d057aefaa6ae7c59efda17713d",
+   "existe": true,
+   "script": "embarcados/src/python/gerar_artigo_figuras.py",
+   "fontes": [
+    {
+     "arquivo": "embarcados/paper/fontes/ws_float_16000.json",
+     "sha256": "fba4c5e5160ccc79f1e76dcb3e2d40e9bc5622fbb63cf3d6d977e03e438346a1"
+    },
+    {
+     "arquivo": "embarcados/paper/fontes/ws_float_48000.json",
+     "sha256": "e1c11825ce3e5d25702b57dd3bd9d0bbc3c8844278281c226be7441a9cde6eb3"
+    },
+    {
+     "arquivo": "embarcados/results/csv/esp32_lat_esp32_20261025-143026.csv",
+     "sha256": "c33d5055b4101eca0a54f1091c0f478bdb86c5b1b77afc593f084b83d66daf69"
+    },
+    {
+     "arquivo": "embarcados/results/csv/esp32_lat_esp32_20261025-143026_meta.json",
+     "sha256": "dfaa329d858d3505d830126bb616e2f159b7329f31df55c23027065fd052dccf"
+    },
+    {
+     "arquivo": "embarcados/results/csv/esp32_memoria_esp32_20261025-141018.csv",
+     "sha256": "77da4db54787b410063ec92b6c029cb4631b829c598d3f3b69fadd1703fd589c"
+    },
+    {
+     "arquivo": "embarcados/results/manifests/bancada.json",
+     "sha256": "fc33676e8d02236ca62331e9ffa6b137520295be8eb25ecc5f0ad8c77519f426"
+    }
+   ],
+   "dados_brutos_lidos": []
+  },
+  {
+   "arquivo": "embarcados/figures/png/esp32_lat_ram_esp32_20261025-143026_en.png",
+   "sha256": "26dd385bc02425286a9e7e2867b22658ff5c9dafdb2ac5b9b9e9672589d7411d",
+   "existe": true,
+   "script": "embarcados/src/python/gerar_artigo_figuras.py",
+   "fontes": [
+    {
+     "arquivo": "embarcados/paper/fontes/ws_float_16000.json",
+     "sha256": "fba4c5e5160ccc79f1e76dcb3e2d40e9bc5622fbb63cf3d6d977e03e438346a1"
+    },
+    {
+     "arquivo": "embarcados/paper/fontes/ws_float_48000.json",
+     "sha256": "e1c11825ce3e5d25702b57dd3bd9d0bbc3c8844278281c226be7441a9cde6eb3"
+    },
+    {
+     "arquivo": "embarcados/results/csv/esp32_lat_esp32_20261025-143026.csv",
+     "sha256": "c33d5055b4101eca0a54f1091c0f478bdb86c5b1b77afc593f084b83d66daf69"
+    },
+    {
+     "arquivo": "embarcados/results/csv/esp32_lat_esp32_20261025-143026_meta.json",
+     "sha256": "dfaa329d858d3505d830126bb616e2f159b7329f31df55c23027065fd052dccf"
+    },
+    {
+     "arquivo": "embarcados/results/csv/esp32_memoria_esp32_20261025-141018.csv",
+     "sha256": "77da4db54787b410063ec92b6c029cb4631b829c598d3f3b69fadd1703fd589c"
+    },
+    {
+     "arquivo": "embarcados/results/manifests/bancada.json",
+     "sha256": "fc33676e8d02236ca62331e9ffa6b137520295be8eb25ecc5f0ad8c77519f426"
     }
    ],
    "dados_brutos_lidos": []
@@ -3670,7 +3880,7 @@
    "script": "embarcados/src/python/gerar_artigo_numeros.py",
    "fontes": [
     {
-     "arquivo": "embarcados/results/csv/equivalencia_resumo_por_build_20261024-091729.csv",
+     "arquivo": "embarcados/results/csv/equivalencia_resumo_por_build_20261024-101821.csv",
      "sha256": "bc42bdf549e15875a3762c4907610f49a8ff0cb08c2fc10e3fafd5e59d84eb35"
     }
    ]
@@ -3683,7 +3893,7 @@
    "script": "embarcados/src/python/gerar_artigo_numeros.py",
    "fontes": [
     {
-     "arquivo": "embarcados/results/csv/equivalencia_resumo_por_build_20261024-091729.csv",
+     "arquivo": "embarcados/results/csv/equivalencia_resumo_por_build_20261024-101821.csv",
      "sha256": "bc42bdf549e15875a3762c4907610f49a8ff0cb08c2fc10e3fafd5e59d84eb35"
     }
    ]
@@ -3696,7 +3906,7 @@
    "script": "embarcados/src/python/gerar_artigo_numeros.py",
    "fontes": [
     {
-     "arquivo": "embarcados/results/csv/equivalencia_resumo_por_build_20261024-091729.csv",
+     "arquivo": "embarcados/results/csv/equivalencia_resumo_por_build_20261024-101821.csv",
      "sha256": "bc42bdf549e15875a3762c4907610f49a8ff0cb08c2fc10e3fafd5e59d84eb35"
     }
    ]
@@ -3709,7 +3919,7 @@
    "script": "embarcados/src/python/gerar_artigo_numeros.py",
    "fontes": [
     {
-     "arquivo": "embarcados/results/csv/equivalencia_resumo_por_build_20261024-091729.csv",
+     "arquivo": "embarcados/results/csv/equivalencia_resumo_por_build_20261024-101821.csv",
      "sha256": "bc42bdf549e15875a3762c4907610f49a8ff0cb08c2fc10e3fafd5e59d84eb35"
     }
    ]
@@ -3722,7 +3932,7 @@
    "script": "embarcados/src/python/gerar_artigo_numeros.py",
    "fontes": [
     {
-     "arquivo": "embarcados/results/csv/equivalencia_resumo_por_build_20261024-091729.csv",
+     "arquivo": "embarcados/results/csv/equivalencia_resumo_por_build_20261024-101821.csv",
      "sha256": "bc42bdf549e15875a3762c4907610f49a8ff0cb08c2fc10e3fafd5e59d84eb35"
     }
    ]
@@ -3735,7 +3945,7 @@
    "script": "embarcados/src/python/gerar_artigo_numeros.py",
    "fontes": [
     {
-     "arquivo": "embarcados/results/csv/equivalencia_resumo_por_build_20261024-091729.csv",
+     "arquivo": "embarcados/results/csv/equivalencia_resumo_por_build_20261024-101821.csv",
      "sha256": "bc42bdf549e15875a3762c4907610f49a8ff0cb08c2fc10e3fafd5e59d84eb35"
     }
    ]
@@ -3748,7 +3958,7 @@
    "script": "embarcados/src/python/gerar_artigo_numeros.py",
    "fontes": [
     {
-     "arquivo": "embarcados/results/csv/equivalencia_resumo_por_build_20261024-091729.csv",
+     "arquivo": "embarcados/results/csv/equivalencia_resumo_por_build_20261024-101821.csv",
      "sha256": "bc42bdf549e15875a3762c4907610f49a8ff0cb08c2fc10e3fafd5e59d84eb35"
     }
    ]
@@ -3761,7 +3971,7 @@
    "script": "embarcados/src/python/gerar_artigo_numeros.py",
    "fontes": [
     {
-     "arquivo": "embarcados/results/csv/equivalencia_resumo_por_build_20261024-091729.csv",
+     "arquivo": "embarcados/results/csv/equivalencia_resumo_por_build_20261024-101821.csv",
      "sha256": "bc42bdf549e15875a3762c4907610f49a8ff0cb08c2fc10e3fafd5e59d84eb35"
     }
    ]
@@ -3774,7 +3984,7 @@
    "script": "embarcados/src/python/gerar_artigo_numeros.py",
    "fontes": [
     {
-     "arquivo": "embarcados/results/csv/equivalencia_resumo_por_build_20261024-091729.csv",
+     "arquivo": "embarcados/results/csv/equivalencia_resumo_por_build_20261024-101821.csv",
      "sha256": "bc42bdf549e15875a3762c4907610f49a8ff0cb08c2fc10e3fafd5e59d84eb35"
     }
    ]
@@ -3787,7 +3997,7 @@
    "script": "embarcados/src/python/gerar_artigo_numeros.py",
    "fontes": [
     {
-     "arquivo": "embarcados/results/csv/equivalencia_resumo_por_build_20261024-091729.csv",
+     "arquivo": "embarcados/results/csv/equivalencia_resumo_por_build_20261024-101821.csv",
      "sha256": "bc42bdf549e15875a3762c4907610f49a8ff0cb08c2fc10e3fafd5e59d84eb35"
     }
    ]
@@ -3800,7 +4010,7 @@
    "script": "embarcados/src/python/gerar_artigo_numeros.py",
    "fontes": [
     {
-     "arquivo": "embarcados/results/csv/equivalencia_resumo_por_build_20261024-091729.csv",
+     "arquivo": "embarcados/results/csv/equivalencia_resumo_por_build_20261024-101821.csv",
      "sha256": "bc42bdf549e15875a3762c4907610f49a8ff0cb08c2fc10e3fafd5e59d84eb35"
     }
    ]
@@ -3813,7 +4023,7 @@
    "script": "embarcados/src/python/gerar_artigo_numeros.py",
    "fontes": [
     {
-     "arquivo": "embarcados/results/csv/equivalencia_resumo_por_build_20261024-091729.csv",
+     "arquivo": "embarcados/results/csv/equivalencia_resumo_por_build_20261024-101821.csv",
      "sha256": "bc42bdf549e15875a3762c4907610f49a8ff0cb08c2fc10e3fafd5e59d84eb35"
     }
    ]
@@ -3826,7 +4036,7 @@
    "script": "embarcados/src/python/gerar_artigo_numeros.py",
    "fontes": [
     {
-     "arquivo": "embarcados/results/csv/equivalencia_resumo_por_build_20261024-091729.csv",
+     "arquivo": "embarcados/results/csv/equivalencia_resumo_por_build_20261024-101821.csv",
      "sha256": "bc42bdf549e15875a3762c4907610f49a8ff0cb08c2fc10e3fafd5e59d84eb35"
     }
    ]
@@ -3839,7 +4049,7 @@
    "script": "embarcados/src/python/gerar_artigo_numeros.py",
    "fontes": [
     {
-     "arquivo": "embarcados/results/csv/equivalencia_resumo_por_build_20261024-091729.csv",
+     "arquivo": "embarcados/results/csv/equivalencia_resumo_por_build_20261024-101821.csv",
      "sha256": "bc42bdf549e15875a3762c4907610f49a8ff0cb08c2fc10e3fafd5e59d84eb35"
     }
    ]
@@ -3852,7 +4062,7 @@
    "script": "embarcados/src/python/gerar_artigo_numeros.py",
    "fontes": [
     {
-     "arquivo": "embarcados/results/csv/equivalencia_resumo_por_build_20261024-091729.csv",
+     "arquivo": "embarcados/results/csv/equivalencia_resumo_por_build_20261024-101821.csv",
      "sha256": "bc42bdf549e15875a3762c4907610f49a8ff0cb08c2fc10e3fafd5e59d84eb35"
     }
    ]
@@ -3865,7 +4075,7 @@
    "script": "embarcados/src/python/gerar_artigo_numeros.py",
    "fontes": [
     {
-     "arquivo": "embarcados/results/csv/equivalencia_resumo_por_build_20261024-091729.csv",
+     "arquivo": "embarcados/results/csv/equivalencia_resumo_por_build_20261024-101821.csv",
      "sha256": "bc42bdf549e15875a3762c4907610f49a8ff0cb08c2fc10e3fafd5e59d84eb35"
     }
    ]
@@ -3878,7 +4088,7 @@
    "script": "embarcados/src/python/gerar_artigo_numeros.py",
    "fontes": [
     {
-     "arquivo": "embarcados/results/csv/equivalencia_resumo_por_build_20261024-091729.csv",
+     "arquivo": "embarcados/results/csv/equivalencia_resumo_por_build_20261024-101821.csv",
      "sha256": "bc42bdf549e15875a3762c4907610f49a8ff0cb08c2fc10e3fafd5e59d84eb35"
     }
    ]
@@ -3891,7 +4101,7 @@
    "script": "embarcados/src/python/gerar_artigo_numeros.py",
    "fontes": [
     {
-     "arquivo": "embarcados/results/csv/equivalencia_resumo_por_build_20261024-091729.csv",
+     "arquivo": "embarcados/results/csv/equivalencia_resumo_por_build_20261024-101821.csv",
      "sha256": "bc42bdf549e15875a3762c4907610f49a8ff0cb08c2fc10e3fafd5e59d84eb35"
     }
    ]
@@ -4047,7 +4257,7 @@
    "script": "embarcados/src/python/gerar_artigo_numeros.py",
    "fontes": [
     {
-     "arquivo": "embarcados/results/csv/equivalencia_resumo_por_build_20261024-091729.csv",
+     "arquivo": "embarcados/results/csv/equivalencia_resumo_por_build_20261024-101821.csv",
      "sha256": "bc42bdf549e15875a3762c4907610f49a8ff0cb08c2fc10e3fafd5e59d84eb35"
     }
    ]
@@ -4086,7 +4296,7 @@
    "script": "embarcados/src/python/gerar_artigo_numeros.py",
    "fontes": [
     {
-     "arquivo": "embarcados/results/csv/equivalencia_resumo_por_build_20261024-091729.csv",
+     "arquivo": "embarcados/results/csv/equivalencia_resumo_por_build_20261024-101821.csv",
      "sha256": "bc42bdf549e15875a3762c4907610f49a8ff0cb08c2fc10e3fafd5e59d84eb35"
     }
    ]
@@ -4820,15 +5030,15 @@
    ]
   },
   "VPcSeqWindows": {
-   "valor": 24,
+   "valor": 30,
    "status": "ok",
    "categoria": "pc",
    "coluna": "nº de linhas (janelas)",
    "script": "embarcados/src/python/gerar_artigo_numeros.py",
    "fontes": [
     {
-     "arquivo": "embarcados/results/csv/seq_pc_20261024-092103.csv",
-     "sha256": "eaba0cbe2d39af3e1d7f7cbdc8afbbdff87e832a5f8d4d6c636a3995f756a658"
+     "arquivo": "embarcados/results/csv/seq_pc_20261024-184829.csv",
+     "sha256": "6b850b863fbd00ab5f1929d0cbecb71c92d5b533e9092a2f605394fd784acd76"
     }
    ]
   },
@@ -4840,8 +5050,8 @@
    "script": "embarcados/src/python/gerar_artigo_numeros.py",
    "fontes": [
     {
-     "arquivo": "embarcados/results/csv/seq_pc_20261024-092103_meta.json",
-     "sha256": "2be9a1842106537bbc699026c93bc96c024c98a8f36618cd5a470f0df8d59ee8"
+     "arquivo": "embarcados/results/csv/seq_pc_20261024-184829_meta.json",
+     "sha256": "4ea98bcd0d3754c7de921204ff64f51aa79dd10b515544f57e1c05aa5b8019da"
     }
    ]
   },
@@ -4853,8 +5063,8 @@
    "script": "embarcados/src/python/gerar_artigo_numeros.py",
    "fontes": [
     {
-     "arquivo": "embarcados/results/csv/seq_pc_20261024-092103_meta.json",
-     "sha256": "2be9a1842106537bbc699026c93bc96c024c98a8f36618cd5a470f0df8d59ee8"
+     "arquivo": "embarcados/results/csv/seq_pc_20261024-184829_meta.json",
+     "sha256": "4ea98bcd0d3754c7de921204ff64f51aa79dd10b515544f57e1c05aa5b8019da"
     }
    ]
   },
@@ -4866,8 +5076,8 @@
    "script": "embarcados/src/python/gerar_artigo_numeros.py",
    "fontes": [
     {
-     "arquivo": "embarcados/results/csv/seq_pc_20261024-092103_meta.json",
-     "sha256": "2be9a1842106537bbc699026c93bc96c024c98a8f36618cd5a470f0df8d59ee8"
+     "arquivo": "embarcados/results/csv/seq_pc_20261024-184829_meta.json",
+     "sha256": "4ea98bcd0d3754c7de921204ff64f51aa79dd10b515544f57e1c05aa5b8019da"
     }
    ]
   },
@@ -4879,21 +5089,21 @@
    "script": "embarcados/src/python/gerar_artigo_numeros.py",
    "fontes": [
     {
-     "arquivo": "embarcados/results/csv/seq_pc_20261024-092103_meta.json",
-     "sha256": "2be9a1842106537bbc699026c93bc96c024c98a8f36618cd5a470f0df8d59ee8"
+     "arquivo": "embarcados/results/csv/seq_pc_20261024-184829_meta.json",
+     "sha256": "4ea98bcd0d3754c7de921204ff64f51aa79dd10b515544f57e1c05aa5b8019da"
     }
    ]
   },
   "VPcSeqMaxProbDiff": {
-   "valor": 3.1722096913711084e-06,
+   "valor": 2.6791555292504654e-05,
    "status": "ok",
    "categoria": "pc",
    "coluna": "max_abs_dif_probs",
    "script": "embarcados/src/python/gerar_artigo_numeros.py",
    "fontes": [
     {
-     "arquivo": "embarcados/results/csv/seq_pc_20261024-092103_meta.json",
-     "sha256": "2be9a1842106537bbc699026c93bc96c024c98a8f36618cd5a470f0df8d59ee8"
+     "arquivo": "embarcados/results/csv/seq_pc_20261024-184829_meta.json",
+     "sha256": "4ea98bcd0d3754c7de921204ff64f51aa79dd10b515544f57e1c05aa5b8019da"
     }
    ]
   },
@@ -4905,21 +5115,21 @@
    "script": "embarcados/src/python/gerar_artigo_numeros.py",
    "fontes": [
     {
-     "arquivo": "embarcados/results/csv/seq_pc_20261024-092103_meta.json",
-     "sha256": "2be9a1842106537bbc699026c93bc96c024c98a8f36618cd5a470f0df8d59ee8"
+     "arquivo": "embarcados/results/csv/seq_pc_20261024-184829_meta.json",
+     "sha256": "4ea98bcd0d3754c7de921204ff64f51aa79dd10b515544f57e1c05aa5b8019da"
     }
    ]
   },
   "VPcSeqPerClass": {
-   "valor": 8,
+   "valor": 10,
    "status": "ok",
    "categoria": "pc",
    "coluna": "janelas por classe",
    "script": "embarcados/src/python/gerar_artigo_numeros.py",
    "fontes": [
     {
-     "arquivo": "embarcados/results/csv/seq_pc_20261024-092103.csv",
-     "sha256": "eaba0cbe2d39af3e1d7f7cbdc8afbbdff87e832a5f8d4d6c636a3995f756a658"
+     "arquivo": "embarcados/results/csv/seq_pc_20261024-184829.csv",
+     "sha256": "6b850b863fbd00ab5f1929d0cbecb71c92d5b533e9092a2f605394fd784acd76"
     }
    ]
   },
@@ -4932,7 +5142,7 @@
    "fontes": [
     {
      "arquivo": "embarcados/paper/fontes/ws_float_16000.json",
-     "sha256": "95a67377c7eb2eb4ab886a73da7c0accffb11978a41718e5e942cff74afd01c7"
+     "sha256": "fba4c5e5160ccc79f1e76dcb3e2d40e9bc5622fbb63cf3d6d977e03e438346a1"
     }
    ]
   },
@@ -4945,7 +5155,7 @@
    "fontes": [
     {
      "arquivo": "embarcados/paper/fontes/ws_float_16000.json",
-     "sha256": "95a67377c7eb2eb4ab886a73da7c0accffb11978a41718e5e942cff74afd01c7"
+     "sha256": "fba4c5e5160ccc79f1e76dcb3e2d40e9bc5622fbb63cf3d6d977e03e438346a1"
     }
    ]
   },
@@ -4958,7 +5168,7 @@
    "fontes": [
     {
      "arquivo": "embarcados/paper/fontes/ws_float_16000.json",
-     "sha256": "95a67377c7eb2eb4ab886a73da7c0accffb11978a41718e5e942cff74afd01c7"
+     "sha256": "fba4c5e5160ccc79f1e76dcb3e2d40e9bc5622fbb63cf3d6d977e03e438346a1"
     }
    ]
   },
@@ -4971,7 +5181,7 @@
    "fontes": [
     {
      "arquivo": "embarcados/paper/fontes/ws_float_48000.json",
-     "sha256": "3d3878646c51b96e1e1ab4c8fd935bb8a069e95c7ec7b95fe3a59ea8e0f5d838"
+     "sha256": "e1c11825ce3e5d25702b57dd3bd9d0bbc3c8844278281c226be7441a9cde6eb3"
     }
    ]
   },
@@ -4984,7 +5194,7 @@
    "fontes": [
     {
      "arquivo": "embarcados/paper/fontes/ws_float_48000.json",
-     "sha256": "3d3878646c51b96e1e1ab4c8fd935bb8a069e95c7ec7b95fe3a59ea8e0f5d838"
+     "sha256": "e1c11825ce3e5d25702b57dd3bd9d0bbc3c8844278281c226be7441a9cde6eb3"
     }
    ]
   },
@@ -4997,7 +5207,7 @@
    "fontes": [
     {
      "arquivo": "embarcados/paper/fontes/ws_float_48000.json",
-     "sha256": "3d3878646c51b96e1e1ab4c8fd935bb8a069e95c7ec7b95fe3a59ea8e0f5d838"
+     "sha256": "e1c11825ce3e5d25702b57dd3bd9d0bbc3c8844278281c226be7441a9cde6eb3"
     }
    ]
   },
@@ -5010,7 +5220,7 @@
    "fontes": [
     {
      "arquivo": "embarcados/paper/fontes/ws_double_16000.json",
-     "sha256": "3023074d0581ae3a1103bb5b42d4704fcb05631eada2a86eecdc1846ad8b293e"
+     "sha256": "bc0e0830eb9888248a061f13b0c91869f9b364b80a74a8268c655fe22b58690a"
     }
    ]
   },
@@ -5023,7 +5233,7 @@
    "fontes": [
     {
      "arquivo": "embarcados/paper/fontes/ws_double_16000.json",
-     "sha256": "3023074d0581ae3a1103bb5b42d4704fcb05631eada2a86eecdc1846ad8b293e"
+     "sha256": "bc0e0830eb9888248a061f13b0c91869f9b364b80a74a8268c655fe22b58690a"
     }
    ]
   },
@@ -5036,7 +5246,7 @@
    "fontes": [
     {
      "arquivo": "embarcados/paper/fontes/ws_double_16000.json",
-     "sha256": "3023074d0581ae3a1103bb5b42d4704fcb05631eada2a86eecdc1846ad8b293e"
+     "sha256": "bc0e0830eb9888248a061f13b0c91869f9b364b80a74a8268c655fe22b58690a"
     }
    ]
   },
@@ -5049,7 +5259,7 @@
    "fontes": [
     {
      "arquivo": "embarcados/paper/fontes/ws_double_48000.json",
-     "sha256": "dc2a3113667b36f99073b7782f28f4e018e1e13f865c3dd63bf97070c05f53f9"
+     "sha256": "efaae503d4958053578b820f09d89905620d413b5c4ddf1eabe91fd3002fcb3d"
     }
    ]
   },
@@ -5062,7 +5272,7 @@
    "fontes": [
     {
      "arquivo": "embarcados/paper/fontes/ws_double_48000.json",
-     "sha256": "dc2a3113667b36f99073b7782f28f4e018e1e13f865c3dd63bf97070c05f53f9"
+     "sha256": "efaae503d4958053578b820f09d89905620d413b5c4ddf1eabe91fd3002fcb3d"
     }
    ]
   },
@@ -5075,7 +5285,7 @@
    "fontes": [
     {
      "arquivo": "embarcados/paper/fontes/ws_double_48000.json",
-     "sha256": "dc2a3113667b36f99073b7782f28f4e018e1e13f865c3dd63bf97070c05f53f9"
+     "sha256": "efaae503d4958053578b820f09d89905620d413b5c4ddf1eabe91fd3002fcb3d"
     }
    ]
   },
@@ -5088,7 +5298,7 @@
    "fontes": [
     {
      "arquivo": "embarcados/paper/fontes/ws_float_16000.json",
-     "sha256": "95a67377c7eb2eb4ab886a73da7c0accffb11978a41718e5e942cff74afd01c7"
+     "sha256": "fba4c5e5160ccc79f1e76dcb3e2d40e9bc5622fbb63cf3d6d977e03e438346a1"
     }
    ]
   },
@@ -5378,6 +5588,110 @@
     }
    ]
   },
+  "VBuildLmBinKb": {
+   "valor": 215.21875,
+   "status": "ok",
+   "categoria": "build",
+   "coluna": "binary size (hex)/1024 (p11_c_lowmem)",
+   "script": "embarcados/src/python/gerar_artigo_numeros.py",
+   "fontes": [
+    {
+     "arquivo": "embarcados/results/firmware/size_esp32_lowmem_20261025-135632.txt",
+     "sha256": "e7fcb9a5fe3c38cc50c527e2979e733c26d15cfd6ff95b74cc1695b20832e303"
+    }
+   ]
+  },
+  "VBuildLmBinPct": {
+   "valor": 21.0174560546875,
+   "status": "ok",
+   "categoria": "build",
+   "coluna": "bin/partição app",
+   "script": "embarcados/src/python/gerar_artigo_numeros.py",
+   "fontes": [
+    {
+     "arquivo": "embarcados/results/firmware/size_esp32_lowmem_20261025-135632.txt",
+     "sha256": "e7fcb9a5fe3c38cc50c527e2979e733c26d15cfd6ff95b74cc1695b20832e303"
+    }
+   ]
+  },
+  "VBuildLmFlashCodeKb": {
+   "valor": 130.2529296875,
+   "status": "ok",
+   "categoria": "build",
+   "coluna": "Flash Code Used/1024",
+   "script": "embarcados/src/python/gerar_artigo_numeros.py",
+   "fontes": [
+    {
+     "arquivo": "embarcados/results/firmware/size_esp32_lowmem_20261025-135632.txt",
+     "sha256": "e7fcb9a5fe3c38cc50c527e2979e733c26d15cfd6ff95b74cc1695b20832e303"
+    }
+   ]
+  },
+  "VBuildLmFlashDataKb": {
+   "valor": 19.5703125,
+   "status": "ok",
+   "categoria": "build",
+   "coluna": "Flash Data Used/1024",
+   "script": "embarcados/src/python/gerar_artigo_numeros.py",
+   "fontes": [
+    {
+     "arquivo": "embarcados/results/firmware/size_esp32_lowmem_20261025-135632.txt",
+     "sha256": "e7fcb9a5fe3c38cc50c527e2979e733c26d15cfd6ff95b74cc1695b20832e303"
+    }
+   ]
+  },
+  "VBuildLmDramKb": {
+   "valor": 34.796875,
+   "status": "ok",
+   "categoria": "build",
+   "coluna": "DRAM Used/1024 (estático)",
+   "script": "embarcados/src/python/gerar_artigo_numeros.py",
+   "fontes": [
+    {
+     "arquivo": "embarcados/results/firmware/size_esp32_lowmem_20261025-135632.txt",
+     "sha256": "e7fcb9a5fe3c38cc50c527e2979e733c26d15cfd6ff95b74cc1695b20832e303"
+    }
+   ]
+  },
+  "VBuildLmDramTotalKb": {
+   "valor": 176.5,
+   "status": "ok",
+   "categoria": "build",
+   "coluna": "DRAM Total/1024",
+   "script": "embarcados/src/python/gerar_artigo_numeros.py",
+   "fontes": [
+    {
+     "arquivo": "embarcados/results/firmware/size_esp32_lowmem_20261025-135632.txt",
+     "sha256": "e7fcb9a5fe3c38cc50c527e2979e733c26d15cfd6ff95b74cc1695b20832e303"
+    }
+   ]
+  },
+  "VBuildLmIramKb": {
+   "valor": 57.7138671875,
+   "status": "ok",
+   "categoria": "build",
+   "coluna": "IRAM Used/1024 (estático)",
+   "script": "embarcados/src/python/gerar_artigo_numeros.py",
+   "fontes": [
+    {
+     "arquivo": "embarcados/results/firmware/size_esp32_lowmem_20261025-135632.txt",
+     "sha256": "e7fcb9a5fe3c38cc50c527e2979e733c26d15cfd6ff95b74cc1695b20832e303"
+    }
+   ]
+  },
+  "VBuildLmIramTotalKb": {
+   "valor": 128.0,
+   "status": "ok",
+   "categoria": "build",
+   "coluna": "IRAM Total/1024",
+   "script": "embarcados/src/python/gerar_artigo_numeros.py",
+   "fontes": [
+    {
+     "arquivo": "embarcados/results/firmware/size_esp32_lowmem_20261025-135632.txt",
+     "sha256": "e7fcb9a5fe3c38cc50c527e2979e733c26d15cfd6ff95b74cc1695b20832e303"
+    }
+   ]
+  },
   "VEqFloatBadCases": {
    "valor": 2,
    "status": "ok",
@@ -5438,7 +5752,7 @@
    "script": "embarcados/src/python/gerar_artigo_numeros.py",
    "fontes": [
     {
-     "arquivo": "embarcados/results/csv/equivalencia_resumo_por_build_20261024-091729.csv",
+     "arquivo": "embarcados/results/csv/equivalencia_resumo_por_build_20261024-101821.csv",
      "sha256": "bc42bdf549e15875a3762c4907610f49a8ff0cb08c2fc10e3fafd5e59d84eb35"
     }
    ]
@@ -5451,7 +5765,7 @@
    "script": "embarcados/src/python/gerar_artigo_numeros.py",
    "fontes": [
     {
-     "arquivo": "embarcados/results/csv/equivalencia_resumo_por_build_20261024-091729.csv",
+     "arquivo": "embarcados/results/csv/equivalencia_resumo_por_build_20261024-101821.csv",
      "sha256": "bc42bdf549e15875a3762c4907610f49a8ff0cb08c2fc10e3fafd5e59d84eb35"
     }
    ]
@@ -5464,7 +5778,7 @@
    "script": "embarcados/src/python/gerar_artigo_numeros.py",
    "fontes": [
     {
-     "arquivo": "embarcados/results/csv/equivalencia_resumo_por_build_20261024-091729.csv",
+     "arquivo": "embarcados/results/csv/equivalencia_resumo_por_build_20261024-101821.csv",
      "sha256": "bc42bdf549e15875a3762c4907610f49a8ff0cb08c2fc10e3fafd5e59d84eb35"
     }
    ]
@@ -5477,7 +5791,7 @@
    "script": "embarcados/src/python/gerar_artigo_numeros.py",
    "fontes": [
     {
-     "arquivo": "embarcados/results/csv/equivalencia_resumo_por_build_20261024-091729.csv",
+     "arquivo": "embarcados/results/csv/equivalencia_resumo_por_build_20261024-101821.csv",
      "sha256": "bc42bdf549e15875a3762c4907610f49a8ff0cb08c2fc10e3fafd5e59d84eb35"
     }
    ]
@@ -5490,7 +5804,7 @@
    "script": "embarcados/src/python/gerar_artigo_numeros.py",
    "fontes": [
     {
-     "arquivo": "embarcados/results/csv/equivalencia_resumo_por_build_20261024-091729.csv",
+     "arquivo": "embarcados/results/csv/equivalencia_resumo_por_build_20261024-101821.csv",
      "sha256": "bc42bdf549e15875a3762c4907610f49a8ff0cb08c2fc10e3fafd5e59d84eb35"
     }
    ]
@@ -5692,7 +6006,7 @@
    "fontes": [
     {
      "arquivo": "embarcados/paper/fontes/ws_float_48000.json",
-     "sha256": "3d3878646c51b96e1e1ab4c8fd935bb8a069e95c7ec7b95fe3a59ea8e0f5d838"
+     "sha256": "e1c11825ce3e5d25702b57dd3bd9d0bbc3c8844278281c226be7441a9cde6eb3"
     }
    ]
   },
@@ -5705,7 +6019,7 @@
    "fontes": [
     {
      "arquivo": "embarcados/paper/fontes/ws_float_16000.json",
-     "sha256": "95a67377c7eb2eb4ab886a73da7c0accffb11978a41718e5e942cff74afd01c7"
+     "sha256": "fba4c5e5160ccc79f1e76dcb3e2d40e9bc5622fbb63cf3d6d977e03e438346a1"
     }
    ]
   },
@@ -5736,353 +6050,975 @@
    ]
   },
   "VChipModel": {
-   "valor": null,
-   "status": "pending",
+   "valor": "ESP32",
+   "status": "ok",
    "categoria": "esp32",
    "coluna": "chip_modelo",
    "script": "embarcados/src/python/gerar_artigo_numeros.py",
    "fontes": [
     {
      "arquivo": "embarcados/results/manifests/bancada.json",
-     "sha256": null
+     "sha256": "fc33676e8d02236ca62331e9ffa6b137520295be8eb25ecc5f0ad8c77519f426"
+    }
+   ]
+  },
+  "VChipRev": {
+   "valor": "v3.1",
+   "status": "ok",
+   "categoria": "esp32",
+   "coluna": "esp_chip_info.revisao (maior*100+menor)",
+   "script": "embarcados/src/python/gerar_artigo_numeros.py",
+   "fontes": [
+    {
+     "arquivo": "embarcados/results/manifests/bancada.json",
+     "sha256": "fc33676e8d02236ca62331e9ffa6b137520295be8eb25ecc5f0ad8c77519f426"
     }
    ]
   },
   "VChipCpuMhz": {
-   "valor": null,
-   "status": "pending",
+   "valor": 240.0,
+   "status": "ok",
    "categoria": "esp32",
    "coluna": "cpu_mhz",
    "script": "embarcados/src/python/gerar_artigo_numeros.py",
    "fontes": [
     {
      "arquivo": "embarcados/results/manifests/bancada.json",
-     "sha256": null
+     "sha256": "fc33676e8d02236ca62331e9ffa6b137520295be8eb25ecc5f0ad8c77519f426"
+    }
+   ]
+  },
+  "VChipFlashMb": {
+   "valor": 4.0,
+   "status": "ok",
+   "categoria": "esp32",
+   "coluna": "flash_mb",
+   "script": "embarcados/src/python/gerar_artigo_numeros.py",
+   "fontes": [
+    {
+     "arquivo": "embarcados/results/manifests/bancada.json",
+     "sha256": "fc33676e8d02236ca62331e9ffa6b137520295be8eb25ecc5f0ad8c77519f426"
     }
    ]
   },
   "VChipPsramMb": {
-   "valor": null,
-   "status": "pending",
+   "valor": 0.0,
+   "status": "ok",
    "categoria": "esp32",
    "coluna": "psram_mb",
    "script": "embarcados/src/python/gerar_artigo_numeros.py",
    "fontes": [
     {
      "arquivo": "embarcados/results/manifests/bancada.json",
-     "sha256": null
+     "sha256": "fc33676e8d02236ca62331e9ffa6b137520295be8eb25ecc5f0ad8c77519f426"
+    }
+   ]
+  },
+  "VChipIdf": {
+   "valor": "v5.5.6",
+   "status": "ok",
+   "categoria": "esp32",
+   "coluna": "idf",
+   "script": "embarcados/src/python/gerar_artigo_numeros.py",
+   "fontes": [
+    {
+     "arquivo": "embarcados/results/manifests/bancada.json",
+     "sha256": "fc33676e8d02236ca62331e9ffa6b137520295be8eb25ecc5f0ad8c77519f426"
+    }
+   ]
+  },
+  "VChipVariant": {
+   "valor": "p11_c_lowmem",
+   "status": "ok",
+   "categoria": "esp32",
+   "coluna": "variante",
+   "script": "embarcados/src/python/gerar_artigo_numeros.py",
+   "fontes": [
+    {
+     "arquivo": "embarcados/results/manifests/bancada.json",
+     "sha256": "fc33676e8d02236ca62331e9ffa6b137520295be8eb25ecc5f0ad8c77519f426"
+    }
+   ]
+  },
+  "VChipPoolB": {
+   "valor": 314944,
+   "status": "ok",
+   "categoria": "esp32",
+   "coluna": "esp_chip_info.pool_8bit + pool_32bit",
+   "script": "embarcados/src/python/gerar_artigo_numeros.py",
+   "fontes": [
+    {
+     "arquivo": "embarcados/results/manifests/bancada.json",
+     "sha256": "fc33676e8d02236ca62331e9ffa6b137520295be8eb25ecc5f0ad8c77519f426"
+    }
+   ]
+  },
+  "VChipPoolKib": {
+   "valor": 307.5625,
+   "status": "ok",
+   "categoria": "esp32",
+   "coluna": "(pool_8bit+pool_32bit)/1024",
+   "script": "embarcados/src/python/gerar_artigo_numeros.py",
+   "fontes": [
+    {
+     "arquivo": "embarcados/results/manifests/bancada.json",
+     "sha256": "fc33676e8d02236ca62331e9ffa6b137520295be8eb25ecc5f0ad8c77519f426"
+    }
+   ]
+  },
+  "VChipPoolBlocks": {
+   "valor": 5,
+   "status": "ok",
+   "categoria": "esp32",
+   "coluna": "len(esp_chip_info.pool)",
+   "script": "embarcados/src/python/gerar_artigo_numeros.py",
+   "fontes": [
+    {
+     "arquivo": "embarcados/results/manifests/bancada.json",
+     "sha256": "fc33676e8d02236ca62331e9ffa6b137520295be8eb25ecc5f0ad8c77519f426"
+    }
+   ]
+  },
+  "VChipHeapBootB": {
+   "valor": 8488,
+   "status": "ok",
+   "categoria": "esp32",
+   "coluna": "esp_chip_info.heap_livre_interna (depois de reservar o pool)",
+   "script": "embarcados/src/python/gerar_artigo_numeros.py",
+   "fontes": [
+    {
+     "arquivo": "embarcados/results/manifests/bancada.json",
+     "sha256": "fc33676e8d02236ca62331e9ffa6b137520295be8eb25ecc5f0ad8c77519f426"
+    }
+   ]
+  },
+  "VChipFitsIdmt": {
+   "valor": 0,
+   "status": "ok",
+   "categoria": "esp32",
+   "coluna": "coube[idmt] (1=sim)",
+   "script": "embarcados/src/python/gerar_artigo_numeros.py",
+   "fontes": [
+    {
+     "arquivo": "embarcados/results/csv/esp32_memoria_esp32_20261025-141018.csv",
+     "sha256": "77da4db54787b410063ec92b6c029cb4631b829c598d3f3b69fadd1703fd589c"
+    }
+   ]
+  },
+  "VChipFitsBldc": {
+   "valor": 1,
+   "status": "ok",
+   "categoria": "esp32",
+   "coluna": "coube[a2212] (1=sim)",
+   "script": "embarcados/src/python/gerar_artigo_numeros.py",
+   "fontes": [
+    {
+     "arquivo": "embarcados/results/csv/esp32_memoria_esp32_20261025-141018.csv",
+     "sha256": "77da4db54787b410063ec92b6c029cb4631b829c598d3f3b69fadd1703fd589c"
+    }
+   ]
+  },
+  "VChipWsBldcB": {
+   "valor": 303308,
+   "status": "ok",
+   "categoria": "esp32",
+   "coluna": "ws_bytes[a2212] (pico do pool)",
+   "script": "embarcados/src/python/gerar_artigo_numeros.py",
+   "fontes": [
+    {
+     "arquivo": "embarcados/results/csv/esp32_memoria_esp32_20261025-141018.csv",
+     "sha256": "77da4db54787b410063ec92b6c029cb4631b829c598d3f3b69fadd1703fd589c"
+    }
+   ]
+  },
+  "VChipWsBldcKib": {
+   "valor": 296.19921875,
+   "status": "ok",
+   "categoria": "esp32",
+   "coluna": "ws_bytes[a2212]/1024",
+   "script": "embarcados/src/python/gerar_artigo_numeros.py",
+   "fontes": [
+    {
+     "arquivo": "embarcados/results/csv/esp32_memoria_esp32_20261025-141018.csv",
+     "sha256": "77da4db54787b410063ec92b6c029cb4631b829c598d3f3b69fadd1703fd589c"
+    }
+   ]
+  },
+  "VChipWsPoolPct": {
+   "valor": 96.30537492379598,
+   "status": "ok",
+   "categoria": "esp32",
+   "coluna": "100·ws_bytes[a2212]/(pool_8bit+pool_32bit)",
+   "script": "embarcados/src/python/gerar_artigo_numeros.py",
+   "fontes": [
+    {
+     "arquivo": "embarcados/results/csv/esp32_memoria_esp32_20261025-141018.csv",
+     "sha256": "77da4db54787b410063ec92b6c029cb4631b829c598d3f3b69fadd1703fd589c"
+    },
+    {
+     "arquivo": "embarcados/results/manifests/bancada.json",
+     "sha256": "fc33676e8d02236ca62331e9ffa6b137520295be8eb25ecc5f0ad8c77519f426"
+    }
+   ]
+  },
+  "VChipHeapIntBldcB": {
+   "valor": 7584,
+   "status": "ok",
+   "categoria": "esp32",
+   "coluna": "heap_min_livre_interna[a2212]",
+   "script": "embarcados/src/python/gerar_artigo_numeros.py",
+   "fontes": [
+    {
+     "arquivo": "embarcados/results/csv/esp32_memoria_esp32_20261025-141018.csv",
+     "sha256": "77da4db54787b410063ec92b6c029cb4631b829c598d3f3b69fadd1703fd589c"
+    }
+   ]
+  },
+  "VChipHeapIntBldcKib": {
+   "valor": 7.40625,
+   "status": "ok",
+   "categoria": "esp32",
+   "coluna": "heap_min_livre_interna[a2212]/1024",
+   "script": "embarcados/src/python/gerar_artigo_numeros.py",
+   "fontes": [
+    {
+     "arquivo": "embarcados/results/csv/esp32_memoria_esp32_20261025-141018.csv",
+     "sha256": "77da4db54787b410063ec92b6c029cb4631b829c598d3f3b69fadd1703fd589c"
+    }
+   ]
+  },
+  "VChipWsPsramBldc": {
+   "valor": 0,
+   "status": "ok",
+   "categoria": "esp32",
+   "coluna": "ws_na_psram[a2212]",
+   "script": "embarcados/src/python/gerar_artigo_numeros.py",
+   "fontes": [
+    {
+     "arquivo": "embarcados/results/csv/esp32_memoria_esp32_20261025-141018.csv",
+     "sha256": "77da4db54787b410063ec92b6c029cb4631b829c598d3f3b69fadd1703fd589c"
+    }
+   ]
+  },
+  "VChipIdmtFreeAtFailKib": {
+   "valor": 307.5625,
+   "status": "ok",
+   "categoria": "esp32",
+   "coluna": "livre interna no momento da recusa (idmt)/1024",
+   "script": "embarcados/src/python/gerar_artigo_numeros.py",
+   "fontes": [
+    {
+     "arquivo": "embarcados/results/csv/esp32_memoria_esp32_20261025-141018.csv",
+     "sha256": "77da4db54787b410063ec92b6c029cb4631b829c598d3f3b69fadd1703fd589c"
+    }
+   ]
+  },
+  "VChipIdmtSamples": {
+   "valor": 48000,
+   "status": "ok",
+   "categoria": "esp32",
+   "coluna": "n_amostras[idmt]",
+   "script": "embarcados/src/python/gerar_artigo_numeros.py",
+   "fontes": [
+    {
+     "arquivo": "embarcados/results/csv/esp32_memoria_esp32_20261025-141018.csv",
+     "sha256": "77da4db54787b410063ec92b6c029cb4631b829c598d3f3b69fadd1703fd589c"
+    }
+   ]
+  },
+  "VChipLatBldcMed": {
+   "valor": 2647.5015000000003,
+   "status": "ok",
+   "categoria": "esp32",
+   "coluna": "mediana total_ms (aquecimento excluído)",
+   "script": "embarcados/src/python/gerar_artigo_numeros.py",
+   "fontes": [
+    {
+     "arquivo": "embarcados/results/csv/esp32_lat_esp32_20261025-143026.csv",
+     "sha256": "c33d5055b4101eca0a54f1091c0f478bdb86c5b1b77afc593f084b83d66daf69"
+    }
+   ]
+  },
+  "VChipLatBldcPninetyfive": {
+   "valor": 2647.62405,
+   "status": "ok",
+   "categoria": "esp32",
+   "coluna": "p95 total_ms (aquecimento excluído)",
+   "script": "embarcados/src/python/gerar_artigo_numeros.py",
+   "fontes": [
+    {
+     "arquivo": "embarcados/results/csv/esp32_lat_esp32_20261025-143026.csv",
+     "sha256": "c33d5055b4101eca0a54f1091c0f478bdb86c5b1b77afc593f084b83d66daf69"
+    }
+   ]
+  },
+  "VChipLatBldcMax": {
+   "valor": 2647.674,
+   "status": "ok",
+   "categoria": "esp32",
+   "coluna": "máx total_ms (aquecimento excluído)",
+   "script": "embarcados/src/python/gerar_artigo_numeros.py",
+   "fontes": [
+    {
+     "arquivo": "embarcados/results/csv/esp32_lat_esp32_20261025-143026.csv",
+     "sha256": "c33d5055b4101eca0a54f1091c0f478bdb86c5b1b77afc593f084b83d66daf69"
+    }
+   ]
+  },
+  "VChipLatBldcMin": {
+   "valor": 2647.362,
+   "status": "ok",
+   "categoria": "esp32",
+   "coluna": "mín total_ms (aquecimento excluído)",
+   "script": "embarcados/src/python/gerar_artigo_numeros.py",
+   "fontes": [
+    {
+     "arquivo": "embarcados/results/csv/esp32_lat_esp32_20261025-143026.csv",
+     "sha256": "c33d5055b4101eca0a54f1091c0f478bdb86c5b1b77afc593f084b83d66daf69"
+    }
+   ]
+  },
+  "VChipLatBldcN": {
+   "valor": 200,
+   "status": "ok",
+   "categoria": "esp32",
+   "coluna": "nº de janelas medidas",
+   "script": "embarcados/src/python/gerar_artigo_numeros.py",
+   "fontes": [
+    {
+     "arquivo": "embarcados/results/csv/esp32_lat_esp32_20261025-143026.csv",
+     "sha256": "c33d5055b4101eca0a54f1091c0f478bdb86c5b1b77afc593f084b83d66daf69"
+    }
+   ]
+  },
+  "VChipLatWarmup": {
+   "valor": 5,
+   "status": "ok",
+   "categoria": "esp32",
+   "coluna": "argv.aquecimento",
+   "script": "embarcados/src/python/gerar_artigo_numeros.py",
+   "fontes": [
+    {
+     "arquivo": "embarcados/results/csv/esp32_lat_esp32_20261025-143026_meta.json",
+     "sha256": "dfaa329d858d3505d830126bb616e2f159b7329f31df55c23027065fd052dccf"
+    }
+   ]
+  },
+  "VChipLatDistinct": {
+   "valor": 75,
+   "status": "ok",
+   "categoria": "esp32",
+   "coluna": "n_janelas_distintas",
+   "script": "embarcados/src/python/gerar_artigo_numeros.py",
+   "fontes": [
+    {
+     "arquivo": "embarcados/results/csv/esp32_lat_esp32_20261025-143026.csv",
+     "sha256": "c33d5055b4101eca0a54f1091c0f478bdb86c5b1b77afc593f084b83d66daf69"
+    }
+   ]
+  },
+  "VChipRtfBldc": {
+   "valor": 2.6475015,
+   "status": "ok",
+   "categoria": "esp32",
+   "coluna": "mediana total_ms / (1000·AVAL_A2212.seg_s)",
+   "script": "embarcados/src/python/gerar_artigo_numeros.py",
+   "fontes": [
+    {
+     "arquivo": "embarcados/results/csv/esp32_lat_esp32_20261025-143026.csv",
+     "sha256": "c33d5055b4101eca0a54f1091c0f478bdb86c5b1b77afc593f084b83d66daf69"
+    },
+    {
+     "arquivo": "motorsound/config.py",
+     "sha256": "533b6f9cb12228d8c2fcf492b48c5d1950d0e4cf71fac47b4e4573ea86f9e56f"
+    }
+   ]
+  },
+  "VChipRtfMaxBldc": {
+   "valor": 2.647674,
+   "status": "ok",
+   "categoria": "esp32",
+   "coluna": "máx total_ms / (1000·seg_s)",
+   "script": "embarcados/src/python/gerar_artigo_numeros.py",
+   "fontes": [
+    {
+     "arquivo": "embarcados/results/csv/esp32_lat_esp32_20261025-143026.csv",
+     "sha256": "c33d5055b4101eca0a54f1091c0f478bdb86c5b1b77afc593f084b83d66daf69"
+    },
+    {
+     "arquivo": "motorsound/config.py",
+     "sha256": "533b6f9cb12228d8c2fcf492b48c5d1950d0e4cf71fac47b4e4573ea86f9e56f"
+    }
+   ]
+  },
+  "VChipStackBldc": {
+   "valor": 20536,
+   "status": "ok",
+   "categoria": "esp32",
+   "coluna": "min pilha_folga_bytes",
+   "script": "embarcados/src/python/gerar_artigo_numeros.py",
+   "fontes": [
+    {
+     "arquivo": "embarcados/results/csv/esp32_lat_esp32_20261025-143026.csv",
+     "sha256": "c33d5055b4101eca0a54f1091c0f478bdb86c5b1b77afc593f084b83d66daf69"
+    }
+   ]
+  },
+  "VChipBldcPrepMed": {
+   "valor": 1.81,
+   "status": "ok",
+   "categoria": "esp32",
+   "coluna": "mediana prep_ms",
+   "script": "embarcados/src/python/gerar_artigo_numeros.py",
+   "fontes": [
+    {
+     "arquivo": "embarcados/results/csv/esp32_lat_esp32_20261025-143026.csv",
+     "sha256": "c33d5055b4101eca0a54f1091c0f478bdb86c5b1b77afc593f084b83d66daf69"
+    }
+   ]
+  },
+  "VChipBldcPrepPct": {
+   "valor": 0.06836634464607479,
+   "status": "ok",
+   "categoria": "esp32",
+   "coluna": "100·mediana prep_ms / mediana total_ms",
+   "script": "embarcados/src/python/gerar_artigo_numeros.py",
+   "fontes": [
+    {
+     "arquivo": "embarcados/results/csv/esp32_lat_esp32_20261025-143026.csv",
+     "sha256": "c33d5055b4101eca0a54f1091c0f478bdb86c5b1b77afc593f084b83d66daf69"
+    }
+   ]
+  },
+  "VChipBldcTrackMed": {
+   "valor": 2345.538,
+   "status": "ok",
+   "categoria": "esp32",
+   "coluna": "mediana rastreio_ms",
+   "script": "embarcados/src/python/gerar_artigo_numeros.py",
+   "fontes": [
+    {
+     "arquivo": "embarcados/results/csv/esp32_lat_esp32_20261025-143026.csv",
+     "sha256": "c33d5055b4101eca0a54f1091c0f478bdb86c5b1b77afc593f084b83d66daf69"
+    }
+   ]
+  },
+  "VChipBldcTrackPct": {
+   "valor": 88.59439739694197,
+   "status": "ok",
+   "categoria": "esp32",
+   "coluna": "100·mediana rastreio_ms / mediana total_ms",
+   "script": "embarcados/src/python/gerar_artigo_numeros.py",
+   "fontes": [
+    {
+     "arquivo": "embarcados/results/csv/esp32_lat_esp32_20261025-143026.csv",
+     "sha256": "c33d5055b4101eca0a54f1091c0f478bdb86c5b1b77afc593f084b83d66daf69"
+    }
+   ]
+  },
+  "VChipBldcVitMed": {
+   "valor": 90.711,
+   "status": "ok",
+   "categoria": "esp32",
+   "coluna": "mediana viterbi_ms",
+   "script": "embarcados/src/python/gerar_artigo_numeros.py",
+   "fontes": [
+    {
+     "arquivo": "embarcados/results/csv/esp32_lat_esp32_20261025-143026.csv",
+     "sha256": "c33d5055b4101eca0a54f1091c0f478bdb86c5b1b77afc593f084b83d66daf69"
+    }
+   ]
+  },
+  "VChipBldcVitPct": {
+   "valor": 3.42628701060226,
+   "status": "ok",
+   "categoria": "esp32",
+   "coluna": "100·mediana viterbi_ms / mediana total_ms",
+   "script": "embarcados/src/python/gerar_artigo_numeros.py",
+   "fontes": [
+    {
+     "arquivo": "embarcados/results/csv/esp32_lat_esp32_20261025-143026.csv",
+     "sha256": "c33d5055b4101eca0a54f1091c0f478bdb86c5b1b77afc593f084b83d66daf69"
+    }
+   ]
+  },
+  "VChipBldcSalMed": {
+   "valor": 0.002,
+   "status": "ok",
+   "categoria": "esp32",
+   "coluna": "mediana sal_caminho_ms",
+   "script": "embarcados/src/python/gerar_artigo_numeros.py",
+   "fontes": [
+    {
+     "arquivo": "embarcados/results/csv/esp32_lat_esp32_20261025-143026.csv",
+     "sha256": "c33d5055b4101eca0a54f1091c0f478bdb86c5b1b77afc593f084b83d66daf69"
+    }
+   ]
+  },
+  "VChipBldcSalPct": {
+   "valor": 7.554292226085613e-05,
+   "status": "ok",
+   "categoria": "esp32",
+   "coluna": "100·mediana sal_caminho_ms / mediana total_ms",
+   "script": "embarcados/src/python/gerar_artigo_numeros.py",
+   "fontes": [
+    {
+     "arquivo": "embarcados/results/csv/esp32_lat_esp32_20261025-143026.csv",
+     "sha256": "c33d5055b4101eca0a54f1091c0f478bdb86c5b1b77afc593f084b83d66daf69"
+    }
+   ]
+  },
+  "VChipBldcEnvMed": {
+   "valor": 199.302,
+   "status": "ok",
+   "categoria": "esp32",
+   "coluna": "mediana envelope_ms",
+   "script": "embarcados/src/python/gerar_artigo_numeros.py",
+   "fontes": [
+    {
+     "arquivo": "embarcados/results/csv/esp32_lat_esp32_20261025-143026.csv",
+     "sha256": "c33d5055b4101eca0a54f1091c0f478bdb86c5b1b77afc593f084b83d66daf69"
+    }
+   ]
+  },
+  "VChipBldcEnvPct": {
+   "valor": 7.527927746216574,
+   "status": "ok",
+   "categoria": "esp32",
+   "coluna": "100·mediana envelope_ms / mediana total_ms",
+   "script": "embarcados/src/python/gerar_artigo_numeros.py",
+   "fontes": [
+    {
+     "arquivo": "embarcados/results/csv/esp32_lat_esp32_20261025-143026.csv",
+     "sha256": "c33d5055b4101eca0a54f1091c0f478bdb86c5b1b77afc593f084b83d66daf69"
+    }
+   ]
+  },
+  "VChipBldcFeatMed": {
+   "valor": 10.12,
+   "status": "ok",
+   "categoria": "esp32",
+   "coluna": "mediana features_ms",
+   "script": "embarcados/src/python/gerar_artigo_numeros.py",
+   "fontes": [
+    {
+     "arquivo": "embarcados/results/csv/esp32_lat_esp32_20261025-143026.csv",
+     "sha256": "c33d5055b4101eca0a54f1091c0f478bdb86c5b1b77afc593f084b83d66daf69"
+    }
+   ]
+  },
+  "VChipBldcFeatPct": {
+   "valor": 0.38224718663993196,
+   "status": "ok",
+   "categoria": "esp32",
+   "coluna": "100·mediana features_ms / mediana total_ms",
+   "script": "embarcados/src/python/gerar_artigo_numeros.py",
+   "fontes": [
+    {
+     "arquivo": "embarcados/results/csv/esp32_lat_esp32_20261025-143026.csv",
+     "sha256": "c33d5055b4101eca0a54f1091c0f478bdb86c5b1b77afc593f084b83d66daf69"
+    }
+   ]
+  },
+  "VChipBldcCosMed": {
+   "valor": 0.027,
+   "status": "ok",
+   "categoria": "esp32",
+   "coluna": "mediana cosseno_ms",
+   "script": "embarcados/src/python/gerar_artigo_numeros.py",
+   "fontes": [
+    {
+     "arquivo": "embarcados/results/csv/esp32_lat_esp32_20261025-143026.csv",
+     "sha256": "c33d5055b4101eca0a54f1091c0f478bdb86c5b1b77afc593f084b83d66daf69"
+    }
+   ]
+  },
+  "VChipBldcCosPct": {
+   "valor": 0.0010198294505215577,
+   "status": "ok",
+   "categoria": "esp32",
+   "coluna": "100·mediana cosseno_ms / mediana total_ms",
+   "script": "embarcados/src/python/gerar_artigo_numeros.py",
+   "fontes": [
+    {
+     "arquivo": "embarcados/results/csv/esp32_lat_esp32_20261025-143026.csv",
+     "sha256": "c33d5055b4101eca0a54f1091c0f478bdb86c5b1b77afc593f084b83d66daf69"
     }
    ]
   },
   "VChipLatIdmtMed": {
    "valor": null,
-   "status": "pending",
+   "status": "nao_coube",
    "categoria": "esp32",
-   "coluna": "resumo.idmt.total_ms.mediana",
+   "coluna": "coube[idmt] = 0",
    "script": "embarcados/src/python/gerar_artigo_numeros.py",
    "fontes": [
     {
-     "arquivo": "embarcados/results/manifests/bancada.json",
-     "sha256": null
+     "arquivo": "embarcados/results/csv/esp32_memoria_esp32_20261025-141018.csv",
+     "sha256": "77da4db54787b410063ec92b6c029cb4631b829c598d3f3b69fadd1703fd589c"
     }
    ]
   },
   "VChipLatIdmtPninetyfive": {
    "valor": null,
-   "status": "pending",
+   "status": "nao_coube",
    "categoria": "esp32",
-   "coluna": "resumo.idmt.total_ms.p95",
+   "coluna": "coube[idmt] = 0",
    "script": "embarcados/src/python/gerar_artigo_numeros.py",
    "fontes": [
     {
-     "arquivo": "embarcados/results/manifests/bancada.json",
-     "sha256": null
+     "arquivo": "embarcados/results/csv/esp32_memoria_esp32_20261025-141018.csv",
+     "sha256": "77da4db54787b410063ec92b6c029cb4631b829c598d3f3b69fadd1703fd589c"
     }
    ]
   },
   "VChipLatIdmtMax": {
    "valor": null,
-   "status": "pending",
+   "status": "nao_coube",
    "categoria": "esp32",
-   "coluna": "resumo.idmt.total_ms.max",
+   "coluna": "coube[idmt] = 0",
    "script": "embarcados/src/python/gerar_artigo_numeros.py",
    "fontes": [
     {
-     "arquivo": "embarcados/results/manifests/bancada.json",
-     "sha256": null
-    }
-   ]
-  },
-  "VChipLatIdmtN": {
-   "valor": null,
-   "status": "pending",
-   "categoria": "esp32",
-   "coluna": "resumo.idmt.total_ms.n",
-   "script": "embarcados/src/python/gerar_artigo_numeros.py",
-   "fontes": [
-    {
-     "arquivo": "embarcados/results/manifests/bancada.json",
-     "sha256": null
+     "arquivo": "embarcados/results/csv/esp32_memoria_esp32_20261025-141018.csv",
+     "sha256": "77da4db54787b410063ec92b6c029cb4631b829c598d3f3b69fadd1703fd589c"
     }
    ]
   },
   "VChipRtfIdmt": {
    "valor": null,
-   "status": "pending",
+   "status": "nao_coube",
    "categoria": "esp32",
-   "coluna": "fator_tempo_real_mediana",
+   "coluna": "coube[idmt] = 0",
    "script": "embarcados/src/python/gerar_artigo_numeros.py",
    "fontes": [
     {
-     "arquivo": "embarcados/results/manifests/bancada.json",
-     "sha256": null
+     "arquivo": "embarcados/results/csv/esp32_memoria_esp32_20261025-141018.csv",
+     "sha256": "77da4db54787b410063ec92b6c029cb4631b829c598d3f3b69fadd1703fd589c"
     }
    ]
   },
-  "VChipRtfMaxIdmt": {
+  "VChipWsIdmtKib": {
    "valor": null,
-   "status": "pending",
+   "status": "nao_coube",
    "categoria": "esp32",
-   "coluna": "fator_tempo_real_max",
+   "coluna": "coube[idmt] = 0",
    "script": "embarcados/src/python/gerar_artigo_numeros.py",
    "fontes": [
     {
-     "arquivo": "embarcados/results/manifests/bancada.json",
-     "sha256": null
+     "arquivo": "embarcados/results/csv/esp32_memoria_esp32_20261025-141018.csv",
+     "sha256": "77da4db54787b410063ec92b6c029cb4631b829c598d3f3b69fadd1703fd589c"
     }
    ]
   },
-  "VChipHeapIntIdmtKb": {
+  "VChipHeapIntIdmtB": {
    "valor": null,
-   "status": "pending",
+   "status": "nao_coube",
    "categoria": "esp32",
-   "coluna": "heap_min_livre_interna/1024",
+   "coluna": "coube[idmt] = 0",
    "script": "embarcados/src/python/gerar_artigo_numeros.py",
    "fontes": [
     {
-     "arquivo": "embarcados/results/manifests/bancada.json",
-     "sha256": null
-    }
-   ]
-  },
-  "VChipStackIdmt": {
-   "valor": null,
-   "status": "pending",
-   "categoria": "esp32",
-   "coluna": "pilha_folga_bytes_min",
-   "script": "embarcados/src/python/gerar_artigo_numeros.py",
-   "fontes": [
-    {
-     "arquivo": "embarcados/results/manifests/bancada.json",
-     "sha256": null
-    }
-   ]
-  },
-  "VChipWsPsramIdmt": {
-   "valor": null,
-   "status": "pending",
-   "categoria": "esp32",
-   "coluna": "ws_na_psram",
-   "script": "embarcados/src/python/gerar_artigo_numeros.py",
-   "fontes": [
-    {
-     "arquivo": "embarcados/results/manifests/bancada.json",
-     "sha256": null
-    }
-   ]
-  },
-  "VChipWsIdmtMb": {
-   "valor": null,
-   "status": "pending",
-   "categoria": "esp32",
-   "coluna": "ws_bytes/1e6",
-   "script": "embarcados/src/python/gerar_artigo_numeros.py",
-   "fontes": [
-    {
-     "arquivo": "embarcados/results/manifests/bancada.json",
-     "sha256": null
-    }
-   ]
-  },
-  "VChipLatBldcMed": {
-   "valor": null,
-   "status": "pending",
-   "categoria": "esp32",
-   "coluna": "resumo.a2212.total_ms.mediana",
-   "script": "embarcados/src/python/gerar_artigo_numeros.py",
-   "fontes": [
-    {
-     "arquivo": "embarcados/results/manifests/bancada.json",
-     "sha256": null
-    }
-   ]
-  },
-  "VChipLatBldcPninetyfive": {
-   "valor": null,
-   "status": "pending",
-   "categoria": "esp32",
-   "coluna": "resumo.a2212.total_ms.p95",
-   "script": "embarcados/src/python/gerar_artigo_numeros.py",
-   "fontes": [
-    {
-     "arquivo": "embarcados/results/manifests/bancada.json",
-     "sha256": null
-    }
-   ]
-  },
-  "VChipLatBldcMax": {
-   "valor": null,
-   "status": "pending",
-   "categoria": "esp32",
-   "coluna": "resumo.a2212.total_ms.max",
-   "script": "embarcados/src/python/gerar_artigo_numeros.py",
-   "fontes": [
-    {
-     "arquivo": "embarcados/results/manifests/bancada.json",
-     "sha256": null
-    }
-   ]
-  },
-  "VChipLatBldcN": {
-   "valor": null,
-   "status": "pending",
-   "categoria": "esp32",
-   "coluna": "resumo.a2212.total_ms.n",
-   "script": "embarcados/src/python/gerar_artigo_numeros.py",
-   "fontes": [
-    {
-     "arquivo": "embarcados/results/manifests/bancada.json",
-     "sha256": null
-    }
-   ]
-  },
-  "VChipRtfBldc": {
-   "valor": null,
-   "status": "pending",
-   "categoria": "esp32",
-   "coluna": "fator_tempo_real_mediana",
-   "script": "embarcados/src/python/gerar_artigo_numeros.py",
-   "fontes": [
-    {
-     "arquivo": "embarcados/results/manifests/bancada.json",
-     "sha256": null
-    }
-   ]
-  },
-  "VChipRtfMaxBldc": {
-   "valor": null,
-   "status": "pending",
-   "categoria": "esp32",
-   "coluna": "fator_tempo_real_max",
-   "script": "embarcados/src/python/gerar_artigo_numeros.py",
-   "fontes": [
-    {
-     "arquivo": "embarcados/results/manifests/bancada.json",
-     "sha256": null
-    }
-   ]
-  },
-  "VChipHeapIntBldcKb": {
-   "valor": null,
-   "status": "pending",
-   "categoria": "esp32",
-   "coluna": "heap_min_livre_interna/1024",
-   "script": "embarcados/src/python/gerar_artigo_numeros.py",
-   "fontes": [
-    {
-     "arquivo": "embarcados/results/manifests/bancada.json",
-     "sha256": null
-    }
-   ]
-  },
-  "VChipStackBldc": {
-   "valor": null,
-   "status": "pending",
-   "categoria": "esp32",
-   "coluna": "pilha_folga_bytes_min",
-   "script": "embarcados/src/python/gerar_artigo_numeros.py",
-   "fontes": [
-    {
-     "arquivo": "embarcados/results/manifests/bancada.json",
-     "sha256": null
-    }
-   ]
-  },
-  "VChipWsPsramBldc": {
-   "valor": null,
-   "status": "pending",
-   "categoria": "esp32",
-   "coluna": "ws_na_psram",
-   "script": "embarcados/src/python/gerar_artigo_numeros.py",
-   "fontes": [
-    {
-     "arquivo": "embarcados/results/manifests/bancada.json",
-     "sha256": null
-    }
-   ]
-  },
-  "VChipWsBldcMb": {
-   "valor": null,
-   "status": "pending",
-   "categoria": "esp32",
-   "coluna": "ws_bytes/1e6",
-   "script": "embarcados/src/python/gerar_artigo_numeros.py",
-   "fontes": [
-    {
-     "arquivo": "embarcados/results/manifests/bancada.json",
-     "sha256": null
-    }
-   ]
-  },
-  "VChipEqStagesPass": {
-   "valor": null,
-   "status": "pending",
-   "categoria": "esp32",
-   "coluna": "equivalência no chip não rodou",
-   "script": "embarcados/src/python/gerar_artigo_numeros.py",
-   "fontes": [
-    {
-     "arquivo": "embarcados/results/manifests/bancada.json",
-     "sha256": null
+     "arquivo": "embarcados/results/csv/esp32_memoria_esp32_20261025-141018.csv",
+     "sha256": "77da4db54787b410063ec92b6c029cb4631b829c598d3f3b69fadd1703fd589c"
     }
    ]
   },
   "VChipEqStages": {
-   "valor": null,
-   "status": "pending",
+   "valor": 8,
+   "status": "ok",
    "categoria": "esp32",
-   "coluna": "equivalência no chip não rodou",
+   "coluna": "etapas de janela comparadas (n_pass+n_fail>0)",
    "script": "embarcados/src/python/gerar_artigo_numeros.py",
    "fontes": [
     {
-     "arquivo": "embarcados/results/manifests/bancada.json",
-     "sha256": null
+     "arquivo": "embarcados/results/csv/equivalencia_esp32_esp32_p11_c_lowmem_20261025-141829_resumo.csv",
+     "sha256": "fddcc117da7fa805ad8b43ab0d2f3a3dc6fcdfe02a5003993210c4c4e5f9d564"
+    }
+   ]
+  },
+  "VChipEqStagesPass": {
+   "valor": 8,
+   "status": "ok",
+   "categoria": "esp32",
+   "coluna": "etapas comparadas sem FAIL/PASS_EMPATE",
+   "script": "embarcados/src/python/gerar_artigo_numeros.py",
+   "fontes": [
+    {
+     "arquivo": "embarcados/results/csv/equivalencia_esp32_esp32_p11_c_lowmem_20261025-141829_resumo.csv",
+     "sha256": "fddcc117da7fa805ad8b43ab0d2f3a3dc6fcdfe02a5003993210c4c4e5f9d564"
+    }
+   ]
+  },
+  "VChipEqStagesAbsent": {
+   "valor": 12,
+   "status": "ok",
+   "categoria": "esp32",
+   "coluna": "etapas de janela que o firmware não devolve (todas AUSENTE)",
+   "script": "embarcados/src/python/gerar_artigo_numeros.py",
+   "fontes": [
+    {
+     "arquivo": "embarcados/results/csv/equivalencia_esp32_esp32_p11_c_lowmem_20261025-141829_resumo.csv",
+     "sha256": "fddcc117da7fa805ad8b43ab0d2f3a3dc6fcdfe02a5003993210c4c4e5f9d564"
+    }
+   ]
+  },
+  "VChipEqFail": {
+   "valor": 0,
+   "status": "ok",
+   "categoria": "esp32",
+   "coluna": "soma n_fail + n_fail_jusante",
+   "script": "embarcados/src/python/gerar_artigo_numeros.py",
+   "fontes": [
+    {
+     "arquivo": "embarcados/results/csv/equivalencia_esp32_esp32_p11_c_lowmem_20261025-141829_resumo.csv",
+     "sha256": "fddcc117da7fa805ad8b43ab0d2f3a3dc6fcdfe02a5003993210c4c4e5f9d564"
+    }
+   ]
+  },
+  "VChipEqCases": {
+   "valor": 79,
+   "status": "ok",
+   "categoria": "esp32",
+   "coluna": "janelas comparadas em decisao",
+   "script": "embarcados/src/python/gerar_artigo_numeros.py",
+   "fontes": [
+    {
+     "arquivo": "embarcados/results/csv/equivalencia_esp32_esp32_p11_c_lowmem_20261025-141829_resumo.csv",
+     "sha256": "fddcc117da7fa805ad8b43ab0d2f3a3dc6fcdfe02a5003993210c4c4e5f9d564"
     }
    ]
   },
   "VChipEqDecisionPass": {
-   "valor": null,
-   "status": "pending",
+   "valor": 79,
+   "status": "ok",
    "categoria": "esp32",
-   "coluna": "equivalência no chip não rodou",
+   "coluna": "n_pass+n_pass_empate[decisao]",
    "script": "embarcados/src/python/gerar_artigo_numeros.py",
    "fontes": [
     {
-     "arquivo": "embarcados/results/manifests/bancada.json",
-     "sha256": null
+     "arquivo": "embarcados/results/csv/equivalencia_esp32_esp32_p11_c_lowmem_20261025-141829_resumo.csv",
+     "sha256": "fddcc117da7fa805ad8b43ab0d2f3a3dc6fcdfe02a5003993210c4c4e5f9d564"
+    }
+   ]
+  },
+  "VChipEqMaxRatio": {
+   "valor": 0.1867589374490039,
+   "status": "ok",
+   "categoria": "esp32",
+   "coluna": "máx razao_tol_max nas etapas comparadas",
+   "script": "embarcados/src/python/gerar_artigo_numeros.py",
+   "fontes": [
+    {
+     "arquivo": "embarcados/results/csv/equivalencia_esp32_esp32_p11_c_lowmem_20261025-141829_resumo.csv",
+     "sha256": "fddcc117da7fa805ad8b43ab0d2f3a3dc6fcdfe02a5003993210c4c4e5f9d564"
+    }
+   ]
+  },
+  "VChipEqCasesReal": {
+   "valor": 75,
+   "status": "ok",
+   "categoria": "esp32",
+   "coluna": "janelas reais (limpo+ruidoso) comparadas",
+   "script": "embarcados/src/python/gerar_artigo_numeros.py",
+   "fontes": [
+    {
+     "arquivo": "embarcados/results/csv/equivalencia_esp32_esp32_p11_c_lowmem_20261025-141829.csv",
+     "sha256": "bcad4cf8ffc56a4b2d871b51fc0faecbf0c227422da777c18220979209324902"
+    }
+   ]
+  },
+  "VChipEqCasesEdge": {
+   "valor": 4,
+   "status": "ok",
+   "categoria": "esp32",
+   "coluna": "casos de borda comparados",
+   "script": "embarcados/src/python/gerar_artigo_numeros.py",
+   "fontes": [
+    {
+     "arquivo": "embarcados/results/csv/equivalencia_esp32_esp32_p11_c_lowmem_20261025-141829.csv",
+     "sha256": "bcad4cf8ffc56a4b2d871b51fc0faecbf0c227422da777c18220979209324902"
+    }
+   ]
+  },
+  "VEqLmStages": {
+   "valor": 18,
+   "status": "ok",
+   "categoria": "equivalencia",
+   "coluna": "etapas de janela comparadas (float-lowmem, PC)",
+   "script": "embarcados/src/python/gerar_artigo_numeros.py",
+   "fontes": [
+    {
+     "arquivo": "embarcados/results/csv/equivalencia_float-lowmem_20261025-135553_resumo.csv",
+     "sha256": "017f32ab62e37eccd46937c75cd2a00758daf5ebd16e23217a2869d1e2445597"
+    }
+   ]
+  },
+  "VEqLmStagesPass": {
+   "valor": 18,
+   "status": "ok",
+   "categoria": "equivalencia",
+   "coluna": "etapas sem FAIL/PASS_EMPATE (float-lowmem, PC)",
+   "script": "embarcados/src/python/gerar_artigo_numeros.py",
+   "fontes": [
+    {
+     "arquivo": "embarcados/results/csv/equivalencia_float-lowmem_20261025-135553_resumo.csv",
+     "sha256": "017f32ab62e37eccd46937c75cd2a00758daf5ebd16e23217a2869d1e2445597"
+    }
+   ]
+  },
+  "VEqLmCases": {
+   "valor": 79,
+   "status": "ok",
+   "categoria": "equivalencia",
+   "coluna": "janelas comparadas (float-lowmem, PC)",
+   "script": "embarcados/src/python/gerar_artigo_numeros.py",
+   "fontes": [
+    {
+     "arquivo": "embarcados/results/csv/equivalencia_float-lowmem_20261025-135553_resumo.csv",
+     "sha256": "017f32ab62e37eccd46937c75cd2a00758daf5ebd16e23217a2869d1e2445597"
+    }
+   ]
+  },
+  "VEqLmDecisionPass": {
+   "valor": 79,
+   "status": "ok",
+   "categoria": "equivalencia",
+   "coluna": "pass[decisao] (float-lowmem)",
+   "script": "embarcados/src/python/gerar_artigo_numeros.py",
+   "fontes": [
+    {
+     "arquivo": "embarcados/results/csv/equivalencia_float-lowmem_20261025-135553_resumo.csv",
+     "sha256": "017f32ab62e37eccd46937c75cd2a00758daf5ebd16e23217a2869d1e2445597"
+    }
+   ]
+  },
+  "VEqLmMaxRatio": {
+   "valor": 0.194080938860566,
+   "status": "ok",
+   "categoria": "equivalencia",
+   "coluna": "máx razao_tol_max (float-lowmem, PC)",
+   "script": "embarcados/src/python/gerar_artigo_numeros.py",
+   "fontes": [
+    {
+     "arquivo": "embarcados/results/csv/equivalencia_float-lowmem_20261025-135553_resumo.csv",
+     "sha256": "017f32ab62e37eccd46937c75cd2a00758daf5ebd16e23217a2869d1e2445597"
+    }
+   ]
+  },
+  "VChipSeqWindows": {
+   "valor": 30,
+   "status": "ok",
+   "categoria": "esp32",
+   "coluna": "nº de janelas do fluxo",
+   "script": "embarcados/src/python/gerar_artigo_numeros.py",
+   "fontes": [
+    {
+     "arquivo": "embarcados/results/csv/esp32_seq_esp32_20261025-143251.csv",
+     "sha256": "d1dcbe589787955e7f6ad82a079516ee0d379f56d554c569fc4e960a2c1a65ec"
+    }
+   ]
+  },
+  "VChipSeqSwitches": {
+   "valor": 2,
+   "status": "ok",
+   "categoria": "esp32",
+   "coluna": "len(deteccao)",
+   "script": "embarcados/src/python/gerar_artigo_numeros.py",
+   "fontes": [
+    {
+     "arquivo": "embarcados/results/csv/esp32_seq_esp32_20261025-143251_meta.json",
+     "sha256": "61810c17d043b0abf607a7d75f1456a5e44659bb5ac61bac45a1e03299682271"
     }
    ]
   },
   "VChipSeqDelay": {
-   "valor": null,
-   "status": "pending",
+   "valor": 0,
+   "status": "ok",
    "categoria": "esp32",
-   "coluna": "fluxo contínuo no chip não rodou",
+   "coluna": "max atraso_janelas",
    "script": "embarcados/src/python/gerar_artigo_numeros.py",
    "fontes": [
     {
+     "arquivo": "embarcados/results/csv/esp32_seq_esp32_20261025-143251_meta.json",
+     "sha256": "61810c17d043b0abf607a7d75f1456a5e44659bb5ac61bac45a1e03299682271"
+    }
+   ]
+  },
+  "VChipSeqCp": {
+   "valor": 2.0,
+   "status": "ok",
+   "categoria": "esp32",
+   "coluna": "cp",
+   "script": "embarcados/src/python/gerar_artigo_numeros.py",
+   "fontes": [
+    {
+     "arquivo": "embarcados/results/csv/esp32_seq_esp32_20261025-143251_meta.json",
+     "sha256": "61810c17d043b0abf607a7d75f1456a5e44659bb5ac61bac45a1e03299682271"
+    }
+   ]
+  },
+  "VChipSeqSame": {
+   "valor": 30,
+   "status": "ok",
+   "categoria": "esp32",
+   "coluna": "nº de janelas com decisao_online (chip) == online_python (seq_pc)",
+   "script": "embarcados/src/python/gerar_artigo_numeros.py",
+   "fontes": [
+    {
+     "arquivo": "embarcados/results/csv/esp32_seq_esp32_20261025-143251.csv",
+     "sha256": "d1dcbe589787955e7f6ad82a079516ee0d379f56d554c569fc4e960a2c1a65ec"
+    },
+    {
+     "arquivo": "embarcados/results/csv/seq_pc_20261024-184829.csv",
+     "sha256": "6b850b863fbd00ab5f1929d0cbecb71c92d5b533e9092a2f605394fd784acd76"
+    }
+   ]
+  },
+  "VChipSeqHmmUs": {
+   "valor": 104.0,
+   "status": "ok",
+   "categoria": "esp32",
+   "coluna": "mediana us_hmm",
+   "script": "embarcados/src/python/gerar_artigo_numeros.py",
+   "fontes": [
+    {
+     "arquivo": "embarcados/results/csv/esp32_seq_esp32_20261025-143251.csv",
+     "sha256": "d1dcbe589787955e7f6ad82a079516ee0d379f56d554c569fc4e960a2c1a65ec"
+    }
+   ]
+  },
+  "VChipRefOverPoolThree": {
+   "valor": 5.918461694777484,
+   "status": "ok",
+   "categoria": "estimativa",
+   "coluna": "arena da referência (estimativa) / RAM interna do pool (medida)",
+   "script": "embarcados/src/python/gerar_artigo_numeros.py",
+   "fontes": [
+    {
+     "arquivo": "embarcados/paper/fontes/ws_float_48000.json",
+     "sha256": "e1c11825ce3e5d25702b57dd3bd9d0bbc3c8844278281c226be7441a9cde6eb3"
+    },
+    {
      "arquivo": "embarcados/results/manifests/bancada.json",
-     "sha256": null
+     "sha256": "fc33676e8d02236ca62331e9ffa6b137520295be8eb25ecc5f0ad8c77519f426"
+    }
+   ]
+  },
+  "VChipRefOverPoolOne": {
+   "valor": 3.04333468807153,
+   "status": "ok",
+   "categoria": "estimativa",
+   "coluna": "arena da referência (estimativa) / RAM interna do pool (medida)",
+   "script": "embarcados/src/python/gerar_artigo_numeros.py",
+   "fontes": [
+    {
+     "arquivo": "embarcados/paper/fontes/ws_float_16000.json",
+     "sha256": "fba4c5e5160ccc79f1e76dcb3e2d40e9bc5622fbb63cf3d6d977e03e438346a1"
+    },
+    {
+     "arquivo": "embarcados/results/manifests/bancada.json",
+     "sha256": "fc33676e8d02236ca62331e9ffa6b137520295be8eb25ecc5f0ad8c77519f426"
     }
    ]
   }
@@ -6090,48 +7026,48 @@
  "textos": [
   {
    "arquivo": "embarcados/paper/METODOLOGIA.md",
-   "sha256": "2f41f404402445f6309b209b456388e97802636ab710ddc635a435ac364ecf01",
+   "sha256": "747749837e0d7680fd09f0bcb10ea76fed1d3e964bed350a2773ae15aea18602",
    "existe": true,
    "script": "embarcados/src/python/gerar_artigo_textos.py",
    "fontes": [
     {
      "arquivo": "embarcados/paper/numeros.json",
-     "sha256": "0c52f2a794c10d4bb040c725895907fc3a8048cfc6cbb4325e8aa49e37f19a5a"
+     "sha256": "cdfe34c918c6fa0c58dfe8d5822563a5ccaf2f3b88a2b68812c72b19fea7b156"
     }
    ]
   },
   {
    "arquivo": "embarcados/paper/RESULTADOS.md",
-   "sha256": "336f589cc0993b4b9c73b3f5cf49197e7d1aa9744f48e4017c7e8cb312f7b045",
+   "sha256": "83a91c97ff6520486929ea7fb8ad1d30b3ef1f1b4f2c6b23f6f6b8ebe0bca3fc",
    "existe": true,
    "script": "embarcados/src/python/gerar_artigo_textos.py",
    "fontes": [
     {
      "arquivo": "embarcados/paper/numeros.json",
-     "sha256": "0c52f2a794c10d4bb040c725895907fc3a8048cfc6cbb4325e8aa49e37f19a5a"
+     "sha256": "cdfe34c918c6fa0c58dfe8d5822563a5ccaf2f3b88a2b68812c72b19fea7b156"
     }
    ]
   },
   {
    "arquivo": "embarcados/paper/main.tex",
-   "sha256": "39ce02ab084ec6e705b7cf4da30c806c22a7a547b673e5d9b44d7f959592ff5a",
+   "sha256": "eeca28ea7a46dd7bc5ee351607bc1fc71ec77b6b0282087471196de439d3076f",
    "existe": true,
    "script": "redigido à mão; números só por macro",
    "fontes": [
     {
      "arquivo": "embarcados/paper/figuras.tex",
-     "sha256": "cff871901fa4c4b2cc20c3d9be12b6d77c9a9e4f78c6cd8315654f0c89e9d49a"
+     "sha256": "94bc6a7db5e83b48800b13a7da1ee86d85629a5839492d1a1d11a78bf2d06d3c"
     },
     {
      "arquivo": "embarcados/paper/numeros.tex",
-     "sha256": "786b25bda24bc4f5b0419a39b73ce2ac157727eae99cad765eac24c9878b0a9f"
+     "sha256": "70d3d1fe283327a61b0a65560063037af2705200fe27aa555773b940f2bb5b10"
     }
    ]
   }
  ],
  "numeros_tex": {
   "arquivo": "embarcados/paper/numeros.tex",
-  "sha256": "786b25bda24bc4f5b0419a39b73ce2ac157727eae99cad765eac24c9878b0a9f",
+  "sha256": "70d3d1fe283327a61b0a65560063037af2705200fe27aa555773b940f2bb5b10",
   "existe": true,
   "script": "embarcados/src/python/gerar_artigo_numeros.py",
   "fontes": [
@@ -6169,19 +7105,19 @@
    },
    {
     "arquivo": "embarcados/paper/fontes/ws_double_16000.json",
-    "sha256": "3023074d0581ae3a1103bb5b42d4704fcb05631eada2a86eecdc1846ad8b293e"
+    "sha256": "bc0e0830eb9888248a061f13b0c91869f9b364b80a74a8268c655fe22b58690a"
    },
    {
     "arquivo": "embarcados/paper/fontes/ws_double_48000.json",
-    "sha256": "dc2a3113667b36f99073b7782f28f4e018e1e13f865c3dd63bf97070c05f53f9"
+    "sha256": "efaae503d4958053578b820f09d89905620d413b5c4ddf1eabe91fd3002fcb3d"
    },
    {
     "arquivo": "embarcados/paper/fontes/ws_float_16000.json",
-    "sha256": "95a67377c7eb2eb4ab886a73da7c0accffb11978a41718e5e942cff74afd01c7"
+    "sha256": "fba4c5e5160ccc79f1e76dcb3e2d40e9bc5622fbb63cf3d6d977e03e438346a1"
    },
    {
     "arquivo": "embarcados/paper/fontes/ws_float_48000.json",
-    "sha256": "3d3878646c51b96e1e1ab4c8fd935bb8a069e95c7ec7b95fe3a59ea8e0f5d838"
+    "sha256": "e1c11825ce3e5d25702b57dd3bd9d0bbc3c8844278281c226be7441a9cde6eb3"
    },
    {
     "arquivo": "embarcados/results/c_out/float/casos/borda_dc_ruido3s_ma2212/welch_P.f32",
@@ -6216,6 +7152,18 @@
     "sha256": "d46c9c2aa501b61a966d439995c2adeaf961781059bcc096083722e00735ccc9"
    },
    {
+    "arquivo": "embarcados/results/csv/equivalencia_esp32_esp32_p11_c_lowmem_20261025-141829.csv",
+    "sha256": "bcad4cf8ffc56a4b2d871b51fc0faecbf0c227422da777c18220979209324902"
+   },
+   {
+    "arquivo": "embarcados/results/csv/equivalencia_esp32_esp32_p11_c_lowmem_20261025-141829_resumo.csv",
+    "sha256": "fddcc117da7fa805ad8b43ab0d2f3a3dc6fcdfe02a5003993210c4c4e5f9d564"
+   },
+   {
+    "arquivo": "embarcados/results/csv/equivalencia_float-lowmem_20261025-135553_resumo.csv",
+    "sha256": "017f32ab62e37eccd46937c75cd2a00758daf5ebd16e23217a2869d1e2445597"
+   },
+   {
     "arquivo": "embarcados/results/csv/equivalencia_float-sosd_20261024-091222.csv",
     "sha256": "fb79aad99d6e607a132af89358182c74f4eeec2ac31e97410c5fab486e945ce9"
    },
@@ -6224,24 +7172,48 @@
     "sha256": "38e87620d895ce26c9c0bbfa5bd0df7af3686607d525235e3fa5c9d287612314"
    },
    {
-    "arquivo": "embarcados/results/csv/equivalencia_resumo_por_build_20261024-091729.csv",
+    "arquivo": "embarcados/results/csv/equivalencia_resumo_por_build_20261024-101821.csv",
     "sha256": "bc42bdf549e15875a3762c4907610f49a8ff0cb08c2fc10e3fafd5e59d84eb35"
+   },
+   {
+    "arquivo": "embarcados/results/csv/esp32_lat_esp32_20261025-143026.csv",
+    "sha256": "c33d5055b4101eca0a54f1091c0f478bdb86c5b1b77afc593f084b83d66daf69"
+   },
+   {
+    "arquivo": "embarcados/results/csv/esp32_lat_esp32_20261025-143026_meta.json",
+    "sha256": "dfaa329d858d3505d830126bb616e2f159b7329f31df55c23027065fd052dccf"
+   },
+   {
+    "arquivo": "embarcados/results/csv/esp32_memoria_esp32_20261025-141018.csv",
+    "sha256": "77da4db54787b410063ec92b6c029cb4631b829c598d3f3b69fadd1703fd589c"
+   },
+   {
+    "arquivo": "embarcados/results/csv/esp32_seq_esp32_20261025-143251.csv",
+    "sha256": "d1dcbe589787955e7f6ad82a079516ee0d379f56d554c569fc4e960a2c1a65ec"
+   },
+   {
+    "arquivo": "embarcados/results/csv/esp32_seq_esp32_20261025-143251_meta.json",
+    "sha256": "61810c17d043b0abf607a7d75f1456a5e44659bb5ac61bac45a1e03299682271"
    },
    {
     "arquivo": "embarcados/results/csv/p11_features_20261023_222831.csv",
     "sha256": "eb64ba855c885bf0ad428487067476095314ec200965130fa606c5ecf3649ef7"
    },
    {
-    "arquivo": "embarcados/results/csv/seq_pc_20261024-092103.csv",
-    "sha256": "eaba0cbe2d39af3e1d7f7cbdc8afbbdff87e832a5f8d4d6c636a3995f756a658"
+    "arquivo": "embarcados/results/csv/seq_pc_20261024-184829.csv",
+    "sha256": "6b850b863fbd00ab5f1929d0cbecb71c92d5b533e9092a2f605394fd784acd76"
    },
    {
-    "arquivo": "embarcados/results/csv/seq_pc_20261024-092103_meta.json",
-    "sha256": "2be9a1842106537bbc699026c93bc96c024c98a8f36618cd5a470f0df8d59ee8"
+    "arquivo": "embarcados/results/csv/seq_pc_20261024-184829_meta.json",
+    "sha256": "4ea98bcd0d3754c7de921204ff64f51aa79dd10b515544f57e1c05aa5b8019da"
+   },
+   {
+    "arquivo": "embarcados/results/firmware/size_esp32_lowmem_20261025-135632.txt",
+    "sha256": "e7fcb9a5fe3c38cc50c527e2979e733c26d15cfd6ff95b74cc1695b20832e303"
    },
    {
     "arquivo": "embarcados/results/manifests/bancada.json",
-    "sha256": null
+    "sha256": "fc33676e8d02236ca62331e9ffa6b137520295be8eb25ecc5f0ad8c77519f426"
    },
    {
     "arquivo": "embarcados/results/metrics/bench_pc_20261024-091911.json",

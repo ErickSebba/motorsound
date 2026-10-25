@@ -1,10 +1,10 @@
 {
  "gerado_por": "embarcados/src/python/gerar_artigo_numeros.py",
  "projeto": {
-  "commit": "8c97c004e43bbe76a61d67f40b0cf358aedaa9e5",
+  "commit": "5cc552d71dd33d4bfe8c219e1a4ffdea8a01ff40",
   "sujo": true
  },
- "chip_medido": false,
+ "chip_medido": true,
  "categorias": {
   "codigo": "parâmetro lido do código Python da referência",
   "dados": "contagem lida das predições/CSV do experimento",
@@ -24,10 +24,10 @@
   "embarcados/gold/casos/borda_dc_ruido3s_midmt/welch_P.f64": "fd12e9a5fa88895e8ca13b9aacecfa19f90b4198770d7fde5602289ee894517f",
   "embarcados/gold/manifest.json": "a681abee826d5b8ede688d4d67ea159495898ea48e0c131f729d8406437ba876",
   "embarcados/gold/seqs/idmt_seq00/params.json": "a50569ecb0951b7b171019e4ccbe89eebd51eff92893532f03a8490dcd38cf78",
-  "embarcados/paper/fontes/ws_double_16000.json": "3023074d0581ae3a1103bb5b42d4704fcb05631eada2a86eecdc1846ad8b293e",
-  "embarcados/paper/fontes/ws_double_48000.json": "dc2a3113667b36f99073b7782f28f4e018e1e13f865c3dd63bf97070c05f53f9",
-  "embarcados/paper/fontes/ws_float_16000.json": "95a67377c7eb2eb4ab886a73da7c0accffb11978a41718e5e942cff74afd01c7",
-  "embarcados/paper/fontes/ws_float_48000.json": "3d3878646c51b96e1e1ab4c8fd935bb8a069e95c7ec7b95fe3a59ea8e0f5d838",
+  "embarcados/paper/fontes/ws_double_16000.json": "bc0e0830eb9888248a061f13b0c91869f9b364b80a74a8268c655fe22b58690a",
+  "embarcados/paper/fontes/ws_double_48000.json": "efaae503d4958053578b820f09d89905620d413b5c4ddf1eabe91fd3002fcb3d",
+  "embarcados/paper/fontes/ws_float_16000.json": "fba4c5e5160ccc79f1e76dcb3e2d40e9bc5622fbb63cf3d6d977e03e438346a1",
+  "embarcados/paper/fontes/ws_float_48000.json": "e1c11825ce3e5d25702b57dd3bd9d0bbc3c8844278281c226be7441a9cde6eb3",
   "embarcados/results/c_out/float/casos/borda_dc_ruido3s_ma2212/welch_P.f32": "842711aa94501c776403c53dba815dcae1c8c1344ae0f2ffd425015c61b6e530",
   "embarcados/results/c_out/float/casos/borda_dc_ruido3s_midmt/welch_P.f32": "842711aa94501c776403c53dba815dcae1c8c1344ae0f2ffd425015c61b6e530",
   "embarcados/results/csv/bench_pc_20261024-091911.csv": "15ea3f2990bea2c2c39ffb0a256ae2d195e18808d11ae365a3874095fff2ced2",
@@ -36,13 +36,22 @@
   "embarcados/results/csv/equivalencia_double_20261024-091106.csv": "0462b21cd040d8987e25988c7b603e2dfc9009f57ec9b9382dda2e1ac4310cf3",
   "embarcados/results/csv/equivalencia_emul_double_20261024-090737_meta.json": "e23e090ee472c5a8a1451189a9331ee135b2d9a1516091195c434a0ab471db4a",
   "embarcados/results/csv/equivalencia_emul_float_20261024-090743_meta.json": "d46c9c2aa501b61a966d439995c2adeaf961781059bcc096083722e00735ccc9",
+  "embarcados/results/csv/equivalencia_esp32_esp32_p11_c_lowmem_20261025-141829.csv": "bcad4cf8ffc56a4b2d871b51fc0faecbf0c227422da777c18220979209324902",
+  "embarcados/results/csv/equivalencia_esp32_esp32_p11_c_lowmem_20261025-141829_resumo.csv": "fddcc117da7fa805ad8b43ab0d2f3a3dc6fcdfe02a5003993210c4c4e5f9d564",
+  "embarcados/results/csv/equivalencia_float-lowmem_20261025-135553_resumo.csv": "017f32ab62e37eccd46937c75cd2a00758daf5ebd16e23217a2869d1e2445597",
   "embarcados/results/csv/equivalencia_float-sosd_20261024-091222.csv": "fb79aad99d6e607a132af89358182c74f4eeec2ac31e97410c5fab486e945ce9",
   "embarcados/results/csv/equivalencia_float_20261024-091122.csv": "38e87620d895ce26c9c0bbfa5bd0df7af3686607d525235e3fa5c9d287612314",
-  "embarcados/results/csv/equivalencia_resumo_por_build_20261024-091729.csv": "bc42bdf549e15875a3762c4907610f49a8ff0cb08c2fc10e3fafd5e59d84eb35",
+  "embarcados/results/csv/equivalencia_resumo_por_build_20261024-101821.csv": "bc42bdf549e15875a3762c4907610f49a8ff0cb08c2fc10e3fafd5e59d84eb35",
+  "embarcados/results/csv/esp32_lat_esp32_20261025-143026.csv": "c33d5055b4101eca0a54f1091c0f478bdb86c5b1b77afc593f084b83d66daf69",
+  "embarcados/results/csv/esp32_lat_esp32_20261025-143026_meta.json": "dfaa329d858d3505d830126bb616e2f159b7329f31df55c23027065fd052dccf",
+  "embarcados/results/csv/esp32_memoria_esp32_20261025-141018.csv": "77da4db54787b410063ec92b6c029cb4631b829c598d3f3b69fadd1703fd589c",
+  "embarcados/results/csv/esp32_seq_esp32_20261025-143251.csv": "d1dcbe589787955e7f6ad82a079516ee0d379f56d554c569fc4e960a2c1a65ec",
+  "embarcados/results/csv/esp32_seq_esp32_20261025-143251_meta.json": "61810c17d043b0abf607a7d75f1456a5e44659bb5ac61bac45a1e03299682271",
   "embarcados/results/csv/p11_features_20261023_222831.csv": "eb64ba855c885bf0ad428487067476095314ec200965130fa606c5ecf3649ef7",
-  "embarcados/results/csv/seq_pc_20261024-092103.csv": "eaba0cbe2d39af3e1d7f7cbdc8afbbdff87e832a5f8d4d6c636a3995f756a658",
-  "embarcados/results/csv/seq_pc_20261024-092103_meta.json": "2be9a1842106537bbc699026c93bc96c024c98a8f36618cd5a470f0df8d59ee8",
-  "embarcados/results/manifests/bancada.json": null,
+  "embarcados/results/csv/seq_pc_20261024-184829.csv": "6b850b863fbd00ab5f1929d0cbecb71c92d5b533e9092a2f605394fd784acd76",
+  "embarcados/results/csv/seq_pc_20261024-184829_meta.json": "4ea98bcd0d3754c7de921204ff64f51aa79dd10b515544f57e1c05aa5b8019da",
+  "embarcados/results/firmware/size_esp32_lowmem_20261025-135632.txt": "e7fcb9a5fe3c38cc50c527e2979e733c26d15cfd6ff95b74cc1695b20832e303",
+  "embarcados/results/manifests/bancada.json": "fc33676e8d02236ca62331e9ffa6b137520295be8eb25ecc5f0ad8c77519f426",
   "embarcados/results/metrics/bench_pc_20261024-091911.json": "c119b18fff7eb6b4c1e208ada15b9204bea9cb2c001931dd910203671ab602cd",
   "embarcados/results/predictions/diagnostico_janelas_20261023_222831.csv": "6426a95a9ceb73ad3e4a9f4a8d83f8194a3ce6b7d1605c0bfdd151384454102b",
   "motorsound/config.py": "533b6f9cb12228d8c2fcf492b48c5d1950d0e4cf71fac47b4e4573ea86f9e56f",
@@ -2718,7 +2727,7 @@
    "pt": "26",
    "status": "ok",
    "fonte": [
-    "embarcados/results/csv/equivalencia_resumo_por_build_20261024-091729.csv"
+    "embarcados/results/csv/equivalencia_resumo_por_build_20261024-101821.csv"
    ],
    "coluna": "nº de etapas por build",
    "categoria": "equivalencia",
@@ -2730,7 +2739,7 @@
    "pt": "20",
    "status": "ok",
    "fonte": [
-    "embarcados/results/csv/equivalencia_resumo_por_build_20261024-091729.csv"
+    "embarcados/results/csv/equivalencia_resumo_por_build_20261024-101821.csv"
    ],
    "coluna": "etapas de janela",
    "categoria": "equivalencia",
@@ -2742,7 +2751,7 @@
    "pt": "6",
    "status": "ok",
    "fonte": [
-    "embarcados/results/csv/equivalencia_resumo_por_build_20261024-091729.csv"
+    "embarcados/results/csv/equivalencia_resumo_por_build_20261024-101821.csv"
    ],
    "coluna": "etapas de sequência",
    "categoria": "equivalencia",
@@ -2754,7 +2763,7 @@
    "pt": "164",
    "status": "ok",
    "fonte": [
-    "embarcados/results/csv/equivalencia_resumo_por_build_20261024-091729.csv"
+    "embarcados/results/csv/equivalencia_resumo_por_build_20261024-101821.csv"
    ],
    "coluna": "n[y_prep]",
    "categoria": "equivalencia",
@@ -2766,7 +2775,7 @@
    "pt": "240",
    "status": "ok",
    "fonte": [
-    "embarcados/results/csv/equivalencia_resumo_por_build_20261024-091729.csv"
+    "embarcados/results/csv/equivalencia_resumo_por_build_20261024-101821.csv"
    ],
    "coluna": "n[absorb]",
    "categoria": "equivalencia",
@@ -2778,7 +2787,7 @@
    "pt": "26",
    "status": "ok",
    "fonte": [
-    "embarcados/results/csv/equivalencia_resumo_por_build_20261024-091729.csv"
+    "embarcados/results/csv/equivalencia_resumo_por_build_20261024-101821.csv"
    ],
    "coluna": "nº de etapas com veredito PASS (double)",
    "categoria": "equivalencia",
@@ -2790,7 +2799,7 @@
    "pt": "0,55",
    "status": "ok",
    "fonte": [
-    "embarcados/results/csv/equivalencia_resumo_por_build_20261024-091729.csv"
+    "embarcados/results/csv/equivalencia_resumo_por_build_20261024-101821.csv"
    ],
    "coluna": "máx razao_tol_max nas etapas sem empate/FAIL (double)",
    "categoria": "equivalencia",
@@ -2802,7 +2811,7 @@
    "pt": "164",
    "status": "ok",
    "fonte": [
-    "embarcados/results/csv/equivalencia_resumo_por_build_20261024-091729.csv"
+    "embarcados/results/csv/equivalencia_resumo_por_build_20261024-101821.csv"
    ],
    "coluna": "pass+pass_empate[decisao] (double)",
    "categoria": "equivalencia",
@@ -2814,7 +2823,7 @@
    "pt": "25",
    "status": "ok",
    "fonte": [
-    "embarcados/results/csv/equivalencia_resumo_por_build_20261024-091729.csv"
+    "embarcados/results/csv/equivalencia_resumo_por_build_20261024-101821.csv"
    ],
    "coluna": "nº de etapas com veredito PASS (float)",
    "categoria": "equivalencia",
@@ -2826,7 +2835,7 @@
    "pt": "0,34",
    "status": "ok",
    "fonte": [
-    "embarcados/results/csv/equivalencia_resumo_por_build_20261024-091729.csv"
+    "embarcados/results/csv/equivalencia_resumo_por_build_20261024-101821.csv"
    ],
    "coluna": "máx razao_tol_max nas etapas sem empate/FAIL (float)",
    "categoria": "equivalencia",
@@ -2838,7 +2847,7 @@
    "pt": "164",
    "status": "ok",
    "fonte": [
-    "embarcados/results/csv/equivalencia_resumo_por_build_20261024-091729.csv"
+    "embarcados/results/csv/equivalencia_resumo_por_build_20261024-101821.csv"
    ],
    "coluna": "pass+pass_empate[decisao] (float)",
    "categoria": "equivalencia",
@@ -2850,7 +2859,7 @@
    "pt": "26",
    "status": "ok",
    "fonte": [
-    "embarcados/results/csv/equivalencia_resumo_por_build_20261024-091729.csv"
+    "embarcados/results/csv/equivalencia_resumo_por_build_20261024-101821.csv"
    ],
    "coluna": "nº de etapas com veredito PASS (float-sosd)",
    "categoria": "equivalencia",
@@ -2862,7 +2871,7 @@
    "pt": "0,23",
    "status": "ok",
    "fonte": [
-    "embarcados/results/csv/equivalencia_resumo_por_build_20261024-091729.csv"
+    "embarcados/results/csv/equivalencia_resumo_por_build_20261024-101821.csv"
    ],
    "coluna": "máx razao_tol_max nas etapas sem empate/FAIL (float-sosd)",
    "categoria": "equivalencia",
@@ -2874,7 +2883,7 @@
    "pt": "164",
    "status": "ok",
    "fonte": [
-    "embarcados/results/csv/equivalencia_resumo_por_build_20261024-091729.csv"
+    "embarcados/results/csv/equivalencia_resumo_por_build_20261024-101821.csv"
    ],
    "coluna": "pass+pass_empate[decisao] (float-sosd)",
    "categoria": "equivalencia",
@@ -2886,7 +2895,7 @@
    "pt": "2",
    "status": "ok",
    "fonte": [
-    "embarcados/results/csv/equivalencia_resumo_por_build_20261024-091729.csv"
+    "embarcados/results/csv/equivalencia_resumo_por_build_20261024-101821.csv"
    ],
    "coluna": "fail[float,z]",
    "categoria": "equivalencia",
@@ -2898,7 +2907,7 @@
    "pt": "162",
    "status": "ok",
    "fonte": [
-    "embarcados/results/csv/equivalencia_resumo_por_build_20261024-091729.csv"
+    "embarcados/results/csv/equivalencia_resumo_por_build_20261024-101821.csv"
    ],
    "coluna": "pass[float,z]",
    "categoria": "equivalencia",
@@ -2910,7 +2919,7 @@
    "pt": "z",
    "status": "ok",
    "fonte": [
-    "embarcados/results/csv/equivalencia_resumo_por_build_20261024-091729.csv"
+    "embarcados/results/csv/equivalencia_resumo_por_build_20261024-101821.csv"
    ],
    "coluna": "etapas sem PASS (float)",
    "categoria": "equivalencia",
@@ -2922,7 +2931,7 @@
    "pt": "2",
    "status": "ok",
    "fonte": [
-    "embarcados/results/csv/equivalencia_resumo_por_build_20261024-091729.csv"
+    "embarcados/results/csv/equivalencia_resumo_por_build_20261024-101821.csv"
    ],
    "coluna": "nº de etapas com PASS_EMPATE (float)",
    "categoria": "equivalencia",
@@ -3066,7 +3075,7 @@
    "pt": "d74dae800ceb",
    "status": "ok",
    "fonte": [
-    "embarcados/results/csv/equivalencia_resumo_por_build_20261024-091729.csv"
+    "embarcados/results/csv/equivalencia_resumo_por_build_20261024-101821.csv"
    ],
    "coluna": "sha256_tolerancias gravado no _meta da comparação",
    "categoria": "equivalencia",
@@ -3102,7 +3111,7 @@
    "pt": "2026-10-24 09:11",
    "status": "ok",
    "fonte": [
-    "embarcados/results/csv/equivalencia_resumo_por_build_20261024-091729.csv"
+    "embarcados/results/csv/equivalencia_resumo_por_build_20261024-101821.csv"
    ],
    "coluna": "data da comparação formal (float)",
    "categoria": "equivalencia",
@@ -3747,7 +3756,7 @@
   "VPcCompiler": {
    "valor": "MSVC 19.44 x64 \\slash{}O2 \\slash{}fp:precise",
    "tex": "MSVC 19.44 x64 \\slash{}O2 \\slash{}fp:precise",
-   "pt": "MSVC 19,44 x64 \\slash{}O2 \\slash{}fp:precise",
+   "pt": "MSVC 19.44 x64 /O2 /fp:precise",
    "status": "ok",
    "fonte": [
     "embarcados/results/metrics/bench_pc_20261024-091911.json"
@@ -3781,12 +3790,12 @@
    "nota": ""
   },
   "VPcSeqWindows": {
-   "valor": 24,
-   "tex": "24",
-   "pt": "24",
+   "valor": 30,
+   "tex": "30",
+   "pt": "30",
    "status": "ok",
    "fonte": [
-    "embarcados/results/csv/seq_pc_20261024-092103.csv"
+    "embarcados/results/csv/seq_pc_20261024-184829.csv"
    ],
    "coluna": "nº de linhas (janelas)",
    "categoria": "pc",
@@ -3798,7 +3807,7 @@
    "pt": "2",
    "status": "ok",
    "fonte": [
-    "embarcados/results/csv/seq_pc_20261024-092103_meta.json"
+    "embarcados/results/csv/seq_pc_20261024-184829_meta.json"
    ],
    "coluna": "len(deteccao_online_c)",
    "categoria": "pc",
@@ -3810,7 +3819,7 @@
    "pt": "0",
    "status": "ok",
    "fonte": [
-    "embarcados/results/csv/seq_pc_20261024-092103_meta.json"
+    "embarcados/results/csv/seq_pc_20261024-184829_meta.json"
    ],
    "coluna": "max atraso_janelas (C)",
    "categoria": "pc",
@@ -3822,7 +3831,7 @@
    "pt": "0",
    "status": "ok",
    "fonte": [
-    "embarcados/results/csv/seq_pc_20261024-092103_meta.json"
+    "embarcados/results/csv/seq_pc_20261024-184829_meta.json"
    ],
    "coluna": "max atraso_janelas (Python)",
    "categoria": "pc",
@@ -3834,19 +3843,19 @@
    "pt": "1",
    "status": "ok",
    "fonte": [
-    "embarcados/results/csv/seq_pc_20261024-092103_meta.json"
+    "embarcados/results/csv/seq_pc_20261024-184829_meta.json"
    ],
    "coluna": "decisoes_iguais_python_c (1=sim)",
    "categoria": "pc",
    "nota": ""
   },
   "VPcSeqMaxProbDiff": {
-   "valor": 3.1722096913711084e-06,
-   "tex": "\\ensuremath{3.2\\times10^{-6}}",
-   "pt": "3,2 × 10^-6",
+   "valor": 2.6791555292504654e-05,
+   "tex": "\\ensuremath{2.7\\times10^{-5}}",
+   "pt": "2,7 × 10^-5",
    "status": "ok",
    "fonte": [
-    "embarcados/results/csv/seq_pc_20261024-092103_meta.json"
+    "embarcados/results/csv/seq_pc_20261024-184829_meta.json"
    ],
    "coluna": "max_abs_dif_probs",
    "categoria": "pc",
@@ -3858,19 +3867,19 @@
    "pt": "2",
    "status": "ok",
    "fonte": [
-    "embarcados/results/csv/seq_pc_20261024-092103_meta.json"
+    "embarcados/results/csv/seq_pc_20261024-184829_meta.json"
    ],
    "coluna": "cp",
    "categoria": "pc",
    "nota": ""
   },
   "VPcSeqPerClass": {
-   "valor": 8,
-   "tex": "8",
-   "pt": "8",
+   "valor": 10,
+   "tex": "10",
+   "pt": "10",
    "status": "ok",
    "fonte": [
-    "embarcados/results/csv/seq_pc_20261024-092103.csv"
+    "embarcados/results/csv/seq_pc_20261024-184829.csv"
    ],
    "coluna": "janelas por classe",
    "categoria": "pc",
@@ -4035,7 +4044,7 @@
   "VBuildIdf": {
    "valor": "v5.5.6",
    "tex": "v5.5.6",
-   "pt": "v5,5.6",
+   "pt": "v5.5.6",
    "status": "ok",
    "fonte": [
     "C:/Espressif/build_p11_esp32s3/project_description.json"
@@ -4047,7 +4056,7 @@
   "VBuildGcc": {
    "valor": "14.2.0",
    "tex": "14.2.0",
-   "pt": "14,2.0",
+   "pt": "14.2.0",
    "status": "ok",
    "fonte": [
     "C:/Espressif/build_p11_esp32s3/project_description.json"
@@ -4296,6 +4305,102 @@
    "categoria": "estimativa",
    "nota": ""
   },
+  "VBuildLmBinKb": {
+   "valor": 215.21875,
+   "tex": "215",
+   "pt": "215",
+   "status": "ok",
+   "fonte": [
+    "embarcados/results/firmware/size_esp32_lowmem_20261025-135632.txt"
+   ],
+   "coluna": "binary size (hex)/1024 (p11_c_lowmem)",
+   "categoria": "build",
+   "nota": ""
+  },
+  "VBuildLmBinPct": {
+   "valor": 21.0174560546875,
+   "tex": "21",
+   "pt": "21",
+   "status": "ok",
+   "fonte": [
+    "embarcados/results/firmware/size_esp32_lowmem_20261025-135632.txt"
+   ],
+   "coluna": "bin/partição app",
+   "categoria": "build",
+   "nota": ""
+  },
+  "VBuildLmFlashCodeKb": {
+   "valor": 130.2529296875,
+   "tex": "130",
+   "pt": "130",
+   "status": "ok",
+   "fonte": [
+    "embarcados/results/firmware/size_esp32_lowmem_20261025-135632.txt"
+   ],
+   "coluna": "Flash Code Used/1024",
+   "categoria": "build",
+   "nota": ""
+  },
+  "VBuildLmFlashDataKb": {
+   "valor": 19.5703125,
+   "tex": "20",
+   "pt": "20",
+   "status": "ok",
+   "fonte": [
+    "embarcados/results/firmware/size_esp32_lowmem_20261025-135632.txt"
+   ],
+   "coluna": "Flash Data Used/1024",
+   "categoria": "build",
+   "nota": ""
+  },
+  "VBuildLmDramKb": {
+   "valor": 34.796875,
+   "tex": "35",
+   "pt": "35",
+   "status": "ok",
+   "fonte": [
+    "embarcados/results/firmware/size_esp32_lowmem_20261025-135632.txt"
+   ],
+   "coluna": "DRAM Used/1024 (estático)",
+   "categoria": "build",
+   "nota": ""
+  },
+  "VBuildLmDramTotalKb": {
+   "valor": 176.5,
+   "tex": "176",
+   "pt": "176",
+   "status": "ok",
+   "fonte": [
+    "embarcados/results/firmware/size_esp32_lowmem_20261025-135632.txt"
+   ],
+   "coluna": "DRAM Total/1024",
+   "categoria": "build",
+   "nota": ""
+  },
+  "VBuildLmIramKb": {
+   "valor": 57.7138671875,
+   "tex": "58",
+   "pt": "58",
+   "status": "ok",
+   "fonte": [
+    "embarcados/results/firmware/size_esp32_lowmem_20261025-135632.txt"
+   ],
+   "coluna": "IRAM Used/1024 (estático)",
+   "categoria": "build",
+   "nota": ""
+  },
+  "VBuildLmIramTotalKb": {
+   "valor": 128.0,
+   "tex": "128",
+   "pt": "128",
+   "status": "ok",
+   "fonte": [
+    "embarcados/results/firmware/size_esp32_lowmem_20261025-135632.txt"
+   ],
+   "coluna": "IRAM Total/1024",
+   "categoria": "build",
+   "nota": ""
+  },
   "VEqFloatBadCases": {
    "valor": 2,
    "tex": "2",
@@ -4350,7 +4455,7 @@
    "pt": "26",
    "status": "ok",
    "fonte": [
-    "embarcados/results/csv/equivalencia_resumo_por_build_20261024-091729.csv"
+    "embarcados/results/csv/equivalencia_resumo_por_build_20261024-101821.csv"
    ],
    "coluna": "etapas sem FAIL e sem PASS_EMPATE (double)",
    "categoria": "equivalencia",
@@ -4362,7 +4467,7 @@
    "pt": "23",
    "status": "ok",
    "fonte": [
-    "embarcados/results/csv/equivalencia_resumo_por_build_20261024-091729.csv"
+    "embarcados/results/csv/equivalencia_resumo_por_build_20261024-101821.csv"
    ],
    "coluna": "etapas sem FAIL e sem PASS_EMPATE (float)",
    "categoria": "equivalencia",
@@ -4374,7 +4479,7 @@
    "pt": "26",
    "status": "ok",
    "fonte": [
-    "embarcados/results/csv/equivalencia_resumo_por_build_20261024-091729.csv"
+    "embarcados/results/csv/equivalencia_resumo_por_build_20261024-101821.csv"
    ],
    "coluna": "etapas sem FAIL e sem PASS_EMPATE (float-sosd)",
    "categoria": "equivalencia",
@@ -4386,7 +4491,7 @@
    "pt": "env\\_mod, features, z",
    "status": "ok",
    "fonte": [
-    "embarcados/results/csv/equivalencia_resumo_por_build_20261024-091729.csv"
+    "embarcados/results/csv/equivalencia_resumo_por_build_20261024-101821.csv"
    ],
    "coluna": "etapas com FAIL ou PASS_EMPATE (float)",
    "categoria": "equivalencia",
@@ -4398,7 +4503,7 @@
    "pt": "2",
    "status": "ok",
    "fonte": [
-    "embarcados/results/csv/equivalencia_resumo_por_build_20261024-091729.csv"
+    "embarcados/results/csv/equivalencia_resumo_por_build_20261024-101821.csv"
    ],
    "coluna": "casos afetados por etapa (máx de fail+pass_empate)",
    "categoria": "equivalencia",
@@ -4605,10 +4710,10 @@
    "nota": ""
   },
   "VChipModel": {
-   "valor": null,
-   "tex": "\\textbf{[pending]}",
-   "pt": "**[pendente]**",
-   "status": "pending",
+   "valor": "ESP32",
+   "tex": "ESP32",
+   "pt": "ESP32",
+   "status": "ok",
    "fonte": [
     "embarcados/results/manifests/bancada.json"
    ],
@@ -4616,11 +4721,23 @@
    "categoria": "esp32",
    "nota": ""
   },
+  "VChipRev": {
+   "valor": "v3.1",
+   "tex": "v3.1",
+   "pt": "v3.1",
+   "status": "ok",
+   "fonte": [
+    "embarcados/results/manifests/bancada.json"
+   ],
+   "coluna": "esp_chip_info.revisao (maior*100+menor)",
+   "categoria": "esp32",
+   "nota": ""
+  },
   "VChipCpuMhz": {
-   "valor": null,
-   "tex": "\\textbf{[pending]}",
-   "pt": "**[pendente]**",
-   "status": "pending",
+   "valor": 240.0,
+   "tex": "240",
+   "pt": "240",
+   "status": "ok",
    "fonte": [
     "embarcados/results/manifests/bancada.json"
    ],
@@ -4628,11 +4745,23 @@
    "categoria": "esp32",
    "nota": ""
   },
+  "VChipFlashMb": {
+   "valor": 4.0,
+   "tex": "4",
+   "pt": "4",
+   "status": "ok",
+   "fonte": [
+    "embarcados/results/manifests/bancada.json"
+   ],
+   "coluna": "flash_mb",
+   "categoria": "esp32",
+   "nota": ""
+  },
   "VChipPsramMb": {
-   "valor": null,
-   "tex": "\\textbf{[pending]}",
-   "pt": "**[pendente]**",
-   "status": "pending",
+   "valor": 0.0,
+   "tex": "0",
+   "pt": "0",
+   "status": "ok",
    "fonte": [
     "embarcados/results/manifests/bancada.json"
    ],
@@ -4640,293 +4769,827 @@
    "categoria": "esp32",
    "nota": ""
   },
-  "VChipLatIdmtMed": {
-   "valor": null,
-   "tex": "\\textbf{[pending]}",
-   "pt": "**[pendente]**",
-   "status": "pending",
+  "VChipIdf": {
+   "valor": "v5.5.6",
+   "tex": "v5.5.6",
+   "pt": "v5.5.6",
+   "status": "ok",
    "fonte": [
     "embarcados/results/manifests/bancada.json"
    ],
-   "coluna": "resumo.idmt.total_ms.mediana",
+   "coluna": "idf",
    "categoria": "esp32",
    "nota": ""
   },
-  "VChipLatIdmtPninetyfive": {
-   "valor": null,
-   "tex": "\\textbf{[pending]}",
-   "pt": "**[pendente]**",
-   "status": "pending",
+  "VChipVariant": {
+   "valor": "p11_c_lowmem",
+   "tex": "p11\\_c\\_lowmem",
+   "pt": "p11\\_c\\_lowmem",
+   "status": "ok",
    "fonte": [
     "embarcados/results/manifests/bancada.json"
    ],
-   "coluna": "resumo.idmt.total_ms.p95",
+   "coluna": "variante",
    "categoria": "esp32",
    "nota": ""
   },
-  "VChipLatIdmtMax": {
-   "valor": null,
-   "tex": "\\textbf{[pending]}",
-   "pt": "**[pendente]**",
-   "status": "pending",
+  "VChipPoolB": {
+   "valor": 314944,
+   "tex": "314{,}944",
+   "pt": "314 944",
+   "status": "ok",
    "fonte": [
     "embarcados/results/manifests/bancada.json"
    ],
-   "coluna": "resumo.idmt.total_ms.max",
+   "coluna": "esp_chip_info.pool_8bit + pool_32bit",
    "categoria": "esp32",
    "nota": ""
   },
-  "VChipLatIdmtN": {
-   "valor": null,
-   "tex": "\\textbf{[pending]}",
-   "pt": "**[pendente]**",
-   "status": "pending",
+  "VChipPoolKib": {
+   "valor": 307.5625,
+   "tex": "308",
+   "pt": "308",
+   "status": "ok",
    "fonte": [
     "embarcados/results/manifests/bancada.json"
    ],
-   "coluna": "resumo.idmt.total_ms.n",
+   "coluna": "(pool_8bit+pool_32bit)/1024",
    "categoria": "esp32",
    "nota": ""
   },
-  "VChipRtfIdmt": {
-   "valor": null,
-   "tex": "\\textbf{[pending]}",
-   "pt": "**[pendente]**",
-   "status": "pending",
+  "VChipPoolBlocks": {
+   "valor": 5,
+   "tex": "5",
+   "pt": "5",
+   "status": "ok",
    "fonte": [
     "embarcados/results/manifests/bancada.json"
    ],
-   "coluna": "fator_tempo_real_mediana",
+   "coluna": "len(esp_chip_info.pool)",
    "categoria": "esp32",
    "nota": ""
   },
-  "VChipRtfMaxIdmt": {
-   "valor": null,
-   "tex": "\\textbf{[pending]}",
-   "pt": "**[pendente]**",
-   "status": "pending",
+  "VChipHeapBootB": {
+   "valor": 8488,
+   "tex": "8{,}488",
+   "pt": "8 488",
+   "status": "ok",
    "fonte": [
     "embarcados/results/manifests/bancada.json"
    ],
-   "coluna": "fator_tempo_real_max",
+   "coluna": "esp_chip_info.heap_livre_interna (depois de reservar o pool)",
    "categoria": "esp32",
    "nota": ""
   },
-  "VChipHeapIntIdmtKb": {
-   "valor": null,
-   "tex": "\\textbf{[pending]}",
-   "pt": "**[pendente]**",
-   "status": "pending",
+  "VChipFitsIdmt": {
+   "valor": 0,
+   "tex": "0",
+   "pt": "0",
+   "status": "ok",
    "fonte": [
-    "embarcados/results/manifests/bancada.json"
+    "embarcados/results/csv/esp32_memoria_esp32_20261025-141018.csv"
    ],
-   "coluna": "heap_min_livre_interna/1024",
+   "coluna": "coube[idmt] (1=sim)",
    "categoria": "esp32",
    "nota": ""
   },
-  "VChipStackIdmt": {
-   "valor": null,
-   "tex": "\\textbf{[pending]}",
-   "pt": "**[pendente]**",
-   "status": "pending",
+  "VChipFitsBldc": {
+   "valor": 1,
+   "tex": "1",
+   "pt": "1",
+   "status": "ok",
    "fonte": [
-    "embarcados/results/manifests/bancada.json"
+    "embarcados/results/csv/esp32_memoria_esp32_20261025-141018.csv"
    ],
-   "coluna": "pilha_folga_bytes_min",
+   "coluna": "coube[a2212] (1=sim)",
    "categoria": "esp32",
    "nota": ""
   },
-  "VChipWsPsramIdmt": {
-   "valor": null,
-   "tex": "\\textbf{[pending]}",
-   "pt": "**[pendente]**",
-   "status": "pending",
+  "VChipWsBldcB": {
+   "valor": 303308,
+   "tex": "303{,}308",
+   "pt": "303 308",
+   "status": "ok",
    "fonte": [
-    "embarcados/results/manifests/bancada.json"
+    "embarcados/results/csv/esp32_memoria_esp32_20261025-141018.csv"
    ],
-   "coluna": "ws_na_psram",
+   "coluna": "ws_bytes[a2212] (pico do pool)",
    "categoria": "esp32",
    "nota": ""
   },
-  "VChipWsIdmtMb": {
-   "valor": null,
-   "tex": "\\textbf{[pending]}",
-   "pt": "**[pendente]**",
-   "status": "pending",
+  "VChipWsBldcKib": {
+   "valor": 296.19921875,
+   "tex": "296",
+   "pt": "296",
+   "status": "ok",
    "fonte": [
-    "embarcados/results/manifests/bancada.json"
+    "embarcados/results/csv/esp32_memoria_esp32_20261025-141018.csv"
    ],
-   "coluna": "ws_bytes/1e6",
+   "coluna": "ws_bytes[a2212]/1024",
    "categoria": "esp32",
    "nota": ""
   },
-  "VChipLatBldcMed": {
-   "valor": null,
-   "tex": "\\textbf{[pending]}",
-   "pt": "**[pendente]**",
-   "status": "pending",
+  "VChipWsPoolPct": {
+   "valor": 96.30537492379598,
+   "tex": "96",
+   "pt": "96",
+   "status": "ok",
    "fonte": [
+    "embarcados/results/csv/esp32_memoria_esp32_20261025-141018.csv",
     "embarcados/results/manifests/bancada.json"
    ],
-   "coluna": "resumo.a2212.total_ms.mediana",
+   "coluna": "100·ws_bytes[a2212]/(pool_8bit+pool_32bit)",
    "categoria": "esp32",
    "nota": ""
   },
-  "VChipLatBldcPninetyfive": {
-   "valor": null,
-   "tex": "\\textbf{[pending]}",
-   "pt": "**[pendente]**",
-   "status": "pending",
+  "VChipHeapIntBldcB": {
+   "valor": 7584,
+   "tex": "7{,}584",
+   "pt": "7 584",
+   "status": "ok",
    "fonte": [
-    "embarcados/results/manifests/bancada.json"
+    "embarcados/results/csv/esp32_memoria_esp32_20261025-141018.csv"
    ],
-   "coluna": "resumo.a2212.total_ms.p95",
+   "coluna": "heap_min_livre_interna[a2212]",
    "categoria": "esp32",
    "nota": ""
   },
-  "VChipLatBldcMax": {
-   "valor": null,
-   "tex": "\\textbf{[pending]}",
-   "pt": "**[pendente]**",
-   "status": "pending",
+  "VChipHeapIntBldcKib": {
+   "valor": 7.40625,
+   "tex": "7.4",
+   "pt": "7,4",
+   "status": "ok",
    "fonte": [
-    "embarcados/results/manifests/bancada.json"
+    "embarcados/results/csv/esp32_memoria_esp32_20261025-141018.csv"
    ],
-   "coluna": "resumo.a2212.total_ms.max",
-   "categoria": "esp32",
-   "nota": ""
-  },
-  "VChipLatBldcN": {
-   "valor": null,
-   "tex": "\\textbf{[pending]}",
-   "pt": "**[pendente]**",
-   "status": "pending",
-   "fonte": [
-    "embarcados/results/manifests/bancada.json"
-   ],
-   "coluna": "resumo.a2212.total_ms.n",
-   "categoria": "esp32",
-   "nota": ""
-  },
-  "VChipRtfBldc": {
-   "valor": null,
-   "tex": "\\textbf{[pending]}",
-   "pt": "**[pendente]**",
-   "status": "pending",
-   "fonte": [
-    "embarcados/results/manifests/bancada.json"
-   ],
-   "coluna": "fator_tempo_real_mediana",
-   "categoria": "esp32",
-   "nota": ""
-  },
-  "VChipRtfMaxBldc": {
-   "valor": null,
-   "tex": "\\textbf{[pending]}",
-   "pt": "**[pendente]**",
-   "status": "pending",
-   "fonte": [
-    "embarcados/results/manifests/bancada.json"
-   ],
-   "coluna": "fator_tempo_real_max",
-   "categoria": "esp32",
-   "nota": ""
-  },
-  "VChipHeapIntBldcKb": {
-   "valor": null,
-   "tex": "\\textbf{[pending]}",
-   "pt": "**[pendente]**",
-   "status": "pending",
-   "fonte": [
-    "embarcados/results/manifests/bancada.json"
-   ],
-   "coluna": "heap_min_livre_interna/1024",
-   "categoria": "esp32",
-   "nota": ""
-  },
-  "VChipStackBldc": {
-   "valor": null,
-   "tex": "\\textbf{[pending]}",
-   "pt": "**[pendente]**",
-   "status": "pending",
-   "fonte": [
-    "embarcados/results/manifests/bancada.json"
-   ],
-   "coluna": "pilha_folga_bytes_min",
+   "coluna": "heap_min_livre_interna[a2212]/1024",
    "categoria": "esp32",
    "nota": ""
   },
   "VChipWsPsramBldc": {
-   "valor": null,
-   "tex": "\\textbf{[pending]}",
-   "pt": "**[pendente]**",
-   "status": "pending",
+   "valor": 0,
+   "tex": "0",
+   "pt": "0",
+   "status": "ok",
    "fonte": [
-    "embarcados/results/manifests/bancada.json"
+    "embarcados/results/csv/esp32_memoria_esp32_20261025-141018.csv"
    ],
-   "coluna": "ws_na_psram",
+   "coluna": "ws_na_psram[a2212]",
    "categoria": "esp32",
    "nota": ""
   },
-  "VChipWsBldcMb": {
-   "valor": null,
-   "tex": "\\textbf{[pending]}",
-   "pt": "**[pendente]**",
-   "status": "pending",
+  "VChipIdmtFreeAtFailKib": {
+   "valor": 307.5625,
+   "tex": "308",
+   "pt": "308",
+   "status": "ok",
    "fonte": [
-    "embarcados/results/manifests/bancada.json"
+    "embarcados/results/csv/esp32_memoria_esp32_20261025-141018.csv"
    ],
-   "coluna": "ws_bytes/1e6",
+   "coluna": "livre interna no momento da recusa (idmt)/1024",
+   "categoria": "esp32",
+   "nota": ""
+  },
+  "VChipIdmtSamples": {
+   "valor": 48000,
+   "tex": "48{,}000",
+   "pt": "48 000",
+   "status": "ok",
+   "fonte": [
+    "embarcados/results/csv/esp32_memoria_esp32_20261025-141018.csv"
+   ],
+   "coluna": "n_amostras[idmt]",
+   "categoria": "esp32",
+   "nota": ""
+  },
+  "VChipLatBldcMed": {
+   "valor": 2647.5015000000003,
+   "tex": "2647.5",
+   "pt": "2647,5",
+   "status": "ok",
+   "fonte": [
+    "embarcados/results/csv/esp32_lat_esp32_20261025-143026.csv"
+   ],
+   "coluna": "mediana total_ms (aquecimento excluído)",
+   "categoria": "esp32",
+   "nota": ""
+  },
+  "VChipLatBldcPninetyfive": {
+   "valor": 2647.62405,
+   "tex": "2647.6",
+   "pt": "2647,6",
+   "status": "ok",
+   "fonte": [
+    "embarcados/results/csv/esp32_lat_esp32_20261025-143026.csv"
+   ],
+   "coluna": "p95 total_ms (aquecimento excluído)",
+   "categoria": "esp32",
+   "nota": ""
+  },
+  "VChipLatBldcMax": {
+   "valor": 2647.674,
+   "tex": "2647.7",
+   "pt": "2647,7",
+   "status": "ok",
+   "fonte": [
+    "embarcados/results/csv/esp32_lat_esp32_20261025-143026.csv"
+   ],
+   "coluna": "máx total_ms (aquecimento excluído)",
+   "categoria": "esp32",
+   "nota": ""
+  },
+  "VChipLatBldcMin": {
+   "valor": 2647.362,
+   "tex": "2647.4",
+   "pt": "2647,4",
+   "status": "ok",
+   "fonte": [
+    "embarcados/results/csv/esp32_lat_esp32_20261025-143026.csv"
+   ],
+   "coluna": "mín total_ms (aquecimento excluído)",
+   "categoria": "esp32",
+   "nota": ""
+  },
+  "VChipLatBldcN": {
+   "valor": 200,
+   "tex": "200",
+   "pt": "200",
+   "status": "ok",
+   "fonte": [
+    "embarcados/results/csv/esp32_lat_esp32_20261025-143026.csv"
+   ],
+   "coluna": "nº de janelas medidas",
+   "categoria": "esp32",
+   "nota": ""
+  },
+  "VChipLatWarmup": {
+   "valor": 5,
+   "tex": "5",
+   "pt": "5",
+   "status": "ok",
+   "fonte": [
+    "embarcados/results/csv/esp32_lat_esp32_20261025-143026_meta.json"
+   ],
+   "coluna": "argv.aquecimento",
+   "categoria": "esp32",
+   "nota": ""
+  },
+  "VChipLatDistinct": {
+   "valor": 75,
+   "tex": "75",
+   "pt": "75",
+   "status": "ok",
+   "fonte": [
+    "embarcados/results/csv/esp32_lat_esp32_20261025-143026.csv"
+   ],
+   "coluna": "n_janelas_distintas",
+   "categoria": "esp32",
+   "nota": ""
+  },
+  "VChipRtfBldc": {
+   "valor": 2.6475015,
+   "tex": "2.65",
+   "pt": "2,65",
+   "status": "ok",
+   "fonte": [
+    "embarcados/results/csv/esp32_lat_esp32_20261025-143026.csv",
+    "motorsound/config.py"
+   ],
+   "coluna": "mediana total_ms / (1000·AVAL_A2212.seg_s)",
+   "categoria": "esp32",
+   "nota": "fator > 1: mais lento que o tempo real"
+  },
+  "VChipRtfMaxBldc": {
+   "valor": 2.647674,
+   "tex": "2.65",
+   "pt": "2,65",
+   "status": "ok",
+   "fonte": [
+    "embarcados/results/csv/esp32_lat_esp32_20261025-143026.csv",
+    "motorsound/config.py"
+   ],
+   "coluna": "máx total_ms / (1000·seg_s)",
+   "categoria": "esp32",
+   "nota": ""
+  },
+  "VChipStackBldc": {
+   "valor": 20536,
+   "tex": "20{,}536",
+   "pt": "20 536",
+   "status": "ok",
+   "fonte": [
+    "embarcados/results/csv/esp32_lat_esp32_20261025-143026.csv"
+   ],
+   "coluna": "min pilha_folga_bytes",
+   "categoria": "esp32",
+   "nota": ""
+  },
+  "VChipBldcPrepMed": {
+   "valor": 1.81,
+   "tex": "1.8",
+   "pt": "1,8",
+   "status": "ok",
+   "fonte": [
+    "embarcados/results/csv/esp32_lat_esp32_20261025-143026.csv"
+   ],
+   "coluna": "mediana prep_ms",
+   "categoria": "esp32",
+   "nota": ""
+  },
+  "VChipBldcPrepPct": {
+   "valor": 0.06836634464607479,
+   "tex": "0",
+   "pt": "0",
+   "status": "ok",
+   "fonte": [
+    "embarcados/results/csv/esp32_lat_esp32_20261025-143026.csv"
+   ],
+   "coluna": "100·mediana prep_ms / mediana total_ms",
+   "categoria": "esp32",
+   "nota": ""
+  },
+  "VChipBldcTrackMed": {
+   "valor": 2345.538,
+   "tex": "2345.5",
+   "pt": "2345,5",
+   "status": "ok",
+   "fonte": [
+    "embarcados/results/csv/esp32_lat_esp32_20261025-143026.csv"
+   ],
+   "coluna": "mediana rastreio_ms",
+   "categoria": "esp32",
+   "nota": ""
+  },
+  "VChipBldcTrackPct": {
+   "valor": 88.59439739694197,
+   "tex": "89",
+   "pt": "89",
+   "status": "ok",
+   "fonte": [
+    "embarcados/results/csv/esp32_lat_esp32_20261025-143026.csv"
+   ],
+   "coluna": "100·mediana rastreio_ms / mediana total_ms",
+   "categoria": "esp32",
+   "nota": ""
+  },
+  "VChipBldcVitMed": {
+   "valor": 90.711,
+   "tex": "90.7",
+   "pt": "90,7",
+   "status": "ok",
+   "fonte": [
+    "embarcados/results/csv/esp32_lat_esp32_20261025-143026.csv"
+   ],
+   "coluna": "mediana viterbi_ms",
+   "categoria": "esp32",
+   "nota": ""
+  },
+  "VChipBldcVitPct": {
+   "valor": 3.42628701060226,
+   "tex": "3",
+   "pt": "3",
+   "status": "ok",
+   "fonte": [
+    "embarcados/results/csv/esp32_lat_esp32_20261025-143026.csv"
+   ],
+   "coluna": "100·mediana viterbi_ms / mediana total_ms",
+   "categoria": "esp32",
+   "nota": ""
+  },
+  "VChipBldcSalMed": {
+   "valor": 0.002,
+   "tex": "0.002",
+   "pt": "0,002",
+   "status": "ok",
+   "fonte": [
+    "embarcados/results/csv/esp32_lat_esp32_20261025-143026.csv"
+   ],
+   "coluna": "mediana sal_caminho_ms",
+   "categoria": "esp32",
+   "nota": ""
+  },
+  "VChipBldcSalPct": {
+   "valor": 7.554292226085613e-05,
+   "tex": "0",
+   "pt": "0",
+   "status": "ok",
+   "fonte": [
+    "embarcados/results/csv/esp32_lat_esp32_20261025-143026.csv"
+   ],
+   "coluna": "100·mediana sal_caminho_ms / mediana total_ms",
+   "categoria": "esp32",
+   "nota": ""
+  },
+  "VChipBldcEnvMed": {
+   "valor": 199.302,
+   "tex": "199.3",
+   "pt": "199,3",
+   "status": "ok",
+   "fonte": [
+    "embarcados/results/csv/esp32_lat_esp32_20261025-143026.csv"
+   ],
+   "coluna": "mediana envelope_ms",
+   "categoria": "esp32",
+   "nota": ""
+  },
+  "VChipBldcEnvPct": {
+   "valor": 7.527927746216574,
+   "tex": "8",
+   "pt": "8",
+   "status": "ok",
+   "fonte": [
+    "embarcados/results/csv/esp32_lat_esp32_20261025-143026.csv"
+   ],
+   "coluna": "100·mediana envelope_ms / mediana total_ms",
+   "categoria": "esp32",
+   "nota": ""
+  },
+  "VChipBldcFeatMed": {
+   "valor": 10.12,
+   "tex": "10.1",
+   "pt": "10,1",
+   "status": "ok",
+   "fonte": [
+    "embarcados/results/csv/esp32_lat_esp32_20261025-143026.csv"
+   ],
+   "coluna": "mediana features_ms",
+   "categoria": "esp32",
+   "nota": ""
+  },
+  "VChipBldcFeatPct": {
+   "valor": 0.38224718663993196,
+   "tex": "0",
+   "pt": "0",
+   "status": "ok",
+   "fonte": [
+    "embarcados/results/csv/esp32_lat_esp32_20261025-143026.csv"
+   ],
+   "coluna": "100·mediana features_ms / mediana total_ms",
+   "categoria": "esp32",
+   "nota": ""
+  },
+  "VChipBldcCosMed": {
+   "valor": 0.027,
+   "tex": "0.027",
+   "pt": "0,027",
+   "status": "ok",
+   "fonte": [
+    "embarcados/results/csv/esp32_lat_esp32_20261025-143026.csv"
+   ],
+   "coluna": "mediana cosseno_ms",
+   "categoria": "esp32",
+   "nota": ""
+  },
+  "VChipBldcCosPct": {
+   "valor": 0.0010198294505215577,
+   "tex": "0",
+   "pt": "0",
+   "status": "ok",
+   "fonte": [
+    "embarcados/results/csv/esp32_lat_esp32_20261025-143026.csv"
+   ],
+   "coluna": "100·mediana cosseno_ms / mediana total_ms",
+   "categoria": "esp32",
+   "nota": ""
+  },
+  "VChipLatIdmtMed": {
+   "valor": null,
+   "tex": "\\textit{did not fit}",
+   "pt": "não coube",
+   "status": "nao_coube",
+   "fonte": [
+    "embarcados/results/csv/esp32_memoria_esp32_20261025-141018.csv"
+   ],
+   "coluna": "coube[idmt] = 0",
+   "categoria": "esp32",
+   "nota": "a janela de 3 s do IDMT não coube na RAM interna desta placa (sem PSRAM)"
+  },
+  "VChipLatIdmtPninetyfive": {
+   "valor": null,
+   "tex": "\\textit{did not fit}",
+   "pt": "não coube",
+   "status": "nao_coube",
+   "fonte": [
+    "embarcados/results/csv/esp32_memoria_esp32_20261025-141018.csv"
+   ],
+   "coluna": "coube[idmt] = 0",
+   "categoria": "esp32",
+   "nota": "a janela de 3 s do IDMT não coube na RAM interna desta placa (sem PSRAM)"
+  },
+  "VChipLatIdmtMax": {
+   "valor": null,
+   "tex": "\\textit{did not fit}",
+   "pt": "não coube",
+   "status": "nao_coube",
+   "fonte": [
+    "embarcados/results/csv/esp32_memoria_esp32_20261025-141018.csv"
+   ],
+   "coluna": "coube[idmt] = 0",
+   "categoria": "esp32",
+   "nota": "a janela de 3 s do IDMT não coube na RAM interna desta placa (sem PSRAM)"
+  },
+  "VChipRtfIdmt": {
+   "valor": null,
+   "tex": "\\textit{did not fit}",
+   "pt": "não coube",
+   "status": "nao_coube",
+   "fonte": [
+    "embarcados/results/csv/esp32_memoria_esp32_20261025-141018.csv"
+   ],
+   "coluna": "coube[idmt] = 0",
+   "categoria": "esp32",
+   "nota": "a janela de 3 s do IDMT não coube na RAM interna desta placa (sem PSRAM)"
+  },
+  "VChipWsIdmtKib": {
+   "valor": null,
+   "tex": "\\textit{did not fit}",
+   "pt": "não coube",
+   "status": "nao_coube",
+   "fonte": [
+    "embarcados/results/csv/esp32_memoria_esp32_20261025-141018.csv"
+   ],
+   "coluna": "coube[idmt] = 0",
+   "categoria": "esp32",
+   "nota": "a janela de 3 s do IDMT não coube na RAM interna desta placa (sem PSRAM)"
+  },
+  "VChipHeapIntIdmtB": {
+   "valor": null,
+   "tex": "\\textit{did not fit}",
+   "pt": "não coube",
+   "status": "nao_coube",
+   "fonte": [
+    "embarcados/results/csv/esp32_memoria_esp32_20261025-141018.csv"
+   ],
+   "coluna": "coube[idmt] = 0",
+   "categoria": "esp32",
+   "nota": "a janela de 3 s do IDMT não coube na RAM interna desta placa (sem PSRAM)"
+  },
+  "VChipEqStages": {
+   "valor": 8,
+   "tex": "8",
+   "pt": "8",
+   "status": "ok",
+   "fonte": [
+    "embarcados/results/csv/equivalencia_esp32_esp32_p11_c_lowmem_20261025-141829_resumo.csv"
+   ],
+   "coluna": "etapas de janela comparadas (n_pass+n_fail>0)",
    "categoria": "esp32",
    "nota": ""
   },
   "VChipEqStagesPass": {
-   "valor": null,
-   "tex": "\\textbf{[pending]}",
-   "pt": "**[pendente]**",
-   "status": "pending",
+   "valor": 8,
+   "tex": "8",
+   "pt": "8",
+   "status": "ok",
    "fonte": [
-    "embarcados/results/manifests/bancada.json"
+    "embarcados/results/csv/equivalencia_esp32_esp32_p11_c_lowmem_20261025-141829_resumo.csv"
    ],
-   "coluna": "equivalência no chip não rodou",
+   "coluna": "etapas comparadas sem FAIL/PASS_EMPATE",
    "categoria": "esp32",
    "nota": ""
   },
-  "VChipEqStages": {
-   "valor": null,
-   "tex": "\\textbf{[pending]}",
-   "pt": "**[pendente]**",
-   "status": "pending",
+  "VChipEqStagesAbsent": {
+   "valor": 12,
+   "tex": "12",
+   "pt": "12",
+   "status": "ok",
    "fonte": [
-    "embarcados/results/manifests/bancada.json"
+    "embarcados/results/csv/equivalencia_esp32_esp32_p11_c_lowmem_20261025-141829_resumo.csv"
    ],
-   "coluna": "equivalência no chip não rodou",
+   "coluna": "etapas de janela que o firmware não devolve (todas AUSENTE)",
+   "categoria": "esp32",
+   "nota": ""
+  },
+  "VChipEqFail": {
+   "valor": 0,
+   "tex": "0",
+   "pt": "0",
+   "status": "ok",
+   "fonte": [
+    "embarcados/results/csv/equivalencia_esp32_esp32_p11_c_lowmem_20261025-141829_resumo.csv"
+   ],
+   "coluna": "soma n_fail + n_fail_jusante",
+   "categoria": "esp32",
+   "nota": ""
+  },
+  "VChipEqCases": {
+   "valor": 79,
+   "tex": "79",
+   "pt": "79",
+   "status": "ok",
+   "fonte": [
+    "embarcados/results/csv/equivalencia_esp32_esp32_p11_c_lowmem_20261025-141829_resumo.csv"
+   ],
+   "coluna": "janelas comparadas em decisao",
    "categoria": "esp32",
    "nota": ""
   },
   "VChipEqDecisionPass": {
-   "valor": null,
-   "tex": "\\textbf{[pending]}",
-   "pt": "**[pendente]**",
-   "status": "pending",
+   "valor": 79,
+   "tex": "79",
+   "pt": "79",
+   "status": "ok",
    "fonte": [
-    "embarcados/results/manifests/bancada.json"
+    "embarcados/results/csv/equivalencia_esp32_esp32_p11_c_lowmem_20261025-141829_resumo.csv"
    ],
-   "coluna": "equivalência no chip não rodou",
+   "coluna": "n_pass+n_pass_empate[decisao]",
+   "categoria": "esp32",
+   "nota": ""
+  },
+  "VChipEqMaxRatio": {
+   "valor": 0.1867589374490039,
+   "tex": "0.19",
+   "pt": "0,19",
+   "status": "ok",
+   "fonte": [
+    "embarcados/results/csv/equivalencia_esp32_esp32_p11_c_lowmem_20261025-141829_resumo.csv"
+   ],
+   "coluna": "máx razao_tol_max nas etapas comparadas",
+   "categoria": "esp32",
+   "nota": ""
+  },
+  "VChipEqCasesReal": {
+   "valor": 75,
+   "tex": "75",
+   "pt": "75",
+   "status": "ok",
+   "fonte": [
+    "embarcados/results/csv/equivalencia_esp32_esp32_p11_c_lowmem_20261025-141829.csv"
+   ],
+   "coluna": "janelas reais (limpo+ruidoso) comparadas",
+   "categoria": "esp32",
+   "nota": ""
+  },
+  "VChipEqCasesEdge": {
+   "valor": 4,
+   "tex": "4",
+   "pt": "4",
+   "status": "ok",
+   "fonte": [
+    "embarcados/results/csv/equivalencia_esp32_esp32_p11_c_lowmem_20261025-141829.csv"
+   ],
+   "coluna": "casos de borda comparados",
+   "categoria": "esp32",
+   "nota": ""
+  },
+  "VEqLmStages": {
+   "valor": 18,
+   "tex": "18",
+   "pt": "18",
+   "status": "ok",
+   "fonte": [
+    "embarcados/results/csv/equivalencia_float-lowmem_20261025-135553_resumo.csv"
+   ],
+   "coluna": "etapas de janela comparadas (float-lowmem, PC)",
+   "categoria": "equivalencia",
+   "nota": ""
+  },
+  "VEqLmStagesPass": {
+   "valor": 18,
+   "tex": "18",
+   "pt": "18",
+   "status": "ok",
+   "fonte": [
+    "embarcados/results/csv/equivalencia_float-lowmem_20261025-135553_resumo.csv"
+   ],
+   "coluna": "etapas sem FAIL/PASS_EMPATE (float-lowmem, PC)",
+   "categoria": "equivalencia",
+   "nota": ""
+  },
+  "VEqLmCases": {
+   "valor": 79,
+   "tex": "79",
+   "pt": "79",
+   "status": "ok",
+   "fonte": [
+    "embarcados/results/csv/equivalencia_float-lowmem_20261025-135553_resumo.csv"
+   ],
+   "coluna": "janelas comparadas (float-lowmem, PC)",
+   "categoria": "equivalencia",
+   "nota": ""
+  },
+  "VEqLmDecisionPass": {
+   "valor": 79,
+   "tex": "79",
+   "pt": "79",
+   "status": "ok",
+   "fonte": [
+    "embarcados/results/csv/equivalencia_float-lowmem_20261025-135553_resumo.csv"
+   ],
+   "coluna": "pass[decisao] (float-lowmem)",
+   "categoria": "equivalencia",
+   "nota": ""
+  },
+  "VEqLmMaxRatio": {
+   "valor": 0.194080938860566,
+   "tex": "0.19",
+   "pt": "0,19",
+   "status": "ok",
+   "fonte": [
+    "embarcados/results/csv/equivalencia_float-lowmem_20261025-135553_resumo.csv"
+   ],
+   "coluna": "máx razao_tol_max (float-lowmem, PC)",
+   "categoria": "equivalencia",
+   "nota": ""
+  },
+  "VChipSeqWindows": {
+   "valor": 30,
+   "tex": "30",
+   "pt": "30",
+   "status": "ok",
+   "fonte": [
+    "embarcados/results/csv/esp32_seq_esp32_20261025-143251.csv"
+   ],
+   "coluna": "nº de janelas do fluxo",
+   "categoria": "esp32",
+   "nota": ""
+  },
+  "VChipSeqSwitches": {
+   "valor": 2,
+   "tex": "2",
+   "pt": "2",
+   "status": "ok",
+   "fonte": [
+    "embarcados/results/csv/esp32_seq_esp32_20261025-143251_meta.json"
+   ],
+   "coluna": "len(deteccao)",
    "categoria": "esp32",
    "nota": ""
   },
   "VChipSeqDelay": {
-   "valor": null,
-   "tex": "\\textbf{[pending]}",
-   "pt": "**[pendente]**",
-   "status": "pending",
+   "valor": 0,
+   "tex": "0",
+   "pt": "0",
+   "status": "ok",
    "fonte": [
-    "embarcados/results/manifests/bancada.json"
+    "embarcados/results/csv/esp32_seq_esp32_20261025-143251_meta.json"
    ],
-   "coluna": "fluxo contínuo no chip não rodou",
+   "coluna": "max atraso_janelas",
    "categoria": "esp32",
    "nota": ""
+  },
+  "VChipSeqCp": {
+   "valor": 2.0,
+   "tex": "2",
+   "pt": "2",
+   "status": "ok",
+   "fonte": [
+    "embarcados/results/csv/esp32_seq_esp32_20261025-143251_meta.json"
+   ],
+   "coluna": "cp",
+   "categoria": "esp32",
+   "nota": ""
+  },
+  "VChipSeqSame": {
+   "valor": 30,
+   "tex": "30",
+   "pt": "30",
+   "status": "ok",
+   "fonte": [
+    "embarcados/results/csv/esp32_seq_esp32_20261025-143251.csv",
+    "embarcados/results/csv/seq_pc_20261024-184829.csv"
+   ],
+   "coluna": "nº de janelas com decisao_online (chip) == online_python (seq_pc)",
+   "categoria": "esp32",
+   "nota": ""
+  },
+  "VChipSeqHmmUs": {
+   "valor": 104.0,
+   "tex": "104",
+   "pt": "104",
+   "status": "ok",
+   "fonte": [
+    "embarcados/results/csv/esp32_seq_esp32_20261025-143251.csv"
+   ],
+   "coluna": "mediana us_hmm",
+   "categoria": "esp32",
+   "nota": ""
+  },
+  "VChipRefOverPoolThree": {
+   "valor": 5.918461694777484,
+   "tex": "5.9",
+   "pt": "5,9",
+   "status": "ok",
+   "fonte": [
+    "embarcados/paper/fontes/ws_float_48000.json",
+    "embarcados/results/manifests/bancada.json"
+   ],
+   "coluna": "arena da referência (estimativa) / RAM interna do pool (medida)",
+   "categoria": "estimativa",
+   "nota": "razão entre categoria 1 e categoria 4"
+  },
+  "VChipRefOverPoolOne": {
+   "valor": 3.04333468807153,
+   "tex": "3.0",
+   "pt": "3,0",
+   "status": "ok",
+   "fonte": [
+    "embarcados/paper/fontes/ws_float_16000.json",
+    "embarcados/results/manifests/bancada.json"
+   ],
+   "coluna": "arena da referência (estimativa) / RAM interna do pool (medida)",
+   "categoria": "estimativa",
+   "nota": "razão entre categoria 1 e categoria 4"
   }
  }
 }

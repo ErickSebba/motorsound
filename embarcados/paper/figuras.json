@@ -20,7 +20,18 @@
  "equivalencia_erro_etapas_en": {
   "pdf": "embarcados/figures/pdf/equivalencia_erro_etapas_en.pdf",
   "fontes": [
-   "embarcados/results/csv/equivalencia_resumo_por_build_20261024-091729.csv"
+   "embarcados/results/csv/equivalencia_resumo_por_build_20261024-101821.csv"
+  ]
+ },
+ "esp32_lat_ram_esp32_20261025-143026_en": {
+  "pdf": "embarcados/figures/pdf/esp32_lat_ram_esp32_20261025-143026_en.pdf",
+  "fontes": [
+   "embarcados/results/manifests/bancada.json",
+   "embarcados/results/csv/esp32_lat_esp32_20261025-143026.csv",
+   "embarcados/results/csv/esp32_lat_esp32_20261025-143026_meta.json",
+   "embarcados/results/csv/esp32_memoria_esp32_20261025-141018.csv",
+   "embarcados/paper/fontes/ws_float_16000.json",
+   "embarcados/paper/fontes/ws_float_48000.json"
   ]
  }
 }

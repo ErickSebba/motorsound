@@ -21,6 +21,7 @@ import inspect
 import json
 import re
 import subprocess
+from pathlib import Path
 
 import numpy as np
 import pandas as pd
@@ -59,6 +60,8 @@ class Registro:
     def txt(self, chave, valor, fonte, coluna, cat, nota=""):
         tex = None if valor is None else str(valor).replace("_", r"\_")
         self.add(chave, valor, tex, fonte, coluna, cat, nota)
+        if tex is not None:   # texto (versões, nomes): sem trocar ponto por vírgula no pt
+            self.n[chave]["pt"] = tex.replace(r"\slash{}", "/")
 
 
 # ------------------------------------------------------------------ 1. código da referência
@@ -357,6 +360,20 @@ def equivalencia(R):
 
 
 # ------------------------------------------------------------------ 6. medição no PC
+def _seq_pc_mesma_imagem():
+    """seq_pc_*.csv que rodou a MESMA imagem de fluxo que o chip (esp32_seq_*_meta.json);
+    sem fluxo no chip, o mais recente."""
+    fsq = C.mais_recente(C.RES / "csv", "esp32_seq_*.csv")
+    cands = [f for f in sorted((C.RES / "csv").glob("seq_pc_*.csv")) if not f.stem.endswith("_meta")]
+    if fsq is not None:
+        img = Path(C.ler_json(fsq.with_name(fsq.stem + "_meta.json"))["imagem"].replace("\\", "/")).name
+        m = [f for f in cands if Path(C.ler_json(f.with_name(f.stem + "_meta.json"))["imagem"]
+                                     .replace("\\", "/")).name == img]
+        if m:
+            return m[-1]
+    return cands[-1] if cands else None
+
+
 def pc(R):
     fj = C.mais_recente(C.RES / "metrics", "bench_pc_*.json")
     fc = C.mais_recente(C.RES / "csv", "bench_pc_*.csv")
@@ -392,7 +409,7 @@ def pc(R):
     R.txt("VPcOs", m["maquina"]["plataforma"].split("-")[0] + " " +
           m["maquina"]["plataforma"].split("-")[1], fj, "meta.maquina.plataforma", "pc")
     # fluxo contínuo no PC
-    fs = C.mais_recente(C.RES / "csv", "seq_pc_*.csv")
+    fs = _seq_pc_mesma_imagem()
     ms = C.ler_json(fs.with_name(fs.stem + "_meta.json"))
     S = pd.read_csv(fs)
     R.num("VPcSeqWindows", len(S), fs, "nº de linhas (janelas)", "pc", 0)
@@ -443,9 +460,9 @@ def estimativa(R):
 
 
 # ------------------------------------------------------------------ 8. build do firmware
-def _size(alvo):
-    f = C.ESPRESSIF / f"build_p11_{alvo}" / "size.txt"
-    if not f.exists():
+def _size(alvo, f=None):
+    f = f or (C.ESPRESSIF / f"build_p11_{alvo}" / "size.txt")
+    if f is None or not f.exists():
         return None, f
     t = f.read_text(encoding="utf-8", errors="replace")
     d = {}
@@ -491,55 +508,218 @@ def build(R):
               nota="razão entre estimativa analítica (cat. 1) e capacidade do build (cat. 3)")
         R.num(f"VBuild{na}WsRatioOne", R.n["VEstWsFloatOneMb"]["valor"] * 1e6 / tot, [f],
               f"estimativa ws float 1 s / {dram} total", "estimativa", 1)
+    # variante p11_c_lowmem, a que roda na placa (size.txt guardado em results/firmware/)
+    f = C.mais_recente(C.RES / "firmware", "size_esp32_lowmem_*.txt")
+    d, f = _size("esp32_lowmem", f) if f is not None else (None, C.RES / "firmware")
+    if d is None:
+        for k in ("BinKb", "BinPct", "FlashCodeKb", "FlashDataKb", "DramKb", "DramTotalKb",
+                  "IramKb", "IramTotalKb"):
+            R.num(f"VBuildLm{k}", None, f, "size_esp32_lowmem_*.txt ausente", "build")
+        return
+    R.num("VBuildLmBinKb", d["bin"] / 1024, f, "binary size (hex)/1024 (p11_c_lowmem)", "build", 0)
+    R.num("VBuildLmBinPct", 100 * d["bin"] / d["part"], f, "bin/partição app", "build", 0)
+    R.num("VBuildLmFlashCodeKb", int(d["Flash Code"][0]) / 1024, f, "Flash Code Used/1024",
+          "build", 0)
+    R.num("VBuildLmFlashDataKb", int(d["Flash Data"][0]) / 1024, f, "Flash Data Used/1024",
+          "build", 0)
+    R.num("VBuildLmDramKb", int(d["DRAM"][0]) / 1024, f, "DRAM Used/1024 (estático)", "build", 0)
+    R.num("VBuildLmDramTotalKb", int(d["DRAM"][-1]) / 1024, f, "DRAM Total/1024", "build", 0)
+    R.num("VBuildLmIramKb", int(d["IRAM"][0]) / 1024, f, "IRAM Used/1024 (estático)", "build", 0)
+    R.num("VBuildLmIramTotalKb", int(d["IRAM"][-1]) / 1024, f, "IRAM Total/1024", "build", 0)
 
 
 # ------------------------------------------------------------------ 9. medição no ESP32
+NAO_COUBE_TEX = r"\textit{did not fit}"
+NAO_COUBE_PT = "não coube"
+
+
+def _nao_coube(R, chave, fonte, coluna):
+    """Macro de grandeza que não existe porque a janela não coube no chip (texto, nunca número)."""
+    R.add(chave, None, NAO_COUBE_TEX, fonte, coluna, "esp32",
+          nota="a janela de 3 s do IDMT não coube na RAM interna desta placa (sem PSRAM)")
+    R.n[chave].update({"tex": NAO_COUBE_TEX, "pt": NAO_COUBE_PT, "status": "nao_coube"})
+
+
+ETAPAS_CHIP_CSV = (("prep", "Prep"), ("rastreio", "Track"), ("viterbi", "Vit"),
+                   ("sal_caminho", "Sal"), ("envelope", "Env"), ("features", "Feat"),
+                   ("cosseno", "Cos"))
+
+
 def esp32(R):
+    """Categoria 4 (medição no ESP32 físico): manifesto da bancada, memória, latência,
+    equivalência e fluxo contínuo, todos lidos dos CSV/JSON gravados pelo pil_esp32.py."""
     fb = C.RES / "manifests" / "bancada.json"
-    flat = C.mais_recente(C.RES / "metrics", "esp32_lat_*.json")
+    fmem = C.mais_recente(C.RES / "csv", "esp32_memoria_*.csv")
+    flat = C.mais_recente(C.RES / "csv", "esp32_lat_*.csv")
     feq = C.mais_recente(C.RES / "csv", "equivalencia_esp32_*_resumo.csv", excluir=("_meta",))
     fsq = C.mais_recente(C.RES / "csv", "esp32_seq_*.csv")
     b = C.ler_json(fb) if fb.exists() else None
     tem_lat = b is not None and flat is not None
+    # --- placa
     R.txt("VChipModel", b["chip_modelo"] if b else None, fb, "chip_modelo", "esp32")
+    rev = b["esp_chip_info"]["revisao"] if b else None
+    R.txt("VChipRev", f"v{rev // 100}.{rev % 100}" if b else None, fb,
+          "esp_chip_info.revisao (maior*100+menor)", "esp32")
     R.num("VChipCpuMhz", b["cpu_mhz"] if b else None, fb, "cpu_mhz", "esp32", 0)
+    R.num("VChipFlashMb", b["flash_mb"] if b else None, fb, "flash_mb", "esp32", 0)
     R.num("VChipPsramMb", b["psram_mb"] if b else None, fb, "psram_mb", "esp32", 0)
-    L = C.ler_json(flat)["resumo"] if tem_lat else {}
+    R.txt("VChipIdf", b["idf"] if b else None, fb, "idf", "esp32")
+    R.txt("VChipVariant", b["variante"] if b else None, fb, "variante", "esp32")
+    pool = (b["esp_chip_info"]["pool_8bit"] + b["esp_chip_info"]["pool_32bit"]) if b else None
+    R.num("VChipPoolB", pool, fb, "esp_chip_info.pool_8bit + pool_32bit", "esp32", 0)
+    R.num("VChipPoolKib", pool / 1024 if b else None, fb, "(pool_8bit+pool_32bit)/1024", "esp32", 0)
+    R.num("VChipPoolBlocks", len(b["esp_chip_info"]["pool"]) if b else None, fb,
+          "len(esp_chip_info.pool)", "esp32", 0)
+    R.num("VChipHeapBootB", b["esp_chip_info"]["heap_livre_interna"] if b else None, fb,
+          "esp_chip_info.heap_livre_interna (depois de reservar o pool)", "esp32", 0)
+    # --- memória por base (o que coube)
+    M = pd.read_csv(fmem) if fmem is not None else None
     for base, nb in (("idmt", "Idmt"), ("a2212", "Bldc")):
-        x = L.get(base)
-        for est, ne in (("mediana", "Med"), ("p95", "Pninetyfive"), ("max", "Max")):
-            R.num(f"VChipLat{nb}{ne}", x["total_ms"][est] if x else None, flat or fb,
-                  f"resumo.{base}.total_ms.{est}", "esp32", 1)
-        R.num(f"VChipLat{nb}N", x["total_ms"]["n"] if x else None, flat or fb,
-              f"resumo.{base}.total_ms.n", "esp32", 0)
-        R.num(f"VChipRtf{nb}", x["fator_tempo_real_mediana"] if x else None, flat or fb,
-              "fator_tempo_real_mediana", "esp32", 3)
-        R.num(f"VChipRtfMax{nb}", x["fator_tempo_real_max"] if x else None, flat or fb,
-              "fator_tempo_real_max", "esp32", 3)
-        R.num(f"VChipHeapInt{nb}Kb", x["heap_min_livre_interna"] / 1024 if x else None, flat or fb,
-              "heap_min_livre_interna/1024", "esp32", 0)
-        R.num(f"VChipStack{nb}", x["pilha_folga_bytes_min"] if x else None, flat or fb,
-              "pilha_folga_bytes_min", "esp32", 0)
-        R.num(f"VChipWsPsram{nb}", x["ws_na_psram"] if x else None, flat or fb, "ws_na_psram",
+        r = M[M.base == base].iloc[0] if M is not None and (M.base == base).any() else None
+        R.num(f"VChipFits{nb}", int(r.coube) if r is not None else None, fmem or fb,
+              f"coube[{base}] (1=sim)", "esp32", 0)
+    rb = M[M.base == "a2212"].iloc[0] if M is not None else None
+    R.num("VChipWsBldcB", int(rb.ws_bytes) if rb is not None else None, fmem or fb,
+          "ws_bytes[a2212] (pico do pool)", "esp32", 0)
+    R.num("VChipWsBldcKib", rb.ws_bytes / 1024 if rb is not None else None, fmem or fb,
+          "ws_bytes[a2212]/1024", "esp32", 0)
+    R.num("VChipWsPoolPct", 100 * rb.ws_bytes / pool if rb is not None and pool else None,
+          [fmem, fb], "100·ws_bytes[a2212]/(pool_8bit+pool_32bit)", "esp32", 0)
+    R.num("VChipHeapIntBldcB", int(rb.heap_min_livre_interna) if rb is not None else None,
+          fmem or fb, "heap_min_livre_interna[a2212]", "esp32", 0)
+    R.num("VChipHeapIntBldcKib", rb.heap_min_livre_interna / 1024 if rb is not None else None,
+          fmem or fb, "heap_min_livre_interna[a2212]/1024", "esp32", 1)
+    R.num("VChipWsPsramBldc", int(rb.ws_na_psram) if rb is not None else None, fmem or fb,
+          "ws_na_psram[a2212]", "esp32", 0)
+    ri = M[M.base == "idmt"].iloc[0] if M is not None else None
+    R.num("VChipIdmtFreeAtFailKib", ri.maior_bloco_livre_interna / 1024 if ri is not None else None,
+          fmem or fb, "livre interna no momento da recusa (idmt)/1024", "esp32", 0)
+    R.num("VChipIdmtSamples", int(ri.n_amostras) if ri is not None else None, fmem or fb,
+          "n_amostras[idmt]", "esp32", 0)
+    # --- latência (A2212, 1 s). Aquecimento excluído.
+    L = pd.read_csv(flat) if tem_lat else None
+    if L is not None:
+        L = L[(L.base == "a2212") & (~L.aquecimento.astype(bool))]
+        ml = C.ler_json(flat.with_name(flat.stem + "_meta.json"))
+    t = L.total_ms if L is not None else None
+    col = "total_ms (aquecimento excluído)"
+    R.num("VChipLatBldcMed", float(t.median()) if t is not None else None, flat or fb,
+          f"mediana {col}", "esp32", 1)
+    R.num("VChipLatBldcPninetyfive", float(t.quantile(0.95)) if t is not None else None,
+          flat or fb, f"p95 {col}", "esp32", 1)
+    R.num("VChipLatBldcMax", float(t.max()) if t is not None else None, flat or fb, f"máx {col}",
+          "esp32", 1)
+    R.num("VChipLatBldcMin", float(t.min()) if t is not None else None, flat or fb, f"mín {col}",
+          "esp32", 1)
+    R.num("VChipLatBldcN", len(t) if t is not None else None, flat or fb, "nº de janelas medidas",
+          "esp32", 0)
+    R.num("VChipLatWarmup", ml["argv"]["aquecimento"] if L is not None else None,
+          flat.with_name(flat.stem + "_meta.json") if flat else fb, "argv.aquecimento", "esp32", 0)
+    R.num("VChipLatDistinct", int(L.n_janelas_distintas.iloc[0]) if L is not None else None,
+          flat or fb, "n_janelas_distintas", "esp32", 0)
+    from motorsound.config import AVAL_A2212
+    seg_s = AVAL_A2212.seg_s
+    R.num("VChipRtfBldc", float(t.median()) / (1000 * seg_s) if t is not None else None,
+          [flat, RAIZ_PY / "motorsound" / "config.py"],
+          "mediana total_ms / (1000·AVAL_A2212.seg_s)", "esp32", 2,
+          nota="fator > 1: mais lento que o tempo real")
+    R.num("VChipRtfMaxBldc", float(t.max()) / (1000 * seg_s) if t is not None else None,
+          [flat, RAIZ_PY / "motorsound" / "config.py"], "máx total_ms / (1000·seg_s)", "esp32", 2)
+    R.num("VChipStackBldc", int(L.pilha_folga_bytes.min()) if L is not None else None, flat or fb,
+          "min pilha_folga_bytes", "esp32", 0)
+    for et, ne in ETAPAS_CHIP_CSV:
+        x = L[f"{et}_ms"] if L is not None else None
+        casas = 1 if ne in ("Track", "Env", "Vit", "Feat", "Prep") else 3
+        R.num(f"VChipBldc{ne}Med", float(x.median()) if x is not None else None, flat or fb,
+              f"mediana {et}_ms", "esp32", casas)
+        R.num(f"VChipBldc{ne}Pct", 100 * float(x.median()) / float(t.median())
+              if x is not None else None, flat or fb, f"100·mediana {et}_ms / mediana total_ms",
               "esp32", 0)
-        R.num(f"VChipWs{nb}Mb", x["ws_bytes"] / 1e6 if x else None, flat or fb, "ws_bytes/1e6",
-              "esp32", 2)
+    # IDMT (3 s): não coube nesta placa -> texto, nunca número
+    for k in ("VChipLatIdmtMed", "VChipLatIdmtPninetyfive", "VChipLatIdmtMax", "VChipRtfIdmt",
+              "VChipWsIdmtKib", "VChipHeapIntIdmtB"):
+        if M is not None and int(ri.coube) == 0:
+            _nao_coube(R, k, fmem, "coube[idmt] = 0")
+        else:
+            R.num(k, None, fmem or fb, "não medido", "esp32", 0)
+    # --- equivalência no chip (só saídas finais; etapas intermediárias não voltam pela serial)
     if feq is not None and b is not None:
         E = pd.read_csv(feq)
-        R.num("VChipEqStagesPass", int((E.veredito == "PASS").sum()), feq, "veredito==PASS", "esp32", 0)
-        R.num("VChipEqStages", len(E), feq, "nº de etapas comparadas no chip", "esp32", 0)
-        d = E[E.etapa == "decisao"]
-        R.num("VChipEqDecisionPass", int(d["pass"].iloc[0] + d.pass_empate.iloc[0]) if len(d) else None,
-              feq, "pass+pass_empate[decisao]", "esp32", 0)
+        Ec = E[E.tipo_item == "caso"]
+        comp = Ec[(Ec.n_pass + Ec.n_pass_empate + Ec.n_fail) > 0]
+        R.num("VChipEqStages", len(comp), feq, "etapas de janela comparadas (n_pass+n_fail>0)",
+              "esp32", 0)
+        R.num("VChipEqStagesPass", int(((comp.n_fail == 0) & (comp.n_pass_empate == 0)
+                                        & (comp.n_fail_jusante == 0)).sum()), feq,
+              "etapas comparadas sem FAIL/PASS_EMPATE", "esp32", 0)
+        R.num("VChipEqStagesAbsent", int((Ec.n_ausente == Ec.n_itens).sum()), feq,
+              "etapas de janela que o firmware não devolve (todas AUSENTE)", "esp32", 0)
+        R.num("VChipEqFail", int((E.n_fail.fillna(0) + E.n_fail_jusante.fillna(0)).sum()), feq,
+              "soma n_fail + n_fail_jusante", "esp32", 0)
+        d = Ec[Ec.etapa == "decisao"].iloc[0]
+        R.num("VChipEqCases", int(d.n_pass + d.n_pass_empate + d.n_fail), feq,
+              "janelas comparadas em decisao", "esp32", 0)
+        R.num("VChipEqDecisionPass", int(d.n_pass + d.n_pass_empate), feq,
+              "n_pass+n_pass_empate[decisao]", "esp32", 0)
+        R.num("VChipEqMaxRatio", float(comp.razao_tol_max.max()), feq,
+              "máx razao_tol_max nas etapas comparadas", "esp32", 2)
+        fd = feq.with_name(feq.name.replace("_resumo", ""))
+        Dd = pd.read_csv(fd, usecols=["tipo_item", "id", "tipo_caso", "etapa", "status"])
+        q = Dd[(Dd.tipo_item == "caso") & (Dd.etapa == "decisao") & (Dd.status != "AUSENTE")]
+        R.num("VChipEqCasesReal", int(q[q.tipo_caso != "borda"].id.nunique()), fd,
+              "janelas reais (limpo+ruidoso) comparadas", "esp32", 0)
+        R.num("VChipEqCasesEdge", int(q[q.tipo_caso == "borda"].id.nunique()), fd,
+              "casos de borda comparados", "esp32", 0)
     else:
-        for k in ("VChipEqStagesPass", "VChipEqStages", "VChipEqDecisionPass"):
+        for k in ("VChipEqStages", "VChipEqStagesPass", "VChipEqStagesAbsent", "VChipEqFail",
+                  "VChipEqCases", "VChipEqDecisionPass", "VChipEqMaxRatio", "VChipEqCasesReal",
+                  "VChipEqCasesEdge"):
             R.num(k, None, fb, "equivalência no chip não rodou", "esp32", 0)
+    # --- mesma variante no PC (float), para separar porte × chip
+    flm = C.mais_recente(C.RES / "csv", "equivalencia_float-lowmem_*_resumo.csv",
+                         excluir=("_meta",))
+    E = pd.read_csv(flm)
+    Ec = E[E.tipo_item == "caso"]
+    comp = Ec[(Ec.n_pass + Ec.n_pass_empate + Ec.n_fail) > 0]
+    R.num("VEqLmStages", len(comp), flm, "etapas de janela comparadas (float-lowmem, PC)",
+          "equivalencia", 0)
+    R.num("VEqLmStagesPass", int(((comp.n_fail == 0) & (comp.n_pass_empate == 0)).sum()), flm,
+          "etapas sem FAIL/PASS_EMPATE (float-lowmem, PC)", "equivalencia", 0)
+    d = Ec[Ec.etapa == "decisao"].iloc[0]
+    R.num("VEqLmCases", int(d.n_pass + d.n_pass_empate + d.n_fail), flm,
+          "janelas comparadas (float-lowmem, PC)", "equivalencia", 0)
+    R.num("VEqLmDecisionPass", int(d.n_pass + d.n_pass_empate), flm, "pass[decisao] (float-lowmem)",
+          "equivalencia", 0)
+    R.num("VEqLmMaxRatio", float(comp.razao_tol_max.max()), flm,
+          "máx razao_tol_max (float-lowmem, PC)", "equivalencia", 2)
+    # --- fluxo contínuo no chip
     if fsq is not None and b is not None:
-        ms = C.ler_json(fsq.with_name(fsq.stem + "_meta.json"))
-        R.num("VChipSeqDelay", max((d["atraso_janelas"] or 0) for d in ms["deteccao"]),
-              fsq.with_name(fsq.stem + "_meta.json"), "max atraso_janelas", "esp32", 0)
+        fsm = fsq.with_name(fsq.stem + "_meta.json")
+        ms = C.ler_json(fsm)
+        S = pd.read_csv(fsq)
+        R.num("VChipSeqWindows", len(S), fsq, "nº de janelas do fluxo", "esp32", 0)
+        R.num("VChipSeqSwitches", len(ms["deteccao"]), fsm, "len(deteccao)", "esp32", 0)
+        R.num("VChipSeqDelay", max((d["atraso_janelas"] or 0) for d in ms["deteccao"]), fsm,
+              "max atraso_janelas", "esp32", 0)
+        R.num("VChipSeqCp", ms["cp"], fsm, "cp", "esp32", 0)
+        fpc = _seq_pc_mesma_imagem()
+        P = pd.read_csv(fpc) if fpc is not None else None
+        igual = int((P.online_python.values == S.decisao_online.values).sum()) if P is not None \
+            else None
+        R.num("VChipSeqSame", igual, [fsq, fpc] if fpc else fsq,
+              "nº de janelas com decisao_online (chip) == online_python (seq_pc)", "esp32", 0)
+        R.num("VChipSeqHmmUs", float(S.us_hmm.median()), fsq, "mediana us_hmm", "esp32", 0)
     else:
-        R.num("VChipSeqDelay", None, fb, "fluxo contínuo no chip não rodou", "esp32", 0)
+        for k in ("VChipSeqWindows", "VChipSeqSwitches", "VChipSeqDelay", "VChipSeqCp",
+                  "VChipSeqSame", "VChipSeqHmmUs"):
+            R.num(k, None, fb, "fluxo contínuo no chip não rodou", "esp32", 0)
+    # --- razão de RAM numa unidade só (KiB): arena da referência (estimativa) / pool medido
+    if pool:
+        for nn in ("Three", "One"):
+            R.num(f"VChipRefOverPool{nn}", R.n[f"VEstWsFloat{nn}Kib"]["valor"] * 1024 / pool,
+                  [C.PAPER / "fontes" / f"ws_float_{48000 if nn == 'Three' else 16000}.json", fb],
+                  "arena da referência (estimativa) / RAM interna do pool (medida)", "estimativa", 1,
+                  nota="razão entre categoria 1 e categoria 4")
     return tem_lat
 
 

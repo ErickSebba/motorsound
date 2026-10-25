@@ -9,5 +9,5 @@
  "faseA_rastreio": 410280,
  "faseB_envelope": 1200960,
  "comando": "embarcados/build-float/p11_host.exe ws 48000",
- "sha256_executavel": "2f2fc44af529c5fdcb309ba2f81af189577a306932d34ec311b0798937446651"
+ "sha256_executavel": "77711884d1dac6d6309125801fcb0b59a8c049665d43d3801a5d377addfb65be"
 }

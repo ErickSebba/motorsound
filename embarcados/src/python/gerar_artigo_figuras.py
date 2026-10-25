@@ -9,7 +9,8 @@ Agente E (Etapa 7). Rodar DEPOIS de gerar_artigo_numeros.py (lê paper/numeros.j
 - diag_confusao_p11_en_<ts>, diag_espectro_en_<ts>   idem (o espectro relê janelas do
                        train/ do IDMT, nunca o test/)
 - equivalencia_erro_etapas_en   razão erro/tolerância por etapa (resumo por build)
-- esp32_latencia_<alvo>_<ts>    SÓ se results/metrics/esp32_lat_*.json e bancada.json existirem;
+- esp32_lat_ram_<alvo>_<ts>_en  SÓ se results/csv/esp32_lat_*.csv, esp32_memoria_*.csv e bancada.json
+                       existirem (latência por etapa e RAM do pool, medidas no ESP32);
                        caso contrário nenhuma figura é criada (sem figura falsa).
 
 Escreve também paper/figuras.tex com uma macro de caminho por figura (\\FigArq, …) e o
@@ -92,7 +93,7 @@ def fig_arquitetura(n):
     nh3 = int(n["VParSr"]["valor"] * n["VParSegIdmt"]["valor"])
     ax.add_patch(FancyBboxPatch((1, 1), 98, 92, boxstyle="round,pad=0.3,rounding_size=2",
                                 fc="none", ec=laranja, lw=0.9, ls="--"))
-    ax.text(50, 91.2, "runs on the ESP32: portable C, float32, no malloc (same source as PC build)",
+    ax.text(50, 91.2, "runs on the ESP32: portable C, float32 (same source as the PC build)",
             fontsize=5.0, color=laranja, ha="center", va="top", style="italic")
     # entrada
     caixa(4, 100, 61, 9, f"Audio {v('VParSrKhz')} kHz, window {v('VParSegIdmt')} s (IDMT) / "
@@ -124,11 +125,13 @@ def fig_arquitetura(n):
     seta(65, 82.75, 70, 66)
     seta(70, 60, 65, 38.75)
     # anotações de memória e FFT
-    caixa(70, 33, 27, 16, f"Mixed-radix FFT\n(portable C): STFT,\nHilbert of N = {nh1}\n"
-          f"or {nh3}, Welch", cor=laranja, fc="#fdf0e9", fs=5.1)
-    caixa(70, 5, 27, 23, f"PSRAM arena\n(analytical estimate:\n{v('VEstWsFloatThreeMb')} MB @ "
-          f"{v('VParSegIdmt')} s,\n{v('VEstWsFloatOneMb')} MB @ {v('VParSegBldc')} s)\n"
-          "saliency, Viterbi\nback-pointers, Hilbert", cor=laranja, fc="#fdf0e9", fs=5.1)
+    caixa(70, 33, 27, 16, f"Portable FFTs:\nSTFT, Welch,\nHilbert of N = {nh1}\n"
+          f"or {nh3}", cor=laranja, fc="#fdf0e9", fs=5.1)
+    var = n["VChipVariant"]["valor"] or "low-memory variant"
+    caixa(70, 5, 27, 23, f"Working memory\nreference (estimate):\n{v('VEstWsFloatThreeMb')} MB @ "
+          f"{v('VParSegIdmt')} s,\n{v('VEstWsFloatOneMb')} MB @ {v('VParSegBldc')} s\n"
+          f"ESP32 without PSRAM\n({var}, measured):\n{v('VChipWsBldcKib')} KiB @ {v('VParSegBldc')} s,\n"
+          f"{v('VParSegIdmt')} s does not fit", cor=laranja, fc="#fdf0e9", fs=4.6)
     return _salvar(fig, "arquitetura", [C.PAPER / "numeros.json"])
 
 
@@ -205,7 +208,7 @@ def fig_espectro_en():
     from pipelines import p11_decifrae_harmsum as p11
     pre = p11.PRE
     segs = runner.segmentos_de("idmt", AVAL_IDMT)
-    fig, axs = plt.subplots(2, 1, figsize=(3.5, 2.9), gridspec_kw={"height_ratios": [1.5, 1]})
+    fig, axs = plt.subplots(1, 2, figsize=(3.5, 2.9), gridspec_kw={"height_ratios": [1.5, 1]})
     fontes = []
     for classe, cor in (("good", "#2a78d6"), ("broken", "#eb6834")):
         ss_ = [s for s in segs if s.classe == classe]
@@ -277,43 +280,71 @@ def fig_equivalencia_en():
 
 
 # ------------------------------------------------------------------ ESP32 (condicional)
-ETAPAS_CHIP = [("prep", "preparar", "RMS norm."), ("rastreio", "rastrear_quadros", "STFT + harm. sum"),
-               ("viterbi", "viterbi", "Viterbi"), ("envelope", "envelope_mod", "envelope"),
-               ("features", "features", "features"), ("cosseno", "cosseno", "cosine")]
+ETAPAS_CHIP = [("rastreio", "STFT + harm. sum"), ("envelope", "envelope"),
+               ("viterbi", "Viterbi"), ("features", "features"), ("prep", "RMS norm."),
+               ("cosseno", "cosine"), ("sal_caminho", "path saliency")]
 
 
-def fig_latencia_esp32(resumo_chip, resumo_pc, nome, fontes):
-    """Barras empilhadas por etapa (mediana), ESP32 medido × C no PC medido, por base."""
-    fig, axs = plt.subplots(1, 2, figsize=(3.5, 1.7))
-    paleta = ["#9c9a94", "#2a78d6", "#eb6834", "#1baf7a", "#eda100", "#7a52c7"]
-    for ax, (base, tit) in zip(axs, (("idmt", "IDMT, 3 s"), ("a2212", "A2212, 1 s"))):
-        linhas = [("ESP32", resumo_chip[base], 0), ("PC", resumo_pc[f"c_float_pc/{base}"], 1)]
-        for rot, r, i in linhas:
-            acc = 0.0
-            for k, (ec, ep, lab) in enumerate(ETAPAS_CHIP):
-                chave = f"{ec}_ms" if rot == "ESP32" else f"{ep}_ms"
-                val = r[chave]["mediana"]
-                ax.barh(i, val, left=acc, color=paleta[k], height=0.6,
-                        label=lab if (base == "idmt" and rot == "ESP32") else None)
-                acc += val
-        ax.set_yticks([0, 1], ["ESP32", "PC"])
-        ax.set_xscale("log")
-        ax.set_xlabel(f"median ms ({tit})", fontsize=7)
-    fig.legend(ncol=3, frameon=False, fontsize=6, loc="lower center", bbox_to_anchor=(0.5, 1.0))
-    fig.tight_layout()
+def fig_latencia_esp32(L, b, M, n, nome, fontes):
+    """(a) mediana por etapa medida no ESP32 (A2212, 1 s, sem aquecimento), escala linear;
+    (b) RAM interna: pool disponível e pico usado (medidos) × arena da referência (estimativa)."""
+    fig, (ax, bx) = plt.subplots(1, 2, figsize=(3.5, 1.3),
+                                 gridspec_kw={"width_ratios": [1.0, 1.0], "wspace": 1.05})
+    azul, cinza, laranja = "#2a78d6", "#9c9a94", "#eb6834"
+    med = [float(L[f"{e}_ms"].median()) for e, _ in ETAPAS_CHIP]
+    y = np.arange(len(ETAPAS_CHIP))[::-1]
+    ax.barh(y, med, color=azul, height=0.62, zorder=2)
+    tot = float(L.total_ms.median())
+    for yi, m in zip(y, med):
+        lab = f"{m:,.1f} ms" if m >= 1 else f"{m:.3f} ms"
+        ax.text(m + tot * 0.02, yi, lab, va="center", fontsize=4.8, color="#0b0b0b")
+    ax.set_yticks(y, [r for _, r in ETAPAS_CHIP], fontsize=5.2)
+    ax.set_xlim(0, tot * 1.45)
+    ax.tick_params(axis="x", labelsize=5)
+    ax.set_xlabel(f"median ms per {n['VParSegBldc']['tex']}-s window
+(total {tot:,.1f} ms)",
+                  fontsize=5.5)
+    ax.grid(axis="x", color="#e6e5e1", lw=0.4, zorder=0)
+    ax.text(0.0, 1.04, "(a)", transform=ax.transAxes, fontsize=7, weight="bold", ha="right")
+    # (b) RAM
+    pool = (b["esp_chip_info"]["pool_8bit"] + b["esp_chip_info"]["pool_32bit"]) / 1024
+    usado = float(M[M.base == "a2212"].ws_bytes.iloc[0]) / 1024
+    ref1 = n["VEstWsFloatOneKib"]["valor"]
+    ref3 = n["VEstWsFloatThreeKib"]["valor"]
+    seg1, seg3 = n["VParSegBldc"]["tex"], n["VParSegIdmt"]["tex"]
+    barras = [(f"pool RAM (meas.)", pool, cinza, ""),
+              (f"lowmem peak {seg1} s (meas.)", usado, azul, ""),
+              (f"ref. arena {seg1} s (est.)", ref1, laranja, "////"),
+              (f"ref. arena {seg3} s (est.)", ref3, laranja, "////")]
+    yb = np.arange(len(barras))[::-1]
+    for yi, (rot, v, cor, h) in zip(yb, barras):
+        bx.barh(yi, v, color=cor if not h else "white", edgecolor=cor, hatch=h, height=0.62,
+                lw=0.6, zorder=2)
+        bx.text(v + ref3 * 0.02, yi, f"{v:,.0f}", va="center", fontsize=4.8)
+    bx.axvline(pool, color="#0b0b0b", lw=0.6, ls="--", zorder=3)
+    bx.set_yticks(yb, [r for r, *_ in barras], fontsize=5.2)
+    bx.set_xlim(0, ref3 * 1.3)
+    bx.tick_params(axis="x", labelsize=5)
+    bx.set_xlabel("KiB (no PSRAM)", fontsize=5.5)
+    bx.grid(axis="x", color="#e6e5e1", lw=0.4, zorder=0)
+    bx.text(0.0, 1.04, "(b)", transform=bx.transAxes, fontsize=7, weight="bold", ha="right")
     return _salvar(fig, nome, fontes)
 
 
-def fig_esp32_se_houver():
+def fig_esp32_se_houver(n):
     fb = C.RES / "manifests" / "bancada.json"
-    flat = C.mais_recente(C.RES / "metrics", "esp32_lat_*.json")
-    fpc = C.mais_recente(C.RES / "metrics", "bench_pc_*.json")
-    if not (fb.exists() and flat is not None):
-        print("ESP32: sem bancada.json/esp32_lat_*.json -> nenhuma figura de latência criada")
+    flat = C.mais_recente(C.RES / "csv", "esp32_lat_*.csv")
+    fmem = C.mais_recente(C.RES / "csv", "esp32_memoria_*.csv")
+    if not (fb.exists() and flat is not None and fmem is not None):
+        print("ESP32: sem bancada.json/esp32_lat_*.csv -> nenhuma figura de latência criada")
         return None
-    chip = C.ler_json(flat)["resumo"]
-    pc = C.ler_json(fpc)["resumo"]
-    return fig_latencia_esp32(chip, pc, flat.stem, [fb, flat, fpc])
+    L = pd.read_csv(flat)
+    L = L[(L.base == "a2212") & (~L.aquecimento.astype(bool))]
+    b = C.ler_json(fb)
+    M = pd.read_csv(fmem)
+    fws = [C.PAPER / "fontes" / "ws_float_16000.json", C.PAPER / "fontes" / "ws_float_48000.json"]
+    return fig_latencia_esp32(L, b, M, n, "esp32_lat_ram_" + flat.stem.split("esp32_lat_")[1] + "_en",
+                              [fb, flat, flat.with_name(flat.stem + "_meta.json"), fmem] + fws)
 
 
 def escrever_figuras_tex(nomes, chip):
@@ -342,7 +373,7 @@ def main(argv=None):
     else:
         fdiag, ts = _diag_fontes()
         nomes["FigSpec"] = f"diag_espectro_en_{ts}"
-    chip = fig_esp32_se_houver()
+    chip = fig_esp32_se_houver(n)
     if chip:
         nomes["FigEspLat"] = chip
     escrever_figuras_tex(nomes, bool(chip))

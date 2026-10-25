@@ -9,7 +9,7 @@ referência). Texto descritivo (nomes de protocolo, o que cada um permite conclu
 Saídas em tables/latex/:
   bases_protocolos.tex      bases e o que cada protocolo permite concluir
   parametros_features.tex   parâmetros da p11 (lidos do código) e as 13 features
-  recursos.tex              recursos por categoria: estimativa | PC | build | ESP32 (pending)
+  recursos.tex              recursos por categoria: estimativa | PC | build | ESP32 (p11_c_lowmem)
   desempenho_compacto.tex   acurácia balanceada, 4 métodos × 6 protocolos (versão de 1 coluna)
   equivalencia_compacta.tex veredito por grupo de etapas (versão de 1 coluna)
 `desempenho.tex` e `equivalencia.tex` NÃO são gerados aqui (diagnostico_saidas.py e
@@ -115,36 +115,44 @@ def recursos(n):
     t = lambda k: T(n, k)  # noqa: E731
     na = "--"
     W = f"{t('VParSegIdmt')}\\,s / {t('VParSegBldc')}\\,s"
+    ref, lm = r"\texttt{p11\_c\_ref}", r"\texttt{" + t("VChipVariant") + "}"
     rows = [
+        ("Variant", f"{ref} arena", f"{ref}", f"{ref}; {lm}", f"{lm}"),
         (f"Latency, C float32, median [p95] (ms), {W}", na,
          f"{t('VPcCIdmtMed')} [{t('VPcCIdmtPninetyfive')}] / {t('VPcCBldcMed')} [{t('VPcCBldcPninetyfive')}]",
-         na, f"{t('VChipLatIdmtMed')} / {t('VChipLatBldcMed')}"),
+         na, f"{t('VChipLatIdmtMed')} / {t('VChipLatBldcMed')} [{t('VChipLatBldcPninetyfive')}]"),
         (f"Latency, Python reference, median (ms), {W}", na,
          f"{t('VPcPyIdmtMed')} / {t('VPcPyBldcMed')}", na, na),
-        (f"Real-time factor (C), {W}", na, f"{t('VPcCIdmtRtf')} / {t('VPcCBldcRtf')}", na,
+        (f"Real-time factor (C, median), {W}", na, f"{t('VPcCIdmtRtf')} / {t('VPcCBldcRtf')}", na,
          f"{t('VChipRtfIdmt')} / {t('VChipRtfBldc')}"),
-        (f"Working memory, float32 (MB), {W}",
-         f"{t('VEstWsFloatThreeMb')} / {t('VEstWsFloatOneMb')}", na, na,
-         f"{t('VChipWsIdmtMb')} / {t('VChipWsBldcMb')}"),
-        ("\\quad without harmonic table (MB)",
-         f"{t('VEstWsFloatThreeNoTabMb')} / {t('VEstWsFloatOneNoTabMb')}", na, na, na),
-        ("Min.\\ free internal heap (KiB)", na, na, na, f"{t('VChipHeapIntIdmtKb')}"),
-        ("Stack headroom (B)", na, na, na, f"{t('VChipStackIdmt')}"),
-        ("App binary (KiB), ESP32 / -S3", na, na, f"{t('VBuildEspBinKb')} / {t('VBuildEspsBinKb')}", na),
-        ("Static internal RAM used / region (KiB), ESP32 / -S3", na, na,
-         f"{t('VBuildEspDramKb')}/{t('VBuildEspDramTotalKb')} / {t('VBuildEspsDramKb')}/{t('VBuildEspsDramTotalKb')}",
+        (f"Share of STFT + harmonic sum (\\%), {t('VParSegBldc')}\\,s", na,
+         f"{t('VPcCBldcTrackPct')}", na, f"{t('VChipBldcTrackPct')}"),
+        (f"Working memory (KiB), {W}", f"{t('VEstWsFloatThreeKib')} / {t('VEstWsFloatOneKib')}",
+         na, na, f"{t('VChipWsIdmtKib')} / {t('VChipWsBldcKib')} (pool peak)"),
+        ("Internal RAM handed to the pool (KiB)", na, na, na, f"{t('VChipPoolKib')}"),
+        (f"Min.\\ free internal heap (KiB), {t('VParSegBldc')}\\,s", na, na, na,
+         f"{t('VChipHeapIntBldcKib')}"),
+        (f"Stack headroom (B), {t('VParSegBldc')}\\,s", na, na, na, f"{t('VChipStackBldc')}"),
+        (f"App binary (KiB): ESP32, -S3 ({ref}); ESP32 ({lm})", na, na,
+         f"{t('VBuildEspBinKb')}, {t('VBuildEspsBinKb')}; {t('VBuildLmBinKb')}", na),
+        (f"Static DRAM, IRAM used / region (KiB), ESP32, {lm}", na, na,
+         f"{t('VBuildLmDramKb')}/{t('VBuildLmDramTotalKb')}, {t('VBuildLmIramKb')}/{t('VBuildLmIramTotalKb')}",
          na),
     ]
     L = [CAB, r"\begin{table*}[t]", r"\centering", r"\scriptsize", r"\setlength{\tabcolsep}{4pt}",
          (r"\caption{Resources, separated by evidence category. (1) analytical estimate "
-          r"(\texttt{p11\_host ws}, same layout function as the arena); (2) measured on the PC "
-          f"({t('VPcOs')}, {t('VPcCompiler')}; {t('VPcNIdmt')} measurements per dataset cycling "
-          f"over {t('VPcDistinctIdmt')} distinct windows after {t('VPcWarmup')} warm-up; the C "
-          r"executable runs as a new process per window and its time excludes the workspace "
-          r"initialisation, which the Python timing cannot exclude); (3) firmware build, "
-          r"\texttt{idf.py size} (ESP-IDF "
-          f"{t('VBuildIdf')}), static only; (4) measured on the ESP32. Only column (4) is a "
-          r"measurement on the microcontroller.}"),
+          r"(\texttt{p11\_host ws}, same layout function as the arena of the reference variant); "
+          r"(2) measured on the PC "
+          f"({t('VPcOs')}, {t('VPcCompiler')}; {t('VPcNIdmt')} timings per dataset cycling "
+          f"over {t('VPcDistinctIdmt')} distinct windows after {t('VPcWarmup')} warm-up runs; the C "
+          r"executable runs as a new process per window, so warm-up does not warm it, and its time "
+          r"excludes the workspace initialisation, which the Python timing cannot exclude); "
+          r"(3) firmware build, \texttt{idf.py size} (ESP-IDF "
+          f"{t('VBuildIdf')}), static only; (4) measured on the {t('VChipModel')} "
+          f"({t('VChipCpuMhz')}\\,MHz, {t('VChipPsramMb')}\\,MB PSRAM; {t('VChipLatBldcN')} timed "
+          f"windows cycling over {t('VChipLatDistinct')} distinct ones after {t('VChipLatWarmup')} "
+          r"warm-up runs). Only column (4) is a measurement on the microcontroller, and it uses "
+          f"the named low-memory variant {lm}; the {t('VParSegIdmt')}-s IDMT window did not fit.}}"),
          r"\label{tab:resources}", r"\begin{tabular}{@{}lllll@{}}", r"\toprule",
          r"Quantity & (1) Estimate & (2) PC & (3) Build & (4) ESP32 \\", r"\midrule"]
     for r in rows:

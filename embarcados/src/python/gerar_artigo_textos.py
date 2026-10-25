@@ -67,9 +67,16 @@ verificação), e as decisões que mudam inteiros (grade, medianas, arredondamen
 harmônicas) são feitas em double nos dois builds, reproduzindo o arredondamento meio-para-par e o
 desempate pelo primeiro índice da referência. Toda mudança de aritmética é uma variante nomeada.
 A avaliada aqui, `p11_c_sosd`, mantém em double o estado do filtro do envelope dentro do build
-float32, como o scipy faz; ela é mais precisa, não uma aproximação. Existe no firmware a opção
-`p11_c_espdsp` (FFTs de potência de dois pela ESP-DSP), que nunca foi comparada com a referência e
-não é usada.
+float32, como o scipy faz; ela é mais precisa, não uma aproximação. A placa disponível não tem
+PSRAM, e para ela existe a variante nomeada `{VChipVariant}`: as mesmas funções do núcleo, mas a
+memória vem de um pool de {VChipPoolBlocks} blocos de RAM interna (DRAM e IRAM, esta só para
+vetores de float lidos por palavra inteira, como as tabelas de giro da FFT), alocados por fase com
+um plano encontrado por busca com retrocesso; a tabela de interpolação harmônica sai e as posições
+dos harmônicos são recalculadas em double a cada quadro; o Hilbert é feito por uma FFT de quatro
+passos, que é a mesma DFT em outra ordem de operações e por isso muda o erro numérico. Ela é
+comparada com a referência pelas mesmas tolerâncias do float32. Existe no firmware a opção
+`p11_c_espdsp` (FFTs de potência de dois pela ESP-DSP), que nunca foi comparada com a referência
+nem medida no chip e por isso fica fora do artigo.
 
 ## Bases, protocolos e métricas
 
@@ -128,17 +135,22 @@ tamanho da arena devolvido pela função de layout do C (`p11_host ws <n>`). A m
 roda num processo novo por janela (o aquecimento não aquece o C) e o tempo é tomado dentro dele, em
 torno das chamadas do núcleo, sem a inicialização do workspace; a referência Python é cronometrada
 nas mesmas janelas e não tem como excluir a própria inicialização. O build do firmware (`VBuild…`) é o `idf.py size` para ESP32 e ESP32-S3 (ESP-IDF
-{VBuildIdf}, GCC {VBuildGcc}), só estático. A medição no ESP32 (`VChip…`) manda as janelas pela
-serial e mede com o temporizador do chip só em torno do processamento, junto com as marcas de heap
-e de pilha. Só essa última categoria pode ser chamada de "medido no ESP32", e ela ainda está
-pendente. Energia não é medida e não é estimada por datasheet.
+{VBuildIdf}, GCC {VBuildGcc}), só estático; para a variante `{VChipVariant}` o build é o do
+ESP32. A medição no ESP32 (`VChip…`) foi feita num {VChipModel} (revisão {VChipRev}, {VChipCpuMhz}
+MHz, {VChipFlashMb} MB de flash, {VChipPsramMb} MB de PSRAM, ESP-IDF {VChipIdf}), com rádios nunca
+iniciados. As janelas chegam pela serial e o tempo é tomado com o temporizador do chip só em torno
+de cada chamada do núcleo, junto com as marcas de heap e de pilha; a latência usa {VChipLatBldcN}
+janelas de {VParSegBldc} s em ciclo sobre {VChipLatDistinct} janelas distintas, depois de
+{VChipLatWarmup} de aquecimento, que ficam fora do resumo. O fluxo contínuo lê as janelas da flash
+do próprio chip. Só essa última categoria pode ser chamada de "medido no ESP32". Energia não é
+medida e não é estimada por datasheet.
 """
 
 RESULTADOS = """# Resultados (artigo ICIT 2027, `embarcados/`)
 
 > Gerado por `embarcados/src/python/gerar_artigo_textos.py` a partir de `paper/numeros.json`
 > (commit {COMMIT}). Não editar à mão. Validação apenas; o teste oficial do IDMT não foi lido.
-> Valores **[pendente]** dependem da bancada do ESP32 físico.
+> Os números do ESP32 vêm da bancada física, com a variante `{VChipVariant}`.
 
 ## Equivalência Python × C (medição no PC)
 
@@ -163,9 +175,19 @@ janelas) de {VEqEnvDecFloatMed} para {VEqEnvDecSosdMed}, porque os polos do pass
 do círculo unitário e o arredondamento em float32 se acumula no estado do filtro. A afirmação que os
 dados sustentam é concordância etapa a etapa dentro de tolerâncias congeladas antes da comparação
 formal, com a exceção acima; não é equivalência incondicional. A auditoria independente (agente F)
-reproduziu a comparação a partir de um build limpo, e as correções dela estão aplicadas aqui. A
-mesma comparação no chip está pendente ({VChipEqStagesPass} de {VChipEqStages} etapas; decisão
-{VChipEqDecisionPass}) e não foi coberta pela auditoria.
+reproduziu a comparação a partir de um build limpo, e as correções dela estão aplicadas aqui.
+
+A variante `{VChipVariant}` foi comparada com as mesmas tolerâncias do float32, primeiro no PC e
+depois no chip. No PC, as {VEqLmCases} janelas de {VParSegBldc} s do ouro passam nas {VEqLmStages}
+etapas comparadas ({VEqLmStagesPass} sem falha; maior razão erro/tolerância {VEqLmMaxRatio};
+decisão igual em {VEqLmDecisionPass} de {VEqLmCases}). No ESP32, as mesmas {VChipEqCases} janelas
+({VChipEqCasesReal} de áudio real e {VChipEqCasesEdge} casos de borda) passam nas {VChipEqStages}
+saídas que o firmware devolve pela serial (caminho e escore do Viterbi, envelope de modulação,
+features, z, cossenos, probabilidades e decisão), com {VChipEqFail} falhas, decisão igual em
+{VChipEqDecisionPass} de {VChipEqCases} e maior razão erro/tolerância {VChipEqMaxRatio}. As
+{VChipEqStagesAbsent} etapas intermediárias não voltam do chip e ficam ausentes, e as janelas de
+{VParSegIdmt} s do IDMT não couberam na placa, então não há comparação no chip para elas. A
+auditoria independente não cobriu os resultados do chip.
 
 ## Custo
 
@@ -186,18 +208,40 @@ seriam {VEstWsDoubleThreeMb} e {VEstWsDoubleOneMb} MB. Numa unidade só, a arena
 {VBuildEspsWsRatioOne} vezes a região DIRAM interna inteira que o build reporta para o ESP32-S3
 ({VBuildEspsDramTotalKb} KiB, dos quais só {VBuildEspsDramFreeKib} KiB sobram depois da alocação
 estática; a IRAM do S3 está {VBuildEspsIramPct} % usada), e {VBuildEspWsRatio} e
-{VBuildEspWsRatioOne} vezes a DRAM do ESP32 ({VBuildEspDramTotalKb} KiB): a referência exige PSRAM, e qualquer redução (Hilbert por blocos,
-tabelas menores) muda a aritmética e teria de ser verificada como variante nomeada. No build do
-firmware, a imagem ocupa {VBuildEspBinKb} KiB (ESP32, {VBuildEspBinPct} % da partição) e
-{VBuildEspsBinKb} KiB (ESP32-S3, {VBuildEspsBinPct} %); o uso estático de RAM interna é
-{VBuildEspDramKb} KiB de DRAM mais {VBuildEspIramKb} KiB de IRAM no ESP32 e {VBuildEspsDramKb} KiB
-de DIRAM no ESP32-S3. A arena é alocada em tempo de execução e não entra nesses números.
+{VBuildEspWsRatioOne} vezes a DRAM do ESP32 ({VBuildEspDramTotalKb} KiB): a arena contígua da
+referência (`p11_c_ref`) exige PSRAM. No build do firmware da referência, a imagem ocupa
+{VBuildEspBinKb} KiB (ESP32, {VBuildEspBinPct} % da partição) e {VBuildEspsBinKb} KiB (ESP32-S3,
+{VBuildEspsBinPct} %); o uso estático de RAM interna é {VBuildEspDramKb} KiB de DRAM mais
+{VBuildEspIramKb} KiB de IRAM no ESP32 e {VBuildEspsDramKb} KiB de DIRAM no ESP32-S3. O firmware da
+variante `{VChipVariant}` para o ESP32 ocupa {VBuildLmBinKb} KiB ({VBuildLmBinPct} % da partição;
+{VBuildLmFlashCodeKb} KiB de código e {VBuildLmFlashDataKb} KiB de dados constantes na flash) e usa,
+de forma estática, {VBuildLmDramKb} de {VBuildLmDramTotalKb} KiB de DRAM e {VBuildLmIramKb} de
+{VBuildLmIramTotalKb} KiB de IRAM. A memória de trabalho é alocada em tempo de execução e não entra
+nesses números.
 
-Medido no ESP32: modelo {VChipModel}, {VChipCpuMhz} MHz, PSRAM {VChipPsramMb} MB; latência mediana
-{VChipLatIdmtMed} ms em {VParSegIdmt} s (p95 {VChipLatIdmtPninetyfive}, máximo {VChipLatIdmtMax})
-e {VChipLatBldcMed} ms em {VParSegBldc} s; fator de tempo real {VChipRtfIdmt} e {VChipRtfBldc};
-heap interno mínimo livre {VChipHeapIntIdmtKb} KiB; folga de pilha {VChipStackIdmt} bytes. Nenhuma
-estimativa foi posta no lugar desses valores.
+Medido no ESP32 ({VChipModel}, {VChipCpuMhz} MHz, {VChipPsramMb} MB de PSRAM), a referência não
+cabe: a arena estimada é pelo menos {VChipRefOverPoolOne} vezes ({VParSegBldc} s) e
+{VChipRefOverPoolThree} vezes ({VParSegIdmt} s) a RAM interna que o firmware consegue entregar ao
+pool ({VChipPoolKib} KiB, medida). Com a variante `{VChipVariant}`, a janela de {VParSegBldc} s do
+A2212 cabe: o pico do pool é {VChipWsBldcB} bytes ({VChipWsBldcKib} KiB, {VChipWsPoolPct} % do
+pool), nada vai para PSRAM, o heap interno mínimo livre durante o processamento é
+{VChipHeapIntBldcB} bytes e a folga mínima de pilha é {VChipStackBldc} bytes. A janela de
+{VParSegIdmt} s do IDMT ({VChipIdmtSamples} amostras) não cabe nesta placa: o plano de alocação não
+encontra lugar com {VChipIdmtFreeAtFailKib} KiB livres, e por isso latência, memória e
+equivalência do IDMT no chip ficam como "{VChipLatIdmtMed}", sem número. A latência mediana por
+janela de {VParSegBldc} s é {VChipLatBldcMed} ms (p95 {VChipLatBldcPninetyfive} ms, máximo
+{VChipLatBldcMax} ms, {VChipLatBldcN} janelas), ou seja, um fator de tempo real de
+{VChipRtfBldc}: o chip leva {VChipRtfBldc} vezes a duração do áudio e não opera em tempo real nesta
+placa. A STFT por quadro com soma harmônica leva {VChipBldcTrackMed} ms ({VChipBldcTrackPct} % da
+mediana), o ramo do envelope {VChipBldcEnvMed} ms ({VChipBldcEnvPct} %), o Viterbi de rotação
+{VChipBldcVitMed} ms ({VChipBldcVitPct} %), as features {VChipBldcFeatMed} ms e a normalização
+{VChipBldcPrepMed} ms; cosseno e saliência no caminho são desprezíveis. No PC, a etapa de rastreio
+da referência (com tabela) fica com {VPcCBldcTrackPct} % do tempo do C. Atribuímos o peso dela no
+chip ao fato de a variante recalcular as posições harmônicas em double sem tabela, e o ESP32 só tem double
+por emulação em software; o tempo da variante no PC não foi medido. Os
+caminhos para fechar a diferença são uma variante que faça essas contas em float (que teria de ser
+verificada como variante nomeada) ou uma placa com PSRAM, onde a tabela da referência cabe.
+Energia não foi medida.
 
 ## Classificação nos três protocolos
 
@@ -246,11 +290,16 @@ independentes, então a correlação é descritiva.
 
 ## Decisão em fluxo
 
-Numa sequência de {VPcSeqWindows} janelas de validação do IDMT ({VPcSeqPerClass} por classe, good →
-broken → heavyload), o HMM online com penalidade {VPcSeqCp} detectou as {VPcSeqSwitches} trocas com
-atraso de {VPcSeqDelayC} janelas no C e {VPcSeqDelayPy} no Python, com decisões iguais (diferença
-máxima de probabilidade {VPcSeqMaxProbDiff}), medido no PC. Dada a saturação do IDMT, isso confere a
-implementação, não o detector. No chip: atraso máximo {VChipSeqDelay} janelas.
+Numa sequência de {VPcSeqWindows} janelas de {VParSegBldc} s de validação do A2212
+({VPcSeqPerClass} por classe, Healthy → Propeller → Bearing), o HMM online com penalidade
+{VPcSeqCp} detectou as {VPcSeqSwitches} trocas com atraso de {VPcSeqDelayC} janelas no C e
+{VPcSeqDelayPy} no Python, com decisões iguais (diferença máxima de probabilidade
+{VPcSeqMaxProbDiff}), medido no PC. No ESP32, a mesma sequência gravada na flash do chip e
+processada janela a janela pela variante `{VChipVariant}` detectou as {VChipSeqSwitches} trocas com
+atraso de {VChipSeqDelay} janelas, e a decisão online do chip coincide com a do Python em
+{VChipSeqSame} de {VChipSeqWindows} janelas; o passo do HMM leva {VChipSeqHmmUs} µs (mediana). As
+janelas são as limpas do ouro, quantizadas em 16 bits na imagem (o PC processou o mesmo áudio
+desquantizado), e Bearing é o motor M4; isso confere a implementação, não o detector.
 
 ## O que as bases permitem concluir
 
