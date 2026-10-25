@@ -1,0 +1,3 @@
+base,janela,n_amostras,coube,resposta,ws_bytes,maior_bloco_livre_interna,maior_bloco_livre_psram
+a2212,a2212_limpo_Healthy_00,16000,0,"esperava @@RES, veio @@PRONTO p11",,,
+idmt,idmt_limpo_good_00,48000,0,"@@ERRO WIN 0 sem memoria para 192000 bytes de workspace (livre interna 313088, psram 0)",192000.0,313088.0,0.0

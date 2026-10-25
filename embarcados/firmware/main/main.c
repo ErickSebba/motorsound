@@ -166,9 +166,10 @@ static int prepara_buffers(int n)
 /* ------------------------------------------------------------------ variante lowmem */
 /* Pool montado no boot com todos os blocos livres: DRAM (acesso por byte) deixando
  * LM_RESERVA para o sistema, depois IRAM (só 32 bits, MALLOC_CAP_EXEC no ESP32). */
-/* 12 KB: no chip o firmware funcionou com 6 KB livres (só MODEL e SEQ alocam depois, < 3 KB);
- * mais reserva tirava a folga do pool (a fase A não cabe com o 2o bloco de DRAM < ~100 KB) */
-#define LM_RESERVA (12 * 1024)
+/* 7 KB: no chip o firmware funcionou com 6 KB livres (só MODEL e SEQ alocam depois, < 3 KB).
+ * Com 12 KB (25/10) o último bloco de DRAM ficou em 14 272 B e o qZ (32 KB) não encaixou;
+ * no PC, com o mesmo layout, basta esse bloco ter 18 272 B */
+#define LM_RESERVA (7 * 1024)
 static lm_pool g_pool;
 static p11_lm g_lm;
 static int g_lm_n = 0;

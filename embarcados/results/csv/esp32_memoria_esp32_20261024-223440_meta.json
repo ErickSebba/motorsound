@@ -1,0 +1,12 @@
+{
+  "categoria": "medicao_no_ESP32",
+  "sessao_bancada": "esp32-20261024-223436",
+  "chip": "ESP32",
+  "psram_mb": 0.0,
+  "variante": "p11_c_lowmem",
+  "heap_livre_interna_boot": 17188,
+  "projeto": {
+    "commit": "61c23c54e581f3e02ac0d1bb207b8aa9a3cdb799",
+    "sujo": true
+  }
+}
