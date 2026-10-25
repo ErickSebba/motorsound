@@ -1,0 +1,30 @@
+{
+  "categoria": "medicao_no_ESP32",
+  "sessao_bancada": "esp32-20261025-141012",
+  "chip": "ESP32",
+  "imagem": "gold\\seq_esp32\\seq_a2212_20261024-184818.bin",
+  "cp": 2.0,
+  "n_logprob": -50.0,
+  "temp": 1.0,
+  "deteccao": [
+    {
+      "troca_em": 10,
+      "de": 0,
+      "para": 1,
+      "atraso_janelas": 0
+    },
+    {
+      "troca_em": 20,
+      "de": 1,
+      "para": 2,
+      "atraso_janelas": 0
+    }
+  ],
+  "base": "a2212",
+  "passo_s": 1.0,
+  "variante": "p11_c_lowmem",
+  "projeto": {
+    "commit": "5f5e64768932f810ab40fc700f5de9c3764f11a8",
+    "sujo": true
+  }
+}
