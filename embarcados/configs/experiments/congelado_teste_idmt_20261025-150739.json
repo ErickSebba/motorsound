@@ -1,0 +1,129 @@
+{
+  "categoria": "congelamento_antes_do_teste",
+  "gerado_em": "20261025-150739",
+  "projeto": {
+    "commit": "ac0f113f35e9d531653268d1177a81d20b80ca10",
+    "sujo": false
+  },
+  "autorizacao": "Erick, 25/10/2026, na conversa da sessão (abrir o teste oficial do IDMT)",
+  "protocolo": "treino em todas as janelas de 3 s de train/ (pure, 3 classes); teste em todas as janelas de 3 s de test/ (9 condições), uma única vez; sem ajuste posterior",
+  "variantes": [
+    {
+      "variante": "b00_rmspico_norm",
+      "pipeline": "b00_nivel",
+      "normalizar_rms": true,
+      "aval": {
+        "seg_s": 3.0,
+        "normalizar_rms": true,
+        "rms_alvo": 0.1
+      },
+      "pre": {
+        "sr": 16000
+      },
+      "post": {
+        "temp": 1.0,
+        "change_penalty": 2.0,
+        "n_logprob": -2.5,
+        "rel_gate": 0.2,
+        "abs_floor": 0.0005,
+        "min_dur": 0.0,
+        "seed": 20261014
+      }
+    },
+    {
+      "variante": "b00_rmspico_bruto",
+      "pipeline": "b00_nivel",
+      "normalizar_rms": false,
+      "aval": {
+        "seg_s": 3.0,
+        "normalizar_rms": false,
+        "rms_alvo": 0.1
+      },
+      "pre": {
+        "sr": 16000
+      },
+      "post": {
+        "temp": 1.0,
+        "change_penalty": 2.0,
+        "n_logprob": -2.5,
+        "rel_gate": 0.2,
+        "abs_floor": 0.0005,
+        "min_dur": 0.0,
+        "seed": 20261014
+      }
+    },
+    {
+      "variante": "p04_classicas",
+      "pipeline": "p04_classicas",
+      "normalizar_rms": true,
+      "aval": {
+        "seg_s": 3.0,
+        "normalizar_rms": true,
+        "rms_alvo": 0.1
+      },
+      "pre": {
+        "sr": 16000,
+        "n_fft": 512,
+        "hop": 256,
+        "n_mfcc": 13,
+        "n_mels": 26,
+        "fmin_mel": 20.0
+      },
+      "post": {
+        "temp": 1.0,
+        "change_penalty": 2.0,
+        "n_logprob": -2.5,
+        "rel_gate": 0.2,
+        "abs_floor": 0.0005,
+        "min_dur": 0.0,
+        "seed": 20261014
+      }
+    },
+    {
+      "variante": "p11_decifrae_harmsum",
+      "pipeline": "p11_decifrae_harmsum",
+      "normalizar_rms": true,
+      "aval": {
+        "seg_s": 3.0,
+        "normalizar_rms": true,
+        "rms_alvo": 0.1
+      },
+      "pre": {
+        "sr": 16000,
+        "fmin": 15.0,
+        "fmax": 60.0,
+        "passo_cents": 2.0,
+        "n_fft": 8192,
+        "hop": 1024,
+        "usar_pyin": false,
+        "usar_viterbi": true,
+        "max_salto": 50
+      },
+      "post": {
+        "temp": 1.0,
+        "change_penalty": 2.0,
+        "n_logprob": -2.5,
+        "rel_gate": 0.2,
+        "abs_floor": 0.0005,
+        "min_dur": 0.0,
+        "seed": 20261014,
+        "temp_cos": 0.1
+      }
+    }
+  ],
+  "seed_boot": 20261025,
+  "n_boot": 2000,
+  "hashes": {
+    "pipelines/b00_nivel.py": "b00b273cb23ffe1c84e333d30a358cbf5cc2ccdd4f01323d03472984d9a8ea3f",
+    "pipelines/p04_classicas.py": "5579808b6b55601a35dfb93e33806c6c318ca09169f6779a35315caa870b1f64",
+    "pipelines/p11_decifrae_harmsum.py": "4e7514b0b8854a17560947ef034d8dd4ccb06e40af5dbe331571e1f0e69395c3",
+    "pipelines/_decifrae.py": "d40385a87dd38c5b010180386f12bc078daeae33c56fc26e7f19455a0a30e7e2",
+    "motorsound/runner.py": "a46bc2127ed6fee53bbd6b62fca2d0df43583c750bd6914de846f501f6ec6272",
+    "motorsound/io.py": "62786f49243f1bf09048e51b5c17deca2e28652682406b58dda95c3c1ec0340a",
+    "motorsound/config.py": "533b6f9cb12228d8c2fcf492b48c5d1950d0e4cf71fac47b4e4573ea86f9e56f",
+    "motorsound/classificador.py": "7d1b41a98465b759c854d163a858c9f68117e221137f5ad0542b15f953233d42",
+    "motorsound/rotacao.py": "45715cbb50101879834b020a01c9fd48bb888e0c6f086b063b35c1f75efe63a9",
+    "embarcados/src/python/diagnostico.py": "919dd4fceb68553c8853a44c33ac9b8d4e3dcc5627c335089ec49416dde96225",
+    "embarcados/src/python/teste_idmt.py": "b7eb8e50ba18bf3b38a12ce2d0f4b6922f6fca2de2d1372e38ae15fbb5dd255b"
+  }
+}
