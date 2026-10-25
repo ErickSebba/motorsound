@@ -67,6 +67,7 @@ typedef struct {
     p11_cpx *lin[LM_MAX_LINHAS];
     p11_cpx *col_a, *col_b, *row_t;
     size_t bytes_persist, bytes_faseA, bytes_faseB, bytes_faseC;
+    int bloco_a[4];     /* bloco de cada pedido da fase A (qX, qZ, sal_q, e_norm), planejado no init */
 } p11_lm;
 
 /* aloca a parte persistente (y = buffer de entrada do áudio, grade, janela, P_mean, rfft)

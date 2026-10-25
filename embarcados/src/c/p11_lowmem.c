@@ -66,6 +66,10 @@ void *lm_corta(lm_pool *pl, size_t bytes, int aceita32)
         if (melhor >= 0) {
             size_t uso;
             lm_bloco *b = &pl->b[melhor];
+#ifdef P11_LM_TRACE
+            printf("corta %6u a32=%d -> bloco %d (sobra %u)\n", (unsigned)bytes, aceita32, melhor,
+                   (unsigned)sobra_melhor);
+#endif
             b->usado = (size_t)(ini_melhor + bytes - (uintptr_t)b->p);
             uso = lm_em_uso(pl);
             if (uso > pl->pico) pl->pico = uso;
@@ -74,6 +78,19 @@ void *lm_corta(lm_pool *pl, size_t bytes, int aceita32)
     }
     pl->falhou_bytes = bytes;
     return NULL;
+}
+
+/* corta no bloco i (o plano de p11_lm_init já garantiu que cabe) */
+static void *lm_corta_bloco(lm_pool *pl, size_t bytes, int i)
+{
+    lm_bloco *b = &pl->b[i];
+    uintptr_t ini = ((uintptr_t)(b->p + b->usado) + (LM_ALIN - 1)) & ~(uintptr_t)(LM_ALIN - 1);
+    size_t uso;
+    if (ini + bytes > (uintptr_t)(b->p + b->tam)) { pl->falhou_bytes = bytes; return NULL; }
+    b->usado = (size_t)(ini + bytes - (uintptr_t)b->p);
+    uso = lm_em_uso(pl);
+    if (uso > pl->pico) pl->pico = uso;
+    return (void *)ini;
 }
 
 void lm_marca(lm_pool *pl)
@@ -94,22 +111,23 @@ void lm_volta(lm_pool *pl)
     do { (ptr) = (tipo *)lm_corta(lm->pool, sizeof(tipo) * (size_t)(n), (a32)); \
          if (!(ptr)) return -10; } while (0)
 
-/* Pedidos de uma fase atendidos do maior para o menor (melhor encaixe em cada um): com a
- * RAM fragmentada do chip, a ordem do código deixava sobras inúteis (24/10: o e_norm de
- * 38 432 B não achou bloco com ~70 KB livres no total). */
-typedef struct { void **dst; size_t bytes; int a32; } lm_ped;
+/* Pedidos atendidos do maior para o menor, com melhor encaixe. Com a RAM fragmentada do
+ * chip, decidir fase a fase não basta: em 25/10 o P_mean (16 KB) do init caiu no bloco de
+ * 118 KB e o qZ da fase A ficou sem lugar. Por isso o init planeja junto os pedidos
+ * persistentes e os da fase A (bloco de cada um; cada pedido arredondado para LM_ALIN e
+ * LM_ALIN de folga por bloco, o que vale para qualquer ordem de corte), e a fase A corta
+ * direto no bloco planejado. */
+typedef struct { void **dst; size_t bytes; int a32; int bloco; } lm_ped;
 #define LM_MAX_PED (LM_MAX_LINHAS + 32)
 static lm_ped g_ped[LM_MAX_PED];
 static int g_nped;
 
-#define PED(ptr, tipo, cnt, aceita) \
-    do { g_ped[g_nped].dst = (void **)(void *)&(ptr); \
-         g_ped[g_nped].bytes = sizeof(tipo) * (size_t)(cnt); g_ped[g_nped].a32 = (aceita); \
-         ++g_nped; } while (0)
+#define PED(ptr, tipo, cnt, aceita)     do { g_ped[g_nped].dst = (void **)(void *)&(ptr);          g_ped[g_nped].bytes = sizeof(tipo) * (size_t)(cnt); g_ped[g_nped].a32 = (aceita);          g_ped[g_nped].bloco = -1; ++g_nped; } while (0)
 
-static int atende(lm_pool *pl)
+static size_t arred(size_t b) { return (b + (LM_ALIN - 1)) & ~(size_t)(LM_ALIN - 1); }
+
+static void ordena_ped(int *ord)
 {
-    static int ord[LM_MAX_PED];
     int i, k;
     for (i = 0; i < g_nped; ++i) {
         int x = i;
@@ -117,10 +135,51 @@ static int atende(lm_pool *pl)
         while (k >= 0 && g_ped[ord[k]].bytes < g_ped[x].bytes) { ord[k + 1] = ord[k]; --k; }
         ord[k + 1] = x;
     }
+}
+
+/* escolhe o bloco de cada pedido (mesmas regras de lm_corta) sem cortar nada */
+static int planeja(const lm_pool *pl)
+{
+    static int ord[LM_MAX_PED];
+    size_t livre[LM_MAX_BLOCOS];
+    int i, j, passo;
+    for (j = 0; j < pl->nb; ++j) {
+        size_t cap = pl->b[j].tam > LM_ALIN ? pl->b[j].tam - LM_ALIN : 0;
+        livre[j] = cap > pl->b[j].usado ? cap - arred(pl->b[j].usado) : 0;
+    }
+    ordena_ped(ord);
     for (i = 0; i < g_nped; ++i) {
-        void *p = lm_corta(pl, g_ped[ord[i]].bytes, g_ped[ord[i]].a32);
+        lm_ped *q = &g_ped[ord[i]];
+        size_t c = arred(q->bytes);
+        int melhor = -1;
+        for (passo = 0; passo < 2 && melhor < 0; ++passo) {
+            if (!q->a32 && passo == 1) break;
+            for (j = 0; j < pl->nb; ++j) {
+                if (pl->b[j].so32 && !q->a32) continue;
+                if (q->a32 && passo == 0 && !pl->b[j].so32) continue;
+                if (q->a32 && passo == 1 && pl->b[j].so32) continue;
+                if (c <= livre[j] && (melhor < 0 || livre[j] - c < livre[melhor] - c)) melhor = j;
+            }
+        }
+        if (melhor < 0) return -10;
+        livre[melhor] -= c;
+        q->bloco = melhor;
+    }
+    return 0;
+}
+
+/* corta os pedidos que têm bloco planejado (os outros: melhor encaixe), do maior ao menor */
+static int atende(lm_pool *pl)
+{
+    static int ord[LM_MAX_PED];
+    int i;
+    ordena_ped(ord);
+    for (i = 0; i < g_nped; ++i) {
+        lm_ped *q = &g_ped[ord[i]];
+        void *p = q->bloco >= 0 ? lm_corta_bloco(pl, q->bytes, q->bloco)
+                                : lm_corta(pl, q->bytes, q->a32);
         if (!p) { g_nped = 0; return -10; }
-        *g_ped[ord[i]].dst = p;
+        *q->dst = p;
     }
     g_nped = 0;
     return 0;
@@ -168,6 +227,17 @@ int p11_lm_init(p11_lm *lm, lm_pool *pool, int n)
     PED(tw_r, p11_cpx, h, 1);
     PED(lm->tw_r128, p11_cpx, LM_N2, 0);
     PED(lm->tw_q, p11_cpx, lm->n1, 0);
+    {   /* fase A entra no plano (mesmos pedidos de p11_lm_rastrear), mas não é cortada aqui */
+        void *fant[4];
+        int np = g_nped, k;
+        PED(fant[0], p11_cpx, P11_F, 0);
+        PED(fant[1], p11_cpx, P11_N_FFT / 2, 0);
+        PED(fant[2], p11_real, P11_J, 0);
+        PED(fant[3], p11_real, (size_t)ws->T * P11_J, 0);
+        if (planeja(pool) != 0) { g_nped = 0; pool->falhou_bytes = 0; return -10; }
+        for (k = 0; k < 4; ++k) lm->bloco_a[k] = g_ped[np + k].bloco;
+        g_nped = np;
+    }
     if (atende(pool) != 0) return -10;
 
     /* grade e janela: mesmas contas de p11_ws_init (calc_grade e np.hanning) */
@@ -216,6 +286,7 @@ int p11_lm_rastrear(p11_lm *lm, p11_real *min_delta, p11_real *score,
     PED(ws->qZ, p11_cpx, P11_N_FFT / 2, 0);
     PED(ws->sal_q, p11_real, J, 0);
     PED(ws->e_norm, p11_real, (size_t)T * J, 0);
+    for (t = 0; t < 4; ++t) g_ped[t].bloco = lm->bloco_a[t];   /* blocos planejados no init */
     if (atende(lm->pool) != 0) return -10;
     ws->qz = ws->qX;
     ws->qS = (p11_real *)ws->qX;
