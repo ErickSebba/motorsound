@@ -26,17 +26,23 @@ a ideia das features e do cosseno, com as 16 divergências corrigidas
 | diagnóstico (etapa 6) | `.venv\Scripts\python.exe embarcados\src\python\diagnostico.py --n-jobs 4` e `diagnostico_saidas.py` | `results/{csv,metrics,predictions}/diagnostico_*` |
 | bancada no PC | `cd embarcados\src\python; ..\..\..\.venv\Scripts\python.exe bench_pc.py --n 200 --aquecimento 5` | `results/csv/bench_pc_*` |
 | fluxo contínuo no PC | `... pil_esp32.py seq-imagem --por-classe 8` e `... seq_pc.py --imagem <bin> --cp 2` | `results/csv/seq_pc_*` |
-| firmware | `embarcados\firmware\build_fw.bat <esp32 \| esp32s3 \| esp32s3oct> [espdsp]` | `C:\Espressif\build_p11_<alvo>` |
-| ESP32 físico | `firmware\gravar_fw.bat <alvo> COMx`, `pil_esp32.py info/equiv/lat`, `firmware\gravar_seq.bat COMx <bin>`, `pil_esp32.py seq` | `results/csv/esp32_*`, `results/manifests/bancada.json` |
+| variante p11_c_lowmem no PC | `.venv\Scripts\python.exe embarcados\tests\equivalence\gerar_lowmem.py --build float --pool "<layout do chip>"` | `results/csv/equivalencia_float-lowmem_*` |
+| firmware | `embarcados\firmware\build_fw.bat <esp32 \| esp32s3 \| esp32s3oct> [lowmem \| espdsp]` | `C:\Espressif\build_p11_<alvo>[_<variante>]` |
+| gravar (placa sem reset de GPIO0) | 1ª vez: `firmware\gravar_tudo.bat COM3 esp32_lowmem <seq.bin> no_reset` (BOOT+EN antes); depois: `firmware\gravar_boot_espera.py COM3 C:\Espressif\build_p11_esp32_lowmem 600` segurando BOOT | flash |
+| ESP32 físico | `pil_esp32.py info`, `mem`, `equiv` (+ `comparar.py --build esp32_esp32_p11_c_lowmem --tol-build float --c-out results\c_out\esp32_esp32_p11_c_lowmem`), `lat --bases a2212 --n 200 --aquecimento 5`, `seq --imagem <bin> --cp 2` | `results/csv/esp32_*`, `results/csv/equivalencia_esp32_*`, `results/manifests/bancada.json` |
+| números da auditoria | `aud_holdout.py`, `aud_rotacao_motor.py`, `aud_motor_igual.py`, `gerar_artigo_numeros_aud.py` (em `embarcados\src\python`) | `results/csv/aud_*`, `paper/numeros_aud.tex` |
+| teste oficial do IDMT (uma vez) | `teste_idmt.py congelar` → commit → `teste_idmt.py avaliar --congelado <json>`; `gerar_artigo_teste.py` | `configs/experiments/congelado_*`, `results/csv/teste_idmt_*`, `paper/numeros_teste.tex` |
 | artigo | `.venv\Scripts\python.exe embarcados\src\python\gerar_artigo_tudo.py` (ver `paper/README.md`) | `paper/main.pdf`, `paper/main_wip.pdf` |
+| dossiê para o manuscrito | `.venv\Scripts\python.exe embarcados\src\python\gerar_dossie.py` | `reports/DOSSIE_MANUSCRITO.md` |
 
 Ferramentas: MSVC 2022 Build Tools + CMake (PC), ESP-IDF v5.5.6 em `C:\Espressif` (ambiente por
 `firmware/idf_env.bat`), MiKTeX 25.12 (usuário). Ver `reports/BLOQUEIOS.md`.
 
 ## Resumo
 
-**Bases usadas e limites.** IDMT-ISA-ELECTRIC-ENGINE (só `train/`; o teste oficial nunca foi
-aberto) e BLDC A2212. No IDMT cada classe é um motor e uma gravação, então todo protocolo mede
+**Bases usadas e limites.** IDMT-ISA-ELECTRIC-ENGINE (desenvolvimento só no `train/`; o teste
+oficial foi lido uma vez em 25/10, com autorização do Erick e configurações congeladas antes) e
+BLDC A2212. No IDMT cada classe é um motor e uma gravação, então todo protocolo mede
 reconhecimento de unidade conhecida; no A2212 a classe Bearing existe só no motor 4. Nenhuma
 base nova foi baixada. Detalhes: `reports/diagnostico.md`.
 
@@ -52,10 +58,14 @@ falha nos dois casos sintéticos de borda DC+ruído (argmax do Welch no piso num
 como FAIL após a auditoria), com a decisão de classe igual em todos os casos; a variante
 `p11_c_sosd` passa em tudo. **Não** dizer "equivalente à p11" sem essas ressalvas.
 
-**Medições no ESP32.** Pendentes até o chip ser conectado (`reports/BLOQUEIOS.md`, B1). Hoje há só
-estimativa analítica do workspace (`p11_host ws`), medição no PC e build do firmware
-(`idf.py size`), que são categorias diferentes e não podem ser chamadas de "medido no ESP32".
-A estimativa indica que a p11 de referência exige PSRAM.
+**Medições no ESP32.** Feitas num ESP32 clássico sem PSRAM (`results/manifests/bancada.json`).
+A referência `p11_c_ref` não cabe; a variante nomeada `p11_c_lowmem` cabe só em janelas de 1 s
+(A2212), passa na equivalência no chip com as tolerâncias congeladas (só saídas finais), e **não
+é tempo real** (fator em `paper/numeros.json`, `VChipRtfBldc`); a janela de 3 s do IDMT não cabe.
+Energia não medida. Números e fontes: `reports/DOSSIE_MANUSCRITO.md` §5.
+
+**Teste oficial do IDMT.** A validação quase perfeita não se sustenta no teste
+(`results/csv/teste_idmt_*`, `paper/RESULTADOS.md`); classe = motor também lá.
 
 **Figuras e tabelas.** `figures/{pdf,png}/`, `tables/latex/`, ligadas a experimento e commit em
 `results/manifests/manifesto.json`.
@@ -64,12 +74,12 @@ A estimativa indica que a p11 de referência exige PSRAM.
 (`reports/diagnostico.md`, `tables/latex/desempenho_compacto.tex`): a contribuição do artigo é a
 viabilidade embarcada com equivalência verificada, não acurácia.
 
-**Bloqueios restantes.** B1 (chip). Ver `reports/BLOQUEIOS.md`.
+**Bloqueios restantes.** Nenhum que impeça a submissão. Limites da placa (sem PSRAM) e da
+conexão USB registrados em `reports/BLOQUEIOS.md` (B5, B6).
 
-**Veredito do auditor.** `reports/independent_scientific_audit.md` (antes do chip): A COND,
-B PASS, C COND (só PC), D FAIL (sem medição no chip), E COND; as correções de texto pedidas
-foram aplicadas em `5c70782`.
+**Veredito do auditor.** Antes do chip: `reports/independent_scientific_audit.md` (A COND, B PASS,
+C COND, D FAIL, E COND). Depois do chip e do teste: `reports/independent_scientific_audit_final.md`.
 
-**Recomendação.** Pendente do chip. Pela regra do prompt: regular (6 pp) se C e D passarem com
-equivalência e medições no chip; WiP (4 pp) se a equivalência passou só no PC ou as medições
-estão incompletas — que é a situação atual.
+**Decisão.** Em 25/10 o Erick escolheu o artigo regular (6 pp), com a afirmação de
+embarcabilidade restrita ao que foi medido (1 s, não tempo real). `paper/main.pdf` (6 pp) e
+`paper/main_wip.pdf` (4 pp) compilam.
