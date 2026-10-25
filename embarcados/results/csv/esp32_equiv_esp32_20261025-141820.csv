@@ -1,0 +1,165 @@
+id,coube,resposta,us_init,us_prep,us_rastreio,us_viterbi,us_sal_caminho,us_envelope,us_features,us_cosseno,us_hilbert,us_sosfilt,us_welch,ws_bytes,ws_na_psram,heap_min_livre_interna
+idmt_limpo_good_00,0,"@@ERRO WIN 0 sem memoria para 0 bytes de workspace (livre interna 314944, psram 0)",,,,,,,,,,,,,,
+idmt_limpo_good_01,0,"@@ERRO WIN 1 sem memoria para 0 bytes de workspace (livre interna 314944, psram 0)",,,,,,,,,,,,,,
+idmt_limpo_good_02,0,"@@ERRO WIN 2 sem memoria para 0 bytes de workspace (livre interna 314944, psram 0)",,,,,,,,,,,,,,
+idmt_limpo_good_03,0,"@@ERRO WIN 3 sem memoria para 0 bytes de workspace (livre interna 314944, psram 0)",,,,,,,,,,,,,,
+idmt_limpo_good_04,0,"@@ERRO WIN 4 sem memoria para 0 bytes de workspace (livre interna 314944, psram 0)",,,,,,,,,,,,,,
+idmt_limpo_good_05,0,"@@ERRO WIN 5 sem memoria para 0 bytes de workspace (livre interna 314944, psram 0)",,,,,,,,,,,,,,
+idmt_limpo_good_06,0,"@@ERRO WIN 6 sem memoria para 0 bytes de workspace (livre interna 314944, psram 0)",,,,,,,,,,,,,,
+idmt_limpo_good_07,0,"@@ERRO WIN 7 sem memoria para 0 bytes de workspace (livre interna 314944, psram 0)",,,,,,,,,,,,,,
+idmt_limpo_good_08,0,"@@ERRO WIN 8 sem memoria para 0 bytes de workspace (livre interna 314944, psram 0)",,,,,,,,,,,,,,
+idmt_limpo_good_09,0,"@@ERRO WIN 9 sem memoria para 0 bytes de workspace (livre interna 314944, psram 0)",,,,,,,,,,,,,,
+idmt_branco20_good_00,0,"@@ERRO WIN 10 sem memoria para 0 bytes de workspace (livre interna 314944, psram 0)",,,,,,,,,,,,,,
+idmt_branco20_good_01,0,"@@ERRO WIN 11 sem memoria para 0 bytes de workspace (livre interna 314944, psram 0)",,,,,,,,,,,,,,
+idmt_branco20_good_02,0,"@@ERRO WIN 12 sem memoria para 0 bytes de workspace (livre interna 314944, psram 0)",,,,,,,,,,,,,,
+idmt_branco5_good_00,0,"@@ERRO WIN 13 sem memoria para 0 bytes de workspace (livre interna 314944, psram 0)",,,,,,,,,,,,,,
+idmt_branco5_good_01,0,"@@ERRO WIN 14 sem memoria para 0 bytes de workspace (livre interna 314944, psram 0)",,,,,,,,,,,,,,
+idmt_branco5_good_02,0,"@@ERRO WIN 15 sem memoria para 0 bytes de workspace (livre interna 314944, psram 0)",,,,,,,,,,,,,,
+idmt_branco0_good_00,0,"@@ERRO WIN 16 sem memoria para 0 bytes de workspace (livre interna 314944, psram 0)",,,,,,,,,,,,,,
+idmt_branco0_good_01,0,"@@ERRO WIN 17 sem memoria para 0 bytes de workspace (livre interna 314944, psram 0)",,,,,,,,,,,,,,
+idmt_branco0_good_02,0,"@@ERRO WIN 18 sem memoria para 0 bytes de workspace (livre interna 314944, psram 0)",,,,,,,,,,,,,,
+idmt_leeshen_sag_good_00,0,"@@ERRO WIN 19 sem memoria para 0 bytes de workspace (livre interna 314944, psram 0)",,,,,,,,,,,,,,
+idmt_leeshen_sag_good_01,0,"@@ERRO WIN 20 sem memoria para 0 bytes de workspace (livre interna 314944, psram 0)",,,,,,,,,,,,,,
+idmt_leeshen_sag_good_02,0,"@@ERRO WIN 21 sem memoria para 0 bytes de workspace (livre interna 314944, psram 0)",,,,,,,,,,,,,,
+idmt_leeshen_flicker_good_00,0,"@@ERRO WIN 22 sem memoria para 0 bytes de workspace (livre interna 314944, psram 0)",,,,,,,,,,,,,,
+idmt_leeshen_flicker_good_01,0,"@@ERRO WIN 23 sem memoria para 0 bytes de workspace (livre interna 314944, psram 0)",,,,,,,,,,,,,,
+idmt_leeshen_flicker_good_02,0,"@@ERRO WIN 24 sem memoria para 0 bytes de workspace (livre interna 314944, psram 0)",,,,,,,,,,,,,,
+idmt_limpo_broken_00,0,"@@ERRO WIN 25 sem memoria para 0 bytes de workspace (livre interna 314944, psram 0)",,,,,,,,,,,,,,
+idmt_limpo_broken_01,0,"@@ERRO WIN 26 sem memoria para 0 bytes de workspace (livre interna 314944, psram 0)",,,,,,,,,,,,,,
+idmt_limpo_broken_02,0,"@@ERRO WIN 27 sem memoria para 0 bytes de workspace (livre interna 314944, psram 0)",,,,,,,,,,,,,,
+idmt_limpo_broken_03,0,"@@ERRO WIN 28 sem memoria para 0 bytes de workspace (livre interna 314944, psram 0)",,,,,,,,,,,,,,
+idmt_limpo_broken_04,0,"@@ERRO WIN 29 sem memoria para 0 bytes de workspace (livre interna 314944, psram 0)",,,,,,,,,,,,,,
+idmt_limpo_broken_05,0,"@@ERRO WIN 30 sem memoria para 0 bytes de workspace (livre interna 314944, psram 0)",,,,,,,,,,,,,,
+idmt_limpo_broken_06,0,"@@ERRO WIN 31 sem memoria para 0 bytes de workspace (livre interna 314944, psram 0)",,,,,,,,,,,,,,
+idmt_limpo_broken_07,0,"@@ERRO WIN 32 sem memoria para 0 bytes de workspace (livre interna 314944, psram 0)",,,,,,,,,,,,,,
+idmt_limpo_broken_08,0,"@@ERRO WIN 33 sem memoria para 0 bytes de workspace (livre interna 314944, psram 0)",,,,,,,,,,,,,,
+idmt_limpo_broken_09,0,"@@ERRO WIN 34 sem memoria para 0 bytes de workspace (livre interna 314944, psram 0)",,,,,,,,,,,,,,
+idmt_branco20_broken_00,0,"@@ERRO WIN 35 sem memoria para 0 bytes de workspace (livre interna 314944, psram 0)",,,,,,,,,,,,,,
+idmt_branco20_broken_01,0,"@@ERRO WIN 36 sem memoria para 0 bytes de workspace (livre interna 314944, psram 0)",,,,,,,,,,,,,,
+idmt_branco20_broken_02,0,"@@ERRO WIN 37 sem memoria para 0 bytes de workspace (livre interna 314944, psram 0)",,,,,,,,,,,,,,
+idmt_branco5_broken_00,0,"@@ERRO WIN 38 sem memoria para 0 bytes de workspace (livre interna 314944, psram 0)",,,,,,,,,,,,,,
+idmt_branco5_broken_01,0,"@@ERRO WIN 39 sem memoria para 0 bytes de workspace (livre interna 314944, psram 0)",,,,,,,,,,,,,,
+idmt_branco5_broken_02,0,"@@ERRO WIN 40 sem memoria para 0 bytes de workspace (livre interna 314944, psram 0)",,,,,,,,,,,,,,
+idmt_branco0_broken_00,0,"@@ERRO WIN 41 sem memoria para 0 bytes de workspace (livre interna 314944, psram 0)",,,,,,,,,,,,,,
+idmt_branco0_broken_01,0,"@@ERRO WIN 42 sem memoria para 0 bytes de workspace (livre interna 314944, psram 0)",,,,,,,,,,,,,,
+idmt_branco0_broken_02,0,"@@ERRO WIN 43 sem memoria para 0 bytes de workspace (livre interna 314944, psram 0)",,,,,,,,,,,,,,
+idmt_leeshen_sag_broken_00,0,"@@ERRO WIN 44 sem memoria para 0 bytes de workspace (livre interna 314944, psram 0)",,,,,,,,,,,,,,
+idmt_leeshen_sag_broken_01,0,"@@ERRO WIN 45 sem memoria para 0 bytes de workspace (livre interna 314944, psram 0)",,,,,,,,,,,,,,
+idmt_leeshen_sag_broken_02,0,"@@ERRO WIN 46 sem memoria para 0 bytes de workspace (livre interna 314944, psram 0)",,,,,,,,,,,,,,
+idmt_leeshen_flicker_broken_00,0,"@@ERRO WIN 47 sem memoria para 0 bytes de workspace (livre interna 314944, psram 0)",,,,,,,,,,,,,,
+idmt_leeshen_flicker_broken_01,0,"@@ERRO WIN 48 sem memoria para 0 bytes de workspace (livre interna 314944, psram 0)",,,,,,,,,,,,,,
+idmt_leeshen_flicker_broken_02,0,"@@ERRO WIN 49 sem memoria para 0 bytes de workspace (livre interna 314944, psram 0)",,,,,,,,,,,,,,
+idmt_limpo_heavyload_00,0,"@@ERRO WIN 50 sem memoria para 0 bytes de workspace (livre interna 314944, psram 0)",,,,,,,,,,,,,,
+idmt_limpo_heavyload_01,0,"@@ERRO WIN 51 sem memoria para 0 bytes de workspace (livre interna 314944, psram 0)",,,,,,,,,,,,,,
+idmt_limpo_heavyload_02,0,"@@ERRO WIN 52 sem memoria para 0 bytes de workspace (livre interna 314944, psram 0)",,,,,,,,,,,,,,
+idmt_limpo_heavyload_03,0,"@@ERRO WIN 53 sem memoria para 0 bytes de workspace (livre interna 314944, psram 0)",,,,,,,,,,,,,,
+idmt_limpo_heavyload_04,0,"@@ERRO WIN 54 sem memoria para 0 bytes de workspace (livre interna 314944, psram 0)",,,,,,,,,,,,,,
+idmt_limpo_heavyload_05,0,"@@ERRO WIN 55 sem memoria para 0 bytes de workspace (livre interna 314944, psram 0)",,,,,,,,,,,,,,
+idmt_limpo_heavyload_06,0,"@@ERRO WIN 56 sem memoria para 0 bytes de workspace (livre interna 314944, psram 0)",,,,,,,,,,,,,,
+idmt_limpo_heavyload_07,0,"@@ERRO WIN 57 sem memoria para 0 bytes de workspace (livre interna 314944, psram 0)",,,,,,,,,,,,,,
+idmt_limpo_heavyload_08,0,"@@ERRO WIN 58 sem memoria para 0 bytes de workspace (livre interna 314944, psram 0)",,,,,,,,,,,,,,
+idmt_limpo_heavyload_09,0,"@@ERRO WIN 59 sem memoria para 0 bytes de workspace (livre interna 314944, psram 0)",,,,,,,,,,,,,,
+idmt_branco20_heavyload_00,0,"@@ERRO WIN 60 sem memoria para 0 bytes de workspace (livre interna 314944, psram 0)",,,,,,,,,,,,,,
+idmt_branco20_heavyload_01,0,"@@ERRO WIN 61 sem memoria para 0 bytes de workspace (livre interna 314944, psram 0)",,,,,,,,,,,,,,
+idmt_branco20_heavyload_02,0,"@@ERRO WIN 62 sem memoria para 0 bytes de workspace (livre interna 314944, psram 0)",,,,,,,,,,,,,,
+idmt_branco5_heavyload_00,0,"@@ERRO WIN 63 sem memoria para 0 bytes de workspace (livre interna 314944, psram 0)",,,,,,,,,,,,,,
+idmt_branco5_heavyload_01,0,"@@ERRO WIN 64 sem memoria para 0 bytes de workspace (livre interna 314944, psram 0)",,,,,,,,,,,,,,
+idmt_branco5_heavyload_02,0,"@@ERRO WIN 65 sem memoria para 0 bytes de workspace (livre interna 314944, psram 0)",,,,,,,,,,,,,,
+idmt_branco0_heavyload_00,0,"@@ERRO WIN 66 sem memoria para 0 bytes de workspace (livre interna 314944, psram 0)",,,,,,,,,,,,,,
+idmt_branco0_heavyload_01,0,"@@ERRO WIN 67 sem memoria para 0 bytes de workspace (livre interna 314944, psram 0)",,,,,,,,,,,,,,
+idmt_branco0_heavyload_02,0,"@@ERRO WIN 68 sem memoria para 0 bytes de workspace (livre interna 314944, psram 0)",,,,,,,,,,,,,,
+idmt_leeshen_sag_heavyload_00,0,"@@ERRO WIN 69 sem memoria para 0 bytes de workspace (livre interna 314944, psram 0)",,,,,,,,,,,,,,
+idmt_leeshen_sag_heavyload_01,0,"@@ERRO WIN 70 sem memoria para 0 bytes de workspace (livre interna 314944, psram 0)",,,,,,,,,,,,,,
+idmt_leeshen_sag_heavyload_02,0,"@@ERRO WIN 71 sem memoria para 0 bytes de workspace (livre interna 314944, psram 0)",,,,,,,,,,,,,,
+idmt_leeshen_flicker_heavyload_00,0,"@@ERRO WIN 72 sem memoria para 0 bytes de workspace (livre interna 314944, psram 0)",,,,,,,,,,,,,,
+idmt_leeshen_flicker_heavyload_01,0,"@@ERRO WIN 73 sem memoria para 0 bytes de workspace (livre interna 314944, psram 0)",,,,,,,,,,,,,,
+idmt_leeshen_flicker_heavyload_02,0,"@@ERRO WIN 74 sem memoria para 0 bytes de workspace (livre interna 314944, psram 0)",,,,,,,,,,,,,,
+a2212_limpo_Healthy_00,1,,0.0,1883.0,2345672.0,90958.0,53.0,199388.0,10320.0,107.0,141130.0,19395.0,38846.0,303308.0,0.0,7584.0
+a2212_limpo_Healthy_01,1,,0.0,1810.0,2345525.0,90661.0,2.0,199321.0,10111.0,24.0,141213.0,19381.0,38710.0,303308.0,0.0,7584.0
+a2212_limpo_Healthy_02,1,,0.0,1814.0,2345548.0,90694.0,2.0,199267.0,10118.0,27.0,141162.0,19389.0,38700.0,303308.0,0.0,7584.0
+a2212_limpo_Healthy_03,1,,0.0,1810.0,2345535.0,90553.0,2.0,199307.0,10129.0,24.0,141189.0,19387.0,38715.0,303308.0,0.0,7584.0
+a2212_limpo_Healthy_04,1,,0.0,1810.0,2345533.0,90663.0,2.0,199257.0,10112.0,28.0,141154.0,19387.0,38699.0,303308.0,0.0,7584.0
+a2212_limpo_Healthy_05,1,,0.0,1809.0,2345519.0,90681.0,2.0,199319.0,10118.0,23.0,141182.0,19383.0,38738.0,303308.0,0.0,7584.0
+a2212_limpo_Healthy_06,1,,0.0,1810.0,2345555.0,90724.0,2.0,199285.0,10115.0,28.0,141161.0,19380.0,38727.0,303308.0,0.0,7584.0
+a2212_limpo_Healthy_07,1,,0.0,1810.0,2345520.0,90733.0,2.0,199297.0,10123.0,23.0,141183.0,19379.0,38718.0,303308.0,0.0,7584.0
+a2212_limpo_Healthy_08,1,,0.0,1809.0,2345537.0,90608.0,2.0,199277.0,10131.0,27.0,141152.0,19383.0,38725.0,303308.0,0.0,7584.0
+a2212_limpo_Healthy_09,1,,0.0,1814.0,2345514.0,90669.0,2.0,199292.0,10118.0,23.0,141183.0,19388.0,38704.0,303308.0,0.0,7584.0
+a2212_branco20_Healthy_00,1,,0.0,1815.0,2345535.0,90724.0,2.0,199261.0,10115.0,27.0,141151.0,19386.0,38708.0,303308.0,0.0,7584.0
+a2212_branco20_Healthy_01,1,,0.0,1814.0,2345532.0,90663.0,2.0,199302.0,10117.0,23.0,141188.0,19389.0,38708.0,303308.0,0.0,7584.0
+a2212_branco20_Healthy_02,1,,0.0,1810.0,2345548.0,90693.0,2.0,199269.0,10118.0,27.0,141164.0,19388.0,38700.0,303308.0,0.0,7584.0
+a2212_branco5_Healthy_00,1,,0.0,1809.0,2345536.0,90713.0,2.0,199303.0,10124.0,24.0,141190.0,19391.0,38705.0,303308.0,0.0,7584.0
+a2212_branco5_Healthy_01,1,,0.0,1810.0,2345542.0,90686.0,2.0,199277.0,10127.0,27.0,141161.0,19386.0,38714.0,303308.0,0.0,7584.0
+a2212_branco5_Healthy_02,1,,0.0,1809.0,2345540.0,90685.0,2.0,199300.0,10124.0,23.0,141188.0,19388.0,38707.0,303308.0,0.0,7584.0
+a2212_branco0_Healthy_00,1,,0.0,1810.0,2345534.0,90702.0,2.0,199238.0,10126.0,27.0,141155.0,19389.0,38678.0,303308.0,0.0,7584.0
+a2212_branco0_Healthy_01,1,,0.0,1810.0,2345529.0,90660.0,2.0,199309.0,10126.0,24.0,141195.0,19385.0,38713.0,303308.0,0.0,7584.0
+a2212_branco0_Healthy_02,1,,0.0,1809.0,2345547.0,90699.0,2.0,199276.0,10124.0,28.0,141163.0,19384.0,38712.0,303308.0,0.0,7584.0
+a2212_leeshen_sag_Healthy_00,1,,0.0,1810.0,2345525.0,90712.0,2.0,199332.0,10123.0,24.0,141187.0,19388.0,38740.0,303308.0,0.0,7584.0
+a2212_leeshen_sag_Healthy_01,1,,0.0,1809.0,2345555.0,90706.0,2.0,199282.0,10121.0,27.0,141162.0,19383.0,38721.0,303308.0,0.0,7584.0
+a2212_leeshen_sag_Healthy_02,1,,0.0,1810.0,2345525.0,90658.0,2.0,199281.0,10123.0,24.0,141182.0,19387.0,38695.0,303308.0,0.0,7584.0
+a2212_leeshen_flicker_Healthy_00,1,,0.0,1809.0,2345546.0,90714.0,2.0,199246.0,10128.0,27.0,141152.0,19392.0,38685.0,303308.0,0.0,7584.0
+a2212_leeshen_flicker_Healthy_01,1,,0.0,1814.0,2345535.0,90615.0,2.0,199320.0,10122.0,24.0,141191.0,19387.0,38725.0,303308.0,0.0,7584.0
+a2212_leeshen_flicker_Healthy_02,1,,0.0,1810.0,2345545.0,90678.0,2.0,199242.0,10124.0,27.0,141153.0,19387.0,38686.0,303308.0,0.0,7584.0
+a2212_limpo_Propeller_00,1,,0.0,1809.0,2345530.0,90760.0,2.0,199350.0,10096.0,24.0,141181.0,19387.0,38765.0,303308.0,0.0,7584.0
+a2212_limpo_Propeller_01,1,,0.0,1810.0,2345552.0,90793.0,2.0,199299.0,10120.0,27.0,141161.0,19379.0,38742.0,303308.0,0.0,7584.0
+a2212_limpo_Propeller_02,1,,0.0,1810.0,2345522.0,90747.0,2.0,199331.0,10118.0,23.0,141182.0,19382.0,38751.0,303308.0,0.0,7584.0
+a2212_limpo_Propeller_03,1,,0.0,1810.0,2345543.0,90626.0,2.0,199341.0,10112.0,27.0,141153.0,19389.0,38782.0,303308.0,0.0,7584.0
+a2212_limpo_Propeller_04,1,,0.0,1810.0,2345520.0,90829.0,2.0,199357.0,10112.0,24.0,141181.0,19388.0,38771.0,303308.0,0.0,7584.0
+a2212_limpo_Propeller_05,1,,0.0,1810.0,2345547.0,90763.0,2.0,199318.0,10120.0,28.0,141163.0,19387.0,38751.0,303308.0,0.0,7584.0
+a2212_limpo_Propeller_06,1,,0.0,1809.0,2345536.0,90782.0,2.0,199353.0,10117.0,23.0,141188.0,19386.0,38762.0,303308.0,0.0,7584.0
+a2212_limpo_Propeller_07,1,,0.0,1810.0,2345544.0,90811.0,2.0,199355.0,10120.0,27.0,141163.0,19383.0,38792.0,303308.0,0.0,7584.0
+a2212_limpo_Propeller_08,1,,0.0,1810.0,2345535.0,90788.0,2.0,199362.0,10119.0,24.0,141189.0,19380.0,38776.0,303308.0,0.0,7584.0
+a2212_limpo_Propeller_09,1,,0.0,1809.0,2345548.0,90787.0,2.0,199308.0,10125.0,28.0,141164.0,19384.0,38743.0,303308.0,0.0,7584.0
+a2212_branco20_Propeller_00,1,,0.0,1810.0,2345542.0,90717.0,2.0,199362.0,10085.0,32.0,141190.0,19386.0,38769.0,303308.0,0.0,7584.0
+a2212_branco20_Propeller_01,1,,0.0,1814.0,2345555.0,90807.0,2.0,199302.0,10120.0,28.0,141162.0,19381.0,38742.0,303308.0,0.0,7584.0
+a2212_branco20_Propeller_02,1,,0.0,1810.0,2345531.0,90747.0,2.0,199347.0,10120.0,24.0,141190.0,19387.0,38753.0,303308.0,0.0,7584.0
+a2212_branco5_Propeller_00,1,,0.0,1810.0,2345541.0,90644.0,2.0,199294.0,10125.0,27.0,141153.0,19389.0,38735.0,303308.0,0.0,7584.0
+a2212_branco5_Propeller_01,1,,0.0,1810.0,2345528.0,90699.0,2.0,199324.0,10125.0,24.0,141185.0,19389.0,38733.0,303308.0,0.0,7584.0
+a2212_branco5_Propeller_02,1,,0.0,1809.0,2345550.0,90701.0,2.0,199308.0,10128.0,28.0,141166.0,19385.0,38741.0,303308.0,0.0,7584.0
+a2212_branco0_Propeller_00,1,,0.0,1814.0,2345535.0,90635.0,2.0,199307.0,10126.0,23.0,141185.0,19391.0,38714.0,303308.0,0.0,7584.0
+a2212_branco0_Propeller_01,1,,0.0,1810.0,2345540.0,90676.0,2.0,199285.0,10130.0,27.0,141154.0,19388.0,38726.0,303308.0,0.0,7584.0
+a2212_branco0_Propeller_02,1,,0.0,1814.0,2345527.0,90722.0,2.0,199326.0,10128.0,23.0,141188.0,19387.0,38735.0,303308.0,0.0,7584.0
+a2212_leeshen_sag_Propeller_00,1,,0.0,1810.0,2345559.0,90762.0,2.0,199332.0,10124.0,27.0,141162.0,19388.0,38765.0,303308.0,0.0,7584.0
+a2212_leeshen_sag_Propeller_01,1,,0.0,1810.0,2345535.0,90789.0,2.0,199320.0,10127.0,24.0,141189.0,19382.0,38732.0,303308.0,0.0,7584.0
+a2212_leeshen_sag_Propeller_02,1,,0.0,1810.0,2345547.0,90711.0,2.0,199303.0,10123.0,28.0,141160.0,19385.0,38738.0,303308.0,0.0,7584.0
+a2212_leeshen_flicker_Propeller_00,1,,0.0,1809.0,2345534.0,90762.0,2.0,199344.0,10091.0,32.0,141188.0,19381.0,38759.0,303308.0,0.0,7584.0
+a2212_leeshen_flicker_Propeller_01,1,,0.0,1810.0,2345549.0,90812.0,2.0,199291.0,10120.0,27.0,141160.0,19381.0,38733.0,303308.0,0.0,7584.0
+a2212_leeshen_flicker_Propeller_02,1,,0.0,1810.0,2345538.0,90735.0,2.0,199330.0,10122.0,23.0,141189.0,19384.0,38740.0,303308.0,0.0,7584.0
+a2212_limpo_Bearing_00,1,,0.0,1809.0,2345553.0,90696.0,2.0,199287.0,10103.0,27.0,141163.0,19385.0,38722.0,303308.0,0.0,7584.0
+a2212_limpo_Bearing_01,1,,0.0,1810.0,2345539.0,90720.0,2.0,199329.0,10108.0,24.0,141194.0,19390.0,38728.0,303308.0,0.0,7584.0
+a2212_limpo_Bearing_02,1,,0.0,1810.0,2345555.0,90712.0,2.0,199290.0,10105.0,27.0,141161.0,19385.0,38727.0,303308.0,0.0,7584.0
+a2212_limpo_Bearing_03,1,,0.0,1810.0,2345526.0,90706.0,2.0,199317.0,10107.0,24.0,141193.0,19387.0,38721.0,303308.0,0.0,7584.0
+a2212_limpo_Bearing_04,1,,0.0,1810.0,2345555.0,90695.0,2.0,199268.0,10105.0,27.0,141163.0,19385.0,38703.0,303308.0,0.0,7584.0
+a2212_limpo_Bearing_05,1,,0.0,1809.0,2345533.0,90702.0,2.0,199323.0,10099.0,23.0,141191.0,19382.0,38733.0,303308.0,0.0,7584.0
+a2212_limpo_Bearing_06,1,,0.0,1809.0,2345560.0,90750.0,2.0,199266.0,10102.0,28.0,141163.0,19386.0,38700.0,303308.0,0.0,7584.0
+a2212_limpo_Bearing_07,1,,0.0,1810.0,2345533.0,90714.0,2.0,199323.0,10109.0,23.0,141188.0,19386.0,38732.0,303308.0,0.0,7584.0
+a2212_limpo_Bearing_08,1,,0.0,1810.0,2345544.0,90721.0,2.0,199294.0,10106.0,27.0,141161.0,19387.0,38729.0,303308.0,0.0,7584.0
+a2212_limpo_Bearing_09,1,,0.0,1809.0,2345536.0,90706.0,2.0,199316.0,10104.0,24.0,141198.0,19385.0,38716.0,303308.0,0.0,7584.0
+a2212_branco20_Bearing_00,1,,0.0,1810.0,2345549.0,90733.0,2.0,199281.0,10102.0,27.0,141162.0,19384.0,38718.0,303308.0,0.0,7584.0
+a2212_branco20_Bearing_01,1,,0.0,1810.0,2345539.0,90764.0,2.0,199329.0,10101.0,24.0,141190.0,19391.0,38732.0,303308.0,0.0,7584.0
+a2212_branco20_Bearing_02,1,,0.0,1813.0,2345545.0,90741.0,2.0,199284.0,10103.0,27.0,141161.0,19382.0,38724.0,303308.0,0.0,7584.0
+a2212_branco5_Bearing_00,1,,0.0,1813.0,2345529.0,90697.0,2.0,199304.0,10124.0,23.0,141189.0,19390.0,38709.0,303308.0,0.0,7584.0
+a2212_branco5_Bearing_01,1,,0.0,1809.0,2345537.0,90693.0,2.0,199272.0,10131.0,28.0,141153.0,19386.0,38716.0,303308.0,0.0,7584.0
+a2212_branco5_Bearing_02,1,,0.0,1809.0,2345523.0,90709.0,2.0,199294.0,10125.0,24.0,141182.0,19388.0,38707.0,303308.0,0.0,7584.0
+a2212_branco0_Bearing_00,1,,0.0,1809.0,2345539.0,90651.0,2.0,199253.0,10124.0,28.0,141155.0,19389.0,38692.0,303308.0,0.0,7584.0
+a2212_branco0_Bearing_01,1,,0.0,1810.0,2345517.0,90665.0,2.0,199301.0,10130.0,24.0,141181.0,19382.0,38722.0,303308.0,0.0,7584.0
+a2212_branco0_Bearing_02,1,,0.0,1809.0,2345538.0,90655.0,2.0,199250.0,10127.0,27.0,141156.0,19387.0,38691.0,303308.0,0.0,7584.0
+a2212_leeshen_sag_Bearing_00,1,,0.0,1810.0,2345519.0,90728.0,2.0,199320.0,10113.0,24.0,141190.0,19384.0,38729.0,303308.0,0.0,7584.0
+a2212_leeshen_sag_Bearing_01,1,,0.0,1814.0,2345550.0,90756.0,2.0,199291.0,10116.0,28.0,141163.0,19387.0,38724.0,303308.0,0.0,7584.0
+a2212_leeshen_sag_Bearing_02,1,,0.0,1809.0,2345538.0,90707.0,2.0,199325.0,10110.0,23.0,141189.0,19387.0,38732.0,303308.0,0.0,7584.0
+a2212_leeshen_flicker_Bearing_00,1,,0.0,1809.0,2345554.0,90722.0,2.0,199287.0,10104.0,28.0,141160.0,19385.0,38725.0,303308.0,0.0,7584.0
+a2212_leeshen_flicker_Bearing_01,1,,0.0,1810.0,2345525.0,90684.0,2.0,199329.0,10104.0,24.0,141195.0,19384.0,38734.0,303308.0,0.0,7584.0
+a2212_leeshen_flicker_Bearing_02,1,,0.0,1810.0,2345547.0,90696.0,2.0,199292.0,10109.0,27.0,141161.0,19389.0,38726.0,303308.0,0.0,7584.0
+borda_silencio3s_midmt,0,"@@ERRO WIN 150 sem memoria para 0 bytes de workspace (livre interna 314944, psram 0)",,,,,,,,,,,,,,
+borda_silencio3s_ma2212,0,"@@ERRO WIN 151 sem memoria para 0 bytes de workspace (livre interna 314944, psram 0)",,,,,,,,,,,,,,
+borda_silencio1s_midmt,1,,0.0,1810.0,2333457.0,89494.0,2.0,193062.0,9852.0,23.0,140993.0,13517.0,38535.0,303308.0,0.0,7584.0
+borda_silencio1s_ma2212,1,,0.0,1809.0,2333509.0,89482.0,2.0,193262.0,9848.0,27.0,141201.0,13518.0,38526.0,303308.0,0.0,7584.0
+borda_clip_idmt_midmt,0,"@@ERRO WIN 154 sem memoria para 0 bytes de workspace (livre interna 314944, psram 0)",,,,,,,,,,,,,,
+borda_clip_idmt_ma2212,0,"@@ERRO WIN 155 sem memoria para 0 bytes de workspace (livre interna 314944, psram 0)",,,,,,,,,,,,,,
+borda_clip_a2212_midmt,1,,0.0,1814.0,2345493.0,90731.0,2.0,199126.0,10118.0,23.0,141006.0,19388.0,38716.0,303308.0,0.0,7584.0
+borda_clip_a2212_ma2212,1,,0.0,1810.0,2345542.0,90727.0,2.0,199302.0,10114.0,27.0,141197.0,19385.0,38703.0,303308.0,0.0,7584.0
+borda_rot90hz3s_midmt,0,"@@ERRO WIN 158 sem memoria para 0 bytes de workspace (livre interna 314944, psram 0)",,,,,,,,,,,,,,
+borda_rot90hz3s_ma2212,0,"@@ERRO WIN 159 sem memoria para 0 bytes de workspace (livre interna 314944, psram 0)",,,,,,,,,,,,,,
+borda_rot8hz3s_midmt,0,"@@ERRO WIN 160 sem memoria para 0 bytes de workspace (livre interna 314944, psram 0)",,,,,,,,,,,,,,
+borda_rot8hz3s_ma2212,0,"@@ERRO WIN 161 sem memoria para 0 bytes de workspace (livre interna 314944, psram 0)",,,,,,,,,,,,,,
+borda_dc_ruido3s_midmt,0,"@@ERRO WIN 162 sem memoria para 0 bytes de workspace (livre interna 314944, psram 0)",,,,,,,,,,,,,,
+borda_dc_ruido3s_ma2212,0,"@@ERRO WIN 163 sem memoria para 0 bytes de workspace (livre interna 314944, psram 0)",,,,,,,,,,,,,,

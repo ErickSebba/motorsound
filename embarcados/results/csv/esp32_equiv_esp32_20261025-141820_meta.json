@@ -1,0 +1,10 @@
+{
+  "categoria": "medicao_no_ESP32",
+  "sessao_bancada": "esp32-20261025-141012",
+  "chip": "ESP32",
+  "c_out": "C:\\Users\\erick\\dev\\Decifrae-Artigo\\Artigo3(MotorSound)\\embarcados\\results\\c_out\\esp32_esp32_p11_c_lowmem\\casos",
+  "projeto": {
+    "commit": "610c34427a0cf30f99f643a875a81b2ae8e95a20",
+    "sujo": true
+  }
+}

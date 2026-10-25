@@ -1,0 +1,121 @@
+{
+  "meta": {
+    "categoria": "medicao_no_ESP32",
+    "sessao_bancada": "esp32-20261025-141012",
+    "chip": "ESP32",
+    "cpu_mhz": 240.0,
+    "idf": "v5.5.6",
+    "flags": "-O2 -ffp-contract=off P11_REAL=float P11_LOWMEM",
+    "argv": {
+      "cmd": "lat",
+      "porta": "COM3",
+      "alvo": "esp32",
+      "baud": 921600,
+      "n": 200,
+      "aquecimento": 5,
+      "bases": [
+        "a2212"
+      ]
+    },
+    "projeto": {
+      "commit": "53a74af5f03108738c3110cfb1cb4ad3450ac37a",
+      "sujo": true
+    },
+    "relogio": "esp_timer_get_time em torno de cada chamada do nucleo",
+    "nota": "janelas = casos nao-borda do ouro em ciclo; aquecimento excluido do resumo"
+  },
+  "resumo": {
+    "a2212": {
+      "total_ms": {
+        "n": 200,
+        "mediana": 2647.5015000000003,
+        "p95": 2647.62405,
+        "max": 2647.674,
+        "min": 2647.362,
+        "media": 2647.509935
+      },
+      "init_ms": {
+        "n": 200,
+        "mediana": 0.0,
+        "p95": 0.0,
+        "max": 0.0,
+        "min": 0.0,
+        "media": 0.0
+      },
+      "total_com_init_ms": {
+        "n": 200,
+        "mediana": 2647.5015000000003,
+        "p95": 2647.62405,
+        "max": 2647.674,
+        "min": 2647.362,
+        "media": 2647.509935
+      },
+      "fator_tempo_real_mediana": 2.6475015,
+      "fator_tempo_real_max": 2.647674,
+      "fator_tempo_real_com_init_mediana": 2.6475015,
+      "pico_heap_interna_bytes": 904,
+      "pico_heap_psram_bytes": 0,
+      "ws_bytes": 303308,
+      "ws_na_psram": 0,
+      "heap_min_livre_interna": 7584,
+      "heap_min_livre_psram": 0,
+      "pilha_folga_bytes_min": 20536,
+      "prep_ms": {
+        "n": 200,
+        "mediana": 1.81,
+        "p95": 1.814,
+        "max": 1.815,
+        "min": 1.809,
+        "media": 1.8103500000000003
+      },
+      "rastreio_ms": {
+        "n": 200,
+        "mediana": 2345.538,
+        "p95": 2345.555,
+        "max": 2345.56,
+        "min": 2345.512,
+        "media": 2345.53821
+      },
+      "viterbi_ms": {
+        "n": 200,
+        "mediana": 90.711,
+        "p95": 90.807,
+        "max": 90.837,
+        "min": 90.554,
+        "media": 90.71278999999998
+      },
+      "sal_caminho_ms": {
+        "n": 200,
+        "mediana": 0.002,
+        "p95": 0.002,
+        "max": 0.002,
+        "min": 0.002,
+        "media": 0.0020000000000000005
+      },
+      "envelope_ms": {
+        "n": 200,
+        "mediana": 199.302,
+        "p95": 199.355,
+        "max": 199.383,
+        "min": 199.236,
+        "media": 199.30378499999998
+      },
+      "features_ms": {
+        "n": 200,
+        "mediana": 10.12,
+        "p95": 10.129,
+        "max": 10.131,
+        "min": 10.085,
+        "media": 10.11703
+      },
+      "cosseno_ms": {
+        "n": 200,
+        "mediana": 0.027,
+        "p95": 0.028,
+        "max": 0.039,
+        "min": 0.023,
+        "media": 0.02577
+      }
+    }
+  }
+}
