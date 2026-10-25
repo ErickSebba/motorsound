@@ -32,7 +32,8 @@ def T(n, k):
 def bases_protocolos(n):
     L = [CAB, r"\begin{table}[t]", r"\centering", r"\scriptsize",
          r"\setlength{\tabcolsep}{3pt}",
-         (r"\caption{Datasets and evaluation protocols. IDMT: \texttt{train/} only, "
+         (r"\caption{Datasets and evaluation protocols. IDMT: \texttt{train/} for development "
+          r"(official test set read once at the end), "
           f"{T(n,'VDataIdmtRecordings')} recordings of {T(n,'VDataIdmtMotors')} motors, "
           f"{T(n,'VDataIdmtWindows')} windows of {T(n,'VParSegIdmt')}\\,s. A2212: "
           f"{T(n,'VDataBldcRecordings')} files of {T(n,'VDataBldcMotors')} motors "
@@ -159,7 +160,7 @@ def desempenho_compacto(n):
     L = [CAB, r"\begin{table}[t]", r"\centering", r"\scriptsize", r"\setlength{\tabcolsep}{3pt}",
          (r"\caption{Balanced accuracy on the same windows (validation only); $g$ = groups. "
           f"{t('VDataCiLevel')}\\% CIs from a group bootstrap ({t('VDataNBoot')} resamples) are "
-          r"given in the text\ifwip{} and in Fig.~\ref{fig:balacc}\fi. $^\dagger$Intentional leakage. IDMT: class = motor = "
+          r"\ifwip shown in Fig.~\ref{fig:balacc}\else in the repository (A2212 file split also in the text)\fi. $^\dagger$Intentional leakage. IDMT: class = motor = "
           r"recording. A2212: Bearing exists only on motor M4 (confounded with motor identity); "
           r"with M4 held out, Bearing recall is zero by construction.}"),
          r"\label{tab:desempenho-compacto}", r"\begin{tabular}{@{}lrcccc@{}}", r"\toprule",

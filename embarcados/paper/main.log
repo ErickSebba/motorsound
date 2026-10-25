@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.141592653-2.6-1.40.28 (MiKTeX 25.12) (preloaded format=pdflatex 2026.10.24)  25 OCT 2026 15:35
+This is pdfTeX, Version 3.141592653-2.6-1.40.28 (MiKTeX 25.12) (preloaded format=pdflatex 2026.10.24)  25 OCT 2026 15:52
 entering extended mode
  restricted \write18 enabled.
  %&-line parsing enabled.
@@ -298,19 +298,19 @@ Package epstopdf-base Info: Redefining graphics rule for `.eps' on input line 4
 fg
 File: epstopdf-sys.cfg 2021/03/18 v2.0 Configuration of epstopdf for MiKTeX
 ))
-LaTeX Font Info:    Trying to load font information for U+msa on input line 99.
-
+LaTeX Font Info:    Trying to load font information for U+msa on input line 100
+.
  (C:\Users\erick\AppData\Local\Programs\MiKTeX\tex/latex/amsfonts\umsa.fd
 File: umsa.fd 2013/01/14 v3.01 AMS symbols A
 )
-LaTeX Font Info:    Trying to load font information for U+msb on input line 99.
-
+LaTeX Font Info:    Trying to load font information for U+msb on input line 100
+.
 
 (C:\Users\erick\AppData\Local\Programs\MiKTeX\tex/latex/amsfonts\umsb.fd
 File: umsb.fd 2013/01/14 v3.01 AMS symbols B
 )
 LaTeX Font Info:    Trying to load font information for OT1+pcr on input line 1
-03.
+04.
 
 (C:\Users\erick\AppData\Local\Programs\MiKTeX\tex/latex/psnfss\ot1pcr.fd
 File: ot1pcr.fd 2001/06/04 font definitions for OT1/pcr.
@@ -327,8 +327,10 @@ Package pdftex.def Info: ../figures/pdf/arquitetura.pdf  used on input line 169
 .
 (pdftex.def)             Requested size: 252.0pt x 252.57207pt.
 
-(../tables/latex/parametros_features.tex) [2 <../figures/pdf/arquitetura.pdf>]
-(../tables/latex/bases_protocolos.tex
+(../tables/latex/parametros_features.tex)
+Underfull \vbox (badness 4217) has occurred while \output is active []
+
+ [2 <../figures/pdf/arquitetura.pdf>] (../tables/latex/bases_protocolos.tex
 Underfull \hbox (badness 10000) in paragraph at lines 14--14
 []\OT1/ptm/m/n/7 IDMT
  []
@@ -358,13 +360,17 @@ Underfull \hbox (badness 4316) in paragraph at lines 19--19
 []\OT1/ptm/m/n/7 motor (M1--
  []
 
-) [3] (../tables/latex/equivalencia_compacta.tex)
+)
+Underfull \vbox (badness 2197) has occurred while \output is active []
+
+ [3]
+(../tables/latex/equivalencia_compacta.tex)
 <../figures/pdf/equivalencia_erro_etapas_en.pdf, id=72, 235.05817pt x 214.53598
 pt>
 File: ../figures/pdf/equivalencia_erro_etapas_en.pdf Graphic file (type pdf)
 <use ../figures/pdf/equivalencia_erro_etapas_en.pdf>
 Package pdftex.def Info: ../figures/pdf/equivalencia_erro_etapas_en.pdf  used o
-n input line 371.
+n input line 369.
 (pdftex.def)             Requested size: 252.0pt x 230.00624pt.
  (../tables/latex/recursos.tex)
 <../figures/pdf/esp32_lat_ram_esp32_20261025-143026_en.pdf, id=73, 255.91734pt 
@@ -375,14 +381,20 @@ ype pdf)
 Package pdftex.def Info: ../figures/pdf/esp32_lat_ram_esp32_20261025-143026_en.
 pdf  used on input line 419.
 (pdftex.def)             Requested size: 252.0pt x 111.05386pt.
- (../tables/latex/desempenho_compacto.tex) [4 <../figures/pdf/equivalencia_erro
-_etapas_en.pdf>]
+
+(../tables/latex/desempenho_compacto.tex
+Underfull \vbox (badness 7613) has occurred while \output is active []
+
+ [4 <../figures/pdf/equivalencia_erro_etapas_en.pdf>])
 <../figures/pdf/teste_idmt_condicoes_en.pdf, id=92, 250.65657pt x 166.61732pt>
 File: ../figures/pdf/teste_idmt_condicoes_en.pdf Graphic file (type pdf)
 <use ../figures/pdf/teste_idmt_condicoes_en.pdf>
 Package pdftex.def Info: ../figures/pdf/teste_idmt_condicoes_en.pdf  used on in
 put line 467.
 (pdftex.def)             Requested size: 252.0pt x 167.51942pt.
+
+Underfull \vbox (badness 10000) has occurred while \output is active []
+
  [5 <../figures/pdf/esp32_lat_ram_esp32_20261025-143026_en.pdf> <../figures/pdf
 /teste_idmt_condicoes_en.pdf>] (main.bbl)
 
@@ -405,7 +417,7 @@ L3 programming layer <2025-12-24>
 Here is how much of TeX's memory you used:
  4444 strings out of 467871
  74386 string characters out of 5418375
- 486198 words of memory out of 5000000
+ 487226 words of memory out of 5000000
  33258 multiletter control sequences out of 15000+600000
  669022 words of font info for 121 fonts, out of 8000000 for 9000
  1141 hyphenation exceptions out of 8191
@@ -429,7 +441,7 @@ rw/courier/ucrr8a.pfb><C:/Users/erick/AppData/Local/Programs/MiKTeX/fonts/type1
 /urw/times/utmbi8a.pfb><C:/Users/erick/AppData/Local/Programs/MiKTeX/fonts/type
 1/urw/times/utmr8a.pfb><C:/Users/erick/AppData/Local/Programs/MiKTeX/fonts/type
 1/urw/times/utmri8a.pfb>
-Output written on main.pdf (6 pages, 343026 bytes).
+Output written on main.pdf (6 pages, 341770 bytes).
 PDF statistics:
  204 PDF objects out of 1000 (max. 8388607)
  0 named destinations out of 1000 (max. 500000)
