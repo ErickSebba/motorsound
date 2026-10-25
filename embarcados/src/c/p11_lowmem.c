@@ -151,16 +151,18 @@ int p11_lm_init(p11_lm *lm, lm_pool *pool, int n)
     ws->nperseg = nd < 1024 ? nd : 1024;
     if (ws->nperseg % 2) return -2;   /* p11_welch exige nperseg par */
 
+    /* todos de 32 bits (float, int32, double = dois l32i): podem ir para a IRAM, que só
+     * aceita acesso em 32 bits; no ESP32 sem PSRAM a DRAM livre fica para o qX (24/10) */
     g_nped = 0;
-    PED(ws->y, p11_real, n, 0);                   /* recebe bytes da serial */
-    PED(ws->grade, double, P11_J, 0);
+    PED(ws->y, p11_real, n, 1);                   /* serial copia em palavras de 32 bits (main.c) */
+    PED(ws->grade, double, P11_J, 1);
     PED(ws->janela, p11_real, P11_N_FFT, 1);
-    PED(ws->P_mean, p11_real, P11_F, 0);
-    PED(ws->e_q, p11_real, ws->T, 0);
-    PED(ws->path, int32_t, ws->T, 0);
-    PED(ws->fbuf, double, ws->T, 0);
-    PED(ws->rbuf, p11_real, ws->T, 0);
-    PED(ws->env_dec, p11_real, nd, 0);
+    PED(ws->P_mean, p11_real, P11_F, 1);
+    PED(ws->e_q, p11_real, ws->T, 1);
+    PED(ws->path, int32_t, ws->T, 1);
+    PED(ws->fbuf, double, ws->T, 1);
+    PED(ws->rbuf, p11_real, ws->T, 1);
+    PED(ws->env_dec, p11_real, nd, 1);
     PED(tw_meia, p11_cpx, h, 1);
     PED(tw_r, p11_cpx, h, 1);
     PED(lm->tw_r128, p11_cpx, LM_N2, 1);

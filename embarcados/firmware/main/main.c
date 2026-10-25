@@ -55,6 +55,7 @@ static size_t g_mem_bytes = 0;
 static int g_mem_psram = 0;
 
 static char g_out[SAIDA_MAX];
+static int g_rc_det = 0;   /* código interno da última falha (p11_lm_rastrear: -10 = pool) */
 
 /* ------------------------------------------------------------------ serial */
 static void escreve(const char *s, size_t n) { uart_write_bytes(UART_P11, s, n); }
@@ -73,16 +74,23 @@ static void le_exato(void *dst, size_t n)
 /* Leitura com confirmação: depois de cada pedaço de CONF_BYTES o firmware responde "@@A" e o
  * host só manda o próximo depois disso. Sem isso, a 921600 baud bytes se perdiam (24/10). */
 #define CONF_BYTES 1024
-static void le_confirmado(void *dst, size_t n)
+/* Cada pedaço passa por um buffer em DRAM e vai para dst em palavras de 32 bits: na variante
+ * lowmem o áudio pode morar na IRAM, que não aceita acesso por byte (nem o uart_read_bytes nem
+ * o CRC). Devolve o CRC32 (o mesmo de zlib.crc32) dos bytes recebidos. n é múltiplo de 4. */
+static uint32_t g_conf[CONF_BYTES / 4];
+static uint32_t le_confirmado(void *dst, size_t n)
 {
-    uint8_t *p = (uint8_t *)dst;
+    uint32_t *p = (uint32_t *)dst, crc = 0;
     while (n) {
-        size_t k = n > CONF_BYTES ? CONF_BYTES : n;
-        le_exato(p, k);
-        p += k;
+        size_t k = n > CONF_BYTES ? CONF_BYTES : n, i;
+        le_exato(g_conf, k);
+        crc = esp_rom_crc32_le(crc, (const uint8_t *)g_conf, k);
+        for (i = 0; i < k / 4; ++i) p[i] = g_conf[i];
+        p += k / 4;
         n -= k;
         uart_write_bytes(UART_P11, "@@A\n", 4);
     }
+    return crc;
 }
 
 static int le_linha(char *buf, int cap)
@@ -252,11 +260,11 @@ static int roda_janela(const float *audio, int n, resultado_t *r)
     memset(r, 0, sizeof(*r));
     if (prepara(n) != 0) return -1;
     y = audio_buf();
-    if (audio != y) memcpy(y, audio, sizeof(float) * (size_t)n);
+    if (audio != y) { int i; for (i = 0; i < n; ++i) y[i] = audio[i]; }   /* y pode estar na IRAM */
     t0 = esp_timer_get_time();
     p11_preparar(y, n, y);
     t1 = esp_timer_get_time(); r->t_prep = t1 - t0;
-    if (p11_lm_rastrear(&g_lm, &r->min_delta, &r->score, NULL, NULL) != 0) return -2;
+    if ((g_rc_det = p11_lm_rastrear(&g_lm, &r->min_delta, &r->score, NULL, NULL)) != 0) return -2;
     r->t_rast = g_marcas[LM_T_STFT] - t1;
     r->t_vit = g_marcas[LM_T_VITERBI] - g_marcas[LM_T_STFT];
     r->t_sal = g_marcas[LM_T_SAL] - g_marcas[LM_T_VITERBI];
@@ -273,7 +281,7 @@ static int roda_janela(const float *audio, int n, resultado_t *r)
     t1 = esp_timer_get_time(); r->t_cos = t1 - t0;
     r->T = g_lm.ws.T;
     if (r->T > (int)(sizeof r->path / sizeof r->path[0])) return -4;
-    memcpy(r->path, g_lm.ws.path, sizeof(int32_t) * (size_t)r->T);
+    { int t; for (t = 0; t < r->T; ++t) r->path[t] = g_lm.ws.path[t]; }   /* path pode estar na IRAM */
     return 0;
 }
 #else
@@ -457,13 +465,12 @@ static void cmd_win(int id, int n)
         escreve_str(g_out);
         return;
     }
-    le_confirmado(audio_buf(), sizeof(float) * (size_t)n);
-    /* CRC32 (o mesmo de zlib.crc32) dos bytes recebidos, fora do tempo medido: o host
-     * descarta a janela se a serial perdeu ou trocou algum byte */
-    crc = esp_rom_crc32_le(0, (const uint8_t *)audio_buf(), sizeof(float) * (size_t)n);
+    /* CRC32 dos bytes recebidos, fora do tempo medido: o host descarta a janela se a serial
+     * perdeu ou trocou algum byte */
+    crc = le_confirmado(audio_buf(), sizeof(float) * (size_t)n);
     rc = roda_janela(audio_buf(), n, &r);
     if (rc != 0) {
-        snprintf(g_out, SAIDA_MAX, "@@ERRO WIN %d rc=%d\n", id, rc);
+        snprintf(g_out, SAIDA_MAX, "@@ERRO WIN %d rc=%d det=%d\n", id, rc, g_rc_det);
         escreve_str(g_out);
         return;
     }
