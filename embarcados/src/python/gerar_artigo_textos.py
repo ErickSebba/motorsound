@@ -80,8 +80,9 @@ nem medida no chip e por isso fica fora do artigo.
 
 ## Bases, protocolos e métricas
 
-Usamos só o `train/` do IDMT ({VDataIdmtRecordings} gravações de {VDataIdmtMotors} motores,
-{VDataIdmtWindows} janelas; o teste oficial não foi aberto) e o A2212 inteiro
+Desenvolvemos só no `train/` do IDMT ({VDataIdmtRecordings} gravações de {VDataIdmtMotors} motores,
+{VDataIdmtWindows} janelas; o teste oficial foi lido uma única vez, no fim, com as configurações
+congeladas e commitadas antes, em `configs/experiments/congelado_teste_idmt_*.json`) e no A2212 inteiro
 ({VDataBldcRecordings} arquivos de {VDataBldcMotors} motores, {VDataBldcFilesHealthy} Healthy,
 {VDataBldcFilesPropeller} Propeller e {VDataBldcFilesBearing} Bearing; {VDataBldcWindows} janelas).
 Todos os métodos usam exatamente as mesmas janelas e os mesmos folds. No IDMT comparamos o split
@@ -119,9 +120,9 @@ têm de coincidir exatamente, salvo empate demonstrado com os valores da própri
 falha numa etapa marca as seguintes como "a jusante". Cronologia: o porte em C foi depurado contra
 os mesmos vetores de ouro pelo seu desenvolvedor antes do congelamento (commit do porte anterior ao
 das tolerâncias). Por isso falamos em tolerâncias "congeladas antes da comparação formal", não em
-pré-registro. A auditoria independente (`reports/independent_scientific_audit.md`) conferiu também
-janelas fora do ouro, que passaram com as tolerâncias congeladas; o número dessas janelas não está
-em CSV do repositório e não é citado. As tolerâncias dos casos de borda foram calibradas no erro da
+pré-registro. Por isso conferimos também janelas fora do ouro, que o desenvolvedor do C nunca viu
+(`src/python/aud_holdout.py`, `results/csv/aud_holdout_*`): todas passaram com as tolerâncias
+congeladas. As tolerâncias dos casos de borda foram calibradas no erro da
 emulação nos mesmos sinais, evidência mais fraca, e algumas são largas no float32 (proeminência de
 modulação e grupos de ordens). A grade de {VParStepCents} cents e a faixa de {VParFmin} a
 {VParFmax} Hz do rastreador foram escolhidas olhando o `train/` do IDMT.
@@ -149,7 +150,7 @@ medida e não é estimada por datasheet.
 RESULTADOS = """# Resultados (artigo ICIT 2027, `embarcados/`)
 
 > Gerado por `embarcados/src/python/gerar_artigo_textos.py` a partir de `paper/numeros.json`
-> (commit {COMMIT}). Não editar à mão. Validação apenas; o teste oficial do IDMT não foi lido.
+> (commit {COMMIT}). Não editar à mão. Validação, salvo a seção do teste oficial do IDMT (lido uma vez).
 > Os números do ESP32 vêm da bancada física, com a variante `{VChipVariant}`.
 
 ## Equivalência Python × C (medição no PC)
@@ -271,6 +272,20 @@ também do baseline de nível, com intervalos sobrepostos. ROC-AUC macro da p11 
 scores de modelos de folds diferentes e, no fold do M4, p_Bearing = 0 é imposto; por isso não a
 usamos para ordenar métodos. Em toda linha com Bearing, a classe está confundida com o motor M4.
 
+## Teste oficial do IDMT
+
+Com as configurações congeladas e commitadas antes, o teste oficial do IDMT foi lido uma única vez
+(`src/python/teste_idmt.py`), com os modelos treinados em todo o `train/`. Nas {tstNWin} janelas
+de teste ({tstNRec} gravações, {tstNCond} condições), a validação quase perfeita não se sustenta:
+a acurácia balanceada é {tstBalCls} [{tstBalClsLo}, {tstBalClsHi}] para as features clássicas,
+{tstBalDec} [{tstBalDecLo}, {tstBalDecHi}] para a pipeline e {tstBalRmsNorm} para o baseline de
+nível normalizado, com AUC macro de {tstAucCls}, {tstAucDec} e {tstAucRmsNorm}. A pipeline atribui
+a good {tstPredGoodDecBrokenPct} % das janelas broken e {tstPredGoodDecHeavyloadPct} % das
+heavy load, e só lidera sob ruído branco ({tstBalDecWhite} contra {tstBalClsWhite} das
+clássicas); nas outras condições fica abaixo das clássicas. Como o treino viu uma única sessão
+limpa por classe e a classe continua igual ao motor, isso mede a transferência entre sessões e
+ruídos dos mesmos três motores, não o reconhecimento do estado de operação.
+
 ## Rotação estimada (interpretabilidade)
 
 No IDMT a rotação mediana rastreada é {VRotIdmtGoodMed}, {VRotIdmtBrokenMed} e {VRotIdmtHeavyMed}
@@ -303,9 +318,11 @@ desquantizado), e Bearing é o motor M4; isso confere a implementação, não o 
 
 ## O que as bases permitem concluir
 
-O IDMT sem o seu teste não sustenta nenhuma afirmação sobre discriminar estado de operação: uma
+A validação do IDMT não sustenta nenhuma afirmação sobre discriminar estado de operação: uma
 gravação por classe torna classe, motor e sessão a mesma variável, e o baseline de dois números é
-tão bom quanto qualquer modelo. O A2212 com split por arquivo sustenta afirmações sobre o estado de
+tão bom quanto qualquer modelo. O teste oficial mostra como esse teto é frágil (acurácia
+balanceada {tstBalDec} para a p11 e {tstBalCls} para as clássicas), mas nele a classe continua
+igual ao motor. O A2212 com split por arquivo sustenta afirmações sobre o estado de
 motores já vistos no treino, e ali as features clássicas são melhores que a p11. Generalizar para
 um motor novo é a pergunta relevante para um monitor implantado, e com {VDataBldcMotors} motores,
 um defeito de rolamento num só deles e faixas de velocidade diferentes por classe, os dados só
@@ -326,12 +343,15 @@ def preencher(modelo, n, commit):
         if k not in n:
             raise KeyError(f"marcador sem macro: {k}")
         return n[k]["pt"].replace("\\_", "_")
-    return re.sub(r"\{(V[A-Za-z]+|COMMIT)\}", sub, modelo)
+    return re.sub(r"\{(V[A-Za-z]+|tst[A-Za-z]+|COMMIT)\}", sub, modelo)
 
 
 def main():
     j = C.ler_json(C.PAPER / "numeros.json")
     n, commit = j["numeros"], j["projeto"]["commit"][:7]
+    # macros do teste oficial do IDMT (gerar_artigo_teste.py): ponto decimal -> vírgula no pt
+    for k, v in C.ler_json(C.PAPER / "numeros_teste.json").items():
+        n[k] = {"pt": str(v["valor"]).replace(".", ",")}
     for nome, modelo in (("METODOLOGIA.md", METODOLOGIA), ("RESULTADOS.md", RESULTADOS)):
         (C.PAPER / nome).write_text(preencher(modelo, n, commit), encoding="utf-8")
     print("textos: METODOLOGIA.md, RESULTADOS.md")

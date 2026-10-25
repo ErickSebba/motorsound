@@ -90,9 +90,10 @@ def sec_bases(L):
              "inteiro; a sobra final < 3 s de cada `train/<classe>/pure.wav` não vira recorte "
              "(decisão dos autores da base).\n")
     v = json.load(open(RAIZ / "out" / "experiments" / "20261014_185859_validacao_meta.json", encoding="utf-8"))
-    L.append("**Divisão.** O conjunto de teste oficial do IDMT **nunca foi aberto** (trancado por "
-             f"código em {rel(RAIZ / 'motorsound' / 'io.py')}; nota no meta da validação: "
-             f"\"{v.get('nota')}\"). Todos os números são de **validação cruzada**:\n")
+    L.append("**Divisão.** Desenvolvimento só em validação cruzada (o teste fica trancado por código "
+             f"em {rel(RAIZ / 'motorsound' / 'io.py')}). O teste oficial do IDMT foi lido **uma única "
+             "vez**, em 25/10/2026, com autorização do Erick e depois do congelamento commitado "
+             "das configurações (§2, \"Teste oficial do IDMT\"). Os demais números são de validação:\n")
     L.append("- IDMT: blocos temporais. Cada `train/<classe>/pure.wav` em segmentos de 3 s agrupados "
              "em 5 blocos contíguos; deixa-um-bloco-de-fora, com o primeiro segmento de cada bloco "
              "descartado como guarda. Grupo = (gravação, bloco). Fonte: "
@@ -162,6 +163,27 @@ def sec_pipelines(L):
              f"{rel(EMB / 'results' / 'csv' / 'diagnostico_20261023_222831.csv')}, script "
              f"{rel(EMB / 'src' / 'python' / 'diagnostico.py')}; os ICs estão no CSV):\n")
     L.append(md_tab(t) + "\n")
+    ft = sorted(p for p in (EMB / "results" / "csv").glob("teste_idmt_2*.csv")
+                if "_curvas" not in p.name and "_meta" not in p.name)[-1]
+    tt = pd.read_csv(ft)
+    m = tt[(tt.classe == "_macro") & (tt.metrica == "acuracia_balanceada")]
+    tab = m.pivot_table(index="condicao", columns="variante", values="valor").round(3).reset_index()
+    tot = m[m.condicao == "_todas"][["variante", "valor", "ic95_lo", "ic95_hi", "n_janelas", "n_gravacoes"]].round(3)
+    auc = tt[(tt.classe == "_macro") & (tt.metrica == "roc_auc_ovr_macro") & (tt.condicao == "_todas")][["variante", "valor"]].round(3)
+    cong = sorted((EMB / "configs" / "experiments").glob("congelado_teste_idmt_*.json"))[-1]
+    L.append("**Teste oficial do IDMT** (lido uma vez; congelamento em "
+             f"{rel(cong)}, commitado antes do resultado; script "
+             f"{rel(EMB / 'src' / 'python' / 'teste_idmt.py')}; resultado {rel(ft)}; janelas "
+             "em `embarcados/results/predictions/teste_idmt_janelas_*.csv`; curvas ROC/PR em "
+             "`results/csv/teste_idmt_curvas_*.csv`). Treino em todo o `train/` (pure), teste em todas "
+             "as janelas de 3 s do `test/`. Acurácia balanceada agregada (IC95 por bootstrap de gravações):\n")
+    L.append(md_tab(tot) + "\n")
+    L.append("AUC macro um-contra-o-resto:\n")
+    L.append(md_tab(auc) + "\n")
+    L.append("Por condição (acurácia balanceada; cada condição tem 3 gravações, uma por classe):\n")
+    L.append(md_tab(tab) + "\n")
+    L.append("Classe = motor também no teste; o resultado mede transferência entre sessões e ruído "
+             "dos mesmos três motores, não reconhecimento de estado.\n")
     L.append("Baselines realmente executadas: b00_nivel (RMS + pico, normalizado e bruto) e "
              "b01_forma_espectral. Ablações executadas: p11a (grade 10 cents), p12 (sem Viterbi de "
              "rotação), p20b (só rotação), HMM × argmax (\"p13\", em "
@@ -235,7 +257,16 @@ def sec_equiv(L):
     f = ultimo(EMB / "results" / "csv" / "equivalencia_float-lowmem_2*_resumo.csv")
     r = pd.read_csv(f)
     L.append(f"- variante `p11_c_lowmem` (float, só janelas de 1 s): {rel(f)} — PASS "
-             f"{int(r.n_pass.sum())}, FAIL {int(r.n_fail.sum())}.\n")
+             f"{int(r.n_pass.sum())}, FAIL {int(r.n_fail.sum())}.")
+    f = ultimo(EMB / "results" / "csv" / "equivalencia_esp32_*_resumo.csv")
+    r = pd.read_csv(f)
+    dec = r[r.etapa == "decisao"].iloc[0]
+    L.append(f"- **no ESP32 físico**, `p11_c_lowmem`: {rel(f)} — FAIL {int(r.n_fail.sum())}; decisão "
+             f"{int(dec.n_pass)}/{int(dec.n_pass + dec.n_fail)} casos; razão erro/tolerância máx. "
+             f"{r.razao_tol_max.max():.3g}. Só as saídas finais são comparadas (o firmware não devolve as "
+             "etapas intermediárias, que aparecem como ausentes).")
+    f = ultimo(EMB / "results" / "csv" / "aud_holdout_2*_resumo.csv")
+    L.append(f"- teste fora da amostra (24 janelas fora do ouro, PC): {rel(f)}.\n")
     L.append("Divergências conhecidas: nos 2 casos sintéticos de borda DC + ruído do build float, "
              "o pico do espectro de modulação está no piso de arredondamento float32 nas duas "
              "implementações; f_mod difere e o z-score falha; **a decisão de classe coincide**. "
@@ -274,7 +305,8 @@ def sec_esp32(L):
              "`esp_chip_info` pelo firmware; sessões anteriores em `results/manifests/bancada_*.json`).\n")
     L.append(f"- Chip: **{b['chip_modelo']}** clássico (revisão {ci['revisao']}, {ci['cores']} núcleos), "
              f"CPU {b['cpu_mhz']} MHz, flash {b['flash_mb']} MB, PSRAM {b['psram_mb']} MB. "
-             "**Não é ESP32-S3.** Modelo do pacote/módulo lido pelo esptool: ESP32-D0WD-V3 rev 3.1.")
+             "**Não é ESP32-S3.** O esptool identificou o chip como ESP32-D0WD-V3 durante a gravação "
+             "(saída de console, não registrada em arquivo).")
     L.append("- Placa portadora: placa de desenvolvimento com conversor USB-serial CH9102 e botões "
              "BOOT/EN (ou seja, **é uma placa estilo DevKit**). Fabricante e modelo exatos da placa: "
              "**não registrados**.")
@@ -284,7 +316,7 @@ def sec_esp32(L):
              f"{rel(EMB / 'firmware')} (`sdkconfig.defaults`, `main/CMakeLists.txt`). Wi-Fi e BT "
              "desligados.")
     L.append("- Execução: processor-in-the-loop. O áudio chega pela serial (ou pela flash); "
-             "o tempo seria medido com `esp_timer_get_time()` só em torno do processamento, "
+             "o tempo é medido com `esp_timer_get_time()` só em torno do processamento, "
              "sem aquisição.\n")
     m0 = pd.read_csv(EMB / "results" / "csv" / "esp32_memoria_esp32_20261024-182937.csv")
     L.append(f"**Memória, medida no chip.** Variante de referência `p11_c_ref` "
@@ -297,23 +329,43 @@ def sec_esp32(L):
     L.append(f"\nVariante `p11_c_lowmem` (pool de blocos, só janelas de 1 s): pool disponível no "
              f"chip {fmt(ci.get('pool_8bit'))} B de DRAM + {fmt(ci.get('pool_32bit'))} B de IRAM, "
              f"blocos {ci.get('pool')}; heap livre após o pool {fmt(ci.get('heap_livre_8bit'))} B. "
-             "O pico do pool com o mesmo layout de blocos é estimado no PC por "
-             "`tests/equivalence/gerar_lowmem.py` (impresso na execução; não vai para CSV). "
-             "**Nenhuma janela completou no chip até a geração deste dossiê**; as tentativas "
-             "estão nos CSVs:")
+             "Tentativas registradas (as primeiras falharam na alocação ou no acesso à IRAM, até "
+             "as correções do firmware):")
     for f in sorted(glob.glob(str(EMB / "results" / "csv" / "esp32_memoria_esp32_*.csv"))):
         if f.endswith("_meta.json"):
             continue
         r = pd.read_csv(f)
-        res = "; ".join(f"{x.base}: coube={x.coube}" for x in r.itertuples())
+        res = "; ".join(f"{x.base}: coube={x.coube}" + (f", ws={int(x.ws_bytes)} B, heap mín. "
+                        f"{int(x.heap_min_livre_interna)} B" if x.coube == 1 and "heap_min_livre_interna" in r
+                        else "") for x in r.itertuples())
         L.append(f"  - {rel(f)}: {res}")
     sz = copia_size()
     L.append("\n**Tamanho do firmware (build, `idf.py size`, não é medição em execução):** " +
              ", ".join(f"{k}: {rel(v)}" for k, v in sz.items()) + ".\n")
-    L.append("**Tempo de processamento no ESP32: não medido.** Nenhuma janela completou no chip "
-             "(a referência não cabe sem PSRAM; a variante lowmem ainda falhava na alocação ou no "
-             "acesso à IRAM nas tentativas registradas). **Energia: não medida** (não há sensor de "
-             "corrente). O manuscrito não pode afirmar tempo real nem baixo consumo no ESP32.\n")
+    fl = ultimo(EMB / "results" / "csv" / "esp32_lat_esp32_*.csv")
+    lt = pd.read_csv(fl)
+    lt = lt[~lt.aquecimento.astype(bool)]
+    est = lt.total_ms.agg(["count", "min", "mean", "median", lambda s: s.quantile(0.95), "max"])
+    est.index = ["n", "min", "media", "mediana", "p95", "max"]
+    L.append(f"**Tempo de processamento, medido no ESP32** ({rel(fl)}; variante `p11_c_lowmem`, janelas "
+             f"de 1 s do A2212, aquecimento excluído; `esp_timer_get_time()` só em torno do "
+             f"processamento, sem aquisição nem transmissão), ms por janela:\n")
+    L.append(md_tab(est.round(1).to_frame("total_ms").T.reset_index(drop=True)) + "\n")
+    eta = [c for c in lt.columns if c.endswith("_ms") and c != "total_ms"]
+    L.append("Mediana por etapa (ms): " + ", ".join(f"{c[:-3]} {lt[c].median():.1f}" for c in eta) + ".")
+    L.append(f"Fator de tempo real (mediana do total / 1000 ms): {lt.total_ms.median() / 1000:.2f} — "
+             "**não é tempo real** nesta placa. A janela de 3 s do IDMT não cabe.\n")
+    fs = ultimo(EMB / "results" / "csv" / "esp32_seq_esp32_*.csv")
+    ms = json.load(open(fs.with_name(fs.stem + "_meta.json"), encoding="utf-8"))
+    sq = pd.read_csv(fs)
+    pcf = sorted((EMB / "results" / "csv").glob("seq_pc_*.csv"))
+    pcm = [p for p in pcf if json.load(open(p.with_name(p.stem + "_meta.json"), encoding="utf-8")).get("base") == ms.get("base")]
+    iguais = (sq.decisao_online.values == pd.read_csv(pcm[-1]).online_python.values).sum() if pcm else None
+    L.append(f"**Fluxo contínuo, medido no ESP32** ({rel(fs)}): {len(sq)} janelas lidas da flash, "
+             f"detecções {ms['deteccao']}; decisões iguais às do Python ({rel(pcm[-1]) if pcm else '—'}): "
+             f"{iguais}/{len(sq)}.\n")
+    L.append("**Energia: não medida** (não há sensor de corrente). O manuscrito não pode afirmar "
+             "tempo real nem baixo consumo no ESP32.\n")
     bp = pd.read_csv(EMB / "results" / "csv" / "bench_pc_20261024-091911.csv")
     bp = bp[~bp.aquecimento]
     t = bp.groupby(["impl", "base"]).total_ms.agg(
@@ -342,13 +394,16 @@ def sec_figuras(L):
     L.append("- Tabela comparativa das 20 pipelines: **pronta** (§2 e RESULTADOS_tabelas.md T1), em validação.")
     L.append("- Desempenho × custo: **pronta só com custo estimado** (pareto_custo.png); com custo medido é inviável (§5).")
     L.append("- Matriz de confusão: **pronta em validação** para a p11 (diag_confusao_p11_*.png; contagens `cm_pred_*` no CSV de diagnóstico).")
-    L.append("- ROC/PR **no conjunto de teste**: **não disponível**. O teste oficial do IDMT nunca foi aberto "
-             "(exige autorização explícita do Erick) e o A2212 não tem conjunto de teste separado. "
-             "AUC macro em validação existe no CSV de diagnóstico (`roc_auc_ovr_macro`); curvas não foram desenhadas.")
+    L.append("- ROC/PR **no teste oficial do IDMT**: **pronto** (pontos em `results/csv/teste_idmt_curvas_*.csv`, "
+             "ROC em `figures/png/teste_idmt_roc_en.png`; PR só em CSV). O A2212 não tem conjunto de teste "
+             "separado, então lá só há AUC de validação (`roc_auc_ovr_macro` no CSV de diagnóstico).")
+    L.append("- Matriz de confusão **no teste**: **pronta** (`cm_pred_*` em `results/csv/teste_idmt_2*.csv`).")
     L.append("- Python × C com linha de identidade e distribuição dos erros: **parcial**; existe "
              "equivalencia_erro_etapas.png (erro por etapa contra a tolerância). Um gráfico de "
              "dispersão Python × C não foi feito, mas os dados existem (`gold/` + `results/c_out/`, não versionados por tamanho).")
-    L.append("- Distribuição dos tempos no ESP32: **não disponível** (tempo não medido no chip, §5).\n")
+    L.append("- Distribuição dos tempos no ESP32: **dados prontos** (§5, CSV por janela); a figura do "
+             "artigo mostra a mediana por etapa (`figures/png/esp32_lat_ram_*`), não a distribuição "
+             "(a variação entre janelas é < 1 ms).\n")
     L.append("Código: Python de referência em `pipelines/`, `motorsound/`; C em `embarcados/src/c/`; "
              "firmware em `embarcados/firmware/`; testes em `embarcados/tests/`. Manifesto do ouro "
              "(partições e casos): `embarcados/gold/manifest.json` (não versionado; gerado por "
