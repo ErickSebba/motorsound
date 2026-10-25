@@ -137,35 +137,67 @@ static void ordena_ped(int *ord)
     }
 }
 
-/* escolhe o bloco de cada pedido (mesmas regras de lm_corta) sem cortar nada */
+/* Escolhe o bloco de cada pedido sem cortar nada: busca em profundidade, do maior pedido ao
+ * menor, tentando primeiro o bloco de menor sobra (o melhor encaixe guloso é o primeiro ramo).
+ * O guloso puro não basta: em 25/10, com DRAM 114624/110528/14272/8240, ele errava por 76 B
+ * havendo divisão que cabe. Regras de memória iguais às de lm_corta (so32 só para quem aceita).
+ * LM_PLANO_NOS limita a busca (roda uma vez por tamanho de janela). */
+#define LM_PLANO_NOS 200000L
+static int g_ord[LM_MAX_PED];
+static size_t g_livre[LM_MAX_BLOCOS], g_resto[LM_MAX_PED + 1];
+static long g_nos;
+
+static int busca(const lm_pool *pl, int i)
+{
+    int cand[LM_MAX_BLOCOS], nc = 0, j, k;
+    lm_ped *q;
+    size_t c, tot = 0;
+    if (i == g_nped) return 0;
+    if (++g_nos > LM_PLANO_NOS) return -1;
+    q = &g_ped[g_ord[i]];
+    c = arred(q->bytes);
+    for (j = 0; j < pl->nb; ++j) tot += g_livre[j];
+    if (g_resto[i] > tot) return -1;   /* poda: o que falta não cabe nem somando tudo */
+    for (j = 0; j < pl->nb; ++j) {
+        if (pl->b[j].so32 && !q->a32) continue;
+        if (c <= g_livre[j]) cand[nc++] = j;
+    }
+    /* ordem: quem aceita 32 bits tenta antes os blocos so32; depois, menor sobra primeiro */
+    for (j = 1; j < nc; ++j) {
+        int x = cand[j];
+        k = j - 1;
+        while (k >= 0) {
+            int y = cand[k];
+            int py = q->a32 ? !pl->b[y].so32 : 0, px = q->a32 ? !pl->b[x].so32 : 0;
+            if (py < px || (py == px && g_livre[y] <= g_livre[x])) break;
+            cand[k + 1] = y;
+            --k;
+        }
+        cand[k + 1] = x;
+    }
+    for (k = 0; k < nc; ++k) {
+        j = cand[k];
+        g_livre[j] -= c;
+        q->bloco = j;
+        if (busca(pl, i + 1) == 0) return 0;
+        g_livre[j] += c;
+        if (g_nos > LM_PLANO_NOS) return -1;
+    }
+    return -1;
+}
+
 static int planeja(const lm_pool *pl)
 {
-    static int ord[LM_MAX_PED];
-    size_t livre[LM_MAX_BLOCOS];
-    int i, j, passo;
+    int j;
     for (j = 0; j < pl->nb; ++j) {
         size_t cap = pl->b[j].tam > LM_ALIN ? pl->b[j].tam - LM_ALIN : 0;
-        livre[j] = cap > pl->b[j].usado ? cap - arred(pl->b[j].usado) : 0;
+        g_livre[j] = cap > arred(pl->b[j].usado) ? cap - arred(pl->b[j].usado) : 0;
     }
-    ordena_ped(ord);
-    for (i = 0; i < g_nped; ++i) {
-        lm_ped *q = &g_ped[ord[i]];
-        size_t c = arred(q->bytes);
-        int melhor = -1;
-        for (passo = 0; passo < 2 && melhor < 0; ++passo) {
-            if (!q->a32 && passo == 1) break;
-            for (j = 0; j < pl->nb; ++j) {
-                if (pl->b[j].so32 && !q->a32) continue;
-                if (q->a32 && passo == 0 && !pl->b[j].so32) continue;
-                if (q->a32 && passo == 1 && pl->b[j].so32) continue;
-                if (c <= livre[j] && (melhor < 0 || livre[j] - c < livre[melhor] - c)) melhor = j;
-            }
-        }
-        if (melhor < 0) return -10;
-        livre[melhor] -= c;
-        q->bloco = melhor;
-    }
-    return 0;
+    ordena_ped(g_ord);
+    g_resto[g_nped] = 0;
+    for (j = g_nped - 1; j >= 0; --j) g_resto[j] = g_resto[j + 1] + arred(g_ped[g_ord[j]].bytes);
+    g_nos = 0;
+    return busca(pl, 0) == 0 ? 0 : -10;
 }
 
 /* corta os pedidos que têm bloco planejado (os outros: melhor encaixe), do maior ao menor */
