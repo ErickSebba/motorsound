@@ -301,8 +301,7 @@ def fig_latencia_esp32(L, b, M, n, nome, fontes):
     ax.set_yticks(y, [r for _, r in ETAPAS_CHIP], fontsize=5.2)
     ax.set_xlim(0, tot * 1.45)
     ax.tick_params(axis="x", labelsize=5)
-    ax.set_xlabel(f"median ms per {n['VParSegBldc']['tex']}-s window
-(total {tot:,.1f} ms)",
+    ax.set_xlabel(f"median ms per {n['VParSegBldc']['tex']}-s window\n(total {tot:,.1f} ms)",
                   fontsize=5.5)
     ax.grid(axis="x", color="#e6e5e1", lw=0.4, zorder=0)
     ax.text(0.0, 1.04, "(a)", transform=ax.transAxes, fontsize=7, weight="bold", ha="right")

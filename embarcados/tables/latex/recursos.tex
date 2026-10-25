@@ -5,21 +5,17 @@
 \centering
 \scriptsize
 \setlength{\tabcolsep}{4pt}
-\caption{Resources, separated by evidence category. (1) analytical estimate (\texttt{p11\_host ws}, same layout function as the arena of the reference variant); (2) measured on the PC (Windows 11, MSVC 19.44 x64 \slash{}O2 \slash{}fp:precise; 200 timings per dataset cycling over 75 distinct windows after 5 warm-up runs; the C executable runs as a new process per window, so warm-up does not warm it, and its time excludes the workspace initialisation, which the Python timing cannot exclude); (3) firmware build, \texttt{idf.py size} (ESP-IDF v5.5.6), static only; (4) measured on the ESP32 (240\,MHz, 0\,MB PSRAM; 200 timed windows cycling over 75 distinct ones after 5 warm-up runs). Only column (4) is a measurement on the microcontroller, and it uses the named low-memory variant \texttt{p11\_c\_lowmem}; the 3-s IDMT window did not fit.}
+\caption{Resources by evidence category: (1) analytical estimate (\texttt{p11\_host ws}); (2) measured on the PC (Windows 11, MSVC 19.44 x64 \slash{}O2 \slash{}fp:precise; 200 timings per dataset over 75 distinct windows, one new process per window); (3) \texttt{idf.py size}, static only; (4) measured on the ESP32 without PSRAM (200 timed windows after 5 warm-up runs). Columns (1)--(2) use the reference layout \texttt{p11\_c\_ref}; column (4), the only measurement on the microcontroller, uses \texttt{p11\_c\_lowmem}.}
 \label{tab:resources}
 \begin{tabular}{@{}lllll@{}}
 \toprule
 Quantity & (1) Estimate & (2) PC & (3) Build & (4) ESP32 \\
 \midrule
-Variant & \texttt{p11\_c\_ref} arena & \texttt{p11\_c\_ref} & \texttt{p11\_c\_ref}; \texttt{p11\_c\_lowmem} & \texttt{p11\_c\_lowmem} \\
 Latency, C float32, median [p95] (ms), 3\,s / 1\,s & -- & 13.29 [15.00] / 3.18 [3.84] & -- & \textit{did not fit} / 2647.5 [2647.6] \\
 Latency, Python reference, median (ms), 3\,s / 1\,s & -- & 95.3 / 22.1 & -- & -- \\
-Real-time factor (C, median), 3\,s / 1\,s & -- & 0.0044 / 0.0032 & -- & \textit{did not fit} / 2.65 \\
-Share of STFT + harmonic sum (\%), 1\,s & -- & 39 & -- & 89 \\
+Real-time factor (C, median), 3\,s / 1\,s; STFT + harm.\ sum share at 1\,s & -- & 0.0044 / 0.0032; 39\,\% & -- & \textit{did not fit} / 2.65; 89\,\% \\
 Working memory (KiB), 3\,s / 1\,s & 1820 / 936 & -- & -- & \textit{did not fit} / 296 (pool peak) \\
-Internal RAM handed to the pool (KiB) & -- & -- & -- & 308 \\
-Min.\ free internal heap (KiB), 1\,s & -- & -- & -- & 7.4 \\
-Stack headroom (B), 1\,s & -- & -- & -- & 20{,}536 \\
+Internal RAM for the pool; min.\ free heap (KiB); stack headroom (B) & -- & -- & -- & 308; 7.4; 20{,}536 \\
 App binary (KiB): ESP32, -S3 (\texttt{p11\_c\_ref}); ESP32 (\texttt{p11\_c\_lowmem}) & -- & -- & 209, 233; 215 & -- \\
 Static DRAM, IRAM used / region (KiB), ESP32, \texttt{p11\_c\_lowmem} & -- & -- & 35/176, 58/128 & -- \\
 \bottomrule

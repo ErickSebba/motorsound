@@ -117,22 +117,18 @@ def recursos(n):
     W = f"{t('VParSegIdmt')}\\,s / {t('VParSegBldc')}\\,s"
     ref, lm = r"\texttt{p11\_c\_ref}", r"\texttt{" + t("VChipVariant") + "}"
     rows = [
-        ("Variant", f"{ref} arena", f"{ref}", f"{ref}; {lm}", f"{lm}"),
         (f"Latency, C float32, median [p95] (ms), {W}", na,
          f"{t('VPcCIdmtMed')} [{t('VPcCIdmtPninetyfive')}] / {t('VPcCBldcMed')} [{t('VPcCBldcPninetyfive')}]",
          na, f"{t('VChipLatIdmtMed')} / {t('VChipLatBldcMed')} [{t('VChipLatBldcPninetyfive')}]"),
         (f"Latency, Python reference, median (ms), {W}", na,
          f"{t('VPcPyIdmtMed')} / {t('VPcPyBldcMed')}", na, na),
-        (f"Real-time factor (C, median), {W}", na, f"{t('VPcCIdmtRtf')} / {t('VPcCBldcRtf')}", na,
-         f"{t('VChipRtfIdmt')} / {t('VChipRtfBldc')}"),
-        (f"Share of STFT + harmonic sum (\\%), {t('VParSegBldc')}\\,s", na,
-         f"{t('VPcCBldcTrackPct')}", na, f"{t('VChipBldcTrackPct')}"),
+        (f"Real-time factor (C, median), {W}; STFT + harm.\\ sum share at {t('VParSegBldc')}\\,s", na,
+         f"{t('VPcCIdmtRtf')} / {t('VPcCBldcRtf')}; {t('VPcCBldcTrackPct')}\\,\\%", na,
+         f"{t('VChipRtfIdmt')} / {t('VChipRtfBldc')}; {t('VChipBldcTrackPct')}\\,\\%"),
         (f"Working memory (KiB), {W}", f"{t('VEstWsFloatThreeKib')} / {t('VEstWsFloatOneKib')}",
          na, na, f"{t('VChipWsIdmtKib')} / {t('VChipWsBldcKib')} (pool peak)"),
-        ("Internal RAM handed to the pool (KiB)", na, na, na, f"{t('VChipPoolKib')}"),
-        (f"Min.\\ free internal heap (KiB), {t('VParSegBldc')}\\,s", na, na, na,
-         f"{t('VChipHeapIntBldcKib')}"),
-        (f"Stack headroom (B), {t('VParSegBldc')}\\,s", na, na, na, f"{t('VChipStackBldc')}"),
+        ("Internal RAM for the pool; min.\\ free heap (KiB); stack headroom (B)", na, na, na,
+         f"{t('VChipPoolKib')}; {t('VChipHeapIntBldcKib')}; {t('VChipStackBldc')}"),
         (f"App binary (KiB): ESP32, -S3 ({ref}); ESP32 ({lm})", na, na,
          f"{t('VBuildEspBinKb')}, {t('VBuildEspsBinKb')}; {t('VBuildLmBinKb')}", na),
         (f"Static DRAM, IRAM used / region (KiB), ESP32, {lm}", na, na,
@@ -140,19 +136,13 @@ def recursos(n):
          na),
     ]
     L = [CAB, r"\begin{table*}[t]", r"\centering", r"\scriptsize", r"\setlength{\tabcolsep}{4pt}",
-         (r"\caption{Resources, separated by evidence category. (1) analytical estimate "
-          r"(\texttt{p11\_host ws}, same layout function as the arena of the reference variant); "
-          r"(2) measured on the PC "
-          f"({t('VPcOs')}, {t('VPcCompiler')}; {t('VPcNIdmt')} timings per dataset cycling "
-          f"over {t('VPcDistinctIdmt')} distinct windows after {t('VPcWarmup')} warm-up runs; the C "
-          r"executable runs as a new process per window, so warm-up does not warm it, and its time "
-          r"excludes the workspace initialisation, which the Python timing cannot exclude); "
-          r"(3) firmware build, \texttt{idf.py size} (ESP-IDF "
-          f"{t('VBuildIdf')}), static only; (4) measured on the {t('VChipModel')} "
-          f"({t('VChipCpuMhz')}\\,MHz, {t('VChipPsramMb')}\\,MB PSRAM; {t('VChipLatBldcN')} timed "
-          f"windows cycling over {t('VChipLatDistinct')} distinct ones after {t('VChipLatWarmup')} "
-          r"warm-up runs). Only column (4) is a measurement on the microcontroller, and it uses "
-          f"the named low-memory variant {lm}; the {t('VParSegIdmt')}-s IDMT window did not fit.}}"),
+         (r"\caption{Resources by evidence category: (1) analytical estimate (\texttt{p11\_host ws}); "
+          f"(2) measured on the PC ({t('VPcOs')}, {t('VPcCompiler')}; {t('VPcNIdmt')} timings per "
+          f"dataset over {t('VPcDistinctIdmt')} distinct windows, one new process per window); "
+          f"(3) \\texttt{{idf.py size}}, static only; (4) measured on the {t('VChipModel')} without "
+          f"PSRAM ({t('VChipLatBldcN')} timed windows after {t('VChipLatWarmup')} warm-up runs). "
+          f"Columns (1)--(2) use the reference layout {ref}; column (4), the only measurement on the "
+          f"microcontroller, uses {lm}.}}"),
          r"\label{tab:resources}", r"\begin{tabular}{@{}lllll@{}}", r"\toprule",
          r"Quantity & (1) Estimate & (2) PC & (3) Build & (4) ESP32 \\", r"\midrule"]
     for r in rows:

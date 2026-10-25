@@ -1,8 +1,8 @@
 {
- "gerado_em": "2026-10-25T15:18:49",
+ "gerado_em": "2026-10-25T15:30:22",
  "gerado_por": "embarcados/src/python/gerar_artigo_manifesto.py",
  "projeto": {
-  "commit": "5cc552d71dd33d4bfe8c219e1a4ffdea8a01ff40",
+  "commit": "8624cbe092cc85c52e319b7a913a73a0200548a1",
   "sujo": true
  },
  "chip_medido": true,
@@ -73,7 +73,7 @@
     },
     {
      "arquivo": "embarcados/paper/numeros.json",
-     "sha256": "cdfe34c918c6fa0c58dfe8d5822563a5ccaf2f3b88a2b68812c72b19fea7b156"
+     "sha256": "370bff8a75e4a769a47c0c97d9523a556de8a4b25dd2b8b3314452807a180a1f"
     },
     {
      "arquivo": "embarcados/results/c_out/float/casos/borda_dc_ruido3s_ma2212/welch_P.f32",
@@ -253,7 +253,7 @@
     },
     {
      "arquivo": "embarcados/paper/numeros.json",
-     "sha256": "cdfe34c918c6fa0c58dfe8d5822563a5ccaf2f3b88a2b68812c72b19fea7b156"
+     "sha256": "370bff8a75e4a769a47c0c97d9523a556de8a4b25dd2b8b3314452807a180a1f"
     },
     {
      "arquivo": "embarcados/results/c_out/float/casos/borda_dc_ruido3s_ma2212/welch_P.f32",
@@ -379,7 +379,7 @@
   },
   {
    "arquivo": "embarcados/tables/latex/recursos.tex",
-   "sha256": "75a8f42723b15720fe5d2d1e3150110ca178cc831440197b82d46c7785d19cfe",
+   "sha256": "24dc66360f58e33526438dfcc1146eb8a82d4487e9cc8c70153b208e4c13b72d",
    "existe": true,
    "script": "embarcados/src/python/gerar_artigo_tabelas.py",
    "fontes": [
@@ -433,7 +433,7 @@
     },
     {
      "arquivo": "embarcados/paper/numeros.json",
-     "sha256": "cdfe34c918c6fa0c58dfe8d5822563a5ccaf2f3b88a2b68812c72b19fea7b156"
+     "sha256": "370bff8a75e4a769a47c0c97d9523a556de8a4b25dd2b8b3314452807a180a1f"
     },
     {
      "arquivo": "embarcados/results/c_out/float/casos/borda_dc_ruido3s_ma2212/welch_P.f32",
@@ -613,7 +613,7 @@
     },
     {
      "arquivo": "embarcados/paper/numeros.json",
-     "sha256": "cdfe34c918c6fa0c58dfe8d5822563a5ccaf2f3b88a2b68812c72b19fea7b156"
+     "sha256": "370bff8a75e4a769a47c0c97d9523a556de8a4b25dd2b8b3314452807a180a1f"
     },
     {
      "arquivo": "embarcados/results/c_out/float/casos/borda_dc_ruido3s_ma2212/welch_P.f32",
@@ -745,7 +745,7 @@
    "fontes": [
     {
      "arquivo": "embarcados/paper/numeros.json",
-     "sha256": "cdfe34c918c6fa0c58dfe8d5822563a5ccaf2f3b88a2b68812c72b19fea7b156"
+     "sha256": "370bff8a75e4a769a47c0c97d9523a556de8a4b25dd2b8b3314452807a180a1f"
     },
     {
      "arquivo": "embarcados/results/csv/equivalencia_resumo_por_build_20261024-101821.csv",
@@ -793,13 +793,13 @@
  "figuras": [
   {
    "arquivo": "embarcados/figures/pdf/arquitetura.pdf",
-   "sha256": "6cdc8a9a690d439d676d3fd113d6184aa808587e3cbc6fe218c9f682ad026cad",
+   "sha256": "3aee44ed880cea54f71b45e051dacac92e4aa352272bc798c9adf571ab2fdf91",
    "existe": true,
    "script": "embarcados/src/python/gerar_artigo_figuras.py",
    "fontes": [
     {
      "arquivo": "embarcados/paper/numeros.json",
-     "sha256": "cdfe34c918c6fa0c58dfe8d5822563a5ccaf2f3b88a2b68812c72b19fea7b156"
+     "sha256": "370bff8a75e4a769a47c0c97d9523a556de8a4b25dd2b8b3314452807a180a1f"
     }
    ],
    "dados_brutos_lidos": []
@@ -812,14 +812,14 @@
    "fontes": [
     {
      "arquivo": "embarcados/paper/numeros.json",
-     "sha256": "cdfe34c918c6fa0c58dfe8d5822563a5ccaf2f3b88a2b68812c72b19fea7b156"
+     "sha256": "370bff8a75e4a769a47c0c97d9523a556de8a4b25dd2b8b3314452807a180a1f"
     }
    ],
    "dados_brutos_lidos": []
   },
   {
    "arquivo": "embarcados/figures/pdf/diag_balacc_en_20261023_222831.pdf",
-   "sha256": "b8ffe6900278c25abfb80c1f0210a81326aec5a43c542ab8a94990d60bc91667",
+   "sha256": "ac98f4bbf8d311878eb4ea462c25c2991993c6221d450c7560d72fcfc41a0bd8",
    "existe": true,
    "script": "embarcados/src/python/gerar_artigo_figuras.py",
    "fontes": [
@@ -845,7 +845,7 @@
   },
   {
    "arquivo": "embarcados/figures/pdf/diag_confusao_p11_en_20261023_222831.pdf",
-   "sha256": "6b63b58f1bcc8612935f7040534d9fbb4f97b9c065d5604cd086b56fed52ac94",
+   "sha256": "c51ed47249eb5698f690b5610370b505dcdef772c960a1cb32fa25205d168590",
    "existe": true,
    "script": "embarcados/src/python/gerar_artigo_figuras.py",
    "fontes": [
@@ -871,7 +871,7 @@
   },
   {
    "arquivo": "embarcados/figures/pdf/equivalencia_erro_etapas_en.pdf",
-   "sha256": "a916779e012b46882c73c879c2f82b37a0628d1ec948a4f0b6a638fbf9e2882a",
+   "sha256": "57b549034aa27f0a63f9223bf70cf0acaf291b2f4984b79e02f0f938e9a1ff50",
    "existe": true,
    "script": "embarcados/src/python/gerar_artigo_figuras.py",
    "fontes": [
@@ -897,7 +897,7 @@
   },
   {
    "arquivo": "embarcados/figures/pdf/esp32_lat_ram_esp32_20261025-143026_en.pdf",
-   "sha256": "bf9da6bea6d61542cbc20163f4012b08545490d057aefaa6ae7c59efda17713d",
+   "sha256": "f3a11abc07d4a31fbd20033918e136520ccb9178cf168802f403b033c7f35ae4",
    "existe": true,
    "script": "embarcados/src/python/gerar_artigo_figuras.py",
    "fontes": [
@@ -930,7 +930,7 @@
   },
   {
    "arquivo": "embarcados/figures/png/esp32_lat_ram_esp32_20261025-143026_en.png",
-   "sha256": "26dd385bc02425286a9e7e2867b22658ff5c9dafdb2ac5b9b9e9672589d7411d",
+   "sha256": "ceff496fb8d14e1ac3775201732a70d43eb7df00b9679e0a9b96a4b2d0fcd130",
    "existe": true,
    "script": "embarcados/src/python/gerar_artigo_figuras.py",
    "fontes": [
@@ -7026,31 +7026,31 @@
  "textos": [
   {
    "arquivo": "embarcados/paper/METODOLOGIA.md",
-   "sha256": "747749837e0d7680fd09f0bcb10ea76fed1d3e964bed350a2773ae15aea18602",
+   "sha256": "2f0d0616027f676b45b0314f6d4818893f5163c0dc7b75d65bf417d55eb2f2d7",
    "existe": true,
    "script": "embarcados/src/python/gerar_artigo_textos.py",
    "fontes": [
     {
      "arquivo": "embarcados/paper/numeros.json",
-     "sha256": "cdfe34c918c6fa0c58dfe8d5822563a5ccaf2f3b88a2b68812c72b19fea7b156"
+     "sha256": "370bff8a75e4a769a47c0c97d9523a556de8a4b25dd2b8b3314452807a180a1f"
     }
    ]
   },
   {
    "arquivo": "embarcados/paper/RESULTADOS.md",
-   "sha256": "83a91c97ff6520486929ea7fb8ad1d30b3ef1f1b4f2c6b23f6f6b8ebe0bca3fc",
+   "sha256": "b453ffd1ff8e5a19dbe4a3bc48a142ad828823fa503bc7bda23b5b743536fecf",
    "existe": true,
    "script": "embarcados/src/python/gerar_artigo_textos.py",
    "fontes": [
     {
      "arquivo": "embarcados/paper/numeros.json",
-     "sha256": "cdfe34c918c6fa0c58dfe8d5822563a5ccaf2f3b88a2b68812c72b19fea7b156"
+     "sha256": "370bff8a75e4a769a47c0c97d9523a556de8a4b25dd2b8b3314452807a180a1f"
     }
    ]
   },
   {
    "arquivo": "embarcados/paper/main.tex",
-   "sha256": "eeca28ea7a46dd7bc5ee351607bc1fc71ec77b6b0282087471196de439d3076f",
+   "sha256": "a09960a2863f3c55b685162b7e6b1a3a59088654d7d2962395574cc5ba5ac71a",
    "existe": true,
    "script": "redigido à mão; números só por macro",
    "fontes": [
@@ -7060,14 +7060,14 @@
     },
     {
      "arquivo": "embarcados/paper/numeros.tex",
-     "sha256": "70d3d1fe283327a61b0a65560063037af2705200fe27aa555773b940f2bb5b10"
+     "sha256": "bb72c51519e849fdbdaa90dee3c0c7399152b249e135f3dbe8d83ea44fb03afa"
     }
    ]
   }
  ],
  "numeros_tex": {
   "arquivo": "embarcados/paper/numeros.tex",
-  "sha256": "70d3d1fe283327a61b0a65560063037af2705200fe27aa555773b940f2bb5b10",
+  "sha256": "bb72c51519e849fdbdaa90dee3c0c7399152b249e135f3dbe8d83ea44fb03afa",
   "existe": true,
   "script": "embarcados/src/python/gerar_artigo_numeros.py",
   "fontes": [
