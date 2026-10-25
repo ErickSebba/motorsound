@@ -1,0 +1,397 @@
+{
+  "tstNWin": {
+    "valor": "2021",
+    "fonte": "embarcados/results/csv/teste_idmt_20261025-150749.csv",
+    "coluna": "n_janelas[_todas]"
+  },
+  "tstNRec": {
+    "valor": "27",
+    "fonte": "embarcados/results/csv/teste_idmt_20261025-150749.csv",
+    "coluna": "n_gravacoes[_todas]"
+  },
+  "tstNCond": {
+    "valor": "9",
+    "fonte": "embarcados/results/csv/teste_idmt_20261025-150749.csv",
+    "coluna": "nº de condições"
+  },
+  "tstBalCls": {
+    "valor": "0.704",
+    "fonte": "embarcados/results/csv/teste_idmt_20261025-150749.csv",
+    "coluna": "acuracia_balanceada[p04_classicas,_todas]"
+  },
+  "tstBalClsLo": {
+    "valor": "0.615",
+    "fonte": "embarcados/results/csv/teste_idmt_20261025-150749.csv",
+    "coluna": "ic95_lo[acuracia_balanceada,p04_classicas]"
+  },
+  "tstBalClsHi": {
+    "valor": "0.789",
+    "fonte": "embarcados/results/csv/teste_idmt_20261025-150749.csv",
+    "coluna": "ic95_hi[acuracia_balanceada,p04_classicas]"
+  },
+  "tstAucCls": {
+    "valor": "0.954",
+    "fonte": "embarcados/results/csv/teste_idmt_20261025-150749.csv",
+    "coluna": "roc_auc_ovr_macro[p04_classicas,_todas]"
+  },
+  "tstAucClsLo": {
+    "valor": "0.908",
+    "fonte": "embarcados/results/csv/teste_idmt_20261025-150749.csv",
+    "coluna": "ic95_lo[roc_auc_ovr_macro,p04_classicas]"
+  },
+  "tstAucClsHi": {
+    "valor": "0.982",
+    "fonte": "embarcados/results/csv/teste_idmt_20261025-150749.csv",
+    "coluna": "ic95_hi[roc_auc_ovr_macro,p04_classicas]"
+  },
+  "tstFoneCls": {
+    "valor": "0.656",
+    "fonte": "embarcados/results/csv/teste_idmt_20261025-150749.csv",
+    "coluna": "f1_macro[p04_classicas,_todas]"
+  },
+  "tstBalClsAtmoLow": {
+    "valor": "0.986",
+    "fonte": "embarcados/results/csv/teste_idmt_20261025-150749.csv",
+    "coluna": "acuracia_balanceada[p04_classicas,atmo_low]"
+  },
+  "tstBalClsAtmoMed": {
+    "valor": "0.658",
+    "fonte": "embarcados/results/csv/teste_idmt_20261025-150749.csv",
+    "coluna": "acuracia_balanceada[p04_classicas,atmo_medium]"
+  },
+  "tstBalClsAtmoHigh": {
+    "valor": "0.486",
+    "fonte": "embarcados/results/csv/teste_idmt_20261025-150749.csv",
+    "coluna": "acuracia_balanceada[p04_classicas,atmo_high]"
+  },
+  "tstBalClsTalkOne": {
+    "valor": "0.648",
+    "fonte": "embarcados/results/csv/teste_idmt_20261025-150749.csv",
+    "coluna": "acuracia_balanceada[p04_classicas,talking_1]"
+  },
+  "tstBalClsTalkTwo": {
+    "valor": "0.629",
+    "fonte": "embarcados/results/csv/teste_idmt_20261025-150749.csv",
+    "coluna": "acuracia_balanceada[p04_classicas,talking_2]"
+  },
+  "tstBalClsTalkThree": {
+    "valor": "0.643",
+    "fonte": "embarcados/results/csv/teste_idmt_20261025-150749.csv",
+    "coluna": "acuracia_balanceada[p04_classicas,talking_3]"
+  },
+  "tstBalClsTalkFour": {
+    "valor": "0.619",
+    "fonte": "embarcados/results/csv/teste_idmt_20261025-150749.csv",
+    "coluna": "acuracia_balanceada[p04_classicas,talking_4]"
+  },
+  "tstBalClsWhite": {
+    "valor": "0.869",
+    "fonte": "embarcados/results/csv/teste_idmt_20261025-150749.csv",
+    "coluna": "acuracia_balanceada[p04_classicas,whitenoise_low]"
+  },
+  "tstBalClsStress": {
+    "valor": "0.626",
+    "fonte": "embarcados/results/csv/teste_idmt_20261025-150749.csv",
+    "coluna": "acuracia_balanceada[p04_classicas,stresstest]"
+  },
+  "tstPredGoodClsGoodPct": {
+    "valor": "97.3",
+    "fonte": "embarcados/results/csv/teste_idmt_20261025-150749.csv",
+    "coluna": "cm_pred_good/suporte[p04_classicas,good]"
+  },
+  "tstPredGoodClsBrokenPct": {
+    "valor": "1.1",
+    "fonte": "embarcados/results/csv/teste_idmt_20261025-150749.csv",
+    "coluna": "cm_pred_good/suporte[p04_classicas,broken]"
+  },
+  "tstPredGoodClsHeavyloadPct": {
+    "valor": "40.8",
+    "fonte": "embarcados/results/csv/teste_idmt_20261025-150749.csv",
+    "coluna": "cm_pred_good/suporte[p04_classicas,heavyload]"
+  },
+  "tstBalDec": {
+    "valor": "0.595",
+    "fonte": "embarcados/results/csv/teste_idmt_20261025-150749.csv",
+    "coluna": "acuracia_balanceada[p11_decifrae_harmsum,_todas]"
+  },
+  "tstBalDecLo": {
+    "valor": "0.471",
+    "fonte": "embarcados/results/csv/teste_idmt_20261025-150749.csv",
+    "coluna": "ic95_lo[acuracia_balanceada,p11_decifrae_harmsum]"
+  },
+  "tstBalDecHi": {
+    "valor": "0.714",
+    "fonte": "embarcados/results/csv/teste_idmt_20261025-150749.csv",
+    "coluna": "ic95_hi[acuracia_balanceada,p11_decifrae_harmsum]"
+  },
+  "tstAucDec": {
+    "valor": "0.869",
+    "fonte": "embarcados/results/csv/teste_idmt_20261025-150749.csv",
+    "coluna": "roc_auc_ovr_macro[p11_decifrae_harmsum,_todas]"
+  },
+  "tstAucDecLo": {
+    "valor": "0.804",
+    "fonte": "embarcados/results/csv/teste_idmt_20261025-150749.csv",
+    "coluna": "ic95_lo[roc_auc_ovr_macro,p11_decifrae_harmsum]"
+  },
+  "tstAucDecHi": {
+    "valor": "0.923",
+    "fonte": "embarcados/results/csv/teste_idmt_20261025-150749.csv",
+    "coluna": "ic95_hi[roc_auc_ovr_macro,p11_decifrae_harmsum]"
+  },
+  "tstFoneDec": {
+    "valor": "0.579",
+    "fonte": "embarcados/results/csv/teste_idmt_20261025-150749.csv",
+    "coluna": "f1_macro[p11_decifrae_harmsum,_todas]"
+  },
+  "tstBalDecAtmoLow": {
+    "valor": "0.828",
+    "fonte": "embarcados/results/csv/teste_idmt_20261025-150749.csv",
+    "coluna": "acuracia_balanceada[p11_decifrae_harmsum,atmo_low]"
+  },
+  "tstBalDecAtmoMed": {
+    "valor": "0.514",
+    "fonte": "embarcados/results/csv/teste_idmt_20261025-150749.csv",
+    "coluna": "acuracia_balanceada[p11_decifrae_harmsum,atmo_medium]"
+  },
+  "tstBalDecAtmoHigh": {
+    "valor": "0.381",
+    "fonte": "embarcados/results/csv/teste_idmt_20261025-150749.csv",
+    "coluna": "acuracia_balanceada[p11_decifrae_harmsum,atmo_high]"
+  },
+  "tstBalDecTalkOne": {
+    "valor": "0.431",
+    "fonte": "embarcados/results/csv/teste_idmt_20261025-150749.csv",
+    "coluna": "acuracia_balanceada[p11_decifrae_harmsum,talking_1]"
+  },
+  "tstBalDecTalkTwo": {
+    "valor": "0.414",
+    "fonte": "embarcados/results/csv/teste_idmt_20261025-150749.csv",
+    "coluna": "acuracia_balanceada[p11_decifrae_harmsum,talking_2]"
+  },
+  "tstBalDecTalkThree": {
+    "valor": "0.524",
+    "fonte": "embarcados/results/csv/teste_idmt_20261025-150749.csv",
+    "coluna": "acuracia_balanceada[p11_decifrae_harmsum,talking_3]"
+  },
+  "tstBalDecTalkFour": {
+    "valor": "0.419",
+    "fonte": "embarcados/results/csv/teste_idmt_20261025-150749.csv",
+    "coluna": "acuracia_balanceada[p11_decifrae_harmsum,talking_4]"
+  },
+  "tstBalDecWhite": {
+    "valor": "0.954",
+    "fonte": "embarcados/results/csv/teste_idmt_20261025-150749.csv",
+    "coluna": "acuracia_balanceada[p11_decifrae_harmsum,whitenoise_low]"
+  },
+  "tstBalDecStress": {
+    "valor": "0.602",
+    "fonte": "embarcados/results/csv/teste_idmt_20261025-150749.csv",
+    "coluna": "acuracia_balanceada[p11_decifrae_harmsum,stresstest]"
+  },
+  "tstPredGoodDecGoodPct": {
+    "valor": "96.9",
+    "fonte": "embarcados/results/csv/teste_idmt_20261025-150749.csv",
+    "coluna": "cm_pred_good/suporte[p11_decifrae_harmsum,good]"
+  },
+  "tstPredGoodDecBrokenPct": {
+    "valor": "72.6",
+    "fonte": "embarcados/results/csv/teste_idmt_20261025-150749.csv",
+    "coluna": "cm_pred_good/suporte[p11_decifrae_harmsum,broken]"
+  },
+  "tstPredGoodDecHeavyloadPct": {
+    "valor": "45.7",
+    "fonte": "embarcados/results/csv/teste_idmt_20261025-150749.csv",
+    "coluna": "cm_pred_good/suporte[p11_decifrae_harmsum,heavyload]"
+  },
+  "tstBalRmsNorm": {
+    "valor": "0.476",
+    "fonte": "embarcados/results/csv/teste_idmt_20261025-150749.csv",
+    "coluna": "acuracia_balanceada[b00_rmspico_norm,_todas]"
+  },
+  "tstBalRmsNormLo": {
+    "valor": "0.349",
+    "fonte": "embarcados/results/csv/teste_idmt_20261025-150749.csv",
+    "coluna": "ic95_lo[acuracia_balanceada,b00_rmspico_norm]"
+  },
+  "tstBalRmsNormHi": {
+    "valor": "0.606",
+    "fonte": "embarcados/results/csv/teste_idmt_20261025-150749.csv",
+    "coluna": "ic95_hi[acuracia_balanceada,b00_rmspico_norm]"
+  },
+  "tstAucRmsNorm": {
+    "valor": "0.728",
+    "fonte": "embarcados/results/csv/teste_idmt_20261025-150749.csv",
+    "coluna": "roc_auc_ovr_macro[b00_rmspico_norm,_todas]"
+  },
+  "tstAucRmsNormLo": {
+    "valor": "0.665",
+    "fonte": "embarcados/results/csv/teste_idmt_20261025-150749.csv",
+    "coluna": "ic95_lo[roc_auc_ovr_macro,b00_rmspico_norm]"
+  },
+  "tstAucRmsNormHi": {
+    "valor": "0.792",
+    "fonte": "embarcados/results/csv/teste_idmt_20261025-150749.csv",
+    "coluna": "ic95_hi[roc_auc_ovr_macro,b00_rmspico_norm]"
+  },
+  "tstFoneRmsNorm": {
+    "valor": "0.428",
+    "fonte": "embarcados/results/csv/teste_idmt_20261025-150749.csv",
+    "coluna": "f1_macro[b00_rmspico_norm,_todas]"
+  },
+  "tstBalRmsNormAtmoLow": {
+    "valor": "0.465",
+    "fonte": "embarcados/results/csv/teste_idmt_20261025-150749.csv",
+    "coluna": "acuracia_balanceada[b00_rmspico_norm,atmo_low]"
+  },
+  "tstBalRmsNormAtmoMed": {
+    "valor": "0.338",
+    "fonte": "embarcados/results/csv/teste_idmt_20261025-150749.csv",
+    "coluna": "acuracia_balanceada[b00_rmspico_norm,atmo_medium]"
+  },
+  "tstBalRmsNormAtmoHigh": {
+    "valor": "0.343",
+    "fonte": "embarcados/results/csv/teste_idmt_20261025-150749.csv",
+    "coluna": "acuracia_balanceada[b00_rmspico_norm,atmo_high]"
+  },
+  "tstBalRmsNormTalkOne": {
+    "valor": "0.352",
+    "fonte": "embarcados/results/csv/teste_idmt_20261025-150749.csv",
+    "coluna": "acuracia_balanceada[b00_rmspico_norm,talking_1]"
+  },
+  "tstBalRmsNormTalkTwo": {
+    "valor": "0.333",
+    "fonte": "embarcados/results/csv/teste_idmt_20261025-150749.csv",
+    "coluna": "acuracia_balanceada[b00_rmspico_norm,talking_2]"
+  },
+  "tstBalRmsNormTalkThree": {
+    "valor": "0.338",
+    "fonte": "embarcados/results/csv/teste_idmt_20261025-150749.csv",
+    "coluna": "acuracia_balanceada[b00_rmspico_norm,talking_3]"
+  },
+  "tstBalRmsNormTalkFour": {
+    "valor": "0.333",
+    "fonte": "embarcados/results/csv/teste_idmt_20261025-150749.csv",
+    "coluna": "acuracia_balanceada[b00_rmspico_norm,talking_4]"
+  },
+  "tstBalRmsNormWhite": {
+    "valor": "0.940",
+    "fonte": "embarcados/results/csv/teste_idmt_20261025-150749.csv",
+    "coluna": "acuracia_balanceada[b00_rmspico_norm,whitenoise_low]"
+  },
+  "tstBalRmsNormStress": {
+    "valor": "0.382",
+    "fonte": "embarcados/results/csv/teste_idmt_20261025-150749.csv",
+    "coluna": "acuracia_balanceada[b00_rmspico_norm,stresstest]"
+  },
+  "tstPredGoodRmsNormGoodPct": {
+    "valor": "20.9",
+    "fonte": "embarcados/results/csv/teste_idmt_20261025-150749.csv",
+    "coluna": "cm_pred_good/suporte[b00_rmspico_norm,good]"
+  },
+  "tstPredGoodRmsNormBrokenPct": {
+    "valor": "2.3",
+    "fonte": "embarcados/results/csv/teste_idmt_20261025-150749.csv",
+    "coluna": "cm_pred_good/suporte[b00_rmspico_norm,broken]"
+  },
+  "tstPredGoodRmsNormHeavyloadPct": {
+    "valor": "53.9",
+    "fonte": "embarcados/results/csv/teste_idmt_20261025-150749.csv",
+    "coluna": "cm_pred_good/suporte[b00_rmspico_norm,heavyload]"
+  },
+  "tstBalRmsRaw": {
+    "valor": "0.500",
+    "fonte": "embarcados/results/csv/teste_idmt_20261025-150749.csv",
+    "coluna": "acuracia_balanceada[b00_rmspico_bruto,_todas]"
+  },
+  "tstBalRmsRawLo": {
+    "valor": "0.360",
+    "fonte": "embarcados/results/csv/teste_idmt_20261025-150749.csv",
+    "coluna": "ic95_lo[acuracia_balanceada,b00_rmspico_bruto]"
+  },
+  "tstBalRmsRawHi": {
+    "valor": "0.638",
+    "fonte": "embarcados/results/csv/teste_idmt_20261025-150749.csv",
+    "coluna": "ic95_hi[acuracia_balanceada,b00_rmspico_bruto]"
+  },
+  "tstAucRmsRaw": {
+    "valor": "0.753",
+    "fonte": "embarcados/results/csv/teste_idmt_20261025-150749.csv",
+    "coluna": "roc_auc_ovr_macro[b00_rmspico_bruto,_todas]"
+  },
+  "tstAucRmsRawLo": {
+    "valor": "0.666",
+    "fonte": "embarcados/results/csv/teste_idmt_20261025-150749.csv",
+    "coluna": "ic95_lo[roc_auc_ovr_macro,b00_rmspico_bruto]"
+  },
+  "tstAucRmsRawHi": {
+    "valor": "0.824",
+    "fonte": "embarcados/results/csv/teste_idmt_20261025-150749.csv",
+    "coluna": "ic95_hi[roc_auc_ovr_macro,b00_rmspico_bruto]"
+  },
+  "tstFoneRmsRaw": {
+    "valor": "0.450",
+    "fonte": "embarcados/results/csv/teste_idmt_20261025-150749.csv",
+    "coluna": "f1_macro[b00_rmspico_bruto,_todas]"
+  },
+  "tstBalRmsRawAtmoLow": {
+    "valor": "0.713",
+    "fonte": "embarcados/results/csv/teste_idmt_20261025-150749.csv",
+    "coluna": "acuracia_balanceada[b00_rmspico_bruto,atmo_low]"
+  },
+  "tstBalRmsRawAtmoMed": {
+    "valor": "0.333",
+    "fonte": "embarcados/results/csv/teste_idmt_20261025-150749.csv",
+    "coluna": "acuracia_balanceada[b00_rmspico_bruto,atmo_medium]"
+  },
+  "tstBalRmsRawAtmoHigh": {
+    "valor": "0.333",
+    "fonte": "embarcados/results/csv/teste_idmt_20261025-150749.csv",
+    "coluna": "acuracia_balanceada[b00_rmspico_bruto,atmo_high]"
+  },
+  "tstBalRmsRawTalkOne": {
+    "valor": "0.333",
+    "fonte": "embarcados/results/csv/teste_idmt_20261025-150749.csv",
+    "coluna": "acuracia_balanceada[b00_rmspico_bruto,talking_1]"
+  },
+  "tstBalRmsRawTalkTwo": {
+    "valor": "0.333",
+    "fonte": "embarcados/results/csv/teste_idmt_20261025-150749.csv",
+    "coluna": "acuracia_balanceada[b00_rmspico_bruto,talking_2]"
+  },
+  "tstBalRmsRawTalkThree": {
+    "valor": "0.357",
+    "fonte": "embarcados/results/csv/teste_idmt_20261025-150749.csv",
+    "coluna": "acuracia_balanceada[b00_rmspico_bruto,talking_3]"
+  },
+  "tstBalRmsRawTalkFour": {
+    "valor": "0.333",
+    "fonte": "embarcados/results/csv/teste_idmt_20261025-150749.csv",
+    "coluna": "acuracia_balanceada[b00_rmspico_bruto,talking_4]"
+  },
+  "tstBalRmsRawWhite": {
+    "valor": "0.930",
+    "fonte": "embarcados/results/csv/teste_idmt_20261025-150749.csv",
+    "coluna": "acuracia_balanceada[b00_rmspico_bruto,whitenoise_low]"
+  },
+  "tstBalRmsRawStress": {
+    "valor": "0.463",
+    "fonte": "embarcados/results/csv/teste_idmt_20261025-150749.csv",
+    "coluna": "acuracia_balanceada[b00_rmspico_bruto,stresstest]"
+  },
+  "tstPredGoodRmsRawGoodPct": {
+    "valor": "18.5",
+    "fonte": "embarcados/results/csv/teste_idmt_20261025-150749.csv",
+    "coluna": "cm_pred_good/suporte[b00_rmspico_bruto,good]"
+  },
+  "tstPredGoodRmsRawBrokenPct": {
+    "valor": "0.0",
+    "fonte": "embarcados/results/csv/teste_idmt_20261025-150749.csv",
+    "coluna": "cm_pred_good/suporte[b00_rmspico_bruto,broken]"
+  },
+  "tstPredGoodRmsRawHeavyloadPct": {
+    "valor": "0.0",
+    "fonte": "embarcados/results/csv/teste_idmt_20261025-150749.csv",
+    "coluna": "cm_pred_good/suporte[b00_rmspico_bruto,heavyload]"
+  }
+}
