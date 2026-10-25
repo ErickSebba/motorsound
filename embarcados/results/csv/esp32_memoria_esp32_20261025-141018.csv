@@ -1,0 +1,3 @@
+base,janela,n_amostras,coube,ws_bytes,ws_na_psram,heap_min_livre_interna,resposta,maior_bloco_livre_interna,maior_bloco_livre_psram
+a2212,a2212_limpo_Healthy_00,16000,1,303308,0.0,7584.0,,,
+idmt,idmt_limpo_good_00,48000,0,0,,,"@@ERRO WIN 0 sem memoria para 0 bytes de workspace (livre interna 314944, psram 0)",314944.0,0.0
