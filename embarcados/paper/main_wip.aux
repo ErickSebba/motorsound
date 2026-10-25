@@ -16,7 +16,7 @@
 \citation{peeters2019}
 \citation{xi2015}
 \citation{vanaraj2026}
-\@writefile{lof}{\contentsline {figure}{\numberline {1}{\ignorespaces System overview. Everything inside the dashed box is the C port that runs on the microcontroller; audio currently reaches the chip over UART (processor-in-the-loop) or from its flash. Working memory: analytical estimate of the reference layout, and the pool peak of the low-memory variant measured on the ESP32.}}{2}{}\protected@file@percent }
+\@writefile{lof}{\contentsline {figure}{\numberline {1}{\ignorespaces System overview. Everything inside the dashed box is the C port that runs on the microcontroller; audio reaches the chip over UART (processor-in-the-loop) or from flash.}}{2}{}\protected@file@percent }
 \newlabel{fig:arq}{{1}{2}{}{figure.1}{}}
 \@writefile{toc}{\contentsline {section}{\numberline {III}Method}{2}{}\protected@file@percent }
 \newlabel{sec:method}{{III}{2}{}{section.3}{}}
@@ -29,19 +29,14 @@
 \@writefile{toc}{\contentsline {subsection}{\numberline {\mbox  {V-A}}Python--C equivalence}{3}{}\protected@file@percent }
 \@writefile{toc}{\contentsline {subsection}{\numberline {\mbox  {V-B}}Cost}{3}{}\protected@file@percent }
 \newlabel{sec:cost}{{\mbox  {V-B}}{3}{}{subsection.5.2}{}}
-\@writefile{lof}{\contentsline {figure}{\numberline {2}{\ignorespaces Measured on the ESP32 without PSRAM (\texttt  {p11\_c\_lowmem}, A2212, 1{}-s windows). (a) Median time per stage over 200{} windows. (b) Internal RAM handed to the pool and its peak use (measured) against the estimated reference arena (hatched).}}{3}{}\protected@file@percent }
-\newlabel{fig:esplat}{{2}{3}{}{figure.2}{}}
+\@writefile{lot}{\contentsline {table}{\numberline {II}{\ignorespaces Balanced accuracy on the same windows (validation only); $g$ = groups. 95\% CIs from a group bootstrap (2{,}000 resamples) are given in the text{} and in Fig.~\ref {fig:balacc}. $^\dagger $Intentional leakage. IDMT: class = motor = recording. A2212: Bearing exists only on motor M4 (confounded with motor identity); with M4 held out, Bearing recall is zero by construction.}}{3}{}\protected@file@percent }
+\newlabel{tab:desempenho-compacto}{{II}{3}{}{table.2}{}}
+\@writefile{lof}{\contentsline {figure}{\numberline {2}{\ignorespaces Balanced accuracy on the same windows with 95{}\% group-bootstrap intervals. Dotted line: chance. *Intentional leakage. On IDMT class = motor = recording; on A2212 Bearing exists only on motor M4 (confounded with motor identity), so motor-out Bearing recall is zero by construction.}}{3}{}\protected@file@percent }
+\newlabel{fig:balacc}{{2}{3}{}{figure.2}{}}
 \@writefile{toc}{\contentsline {subsection}{\numberline {\mbox  {V-C}}Classification under three protocols}{3}{}\protected@file@percent }
 \citation{estacio2023}
 \bibstyle{IEEEtran}
 \bibdata{references}
-\@writefile{lot}{\contentsline {table}{\numberline {II}{\ignorespaces Balanced accuracy on the same windows (validation only); $g$ = groups. 95\% CIs from a group bootstrap (2{,}000 resamples) are shown in Fig.~\ref {fig:balacc}. $^\dagger $Intentional leakage. IDMT: class = motor = recording. A2212: Bearing exists only on motor M4 (confounded with motor identity); with M4 held out, Bearing recall is zero by construction.}}{4}{}\protected@file@percent }
-\newlabel{tab:desempenho-compacto}{{II}{4}{}{table.2}{}}
-\@writefile{lof}{\contentsline {figure}{\numberline {3}{\ignorespaces Balanced accuracy on the same windows with 95{}\% group-bootstrap intervals. Dotted line: chance. *Intentional leakage. On IDMT class = motor = recording; on A2212 Bearing exists only on motor M4 (confounded with motor identity), so motor-out Bearing recall is zero by construction.}}{4}{}\protected@file@percent }
-\newlabel{fig:balacc}{{3}{4}{}{figure.3}{}}
-\@writefile{toc}{\contentsline {subsection}{\numberline {\mbox  {V-D}}Interpretability: the tracked rotation}{4}{}\protected@file@percent }
-\@writefile{toc}{\contentsline {section}{\numberline {VI}Discussion}{4}{}\protected@file@percent }
-\@writefile{toc}{\contentsline {section}{\numberline {VII}Conclusion}{4}{}\protected@file@percent }
 \bibcite{grollmisch2019}{1}
 \bibcite{estacio2023}{2}
 \bibcite{melcnn2025}{3}
@@ -53,5 +48,8 @@
 \bibcite{peeters2019}{9}
 \bibcite{xi2015}{10}
 \bibcite{vanaraj2026}{11}
-\@writefile{toc}{\contentsline {section}{References}{5}{}\protected@file@percent }
-\gdef \@abspage@last{5}
+\@writefile{toc}{\contentsline {subsection}{\numberline {\mbox  {V-D}}Interpretability: the tracked rotation}{4}{}\protected@file@percent }
+\@writefile{toc}{\contentsline {section}{\numberline {VI}Discussion}{4}{}\protected@file@percent }
+\@writefile{toc}{\contentsline {section}{\numberline {VII}Conclusion}{4}{}\protected@file@percent }
+\@writefile{toc}{\contentsline {section}{References}{4}{}\protected@file@percent }
+\gdef \@abspage@last{4}

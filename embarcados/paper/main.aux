@@ -23,7 +23,7 @@
 \@writefile{toc}{\contentsline {section}{\numberline {II}Related Work}{2}{}\protected@file@percent }
 \@writefile{toc}{\contentsline {section}{\numberline {III}Method}{2}{}\protected@file@percent }
 \newlabel{sec:method}{{III}{2}{}{section.3}{}}
-\@writefile{lof}{\contentsline {figure}{\numberline {1}{\ignorespaces System overview. Everything inside the dashed box is the C port that runs on the microcontroller; audio currently reaches the chip over UART (processor-in-the-loop) or from its flash. Working memory: analytical estimate of the reference layout, and the pool peak of the low-memory variant measured on the ESP32.}}{2}{}\protected@file@percent }
+\@writefile{lof}{\contentsline {figure}{\numberline {1}{\ignorespaces System overview. Everything inside the dashed box is the C port that runs on the microcontroller; audio reaches the chip over UART (processor-in-the-loop) or from flash.}}{2}{}\protected@file@percent }
 \newlabel{fig:arq}{{1}{2}{}{figure.1}{}}
 \citation{vanaraj2026}
 \@writefile{lot}{\contentsline {table}{\numberline {I}{\ignorespaces Parameters of the p11 reference, read from the Python code (\texttt  {PreDecifrae}, \texttt  {rotacao}, \texttt  {\_envelope\_mod}), and the 13 features in the order of the reference.}}{3}{}\protected@file@percent }
@@ -35,29 +35,26 @@
 \@writefile{toc}{\contentsline {section}{\numberline {V}Results}{4}{}\protected@file@percent }
 \newlabel{sec:results}{{V}{4}{}{section.5}{}}
 \@writefile{toc}{\contentsline {subsection}{\numberline {\mbox  {V-A}}Python--C equivalence}{4}{}\protected@file@percent }
+\@writefile{toc}{\contentsline {subsection}{\numberline {\mbox  {V-B}}Cost}{4}{}\protected@file@percent }
+\newlabel{sec:cost}{{\mbox  {V-B}}{4}{}{subsection.5.2}{}}
 \@writefile{lot}{\contentsline {table}{\numberline {III}{\ignorespaces Stage checks passed on the PC (164{} windows; 240{} sequence configurations). Conservative reading: a group fails if any stage fails on any window. All float32 failures are the 2{} synthetic constant-offset edge windows, where the modulation peak is at the float32 noise floor; the decision is unchanged.}}{4}{}\protected@file@percent }
 \newlabel{tab:equiv}{{III}{4}{}{table.3}{}}
 \@writefile{lof}{\contentsline {figure}{\numberline {2}{\ignorespaces Worst error-to-tolerance ratio per stage (PC). Ratios below one pass. F: failure on the synthetic constant-offset edge windows (counted as failures even where the frozen rule accepted a tie). Exact zeros are drawn at the bottom of the axis.}}{4}{}\protected@file@percent }
 \newlabel{fig:equiv}{{2}{4}{}{figure.2}{}}
-\@writefile{toc}{\contentsline {subsection}{\numberline {\mbox  {V-B}}Cost}{4}{}\protected@file@percent }
-\newlabel{sec:cost}{{\mbox  {V-B}}{4}{}{subsection.5.2}{}}
-\citation{estacio2023}
-\@writefile{lof}{\contentsline {figure}{\numberline {3}{\ignorespaces Measured on the ESP32 without PSRAM (\texttt  {p11\_c\_lowmem}, A2212, 1{}-s windows). (a) Median time per stage over 200{} windows. (b) Internal RAM handed to the pool and its peak use (measured) against the estimated reference arena (hatched).}}{5}{}\protected@file@percent }
+\@writefile{toc}{\contentsline {subsection}{\numberline {\mbox  {V-C}}Classification under three protocols}{4}{}\protected@file@percent }
+\@writefile{lot}{\contentsline {table}{\numberline {IV}{\ignorespaces Resources by evidence category: (1) analytical estimate (\texttt  {p11\_host ws}); (2) measured on the PC (Windows 11, MSVC 19.44 x64 \slash  {}O2 \slash  {}fp:precise; 200 timings per dataset over 75 distinct windows, one new process per window); (3) \texttt  {idf.py size}, static only; (4) measured on the ESP32 without PSRAM (200 timed windows after 5 warm-up runs). Columns (1)--(2) use the reference layout \texttt  {p11\_c\_ref}; column (4), the only measurement on the microcontroller, uses \texttt  {p11\_c\_lowmem}.}}{5}{}\protected@file@percent }
+\newlabel{tab:resources}{{IV}{5}{}{table.4}{}}
+\@writefile{lof}{\contentsline {figure}{\numberline {3}{\ignorespaces Measured on the ESP32 without PSRAM (\texttt  {p11\_c\_lowmem}, A2212, 1{}-s windows). (a) Median time per stage over 200{} windows. (b) Internal RAM for the pool and its peak use (measured) against the estimated reference arena (hatched).}}{5}{}\protected@file@percent }
 \newlabel{fig:esplat}{{3}{5}{}{figure.3}{}}
-\@writefile{lof}{\contentsline {figure}{\numberline {4}{\ignorespaces Balanced accuracy on the same windows with 95{}\% group-bootstrap intervals. Dotted line: chance. *Intentional leakage. On IDMT class = motor = recording; on A2212 Bearing exists only on motor M4 (confounded with motor identity), so motor-out Bearing recall is zero by construction.}}{5}{}\protected@file@percent }
-\newlabel{fig:balacc}{{4}{5}{}{figure.4}{}}
-\@writefile{toc}{\contentsline {subsection}{\numberline {\mbox  {V-C}}Classification under three protocols}{5}{}\protected@file@percent }
+\@writefile{lot}{\contentsline {table}{\numberline {V}{\ignorespaces Balanced accuracy on the same windows (validation only); $g$ = groups. 95\% CIs from a group bootstrap (2{,}000 resamples) are given in the text. $^\dagger $Intentional leakage. IDMT: class = motor = recording. A2212: Bearing exists only on motor M4 (confounded with motor identity); with M4 held out, Bearing recall is zero by construction.}}{5}{}\protected@file@percent }
+\newlabel{tab:desempenho-compacto}{{V}{5}{}{table.5}{}}
+\@writefile{lof}{\contentsline {figure}{\numberline {4}{\ignorespaces Balanced accuracy on the official IDMT test set (evaluated once, frozen configurations), per recording condition. Training used only the clean recording of each class.}}{5}{}\protected@file@percent }
+\newlabel{fig:test}{{4}{5}{}{figure.4}{}}
 \@writefile{toc}{\contentsline {subsection}{\numberline {\mbox  {V-D}}Interpretability: the tracked rotation}{5}{}\protected@file@percent }
-\@writefile{toc}{\contentsline {subsection}{\numberline {\mbox  {V-E}}Streaming decision}{5}{}\protected@file@percent }
-\@writefile{toc}{\contentsline {section}{\numberline {VI}Discussion}{5}{}\protected@file@percent }
+\citation{estacio2023}
 \bibstyle{IEEEtran}
 \bibdata{references}
 \bibcite{grollmisch2019}{1}
-\@writefile{lot}{\contentsline {table}{\numberline {IV}{\ignorespaces Resources, separated by evidence category. (1) analytical estimate (\texttt  {p11\_host ws}, same layout function as the arena of the reference variant); (2) measured on the PC (Windows 11, MSVC 19.44 x64 \slash  {}O2 \slash  {}fp:precise; 200 timings per dataset cycling over 75 distinct windows after 5 warm-up runs; the C executable runs as a new process per window, so warm-up does not warm it, and its time excludes the workspace initialisation, which the Python timing cannot exclude); (3) firmware build, \texttt  {idf.py size} (ESP-IDF v5.5.6), static only; (4) measured on the ESP32 (240\,MHz, 0\,MB PSRAM; 200 timed windows cycling over 75 distinct ones after 5 warm-up runs). Only column (4) is a measurement on the microcontroller, and it uses the named low-memory variant \texttt  {p11\_c\_lowmem}; the 3-s IDMT window did not fit.}}{6}{}\protected@file@percent }
-\newlabel{tab:resources}{{IV}{6}{}{table.4}{}}
-\@writefile{lot}{\contentsline {table}{\numberline {V}{\ignorespaces Balanced accuracy on the same windows (validation only); $g$ = groups. 95\% CIs from a group bootstrap (2{,}000 resamples) are shown in Fig.~\ref {fig:balacc}. $^\dagger $Intentional leakage. IDMT: class = motor = recording. A2212: Bearing exists only on motor M4 (confounded with motor identity); with M4 held out, Bearing recall is zero by construction.}}{6}{}\protected@file@percent }
-\newlabel{tab:desempenho-compacto}{{V}{6}{}{table.5}{}}
-\@writefile{toc}{\contentsline {section}{\numberline {VII}Conclusion}{6}{}\protected@file@percent }
 \bibcite{estacio2023}{2}
 \bibcite{melcnn2025}{3}
 \bibcite{ertarin2025}{4}
@@ -71,5 +68,8 @@
 \bibcite{xi2015}{12}
 \bibcite{yoo2023}{13}
 \bibcite{wheat2025}{14}
-\@writefile{toc}{\contentsline {section}{References}{7}{}\protected@file@percent }
-\gdef \@abspage@last{7}
+\@writefile{toc}{\contentsline {subsection}{\numberline {\mbox  {V-E}}Streaming decision}{6}{}\protected@file@percent }
+\@writefile{toc}{\contentsline {section}{\numberline {VI}Discussion}{6}{}\protected@file@percent }
+\@writefile{toc}{\contentsline {section}{\numberline {VII}Conclusion}{6}{}\protected@file@percent }
+\@writefile{toc}{\contentsline {section}{References}{6}{}\protected@file@percent }
+\gdef \@abspage@last{6}
