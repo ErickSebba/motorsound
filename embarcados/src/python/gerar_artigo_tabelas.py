@@ -159,7 +159,7 @@ def desempenho_compacto(n):
     L = [CAB, r"\begin{table}[t]", r"\centering", r"\scriptsize", r"\setlength{\tabcolsep}{3pt}",
          (r"\caption{Balanced accuracy on the same windows (validation only); $g$ = groups. "
           f"{t('VDataCiLevel')}\\% CIs from a group bootstrap ({t('VDataNBoot')} resamples) are "
-          r"shown in Fig.~\ref{fig:balacc}. $^\dagger$Intentional leakage. IDMT: class = motor = "
+          r"given in the text\ifwip{} and in Fig.~\ref{fig:balacc}\fi. $^\dagger$Intentional leakage. IDMT: class = motor = "
           r"recording. A2212: Bearing exists only on motor M4 (confounded with motor identity); "
           r"with M4 held out, Bearing recall is zero by construction.}"),
          r"\label{tab:desempenho-compacto}", r"\begin{tabular}{@{}lrcccc@{}}", r"\toprule",
