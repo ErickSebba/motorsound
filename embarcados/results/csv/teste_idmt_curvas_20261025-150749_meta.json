@@ -1,0 +1,15 @@
+{
+  "categoria": "teste_oficial_IDMT",
+  "gerado_em": "20261025-150749",
+  "congelado": "C:\\Users\\erick\\dev\\Decifrae-Artigo\\Artigo3(MotorSound)\\embarcados\\configs\\experiments\\congelado_teste_idmt_20261025-150739.json",
+  "projeto": {
+    "commit": "6f8caee993881a1f97d8d185532e56f4ea322ca6",
+    "sujo": false
+  },
+  "segundos": 88.2,
+  "janelas": "C:\\Users\\erick\\dev\\Decifrae-Artigo\\Artigo3(MotorSound)\\embarcados\\results\\predictions\\teste_idmt_janelas_20261025-150749.csv",
+  "curvas": "C:\\Users\\erick\\dev\\Decifrae-Artigo\\Artigo3(MotorSound)\\embarcados\\results\\csv\\teste_idmt_curvas_20261025-150749.csv",
+  "seed_boot": 20261025,
+  "n_boot": 2000,
+  "nota": "teste lido uma única vez com configurações congeladas; classe = motor no IDMT"
+}
