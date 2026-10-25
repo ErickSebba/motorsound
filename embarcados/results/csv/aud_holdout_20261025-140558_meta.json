@@ -1,0 +1,40 @@
+{
+  "script": "embarcados/src/python/aud_holdout.py",
+  "gerado_em": "2026-10-25T14:06:04",
+  "projeto": {
+    "commit": "9fb82f016b4482c1a5b58f1b9bd08db149799b78",
+    "sujo": true
+  },
+  "seed": 7,
+  "n_por_base": 12,
+  "sorteio": "np.random.default_rng(seed).choice(candidatos, 12, replace=False), IDMT primeiro e depois A2212; candidatos = runner.segmentos_de(base, aval) cujo (rec_id, idx) não está em gold/manifest.json",
+  "modelos": {
+    "idmt_bloco0": {
+      "bin_sha256": "e6d1e3456d99ea1c17ba5ea9130c326f8e687e015255fb894bee1a3459afc008"
+    },
+    "a2212_arq0": {
+      "bin_sha256": "0102f1561324174687e5af4074d4fb6b71604802f1298cf3b8cd7b8521f65601"
+    }
+  },
+  "gold_manifest_sha256": "a681abee826d5b8ede688d4d67ea159495898ea48e0c131f729d8406437ba876",
+  "holdout_dir": "C:\\Users\\erick\\dev\\Decifrae-Artigo\\Artigo3(MotorSound)\\embarcados\\gold\\holdout_20261025-140558",
+  "hosts": {
+    "float": {
+      "exe": "C:\\Users\\erick\\dev\\Decifrae-Artigo\\Artigo3(MotorSound)\\embarcados\\build-float\\p11_host.exe",
+      "sha256": "77711884d1dac6d6309125801fcb0b59a8c049665d43d3801a5d377addfb65be",
+      "mtime": "2026-10-25T13:55:36"
+    },
+    "double": {
+      "exe": "C:\\Users\\erick\\dev\\Decifrae-Artigo\\Artigo3(MotorSound)\\embarcados\\build-double\\p11_host.exe",
+      "sha256": "82713a4def421449c64bfa4fef0f6dcefb6ff1a078ddbf54d8cf97adbaa12ca7",
+      "mtime": "2026-10-25T13:55:37"
+    }
+  },
+  "comparador": "embarcados/tests/equivalence/comparar.py::rodar (importado, inalterado)",
+  "sha256_comparador": "15547dba57853684cd5c68c1664a7b3bc76a0c681e60c9e95a72736dc7bc6519",
+  "tolerancias": "C:\\Users\\erick\\dev\\Decifrae-Artigo\\Artigo3(MotorSound)\\embarcados\\configs\\embedded\\tolerancias.json",
+  "sha256_tolerancias": "d74dae800cebfe4d670c33ba2c0a72639ad1e04e95bcbd9a904be13c294c1b5d",
+  "falhas_checagens_ouro": [],
+  "duracao_s": 9.3,
+  "nota": "test/ do IDMT não lido; ouro gerado com ouro_p11.etapas_p11"
+}

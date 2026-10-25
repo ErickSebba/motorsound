@@ -1,0 +1,20 @@
+{
+  "script": "embarcados/src/python/aud_motor_igual.py",
+  "gerado_em": "2026-10-25T14:04:55",
+  "projeto": {
+    "commit": "b4504aaf7e94831f3647fbb22059ede297c08911",
+    "sujo": true
+  },
+  "fonte": {
+    "embarcados/results/predictions/diagnostico_janelas_20261023_222831.csv": "6426a95a9ceb73ad3e4a9f4a8d83f8194a3ce6b7d1605c0bfdd151384454102b"
+  },
+  "fonte_meta": {
+    "commit": "9081500",
+    "sujo": true
+  },
+  "seed_boot": 20261023,
+  "n_boot": 2000,
+  "restricao": "classe verdadeira em {Healthy, Propeller} e motor em {M1, M2, M3}; Bearing continua podendo ser predito (conta como erro)",
+  "metricas": "embarcados/src/python/diagnostico.py::metricas e ::bootstrap",
+  "duracao_s": 22.8
+}

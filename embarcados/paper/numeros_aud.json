@@ -1,0 +1,973 @@
+{
+ "gerado_por": "embarcados/src/python/gerar_artigo_numeros_aud.py",
+ "projeto": {
+  "commit": "9fb82f016b4482c1a5b58f1b9bd08db149799b78",
+  "sujo": true
+ },
+ "categorias": {
+  "codigo": "parâmetro lido do código Python da referência",
+  "dados": "contagem lida das predições/CSV do experimento",
+  "estimativa": "1 · estimativa analítica",
+  "pc": "2 · medição no PC",
+  "build": "3 · build do firmware (idf.py size)",
+  "esp32": "4 · medição no ESP32 físico",
+  "diagnostico": "resultado de classificação (validação, PC)",
+  "equivalencia": "equivalência Python × C (PC)"
+ },
+ "fontes": {
+  "embarcados/results/csv/aud_holdout_20261025-140558_meta.json": "044f6ebe1e860b1a3e3f2112861e8be9d62488d6cafa8d67cf09b452f989bacc",
+  "embarcados/results/csv/aud_holdout_20261025-140558_resumo.csv": "3bcbdbb7f759c0618fab97689e40926ae122a963088995601cc9a5d33c303aff",
+  "embarcados/results/csv/aud_motor_igual_20261025-140432.csv": "4d6844f19f92828c46ce35147309c059f6ce58e03753224465b13a62ca664c26",
+  "embarcados/results/csv/aud_rotacao_motor_20261025-140355.csv": "965ac4e715f54de956c1562555f7c951bc235cece4ea67c57a880f384a724455"
+ },
+ "numeros": {
+  "audHoldoutSeed": {
+   "valor": 7,
+   "tex": "7",
+   "pt": "7",
+   "status": "ok",
+   "fonte": [
+    "embarcados/results/csv/aud_holdout_20261025-140558_meta.json"
+   ],
+   "coluna": "seed",
+   "categoria": "equivalencia",
+   "nota": ""
+  },
+  "audHoldoutN": {
+   "valor": 24,
+   "tex": "24",
+   "pt": "24",
+   "status": "ok",
+   "fonte": [
+    "embarcados/results/csv/aud_holdout_20261025-140558_resumo.csv"
+   ],
+   "coluna": "n_janelas[float,_todas]",
+   "categoria": "equivalencia",
+   "nota": ""
+  },
+  "audHoldoutNIdmt": {
+   "valor": 12,
+   "tex": "12",
+   "pt": "12",
+   "status": "ok",
+   "fonte": [
+    "embarcados/results/csv/aud_holdout_20261025-140558_resumo.csv"
+   ],
+   "coluna": "n_janelas[float,idmt]",
+   "categoria": "equivalencia",
+   "nota": ""
+  },
+  "audHoldoutNBldc": {
+   "valor": 12,
+   "tex": "12",
+   "pt": "12",
+   "status": "ok",
+   "fonte": [
+    "embarcados/results/csv/aud_holdout_20261025-140558_resumo.csv"
+   ],
+   "coluna": "n_janelas[float,a2212]",
+   "categoria": "equivalencia",
+   "nota": ""
+  },
+  "audHoldoutFloatPathSame": {
+   "valor": 24,
+   "tex": "24",
+   "pt": "24",
+   "status": "ok",
+   "fonte": [
+    "embarcados/results/csv/aud_holdout_20261025-140558_resumo.csv"
+   ],
+   "coluna": "caminho_identico[float,_todas]",
+   "categoria": "equivalencia",
+   "nota": ""
+  },
+  "audHoldoutFloatDecSame": {
+   "valor": 24,
+   "tex": "24",
+   "pt": "24",
+   "status": "ok",
+   "fonte": [
+    "embarcados/results/csv/aud_holdout_20261025-140558_resumo.csv"
+   ],
+   "coluna": "decisao_igual[float,_todas]",
+   "categoria": "equivalencia",
+   "nota": ""
+  },
+  "audHoldoutFloatFeatOut": {
+   "valor": 0,
+   "tex": "0",
+   "pt": "0",
+   "status": "ok",
+   "fonte": [
+    "embarcados/results/csv/aud_holdout_20261025-140558_resumo.csv"
+   ],
+   "coluna": "n_features_fora_tol[float,_todas]",
+   "categoria": "equivalencia",
+   "nota": ""
+  },
+  "audHoldoutFloatStageFail": {
+   "valor": 0,
+   "tex": "0",
+   "pt": "0",
+   "status": "ok",
+   "fonte": [
+    "embarcados/results/csv/aud_holdout_20261025-140558_resumo.csv"
+   ],
+   "coluna": "n_etapas_fail[float,_todas]",
+   "categoria": "equivalencia",
+   "nota": ""
+  },
+  "audHoldoutFloatRatioMax": {
+   "valor": 0.2002082560084754,
+   "tex": "0.20",
+   "pt": "0,20",
+   "status": "ok",
+   "fonte": [
+    "embarcados/results/csv/aud_holdout_20261025-140558_resumo.csv"
+   ],
+   "coluna": "razao_tol_max_features[float,_todas]",
+   "categoria": "equivalencia",
+   "nota": "max |Δx|/(atol+rtol·|x|) nas 13 features, tolerâncias congeladas"
+  },
+  "audHoldoutFloatDpMax": {
+   "valor": 8.663336201975014e-06,
+   "tex": "\\ensuremath{8.7\\times10^{-6}}",
+   "pt": "8,7 × 10^-6",
+   "status": "ok",
+   "fonte": [
+    "embarcados/results/csv/aud_holdout_20261025-140558_resumo.csv"
+   ],
+   "coluna": "max_abs_dp[float,_todas]",
+   "categoria": "equivalencia",
+   "nota": "max |p_C - p_ref| nas probabilidades"
+  },
+  "audHoldoutDoublePathSame": {
+   "valor": 24,
+   "tex": "24",
+   "pt": "24",
+   "status": "ok",
+   "fonte": [
+    "embarcados/results/csv/aud_holdout_20261025-140558_resumo.csv"
+   ],
+   "coluna": "caminho_identico[double,_todas]",
+   "categoria": "equivalencia",
+   "nota": ""
+  },
+  "audHoldoutDoubleDecSame": {
+   "valor": 24,
+   "tex": "24",
+   "pt": "24",
+   "status": "ok",
+   "fonte": [
+    "embarcados/results/csv/aud_holdout_20261025-140558_resumo.csv"
+   ],
+   "coluna": "decisao_igual[double,_todas]",
+   "categoria": "equivalencia",
+   "nota": ""
+  },
+  "audHoldoutDoubleFeatOut": {
+   "valor": 0,
+   "tex": "0",
+   "pt": "0",
+   "status": "ok",
+   "fonte": [
+    "embarcados/results/csv/aud_holdout_20261025-140558_resumo.csv"
+   ],
+   "coluna": "n_features_fora_tol[double,_todas]",
+   "categoria": "equivalencia",
+   "nota": ""
+  },
+  "audHoldoutDoubleStageFail": {
+   "valor": 0,
+   "tex": "0",
+   "pt": "0",
+   "status": "ok",
+   "fonte": [
+    "embarcados/results/csv/aud_holdout_20261025-140558_resumo.csv"
+   ],
+   "coluna": "n_etapas_fail[double,_todas]",
+   "categoria": "equivalencia",
+   "nota": ""
+  },
+  "audHoldoutDoubleRatioMax": {
+   "valor": 0.0519110144310275,
+   "tex": "0.05",
+   "pt": "0,05",
+   "status": "ok",
+   "fonte": [
+    "embarcados/results/csv/aud_holdout_20261025-140558_resumo.csv"
+   ],
+   "coluna": "razao_tol_max_features[double,_todas]",
+   "categoria": "equivalencia",
+   "nota": "max |Δx|/(atol+rtol·|x|) nas 13 features, tolerâncias congeladas"
+  },
+  "audHoldoutDoubleDpMax": {
+   "valor": 1.8941900836733086e-07,
+   "tex": "\\ensuremath{1.9\\times10^{-7}}",
+   "pt": "1,9 × 10^-7",
+   "status": "ok",
+   "fonte": [
+    "embarcados/results/csv/aud_holdout_20261025-140558_resumo.csv"
+   ],
+   "coluna": "max_abs_dp[double,_todas]",
+   "categoria": "equivalencia",
+   "nota": "max |p_C - p_ref| nas probabilidades"
+  },
+  "audRotBldcSpearman": {
+   "valor": 0.0180108628709357,
+   "tex": "0.02",
+   "pt": "0,02",
+   "status": "ok",
+   "fonte": [
+    "embarcados/results/csv/aud_rotacao_motor_20261025-140355.csv"
+   ],
+   "coluna": "spearman_rho[global]",
+   "categoria": "dados",
+   "nota": "velocidade nominal × mediana de f0 por arquivo"
+  },
+  "audRotBldcFiles": {
+   "valor": 43,
+   "tex": "43",
+   "pt": "43",
+   "status": "ok",
+   "fonte": [
+    "embarcados/results/csv/aud_rotacao_motor_20261025-140355.csv"
+   ],
+   "coluna": "n_arquivos[global]",
+   "categoria": "dados",
+   "nota": ""
+  },
+  "audRotBldcWindows": {
+   "valor": 430,
+   "tex": "430",
+   "pt": "430",
+   "status": "ok",
+   "fonte": [
+    "embarcados/results/csv/aud_rotacao_motor_20261025-140355.csv"
+   ],
+   "coluna": "n_janelas[global]",
+   "categoria": "dados",
+   "nota": ""
+  },
+  "audRotBldcCeilPct": {
+   "valor": 3.7209302325581297,
+   "tex": "3.7",
+   "pt": "3,7",
+   "status": "ok",
+   "fonte": [
+    "embarcados/results/csv/aud_rotacao_motor_20261025-140355.csv"
+   ],
+   "coluna": "100·frac_janelas_teto[global]",
+   "categoria": "dados",
+   "nota": ""
+  },
+  "audRotBldcCeilThrPct": {
+   "valor": 99.0,
+   "tex": "99",
+   "pt": "99",
+   "status": "ok",
+   "fonte": [
+    "embarcados/results/csv/aud_rotacao_motor_20261025-140355.csv"
+   ],
+   "coluna": "100·lim_teto_rel",
+   "categoria": "dados",
+   "nota": ""
+  },
+  "audRotBldcSpearmanMOne": {
+   "valor": 0.3031040213755868,
+   "tex": "0.30",
+   "pt": "0,30",
+   "status": "ok",
+   "fonte": [
+    "embarcados/results/csv/aud_rotacao_motor_20261025-140355.csv"
+   ],
+   "coluna": "spearman_rho[M1]",
+   "categoria": "dados",
+   "nota": ""
+  },
+  "audRotBldcSpearmanPMOne": {
+   "valor": 0.2921507511858584,
+   "tex": "0.29",
+   "pt": "0,29",
+   "status": "ok",
+   "fonte": [
+    "embarcados/results/csv/aud_rotacao_motor_20261025-140355.csv"
+   ],
+   "coluna": "spearman_p[M1]",
+   "categoria": "dados",
+   "nota": ""
+  },
+  "audRotBldcFilesMOne": {
+   "valor": 14,
+   "tex": "14",
+   "pt": "14",
+   "status": "ok",
+   "fonte": [
+    "embarcados/results/csv/aud_rotacao_motor_20261025-140355.csv"
+   ],
+   "coluna": "n_arquivos[M1]",
+   "categoria": "dados",
+   "nota": ""
+  },
+  "audRotBldcSpearmanMTwo": {
+   "valor": 0.3017804310611087,
+   "tex": "0.30",
+   "pt": "0,30",
+   "status": "ok",
+   "fonte": [
+    "embarcados/results/csv/aud_rotacao_motor_20261025-140355.csv"
+   ],
+   "coluna": "spearman_rho[M2]",
+   "categoria": "dados",
+   "nota": ""
+  },
+  "audRotBldcSpearmanPMTwo": {
+   "valor": 0.2559818661242307,
+   "tex": "0.26",
+   "pt": "0,26",
+   "status": "ok",
+   "fonte": [
+    "embarcados/results/csv/aud_rotacao_motor_20261025-140355.csv"
+   ],
+   "coluna": "spearman_p[M2]",
+   "categoria": "dados",
+   "nota": ""
+  },
+  "audRotBldcFilesMTwo": {
+   "valor": 16,
+   "tex": "16",
+   "pt": "16",
+   "status": "ok",
+   "fonte": [
+    "embarcados/results/csv/aud_rotacao_motor_20261025-140355.csv"
+   ],
+   "coluna": "n_arquivos[M2]",
+   "categoria": "dados",
+   "nota": ""
+  },
+  "audRotBldcSpearmanMThree": {
+   "valor": 0.5428571428571429,
+   "tex": "0.54",
+   "pt": "0,54",
+   "status": "ok",
+   "fonte": [
+    "embarcados/results/csv/aud_rotacao_motor_20261025-140355.csv"
+   ],
+   "coluna": "spearman_rho[M3]",
+   "categoria": "dados",
+   "nota": ""
+  },
+  "audRotBldcSpearmanPMThree": {
+   "valor": 0.2657026239067054,
+   "tex": "0.27",
+   "pt": "0,27",
+   "status": "ok",
+   "fonte": [
+    "embarcados/results/csv/aud_rotacao_motor_20261025-140355.csv"
+   ],
+   "coluna": "spearman_p[M3]",
+   "categoria": "dados",
+   "nota": ""
+  },
+  "audRotBldcFilesMThree": {
+   "valor": 6,
+   "tex": "6",
+   "pt": "6",
+   "status": "ok",
+   "fonte": [
+    "embarcados/results/csv/aud_rotacao_motor_20261025-140355.csv"
+   ],
+   "coluna": "n_arquivos[M3]",
+   "categoria": "dados",
+   "nota": ""
+  },
+  "audRotBldcSpearmanMFour": {
+   "valor": 1.0,
+   "tex": "1.00",
+   "pt": "1,00",
+   "status": "ok",
+   "fonte": [
+    "embarcados/results/csv/aud_rotacao_motor_20261025-140355.csv"
+   ],
+   "coluna": "spearman_rho[M4]",
+   "categoria": "dados",
+   "nota": ""
+  },
+  "audRotBldcSpearmanPMFour": {
+   "valor": 0.0,
+   "tex": "0.00",
+   "pt": "0,00",
+   "status": "ok",
+   "fonte": [
+    "embarcados/results/csv/aud_rotacao_motor_20261025-140355.csv"
+   ],
+   "coluna": "spearman_p[M4]",
+   "categoria": "dados",
+   "nota": ""
+  },
+  "audRotBldcFilesMFour": {
+   "valor": 7,
+   "tex": "7",
+   "pt": "7",
+   "status": "ok",
+   "fonte": [
+    "embarcados/results/csv/aud_rotacao_motor_20261025-140355.csv"
+   ],
+   "coluna": "n_arquivos[M4]",
+   "categoria": "dados",
+   "nota": ""
+  },
+  "audRotBldcSpearmanMotorMin": {
+   "valor": 0.3017804310611087,
+   "tex": "0.30",
+   "pt": "0,30",
+   "status": "ok",
+   "fonte": [
+    "embarcados/results/csv/aud_rotacao_motor_20261025-140355.csv"
+   ],
+   "coluna": "min spearman_rho[M1..M4]",
+   "categoria": "dados",
+   "nota": ""
+  },
+  "audRotBldcSpearmanMotorMax": {
+   "valor": 1.0,
+   "tex": "1.00",
+   "pt": "1,00",
+   "status": "ok",
+   "fonte": [
+    "embarcados/results/csv/aud_rotacao_motor_20261025-140355.csv"
+   ],
+   "coluna": "max spearman_rho[M1..M4]",
+   "categoria": "dados",
+   "nota": ""
+  },
+  "audRotBldcFilesMotorMin": {
+   "valor": 6,
+   "tex": "6",
+   "pt": "6",
+   "status": "ok",
+   "fonte": [
+    "embarcados/results/csv/aud_rotacao_motor_20261025-140355.csv"
+   ],
+   "coluna": "min n_arquivos[M1..M4]",
+   "categoria": "dados",
+   "nota": ""
+  },
+  "audRotBldcFilesMotorMax": {
+   "valor": 16,
+   "tex": "16",
+   "pt": "16",
+   "status": "ok",
+   "fonte": [
+    "embarcados/results/csv/aud_rotacao_motor_20261025-140355.csv"
+   ],
+   "coluna": "max n_arquivos[M1..M4]",
+   "categoria": "dados",
+   "nota": ""
+  },
+  "audMotorBalClsFileHP": {
+   "valor": 0.9717532467532468,
+   "tex": "0.972",
+   "pt": "0,972",
+   "status": "ok",
+   "fonte": [
+    "embarcados/results/csv/aud_motor_igual_20261025-140432.csv"
+   ],
+   "coluna": "acuracia_balanceada[protocolo,p04_classicas,arquivo,HP_M1M3]",
+   "categoria": "diagnostico",
+   "nota": ""
+  },
+  "audMotorBalClsFileHPLo": {
+   "valor": 0.9243506493506494,
+   "tex": "0.924",
+   "pt": "0,924",
+   "status": "ok",
+   "fonte": [
+    "embarcados/results/csv/aud_motor_igual_20261025-140432.csv"
+   ],
+   "coluna": "ic95_lo[protocolo,p04_classicas,arquivo,HP_M1M3]",
+   "categoria": "diagnostico",
+   "nota": ""
+  },
+  "audMotorBalClsFileHPHi": {
+   "valor": 0.9977272727272728,
+   "tex": "0.998",
+   "pt": "0,998",
+   "status": "ok",
+   "fonte": [
+    "embarcados/results/csv/aud_motor_igual_20261025-140432.csv"
+   ],
+   "coluna": "ic95_hi[protocolo,p04_classicas,arquivo,HP_M1M3]",
+   "categoria": "diagnostico",
+   "nota": ""
+  },
+  "audMotorBalClsMotorHP": {
+   "valor": 0.92012987012987,
+   "tex": "0.920",
+   "pt": "0,920",
+   "status": "ok",
+   "fonte": [
+    "embarcados/results/csv/aud_motor_igual_20261025-140432.csv"
+   ],
+   "coluna": "acuracia_balanceada[protocolo,p04_classicas,motor,HP_M1M3]",
+   "categoria": "diagnostico",
+   "nota": ""
+  },
+  "audMotorBalClsMotorHPLo": {
+   "valor": 0.8678327922077922,
+   "tex": "0.868",
+   "pt": "0,868",
+   "status": "ok",
+   "fonte": [
+    "embarcados/results/csv/aud_motor_igual_20261025-140432.csv"
+   ],
+   "coluna": "ic95_lo[protocolo,p04_classicas,motor,HP_M1M3]",
+   "categoria": "diagnostico",
+   "nota": ""
+  },
+  "audMotorBalClsMotorHPHi": {
+   "valor": 0.9623376623376624,
+   "tex": "0.962",
+   "pt": "0,962",
+   "status": "ok",
+   "fonte": [
+    "embarcados/results/csv/aud_motor_igual_20261025-140432.csv"
+   ],
+   "coluna": "ic95_hi[protocolo,p04_classicas,motor,HP_M1M3]",
+   "categoria": "diagnostico",
+   "nota": ""
+  },
+  "audMotorDropClsHP": {
+   "valor": 0.0516233766233766,
+   "tex": "0.052",
+   "pt": "0,052",
+   "status": "ok",
+   "fonte": [
+    "embarcados/results/csv/aud_motor_igual_20261025-140432.csv"
+   ],
+   "coluna": "acuracia_balanceada[queda,p04_classicas,HP_M1M3]",
+   "categoria": "diagnostico",
+   "nota": "Bal[arquivo,H/P,M1-M3] - Bal[motor,H/P,M1-M3]"
+  },
+  "audMotorDropClsHPLo": {
+   "valor": 0.0233766233766233,
+   "tex": "0.023",
+   "pt": "0,023",
+   "status": "ok",
+   "fonte": [
+    "embarcados/results/csv/aud_motor_igual_20261025-140432.csv"
+   ],
+   "coluna": "ic95_lo[queda,p04_classicas,HP_M1M3]",
+   "categoria": "diagnostico",
+   "nota": "bootstrap pareado por arquivo"
+  },
+  "audMotorDropClsHPHi": {
+   "valor": 0.0857386363636361,
+   "tex": "0.086",
+   "pt": "0,086",
+   "status": "ok",
+   "fonte": [
+    "embarcados/results/csv/aud_motor_igual_20261025-140432.csv"
+   ],
+   "coluna": "ic95_hi[queda,p04_classicas,HP_M1M3]",
+   "categoria": "diagnostico",
+   "nota": ""
+  },
+  "audMotorDropClsFull": {
+   "valor": 0.3677489177489178,
+   "tex": "0.368",
+   "pt": "0,368",
+   "status": "ok",
+   "fonte": [
+    "embarcados/results/csv/aud_motor_igual_20261025-140432.csv"
+   ],
+   "coluna": "queda_completa[queda,p04_classicas,HP_M1M3]",
+   "categoria": "diagnostico",
+   "nota": "Bal[arquivo] - Bal[motor], protocolos completos"
+  },
+  "audMotorBalDecFileHP": {
+   "valor": 0.752922077922078,
+   "tex": "0.753",
+   "pt": "0,753",
+   "status": "ok",
+   "fonte": [
+    "embarcados/results/csv/aud_motor_igual_20261025-140432.csv"
+   ],
+   "coluna": "acuracia_balanceada[protocolo,p11_decifrae_harmsum,arquivo,HP_M1M3]",
+   "categoria": "diagnostico",
+   "nota": ""
+  },
+  "audMotorBalDecFileHPLo": {
+   "valor": 0.6623376623376623,
+   "tex": "0.662",
+   "pt": "0,662",
+   "status": "ok",
+   "fonte": [
+    "embarcados/results/csv/aud_motor_igual_20261025-140432.csv"
+   ],
+   "coluna": "ic95_lo[protocolo,p11_decifrae_harmsum,arquivo,HP_M1M3]",
+   "categoria": "diagnostico",
+   "nota": ""
+  },
+  "audMotorBalDecFileHPHi": {
+   "valor": 0.842215909090909,
+   "tex": "0.842",
+   "pt": "0,842",
+   "status": "ok",
+   "fonte": [
+    "embarcados/results/csv/aud_motor_igual_20261025-140432.csv"
+   ],
+   "coluna": "ic95_hi[protocolo,p11_decifrae_harmsum,arquivo,HP_M1M3]",
+   "categoria": "diagnostico",
+   "nota": ""
+  },
+  "audMotorBalDecMotorHP": {
+   "valor": 0.6847402597402598,
+   "tex": "0.685",
+   "pt": "0,685",
+   "status": "ok",
+   "fonte": [
+    "embarcados/results/csv/aud_motor_igual_20261025-140432.csv"
+   ],
+   "coluna": "acuracia_balanceada[protocolo,p11_decifrae_harmsum,motor,HP_M1M3]",
+   "categoria": "diagnostico",
+   "nota": ""
+  },
+  "audMotorBalDecMotorHPLo": {
+   "valor": 0.5928571428571429,
+   "tex": "0.593",
+   "pt": "0,593",
+   "status": "ok",
+   "fonte": [
+    "embarcados/results/csv/aud_motor_igual_20261025-140432.csv"
+   ],
+   "coluna": "ic95_lo[protocolo,p11_decifrae_harmsum,motor,HP_M1M3]",
+   "categoria": "diagnostico",
+   "nota": ""
+  },
+  "audMotorBalDecMotorHPHi": {
+   "valor": 0.7743587662337662,
+   "tex": "0.774",
+   "pt": "0,774",
+   "status": "ok",
+   "fonte": [
+    "embarcados/results/csv/aud_motor_igual_20261025-140432.csv"
+   ],
+   "coluna": "ic95_hi[protocolo,p11_decifrae_harmsum,motor,HP_M1M3]",
+   "categoria": "diagnostico",
+   "nota": ""
+  },
+  "audMotorDropDecHP": {
+   "valor": 0.0681818181818182,
+   "tex": "0.068",
+   "pt": "0,068",
+   "status": "ok",
+   "fonte": [
+    "embarcados/results/csv/aud_motor_igual_20261025-140432.csv"
+   ],
+   "coluna": "acuracia_balanceada[queda,p11_decifrae_harmsum,HP_M1M3]",
+   "categoria": "diagnostico",
+   "nota": "Bal[arquivo,H/P,M1-M3] - Bal[motor,H/P,M1-M3]"
+  },
+  "audMotorDropDecHPLo": {
+   "valor": 0.0314935064935065,
+   "tex": "0.031",
+   "pt": "0,031",
+   "status": "ok",
+   "fonte": [
+    "embarcados/results/csv/aud_motor_igual_20261025-140432.csv"
+   ],
+   "coluna": "ic95_lo[queda,p11_decifrae_harmsum,HP_M1M3]",
+   "categoria": "diagnostico",
+   "nota": "bootstrap pareado por arquivo"
+  },
+  "audMotorDropDecHPHi": {
+   "valor": 0.1155844155844155,
+   "tex": "0.116",
+   "pt": "0,116",
+   "status": "ok",
+   "fonte": [
+    "embarcados/results/csv/aud_motor_igual_20261025-140432.csv"
+   ],
+   "coluna": "ic95_hi[queda,p11_decifrae_harmsum,HP_M1M3]",
+   "categoria": "diagnostico",
+   "nota": ""
+  },
+  "audMotorDropDecFull": {
+   "valor": 0.3597402597402598,
+   "tex": "0.360",
+   "pt": "0,360",
+   "status": "ok",
+   "fonte": [
+    "embarcados/results/csv/aud_motor_igual_20261025-140432.csv"
+   ],
+   "coluna": "queda_completa[queda,p11_decifrae_harmsum,HP_M1M3]",
+   "categoria": "diagnostico",
+   "nota": "Bal[arquivo] - Bal[motor], protocolos completos"
+  },
+  "audMotorBalRmsNormFileHP": {
+   "valor": 0.8425324675324675,
+   "tex": "0.843",
+   "pt": "0,843",
+   "status": "ok",
+   "fonte": [
+    "embarcados/results/csv/aud_motor_igual_20261025-140432.csv"
+   ],
+   "coluna": "acuracia_balanceada[protocolo,b00_rmspico_norm,arquivo,HP_M1M3]",
+   "categoria": "diagnostico",
+   "nota": ""
+  },
+  "audMotorBalRmsNormFileHPLo": {
+   "valor": 0.7597240259740261,
+   "tex": "0.760",
+   "pt": "0,760",
+   "status": "ok",
+   "fonte": [
+    "embarcados/results/csv/aud_motor_igual_20261025-140432.csv"
+   ],
+   "coluna": "ic95_lo[protocolo,b00_rmspico_norm,arquivo,HP_M1M3]",
+   "categoria": "diagnostico",
+   "nota": ""
+  },
+  "audMotorBalRmsNormFileHPHi": {
+   "valor": 0.9090909090909092,
+   "tex": "0.909",
+   "pt": "0,909",
+   "status": "ok",
+   "fonte": [
+    "embarcados/results/csv/aud_motor_igual_20261025-140432.csv"
+   ],
+   "coluna": "ic95_hi[protocolo,b00_rmspico_norm,arquivo,HP_M1M3]",
+   "categoria": "diagnostico",
+   "nota": ""
+  },
+  "audMotorBalRmsNormMotorHP": {
+   "valor": 0.8136363636363637,
+   "tex": "0.814",
+   "pt": "0,814",
+   "status": "ok",
+   "fonte": [
+    "embarcados/results/csv/aud_motor_igual_20261025-140432.csv"
+   ],
+   "coluna": "acuracia_balanceada[protocolo,b00_rmspico_norm,motor,HP_M1M3]",
+   "categoria": "diagnostico",
+   "nota": ""
+  },
+  "audMotorBalRmsNormMotorHPLo": {
+   "valor": 0.7197970779220779,
+   "tex": "0.720",
+   "pt": "0,720",
+   "status": "ok",
+   "fonte": [
+    "embarcados/results/csv/aud_motor_igual_20261025-140432.csv"
+   ],
+   "coluna": "ic95_lo[protocolo,b00_rmspico_norm,motor,HP_M1M3]",
+   "categoria": "diagnostico",
+   "nota": ""
+  },
+  "audMotorBalRmsNormMotorHPHi": {
+   "valor": 0.887012987012987,
+   "tex": "0.887",
+   "pt": "0,887",
+   "status": "ok",
+   "fonte": [
+    "embarcados/results/csv/aud_motor_igual_20261025-140432.csv"
+   ],
+   "coluna": "ic95_hi[protocolo,b00_rmspico_norm,motor,HP_M1M3]",
+   "categoria": "diagnostico",
+   "nota": ""
+  },
+  "audMotorDropRmsNormHP": {
+   "valor": 0.0288961038961037,
+   "tex": "0.029",
+   "pt": "0,029",
+   "status": "ok",
+   "fonte": [
+    "embarcados/results/csv/aud_motor_igual_20261025-140432.csv"
+   ],
+   "coluna": "acuracia_balanceada[queda,b00_rmspico_norm,HP_M1M3]",
+   "categoria": "diagnostico",
+   "nota": "Bal[arquivo,H/P,M1-M3] - Bal[motor,H/P,M1-M3]"
+  },
+  "audMotorDropRmsNormHPLo": {
+   "valor": -0.0016314935064935,
+   "tex": "-0.002",
+   "pt": "-0,002",
+   "status": "ok",
+   "fonte": [
+    "embarcados/results/csv/aud_motor_igual_20261025-140432.csv"
+   ],
+   "coluna": "ic95_lo[queda,b00_rmspico_norm,HP_M1M3]",
+   "categoria": "diagnostico",
+   "nota": "bootstrap pareado por arquivo"
+  },
+  "audMotorDropRmsNormHPHi": {
+   "valor": 0.0656087662337661,
+   "tex": "0.066",
+   "pt": "0,066",
+   "status": "ok",
+   "fonte": [
+    "embarcados/results/csv/aud_motor_igual_20261025-140432.csv"
+   ],
+   "coluna": "ic95_hi[queda,b00_rmspico_norm,HP_M1M3]",
+   "categoria": "diagnostico",
+   "nota": ""
+  },
+  "audMotorDropRmsNormFull": {
+   "valor": 0.0192640692640692,
+   "tex": "0.019",
+   "pt": "0,019",
+   "status": "ok",
+   "fonte": [
+    "embarcados/results/csv/aud_motor_igual_20261025-140432.csv"
+   ],
+   "coluna": "queda_completa[queda,b00_rmspico_norm,HP_M1M3]",
+   "categoria": "diagnostico",
+   "nota": "Bal[arquivo] - Bal[motor], protocolos completos"
+  },
+  "audMotorBalRmsRawFileHP": {
+   "valor": 0.9126623376623376,
+   "tex": "0.913",
+   "pt": "0,913",
+   "status": "ok",
+   "fonte": [
+    "embarcados/results/csv/aud_motor_igual_20261025-140432.csv"
+   ],
+   "coluna": "acuracia_balanceada[protocolo,b00_rmspico_bruto,arquivo,HP_M1M3]",
+   "categoria": "diagnostico",
+   "nota": ""
+  },
+  "audMotorBalRmsRawFileHPLo": {
+   "valor": 0.8210714285714286,
+   "tex": "0.821",
+   "pt": "0,821",
+   "status": "ok",
+   "fonte": [
+    "embarcados/results/csv/aud_motor_igual_20261025-140432.csv"
+   ],
+   "coluna": "ic95_lo[protocolo,b00_rmspico_bruto,arquivo,HP_M1M3]",
+   "categoria": "diagnostico",
+   "nota": ""
+  },
+  "audMotorBalRmsRawFileHPHi": {
+   "valor": 0.9828084415584416,
+   "tex": "0.983",
+   "pt": "0,983",
+   "status": "ok",
+   "fonte": [
+    "embarcados/results/csv/aud_motor_igual_20261025-140432.csv"
+   ],
+   "coluna": "ic95_hi[protocolo,b00_rmspico_bruto,arquivo,HP_M1M3]",
+   "categoria": "diagnostico",
+   "nota": ""
+  },
+  "audMotorBalRmsRawMotorHP": {
+   "valor": 0.7538961038961038,
+   "tex": "0.754",
+   "pt": "0,754",
+   "status": "ok",
+   "fonte": [
+    "embarcados/results/csv/aud_motor_igual_20261025-140432.csv"
+   ],
+   "coluna": "acuracia_balanceada[protocolo,b00_rmspico_bruto,motor,HP_M1M3]",
+   "categoria": "diagnostico",
+   "nota": ""
+  },
+  "audMotorBalRmsRawMotorHPLo": {
+   "valor": 0.622702922077922,
+   "tex": "0.623",
+   "pt": "0,623",
+   "status": "ok",
+   "fonte": [
+    "embarcados/results/csv/aud_motor_igual_20261025-140432.csv"
+   ],
+   "coluna": "ic95_lo[protocolo,b00_rmspico_bruto,motor,HP_M1M3]",
+   "categoria": "diagnostico",
+   "nota": ""
+  },
+  "audMotorBalRmsRawMotorHPHi": {
+   "valor": 0.8730519480519481,
+   "tex": "0.873",
+   "pt": "0,873",
+   "status": "ok",
+   "fonte": [
+    "embarcados/results/csv/aud_motor_igual_20261025-140432.csv"
+   ],
+   "coluna": "ic95_hi[protocolo,b00_rmspico_bruto,motor,HP_M1M3]",
+   "categoria": "diagnostico",
+   "nota": ""
+  },
+  "audMotorDropRmsRawHP": {
+   "valor": 0.1587662337662337,
+   "tex": "0.159",
+   "pt": "0,159",
+   "status": "ok",
+   "fonte": [
+    "embarcados/results/csv/aud_motor_igual_20261025-140432.csv"
+   ],
+   "coluna": "acuracia_balanceada[queda,b00_rmspico_bruto,HP_M1M3]",
+   "categoria": "diagnostico",
+   "nota": "Bal[arquivo,H/P,M1-M3] - Bal[motor,H/P,M1-M3]"
+  },
+  "audMotorDropRmsRawHPLo": {
+   "valor": 0.0775892857142856,
+   "tex": "0.078",
+   "pt": "0,078",
+   "status": "ok",
+   "fonte": [
+    "embarcados/results/csv/aud_motor_igual_20261025-140432.csv"
+   ],
+   "coluna": "ic95_lo[queda,b00_rmspico_bruto,HP_M1M3]",
+   "categoria": "diagnostico",
+   "nota": "bootstrap pareado por arquivo"
+  },
+  "audMotorDropRmsRawHPHi": {
+   "valor": 0.2510064935064933,
+   "tex": "0.251",
+   "pt": "0,251",
+   "status": "ok",
+   "fonte": [
+    "embarcados/results/csv/aud_motor_igual_20261025-140432.csv"
+   ],
+   "coluna": "ic95_hi[queda,b00_rmspico_bruto,HP_M1M3]",
+   "categoria": "diagnostico",
+   "nota": ""
+  },
+  "audMotorDropRmsRawFull": {
+   "valor": 0.1058441558441558,
+   "tex": "0.106",
+   "pt": "0,106",
+   "status": "ok",
+   "fonte": [
+    "embarcados/results/csv/aud_motor_igual_20261025-140432.csv"
+   ],
+   "coluna": "queda_completa[queda,b00_rmspico_bruto,HP_M1M3]",
+   "categoria": "diagnostico",
+   "nota": "Bal[arquivo] - Bal[motor], protocolos completos"
+  },
+  "audMotorHPFiles": {
+   "valor": 36,
+   "tex": "36",
+   "pt": "36",
+   "status": "ok",
+   "fonte": [
+    "embarcados/results/csv/aud_motor_igual_20261025-140432.csv"
+   ],
+   "coluna": "n_arquivos[queda]",
+   "categoria": "diagnostico",
+   "nota": ""
+  },
+  "audMotorHPWindows": {
+   "valor": 360,
+   "tex": "360",
+   "pt": "360",
+   "status": "ok",
+   "fonte": [
+    "embarcados/results/csv/aud_motor_igual_20261025-140432.csv"
+   ],
+   "coluna": "n_janelas[queda]",
+   "categoria": "diagnostico",
+   "nota": ""
+  }
+ }
+}
