@@ -100,9 +100,8 @@ def parametros_features(n):
         "envelope-modulation peak frequency", "its prominence (dB)",
         "spectral centroid", "spectral flatness"]
     L = [CAB, r"\begin{table}[t]", r"\centering", r"\scriptsize", r"\setlength{\tabcolsep}{3pt}",
-         (r"\caption{Parameters of the p11 reference, read from the Python code "
-          r"(\texttt{PreDecifrae}, \texttt{rotacao}, \texttt{\_envelope\_mod}), and the "
-          f"{t('VParNFeat')} features in the order of the reference.}}"),
+         (r"\caption{Parameters of the p11 reference, read from the Python implementation, and "
+          f"its {t('VParNFeat')} acoustic features in the order used by the classifier.}}"),
          r"\label{tab:params}", r"\begin{tabular}{@{}p{1.55cm}p{6.6cm}@{}}", r"\toprule"]
     for a, b in par:
         L.append(f"{a} & {b} \\\\")
@@ -137,7 +136,7 @@ def recursos(n):
          na),
     ]
     L = [CAB, r"\begin{table*}[t]", r"\centering", r"\scriptsize", r"\setlength{\tabcolsep}{4pt}",
-         (r"\caption{Resources by evidence category: (1) analytical estimate (\texttt{p11\_host ws}); "
+         (r"\caption{Resources by evidence category: (1) analytical estimate (\texttt{p11\_host\_ws}); "
           f"(2) measured on the PC ({t('VPcOs')}, {t('VPcCompiler')}; {t('VPcNIdmt')} timings per "
           f"dataset over {t('VPcDistinctIdmt')} distinct windows, one new process per window); "
           f"(3) \\texttt{{idf.py size}}, static only; (4) measured on the {t('VChipModel')} without "
@@ -154,17 +153,27 @@ def recursos(n):
 
 def desempenho_compacto(n):
     t = lambda k: T(n, k)  # noqa: E731
-    prots = [("IdmtRand", "IDMT random$^\\dagger$"), ("IdmtBlk", "IDMT blocks"),
-             ("BldcRand", "A2212 random$^\\dagger$"), ("BldcFile", "A2212 file"),
+    prots = [("IdmtRand", "IDMT random$^\\dagger$ (window)"), ("IdmtBlk", "IDMT blocks"),
+             ("BldcRand", "A2212 random$^\\dagger$ (window)"), ("BldcFile", "A2212 file"),
              ("BldcMotor", "A2212 motor-out"), ("BldcNoMfour", "A2212 w/o M4")]
     L = [CAB, r"\begin{table}[t]", r"\centering", r"\scriptsize", r"\setlength{\tabcolsep}{3pt}",
-         (r"\caption{Balanced accuracy on the same windows (validation only); $g$ = groups. "
+         (r"\caption{Balanced accuracy on the same windows (validation only); $g$ = bootstrap groups. "
           f"{t('VDataCiLevel')}\\% CIs from a group bootstrap ({t('VDataNBoot')} resamples) are "
-          r"\ifwip shown in Fig.~\ref{fig:balacc}\else in the repository (A2212 file split also in the text)\fi. $^\dagger$Intentional leakage. IDMT: class = motor = "
-          r"recording. A2212: Bearing exists only on motor M4 (confounded with motor identity); "
-          r"with M4 held out, Bearing recall is zero by construction.}"),
-         r"\label{tab:desempenho-compacto}", r"\begin{tabular}{@{}lrcccc@{}}", r"\toprule",
-         r"Protocol & $g$ & RMS/pk (norm.) & RMS/pk (raw) & Classical & p11 \\", r"\midrule"]
+          r"\ifwip shown in Fig.~\ref{fig:balacc}\else archived with the results\fi. $^\dagger$Intentional leakage. IDMT: class = motor = "
+          r"recording; blocks are recording blocks. In the IDMT random row, $g$ comprises "
+          f"{T(n, 'VDataIdmtBlockCount')} aligned blocks plus a boundary-guard group per IDMT "
+          r"recording. A2212: "
+          r"file and motor-out name the split unit; M4 contains only Bearing, with no Healthy or "
+          r"Propeller files (Bearing is confounded with motor identity); "
+          r"with M4 held out, Bearing recall is zero by construction. A2212 w/o M4 uses only "
+          f"{T(n, 'VDataBldcFilesHealthy')} Healthy and {T(n, 'VDataBldcFilesPropeller')} "
+          f"Propeller files on M1--M3 ({T(n, 'VDataBldcNoMfourGroups')} file groups; "
+          f"chance BA = {T(n, 'VDataBldcNoMfourChanceBA')}). "
+          r"RMS/pk norm.\ is RMS-normalised; raw is unnormalised; p04 denotes classical features "
+          r"and p11 the harmonic-tracking pipeline.}"),
+         r"\label{tab:desempenho-compacto}", r"\begin{tabular}{@{}p{1.7cm}rcccc@{}}", r"\toprule",
+         r"Protocol & $g$ & RMS/pk norm. & RMS/pk raw & p04 & p11 \\",
+         r"\midrule"]
     for k, nome in prots:
         g = t(f"VData{k}Groups")
         vals = [t(f"VDiagBal{v}{k}") for v in ("RmsNorm", "RmsRaw", "Cls", "Dec")]

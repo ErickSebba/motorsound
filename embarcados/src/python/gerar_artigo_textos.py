@@ -55,7 +55,7 @@ filtro forward causal, uma janela por vez ({VParNChangePen} penalidades varridas
 
 ## Porte em C
 
-O porte segue o Python linha a linha e compila sem alteração no PC e no ESP-IDF. Ele nunca guarda
+O porte implementa em C os mesmos estágios do algoritmo Python e compila sem alteração no PC e no ESP-IDF. Ele nunca guarda
 o espectrograma inteiro: cada quadro é janelado, transformado por uma FFT real, acumulado no
 espectro médio e reduzido à sua linha de saliência. O Viterbi precisa da janela inteira, porque o
 custo do silêncio usa a energia máxima da janela; por isso a saliência normalizada e os
@@ -74,7 +74,10 @@ vetores de float lidos por palavra inteira, como as tabelas de giro da FFT), alo
 um plano encontrado por busca com retrocesso; a tabela de interpolação harmônica sai e as posições
 dos harmônicos são recalculadas em double a cada quadro; o Hilbert é feito por uma FFT de quatro
 passos, que é a mesma DFT em outra ordem de operações e por isso muda o erro numérico. Ela é
-comparada com a referência pelas mesmas tolerâncias do float32. Existe no firmware a opção
+comparada com a referência pelas mesmas tolerâncias do float32. A variante de referência
+`p11_c_ref` mantém o layout convencional, é usada na comparação no PC e na estimativa de memória,
+mas não cabe na RAM interna disponível. `p11_host ws <n>` é o comando que estima analiticamente
+esse espaço de trabalho, não uma variante do classificador. Existe no firmware a opção
 `p11_c_espdsp` (FFTs de potência de dois pela ESP-DSP), que nunca foi comparada com a referência
 nem medida no chip e por isso fica fora do artigo.
 
@@ -86,11 +89,15 @@ congeladas e commitadas antes, em `configs/experiments/congelado_teste_idmt_*.js
 ({VDataBldcRecordings} arquivos de {VDataBldcMotors} motores, {VDataBldcFilesHealthy} Healthy,
 {VDataBldcFilesPropeller} Propeller e {VDataBldcFilesBearing} Bearing; {VDataBldcWindows} janelas).
 Todos os métodos usam exatamente as mesmas janelas e os mesmos folds. No IDMT comparamos o split
-aleatório por janela (vazamento intencional, {VDataIdmtRandGroups} grupos) e o split por blocos
-contíguos ({VDataIdmtBlkGroups} grupos), que ainda não separa classe de motor porque há uma gravação
-por classe. No A2212 comparamos o split aleatório, o split agrupado por arquivo
-({VDataBldcFileGroups} grupos), o motor fora e o motor fora sem o fold do M4
-({VDataBldcNoMfourGroups} grupos), porque o rolamento só existe no motor M4. A tabela
+aleatório estratificado por janela em {VDataRandomFolds} folds (vazamento intencional,
+{VDataIdmtRandGroups} grupos) e o split por blocos contíguos alinhados pela posição relativa:
+{VDataIdmtBlockCount} blocos por gravação, com uma janela de guarda removida nas fronteiras,
+{VDataIdmtBlockWindows} janelas usadas e {VDataIdmtBlkGroups} grupos gravação-bloco. Esse split
+ainda não separa classe de motor porque há uma gravação por classe. No A2212, o split agrupado por
+arquivo usa {VDataBldcFileFolds} folds ({VDataBldcFileGroups} grupos); leave-one-motor-out usa
+{VDataBldcMotorFolds} folds. A avaliação A2212 w/o M4 usa somente Healthy versus Propeller em M1--M3,
+com {VDataBldcNoMfourFolds} folds, {VDataBldcNoMfourGroups} grupos e BA de chance
+{VDataBldcNoMfourChanceBA}; não avalia Bearing. O rolamento só existe no motor M4. A tabela
 `tables/latex/bases_protocolos.tex` resume o que cada protocolo permite concluir.
 
 Os baselines são o de nível (RMS e pico com regressão logística, com e sem normalização de RMS) e o
@@ -99,8 +106,17 @@ suave), inspirado no resumo de Vanaraj et al. (ficha `docs/literatura/vanaraj202
 acurácia balanceada, F1 macro, ROC-AUC macro um-contra-todos com os scores contínuos e
 sensibilidade por classe. Os intervalos de {VDataCiLevel} % vêm de um bootstrap que reamostra
 grupos (blocos ou arquivos), estratificado por classe, com {VDataNBoot} reamostragens (semente
-{VDataSeedBoot}). No protocolo de motor fora a unidade independente é o motor, e com
+{VDataSeedBoot}); a semente dos splits é {VDataSeedSplit}. No protocolo de motor fora a unidade independente é o motor, e com
 {VDataBldcMotors} motores não há intervalo honesto nessa escala; o intervalo por arquivo é otimista.
+
+## Rastreabilidade da validação
+
+Os resultados de validação foram arquivados na execução `diagnostico_20261023_222831`, no commit
+`9081500264a3f089ccafcf614e4220da7b22d75c`, com árvore suja, seeds {VDataSeedSplit} e
+{VDataSeedBoot}, e sem hashes do código executado. O snapshot exato não pode ser reconstruído.
+Uma repetição limpa não foi possível neste workspace porque `data/idmt/`, `data/a2212/` e
+`.venv/` estão ausentes; portanto, os números permanecem exploratórios e não são descritos como
+independentemente reproduzidos.
 
 ## Protocolo de equivalência
 
@@ -108,7 +124,9 @@ A referência instrumentada gerou vetores de ouro de todas as etapas em {VEqCase
 {VEqGoldClean} limpas da validação das duas bases, {VEqGoldNoisy} ruidosas ({VEqGoldPerts}
 perturbações: ruído branco em três SNRs e os distúrbios sintéticos de afundamento e cintilação) e
 {VEqGoldEdge} casos de borda (silêncio, clipping, rotação sintética fora da faixa e nível constante
-com ruído mínimo). As etapas do HMM foram conferidas em {VEqGoldSeqs} sequências de probabilidade,
+com ruído mínimo). Assim, {VEqRealCases} vetores são de áudio real ({VEqCleanCases} limpos e
+{VEqNoisyCases} ruidosos), e {VEqEdgeCases} são casos sintéticos de borda, não gravações
+independentes. As etapas do HMM foram conferidas em {VEqGoldSeqs} sequências de probabilidade,
 {VParNChangePen} penalidades e {VEqMinDurValues} durações mínimas ({VEqSeqCombos} configurações). As
 tolerâncias de cada etapa vêm de uma análise de arredondamento de primeira ordem e de uma emulação
 numérica independente de cada build; foram congeladas antes da comparação formal, no commit
@@ -237,9 +255,12 @@ placa. A STFT por quadro com soma harmônica leva {VChipBldcTrackMed} ms ({VChip
 mediana), o ramo do envelope {VChipBldcEnvMed} ms ({VChipBldcEnvPct} %), o Viterbi de rotação
 {VChipBldcVitMed} ms ({VChipBldcVitPct} %), as features {VChipBldcFeatMed} ms e a normalização
 {VChipBldcPrepMed} ms; cosseno e saliência no caminho são desprezíveis. No PC, a etapa de rastreio
-da referência (com tabela) fica com {VPcCBldcTrackPct} % do tempo do C. Atribuímos o peso dela no
-chip ao fato de a variante recalcular as posições harmônicas em double sem tabela, e o ESP32 só tem double
-por emulação em software; o tempo da variante no PC não foi medido. Os
+da referência (com tabela) fica com {VPcCBldcTrackPct} % do tempo do C. A variante medida no chip
+usa float32 para os sinais, mas recalcula as posições harmônicas em double sem tabela. Como STFT e
+soma harmônica foram cronometradas juntas e não foi medida uma variante que calcule essas posições
+em float32, a participação de {VChipBldcTrackPct} % provavelmente está associada a esse
+recálculo e à emulação de double por software; a medição não isola essas causas. O tempo da variante
+low-memory no PC não foi medido. Os
 caminhos para fechar a diferença são uma variante que faça essas contas em float (que teria de ser
 verificada como variante nomeada) ou uma placa com PSRAM, onde a tabela da referência cabe.
 Energia não foi medida.

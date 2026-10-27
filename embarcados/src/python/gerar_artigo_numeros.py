@@ -149,9 +149,26 @@ def parametros(R):
 def dados(R):
     fpred = C.mais_recente(C.RES / "predictions", "diagnostico_janelas_*.csv")
     fdiag = C.mais_recente(C.RES / "csv", "diagnostico_2*.csv")
-    P = pd.read_csv(fpred, usecols=["variante", "base", "split", "rec_id", "idx", "classe",
-                                    "motor"])
+    P = pd.read_csv(fpred, usecols=["variante", "base", "split", "fold", "rec_id", "idx",
+                                    "classe", "motor"])
     P = P[(P.variante == "p11_decifrae_harmsum")]
+    idmt_blocks = P[(P.base == "idmt") & (P.split == "blocos")]
+    R.num("VDataIdmtBlockWindows", len(idmt_blocks.drop_duplicates(["rec_id", "idx"])), fpred,
+          "janelas únicas no split IDMT blocos", "dados", 0)
+    for (base, split), macro, description in (
+            (("idmt", "aleatorio"), "VDataRandomFolds", "nº de folds aleatórios"),
+            (("a2212", "arquivo"), "VDataBldcFileFolds", "nº de folds agrupados por arquivo"),
+            (("a2212", "motor"), "VDataBldcMotorFolds", "nº de folds leave-one-motor-out")):
+        folds = P[(P.base == base) & (P.split == split)].fold.nunique()
+        R.num(macro, int(folds), fpred, description, "dados", 0)
+    R.num("VDataIdmtBlockCount", int(idmt_blocks.fold.nunique()), fpred,
+          "nº de blocos por gravação no split IDMT", "dados", 0)
+    motors_no_m4 = P[(P.base == "a2212") & (P.motor != "M4")].motor.nunique()
+    R.num("VDataBldcNoMfourFolds", int(motors_no_m4), fpred,
+          "nº de motores retidos em M1-M3", "dados", 0)
+    classes_no_m4 = P[(P.base == "a2212") & (P.motor != "M4")].classe.nunique()
+    R.num("VDataBldcNoMfourChanceBA", 1 / classes_no_m4, fpred,
+          "1/nunique(classe) em A2212 M1-M3", "dados", 2)
     for base, nome in (("idmt", "Idmt"), ("a2212", "Bldc")):
         q = P[P.base == base].drop_duplicates(["rec_id", "idx"])
         R.num(f"VData{nome}Windows", len(q), fpred, "len(unique(rec_id,idx)) da p11", "dados", 0)
@@ -174,6 +191,9 @@ def dados(R):
     R.num("VDataSeedBoot", meta["seed_boot"], fdiag.with_name(fdiag.stem + "_meta.json"),
           "seed_boot", "dados", 0)
     R.set_tex("VDataSeedBoot", str(meta["seed_boot"]))
+    R.num("VDataSeedSplit", meta["seed_splits"], fdiag.with_name(fdiag.stem + "_meta.json"),
+          "seed_splits", "dados", 0)
+    R.set_tex("VDataSeedSplit", str(meta["seed_splits"]))
     return fdiag
 
 
@@ -266,6 +286,14 @@ def equivalencia(R):
     meta = C.ler_json(fres.with_name(fres.stem + "_meta.json"))["fontes"]
     nomes = {"double": "Double", "float": "Float", "float-sosd": "Sosd"}
     f_det = {b: C.RES / "csv" / meta[b]["csv"] for b in nomes}
+    cases = pd.read_csv(f_det["float"])
+    cases = cases[cases.tipo_item == "caso"].drop_duplicates("id")
+    contagem = cases.groupby("tipo_caso").id.nunique()
+    for tipo, macro, descricao in (
+            ("limpo", "VEqCleanCases", "nº de janelas limpas"),
+            ("ruidoso", "VEqNoisyCases", "nº de janelas ruidosas"),
+            ("borda", "VEqEdgeCases", "nº de casos de borda")):
+        R.num(macro, int(contagem.get(tipo, 0)), f_det["float"], descricao, "equivalencia", 0)
     etapas_seq = ["hmm_log_em", "argmax", "hmm_viterbi", "hmm_online_alpha", "hmm_online", "absorb"]
     s0 = S[S.build == "double"]
     R.num("VEqStagesTotal", len(s0), fres, "nº de etapas por build", "equivalencia", 0)

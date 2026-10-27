@@ -5,15 +5,15 @@
 \centering
 \scriptsize
 \setlength{\tabcolsep}{3pt}
-\caption{Balanced accuracy on the same windows (validation only); $g$ = groups. 95\% CIs from a group bootstrap (2{,}000 resamples) are \ifwip shown in Fig.~\ref{fig:balacc}\else in the repository (A2212 file split also in the text)\fi. $^\dagger$Intentional leakage. IDMT: class = motor = recording. A2212: Bearing exists only on motor M4 (confounded with motor identity); with M4 held out, Bearing recall is zero by construction.}
+\caption{Balanced accuracy on the same windows (validation only); $g$ = bootstrap groups. 95\% CIs from a group bootstrap (2{,}000 resamples) are \ifwip shown in Fig.~\ref{fig:balacc}\else archived with the results\fi. $^\dagger$Intentional leakage. IDMT: class = motor = recording; blocks are recording blocks. In the IDMT random row, $g$ comprises 5 aligned blocks plus a boundary-guard group per IDMT recording. A2212: file and motor-out name the split unit; M4 contains only Bearing, with no Healthy or Propeller files (Bearing is confounded with motor identity); with M4 held out, Bearing recall is zero by construction. A2212 w/o M4 uses only 22 Healthy and 14 Propeller files on M1--M3 (36 file groups; chance BA = 0.50). RMS/pk norm.\ is RMS-normalised; raw is unnormalised; p04 denotes classical features and p11 the harmonic-tracking pipeline.}
 \label{tab:desempenho-compacto}
-\begin{tabular}{@{}lrcccc@{}}
+\begin{tabular}{@{}p{1.7cm}rcccc@{}}
 \toprule
-Protocol & $g$ & RMS/pk (norm.) & RMS/pk (raw) & Classical & p11 \\
+Protocol & $g$ & RMS/pk norm. & RMS/pk raw & p04 & p11 \\
 \midrule
-IDMT random$^\dagger$ & 18 & 0.992 & 0.997 & 1.000 & 1.000 \\
+IDMT random$^\dagger$ (window) & 18 & 0.992 & 0.997 & 1.000 & 1.000 \\
 IDMT blocks & 15 & 0.991 & 0.993 & 1.000 & 1.000 \\
-A2212 random$^\dagger$ & 43 & 0.564 & 0.625 & 0.998 & 0.849 \\
+A2212 random$^\dagger$ (window) & 43 & 0.564 & 0.625 & 0.998 & 0.849 \\
 A2212 file & 43 & 0.562 & 0.608 & 0.981 & 0.816 \\
 A2212 motor-out & 43 & 0.542 & 0.503 & 0.613 & 0.456 \\
 A2212 w/o M4 & 36 & 0.814 & 0.754 & 0.920 & 0.685 \\

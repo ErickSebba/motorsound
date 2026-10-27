@@ -10,6 +10,7 @@ Nenhum número é digitado aqui.
 """
 from __future__ import annotations
 
+import argparse
 import glob
 import json
 import sys
@@ -43,14 +44,78 @@ def rel(p):
     return Path(p).resolve().relative_to(RAIZ).as_posix()
 
 
-def main():
+def bootstrap_diferenca_ba(predicoes, n, seed):
+    modelos = ("p04_classicas", "p11_decifrae_harmsum")
+    d = pd.read_csv(predicoes, usecols=["variante", "rec_id", "idx", "classe", "pred"])
+    d = d[d.variante.isin(modelos)]
+    if d.duplicated(["variante", "rec_id", "idx"]).any():
+        raise ValueError("predições duplicadas por pipeline, gravação e janela")
+    largas = d.pivot(index=["rec_id", "idx"], columns="variante", values=["classe", "pred"])
+    c04, c11 = largas["classe"][modelos[0]], largas["classe"][modelos[1]]
+    if c04.isna().any() or c11.isna().any() or not c04.equals(c11):
+        raise ValueError("p04 e p11 não contêm os mesmos rótulos verdadeiros por janela")
+
+    por_grupo = pd.DataFrame({
+        "classe": c04,
+        "acerto_p04": largas["pred"][modelos[0]].eq(c04),
+        "acerto_p11": largas["pred"][modelos[1]].eq(c11),
+    }).reset_index().groupby(["classe", "rec_id"], sort=True).agg(
+        n=("idx", "size"),
+        p04=("acerto_p04", "sum"),
+        p11=("acerto_p11", "sum"),
+    )
+    classes = sorted(por_grupo.index.get_level_values("classe").unique())
+    rng = np.random.default_rng(seed)
+    diferencas = np.empty(n, dtype=float)
+    observada = 0.0
+    arrays = {}
+    for classe in classes:
+        g = por_grupo.xs(classe, level="classe").sort_index()
+        arrays[classe] = (
+            g["n"].to_numpy(dtype=np.int64),
+            g["p04"].to_numpy(dtype=np.int64),
+            g["p11"].to_numpy(dtype=np.int64),
+        )
+        total, acertos04, acertos11 = (v.sum() for v in arrays[classe])
+        observada += (acertos04 / total - acertos11 / total) / len(classes)
+
+    for b in range(n):
+        delta = 0.0
+        for classe in classes:
+            total, acertos04, acertos11 = arrays[classe]
+            amostra = rng.integers(0, len(total), size=len(total))
+            denominador = total[amostra].sum()
+            delta += (
+                acertos04[amostra].sum() / denominador
+                - acertos11[amostra].sum() / denominador
+            ) / len(classes)
+        diferencas[b] = delta
+    lo, hi = np.percentile(diferencas, [2.5, 97.5])
+    return observada, float(lo), float(hi), classes, arrays
+
+
+def main(argv=None):
+    parser = argparse.ArgumentParser()
+    parser.add_argument("--numbers-only", action="store_true",
+                        help="atualiza macros e JSON sem regenerar as figuras")
+    args = parser.parse_args(argv)
     fm = ultimo(EMB / "results" / "csv" / "teste_idmt_2*.csv")
     fc = fm.with_name(fm.name.replace("teste_idmt_", "teste_idmt_curvas_"))
+    ts = fm.stem[len("teste_idmt_"):]
+    fp = EMB / "results" / "predictions" / f"teste_idmt_janelas_{ts}.csv"
+    meta = json.loads(fm.with_name(fm.stem + "_meta.json").read_text(encoding="utf-8"))
+    if not fp.exists():
+        raise FileNotFoundError(f"predições do teste não encontradas: {fp}")
     d = pd.read_csv(fm)
     M, J = [], {}
 
     def mac(nome, val, col, d_=3):
-        txt = f"{val:.{d_}f}" if isinstance(val, float) else str(val)
+        if isinstance(val, float):
+            txt = f"{val:.{d_}f}"
+        elif isinstance(val, int) and abs(val) >= 1000:
+            txt = f"{val:,}".replace(",", "{,}")
+        else:
+            txt = str(val)
         M.append(f"\\newcommand{{\\tst{nome}}}{{{txt}}}% [teste] {rel(fm)} :: {col}")
         J[f"tst{nome}"] = {"valor": txt, "fonte": rel(fm), "coluna": col}
 
@@ -76,10 +141,37 @@ def main():
             n_good = int(pc[(pc.classe == cl) & (pc.metrica == "cm_pred_good")].valor.iloc[0])
             mac(f"PredGood{s}{cl.capitalize()}Pct", 100.0 * n_good / n_cl,
                 f"cm_pred_good/suporte[{v},{cl}]", 1)
+
+    delta, delta_lo, delta_hi, classes, grupos = bootstrap_diferenca_ba(
+        fp, int(meta["n_boot"]), int(meta["seed_boot"]))
+    fonte_delta = (
+        f"bootstrap pareado estratificado por classe, grupo=rec_id, "
+        f"mesmas reamostragens; {meta['n_boot']} réplicas, seed={meta['seed_boot']}"
+    )
+    mac("DeltaBalClassicalMinusHarmonic", delta, fonte_delta + f" :: {rel(fp)}")
+    mac("DeltaBalClassicalMinusHarmonicLo", delta_lo,
+        fonte_delta + f" IC95 inferior :: {rel(fp)}")
+    mac("DeltaBalClassicalMinusHarmonicHi", delta_hi,
+        fonte_delta + f" IC95 superior :: {rel(fp)}")
+    J["paired_ba_difference"] = {
+        "pipelines": ["p04_classicas", "p11_decifrae_harmsum"],
+        "difference": "BA(p04) - BA(p11)",
+        "valor": delta,
+        "ic95": [delta_lo, delta_hi],
+        "fonte_predicoes": rel(fp),
+        "agrupamento": "rec_id, estratificado por classe",
+        "reamostragens_compartilhadas": True,
+        "n_boot": int(meta["n_boot"]),
+        "seed": int(meta["seed_boot"]),
+        "n_gravacoes_por_classe": {c: len(g[0]) for c, g in grupos.items()},
+    }
     out = EMB / "paper" / "numeros_teste.tex"
     out.write_text("% GERADO por embarcados/src/python/gerar_artigo_teste.py — não editar\n"
                    + "\n".join(M) + "\n", encoding="utf-8")
     out.with_suffix(".json").write_text(json.dumps(J, indent=2, ensure_ascii=False), encoding="utf-8")
+    if args.numbers_only:
+        print(out, len(M), "macros; figuras mantidas")
+        return
 
     # ---- figura 1: acurácia balanceada por condição (uma linha por condição)
     conds = list(CONDS)

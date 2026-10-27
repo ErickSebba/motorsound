@@ -5590,6 +5590,138 @@
    "coluna": "arena da referência (estimativa) / RAM interna do pool (medida)",
    "categoria": "estimativa",
    "nota": "razão entre categoria 1 e categoria 4"
+  },
+  "VDataIdmtBlockWindows": {
+   "valor": 345,
+   "tex": "345",
+   "pt": "345",
+   "status": "ok",
+   "fonte": [
+    "embarcados/results/predictions/diagnostico_janelas_20261023_222831.csv"
+   ],
+   "coluna": "janelas únicas no split IDMT blocos",
+   "categoria": "dados",
+   "nota": ""
+  },
+  "VDataRandomFolds": {
+   "valor": 5,
+   "tex": "5",
+   "pt": "5",
+   "status": "ok",
+   "fonte": [
+    "embarcados/results/predictions/diagnostico_janelas_20261023_222831.csv"
+   ],
+   "coluna": "nº de folds aleatórios",
+   "categoria": "dados",
+   "nota": ""
+  },
+  "VDataBldcFileFolds": {
+   "valor": 5,
+   "tex": "5",
+   "pt": "5",
+   "status": "ok",
+   "fonte": [
+    "embarcados/results/predictions/diagnostico_janelas_20261023_222831.csv"
+   ],
+   "coluna": "nº de folds agrupados por arquivo",
+   "categoria": "dados",
+   "nota": ""
+  },
+  "VDataBldcMotorFolds": {
+   "valor": 4,
+   "tex": "4",
+   "pt": "4",
+   "status": "ok",
+   "fonte": [
+    "embarcados/results/predictions/diagnostico_janelas_20261023_222831.csv"
+   ],
+   "coluna": "nº de folds leave-one-motor-out",
+   "categoria": "dados",
+   "nota": ""
+  },
+  "VDataIdmtBlockCount": {
+   "valor": 5,
+   "tex": "5",
+   "pt": "5",
+   "status": "ok",
+   "fonte": [
+    "embarcados/results/predictions/diagnostico_janelas_20261023_222831.csv"
+   ],
+   "coluna": "nº de blocos por gravação no split IDMT",
+   "categoria": "dados",
+   "nota": ""
+  },
+  "VDataSeedSplit": {
+   "valor": 20261014,
+   "tex": "20261014",
+   "pt": "20261014",
+   "status": "ok",
+   "fonte": [
+    "embarcados/results/csv/diagnostico_20261023_222831_meta.json"
+   ],
+   "coluna": "seed_splits",
+   "categoria": "dados",
+   "nota": ""
+  },
+  "VEqCleanCases": {
+   "valor": 60,
+   "tex": "60",
+   "pt": "60",
+   "status": "ok",
+   "fonte": [
+    "embarcados/results/csv/equivalencia_float_20261024-091122.csv"
+   ],
+   "coluna": "n? de janelas limpas",
+   "categoria": "equivalencia",
+   "nota": ""
+  },
+  "VEqNoisyCases": {
+   "valor": 90,
+   "tex": "90",
+   "pt": "90",
+   "status": "ok",
+   "fonte": [
+    "embarcados/results/csv/equivalencia_float_20261024-091122.csv"
+   ],
+   "coluna": "n? de janelas ruidosas",
+   "categoria": "equivalencia",
+   "nota": ""
+  },
+  "VEqEdgeCases": {
+   "valor": 14,
+   "tex": "14",
+   "pt": "14",
+   "status": "ok",
+   "fonte": [
+    "embarcados/results/csv/equivalencia_float_20261024-091122.csv"
+   ],
+   "coluna": "n? de casos de borda",
+   "categoria": "equivalencia",
+   "nota": ""
+  },
+  "VDataBldcNoMfourFolds": {
+   "valor": 3,
+   "tex": "3",
+   "pt": "3",
+   "status": "ok",
+   "fonte": [
+    "embarcados/results/predictions/diagnostico_janelas_20261023_222831.csv"
+   ],
+   "coluna": "nº de motores retidos em M1-M3",
+   "categoria": "dados",
+   "nota": ""
+  },
+  "VDataBldcNoMfourChanceBA": {
+   "valor": 0.5,
+   "tex": "0.50",
+   "pt": "0,50",
+   "status": "ok",
+   "fonte": [
+    "embarcados/results/predictions/diagnostico_janelas_20261023_222831.csv"
+   ],
+   "coluna": "1/nunique(classe) em A2212 M1-M3",
+   "categoria": "dados",
+   "nota": ""
   }
  }
 }

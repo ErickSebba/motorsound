@@ -1,6 +1,6 @@
 {
   "tstNWin": {
-    "valor": "2021",
+    "valor": "2{,}021",
     "fonte": "embarcados/results/csv/teste_idmt_20261025-150749.csv",
     "coluna": "n_janelas[_todas]"
   },
@@ -393,5 +393,42 @@
     "valor": "0.0",
     "fonte": "embarcados/results/csv/teste_idmt_20261025-150749.csv",
     "coluna": "cm_pred_good/suporte[b00_rmspico_bruto,heavyload]"
+  },
+  "tstDeltaBalClassicalMinusHarmonic": {
+    "valor": "0.109",
+    "fonte": "embarcados/results/csv/teste_idmt_20261025-150749.csv",
+    "coluna": "bootstrap pareado estratificado por classe, grupo=rec_id, mesmas reamostragens; 2000 réplicas, seed=20261025 :: embarcados/results/predictions/teste_idmt_janelas_20261025-150749.csv"
+  },
+  "tstDeltaBalClassicalMinusHarmonicLo": {
+    "valor": "0.029",
+    "fonte": "embarcados/results/csv/teste_idmt_20261025-150749.csv",
+    "coluna": "bootstrap pareado estratificado por classe, grupo=rec_id, mesmas reamostragens; 2000 réplicas, seed=20261025 IC95 inferior :: embarcados/results/predictions/teste_idmt_janelas_20261025-150749.csv"
+  },
+  "tstDeltaBalClassicalMinusHarmonicHi": {
+    "valor": "0.196",
+    "fonte": "embarcados/results/csv/teste_idmt_20261025-150749.csv",
+    "coluna": "bootstrap pareado estratificado por classe, grupo=rec_id, mesmas reamostragens; 2000 réplicas, seed=20261025 IC95 superior :: embarcados/results/predictions/teste_idmt_janelas_20261025-150749.csv"
+  },
+  "paired_ba_difference": {
+    "pipelines": [
+      "p04_classicas",
+      "p11_decifrae_harmsum"
+    ],
+    "difference": "BA(p04) - BA(p11)",
+    "valor": 0.10894972301937146,
+    "ic95": [
+      0.028890730196285505,
+      0.19555358514958376
+    ],
+    "fonte_predicoes": "embarcados/results/predictions/teste_idmt_janelas_20261025-150749.csv",
+    "agrupamento": "rec_id, estratificado por classe",
+    "reamostragens_compartilhadas": true,
+    "n_boot": 2000,
+    "seed": 20261025,
+    "n_gravacoes_por_classe": {
+      "broken": 9,
+      "good": 9,
+      "heavyload": 9
+    }
   }
 }

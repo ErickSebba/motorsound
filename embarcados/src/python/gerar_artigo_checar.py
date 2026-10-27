@@ -131,11 +131,13 @@ def checar_versao(wip, main, macros_v, macros_fig, bib):
         erros.append(f"{prof} chave(s) '{{' sem par")
     # 7. dígitos soltos na prosa do main.tex (só o arquivo principal, já com ifs resolvidos)
     prosa = resolver_ifs(sem_comentarios(corpo), flags)
+    prosa = re.sub(r"\\begin\{minipage\}\[[^\]]*\]\{[^}]*\}", " ", prosa)
     prosa = re.sub(r"\\(label|ref|eqref|cite|input|includegraphics|bibliography|bibliographystyle"
                    r"|texttt)(\[[^\]]*\])?\{[^}]*\}", " ", prosa)
     prosa = re.sub(r"\$[^$]*\$", " ", prosa)        # matemática: índices, não resultados
     prosa = re.sub(r"\(\d\)", " ", prosa)           # rótulos (1)-(4) das categorias
     prosa = re.sub(r"\\[A-Za-z]+", " ", prosa)
+    prosa = re.sub(r"\b[\w.+-]+@[\w.-]+\.[A-Za-z]{2,}\b", " ", prosa)
     for w in sorted(BRANCA, key=len, reverse=True):
         prosa = prosa.replace(w, " ")
     for i, linha in enumerate(prosa.splitlines()):

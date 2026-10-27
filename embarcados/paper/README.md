@@ -35,7 +35,8 @@ pdflatex -jobname=main "\input{main}"            ; bibtex main      ; pdflatex �
 pdflatex -jobname=main_wip "\def\usewip{1}\input{main}" ; bibtex main_wip ; pdflatex ×2 → WiP
 ```
 
-Estado em 24/10 (após a auditoria F): regular = 6 páginas, WiP = 4 páginas, sem referência indefinida e sem erro.
+Estado em 26/10: versão regular compilada com título e autores finais em 5 páginas; referências
+resolvidas e sem erro de compilação. A versão WiP não foi recompilada após esta edição.
 
 Pré-requisitos já existentes (não são deste agente): `diagnostico.py` + `diagnostico_saidas.py`
 (gera `desempenho.tex`, `diag_*` em PT), `comparar.py` + `resumo_equivalencia.py`
