@@ -20,3 +20,11 @@ cache/
 
 # CSVs crus de experimento: versionados comprimidos em out/experiments/gz/
 out/experiments/*.csv
+
+# Material de estudo e documentos (ficam só no disco); READMEs ficam
+*.md
+!README.md
+embarcados/paper/*.tex
+embarcados/paper/*.bib
+embarcados/paper/*.pdf
+embarcados/paper/*.txt
