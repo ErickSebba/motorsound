@@ -30,3 +30,7 @@ embarcados/paper/*.tex
 embarcados/paper/*.bib
 embarcados/paper/*.pdf
 embarcados/paper/*.txt
+
+# Ferramentas de IA (ficam só no disco)
+.claude/
+CLAUDE.md
