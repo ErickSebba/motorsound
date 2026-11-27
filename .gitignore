@@ -1,4 +1,4 @@
-# Dados nunca entram no git (CLAUDE.md, "Dados", regra 5)
+# Dados nunca entram no git
 data/
 *.wav
 *.WAV
@@ -24,6 +24,8 @@ out/experiments/*.csv
 # Material de estudo e documentos (ficam só no disco); READMEs ficam
 *.md
 !README.md
+!docs/DATASETS.md
+!docs/PIPELINES.md
 embarcados/paper/*.tex
 embarcados/paper/*.bib
 embarcados/paper/*.pdf

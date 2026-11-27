@@ -1,10 +1,10 @@
 """Splits de validação.
 
-Regra geral (CLAUDE.md, "Dados", regra 1): segmentos do mesmo grupo nunca ficam dos dois
+Regra geral: segmentos do mesmo grupo nunca ficam dos dois
 lados de um fold. O que é "grupo" depende da base:
 
 * IDMT: o `train/` tem uma única gravação por classe (docs/DATASETS.md §1.5), então o
-  agrupamento por gravação é impossível. Decisão do Erick em 14/10/2026: cada gravação de
+  agrupamento por gravação é impossível. Decisão de 14/10/2026: cada gravação de
   treino é cortada em `n_blocos` blocos contíguos, alinhados em posição relativa entre as
   classes; o grupo é (gravação, bloco); a validação cruzada deixa um bloco de fora. O
   primeiro segmento de cada bloco (exceto o bloco 0) é descartado como guarda, para que

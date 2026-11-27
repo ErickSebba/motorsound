@@ -8,7 +8,7 @@
 """HMM de estados de operação com `change_penalty` fixo e estado N.
 
 O `change_penalty` independente do número de estados é a correção do bug do
-decodificador travado do violão (CLAUDE.md, "Lições já pagas") e fica como está.
+decodificador travado do decifrae-violao e fica como está.
 """
 from __future__ import annotations
 
