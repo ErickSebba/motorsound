@@ -1,5 +1,5 @@
 """Gera as saídas da variante p11_c_lowmem no PC para os casos de 1 s do ouro e chama o
-comparador do Agente D com as tolerâncias congeladas do build correspondente.
+comparador do verificador com as tolerâncias congeladas do build correspondente.
 
     .venv\\Scripts\\python.exe embarcados\\tests\\equivalence\\gerar_lowmem.py --build float
 

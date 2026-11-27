@@ -1,17 +1,16 @@
 # embarcados/ — porte em C da p11_decifrae_harmsum, equivalência e artigo ICIT 2027
 
-Pasta de trabalho da branch `embarcado-icit`. Regras em `CLAUDE.md`; pedido original em
-`PROMPT_TESTES_EMBARCADO.md`. Este README não repete números: cada valor citado no artigo sai de
-script e está em `paper/numeros.json` (com a fonte), e os relatórios abaixo são gerados ou
-escritos a partir dos CSVs de `results/`.
+Pasta de trabalho da branch `embarcado-icit`. Este README não repete números: cada valor citado
+no artigo sai de script e está em `paper/numeros.json` (com a fonte), e os relatórios em
+`reports/` são gerados ou escritos a partir dos CSVs de `results/`.
 
 ## Mapeamento com a estrutura do colaborador
 
 O porte original estava em `Embarcado/decifrae_core.{c,h}` na raiz (commit `e00f2a9`; na árvore
 de trabalho foi movido, sem commit, para `artigo-ICIT/Proposta_de_Artigo/Embarcado/`). Ele está
 copiado sem alteração em `src/c/colaborador_original/`. O núcleo novo (`src/c/p11_*`) reaproveita
-a ideia das features e do cosseno, com as 16 divergências corrigidas
-(`reports/repository_audit.md`).
+a ideia das features e do cosseno, com as 16 divergências em relação à referência Python
+corrigidas (mapeamento em `reports/c_port.md`).
 
 ## Como reproduzir (diretório de trabalho: `Artigo3(MotorSound)`)
 
@@ -27,21 +26,20 @@ a ideia das features e do cosseno, com as 16 divergências corrigidas
 | bancada no PC | `cd embarcados\src\python; ..\..\..\.venv\Scripts\python.exe bench_pc.py --n 200 --aquecimento 5` | `results/csv/bench_pc_*` |
 | fluxo contínuo no PC | `... pil_esp32.py seq-imagem --por-classe 8` e `... seq_pc.py --imagem <bin> --cp 2` | `results/csv/seq_pc_*` |
 | variante p11_c_lowmem no PC | `.venv\Scripts\python.exe embarcados\tests\equivalence\gerar_lowmem.py --build float --pool "<layout do chip>"` | `results/csv/equivalencia_float-lowmem_*` |
-| firmware | `embarcados\firmware\build_fw.bat <esp32 \| esp32s3 \| esp32s3oct> [lowmem \| espdsp]` | `C:\Espressif\build_p11_<alvo>[_<variante>]` |
+| firmware | `embarcados\firmware\build_fw.bat <esp32 \| esp32s3 \| esp32s3oct> [lowmem \| espdsp]` (fora do Windows: `idf.py set-target esp32 build` dentro de `embarcados/firmware/`, com o ambiente do ESP-IDF ativo) | `C:\Espressif\build_p11_<alvo>[_<variante>]` |
 | gravar (placa sem reset de GPIO0) | 1ª vez: `firmware\gravar_tudo.bat COM3 esp32_lowmem <seq.bin> no_reset` (BOOT+EN antes); depois: `firmware\gravar_boot_espera.py COM3 C:\Espressif\build_p11_esp32_lowmem 600` segurando BOOT | flash |
 | ESP32 físico | `pil_esp32.py info`, `mem`, `equiv` (+ `comparar.py --build esp32_esp32_p11_c_lowmem --tol-build float --c-out results\c_out\esp32_esp32_p11_c_lowmem`), `lat --bases a2212 --n 200 --aquecimento 5`, `seq --imagem <bin> --cp 2` | `results/csv/esp32_*`, `results/csv/equivalencia_esp32_*`, `results/manifests/bancada.json` |
-| números da auditoria | `aud_holdout.py`, `aud_rotacao_motor.py`, `aud_motor_igual.py`, `gerar_artigo_numeros_aud.py` (em `embarcados\src\python`) | `results/csv/aud_*`, `paper/numeros_aud.tex` |
+| números da auditoria independente | `aud_holdout.py`, `aud_rotacao_motor.py`, `aud_motor_igual.py`, `gerar_artigo_numeros_aud.py` (em `embarcados\src\python`) | `results/csv/aud_*`, `paper/numeros_aud.tex` |
 | teste oficial do IDMT (uma vez) | `teste_idmt.py congelar` → commit → `teste_idmt.py avaliar --congelado <json>`; `gerar_artigo_teste.py` | `configs/experiments/congelado_*`, `results/csv/teste_idmt_*`, `paper/numeros_teste.tex` |
 | artigo | `.venv\Scripts\python.exe embarcados\src\python\gerar_artigo_tudo.py` (ver `paper/README.md`) | `paper/main.pdf`, `paper/main_wip.pdf` |
-| dossiê para o manuscrito | `.venv\Scripts\python.exe embarcados\src\python\gerar_dossie.py` | `reports/DOSSIE_MANUSCRITO.md` |
 
 Ferramentas: MSVC 2022 Build Tools + CMake (PC), ESP-IDF v5.5.6 em `C:\Espressif` (ambiente por
-`firmware/idf_env.bat`), MiKTeX 25.12 (usuário). Ver `reports/BLOQUEIOS.md`.
+`firmware/idf_env.bat`), MiKTeX 25.12 (usuário).
 
 ## Resumo
 
 **Bases usadas e limites.** IDMT-ISA-ELECTRIC-ENGINE (desenvolvimento só no `train/`; o teste
-oficial foi lido uma vez em 25/10, com autorização do Erick e configurações congeladas antes) e
+oficial foi lido uma vez em 25/10, com as configurações congeladas e commitadas antes) e
 BLDC A2212. No IDMT cada classe é um motor e uma gravação, então todo protocolo mede
 reconhecimento de unidade conhecida; no A2212 a classe Bearing existe só no motor 4. Nenhuma
 base nova foi baixada. Detalhes: `reports/diagnostico.md`.
@@ -62,10 +60,10 @@ como FAIL após a auditoria), com a decisão de classe igual em todos os casos; 
 A referência `p11_c_ref` não cabe; a variante nomeada `p11_c_lowmem` cabe só em janelas de 1 s
 (A2212), passa na equivalência no chip com as tolerâncias congeladas (só saídas finais), e **não
 é tempo real** (fator em `paper/numeros.json`, `VChipRtfBldc`); a janela de 3 s do IDMT não cabe.
-Energia não medida. Números e fontes: `reports/DOSSIE_MANUSCRITO.md` §5.
+Energia não medida. Números e fontes: `paper/numeros.json` (categoria `esp32`).
 
 **Teste oficial do IDMT.** A validação quase perfeita não se sustenta no teste
-(`results/csv/teste_idmt_*`, `paper/RESULTADOS.md`); classe = motor também lá.
+(`results/csv/teste_idmt_*`, `paper/numeros_teste.json`); classe = motor também lá.
 
 **Figuras e tabelas.** `figures/{pdf,png}/`, `tables/latex/`, ligadas a experimento e commit em
 `results/manifests/manifesto.json`.
@@ -74,12 +72,9 @@ Energia não medida. Números e fontes: `reports/DOSSIE_MANUSCRITO.md` §5.
 (`reports/diagnostico.md`, `tables/latex/desempenho_compacto.tex`): a contribuição do artigo é a
 viabilidade embarcada com equivalência verificada, não acurácia.
 
-**Bloqueios restantes.** Nenhum que impeça a submissão. Limites da placa (sem PSRAM) e da
-conexão USB registrados em `reports/BLOQUEIOS.md` (B5, B6).
+**Limites conhecidos.** A placa não tem PSRAM, e a gravação exige segurar o BOOT (o conversor
+USB não faz o reset automático; ver `firmware/gravar_boot_espera.py`).
 
-**Veredito do auditor.** Antes do chip: `reports/independent_scientific_audit.md` (A COND, B PASS,
-C COND, D FAIL, E COND). Depois do chip e do teste: `reports/independent_scientific_audit_final.md`.
-
-**Decisão.** Em 25/10 o Erick escolheu o artigo regular (6 pp), com a afirmação de
+**Decisão.** Em 25/10 escolhemos o artigo regular (6 pp), com a afirmação de
 embarcabilidade restrita ao que foi medido (1 s, não tempo real). `paper/main.pdf` (6 pp) e
 `paper/main_wip.pdf` (4 pp) compilam.

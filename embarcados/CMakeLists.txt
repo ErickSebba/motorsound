@@ -1,5 +1,5 @@
 # CMake do host (PC) para o núcleo p11. O firmware ESP-IDF terá o próprio CMakeLists em
-# firmware/ (ainda não existe: BLOQUEIOS.md B2).
+# firmware/ (criado depois, quando o ESP-IDF foi instalado).
 #   cmake -S embarcados -B embarcados/build-float  -G "NMake Makefiles" -DCMAKE_BUILD_TYPE=Release -DP11_REAL=float
 #   cmake -S embarcados -B embarcados/build-double -G "NMake Makefiles" -DCMAKE_BUILD_TYPE=Release -DP11_REAL=double
 cmake_minimum_required(VERSION 3.16)

@@ -263,13 +263,13 @@ static void trabalho(p11_cpx *out, const p11_cpx *f, size_t fs, const int *fat,
 
 #if defined(ESP_PLATFORM) && defined(P11_USAR_ESP_DSP)
 /* ------------------------------------------------------------------------------------
- * STUB ESP-DSP -- NÃO COMPILADO (sem ESP-IDF nesta máquina; BLOQUEIOS.md B2).
+ * STUB ESP-DSP -- NÃO COMPILADO (sem ESP-IDF nesta máquina na época).
  * Para N potência de 2, troca a recursão por dsps_fft2r_fc32 (raiz 2, no lugar, dados
  * intercalados re/im) + dsps_bit_rev_fc32. Exige P11_REAL=float, dsps_fft2r_init_fc32(NULL,
  * N_max) chamado uma vez na inicialização do firmware e buffers alinhados a 16 bytes.
  * A inversa usa o truque conj(FFT(conj(x))). Os N não potência de 2 (Hilbert com 16000 ou
  * 48000 amostras, Welch com 1000) continuam no código C portável acima: o ESP-DSP não tem
- * raiz 3/5. Qualquer diferença numérica entre os dois caminhos é assunto do Agente D.
+ * raiz 3/5. Qualquer diferença numérica entre os dois caminhos é assunto do verificador.
  * ------------------------------------------------------------------------------------ */
 #include "dsps_fft2r.h"
 static int eh_pot2(int n) { return n > 0 && (n & (n - 1)) == 0; }

@@ -42,7 +42,7 @@ SEED = 20261023
 # ---------------------------------------------------------------- referência por etapa
 def etapas_referencia(audio, modelo):
     """Etapas da referência, com o mesmo código (ou cópia literal, onde a referência não
-    expõe a etapa) que o wrapper do agente B usa."""
+    expõe a etapa) que o wrapper do gerador de ouro usa."""
     out = {}
     y = audio.astype(np.float32)
     r = float(np.sqrt(np.mean(y ** 2)) + 1e-12)
@@ -360,7 +360,7 @@ def main():
     t0 = time.time()
     cs = casos()
     # modelo de brinquedo (só para propagar erro até probs): protótipos por base com as
-    # features de referência dos próprios casos; o modelo real vem do agente B.
+    # features de referência dos próprios casos; o modelo real vem do gerador de ouro.
     feats = {}
     for i, (base, cls, nome, y) in enumerate(cs):
         if cls != "borda":

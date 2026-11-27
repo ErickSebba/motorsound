@@ -2,7 +2,7 @@
 
     .venv\\Scripts\\python.exe embarcados\\src\\python\\gerar_artigo_numeros.py
 
-Agente E (Etapa 7). Nenhum número é digitado aqui: cada valor é lido de um CSV/JSON de
+Etapa 7. Nenhum número é digitado aqui: cada valor é lido de um CSV/JSON de
 `embarcados/results/`, do código Python da referência (import), da saída de
 `p11_host ws <n>` (estimativa analítica) ou do `size.txt` do `idf.py size` (build do firmware).
 
@@ -134,7 +134,7 @@ def parametros(R):
           "1+(N-n_fft)//hop (stft_mag)", "codigo", 0)
     R.num("VParNClassicFeat", cl.N_FEATURES, RAIZ_PY / "pipelines" / "_classicas.py",
           "N_FEATURES", "codigo", 0)
-    # parâmetros de sequência: os que o ouro e o seq_pc gravaram (lidos do código pelo agente B)
+    # parâmetros de sequência: os que o ouro e o seq_pc gravaram (lidos do código pelo gerador de ouro)
     pj = C.EMB / "gold" / "seqs" / "idmt_seq00" / "params.json"
     p = C.ler_json(pj)
     R.num("VParNChangePen", len(p["change_penalties"]), pj, "change_penalties", "codigo", 0)
@@ -322,7 +322,7 @@ def equivalencia(R):
     emp = S[(S.build == "float") & (S.pass_empate > 0)]
     R.num("VEqFloatTieStages", len(emp), fres, "nº de etapas com PASS_EMPATE (float)",
           "equivalencia", 0)
-    # detalhe do empate (comparador do agente D)
+    # detalhe do empate (comparador do verificador)
     Dt = pd.read_csv(f_det["float"])
     e = Dt[(Dt.etapa == "env_mod") & (Dt.status == "PASS_EMPATE")]
     det = e.detalhe.iloc[0]

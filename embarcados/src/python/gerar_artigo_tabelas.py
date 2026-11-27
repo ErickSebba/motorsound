@@ -2,7 +2,7 @@
 
     .venv\\Scripts\\python.exe embarcados\\src\\python\\gerar_artigo_tabelas.py
 
-Agente E (Etapa 7). Rodar DEPOIS de gerar_artigo_numeros.py. Nenhum número é digitado aqui:
+Etapa 7. Rodar DEPOIS de gerar_artigo_numeros.py. Nenhum número é digitado aqui:
 todo valor sai de numeros.json (que por sua vez sai dos CSV/JSON de results/ e do código da
 referência). Texto descritivo (nomes de protocolo, o que cada um permite concluir) é redação.
 

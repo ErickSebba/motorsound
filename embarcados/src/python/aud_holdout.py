@@ -2,7 +2,7 @@
 
     .venv\\Scripts\\python.exe embarcados\\src\\python\\aud_holdout.py [--builds float double]
 
-Torna reproduzível o `f_holdout.py` do auditor (reports/independent_scientific_audit.md, M2):
+Torna reproduzível a checagem M2 da auditoria independente:
 sorteia, com semente fixa, 12 janelas do `train/` do IDMT e 12 do A2212 que NÃO estão em
 `gold/manifest.json` (chave (rec_id, idx)), gera o ouro delas com a MESMA instrumentação do ouro
 oficial (`ouro_p11.etapas_p11` + `gerar_ouro.gravar`, mesmo layout de `etapas.json`), roda
@@ -12,7 +12,7 @@ oficial (`ouro_p11.etapas_p11` + `gerar_ouro.gravar`, mesmo layout de `etapas.js
 
 Os modelos são os do ouro (`gold/modelos/idmt_bloco0.bin`, `a2212_arq0.bin`), reconstruídos a
 partir do `.json` correspondente (mesmos float64 do `.bin`) para a referência Python.
-As janelas sorteadas podem pertencer ao treino do modelo exportado (como no rascunho do auditor):
+As janelas sorteadas podem pertencer ao treino do modelo exportado (como na checagem original):
 o teste é de equivalência numérica, não de desempenho.
 
 Saídas (nunca sobrescreve):
@@ -52,7 +52,7 @@ EMB = AQUI.parents[1]
 GOLD = EMB / "gold"
 TOL = EMB / "configs" / "embedded" / "tolerancias.json"
 CSV_DIR = EMB / "results" / "csv"
-SEED = 7            # = semente do rascunho do auditor (F\f_holdout.py), registrada aqui
+SEED = 7            # = semente da checagem original, registrada aqui
 N_POR_BASE = 12
 BASES = [("idmt", AVAL_IDMT, "idmt_bloco0"), ("a2212", AVAL_A2212, "a2212_arq0")]
 

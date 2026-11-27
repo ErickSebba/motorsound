@@ -1,6 +1,6 @@
 /* p11_testes.c -- executável auxiliar dos testes unitários (tests/unit/test_p11.py).
  * Cada subcomando lê um binário float64, roda UMA peça do núcleo e grava float64/int32.
- * Não é prova de equivalência (isso é do Agente D): só confere cada peça isolada.
+ * Não é prova de equivalência (isso é do verificador): só confere cada peça isolada.
  *
  *   fft     <in.f64 (2n intercalado)> <n> <out.f64>       DFT direta
  *   ifft    <in.f64> <n> <out.f64>                         IDFT sem 1/n

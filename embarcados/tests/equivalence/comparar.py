@@ -186,7 +186,7 @@ def tol_custo(regra, ref):
 
 
 def score_caminho(custo, path, passo, max_salto, w_step, w_oct, w_sil):
-    """Contrato §4, em float64 (mesma ordem de soma do wrapper do agente B não é exigida:
+    """Contrato §4, em float64 (mesma ordem de soma do wrapper do gerador de ouro não é exigida:
     a diferença é O(T·eps64), irrelevante frente às margens)."""
     J = custo.shape[1] - 1
     k_oct = int(round(1200 / passo))

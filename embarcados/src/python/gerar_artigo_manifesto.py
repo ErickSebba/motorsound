@@ -3,7 +3,7 @@ gerador, aos CSV/JSON de origem (com sha256) e ao commit git atual.
 
     .venv\\Scripts\\python.exe embarcados\\src\\python\\gerar_artigo_manifesto.py
 
-Agente E (Etapa 7). Rodar por último (depois de numeros, figuras, tabelas e textos).
+Etapa 7. Rodar por último (depois de numeros, figuras, tabelas e textos).
 """
 from __future__ import annotations
 

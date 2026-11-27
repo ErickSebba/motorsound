@@ -2,7 +2,7 @@
 
     .venv\\Scripts\\python.exe embarcados\\src\\python\\gerar_artigo_figuras.py
 
-Agente E (Etapa 7). Rodar DEPOIS de gerar_artigo_numeros.py (lê paper/numeros.json).
+Etapa 7. Rodar DEPOIS de gerar_artigo_numeros.py (lê paper/numeros.json).
 
 - arquitetura          diagrama do sistema; rótulos numéricos vêm de numeros.json
 - diag_balacc_en_<ts>  versão em inglês de diag_balacc (mesmo CSV do diagnóstico)

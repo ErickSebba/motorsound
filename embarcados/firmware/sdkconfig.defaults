@@ -1,4 +1,4 @@
-# CPU fixa em 240 MHz, sem gerência de energia (CLAUDE.md de embarcados/, "Hardware")
+# CPU fixa em 240 MHz, sem gerência de energia (medições comparáveis entre execuções)
 CONFIG_ESP_DEFAULT_CPU_FREQ_MHZ_240=y
 CONFIG_PM_ENABLE=n
 # Wi-Fi e BT nunca são iniciados pelo firmware; BT desligado na configuração

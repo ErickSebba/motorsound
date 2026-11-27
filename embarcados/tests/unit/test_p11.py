@@ -1,6 +1,6 @@
-﻿"""Testes unitários do núcleo C p11 (Agente C). NÃO são prova de equivalência: conferem cada
+﻿"""Testes unitários do núcleo C p11. NÃO são prova de equivalência: conferem cada
 peça isolada contra numpy/scipy/referência com entradas sintéticas. A verificação formal
-(com tolerâncias congeladas) é do Agente D.
+(com tolerâncias congeladas) é do verificador.
 
 Uso (da raiz Artigo3(MotorSound)):
     .venv\\Scripts\\python.exe -m pytest embarcados\\tests\\unit\\test_p11.py -q

@@ -1,4 +1,4 @@
-"""Funções comuns dos geradores do artigo (gerar_artigo_*.py). Agente E, Etapa 7.
+"""Funções comuns dos geradores do artigo (gerar_artigo_*.py). Etapa 7.
 
 Nada aqui calcula resultado: só localiza os arquivos de origem em `embarcados/results/`,
 calcula sha256, lê o commit e formata números. Os geradores importam este módulo.
@@ -31,7 +31,7 @@ PENDENTE_PT = "**[pendente]**"
 if str(RAIZ) not in sys.path:
     sys.path.insert(0, str(RAIZ))
 
-# categorias do CLAUDE.md de embarcados/ (nomes usados nas macros e no texto)
+# categorias de cada número (nomes usados nas macros e no texto)
 CAT = {
     "codigo": "parâmetro lido do código Python da referência",
     "dados": "contagem lida das predições/CSV do experimento",

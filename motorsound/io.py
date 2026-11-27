@@ -7,7 +7,7 @@ conhecidas sem depender de nome de arquivo (ver docs/DATASETS.md §1.4).
 
 Trava do teste: nenhuma função lê `test/` ou `test_cut/` do IDMT a menos que a variável
 de ambiente MOTORSOUND_ABRIR_TESTE=1 esteja definida, o que só acontece depois de
-`congelar.py` e da aprovação do Erick (CLAUDE.md, "Dados", regra 2).
+`congelar.py` e da decisão explícita de abrir o teste (uma vez só).
 """
 from __future__ import annotations
 

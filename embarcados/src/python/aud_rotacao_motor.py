@@ -2,7 +2,7 @@
 
     .venv\\Scripts\\python.exe embarcados\\src\\python\\aud_rotacao_motor.py
 
-Torna reproduzível o cálculo do auditor (reports/independent_scientific_audit.md, M4 e m7):
+Torna reproduzível o cálculo da auditoria independente (M4 e m7):
 Spearman entre a velocidade nominal do arquivo e a mediana de f0 (feature 0 da p11 = mediana de
 f_rot na janela) do arquivo, com os 43 arquivos juntos e separado por motor (n de arquivos por
 motor), e a fração de janelas no teto da busca (f0 >= LIM_TETO·fmax, fmax lido da referência).

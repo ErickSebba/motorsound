@@ -2,14 +2,14 @@
 #   um CSV por experimento com timestamp, nunca sobrescrito, `_meta.json` com commit,
 #   seed, configuração e duração; `_commit()` copiado.
 # Mudanças: em vez de variantes A–F de um pipeline só, roda módulos de `pipelines/`
-#   com a interface do CLAUDE.md sobre os folds de `splits.py`; uma linha por janela
+#   com a interface descrita abaixo sobre os folds de `splits.py`; uma linha por janela
 #   (pipeline, gravação, grupo, janela, condição), com a configuração repetida na linha.
 """Runner comum: mesmo split, mesmas janelas, mesmas métricas para toda pipeline.
 
     python -m motorsound.runner --pipelines p00_logmel_cnn p11_decifrae_harmsum \
         --base idmt --split blocos --tag val_idmt
 
-Interface que cada `pipelines/<nome>.py` expõe (CLAUDE.md):
+Interface que cada `pipelines/<nome>.py` expõe:
     NOME, ORIGEM, TIPO, PRE (dataclass), POST (dataclass, opcional)
     extrair(y, sr, pre) -> np.ndarray de forma fixa
     treinar(X, rotulos_int, post, n_classes) -> modelo

@@ -116,11 +116,11 @@ def main():
                       f"{l.razao_tol:.4g}× tol. {det}")
     if not alguma:
         md.append("Nenhuma.")
-    md += ["", "## Nota da auditoria independente (F)", "",
+    md += ["", "## Nota da auditoria independente", "",
            "Os vereditos acima aplicam a regra congelada em `447a7c2`, que aceita como "
            "PASS_EMPATE um argmax do Welch diferente quando P_ref[bin da referência] − "
            "P_ref[bin do C] ≤ 2·tol absoluta. A auditoria "
-           "(`reports/independent_scientific_audit.md`, M1) mostrou que nos casos de borda "
+           "independente (M1) mostrou que nos casos de borda "
            "DC+ruído essa diferença absoluta é pequena só porque o espectro inteiro está no "
            "piso do float32: em termos relativos o pico da referência é várias vezes o bin "
            "escolhido pelo C, então não é empate real. As tolerâncias e o comparador não foram "

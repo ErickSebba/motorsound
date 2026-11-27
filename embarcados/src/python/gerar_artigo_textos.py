@@ -2,7 +2,7 @@
 
     .venv\\Scripts\\python.exe embarcados\\src\\python\\gerar_artigo_textos.py
 
-Agente E (Etapa 7). Os textos abaixo são modelos com marcadores {VNome}; cada marcador é
+Etapa 7. Os textos abaixo são modelos com marcadores {VNome}; cada marcador é
 trocado pelo valor formatado em português que está em paper/numeros.json (campo "pt").
 Nenhum número é digitado aqui. Marcador sem macro correspondente = erro (o script para).
 Os números do ESP32 físico aparecem como **[pendente]** enquanto a bancada não rodar.
@@ -193,7 +193,7 @@ todas as janelas ({VEqFloatDecisionPass} de {VEqCases}). Com a variante nomeada 
 janelas) de {VEqEnvDecFloatMed} para {VEqEnvDecSosdMed}, porque os polos do passa-baixa ficam perto
 do círculo unitário e o arredondamento em float32 se acumula no estado do filtro. A afirmação que os
 dados sustentam é concordância etapa a etapa dentro de tolerâncias congeladas antes da comparação
-formal, com a exceção acima; não é equivalência incondicional. A auditoria independente (agente F)
+formal, com a exceção acima; não é equivalência incondicional. A auditoria independente
 reproduziu a comparação a partir de um build limpo, e as correções dela estão aplicadas aqui.
 
 A variante `{VChipVariant}` foi comparada com as mesmas tolerâncias do float32, primeiro no PC e

@@ -1,4 +1,4 @@
-"""Avaliação única no conjunto de teste oficial do IDMT (autorizada pelo Erick em 25/10/2026).
+"""Avaliação única no conjunto de teste oficial do IDMT (feita uma vez só, em 25/10/2026).
 
 Duas fases, nesta ordem:
 
@@ -74,7 +74,7 @@ def cmd_congelar(a):
         sys.exit("congelar não pode rodar com o teste liberado")
     ts = datetime.now().strftime("%Y%m%d-%H%M%S")
     d = {"categoria": "congelamento_antes_do_teste", "gerado_em": ts, "projeto": commit(),
-         "autorizacao": "Erick, 25/10/2026, na conversa da sessão (abrir o teste oficial do IDMT)",
+         "autorizacao": "25/10/2026: decisão de abrir o teste oficial do IDMT uma única vez",
          "protocolo": "treino em todas as janelas de 3 s de train/ (pure, 3 classes); teste em todas "
                       "as janelas de 3 s de test/ (9 condições), uma única vez; sem ajuste posterior",
          "variantes": configuracao(), "seed_boot": SEED_BOOT, "n_boot": dg.N_BOOT,

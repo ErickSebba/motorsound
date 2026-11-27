@@ -1,4 +1,4 @@
-"""Medição NO PC (categoria 2 do CLAUDE.md): p11 Python de referência e p11 em C (build float
+"""Medição NO PC (categoria 2: medição no PC): p11 Python de referência e p11 em C (build float
 do PC), nas mesmas janelas que vão para o ESP32 (bancada_comum.casos_latencia).
 
     .venv\\Scripts\\python.exe embarcados\\src\\python\\bench_pc.py --n 200 --aquecimento 5

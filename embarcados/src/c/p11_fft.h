@@ -12,7 +12,7 @@
  * Alvo ESP32 (ESP_PLATFORM definido pelo ESP-IDF): ver o bloco no fim de p11_fft.c. Ele
  * desvia N potência de 2 para o ESP-DSP (dsps_fft2r_fc32) e mantém o código C portável para
  * os demais N (o ESP-DSP só tem raiz 2/4). ESSE BLOCO NÃO FOI COMPILADO: não há ESP-IDF
- * nem ESP32 nesta máquina (embarcados/reports/BLOQUEIOS.md, B1 e B2).
+ * nem ESP32 nesta máquina na época do porte.
  */
 #ifndef P11_FFT_H
 #define P11_FFT_H

@@ -4,7 +4,7 @@
 
 Ordem: numeros → figuras → tabelas → textos → manifesto → checar.
 `--sem-espectro` pula a releitura do áudio de train/ do IDMT (a figura de espectro já existente
-é mantida). Agente E (Etapa 7).
+é mantida). Etapa 7.
 """
 from __future__ import annotations
 

@@ -13,7 +13,7 @@
  *   4. Hilbert por FFT de quatro passos (N = N1*N2, N2 = 128) com os dados em linhas de N2
  *      complexos espalhadas pelos blocos, em vez de FFT de raiz mista direta sobre um vetor
  *      contíguo de N complexos. É a mesma DFT, em outra ordem de operações: o erro numérico
- *      muda, e é medido pelo comparador do Agente D contra as mesmas tolerâncias do float.
+ *      muda, e é medido pelo comparador do verificador contra as mesmas tolerâncias do float.
  * STFT, soma harmônica, Viterbi, saliência no caminho, sosfilt, Welch, features, cosseno e
  * HMM são as funções de p11.h/p11_core.c, chamadas sem alteração.
  */

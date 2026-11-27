@@ -1,4 +1,4 @@
-"""Checador do LaTeX do artigo (não há TeX instalado: BLOQUEIOS B4).
+"""Checador do LaTeX do artigo (escrito quando ainda não havia TeX instalado).
 
     .venv\\Scripts\\python.exe embarcados\\src\\python\\gerar_artigo_checar.py
 
