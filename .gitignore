@@ -43,3 +43,7 @@ embarcados/src/python/gerar_dossie.py
 !embarcados/reports/c_port.md
 !embarcados/reports/gold_vectors.md
 !embarcados/reports/diagnostico.md
+
+# Ferramentas de IA (ficam só no disco)
+.claude/
+CLAUDE.md
